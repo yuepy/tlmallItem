@@ -174,8 +174,7 @@
         } else {
           ysp.appMain.showLoading();
         } //var loading = ysp.customHelper.tipMsg.getLoading();
-      }return { loadingFlag: load, isShow: isShow, content: content, tempPlanOtherCustomer: tempPlanOtherCustomer, dayPlanContent: dayPlanContent, selectedCount: selectedCount, tempAreaText: tempAreaText, customer: customer || 0,
-        store: store || 0, textArea: textArea, pageData: { "prev": pageData.prev, "next": pageData.next, "numberTaotal": pageData.numberTaotal, "page": pageData.page, "currentPage": pageData.currentPage, "flag": flag //pageLoading: pageLoading
+      }return { loadingFlag: load, isShow: isShow, content: content, tempPlanOtherCustomer: tempPlanOtherCustomer, dayPlanContent: dayPlanContent, selectedCount: selectedCount, tempAreaText: tempAreaText, customer: customer || 0, store: store || 0, textArea: textArea, pageData: { "prev": pageData.prev, "next": pageData.next, "numberTaotal": pageData.numberTaotal, "page": pageData.page, "currentPage": pageData.currentPage, "flag": flag //pageLoading: pageLoading
         }, buttonNum: buttonNum };
     }, doAction_uiControl44_fBiQg5: function (data, elem) {
       //返回按钮方法，返回工作台页面
@@ -240,7 +239,7 @@
         }
       } //点击确认按钮方法
       if ('ascertain' == data.eventType) {
-        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn');var addDayPlanOkBtn = elem.querySelector('#addDayPlanOkBtn');var cwin = elem.ownerDocument.defaultView;debugger;if (addTempDayPlanOkBtn) {
+        var textArea = data.dataCustom.textArea;var tempAreaText = data.dataCustom.tempAreaText;var selectedCount = data.dataCustom.selectedCount;var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn') || elem.querySelector('#addDayPlanOkBtn');var addTempDayPlanOkBtn = elem.querySelector('#addTempDayPlanOkBtn');var addDayPlanOkBtn = elem.querySelector('#addDayPlanOkBtn');var cwin = elem.ownerDocument.defaultView;if (addTempDayPlanOkBtn) {
           // addTempDayPlanOkBtn.click();
           cwin.tempShow();
         }if (addDayPlanOkBtn) {
@@ -249,7 +248,8 @@
         }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
           var tempTextAreaValue = tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer") && tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer").value;if (tempTextAreaValue != "" || selectedCount != "") {
             ysp.appMain.showLoading();setTimeout(function () {
-              ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.back();ysp.customHelper.BackReload();
+              ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.back();
+              ysp.customHelper.BackReload();
             }, 2000);
           }
         } //计划拜访
@@ -276,8 +276,8 @@
             item.click();
           }
         });
-      }switch (data.eventType) {
-        case 'prev':
+      }
+      switch (data.eventType) {case 'prev':
           prevtitle(data.dataCustom);break;case 'next':
           prevtitle(data.dataCustom);break;case 'GO':
           clickGO(data.dataCustom);break;}function clickGO(data) {
