@@ -340,9 +340,9 @@
       } else if (data.eventType == "timeclick") {
         var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];time.value = d;time.dispatchEvent(new Event("change"));
       } else if (data.eventType == "datechange") {
-        var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];if (ysp.appMain.isIOS() && time.getAttribute("id").indexOf("START_DATE")) {
-          var date = d.split("-");time.value = date[1] + "/" + date[2] + "/" + date[0];
-        } else if (ysp.appMain.isIOS() && time.getAttribute("id").indexOf("END_DATE")) {
+        var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];var href = elem.ownerDocument.defaultView.location.href;if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1 && time.getAttribute("id").indexOf("START_DATE")) {
+          var date = d.split("-");time.value = date[2] + "/" + date[1] + "/" + date[0];
+        } else if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1 && time.getAttribute("id").indexOf("END_DATE")) {
           var date = d.split("-");time.value = date[2] + "/" + date[1] + "/" + date[0];
         } else {
           time.value = d.replace(/-/g, "/");

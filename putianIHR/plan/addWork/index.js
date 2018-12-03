@@ -5,7 +5,12 @@
         var data = { vall: [], pserror: [] };var trs = elem.querySelectorAll("tr[id]");[].forEach.call(trs, function (d, i) {
           var arr = [];var errers = [];var inputs = d.querySelectorAll("input");[].forEach.call(inputs, function (d1, i1) {
             if (i1 == 0) {
-              arr.push(d1.value.replace(/\//g, "-"));errers.push(d1.getAttribute("class"));
+              // arr.push(d1.value.replace(/\//g, "-"));
+              if (ysp.appMain.isIOS() && d1.getAttribute("id").indexOf("DATE") !== -1) {
+                var date = d1.value.split("/");arr.push(date[2] + "-" + date[1] + "-" + date[0]);
+              } else {
+                arr.push(d1.value.replace(/\//g, "-"));
+              }errers.push(d1.getAttribute("class"));
             } else {
               var leixing = d.querySelectorAll("td")[2].querySelector("span");if (leixing) {
                 arr.push(leixing.textContent);errers.push("");
@@ -19,7 +24,12 @@
     }, doAction_uiControl48_gySyv1: function (data, elem) {
       var type = data.eventType;var group = data.dataCustom;var trs = elem.querySelectorAll("tr[id]");if (type == "inputBlur") {
         if (group[0].indexOf("time") != -1) {
-          trs[group[2]].querySelectorAll("input")[0].value = group[1].replace(/-/g, "/");trs[group[2]].querySelectorAll("input")[0].dispatchEvent(new Event("change"));trs[group[2]].querySelectorAll("input")[0].nextElementSibling.click();elem.ownerDocument.querySelector("#bodyCalendar").querySelector('a[tabindex="0"]').parentElement.click();
+          // trs[group[2]].querySelectorAll("input")[0].value = group[1].replace(/-/g, "/");
+          var href = elem.ownerDocument.defaultView.location.href;if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
+            var date = group[1].split("-");trs[group[2]].querySelectorAll("input")[0].value = date[2] + "/" + date[1] + "/" + date[0];
+          } else {
+            time.value = val.replace(/-/g, "/");
+          }trs[group[2]].querySelectorAll("input")[0].dispatchEvent(new Event("change"));trs[group[2]].querySelectorAll("input")[0].nextElementSibling.click();elem.ownerDocument.querySelector("#bodyCalendar").querySelector('a[tabindex="0"]').parentElement.click();
         } else if (group[0].indexOf("hours") != -1) {
           trs[group[2]].querySelectorAll("input")[1].value = group[1].replace(/-/g, "/");trs[group[2]].querySelectorAll("input")[1].dispatchEvent(new Event("change"));
         }

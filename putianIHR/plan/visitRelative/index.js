@@ -24,7 +24,12 @@
               obj.status = "warn";
             };data.content.push(obj);
           } else if (d.querySelector("img[title*='日历']")) {
-            obj.type = "time";obj.index = i;obj.value = d.querySelector("input").value.replace(/\//g, "-");if (d.querySelector("input").className == "PSERROR") {
+            obj.type = "time";obj.index = i; // obj.value = d.querySelector("input").value.replace(/\//g, "-");
+            if (ysp.appMain.isIOS()) {
+              var date = d.querySelector("input").value.split("/");obj.value = date[2] + "-" + date[1] + "-" + date[0];
+            } else {
+              obj.value = d.querySelector("input").value.replace(/\//g, "-");
+            }if (d.querySelector("input").className == "PSERROR") {
               obj.status = "warn";
             };data.content.push(obj);
           } else if (d.querySelector("img[title*='地']")) {
@@ -49,7 +54,12 @@
       var group = data.dataCustom;var type = data.eventType;var tds = elem.querySelectorAll("td[valign]");if (type == "searchClick") {
         tds[group].querySelector("a").click();
       } else if (type == "searchBlur") {
-        tds[group[0]].querySelector("input").value = group[1];tds[group[0]].querySelector("input").dispatchEvent(new Event("change"));$(elem.querySelector("#HPS_AWE005_HDR_HPS_VISIT_DEST")).focus();
+        // tds[group[0]].querySelector("input").value = group[1];
+        var href = elem.ownerDocument.defaultView.location.href;if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
+          var date = group[1].split("-");tds[group[0]].querySelector("input").value = date[2] + "/" + date[1] + "/" + date[0];
+        } else {
+          tds[group[0]].querySelector("input").value = group[1];
+        }tds[group[0]].querySelector("input").dispatchEvent(new Event("change"));$(elem.querySelector("#HPS_AWE005_HDR_HPS_VISIT_DEST")).focus();
       } else if (type == "selectChange") {
         var options = tds[group[0]].querySelector("select").querySelectorAll("option"); // tds[group[0]].querySelector("select").querySelectorAll("option")[group[1]].selected = true;
         // tds[group[0]].querySelector("select").dispatchEvent(new Event("change"));
