@@ -55,19 +55,19 @@
 
 	var iframeUtils = _interopRequireWildcard(_iframeUtils);
 
-	var _newPlan = __webpack_require__(87);
+	var _newPlan = __webpack_require__(86);
 
 	var newPlan = _interopRequireWildcard(_newPlan);
 
-	var _newStorePlan = __webpack_require__(89);
+	var _newStorePlan = __webpack_require__(88);
 
 	var newStorePlan = _interopRequireWildcard(_newStorePlan);
 
-	var _newTempVisit = __webpack_require__(88);
+	var _newTempVisit = __webpack_require__(87);
 
 	var newTempVisit = _interopRequireWildcard(_newTempVisit);
 
-	var _newTempStoreVisit = __webpack_require__(90);
+	var _newTempStoreVisit = __webpack_require__(89);
 
 	var newTempStoreVisit = _interopRequireWildcard(_newTempStoreVisit);
 
@@ -145,13 +145,6 @@
 
 		/** 加载制定拜访计划客户列表 #newPlanAddButton */
 		$('#visitCustomerListBtn').click(function (e) {
-			//lyh 11-20 添加
-		if ($("#planEaiId").val() == '') {
-			$("#chooseVisitInfo").val("");
-			$("#visitCustomerListBtn").attr("num", 0); //选中的数量 
-			$("#visitStoreListBtn").attr("num", 0); //选中的数量
-			$("#dayPlanContent").val("");
-		}
 			//清空搜索内容
 			$("#visitCustomerListBtn").attr("class", "active");
 			$("#visitStoreListBtn").attr("class", "");
@@ -207,10 +200,6 @@
 			$("#tempVisitStoreListBtn").attr("class", "");
 			$("#newTempVisitSearchText").val("");
 
-			//选中数量清零
-			$("#tempVisitCustomerListBtn").attr("num", 0);
-			$("#tempVisitStoreListBtn").attr("num", 0);
-
 			//设置客户与门店切换按钮样式
 			$("#tempVisitStoreListBtn").attr("class", "");
 			$(this).attr("class", "active");
@@ -226,10 +215,6 @@
 			//设置客户与门店切换按钮样式
 			$(this).attr("class", "active");
 			$("#tempVisitCustomerListBtn").attr("class", "");
-
-			//选中数量清零
-			$("#tempVisitCustomerListBtn").attr("num", 0);
-			$("#tempVisitStoreListBtn").attr("num", 0);
 
 			//清空搜索内容
 			$("#newTempVisitSearchText").val("");
@@ -295,7 +280,6 @@
 					if (data.status == 'true') {
 						visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
-						window.show = 'true'
 						$("#addDayPlanCancleBtn").click();
 						$('#newPlanCustomerList').html("");
 						$('#newPlanStoreList').html("");
@@ -320,7 +304,8 @@
 				}
 			});
 		});
-		window.Show = function () {
+    
+    window.Show = function () {
 			if (editPlanTag == '1') {
 				return;
 			}
@@ -336,6 +321,13 @@
 				editPlanTag = '0';
 				return;
 			}
+			var temp = planComment.replace(/[^\u4e00-\u9fa5]/gi, "");
+			if (planComment.length - temp.length + temp.length * 3 > 1500) {
+				var msg = planRowId == '' ? "工作计划内容长度超限,不允许添加!" : "工作计划内容长度超限,不允许修改!";
+				layerUtils.error(msg);
+				editPlanTag = '0';
+				return;
+			}
 
 			layerUtils.waitingOpen(); //打开加载层
 			$.ajax({
@@ -344,26 +336,25 @@
 				data: { planComment: planComment, cusInfo: cusInfo, planEaiId: planEaiId, planRowId: planRowId, planDate: planDate, listType: listType },
 				dataType: "json",
 				success: function success(data) {
-          layerUtils.waitingClose(); //关闭加载层
-          editPlanTag = '0';
 					if (data.status == 'true') {
-						//visitPlanList.referenceHtml(); //刷新页面
+						visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
 						$("#addDayPlanCancleBtn").click();
-						$('#newPlanList').html("");
+						$('#newPlanCustomerList').html("");
+						$('#newPlanStoreList').html("");
 						$("#dayPlanContent").val("");
 						$("#chooseVisitInfo").val("");
 						$("#chooseCustomerCodes").val("");
 						$("#chooseStoreCodes").val("");
 
-						zhuge.track('新增拜访计划');
+						//zhuge.track('新增拜访计划');
 					} else if (data.message != '') {
 						layerUtils.error(data.message);
 					} else {
 						layerUtils.error("添加失败!");
 					}
-					//layerUtils.waitingClose(); //关闭加载层
-					//editPlanTag = '0';
+					layerUtils.waitingClose(); //关闭加载层
+					editPlanTag = '0';
 				},
 				error: function error(e) {
 					console.error(e);
@@ -385,11 +376,11 @@
 				var listType = $("#listType").val();
 				var cusInfo = "";
 				if (listType == 'customer') {
-					$("#newTempCustomerVisit input[name='newTempPlanChk']:checked").each(function () {
+					$("#newTempCustomerVisit input[name='newCustomerTempPlanChk']:checked").each(function () {
 						cusInfo += $(this).val() + ",";
 					});
 				} else {
-					$("#newTempStoreVisit input[name='newTempPlanChk']:checked").each(function () {
+					$("#newTempStoreVisit input[name='newStoreTempPlanChk']:checked").each(function () {
 						cusInfo += $(this).val() + ",";
 					});
 				}
@@ -444,63 +435,78 @@
 				});
 			}
 		});
-//临时拜访提交 后添加的
+    
+    //临时拜访提交 后添加的
 window.tempShow = function (e) {
 	clickCountTemp++;
-	//e.preventDefault();
-	if (clickCountTemp > 1) {
-		return;
-	} else {
-		var actionDate = $("#currentSelectDay").val();
-		var listType = $("#listType").val();
-		var cusInfo = "";
-		$("#newTempVisit input[name='newTempPlanChk']:checked").each(function () {
-			cusInfo += $(this).val() + ",";
-		});
-		var otherCustomer = $("#tempPlanOtherCustomer").val();
-		if (cusInfo == "" && otherCustomer == "") {
-			layerUtils.info("请选择！");
-			clickCountTemp = 0;
-			return;
-		}
-		if (cusInfo != "" && otherCustomer != "") {
-			otherCustomer = "";
-			//$("#tempPlanOtherCustomer").val("");
-			layerUtils.info("已经选择，不支持手填！");
-			clickCountTemp = 0;
-			return;
-		}
-		layerUtils.waitingOpen(); //打开加载层
-		var obj_a = $(this);
-		$.ajax({
-			type: "POST",
-			url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addTempCustomerVisitPlan',
-			data: { cusInfo: cusInfo, actionDate: actionDate, listType: listType, otherCustomer: otherCustomer },
-			dataType: "json",
-			success: function success(data) {
-				clickCountTemp = 0;
-				layerUtils.waitingClose(); //关闭加载层
-				if (data.status == 'true') {
-					//visitPlanList.referenceHtml(); //刷新页面
-					$("#addTempDayPlanCancleBtn").click();
-					$('#newTempVisit').html("");
-					$("#tempPlanOtherCustomer").val("");
-					$("#chooseCustomerCodes").val("");
-					$("#chooseStoreCodes").val("");
-					zhuge.track('新增临时拜访计划');
+			// e.preventDefault();
+			if (clickCountTemp > 1) {
+				return;
+			} else {
+				var actionDate = $("#currentSelectDay").val();
+				var listType = $("#listType").val();
+				var cusInfo = "";
+				if (listType == 'customer') {
+					$("#newTempCustomerVisit input[name='newCustomerTempPlanChk']:checked").each(function () {
+						cusInfo += $(this).val() + ",";
+					});
 				} else {
-					layerUtils.error("添加失败!");
+					$("#newTempStoreVisit input[name='newStoreTempPlanChk']:checked").each(function () {
+						cusInfo += $(this).val() + ",";
+					});
 				}
-			},
-			error: function error(e) {
-				clickCountTemp = 0;
-				layerUtils.waitingClose(); //关闭加载层
-			}
-		});
-	}
-}
-});
 
+				var otherCustomer = $("#tempPlanOtherCustomer").val();
+				if (cusInfo == "" && otherCustomer == "") {
+					layerUtils.info("请选择！");
+					clickCountTemp = 0;
+					return;
+				}
+				if (otherCustomer.length * 3 > 150) {
+					layerUtils.info("手填客户名称长度超限,不允许添加!");
+					clickCountTemp = 0;
+					return;
+				}
+
+				if (cusInfo != "" && otherCustomer != "") {
+					otherCustomer = "";
+					layerUtils.info("已经选择，不支持手填！");
+					clickCountTemp = 0;
+					return;
+				}
+
+				layerUtils.waitingOpen(); //打开加载层
+				var obj_a = $(this);
+				$.ajax({
+					type: "POST",
+					url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addTempCustomerVisitPlan',
+					data: { cusInfo: cusInfo, actionDate: actionDate, listType: listType, otherCustomer: otherCustomer },
+					dataType: "json",
+					success: function success(data) {
+						clickCountTemp = 0;
+						layerUtils.waitingClose(); //关闭加载层
+						if (data.status == 'true') {
+							visitPlanList.referenceHtml(); //刷新页面
+							$("#addTempDayPlanCancleBtn").click();
+							$('#newTempCustomerVisit').html("");
+							$('#newTempStoreVisit').html("");
+							$("#tempPlanOtherCustomer").val("");
+							$("#chooseCustomerCodes").val("");
+							$("#chooseStoreCodes").val("");
+
+							//zhuge.track('新增临时拜访计划');
+						} else {
+							layerUtils.error("添加失败!");
+						}
+					},
+					error: function error(e) {
+						clickCountTemp = 0;
+						layerUtils.waitingClose(); //关闭加载层
+					}
+				});
+			}
+}
+	});
 
 /***/ }),
 
@@ -1614,7 +1620,7 @@ window.tempShow = function (e) {
 
 /***/ }),
 
-/***/ 87:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1679,7 +1685,7 @@ window.tempShow = function (e) {
 	        });
 	        $("#visitStoreListBtn").attr("num", storeNum);
 
-	        $("input[name='newPlanChk']").unbind().click(function () {
+	        $("input[name='newCustomerPlanChk']").unbind().click(function () {
 	            var visitInfo = $('#chooseVisitInfo').val();
 	            var customerInfo = $(this).attr("value");
 
@@ -1705,7 +1711,7 @@ window.tempShow = function (e) {
 	function render(customerVisitList) {
 	    //
 	    var temp = '\n        <table class="table">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u5BA2\u6237\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id="newPlanListContent">\n                ' + (customerVisitList == null ? '' : customerVisitList.map(function (item) {
-	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input id="cList_' + item.customerCode + '" name="newPlanChk" type="checkbox" \n                                        value="' + item.userId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.customerCode + ':customer"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>' + item.customerName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForCustomer(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + item.visitCount + '</b></td>\n                        </tr>\n                    ';
+	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input id="cList_' + item.customerCode + '" name="newCustomerPlanChk" type="checkbox" \n                                        value="' + item.userId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.customerCode + ':customer"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>' + item.customerName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForCustomer(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + item.visitCount + '</b></td>\n                        </tr>\n                    ';
 	    }).join('')) + '\n            </tbody>\n        </table>\n    ';
 	    return temp;
 	}
@@ -1720,7 +1726,7 @@ window.tempShow = function (e) {
 
 /***/ }),
 
-/***/ 88:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1752,7 +1758,7 @@ window.tempShow = function (e) {
 	    $("#tempPlanOtherCustomer").prop("readonly", "");
 	    ajaxUtils.sendAjax("cust/myReport/getCustomerVisitList", body, "planTempCustomerPage", function (data) {
 	        $('#newTempCustomerVisit').html(render(data.data));
-	        $("#newTempCustomerVisit input[name='newTempPlanChk']").click(function () {
+	        $("#newTempCustomerVisit input[name='newCustomerTempPlanChk']").click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "");
 	            $("#tempPlanOtherCustomer").val("");
 	            $("#tempPlanOtherCustomer").prop("readonly", "readonly");
@@ -1764,7 +1770,7 @@ window.tempShow = function (e) {
 	        $("#tempPlanOtherCustomer").unbind().click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "checked");
 	            $("#tempPlanOtherCustomer").prop("readonly", "");
-	            $("#newTempCustomerVisit input[name='newTempPlanChk']:checked").each(function () {
+	            $("#newTempCustomerVisit input[name='newCustomerTempPlanChk']:checked").each(function () {
 	                $(this).prop("checked", "");
 	            });
 	            $("#tempVisitCustomerListBtn").attr("num", "0");
@@ -1774,7 +1780,7 @@ window.tempShow = function (e) {
 
 	function render(customerVisitList) {
 	    var temp = '\n        <table class="table">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u5BA2\u6237\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id="newPlanTempListContent">\n                ' + (customerVisitList == null ? '' : customerVisitList.map(function (item) {
-	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val="' + item.customerName + '" id="tcList_' + item.customerCode + '" name="newTempPlanChk" type=\'radio\' \n                                        value="' + item.userId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.customerCode + ':customer"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>' + item.customerName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForTempCustomer(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + (item.visitCount == null ? '0' : item.visitCount) + '</b></td>\n                        </tr>\n                    ';
+	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val="' + item.customerName + '" id="tcList_' + item.customerCode + '" name="newCustomerTempPlanChk" type=\'radio\' \n                                        value="' + item.userId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.customerCode + ':customer"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>' + item.customerName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForTempCustomer(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + (item.visitCount == null ? '0' : item.visitCount) + '</b></td>\n                        </tr>\n                    ';
 	    }).join('')) + '\n            </tbody>\n        </table>\n    ';
 	    return temp;
 	}
@@ -1789,7 +1795,7 @@ window.tempShow = function (e) {
 
 /***/ }),
 
-/***/ 89:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1853,7 +1859,7 @@ window.tempShow = function (e) {
 	        });
 	        $("#visitStoreListBtn").attr("num", storeNum);
 
-	        $("input[name='newPlanChk']").unbind().click(function () {
+	        $("input[name='newStorePlanChk']").unbind().click(function () {
 	            var visitInfo = $('#chooseVisitInfo').val();
 	            var storeInfo = $(this).attr("value");
 
@@ -1878,7 +1884,7 @@ window.tempShow = function (e) {
 
 	function render(storeVisitList) {
 	    var temp = '\n        <table class="table">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u95E8\u5E97\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id="newStorePlanListContent">\n                ' + (storeVisitList == null ? '' : storeVisitList.map(function (item) {
-	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input id="cList_' + item.storeCode + '" name="newPlanChk" type=\'checkbox\' \n                                        value="' + item.storeId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.storeCode + ':store"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>' + item.storeName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForStore(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + item.visitCount + '</b></td>\n                        </tr>\n                    ';
+	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input id="cList_' + item.storeCode + '" name="newStorePlanChk" type=\'checkbox\' \n                                        value="' + item.storeId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.storeCode + ':store"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            <td>' + item.storeName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForStore(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + item.visitCount + '</b></td>\n                        </tr>\n                    ';
 	    }).join('')) + '\n            </tbody>\n        </table>\n    ';
 	    return temp;
 	}
@@ -1893,7 +1899,7 @@ window.tempShow = function (e) {
 
 /***/ }),
 
-/***/ 90:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1929,7 +1935,7 @@ window.tempShow = function (e) {
 	    $("#tempPlanOtherCustomer").prop("readonly", "");
 	    ajaxUtils.sendAjax("visit/storeVisit/getStoreVisitList", body, "planTempStorePage", function (data) {
 	        $('#newTempStoreVisit').html(render(data.data));
-	        $("#newTempStoreVisit input[name='newTempPlanChk']").click(function () {
+	        $("#newTempStoreVisit input[name='newStoreTempPlanChk']").click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "");
 	            $("#tempPlanOtherCustomer").val("");
 	            $("#tempPlanOtherCustomer").prop("readonly", "readonly");
@@ -1941,7 +1947,7 @@ window.tempShow = function (e) {
 	        $("#tempPlanOtherCustomer").unbind().click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "checked");
 	            $("#tempPlanOtherCustomer").prop("readonly", "");
-	            $("#newTempStoreVisit input[name='newTempPlanChk']:checked").each(function () {
+	            $("#newTempStoreVisit input[name='newStoreTempPlanChk']:checked").each(function () {
 	                $(this).prop("checked", "");
 	            });
 	            $("#tempVisitStoreListBtn").attr("num", "0"); //选中的数量 
@@ -1951,7 +1957,7 @@ window.tempShow = function (e) {
 
 	function render(storeVisitList) {
 	    var temp = '\n        <table class="table">\n            <thead>\n                <tr>\n                    <th>\u9009\u62E9</th>\n                    <th>\u95E8\u5E97\u540D\u79F0</th>\n                    <th>\u62DC\u8BBF\u4EBA\u5458</th>\n                    <th>\u62DC\u8BBF\u8981\u6C42(\u6B21/\u6708)</th>\n                    <th>\u5DF2\u62DC\u8BBF\u6B21\u6570</th>\n                </tr>\n            </thead>\n            <tbody id="newStorePlanTempListContent">\n                ' + (storeVisitList == null ? '' : storeVisitList.map(function (item) {
-	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val="' + item.storeName + '" id="tcList_' + item.storeCode + '" name="newTempPlanChk" type=\'radio\' \n                                        value="' + item.storeId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.storeCode + ':store"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            </td>\n                            <td>' + item.storeName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForTempStore(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + (item.visitCount == null ? '0' : item.visitCount) + '</b></td>\n                        </tr>\n                    ';
+	        return '\n                        <tr>\n                            <td>\n                                <label>\n                                    <input val="' + item.storeName + '" id="tcList_' + item.storeCode + '" name="newStoreTempPlanChk" type=\'radio\' \n                                        value="' + item.storeId + ':' + (item.frequency == null ? '0' : item.frequency) + ':' + (item.period == null ? '0' : item.period) + ':' + (item.visitCount == null ? '0' : item.visitCount) + ':' + item.storeCode + ':store"/>\n                                    <i></i>\n                                </label>\n                            </td>\n                            </td>\n                            <td>' + item.storeName + '</td>\n                            <td>' + item.salesManName + '</td>\n                            ' + getFrequencyAndPeriodForTempStore(item.frequency, item.period) + '\n                            <td>\u5DF2\u62DC\u8BBF\u6B21\u6570\uFF1A<b>' + (item.visitCount == null ? '0' : item.visitCount) + '</b></td>\n                        </tr>\n                    ';
 	    }).join('')) + '\n            </tbody>\n        </table>\n    ';
 	    return temp;
 	}
