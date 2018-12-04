@@ -316,7 +316,12 @@
         }if (titCon) {
           [].forEach.call(titCon, function (item, index) {
             var ipt = item.querySelector("input");var spns = item.querySelector("span");if (ipt) {
-              data.con.push(ipt.value.replace(/\//g, "-"));data.pserror.push(ipt.getAttribute("class"));
+              // data.con.push(ipt.value.replace(/\//g, "-"));
+              if (ysp.appMain.isIOS()) {
+                var date = ipt.value.split("/");data.con.push(date[2] + "-" + date[1] + "-" + date[0]);
+              } else {
+                data.con.push(ipt.value.replace(/\//g, "-"));
+              }data.pserror.push(ipt.getAttribute("class"));
             } else if (index > 0) {
               if (item.querySelector("select")) {
                 data.pserror.push(item.querySelector("select").getAttribute("class"));var sel = [];var opts = item.querySelectorAll("option");[].forEach.call(opts, function (d, i) {
