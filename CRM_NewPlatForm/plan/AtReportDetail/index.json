@@ -3,9 +3,7 @@
   "id": "AtReportDetail",
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/customerAtReport/checkAtReportDetail.html",
   "jsFile": "index.js",
-  "requires": {
-    "AtReportDetail": "../AtReportDetail/index.json"
-  },
+  "requires": {},
   "chineseName": "@我的报告详情",
   "description": "",
   "controls": {
@@ -125,6 +123,33 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control355_MOTWpq": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": "descendant::DIV[@id=\"Details\"]/DIV[3]/DIV[1]/DIV[1]/DIV[2]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-report-infors DIV.content DIV.body.clearfix"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[3]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "roles": "element,link",
+      "text": "\n                                     \n                                        华为FD\n                                        填写的报告时赵伟丽\n                                        \n                                    \n                                    \n                                        华为体验店\n                                        汇报给赵伟丽小姐姐\n                                        \n                                    \n                                    \n                                        华为融合\n                                        赵伟大帅发\n                                        \n                                    \n                                    \n                                        华为省包\n                                        化卫生法\n                                        \n                                    \n                                    \n                                        三星\n                                        三星打造\n                                        \n                                    \n                                    \n                                        大客户业务部\n                                        大客户事情\n                                        \n                                    \n                                    \n                                        其他信息\n                                        other information 就是其让他\n                                        \n                                    \n\n                                    \n                                        \n                                        @的人\n                                        \n                                            @\n\n                                            \n                                            赵伟丽;赵伟;\n                                        \n                                    \n                                    \n                                         \n                                        \n                                            \n                                        \n                                        \n                                    \n                                ",
+      "frameXPath": ""
     }
   },
   "contexts": {
@@ -134,7 +159,9 @@
         "control48_TFfB70",
         "control176_OObhpr"
       ],
-      "anchors": [],
+      "anchors": [
+        "control355_MOTWpq"
+      ],
       "urlAnchor": [
         "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/customerAtReport\\/checkAtReportDetail.html"
       ]
@@ -156,11 +183,7 @@
       "fromContextId": "context14_LNCPgA",
       "fromAction": "doAction",
       "fromControlId": "control47_syfpWU",
-      "toContexts": [
-        {
-          "toContextId": "context14_LNCPgA"
-        }
-      ]
+      "toContexts": []
     },
     "flow39_yECQG5": {
       "fromContextId": "context14_LNCPgA",
