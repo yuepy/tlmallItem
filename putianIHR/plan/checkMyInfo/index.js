@@ -56,7 +56,7 @@
     },
     getData_control36_ScdoW5: function (elem) {
       if (elem) {
-        var data = { title: [], content: [] };var trs = elem.children[0].children;[].forEach.call(trs, function (d, i) {
+        var data = { title: [], content: [] };var trs = elem.children[0].children;var href = elem.ownerDocument.defaultView.location.href;[].forEach.call(trs, function (d, i) {
           var obj = { val: "", options: [], type: "", num: "", status: "" };if (d.querySelector("label")) {
             data.title.push(d.textContent.replace(/\*/g, "").trim());
           } else if (d.querySelector("select")) {
@@ -68,7 +68,7 @@
           } else if (d.querySelector("img") && !d.querySelector("img[alt*='日期']")) {
             obj.type = "search";obj.val = d.querySelector("input[type='text']").value;obj.num = i;data.content.push(obj);
           } else if (d.querySelector("img[alt*='日期']")) {
-            obj.type = "date";if (ysp.appMain.isIOS()) {
+            obj.type = "date";if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
               var date = d.querySelector("input[type='text']").value.split("/");obj.val = date[2] + "-" + date[1] + "-" + date[0];
             } else {
               obj.val = d.querySelector("input[type='text']").value.replace(/\//g, "-");

@@ -304,7 +304,7 @@
       if (!elem) {
         return;
       }var data = { star: [], tit: [], con: [], pserror: [] };if (elem && elem.querySelector("[dir='ltr']") && elem.querySelector("[dir='ltr']").textContent.indexOf("开始日期") !== -1) {
-        var elem = elem.querySelectorAll("[dir='ltr']")[0].querySelector("[dir='ltr']").querySelector("tbody");var titStr = elem.querySelectorAll("th");var titCon = elem.querySelectorAll("td");if (titStr) {
+        var elem = elem.querySelectorAll("[dir='ltr']")[0].querySelector("[dir='ltr']").querySelector("tbody");var titStr = elem.querySelectorAll("th");var titCon = elem.querySelectorAll("td");var href = elem.ownerDocument.defaultView.location.href;if (titStr) {
           [].forEach.call(titStr, function (item, index) {
             //星号
             if (item.querySelector("span")) {
@@ -317,7 +317,7 @@
           [].forEach.call(titCon, function (item, index) {
             var ipt = item.querySelector("input");var spns = item.querySelector("span");if (ipt) {
               // data.con.push(ipt.value.replace(/\//g, "-"));
-              if (ysp.appMain.isIOS()) {
+              if (ysp.appMain.isIOS() && ipt.getAttribute("id").indexOf("DATE") !== -1 && href.indexOf("192.168.220.110") !== -1) {
                 var date = ipt.value.split("/");data.con.push(date[2] + "-" + date[1] + "-" + date[0]);
               } else {
                 data.con.push(ipt.value.replace(/\//g, "-"));

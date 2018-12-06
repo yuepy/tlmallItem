@@ -12,7 +12,7 @@
     },
     getData_control70_h70Dev: function (elem) {
       if (elem) {
-        var data = { title: [], content: [] };var tds = elem.querySelectorAll("td[valign]");[].forEach.call(tds, function (d, i) {
+        var data = { title: [], content: [] };var tds = elem.querySelectorAll("td[valign]");var href = elem.ownerDocument.defaultView.location.href;[].forEach.call(tds, function (d, i) {
           var obj = { options: [], selected: "", index: "", value: "", type: "", status: "" };if (d.querySelector("label")) {
             data.title.push(d.querySelector("label").textContent.trim());
           } else if (d.querySelector("select")) {
@@ -25,7 +25,7 @@
             };data.content.push(obj);
           } else if (d.querySelector("img[title*='日历']")) {
             obj.type = "time";obj.index = i; // obj.value = d.querySelector("input").value.replace(/\//g, "-");
-            if (ysp.appMain.isIOS()) {
+            if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
               var date = d.querySelector("input").value.split("/");obj.value = date[2] + "-" + date[1] + "-" + date[0];
             } else {
               obj.value = d.querySelector("input").value.replace(/\//g, "-");

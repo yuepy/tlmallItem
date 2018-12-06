@@ -27,7 +27,7 @@
       if (!elem) {
         return;
       }var data = { date: "", opts: [], pserror: [], select: "" };var ipt = elem.querySelector("#HPS_AWE002_HDR_PDATE"); // data.date = ipt.value.replace(/\//g, "-");
-      if (ysp.appMain.isIOS()) {
+      var href = elem.ownerDocument.defaultView.location.href;if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
         var date = ipt.value.split("/");data.date = date[2] + "-" + date[1] + "-" + date[0];
       } else {
         data.date = ipt.value.replace(/\//g, "-");

@@ -34,7 +34,7 @@
           trs[group[2]].querySelectorAll("input")[1].value = group[1].replace(/-/g, "/");trs[group[2]].querySelectorAll("input")[1].dispatchEvent(new Event("change"));
         }
       } else if (type == "delete") {
-        trs[group].querySelectorAll("td")[5].querySelector("a").click();
+        trs[group].querySelectorAll("td")[6].querySelector("a").click();
       }
     },
     getTemplate_uiControl48_gySyv1: function () {
