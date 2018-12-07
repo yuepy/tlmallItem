@@ -67,7 +67,7 @@
 
 	var layerUtils = _interopRequireWildcard(_layerUtils);
 
-	var _backfill = __webpack_require__(169);
+	var _backfill = __webpack_require__(171);
 
 	var backfill = _interopRequireWildcard(_backfill);
 
@@ -856,6 +856,7 @@
 	        commonUtils.getTopWin().document.documentElement.classList.add('loading');
 	    }
 	    dataUtils.setTopWindowData("loading", "loading");
+     	localStorage.setItem("layerLoading", "1"); //放入session
 	};
 	/**
 	 * 加载数据层关闭
@@ -868,6 +869,7 @@
 	        commonUtils.getTopWin().document.documentElement.classList.remove('loading');
 	    }
 	    dataUtils.clearTopWindowData("loading");
+    	localStorage.removeItem("layerLoading"); //删除名称为“layerLoading”的信息。
 	};
 
 	/**
@@ -993,14 +995,14 @@
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.224:8080/ptDataShow';
 
 	//生产 nginx
-	//export const SERVER_ROOT = 'http://192.168.220.82:8080'; //服务端根路径
-	//export const LOCAL_SERVER_ROOT = 'http://192.168.220.82:8080'; //本地服务端根路径
+	//export const SERVER_ROOT = 'http://192.168.1.227'; //服务端根路径
+	//export const LOCAL_SERVER_ROOT = 'http://192.168.1.227'; //本地服务端根路径
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.202/ptDataShow';
 
 	//生产 228
 	var SERVER_ROOT = exports.SERVER_ROOT = ''; //服务端根路径
 	var LOCAL_SERVER_ROOT = exports.LOCAL_SERVER_ROOT = ''; //本地服务端根路径
-	var PTDATASHOW_SERVER_ROOT = exports.PTDATASHOW_SERVER_ROOT = 'http://192.168.220.82:8080/ptDataShow';
+	var PTDATASHOW_SERVER_ROOT = exports.PTDATASHOW_SERVER_ROOT = 'http://192.168.220.82:8080/ptDataShow'; //'https://vcrm-uat.pttl.com:8080/ptDataShow';
 
 	// var _dgt = _dgt || [];
 	// window._dgt = _dgt;
@@ -1162,6 +1164,9 @@
 				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
 					alert("分页参数错误，请检查！");
 					return;
+				} else {
+					var pageSize = $('#' + pageDivId + " #page_selectPageNum option:selected").val();
+					body.pageSize = isNaN(pageSize) ? body.pageSize : pageSize;
 				}
 			}
 			param = getJsonString(objextUtil.clone(body)); //保留原来的  克隆一个提交参数
@@ -1228,7 +1233,10 @@
 				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
 					alert("分页参数错误，请检查！");
 					return;
-				}
+        } else {
+        var pageSize = $('#' + pageDivId + " #page_selectPageNum option:selected").val();
+        body.pageSize = isNaN(pageSize) ? body.pageSize : pageSize;
+      	}
 			}
 			param = getJsonString(objextUtil.clone(body)); //保留原来的  克隆一个提交参数
 		}
@@ -1419,13 +1427,14 @@
 	        $("#" + data.pageId).html("");
 	        return;
 	    }
-	    var pageSize = page.pageSize;
+	    var pageSize = page.pageSize; //显示多少条记录
 	    var fn = data.fn;
 	    if (!pageSize) {
 	        pageSize = 10;
 	    }
 	    var pageHtml = "<li class='skip skip_count'><span>共" + pageCount + "页</span><span>到第</span><input type='number' class='skip-num' min='1'/><span>页</span></li>";
 	    pageHtml += "<li class='skip_right_goto' val='" + pageCount + "' val1='" + pageSize + "'><a class='skip-right-icon'></a></li>";
+   	  pageHtml += getSelectOptionHtml(pageSize);
 	    var options = {
 	        bootstrapMajorVersion: 2, //版本
 	        currentPage: currentPage, //当前页数
@@ -1457,8 +1466,13 @@
 	    $('#' + data.pageId).bootstrapPaginator(options);
 	    var liCount = $('#' + data.pageId + " li.skip_right_goto");
 	    if (typeof liCount != "undefined" && liCount.length > 0) {
+        	//跳页
 	        $('#' + data.pageId + " li.skip_right_goto").unbind("click").on("click", function (e) {
 	            gotoPageNum(this, data.pageId, fn);
+	        });
+          //选择页码
+	        $('#' + data.pageId + " #page_selectPageNum").unbind("change").on("change", function (e) {
+	            fn(parseInt($(this).val()), 1);
 	        });
 	    }
 	}
@@ -1510,7 +1524,18 @@
 	    if (result == null) return false;
 	    return true;
 	}
-
+  
+  //获取分页的 select条目
+  function getSelectOptionHtml(pageSize) {
+      var option = "<li>显示<select id='page_selectPageNum'>";
+      if (pageSize == 10) option += "<option value='10' selected='selected'>10</option>";else option += "<option value='10'>10</option>";
+      if (pageSize == 20) option += "<option value='20' selected='selected'>20</option>";else option += "<option value='20'>20</option>";
+      if (pageSize == 50) option += "<option value='50' selected='selected'>50</option>";else option += "<option value='50'>50</option>";
+      if (pageSize == 100) option += "<option value='100' selected='selected'>100</option>";else option += "<option value='100'>100</option>";
+      if (pageSize == 200) option += "<option value='200' selected='selected'>200</option>";else option += "<option value='200'>200</option>";
+      option += "</select>行</li>";
+      return option;
+  }
 /***/ }),
 
 /***/ 8:
@@ -2116,7 +2141,7 @@
 
 /***/ }),
 
-/***/ 169:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

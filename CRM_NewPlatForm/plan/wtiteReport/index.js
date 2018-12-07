@@ -78,7 +78,8 @@
         data.otherInforTagsFlag.push(otherInforTagsButtons[i].getAttribute("class"));
       }var otherInfor = "false";if (otherInforTagsButtons.length > 3) {
         otherInfor = "true";
-      }data.otherInforTagsLength.push(otherInfor);data.file = [];if (elem.querySelector('#fileList').querySelectorAll('.file-item').length > 0) {
+      }data.otherInforTagsLength.push(otherInfor);
+      data.file = [];if (elem.querySelector('#fileList').querySelectorAll('.file-item').length > 0) {
         var divs = elem.querySelector('#fileList').querySelectorAll('.file-item');for (var i = 0; i < divs.length; i++) {
           var src = [],
               title = [],
@@ -94,11 +95,12 @@
               
               _______________________*/if (elem.ownerDocument.querySelector('#ContactSure') != null) {
         data.commit = { number: elem.ownerDocument.querySelector('#ContactSure').querySelector('em').textContent };
-      } /*_____________________
-              
-              	以下为Dialog中展示数据
-              
-              _______________________*/var DialogElem = elem.ownerDocument;var branchs = DialogElem.querySelector('#ContactAlert').querySelectorAll('.box');data.Dialog = [];for (var i = 0, personnel = ''; i < branchs.length; i++) {
+      }
+      /*_____________________
+            
+            	以下为Dialog中展示数据
+            
+            _______________________*/var DialogElem = elem.ownerDocument;var branchs = DialogElem.querySelector('#ContactAlert').querySelectorAll('.box');data.Dialog = [];for (var i = 0, personnel = ''; i < branchs.length; i++) {
         var bran = [],
             perso = [],
             checked = [];bran.push([branchs[i].querySelector('.area-name').textContent.replace(/^(\s*)|(\s*)$/g, '')]);personnel = branchs[i].querySelectorAll('.lists-one');for (var j = 0; j < personnel.length; j++) {
@@ -283,7 +285,8 @@
         } else if (selectEl.dispatchEvent) {
           selectEl.dispatchEvent(new Event('change'));
         } else {
-          selectEl.dispatchEvent(new MouseEvent('click', { view: selectEl.ownerDocument.defaultView, bubbles: true, cancelable: true }));
+          selectEl.dispatchEvent(new MouseEvent('click', { view: selectEl.ownerDocument.defaultView, bubbles: true,
+            cancelable: true }));
         }
       }function buttonClick(data) {
         var index = data.index;var text = data.text;if ("华为FD" == text) {

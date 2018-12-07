@@ -155,7 +155,7 @@
 			$(this).attr("class", "active");
 
 			//清空列表
-			//$('#newPlanList').html("");
+			$('#newPlanList').html("");
 
 			newPlan.load();
 			$('#listType').val("customer");
@@ -169,7 +169,7 @@
 			//清空搜索内容
 			$("#newPlanListSearchText").val("");
 			//清空列表
-			//$('#newPlanList').html("");
+			// $('#newPlanList').html("");
 			newStorePlan.load();
 			$('#listType').val("store");
 		});
@@ -200,11 +200,11 @@
 			$("#tempVisitStoreListBtn").attr("class", "");
 			$("#newTempVisitSearchText").val("");
 
-			//设置客户与门店切换按钮样式
+					//设置客户与门店切换按钮样式
 			$("#tempVisitStoreListBtn").attr("class", "");
 			$(this).attr("class", "active");
 			//清空列表
-			//$('#newTempCustomerVisit').html("");
+			// $('#newTempVisit').html("");
 
 			newTempVisit.load();
 			$('#listType').val("customer");
@@ -216,10 +216,10 @@
 			$(this).attr("class", "active");
 			$("#tempVisitCustomerListBtn").attr("class", "");
 
-			//清空搜索内容
+				//清空搜索内容
 			$("#newTempVisitSearchText").val("");
 			//清空列表
-			//$('#newTempStoreVisit').html("");
+			// $('#newTempVisit').html("");
 
 			newTempStoreVisit.load();
 			$('#listType').val("store");
@@ -280,6 +280,7 @@
 					if (data.status == 'true') {
 						visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
+            window.show = "true"; //后添加的
 						$("#addDayPlanCancleBtn").click();
 						$('#newPlanCustomerList').html("");
 						$('#newPlanStoreList').html("");
@@ -305,6 +306,7 @@
 			});
 		});
     
+    //工作计划提交 后添加的
     window.Show = function () {
 			if (editPlanTag == '1') {
 				return;
@@ -328,7 +330,6 @@
 				editPlanTag = '0';
 				return;
 			}
-
 			layerUtils.waitingOpen(); //打开加载层
 			$.ajax({
 				type: "POST",
@@ -336,25 +337,25 @@
 				data: { planComment: planComment, cusInfo: cusInfo, planEaiId: planEaiId, planRowId: planRowId, planDate: planDate, listType: listType },
 				dataType: "json",
 				success: function success(data) {
+          
 					if (data.status == 'true') {
 						visitPlanList.referenceHtml(); //刷新页面
 						//inintWorkPlan(planDate);
 						$("#addDayPlanCancleBtn").click();
-						$('#newPlanCustomerList').html("");
+            $('#newPlanCustomerList').html("");
 						$('#newPlanStoreList').html("");
 						$("#dayPlanContent").val("");
 						$("#chooseVisitInfo").val("");
 						$("#chooseCustomerCodes").val("");
 						$("#chooseStoreCodes").val("");
-
-						//zhuge.track('新增拜访计划');
+						// zhuge.track('新增拜访计划');
 					} else if (data.message != '') {
 						layerUtils.error(data.message);
 					} else {
 						layerUtils.error("添加失败!");
 					}
 					layerUtils.waitingClose(); //关闭加载层
-					editPlanTag = '0';
+          editPlanTag = '0';
 				},
 				error: function error(e) {
 					console.error(e);
@@ -384,7 +385,6 @@
 						cusInfo += $(this).val() + ",";
 					});
 				}
-
 				var otherCustomer = $("#tempPlanOtherCustomer").val();
 				if (cusInfo == "" && otherCustomer == "") {
 					layerUtils.info("请选择！");
@@ -435,11 +435,10 @@
 				});
 			}
 		});
-    
-    //临时拜访提交 后添加的
-window.tempShow = function (e) {
-	clickCountTemp++;
-			// e.preventDefault();
+  //临时拜访提交 后添加的
+	window.tempShow = function (e) {
+			clickCountTemp++;
+			//e.preventDefault();
 			if (clickCountTemp > 1) {
 				return;
 			} else {
@@ -462,7 +461,7 @@ window.tempShow = function (e) {
 					clickCountTemp = 0;
 					return;
 				}
-				if (otherCustomer.length * 3 > 150) {
+        if (otherCustomer.length * 3 > 150) {
 					layerUtils.info("手填客户名称长度超限,不允许添加!");
 					clickCountTemp = 0;
 					return;
@@ -470,11 +469,11 @@ window.tempShow = function (e) {
 
 				if (cusInfo != "" && otherCustomer != "") {
 					otherCustomer = "";
+					//$("#tempPlanOtherCustomer").val("");
 					layerUtils.info("已经选择，不支持手填！");
 					clickCountTemp = 0;
 					return;
 				}
-
 				layerUtils.waitingOpen(); //打开加载层
 				var obj_a = $(this);
 				$.ajax({
@@ -488,13 +487,12 @@ window.tempShow = function (e) {
 						if (data.status == 'true') {
 							visitPlanList.referenceHtml(); //刷新页面
 							$("#addTempDayPlanCancleBtn").click();
-							$('#newTempCustomerVisit').html("");
+              $('#newTempCustomerVisit').html("");
 							$('#newTempStoreVisit').html("");
 							$("#tempPlanOtherCustomer").val("");
 							$("#chooseCustomerCodes").val("");
 							$("#chooseStoreCodes").val("");
-
-							//zhuge.track('新增临时拜访计划');
+							// zhuge.track('新增临时拜访计划');
 						} else {
 							layerUtils.error("添加失败!");
 						}
@@ -505,7 +503,7 @@ window.tempShow = function (e) {
 					}
 				});
 			}
-}
+		}
 	});
 
 /***/ }),
@@ -944,7 +942,7 @@ window.tempShow = function (e) {
 				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
 					alert("分页参数错误，请检查！");
 					return;
-				} else {
+				}else {
 					var pageSize = $('#' + pageDivId + " #page_selectPageNum option:selected").val();
 					body.pageSize = isNaN(pageSize) ? body.pageSize : pageSize;
 				}
@@ -1013,7 +1011,7 @@ window.tempShow = function (e) {
 				} else if ((typeof body.pageNum == "undefined" || body.pageNum == null) && typeof body.pageSize != "undefined") {
 					alert("分页参数错误，请检查！");
 					return;
-				} else {
+				}else {
 					var pageSize = $('#' + pageDivId + " #page_selectPageNum option:selected").val();
 					body.pageSize = isNaN(pageSize) ? body.pageSize : pageSize;
 				}
@@ -1207,14 +1205,14 @@ window.tempShow = function (e) {
 	        $("#" + data.pageId).html("");
 	        return;
 	    }
-	    var pageSize = page.pageSize; //显示多少条记录
+	    var pageSize = page.pageSize;
 	    var fn = data.fn;
 	    if (!pageSize) {
 	        pageSize = 10;
 	    }
 	    var pageHtml = "<li class='skip skip_count'><span>共" + pageCount + "页</span><span>到第</span><input type='number' class='skip-num' min='1'/><span>页</span></li>";
 	    pageHtml += "<li class='skip_right_goto' val='" + pageCount + "' val1='" + pageSize + "'><a class='skip-right-icon'></a></li>";
-	    pageHtml += getSelectOptionHtml(pageSize);
+    	pageHtml += getSelectOptionHtml(pageSize);
 	    var options = {
 	        bootstrapMajorVersion: 2, //版本
 	        currentPage: currentPage, //当前页数
@@ -1246,11 +1244,11 @@ window.tempShow = function (e) {
 	    $('#' + data.pageId).bootstrapPaginator(options);
 	    var liCount = $('#' + data.pageId + " li.skip_right_goto");
 	    if (typeof liCount != "undefined" && liCount.length > 0) {
-	        //跳页
+         //跳页
 	        $('#' + data.pageId + " li.skip_right_goto").unbind("click").on("click", function (e) {
 	            gotoPageNum(this, data.pageId, fn);
 	        });
-	        //选择页码
+         //选择页码
 	        $('#' + data.pageId + " #page_selectPageNum").unbind("change").on("change", function (e) {
 	            fn(parseInt($(this).val()), 1);
 	        });
@@ -1304,7 +1302,7 @@ window.tempShow = function (e) {
 	    if (result == null) return false;
 	    return true;
 	}
-
+  
 	//获取分页的 select条目
 	function getSelectOptionHtml(pageSize) {
 	    var option = "<li>显示<select id='page_selectPageNum'>";
@@ -1729,7 +1727,7 @@ window.tempShow = function (e) {
 /***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -1933,9 +1931,9 @@ window.tempShow = function (e) {
 	    body.planRowId = $("#planRowId").val();
 	    body.planDate = $("#currentSelectDay").val();
 	    $("#tempPlanOtherCustomer").prop("readonly", "");
-	    ajaxUtils.sendAjax("visit/storeVisit/getStoreVisitList", body, "planTempStorePage", function (data) {
-	        $('#newTempStoreVisit').html(render(data.data));
-	        $("#newTempStoreVisit input[name='newStoreTempPlanChk']").click(function () {
+      ajaxUtils.sendAjax("visit/storeVisit/getStoreVisitList", body, "planTempStorePage", function (data) {
+          $('#newTempStoreVisit').html(render(data.data));
+          $("#newTempStoreVisit input[name='newStoreTempPlanChk']").click(function () {
 	            $("#tempOtherCustomerCheckBox").prop("checked", "");
 	            $("#tempPlanOtherCustomer").val("");
 	            $("#tempPlanOtherCustomer").prop("readonly", "readonly");
