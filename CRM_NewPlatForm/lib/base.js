@@ -219,6 +219,10 @@
       }
       console.log('溜了溜了 !!!');
     }
+    if(ysp.customHelper.AndroidBackFlag == 'ClientStoreOrder'){
+      //客户、门店订单详情返回
+      ysp.appMain.back();
+    }
     //恢复默认值
     ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';
