@@ -223,6 +223,18 @@
       //客户、门店订单详情返回
       ysp.appMain.back();
     }
+    if(ysp.customHelper.AndroidBackFlag == 'VisitBack'){
+      //拜访总览物理键返回
+      if (ysp.customHelper.BackFlag >1) {
+        ysp.customHelper.BackFlag = ysp.customHelper.BackFlag - 1;
+        ysp.runtime.Browser.activeBrowser.contentWindow.history.back();
+      } else if (ysp.customHelper.BackFlag == 1) {
+        ysp.customHelper.BackFlag = ysp.customHelper.BackFlag - 1;
+        ysp.runtime.Browser.activeBrowser.contentWindow.location.href = ysp.customHelper.CUSTOMURL;
+      } else {
+        ysp.runtime.Browser.activeBrowser.contentWindow.close();
+      }
+    }
     //恢复默认值
     ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';

@@ -55,7 +55,8 @@
         var options = selects.querySelectorAll('option');for (var i = 0; i < options.length; i++) {
           data.reportDate.push(options[i].textContent);
         }var reportDateValue = selects && selects.value; //拜访所选的时长
-        data.reportDateValue.push(reportDateValue);data.header = { visitTarget: elem.querySelector('#VisitTarget').value, targetPosition: elem.querySelector('#TargetPosition').value };data.contents = { HuaWeiFD: elem.querySelector('#huaweiFD').textContent, HuaweiExperienceStore: elem.querySelector('#HuaweiExperienceStore').textContent, HuaweiFuse: elem.querySelector('#HuaweiFuse').textContent, HuaweiProvincePackage: elem.querySelector('#HuaweiProvincePackage').textContent, SamSung: elem.querySelector('#SamsungDivison').textContent, Distribution: elem.querySelector('#FenXiaoDivison').textContent, OtherInfor: elem.querySelector('#OtherInfor').textContent }; ///华为FD
+        data.reportDateValue.push(reportDateValue);data.header = { visitTarget: elem.querySelector('#VisitTarget').value, targetPosition: elem.querySelector('#TargetPosition').value };data.contents = { HuaWeiFD: elem.querySelector('#huaweiFD').textContent, HuaweiExperienceStore: elem.querySelector('#HuaweiExperienceStore').textContent, HuaweiFuse: elem.querySelector('#HuaweiFuse').textContent, HuaweiProvincePackage: elem.querySelector('#HuaweiProvincePackage') ? elem.querySelector('#HuaweiProvincePackage').textContent : "", //修改的第一处
+          SamSung: elem.querySelector('#SamsungDivison').textContent, Distribution: elem.querySelector('#FenXiaoDivison').textContent, OtherInfor: elem.querySelector('#OtherInfor').textContent }; ///华为FD
         var huaweiFDButtons = elem.querySelector("#huaweiFDTags") && elem.querySelector("#huaweiFDTags").querySelectorAll("button");for (var i = 0; i < huaweiFDButtons.length; i++) {
           data.huaweiFDTags.push(huaweiFDButtons[i].textContent);
         }for (var i = 0; i < huaweiFDButtons.length; i++) {
@@ -77,7 +78,8 @@
         }var huaweiFuse = "false";if (huaweiFuseTagsButtons.length > 3) {
           huaweiFuse = "true";
         }data.huaweiFuseTagsLength.push(huaweiFuse); ///华为省包
-        var huaweiProvincePackageTagsButtons = elem.querySelector("#huaweiProvincePackageTags") && elem.querySelector("#huaweiProvincePackageTags").querySelectorAll("button");for (var i = 0; i < huaweiProvincePackageTagsButtons.length; i++) {
+        var huaweiProvincePackageTagsButtons = elem.querySelector("#huaweiProvincePackageTags") ? elem.querySelector("#huaweiProvincePackageTags").querySelectorAll("button") : []; //修改的第二处
+        for (var i = 0; i < huaweiProvincePackageTagsButtons.length; i++) {
           data.huaweiProvincePackageTags.push(huaweiProvincePackageTagsButtons[i].textContent);
         }for (var i = 0; i < huaweiProvincePackageTagsButtons.length; i++) {
           data.huaweiProvincePackageTagsFlag.push(huaweiProvincePackageTagsButtons[i].getAttribute("class"));
