@@ -32,7 +32,8 @@
           var eleName = huaweiFDNodes[i].nodeName;if (eleName == "#text") {
             var text = huaweiFDNodes[i].textContent;obj.huaweiFD.push(huaweiFDNodes[i].textContent);
           }
-        }obj.huaweiExperience = eObje.querySelector("#HuaweiExperienceStore").textContent;obj.HuaweiFuse = eObje.querySelector("#HuaweiFuse").textContent;obj.huaweiProvince = eObje.querySelector("#HuaweiProvincePackage").textContent; /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var samsungDivisonNodes = eObje.querySelector("#SamsungDivison").childNodes && [].slice.call(eObje.querySelector("#SamsungDivison").childNodes);obj.samsungDivison = [];for (var i = 0, len = samsungDivisonNodes.length; i < len; i++) {
+        }obj.huaweiExperience = eObje.querySelector("#HuaweiExperienceStore").textContent;obj.HuaweiFuse = eObje.querySelector("#HuaweiFuse").textContent;obj.huaweiProvince = eObje.querySelector("#HuaweiProvincePackage") ? eObje.querySelector("#HuaweiProvincePackage").textContent : ""; //修改的第一处
+        /**需要判断当前标签下的子元素是不是只有一个纯文本节点以及是否存在所谓的br换行节点**/var samsungDivisonNodes = eObje.querySelector("#SamsungDivison").childNodes && [].slice.call(eObje.querySelector("#SamsungDivison").childNodes);obj.samsungDivison = [];for (var i = 0, len = samsungDivisonNodes.length; i < len; i++) {
           var eleName = samsungDivisonNodes[i].nodeName;if (eleName == "#text") {
             var text = samsungDivisonNodes[i].textContent;obj.samsungDivison.push(text);
           }
@@ -83,7 +84,8 @@
         }var huaweiFuse = "false";if (huaweiFuseTagsButtons.length > 3) {
           huaweiFuse = "true";
         }data.huaweiFuseTagsLength.push(huaweiFuse); ///华为省包
-        var huaweiProvincePackageTagsButtons = elem.querySelector("#huaweiProvincePackageTags") && elem.querySelector("#huaweiProvincePackageTags").querySelectorAll("button");for (var i = 0; i < huaweiProvincePackageTagsButtons.length; i++) {
+        var huaweiProvincePackageTagsButtons = elem.querySelector("#huaweiProvincePackageTags") ? elem.querySelector("#huaweiProvincePackageTags").querySelectorAll("button") : []; //修改的第二处
+        for (var i = 0; i < huaweiProvincePackageTagsButtons.length; i++) {
           data.huaweiProvincePackageTags.push(huaweiProvincePackageTagsButtons[i].textContent);
         }for (var i = 0; i < huaweiProvincePackageTagsButtons.length; i++) {
           data.huaweiProvincePackageTagsFlag.push(huaweiProvincePackageTagsButtons[i].getAttribute("class"));
@@ -94,7 +96,8 @@
           data.samsungDivisonTags.push(samsungDivisonTagsButtons[i].textContent);
         }for (var i = 0; i < samsungDivisonTagsButtons.length; i++) {
           data.samsungDivisonTagsFlag.push(samsungDivisonTagsButtons[i].getAttribute("class"));
-        }var samsungDivison = "false";if (samsungDivisonTagsButtons.length > 3) {
+        }
+        var samsungDivison = "false";if (samsungDivisonTagsButtons.length > 3) {
           samsungDivison = "true";
         }data.samsungDivisonTagsLength.push(samsungDivison); ///大客户业务部
         var fenXiaoDivisonTagsButtons = elem.querySelector("#fenXiaoDivisonTags") && elem.querySelector("#fenXiaoDivisonTags").querySelectorAll("button");for (var i = 0; i < fenXiaoDivisonTagsButtons.length; i++) {
@@ -119,8 +122,7 @@
           }
         }var act = $(elem).find('#contentBody').find(".z-act");if (act.length > 0) {
           act.each(function (index, item) {
-            var planGs = [];
-            var checkedName = [];var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
+            var planGs = [];var checkedName = [];var gs = $(item).find('.title').find('.area-name').html();planGs.push(gs);var itemData = { planGs: planGs };data.subPerson.push(itemData);
           });
         }var sum = {};sum.number = $(elem).find("#ContactSure").find("em").html();data.sumNumber.push(sum); //获取@的名字
         // $(elem).find("#ContactUsers").find(".user").each(function (index, item) {
@@ -128,9 +130,9 @@
         //   atName.names = $(item).find("span").html();
         //   data.atNames.push(atName);
         // });
-        data.user = { users: [], users2: []
-        };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
-          var iconClose = users[i].querySelector("i") && users[i].querySelector("i").classList.contains("icon-close");if (iconClose) {
+        data.user = { users: [], users2: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
+          var iconClose = users[i].querySelector("i") && users[i].querySelector("i").classList.contains("icon-close");
+          if (iconClose) {
             data.user.users.push({ text: users[i].querySelector('span').textContent, val: users[i].querySelector('span').getAttribute('val'), val1: users[i].querySelector('span').getAttribute('val1'), val2: users[i].querySelector('span').getAttribute('val2') });
           } else {
             data.user.users2.push({ text: users[i].querySelector('span').textContent, val: users[i].querySelector('span').getAttribute('val'), val1: users[i].querySelector('span').getAttribute('val1'), val2: users[i].querySelector('span').getAttribute('val2') });
@@ -159,8 +161,7 @@
               perso = [],
               checked = [];bran.push([branchs[i].querySelector('.area-name').textContent.replace(/^(\s*)|(\s*)$/g, '')]);personnel = branchs[i].querySelectorAll('.lists-one');for (var j = 0; j < personnel.length; j++) {
             perso.push(personnel[j].querySelector('label').textContent.replace(/^(\s*)|(\s*)$/g, ''));checked.push(perso.length > 0 && personnel[j].querySelector('input').checked);
-          }var item = { branch: bran, personnel: perso, checked: checked };
-          data.Dialog.push(item);
+          }var item = { branch: bran, personnel: perso, checked: checked };data.Dialog.push(item);
         }
       }data.modalDialog = elem.ownerDocument.defaultView.frameElement.parentNode.previousElementSibling.previousElementSibling.querySelector("iframe").contentDocument.querySelector(".layui-layer-dialog");return data;
     },
