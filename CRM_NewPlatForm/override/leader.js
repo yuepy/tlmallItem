@@ -471,7 +471,13 @@ window.addEventListener('DOMContentLoaded', function() {
                         getLines(LineDatas, "lines");
 
                     }
-
+                  //选择维度为年时，表格无数据，隐藏表格
+        	        if(isYear == "1"){
+        	        	$(".u-table-b").hide();
+        	        }
+                  if(isYear == "0"){
+        	        	$(".u-table-b").show();
+        	        }
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
@@ -668,7 +674,13 @@ window.addEventListener('DOMContentLoaded', function() {
                         getLines(LineDatas, "lines");
 
                     }
-
+										//选择维度为年时，表格无数据，隐藏表格
+        	        if(isYear == "1"){
+        	        	$(".u-table-b").hide();
+        	        }
+                  if(isYear == "0"){
+        	        	$(".u-table-b").show();
+        	        }
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
