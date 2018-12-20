@@ -17670,24 +17670,40 @@ div[data-componentsid="uiControl344_T4NX0E"]{
     border-bottom:1px solid rgb(228,228,228);
   }
   .report-tag-list{
-    padding: 5px 0 0 10px;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
-    .temporary-add,.center{
-      margin-bottom:10px;
-    }
-    .top{
-      font-size:18px;
-      color:rgb(16,71,230);
+    color:rgb(163,163,163);
+    .temporary-add{
+      color:rgb(0,0,0);
+      font-size:20px;
+      margin:10px 0;
     }
     .center{
       display: flex;
       width:80vw;
       justify-content: space-between;
     }
+    .bottom{
+      margin-bottom:10px;
+    }
   }
   .report-tag-list>li{
-      border-bottom:1px solid rgb(119,117,112);
+    &:not(:last-child){
+      border-bottom:1px solid rgb(224,224,224);
+    }
+     
   }
   
+}
+.blank-area-tips{
+  display:flex;
+  height:160px;
+  background-color:#FFF;
+}
+.bottom-area-bg{
+  display:flex;
+  height:80px;
+  border-top:1px solid rgb(224,224,224);
+  background-color:rgb(242,242,242);
 }
