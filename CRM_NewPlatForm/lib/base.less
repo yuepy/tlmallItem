@@ -944,6 +944,7 @@ section.ysp-customer-details{
 .ysp-rightbill-icon,
 .ysp-clientportait-icon,
 .ysp-salerebate-icon,
+.ysp-customer-lable-icon,
 .ysp-orderform-icon,
 .ysp-visit-react-icon,
 .ysp-sales-reached-icon,
@@ -1015,6 +1016,9 @@ section.ysp-customer-details{
 
 .ysp-salerebate-icon{
   background-image: url("./images/salerebate-icon.png");
+}
+.ysp-customer-lable-icon{
+  background-image: url("./images/customer-tag.png");
 }
 .ysp-rightbill-icon{
   background-image: url("./images/rightbill-icon.png");
@@ -17568,3 +17572,122 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 //     }
 //   }
 // }
+
+//360客户新添加客户标签入口
+div[data-componentsid="uiControl341_2SyALa"]{
+  .create-label{
+    display:flex;
+    height:50px;
+    padding:10px;
+    justify-content: space-between;
+    align-items:center;
+    background-color:rgb(242,242,242);
+    border-bottom:1px solid rgb(225,225,225);
+  span{
+    color:rgb(106,106,106);
+  }
+  div.to-add-btn{
+    color:rgb(69,146,230);
+    background-color:#FFF;
+    padding:0 12px;
+    text-align:center;
+    border-radius: 6px;
+    border:1px solid rgb(69,146,230);
+  }
+ 
+}
+ .business-manage-list{
+    ul li{
+      display:flex;
+      padding: 10px 10px 10px 0;
+      margin-left:10px;
+      justify-content: space-between;
+      align-items:center;
+      >span{
+        width:32px;
+        height:32px;
+        background:#FFF url(images/ysp-workSummary-delete.png) no-repeat;
+      }
+      &:not(:last-child){
+          border-bottom:1px solid rgb(224,224,224);
+      }
+      .top{
+        margin-bottom:20px;
+        color:rgb(0,0,0);
+        font-size:20px;
+      }
+      >div{
+        flex:1;
+        margin-right:8px;
+        color:rgb(163,163,163);
+      }
+      div.bottom{
+        display: flex;
+        flex-direction:column;
+      }
+    }
+  }
+}
+//系统生成标签的唯一标识
+div[data-componentsid="uiControl343_b3ulqU"]{
+  .sys-generate-tags{
+    display:flex;
+    height:50px;
+    padding:10px;
+    align-items:center;
+    background-color:rgb(242,242,242);
+    color:rgb(106,106,106);
+    font-size:18px;
+    border-top:1px solid rgb(228,228,228);
+    border-bottom:1px solid rgb(228,228,228);
+  }
+  .custom-sys-tags{
+    padding:10px 20px 10px 10px;
+    display:flex;
+    flex-wrap:wrap;
+    .item-sys-tags{
+      margin:10px 25px 0 0;
+      display: flex;
+      padding:5px 25px;
+      text-align:center;
+      color:rgb(74,136,225);
+      border:1px solid rgb(74,136,225);
+      border-radius:5px;
+    }
+  }
+}
+div[data-componentsid="uiControl344_T4NX0E"]{
+  font-family:"Microsoft YaHei";
+  .visit-report-tag{
+    display:flex;
+    height:50px;
+    padding:10px;
+    align-items:center;
+    background-color:rgb(242,242,242);
+    color:rgb(106,106,106);
+    font-size:18px;
+    border-top:1px solid rgb(228,228,228);
+    border-bottom:1px solid rgb(228,228,228);
+  }
+  .report-tag-list{
+    padding: 5px 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    .temporary-add,.center{
+      margin-bottom:10px;
+    }
+    .top{
+      font-size:18px;
+      color:rgb(16,71,230);
+    }
+    .center{
+      display: flex;
+      width:80vw;
+      justify-content: space-between;
+    }
+  }
+  .report-tag-list>li{
+      border-bottom:1px solid rgb(119,117,112);
+  }
+  
+}
