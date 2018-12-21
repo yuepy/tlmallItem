@@ -17150,7 +17150,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
           font-size: 12px;
         }
       }
-    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.JHDCZL_YD,.SYBDC_YD,.BSCDCOffice_YD,.CPDCOffice_YD,.XSYEZL_YD,.YDXSDC_YD,.BSCDC_YD,.XSRYDC_YD,.FGSDC_YD,.NDXSDC_YD,.XMDC_YD,.CPDC_YD,.KHMDDC_YD{
+    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.JHDCZL_YD,.SYBDC_YD,.BSCDCOffice_YD,.CPDCOffice_YD,.XSYEZL_YD,.YDXSDC_YD,.BSCDC_YD,.XSRYDC_YD,.FGSDC_YD,.NDXSDC_YD,.XMDC_YD,.CPDC_YD,.KHMDDC_YD,.ZNSHG_YD{
       margin-bottom: 10px;
       //background:@workspace;
       .list-icon;
@@ -17589,3 +17589,279 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 //     }
 //   }
 // }
+/***************智能生活馆start**************/
+div[data-ysp-modelid="intelligentLivingHall"]{
+  background: #f0eff5;
+  overflow: hidden;
+}
+//时间样式
+.ysp-living-hall-time{
+  background: #fff;
+  padding: 10px;
+  .livingTimeSearch{
+  	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >div:first-child{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      select{
+        flex: 1;
+        margin: 0;
+        padding: 0;
+        border-radius: 6px;
+        background: #fff;
+        padding: 0px 60px 0px 10px;
+        font-size:12px;
+        display: block;
+        height: 30px;
+        background-size: 20px;
+        background-position: 70px;
+        background-repeat: no-repeat;
+        background-image: url(./images/down-arrow-icon.png);
+      }
+    }
+    >div:nth-child(2){
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      >i:first-child{
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-date-icon.png);
+        margin-top: 2px;
+      }
+      >span:nth-child(2){
+        color: #999999;
+        margin-left: 8px;
+        margin-right: 20px;
+      }
+      >i:nth-child(3){
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-pre-icon.png);
+        margin-top: 4px;
+      } 
+    }
+  }
+}
+//销量样式
+.ysp-livingHall-index{
+  margin: 5px 5px;
+  padding-top: 10px;
+  background: #fff !important;
+  border-radius: 10px;
+  overflow-x: auto;
+  //padding: 10px 10px 4px 10px;
+	.ysp-livingHall-sales{
+    display: flex;
+    justify-content: space-between;
+    .listItem{
+      //flex: 1;
+      display: flex;
+      font-size: @fontBase;
+      text-align: center;
+      width: 15px;
+      h2{
+        //font-size: @fontBase;
+        font-size:18px;
+        font-weight: 400;
+        margin: 0 0 5px 5px;
+        padding: 0;
+        color: #2c81ff;
+      }
+      .itemColor{
+        color: #e7350d !important;
+      }
+      span{
+        display: flex;
+        width: 80px;
+        color: #999;
+        font-size: 10px;
+        padding-left: 16px;
+      }
+      div:first-child{
+        margin-bottom: 20px;
+      }
+      .listItemDay{
+        border-radius: 10px;
+        background: #4796ed;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+        margin-left: 5px;
+      }
+      .listItemWeek{
+        border-radius: 10px;
+        background: #e7350d;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+      .listItemMonth{
+        border-radius: 10px;
+        background: #ffbe00;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+      .listItemYear{
+        border-radius: 10px;
+        background: #4796ed;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+      .listItemOrder{
+        border-radius: 10px;
+        background: #e7350d;
+        padding: 5px 20px 3px 20px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+    }
+  }
+}
+//图表样式
+.ysp-livingHall-header-wrapper{
+   background: white;
+   border-radius: 10px;
+   padding-top: 5px;
+   margin-top: 5px;
+  .ysp-livingHall-header-container{
+    height: 30px;
+    position: relative;
+    padding-left: 20px;
+    margin: 0px 5px 5px 15px;
+    i{
+    	display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all .4s ease-in-out;
+    }
+    i:first-child{
+      left: -4px;
+    	top: 3px;
+    	background-image: url(./images/ysp-achievementBusiness.png);
+    }
+    i.date{
+      left: -4px;
+    	top: 3px;
+    	background-image: url(./images/ysp-achievementDate.png);
+    }
+    i.space{
+      left: -4px;
+    	top: 3px;
+    	background-image: url(./images/ysp-achievementSpace.png);
+    }
+    i:last-child{
+      right: 10px;
+    	top: 3px;
+    	background-image: url(./images/up-arrow-icon.png);
+    }
+    .active{
+    	//transform: rotate(180deg);
+      right: 10px !important;
+    	top: 3px !important;
+    	background-image: url(./images/down-arrow.png) !important;
+    }
+  }
+}
+
+.ysp-livingHall-header-select-wrapper{
+   background: white;
+   border-radius: 10px;
+   padding-top: 5px;
+   margin-top: 5px;
+  .ysp-livingHall-header-select-container{
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    select{
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      border-radius: 6px;
+      background: #fff;
+      padding: 0px 30px 0px 10px;
+      font-size: 12px;
+      display: block;
+      height: 30px;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-image: url(images/down-arrow-icon.png);
+    }
+    .selectType{
+      background-position: 40px;
+    }
+    .selectOramty{
+      background-position: 50px;
+    }
+    i{
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    i.date{
+    	background-image: url(./images/ysp-achievementDate.png);
+    }
+    // position: relative;
+    // padding-left: 20px;
+    // margin: 0px 5px 5px 15px;
+    // i{
+    // 	display: block;
+    //   position: absolute;
+    //   width: 20px;
+    //   height: 20px;
+    //   background-size: 20px;
+    //   background-position: center;
+    //   background-repeat: no-repeat;
+    //   transition: all .4s ease-in-out;
+    // }
+    // i:first-child{
+    //   left: -4px;
+    // 	top: 3px;
+    // 	background-image: url(./images/ysp-achievementBusiness.png);
+    // }
+    // i.date{
+    //   left: -4px;
+    // 	top: 3px;
+    // 	background-image: url(./images/ysp-achievementDate.png);
+    // }
+    // i.space{
+    //   left: -4px;
+    // 	top: 3px;
+    // 	background-image: url(./images/ysp-achievementSpace.png);
+    // }
+    // i:last-child{
+    //   right: 10px;
+    // 	top: 3px;
+    // 	background-image: url(./images/up-arrow-icon.png);
+    // }
+    // .active{
+    //   right: 10px !important;
+    // 	top: 3px !important;
+    // 	background-image: url(./images/down-arrow.png) !important;
+    // }
+  }
+}
+/***************智能生活馆end**************/
