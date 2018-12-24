@@ -17755,20 +17755,15 @@ div[data-ysp-modelid="intelligentLivingHall"]{
       background-repeat: no-repeat;
       transition: all .4s ease-in-out;
     }
-    i:first-child{
-      left: -4px;
-    	top: 3px;
-    	background-image: url(./images/ysp-achievementBusiness.png);
-    }
     i.date{
       left: -4px;
     	top: 3px;
-    	background-image: url(./images/ysp-achievementDate.png);
+    	background-image: url(./images/ysp-livingHall-ZB.png);
     }
     i.space{
       left: -4px;
     	top: 3px;
-    	background-image: url(./images/ysp-achievementSpace.png);
+    	background-image: url(./images/ysp-livingHall-QS.png);
     }
     i:last-child{
       right: 10px;
@@ -17783,7 +17778,7 @@ div[data-ysp-modelid="intelligentLivingHall"]{
     }
   }
 }
-
+//产品系列占比趋势样式
 .ysp-livingHall-header-select-wrapper{
    background: white;
    border-radius: 10px;
@@ -17806,13 +17801,11 @@ div[data-ysp-modelid="intelligentLivingHall"]{
       height: 30px;
       background-size: 20px;
       background-repeat: no-repeat;
+      background-position: 45px;
       background-image: url(images/down-arrow-icon.png);
     }
-    .selectType{
-      background-position: 40px;
-    }
-    .selectOramty{
-      background-position: 50px;
+    span:nth-child(3),span:nth-child(4){
+      width: 20%
     }
     i{
       width: 20px;
@@ -17822,46 +17815,100 @@ div[data-ysp-modelid="intelligentLivingHall"]{
       background-repeat: no-repeat;
     }
     i.date{
-    	background-image: url(./images/ysp-achievementDate.png);
+    	background-image: url(./images/ysp-livingHall-ZB.png);
     }
-    // position: relative;
-    // padding-left: 20px;
-    // margin: 0px 5px 5px 15px;
-    // i{
-    // 	display: block;
-    //   position: absolute;
-    //   width: 20px;
-    //   height: 20px;
-    //   background-size: 20px;
-    //   background-position: center;
-    //   background-repeat: no-repeat;
-    //   transition: all .4s ease-in-out;
-    // }
-    // i:first-child{
-    //   left: -4px;
-    // 	top: 3px;
-    // 	background-image: url(./images/ysp-achievementBusiness.png);
-    // }
-    // i.date{
-    //   left: -4px;
-    // 	top: 3px;
-    // 	background-image: url(./images/ysp-achievementDate.png);
-    // }
-    // i.space{
-    //   left: -4px;
-    // 	top: 3px;
-    // 	background-image: url(./images/ysp-achievementSpace.png);
-    // }
-    // i:last-child{
-    //   right: 10px;
-    // 	top: 3px;
-    // 	background-image: url(./images/up-arrow-icon.png);
-    // }
-    // .active{
-    //   right: 10px !important;
-    // 	top: 3px !important;
-    // 	background-image: url(./images/down-arrow.png) !important;
-    // }
+    i.space{
+      background-image: url(./images/ysp-livingHall-FD.png)
+    }
+  }
+}
+
+//最后表格
+.ysp-livingHall-table-header-wrapper{
+   background: white;
+   border-radius: 10px;
+   padding-top: 5px;
+   margin-top: 5px;
+  .ysp-livingHall-table-header-container{
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    select{
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      border-radius: 6px;
+      background: #fff;
+      padding: 0px 30px 0px 10px;
+      font-size: 12px;
+      display: block;
+      height: 30px;
+      background-size: 20px;
+      background-position: 55px;
+      background-repeat: no-repeat;
+      background-image: url(images/down-arrow-icon.png);
+    }
+    span:nth-child(2){
+      margin-left: -20px;
+    }
+    span:nth-child(3){
+      width: 22%;
+      margin-left: -30px;
+    }
+    i{
+    	width: 20px;
+      height: 20px;
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    i.date{
+      left: -4px;
+    	top: 3px;
+    	background-image: url(./images/ysp-livingHall-iphone.png);
+    }
+    i:last-child{
+      right: 10px;
+    	top: 3px;
+    	background-image: url(./images/up-arrow-icon.png);
+    }
+    .active{
+    	//transform: rotate(180deg);
+      right: 10px !important;
+    	top: 3px !important;
+    	background-image: url(./images/down-arrow.png) !important;
+    }
+  }
+  .ysp-livingHall-table-head{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #f0eff5 !important;
+    margin: 10px;
+    span{
+      width: 33%;
+      text-align: center;
+    }
+  }
+  .ysp-livingHall-table-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid #ececec;
+    span{
+      width: 33%;
+      text-align: center;
+    }
+    span:first-child{
+      color: #4796ed;
+      font-size: 12px;
+    }
   }
 }
 /***************智能生活馆end**************/

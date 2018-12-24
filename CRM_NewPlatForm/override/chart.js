@@ -37,7 +37,7 @@ function getRing(datas, Id) {
 		series: [{
 			name: '品类',
 			type: 'pie',
-			radius: ['30%', '70%'],
+			radius: ['30%', '60%'],
 			center : ['50%', '50%'],
 			data: volumeData,
 			itemStyle: {
@@ -77,7 +77,7 @@ function getRing(datas, Id) {
 		series: [{
 			name: '品类',
 			type: 'pie',
-			radius: ['30%', '70%'],
+			radius: ['30%', '60%'],
 			center : ['50%', '50%'],
 			data: salesData,
 			itemStyle: {
