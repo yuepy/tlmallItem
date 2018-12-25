@@ -323,10 +323,12 @@
 				name = "华为体验店";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
 			}
+      /***
 			if (code == "huaweiSB") {
 				name = "华为省包";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
 			}
+      ***/
 			if (code == "samsung") {
 				name = "三星业务事业部";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
@@ -676,7 +678,7 @@
 	 * 加载分业务部门总结
 	 */
 	function getDepartmentHtml() {
-		var temp = '\n\t\t<li><label><input type="checkbox" code="huaweiFD" val="\u534E\u4E3AFD"/><i></i>\u534E\u4E3AFD</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiPJ" val="\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408"/><i></i>\u534E\u4E3A\u914D\u4EF6\u4E0E\u878D\u5408</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiStore" val="\u534E\u4E3A\u4F53\u9A8C\u5E97"/><i></i>\u534E\u4E3A\u4F53\u9A8C\u5E97</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiSB" val="\u534E\u4E3A\u7701\u5305"/><i></i>\u534E\u4E3A\u7701\u5305</label></li>\n\t\t<li><label><input type="checkbox" code="samsung" val="\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="distribution" val="\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8"/><i></i>\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="others" val="\u5176\u4ED6"/><i></i>\u5176\u4ED6</label></li>\n\t';
+		var temp = '\n\t\t<li><label><input type="checkbox" code="huaweiFD" val="\u534E\u4E3AFD\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u534E\u4E3AFD\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiPJ" val="\u878D\u5408\u53CA\u914D\u4EF6\u4E8B\u4E1A\u90E8"/><i></i>\u878D\u5408\u53CA\u914D\u4EF6\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="huaweiStore" val="\u534E\u4E3A\u4F53\u9A8C\u5E97\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u534E\u4E3A\u4F53\u9A8C\u5E97\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="samsung" val="\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8"/><i></i>\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="distribution" val="\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8"/><i></i>\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8</label></li>\n\t\t<li><label><input type="checkbox" code="others" val="\u5176\u4ED6"/><i></i>\u5176\u4ED6</label></li>\n\t';
 		$("#businessDepartment").html(temp);
 		$("#textareaDivs textarea").each(function () {
 			var name = $(this).attr("name");
