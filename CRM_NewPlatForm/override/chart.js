@@ -626,15 +626,14 @@ function getBarLine(datas,Id){
 			data: legendDatas
 		},
 		//x轴显示
-		yAxis: {
+		xAxis: {
 			type: 'category',
 			data: timeDatas[0],
 			axisTick: { show: false } //不显示刻度线
 		},
-		xAxis: {
+		yAxis: {
 			type: 'value',
-			axisTick: { show: false //不显示刻度线
-			}
+			axisTick: { show: false }//不显示刻度线
 			},
 		series: [{ //柱状图bar设置
 			name: legendDatas[0],

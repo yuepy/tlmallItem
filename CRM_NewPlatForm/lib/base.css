@@ -16316,11 +16316,67 @@ div[data-ysp-modelid="intelligentLivingHall"] {
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-header-select-container i.space {
   background-image: url(images/ysp-livingHall-FD.png);
 }
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart {
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  overflow: auto;
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared {
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transform-origin: 1% 100%;
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared select {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+  background: #fff;
+  padding: 0px 30px 0px 10px;
+  font-size: 12px;
+  display: block;
+  height: 30px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 45px;
+  background-image: url(images/down-arrow-icon.png);
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared span:nth-child(3),
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared span:nth-child(4) {
+  width: 20%;
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared i {
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared i.date {
+  background-image: url(images/ysp-livingHall-ZB.png);
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared i.space {
+  background-image: url(images/ysp-livingHall-FD.png);
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-screen {
+  transform: rotate(90deg);
+  transform-origin: 60% 40%;
+  height: 366px;
+  width: 345px;
+}
 .ysp-livingHall-table-header-wrapper {
   background: white;
   border-radius: 10px;
   padding-top: 5px;
   margin-top: 5px;
+  min-height: 100px;
 }
 .ysp-livingHall-table-header-wrapper .ysp-livingHall-table-header-container {
   height: 30px;
