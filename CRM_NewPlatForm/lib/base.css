@@ -16125,6 +16125,86 @@ div[data-componentsid="uiControl341_2SyALa"] .business-manage-list ul li div.bot
   display: flex;
   flex-direction: column;
 }
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content textarea {
+  min-height: 110px;
+  border: none;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .tag-name-select select {
+  margin-right: .75rem;
+  border: none;
+  background: #FFF url(images/ysp-achievement-pre-icon.png) no-repeat right center;
+  background-origin: padding-box;
+  color: #4188e0;
+  padding: .75rem;
+  height: 30px;
+  box-sizing: content-box;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .tag-name-unselect select {
+  margin-right: .75rem;
+  border: none;
+  background: #FFF url(images/ysp-achievement-pre-open-icon.jpg) no-repeat right center;
+  background-origin: padding-box;
+  color: #4188e0;
+  padding: .75rem;
+  height: 30px;
+  box-sizing: content-box;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .tag-name,
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .user-defined-tag,
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .tag-remark {
+  height: 40px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  color: #767676;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .tag-name-select,
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .tag-name-unselect {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: #FFF;
+  border-bottom: 1px solid #dfdfdf;
+  border-top: 1px solid #dfdfdf;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .defined-tag-area,
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .tag-remark-area {
+  height: 110px;
+  background-color: #FFF;
+  border-bottom: 1px solid #dfdfdf;
+  border-top: 1px solid #dfdfdf;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .btn-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 0 10px;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .btn-area .btn-to-cancel,
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .btn-area .btn-to-ensure {
+  border-radius: 6px;
+  width: 45vw;
+  text-align: center;
+  padding: 6px 60px;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .btn-area .btn-to-cancel {
+  border: 1px solid #cccccc;
+  color: #6a6a6a;
+  background-color: #FFF;
+}
+div[data-componentsid="uiControl341_2SyALa"] section.dialog-content .btn-area .btn-to-ensure {
+  color: #ffffff;
+  background-color: #4895ed;
+}
 div[data-componentsid="uiControl343_b3ulqU"] .sys-generate-tags {
   display: flex;
   height: 50px;
@@ -16196,4 +16276,11 @@ div[data-componentsid="uiControl344_T4NX0E"] .report-tag-list > li:not(:last-chi
   height: 80px;
   border-top: 1px solid #e0e0e0;
   background-color: #f2f2f2;
+}
+div[data-ysp-modelid="customerLabel"] {
+  padding-bottom: 0;
+}
+div[data-ysp-modelid="customerLabel"] div[data-componentsid="uiControl345_fUtgMV"] {
+  height: 0;
+  min-height: 0;
 }
