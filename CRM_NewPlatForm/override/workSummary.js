@@ -528,6 +528,7 @@
 					saveWorkTaskFlag = true;
 					if (null != data) {
 						if (data.result == "true") {
+              window.submitReportStatus = 'completed';//后添加
 							layerUtils.info("保存成功！", { time: 1000 });
 							iframeUtils.hideSecondIframe(); //关闭页面
 						} else if (data.msg) {

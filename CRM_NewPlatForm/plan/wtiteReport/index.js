@@ -155,9 +155,9 @@
           a[data].querySelector("i").click();
         } //elem.ownerDocument.querySelector('#ContactUsers').querySelectorAll('.user')[data].querySelector('i').click();
       }function save(data) {
-        debugger;var HuaWeiFD = data.HuaWeiFD;var HuaweiExperienceStore = data.HuaweiExperienceStore;var HuaweiFuse = data.HuaweiFuse; // var HuaweiProvincePackage = data.HuaweiProvincePackage;
+        var HuaWeiFD = data.HuaWeiFD;var HuaweiExperienceStore = data.HuaweiExperienceStore;var HuaweiFuse = data.HuaweiFuse; // var HuaweiProvincePackage = data.HuaweiProvincePackage;
         //|| HuaweiExperienceStore != ""
-        var SamSung = data.SamSung;debugger;var Distribution = data.Distribution;var OtherInfor = data.OtherInfor;elem.ownerDocument.querySelector('.footer').querySelector('#customerReportPopBtnSuccess').click();if (HuaWeiFD != "" || SamSung != "" || Distribution != "" || HuaweiFuse != "" || HuaweiProvincePackage != "" || OtherInfor != "") {
+        var SamSung = data.SamSung;var Distribution = data.Distribution;var OtherInfor = data.OtherInfor;elem.ownerDocument.querySelector('.footer').querySelector('#customerReportPopBtnSuccess').click();if (HuaWeiFD != "" || SamSung != "" || Distribution != "" || HuaweiFuse != "" || HuaweiProvincePackage != "" || OtherInfor != "") {
           //ysp.customHelper.back();
           var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url); 
           //更换返回方法 BackReload()回到工作台
@@ -216,8 +216,7 @@
       }function gsPerson(data) {
         var index = data.Index;var oldNumber = +data.OldNumber; /**如果是第一项的时候就是0,如果使用不严格相等，0与空格""是相等的:会造成默认的第一项展开时，就不会关闭了**/if (!isNaN(oldNumber)) {
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
-        }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];
-        btn.click();
+        }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       }function cancel(data) {
         var index = data;var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       }function personnel(data) {
@@ -274,8 +273,8 @@
           }
         }
       }function inputChange(data) {
-        var text = data.text;
-        var value = data.value;if ("拜访对象" == text) {
+        var text = data.text;var value = data.value;
+        if ("拜访对象" == text) {
           elem.ownerDocument.querySelector('#VisitTarget').value = value;
         } else if ("职务" == text) {
           elem.ownerDocument.querySelector('#TargetPosition').value = value;

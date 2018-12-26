@@ -2207,9 +2207,57 @@
 	        data[$(this).attr("name")] = textVal;
 	        content += textVal;
 	    });
-	    data["VisitTarget"] = $("#VisitTarget").val();
+	    /***data["VisitTarget"] = $("#VisitTarget").val();
 	    data["TargetPosition"] = $("#TargetPosition").val();
-	    data["VisitTime"] = $("#VisitTime").val();
+	    data["VisitTime"] = $("#VisitTime").val();***/
+			var visitTarget = $("#VisitTarget").val();
+      if(visitTarget == ""){
+          layerUtils.info("请填写拜访对象！");
+          return ;
+      } 
+      if(visitTarget.length > 50){
+          layerUtils.info("拜访对象数据长度超限！");
+          return;
+      } 
+      data["VisitTarget"] = visitTarget;
+
+      var targetPosition = $("#TargetPosition").val();
+      if(targetPosition == ""){
+          layerUtils.info("请填写职务！");
+          return ;
+      } 
+      if(targetPosition.length > 50){
+          layerUtils.info("职务数据长度超限！");
+          return;
+      }
+      data["TargetPosition"] = targetPosition;
+
+      var visitTime = $("#VisitTime").val();
+      if(visitTime == ""){
+          layerUtils.info("请填写拜访时长！");
+          return ;
+      } 
+      data["VisitTime"] = visitTime;
+
+      var msg = "";
+      var deptId = ['huaweiFD','HuaweiExperienceStore','HuaweiFuse','SamsungDivison','FenXiaoDivison','OtherInfor'];
+      for (var i=0;i<deptId.length;i++){ 
+          var temp = data[deptId[i]].replace(/[^\u4e00-\u9fa5]/gi,"");
+          if(((data[deptId[i]].length - temp.length) + temp.length * 3) > 1500){
+              if(deptId[i] == 'huaweiFD'){msg = "华为FD内容长度超限!";}
+              if(deptId[i] == 'HuaweiExperienceStore'){msg = "华为体验店内容长度超限!";}
+              if(deptId[i] == 'HuaweiFuse'){msg = "华为融合内容长度超限!";}
+
+              if(deptId[i] == 'SamsungDivison'){msg = "三星内容长度超限!";}
+              if(deptId[i] == 'FenXiaoDivison'){msg = "大客户业务部内容长度超限!";}
+              if(deptId[i] == 'OtherInfor'){msg = "其他信息内容长度超限!";}
+              break;
+          }
+      }
+      if(msg != ""){
+          layerUtils.error(msg);
+          return;
+      }
 
 	    if (content == "") {
 	        layerUtils.info("请至少填写一个内容！");
@@ -2285,11 +2333,20 @@
 	            //if(data.ReportStatus == "已提交"){
 	            referenceParentHtmlFn("报告", data.row_Id); //刷新父页面
 	            //}
-            	layerUtils.success('提交成功！', { time: 1000 });//后添加
+            	if(data.ReportStatus == "已提交"){
+                	layerUtils.success('提交成功！', { time: 1000 });//后添加
+	            }else if(data.ReportStatus == "草稿"){
+                  layerUtils.success('保存成功！', { time: 1000 });//后添加     
+             	}else{
+                
+              }
+            	
 	            iframeUtils.hideSecondIframe(); //关闭
-	        } else {
-	            layerUtils.error("保存失败！");
-	        }
+	        }else if(reslult.message != null && reslult.message != ''){
+            layerUtils.error(reslult.message);
+          } else {
+                layerUtils.error("保存失败！");
+            }
 	        reportSubmit = '0';
 	    });
 	}
