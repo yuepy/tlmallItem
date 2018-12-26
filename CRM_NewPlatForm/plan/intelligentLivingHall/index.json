@@ -192,37 +192,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control362_BZCNJA": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.g-main DIV.m-body DIV.left-right"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[3]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control362_BZCNJA"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control361_pvCSe1": {
       "location": {
         "data": {
@@ -298,6 +267,10 @@
         "data": {
           "tagName": "DIV"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -330,7 +303,6 @@
         "control358_WaW7TB",
         "control360_vySSuq",
         "control359_4ULDWE",
-        "control362_BZCNJA",
         "control361_pvCSe1",
         "control363_g7InBA",
         "control364_yitebx"
@@ -361,6 +333,16 @@
       "fromContextId": "context93_fCRwhi",
       "fromAction": "doAction",
       "fromControlId": "control356_fWEUhT",
+      "toContexts": [
+        {
+          "toContextId": "context93_fCRwhi"
+        }
+      ]
+    },
+    "flow284_Upga6i": {
+      "fromContextId": "context93_fCRwhi",
+      "fromAction": "doAction",
+      "fromControlId": "control364_yitebx",
       "toContexts": [
         {
           "toContextId": "context93_fCRwhi"
@@ -458,21 +440,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl345_tTXzUy",
                 "onGetTemplate": "getTemplate_uiControl345_tTXzUy"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl348_Q4I1Ln",
-          "controlId": "control362_BZCNJA",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl348_Q4I1Ln",
-                "onGetTemplate": "getTemplate_uiControl348_Q4I1Ln"
               }
             }
           }

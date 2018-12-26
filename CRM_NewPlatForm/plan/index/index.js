@@ -11,8 +11,7 @@
         }if (atMe == null) {
           atMe = 0;
         }
-      }return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation,
-        ClientOrStore: ClientOrStore, IconNum: { atMe: atMe, summary: summary } };
+      }return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation, ClientOrStore: ClientOrStore, IconNum: { atMe: atMe, summary: summary } };
     },
     doAction_uiControl63_ax7qQG: function (data, elem) {
       if (data.eventType == 'testClick') {

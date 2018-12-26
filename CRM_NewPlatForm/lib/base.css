@@ -16299,6 +16299,9 @@ div[data-ysp-modelid="intelligentLivingHall"] {
   background-position: 45px;
   background-image: url(images/down-arrow-icon.png);
 }
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-header-select-container select option {
+  font-size: 12px !important;
+}
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-header-select-container span:nth-child(3),
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-header-select-container span:nth-child(4) {
   width: 20%;
@@ -16333,6 +16336,17 @@ div[data-ysp-modelid="intelligentLivingHall"] {
   align-items: center;
   transform-origin: 1% 100%;
 }
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70%;
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared div:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared select {
   flex: 1;
   margin: 0;
@@ -16345,12 +16359,16 @@ div[data-ysp-modelid="intelligentLivingHall"] {
   height: 30px;
   background-size: 20px;
   background-repeat: no-repeat;
-  background-position: 45px;
+  background-position: 55px;
   background-image: url(images/down-arrow-icon.png);
+}
+.ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared select option {
+  font-size: 12px !important;
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared span:nth-child(3),
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared span:nth-child(4) {
-  width: 20%;
+  width: 25%;
+  margin-left: 5px;
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared i {
   width: 20px;
@@ -16360,6 +16378,7 @@ div[data-ysp-modelid="intelligentLivingHall"] {
   background-repeat: no-repeat;
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared i.date {
+  margin-right: 5px;
   background-image: url(images/ysp-livingHall-ZB.png);
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared i.space {
@@ -16398,6 +16417,9 @@ div[data-ysp-modelid="intelligentLivingHall"] {
   background-position: 55px;
   background-repeat: no-repeat;
   background-image: url(images/down-arrow-icon.png);
+}
+.ysp-livingHall-table-header-wrapper .ysp-livingHall-table-header-container select option {
+  font-size: 12px !important;
 }
 .ysp-livingHall-table-header-wrapper .ysp-livingHall-table-header-container span:nth-child(2) {
   margin-left: -20px;
