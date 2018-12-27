@@ -312,23 +312,18 @@
 		var name = "";
 		for (var code in workTask) {
 			if (code == "huaweiFD") {
-				name = "华为FD";
+				name = "华为FD业务事业部";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
 			}
 			if (code == "huaweiPJ") {
-				name = "华为配件与融合";
+				name = "融合及配件事业部";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
 			}
 			if (code == "huaweiStore") {
-				name = "华为体验店";
+				name = "华为体验店业务事业部";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);
 			}
-      /***
-			if (code == "huaweiSB") {
-				name = "华为省包";
-				html += getInitTextareaHtml_child(code, name, workTask[code]);
-			}
-      ***/
+
 			if (code == "samsung") {
 				name = "三星业务事业部";
 				html += getInitTextareaHtml_child(code, name, workTask[code]);

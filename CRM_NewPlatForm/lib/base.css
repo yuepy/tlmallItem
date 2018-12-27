@@ -3207,10 +3207,13 @@ __________________*/
 }
 .ysp-atreport-dialog-body .ysp-atreport-picture > div:first-child .ysp-atreport-picturesrc .ysp-atreport-picturesrcshow > span:last-child {
   display: inline-block;
-  padding: 2px;
+  padding: 2px 10%;
   width: 100%;
   text-align: center;
   margin-left: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .ysp-atreport-dialog-body .ysp-atreport-picture > div:first-child .ysp-atreport-picturepoint {
   display: flex;
