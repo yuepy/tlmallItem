@@ -3688,10 +3688,13 @@ __________________*/
               }
               >span:last-child{
                 display: inline-block;
-                padding:2px;
+                padding:2px 10%;
                 width: 100%;
                 text-align: center;
                 margin-left: 5px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
               } 
             }
           }
@@ -17589,6 +17592,17 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 //     }
 //   }
 // }
+//图片为空时的字段提示样式
+.no-image-content{
+    text-align: center;
+    width: 100%;
+    background-color: #FFF;
+    display: flex;
+    margin-top: 15px;
+    min-height: 50px;
+    align-items: center;
+    padding-left: 15px;
+}
 /***************智能生活馆start**************/
 div[data-ysp-modelid="intelligentLivingHall"]{
   background: #f0eff5;
