@@ -241,7 +241,7 @@
         btn.click();
       } //点击分公司
       if (data.eventType == 'branch') {
-        var data = data.customData;var index = data.Index;var oldNumber = data.OldNumber;if (oldNumber != '') {
+        var data = data.customData;var index = data.Index;var oldNumber = data.OldNumber;if (oldNumber !== '') {
           var btn1 = elem.ownerDocument.querySelectorAll(".area-name")[oldNumber];btn1.click();
         }var btn = elem.ownerDocument.querySelectorAll(".area-name")[index];btn.click();
       }if (data.eventType == 'personnel') {
