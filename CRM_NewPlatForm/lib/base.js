@@ -146,6 +146,7 @@
       EnCoderXhr.send();
     }
 	}
+  //安卓物理返回键 - 客户端调用
   topWin.AndroidBack = function(){
     var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
     var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
@@ -244,7 +245,16 @@
     //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
     //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
   }
-  var forEach = Array.prototype.forEach;
+  //安卓端判断VPN状态 - 客户端调用
+  topWin.AndroidVpn = function(str){
+    if(!str) return ;
+    //str == '0'?'':alert('当前VPN断开 - 稍后重连请刷新');
+  }
+  //安卓端判断当前请求网络状态 - 客户端调用
+  topWin.AndroidLine = function(str){
+    if(!str)return ;
+  }
+  var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
   var singleTaskManager = null; //单例任务池
   var taskTimeoutId;
