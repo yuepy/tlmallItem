@@ -64,8 +64,7 @@
       }var spansFour = optionAll[4].querySelectorAll("span");if (spansFour.length > 0) {
         [].forEach.call(spansFour, function (span, index) {
           if (0 != index) {
-            var spanData = [];
-            var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
+            var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
               spanData.push(true);
             } else {
               spanData.push(false);
