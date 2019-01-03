@@ -254,6 +254,20 @@
   topWin.AndroidLine = function(str){
     if(!str)return ;
   }
+  //向当前页面动态添加提示语 .  (div)
+  var addMarkedModule = function(str){
+    debugger;
+    if(!str && typeof str !== 'string')return ;
+    if(!ysp.runtime && !ysp.runtime.Browser) return ;
+    var currentWindow = ysp.runtime.Browser.activeBrowser.contentWindow;
+    var currentDoc = currentWindow.document;
+    var div = currentDoc.createElement('div');
+    var text = currentDoc.createTextNode(str);
+    div.setAttribute('class','addMarked');
+    div.appendChild(text);
+    currentDoc.body.appendChild(div);
+    
+  }
   var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
   var singleTaskManager = null; //单例任务池
@@ -1104,6 +1118,7 @@
     
   }
   utils.extend(ysp.customHelper, {
+    addMarkedModule:addMarkedModule,
     AndroidBidFlag:'',
     AndroidBackFn:topWin.AndroidBack,
     AndroidDocument:'',//安卓物理返回键客户门店返回元素
