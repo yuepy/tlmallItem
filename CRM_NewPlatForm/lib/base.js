@@ -99,7 +99,13 @@
     }
     return str<10?'0'+str.toString() : str.toString();
   }
-  //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单; /
+  //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单; 
+  var loginTimeOut = function(str){
+    var flag = confirm(str);
+      if(flag){
+        ysp.runtime.Browser.activeBrowser.contentWindow.reload();
+      }
+  }
   topWin.IOSLoginIn = function(user,password){
     if(user == '' || password == ''){
       alert('用户名或密码为空,登录失败!');
@@ -133,14 +139,26 @@
                 }
               }
               getAllMenu(currentAwin,MenuList);
-            }
+            }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
+              loginTimeOut('登录失败,接口返回错误,是否刷新重试');
+            }
             //else if(xhr.status >=400 ){
             // alert('登录效验失败.请手动登录!'+LoginXhr.status);
             // }
           }
+          LoginXhr.timeout = 10000;
+          LoginXhr.ontimeout = function(str){
+            loginTimeOut('登录接口请求超时,是否刷新重试');
+          }
           LoginXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
           LoginXhr.send(body);
+        }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
+          loginTimeOut('未获取到Encoder,是否刷新重试');
         }
+      }
+      EnCoderXhr.timeout = 10000;
+      EnCoderXhr.ontimeout = function(){
+        loginTimeOut('Encoder获取,是否刷新重试');
       }
       EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?'+user);
       EnCoderXhr.send();
@@ -287,6 +305,20 @@
   //安卓端判断当前请求网络状态 - 客户端调用
   topWin.AndroidLine = function(str){
     if(!str)return ;
+  }
+  //向当前页面动态添加提示语 .  (div)
+  var addMarkedModule = function(str){
+    debugger;
+    if(!str && typeof str !== 'string')return ;
+    if(!ysp.runtime && !ysp.runtime.Browser) return ;
+    var currentWindow = ysp.runtime.Browser.activeBrowser.contentWindow;
+    var currentDoc = currentWindow.document;
+    var div = currentDoc.createElement('div');
+    var text = currentDoc.createTextNode(str);
+    div.setAttribute('class','addMarked');
+    div.appendChild(text);
+    currentDoc.body.appendChild(div);
+    
   }
   var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
@@ -1138,6 +1170,7 @@
     
   }
   utils.extend(ysp.customHelper, {
+    addMarkedModule:addMarkedModule,
     AndroidBidFlag:'',
     AndroidBackFn:topWin.AndroidBack,
     AndroidDocument:'',//安卓物理返回键客户门店返回元素
