@@ -131,7 +131,12 @@
         var a = item.querySelectorAll("td.form_label");var b = item.querySelectorAll("td:nth-child(even)");if (index == basetit.length - 1) {
           [].map.call(a, function (d, i) {
             data.base.tit.push(d.textContent.replace(/\s+/g, ""));
-          });data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
+          });if (item.querySelector("td:nth-child(2)").querySelector("input")) {
+            data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);
+          } else if (item.querySelector("td:nth-child(4)").querySelector("input:last-child")) {
+            data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
+          } // data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);
+          // data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
         } else {
           [].map.call(a, function (d, i) {
             data.base.tit.push(d.textContent.replace(/\s+/g, ""));
