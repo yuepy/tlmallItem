@@ -254,6 +254,40 @@
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
     }
+    if(ysp.customHelper.AndroidBackFlag=='clientQuery_back'){
+      //分货客户查询物理键返回
+      ysp.runtime.Browser.activeBrowser.contentWindow.close();
+    }
+    
+    if(ysp.customHelper.AndroidBackFlag=='clientQuery_detail_back'){
+      //分货客户查询详情物理键返回
+        var a = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a');
+        var index = 0;
+
+        for (var i = 0; i < a.length; i++) {
+          // if (a[i].onclick != null) {
+          index++; // }
+        }
+
+        if (index > 1) {
+          index -= 1;
+          var aL = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a').length;
+
+          if (aL - index > 1) {
+            ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a')[aL - 2].click();
+          } else {
+            ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a')[index - 1].click();
+          }
+
+          ysp.appMain.showLoading();
+          setTimeout(function () {
+            ysp.appMain.hideLoading();
+          }, 1000);
+        }
+    }
+    
+    
+    
     //恢复默认值
     ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';
