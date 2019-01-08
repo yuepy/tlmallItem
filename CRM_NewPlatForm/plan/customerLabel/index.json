@@ -47,42 +47,6 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control356_O8KbNW": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@id/word",
-            "prob": 2,
-            "value": "descendant::DIV[@id=\"mainContainer\"]/DIV[1]"
-          },
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.store-border"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control356_O8KbNW"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": false,
-      "frameXPath": "",
-      "componentType": "custom"
-    },
     "control357_ZzsqAR": {
       "location": {
         "data": {
@@ -230,7 +194,6 @@
     "context93_ITECzy": {
       "controls": [
         "control355_z10ZKC",
-        "control356_O8KbNW",
         "control357_ZzsqAR",
         "control358_FeLrZF",
         "control359_sRRWFg",
@@ -242,16 +205,6 @@
   },
   "flows": {
     "flow281_E8onii": {
-      "toContexts": [
-        {
-          "toContextId": "context93_ITECzy"
-        }
-      ]
-    },
-    "flow282_R56pv2": {
-      "fromContextId": "context93_ITECzy",
-      "fromAction": "doAction",
-      "fromControlId": "control356_O8KbNW",
       "toContexts": [
         {
           "toContextId": "context93_ITECzy"
@@ -293,21 +246,6 @@
     "page93_I14atx": {
       "contextId": "context93_ITECzy",
       "layout": [
-        {
-          "id": "uiControl342_AolDAa",
-          "controlId": "control356_O8KbNW",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl342_AolDAa",
-                "onGetTemplate": "getTemplate_uiControl342_AolDAa"
-              }
-            }
-          }
-        },
         {
           "id": "uiControl341_2SyALa",
           "controlId": "control355_z10ZKC",
