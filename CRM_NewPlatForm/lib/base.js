@@ -306,6 +306,9 @@
   topWin.AndroidLine = function(str){
     if(!str)return ;
   }
+  topWin.IOSLine = function(str){
+    if(!str)return ;
+  }
   //向当前页面动态添加提示语 .  (div)
   var addMarkedModule = function(str){
     debugger;
