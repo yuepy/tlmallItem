@@ -489,6 +489,16 @@ function getBarLine(datas,Id){
 			right: 20,
 			data: legendDatas
 		},
+		tooltip:{
+			trigger:"axis",
+			axisPointer:{
+				type:"shadow"
+			},
+      position:['50%','50%']
+		},
+		toolbox:{
+			show:true
+		},
 		//x轴显示
 		xAxis: {
 			type: 'category',
@@ -617,6 +627,13 @@ function getBarLine(datas,Id){
 			right: 10,
 			bottom: 26
 		},
+		tooltip:{
+			trigger:"axis",
+			axisPointer:{
+				type:"shadow"
+			},
+      position:['50%','50%']
+		},
 		legend: {
 			itemGap: 15,
 			itemWidth: 18,
@@ -624,6 +641,9 @@ function getBarLine(datas,Id){
 			top: 15,
 			right: 20,
 			data: legendDatas
+		},
+		toolbox:{
+			show:true
 		},
 		//x轴显示
 		xAxis: {
