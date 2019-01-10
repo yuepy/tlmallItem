@@ -489,6 +489,16 @@ function getBarLine(datas,Id){
 			right: 20,
 			data: legendDatas
 		},
+		tooltip:{
+			trigger:"axis",
+			axisPointer:{
+				type:"shadow"
+			},
+      position:['50%','50%']
+		},
+		toolbox:{
+			show:true
+		},
 		//x轴显示
 		xAxis: {
 			type: 'category',
@@ -500,6 +510,32 @@ function getBarLine(datas,Id){
 			axisTick: { show: false //不显示刻度线
 			}
 			},
+    	    dataZoom : [
+	    	{
+                type: 'slider',
+                show: true,
+                start: 94,
+                end: 100,
+                handleSize: 8
+            },
+            {
+                type: 'inside',
+                start: 94,
+                end: 100
+            },
+            {
+                type: 'slider',
+                show: true,
+                yAxisIndex: 0,
+                filterMode: 'empty',
+                width: 12,
+                height: '70%',
+                handleSize: 8,
+                showDataShadow: false,
+                left: '93%'
+            }
+	    ],
+
 		series: [{ //柱状图bar设置
 			name: legendDatas[0],
 			type: "bar",
@@ -617,6 +653,13 @@ function getBarLine(datas,Id){
 			right: 10,
 			bottom: 26
 		},
+		tooltip:{
+			trigger:"axis",
+			axisPointer:{
+				type:"shadow"
+			},
+      position:['50%','50%']
+		},
 		legend: {
 			itemGap: 15,
 			itemWidth: 18,
@@ -624,6 +667,9 @@ function getBarLine(datas,Id){
 			top: 15,
 			right: 20,
 			data: legendDatas
+		},
+		toolbox:{
+			show:true
 		},
 		//x轴显示
 		xAxis: {
