@@ -30,14 +30,16 @@
           ysp.customHelper.AndroidGetIconNum();
         }
       }if (data.eventType == 'click') {
-        var src = data.dataCustom.url;var title = data.dataCustom.title;if (title == '拜访总览') {
+        //IOS端获取当前网速方法
+        top.EAPI.postMessageToNative('IOSLine', '');var src = data.dataCustom.url;var title = data.dataCustom.title;if (title == '拜访总览') {
           openUrl(src, title);
         } else {
           elem.ownerDocument.defaultView.open(src);
         }
       } //图标尺寸  48 * 48   文字大小 17px
       if (data.eventType == 'click_infomation') {
-        var src = data.dataCustom.url;var title = data.dataCustom.title;openUrl(src, title);
+        var src = data.dataCustom.url;
+        var title = data.dataCustom.title;openUrl(src, title);
       } //请求大数据参数接口 . 拼接地址进行跳转
       function openUrl(src, title) {
         ysp.appMain.showLoading();var xhr = new XMLHttpRequest();xhr.onreadystatechange = function () {
