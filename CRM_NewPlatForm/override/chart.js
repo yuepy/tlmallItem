@@ -479,7 +479,7 @@ function getBarLine(datas,Id){
 			top: 60,
 			left: 10,
 			right: 10,
-			bottom: 26
+			bottom: 30
 		},
 		legend: {
 			itemGap: 15,
@@ -510,31 +510,6 @@ function getBarLine(datas,Id){
 			axisTick: { show: false //不显示刻度线
 			}
 			},
-    	    dataZoom : [
-	    	{
-                type: 'slider',
-                show: true,
-                start: 94,
-                end: 100,
-                handleSize: 8
-            },
-            {
-                type: 'inside',
-                start: 94,
-                end: 100
-            },
-            {
-                type: 'slider',
-                show: true,
-                yAxisIndex: 0,
-                filterMode: 'empty',
-                width: 12,
-                height: '70%',
-                handleSize: 8,
-                showDataShadow: false,
-                left: '93%'
-            }
-	    ],
 
 		series: [{ //柱状图bar设置
 			name: legendDatas[0],
@@ -652,13 +627,6 @@ function getBarLine(datas,Id){
 			left: 10,
 			right: 10,
 			bottom: 26
-		},
-		tooltip:{
-			trigger:"axis",
-			axisPointer:{
-				type:"shadow"
-			},
-      position:['50%','50%']
 		},
 		legend: {
 			itemGap: 15,

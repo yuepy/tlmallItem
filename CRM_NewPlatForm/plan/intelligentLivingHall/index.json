@@ -292,34 +292,6 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
-    },
-    "control376_gRPTlN": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.g-main DIV.m-body DIV.left-right"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[3]/DIV[2]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control376_gRPTlN"
-      },
-      "intendedRole": "custom",
-      "roles": "element,link,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
     }
   },
   "contexts": {
@@ -333,8 +305,7 @@
         "control359_4ULDWE",
         "control361_pvCSe1",
         "control363_g7InBA",
-        "control364_yitebx",
-        "control376_gRPTlN"
+        "control364_yitebx"
       ],
       "anchors": [],
       "urlAnchor": []
@@ -494,21 +465,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl350_hTWc5M",
                 "onGetTemplate": "getTemplate_uiControl350_hTWc5M"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl362_S1Guag",
-          "controlId": "control376_gRPTlN",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl362_S1Guag",
-                "onGetTemplate": "getTemplate_uiControl362_S1Guag"
               }
             }
           }
