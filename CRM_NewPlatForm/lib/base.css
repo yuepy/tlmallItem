@@ -15015,7 +15015,7 @@ div[data-ysp-modelid="achievement"] .ysp-dialog-wrapper .ysp-header-wrapper-sale
 .ysp-search-chose-shadow {
   background: rgba(120, 120, 120, 0.5);
   width: 100%;
-  height: 92%;
+  height: 100vh;
   left: 0;
   top: 0;
   position: fixed;
@@ -15027,7 +15027,7 @@ div[data-ysp-modelid="achievement"] .ysp-dialog-wrapper .ysp-header-wrapper-sale
 }
 .ysp-search-chose {
   width: 90%;
-  height: 92%;
+  height: 100vh;
   left: 50px;
   top: 0;
   background-color: #fff;
@@ -16550,7 +16550,7 @@ div[data-ysp-modelid="customerLabel"] div[data-componentsid="uiControl345_fUtgMV
   background-image: url(images/ysp-livingHall-FD.png);
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart {
-  width: 100%;
+  width: 100vh;
   top: 0;
   background-color: #fff;
   position: fixed;
@@ -16558,6 +16558,7 @@ div[data-ysp-modelid="customerLabel"] div[data-componentsid="uiControl345_fUtgMV
   right: 0;
   z-index: 9999;
   overflow: auto;
+  transform: rotate(90deg);
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared {
   height: 30px;
@@ -16589,7 +16590,7 @@ div[data-ysp-modelid="customerLabel"] div[data-componentsid="uiControl345_fUtgMV
   height: 30px;
   background-size: 20px;
   background-repeat: no-repeat;
-  background-position: 55px;
+  background-position: right;
   background-image: url(images/down-arrow-icon.png);
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-echart-hared select option {
@@ -16615,8 +16616,7 @@ div[data-ysp-modelid="customerLabel"] div[data-componentsid="uiControl345_fUtgMV
   background-image: url(images/ysp-livingHall-FD.png);
 }
 .ysp-livingHall-header-select-wrapper .ysp-livingHall-echart .ysp-livingHall-screen {
-  transform: rotate(90deg) translateY(30px) translateX(30px);
-  transform-origin: 60% 40%;
+  transform-origin: 35% 50%;
   height: 336px;
   width: 345px;
 }
@@ -16859,7 +16859,8 @@ div[data-ysp-modelid="customerLabel"] div[data-componentsid="uiControl345_fUtgMV
   background-image: url(images/ysp-client-checkprev.png) !important;
 }
 div[data-ysp-modelid="clientQuery"] .ysp-header-edit-icon,
-div[data-ysp-modelid="clientQuery_detail"] .ysp-header-edit-icon {
+div[data-ysp-modelid="clientQuery_detail"] .ysp-header-edit-icon,
+div[data-ysp-modelid="goodsMessages"] .ysp-header-edit-icon {
   background: url(images/ysp-workSummend-screen.png) no-repeat;
   background-size: 100%;
   width: 20px;
