@@ -250,7 +250,9 @@
       if ("delect" == data.eventType) {
         var index = data.dataCustom;elem.querySelector("#imgsDiv").querySelectorAll('.img')[index].querySelector('a').click();
       }if ("imageClick" == data.eventType) {
-        elem.querySelector("#formUploadify").querySelector('#importFile').click();
+        if (top.EAPI.isAndroid()) {
+          top.yspCheckIn.isRefresh(false);
+        };elem.querySelector("#formUploadify").querySelector('#importFile').click();
       }if ("chose" == data.eventType) {
         var text = data.dataCustom;if ("华为FD业务事业部" == text) {
           elem.querySelector(".huaweiFD").querySelector("a").click();
