@@ -479,15 +479,17 @@ function getBarLine(datas,Id){
 			top: 60,
 			left: 10,
 			right: 10,
-			bottom: 30
+			bottom: 10
 		},
 		legend: {
-			itemGap: 15,
-			itemWidth: 18,
+			itemGap: 5,
+			itemWidth: 14,
 			itemHeight: 5,
-			top: 15,
+			top: 0,
 			right: 20,
-			data: legendDatas
+			data: legendDatas,
+      align:"left",
+      verticalAlign:"top"
 		},
 		tooltip:{
 			trigger:"axis",
@@ -587,9 +589,66 @@ function getBarLine(datas,Id){
 				}
 			},
 			data: salesData[3]
-		}, 
+		},   {
+			name: legendDatas[4],
+			type: "bar",
+			stack: "销量",
+			barMaxWidth:55,
+			label: {
+				normal: {
+					show: true,
+					position: 'insideTop',
+					formatter: function(params) {
+						if (params.value > 0) {
+						return params.value;
+						} else {
+						return '';
+						}
+						}
+				}
+			},
+			data: salesData[4]
+		}, {
+			name: legendDatas[5],
+			type: "bar",
+			stack: "销量",
+			barMaxWidth:55,
+			label: {
+				normal: {
+					show: true,
+					position: 'insideTop',
+					formatter: function(params) {
+						if (params.value > 0) {
+						return params.value;
+						} else {
+						return '';
+						}
+						}
+				}
+			},
+			data: salesData[5]
+		}, {
+			name: legendDatas[6],
+			type: "bar",
+			stack: "销量",
+			barMaxWidth:55,
+			label: {
+				normal: {
+					show: true,
+					position: 'insideTop',
+					formatter: function(params) {
+						if (params.value > 0) {
+						return params.value;
+						} else {
+						return '';
+						}
+						}
+				}
+			},
+			data: salesData[6]
+		},
 		{
-			name: "折线",
+			name: "合计",
 			type: 'line',
 			symbol: 'circle',
 			color:"blue",
@@ -725,9 +784,66 @@ function getBarLine(datas,Id){
 				}
 			},
 			data: salesData[3]
-		}, 
+		},  {
+			name: legendDatas[4],
+			type: "bar",
+			stack: "销量",
+			barMaxWidth:55,
+			label: {
+				normal: {
+					show: true,
+					position: 'insideTop',
+					formatter: function(params) {
+						if (params.value > 0) {
+						return params.value;
+						} else {
+						return '';
+						}
+						}
+				}
+			},
+			data: salesData[4]
+		}, {
+			name: legendDatas[5],
+			type: "bar",
+			stack: "销量",
+			barMaxWidth:55,
+			label: {
+				normal: {
+					show: true,
+					position: 'insideTop',
+					formatter: function(params) {
+						if (params.value > 0) {
+						return params.value;
+						} else {
+						return '';
+						}
+						}
+				}
+			},
+			data: salesData[5]
+		}, {
+			name: legendDatas[6],
+			type: "bar",
+			stack: "销量",
+			barMaxWidth:55,
+			label: {
+				normal: {
+					show: true,
+					position: 'insideTop',
+					formatter: function(params) {
+						if (params.value > 0) {
+						return params.value;
+						} else {
+						return '';
+						}
+						}
+				}
+			},
+			data: salesData[6]
+		},
 		{
-			name: "折线",
+			name: "合计",
 			type: 'line',
 			symbol: 'circle',
 			color:"blue",
