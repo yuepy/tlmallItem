@@ -106,6 +106,16 @@
         ysp.runtime.Browser.activeBrowser.contentWindow.reload();
       }
   }
+  //强制匹配方案
+  var RedCoreRedMi =function(modelId) {
+    var Model = ysp.runtime.Model;
+    Model.init();
+    var modelURL = Model.basePath + '/plan/' + modelId + '/index.json';
+    var model = Model.models[modelURL];
+    if (model) {Model.pushModel(model)}else{
+      alert('模板跳转失败');
+    };
+	}
   topWin.IOSLoginIn = function(user,password){
     if(user == '' || password == ''){
       alert('用户名或密码为空,登录失败!');
@@ -135,13 +145,15 @@
               if (currentAwin.frameElement && currentAwin.frameElement.name == "browserFrame2" && currentAwin.frameElement.dataset.browser) {
                 if (currentAwin.location.href.indexOf('login') !== -1) {
                   currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html'
-                  ysp.runtime.Model.setForceMatchModels(['index']);
+                  RedCoreRedMi('index');
+                  //ysp.runtime.Model.setForceMatchModels(['index']);
                 }
                 if(currentAwin.frameElement.src.indexOf('login')!==-1){
                   if(ysp.runtime.Model.getActiveModel().id == 'login'){
-                    alert('登录成功! . 页面未跳转'+ysp.runtime.Model.getActiveModel().id);
+                    ysp.runtime.Model.setForceMatchModels(['index']);
+                    alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
                   }else{
-                    alert('模板跳转!但pc地址未更换'+currentAwin.frameElement.src);
+                    alert('模板跳转!但pc地址未更换'+ysp.runtime.Model.forceMatchFlag+currentAwin.frameElement.src);
                   }
                 }
               }
