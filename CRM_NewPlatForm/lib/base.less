@@ -41,6 +41,7 @@ html,body{
 // }
 body {
 	-webkit-overflow-scrolling: initial !important;
+  user-select: none;
 }
 
 //字体变量
@@ -14302,6 +14303,7 @@ div[data-componentsid="uiControl50_m3HABT"],div[data-componentsid="uiControl54_S
   z-index: 9999;
   overflow: auto;
   margin-top: 45px;
+  padding-bottom: 60px;
   >div:nth-child(1){
     padding: 10px;
     border-bottom: 1px solid #ececec;
@@ -14370,7 +14372,10 @@ div[data-componentsid="uiControl50_m3HABT"],div[data-componentsid="uiControl54_S
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     >span:nth-child(1){
       display: block;
       margin: auto 0;
@@ -14390,6 +14395,7 @@ div[data-componentsid="uiControl50_m3HABT"],div[data-componentsid="uiControl54_S
       background: #4796ed;
       text-align: center;
       padding-top: 5%;
+      margin-right: 60px;
     }
     
   }
@@ -16497,6 +16503,7 @@ div[data-ysp-modelid="achievement"]{
   z-index: 99999;
   overflow: auto;
   margin-top: 45px;
+  padding-bottom: 46px;
   .ysp-search-chose-time{
     padding: 10px;
     border-bottom: 1px solid #ececec;
@@ -18153,7 +18160,8 @@ div[data-ysp-modelid="customerLabel"]{
    border-radius: 10px;
    padding-top: 5px;
    margin-top: 5px;
-   min-height: 100px;
+   // min-height: 100px;
+  padding-bottom: 1px;
   .ysp-livingHall-table-header-container{
     height: 30px;
     display: flex;

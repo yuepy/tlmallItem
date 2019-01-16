@@ -1,5 +1,6 @@
 body {
   -webkit-overflow-scrolling: initial !important;
+  user-select: none;
 }
 .ysp-important-font {
   font-size: 18px !important;
@@ -12918,6 +12919,7 @@ div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper div.surebtn-r
   z-index: 9999;
   overflow: auto;
   margin-top: 45px;
+  padding-bottom: 60px;
 }
 .ysp-workSummed-chose > div:nth-child(1) {
   padding: 10px;
@@ -13010,7 +13012,10 @@ div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper div.surebtn-r
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 50px;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .ysp-workSummed-chose .ysp-workSummed-chose-button > span:nth-child(1) {
   display: block;
@@ -13031,6 +13036,7 @@ div[data-componentsid="uiControl54_SGf8tA"] div.ysp-dialog-wrapper div.surebtn-r
   background: #4796ed;
   text-align: center;
   padding-top: 5%;
+  margin-right: 60px;
 }
 .ysp-workSummedContentShow .ysp-workSummendContent-overflow {
   overflow: hidden;
@@ -15037,6 +15043,7 @@ div[data-ysp-modelid="achievement"] .ysp-dialog-wrapper .ysp-header-wrapper-sale
   z-index: 99999;
   overflow: auto;
   margin-top: 45px;
+  padding-bottom: 46px;
 }
 .ysp-search-chose .ysp-search-chose-time {
   padding: 10px;
@@ -16625,7 +16632,7 @@ div[data-ysp-modelid="customerLabel"] div[data-componentsid="uiControl345_fUtgMV
   border-radius: 10px;
   padding-top: 5px;
   margin-top: 5px;
-  min-height: 100px;
+  padding-bottom: 1px;
 }
 .ysp-livingHall-table-header-wrapper .ysp-livingHall-table-header-container {
   height: 30px;
