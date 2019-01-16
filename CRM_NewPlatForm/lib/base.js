@@ -108,14 +108,23 @@
   }
   //强制匹配方案
   var RedCoreRedMi =function(modelId) {
-    var Model = ysp.runtime.Model;
-    Model.init();
-    var modelURL = Model.basePath + '/plan/' + modelId + '/index.json';
-    var model = Model.models[modelURL];
-    if (model) {Model.pushModel(model)}else{
-      alert('模板跳转失败');
-    };
-	}
+      var Model = ysp.runtime.Model;
+      Model.init();
+      var modelURL = Model.basePath + '/plan/' + modelId + '/index.json';
+      var model = Model.models[modelURL];
+      if (model) {
+        Model.models = {[modelURL]: model};
+        Model.pushModel(model);
+      }else {
+        ysp.utils.getJSON(modelURL).then(function (data) {
+        // 配置的 targetURL 优先
+        data.path = modelURL;
+        var dd = Model.parse(data)
+        Model.pushModel(dd)
+        RedCoreRedMi(modelId)
+      });
+    }
+  }
   topWin.IOSLoginIn = function(user,password){
     if(user == '' || password == ''){
       alert('用户名或密码为空,登录失败!');
