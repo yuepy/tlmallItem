@@ -99,7 +99,7 @@
     }
     return str<10?'0'+str.toString() : str.toString();
   }
-  //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单; 
+  //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单;  ( + 安卓端) 
   var loginTimeOut = function(str){
     var flag = confirm(str);
       if(flag){
@@ -136,6 +136,13 @@
                 if (currentAwin.location.href.indexOf('login') !== -1) {
                   currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html'
                   ysp.runtime.Model.setForceMatchModels(['index']);
+                }
+                if(currentAwin.frameElement.src.indexOf('login')!==-1){
+                  if(ysp.runtime.Model.getActiveModel().id == 'login'){
+                    alert('登录成功! . 页面未跳转');
+                  }else{
+                    alert('模板跳转!但pc地址未更换');
+                  }
                 }
               }
               getAllMenu(currentAwin,MenuList);
@@ -321,7 +328,6 @@
     div.setAttribute('class','addMarked');
     div.appendChild(text);
     currentDoc.body.appendChild(div);
-    
   }
   var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
