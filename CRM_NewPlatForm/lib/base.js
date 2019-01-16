@@ -139,9 +139,10 @@
                 }
                 if(currentAwin.frameElement.src.indexOf('login')!==-1){
                   if(ysp.runtime.Model.getActiveModel().id == 'login'){
-                    alert('登录成功! . 页面未跳转'+ysp.runtime.Model.getActiveModel().id);
+                    ysp.runtime.Model.setForceMatchModels(['index']);
+                    alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
                   }else{
-                    alert('模板跳转!但pc地址未更换'+currentAwin.frameElement.src);
+                    alert('模板跳转!但pc地址未更换'+ysp.runtime.Model.forceMatchFlag+currentAwin.frameElement.src);
                   }
                 }
               }
