@@ -409,7 +409,12 @@ window.addEventListener('DOMContentLoaded', function() {
               $("#selDay").val(selDate);
             }
             //面包屑导航
-        	breadcrumb("全国","leader");
+            //breadcrumb("全国","leader");
+            if($("#modelName").text()){
+              breadcrumb("机型","modelName");
+            }else{
+              breadcrumb("全国","leader");
+            }
             
             var orderLogic = $("#orderLogic").val();
         	var cycleType = $("#cycleType").val();
@@ -425,6 +430,7 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+          	var modelName = $("#modelName").text();//机型
             
             if("day"==cycleType)
         		$("#tren").html("日别趋势图");
@@ -432,13 +438,16 @@ window.addEventListener('DOMContentLoaded', function() {
         		$("#tren").html("周别趋势图");
         	else if("month"==cycleType)
         		$("#tren").html("月度趋势图");
+          else if("year"==cycleType)
+        		$("#tren").html("年度趋势图");
             
             initTags(null);
 
             $.ajax({
                 url: "/ptDataShow/salesAll/salesAllData?orderLogic="+ orderLogic +"&cycleType=" + cycleType + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName),
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName)
+                + "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     //console.log(response);
@@ -494,7 +503,9 @@ window.addEventListener('DOMContentLoaded', function() {
                     	var html = "";
                         for (var i = 0; i < bizUnits.length; i++) {
                             if(bizUnits[i].level==1){
-                            	firstLevel.push(bizUnits[i]);
+                            	if("" != bizUnits[i].department){//去掉事业部为空的模块 2018/09/04
+                            		firstLevel.push(bizUnits[i]);
+                            	}
                             }else{
                             	secondLevel.push(bizUnits[i]);
                             }
@@ -519,7 +530,8 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table u-table-b" id="sale-table' + i + '">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th>项目</th><th>销量（台）</th><th>销售额（万）</th></tr>';
+                        	//html += '                    <tr><th>项目</th><th>销量（台）</th><th>销售额（万）</th></tr>';
+                          html += '                    <tr><th code="projectName">项目</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
                         	
@@ -597,8 +609,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '                <tbody>';
                         	
                         	for (var j = 0; j < secondLevel.length; j++) {
-                        		if(secondLevel[j].projectName==firstLevel[i].projectName)
-                        		    html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		if(secondLevel[j].projectName==firstLevel[i].projectName){
+                              var url = getLink("modelName",secondLevel[j].modelName,"01");
+                                 	html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
+                                    html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                              //html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                            }
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
@@ -659,6 +675,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
       
       	window.timeSaleInit = function() {
+        		
         	//订单取数逻辑
         	if($("#orderLogic_hidden").text())
         		$("#orderLogic").val($("#orderLogic_hidden").text());
@@ -683,9 +700,30 @@ window.addEventListener('DOMContentLoaded', function() {
             // 	$("#selDay").val($("#date").text());
             // else
             // 	$("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
-            
+          
+          //后加功能，修改时间显示问题
+          	var selDate = $("#selDay")[0].value;
+            var newDate = date.getFullYear() + '-' + month + '-' + strDate;
+          	var oldDate = $("#date").text();
+          	if(selDate == "" && oldDate == ""){
+              $("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+            }
+            if(selDate == "" && oldDate !=""){
+              $("#selDay").val(oldDate);
+            }
+          	if(selDate == newDate && oldDate != ""){
+              $("#selDay").val(oldDate);
+            }
+            if(selDate != "" && selDate != newDate){
+              $("#selDay").val(selDate);
+            }
             //面包屑导航
-        	breadcrumb("全国","leader");
+            //breadcrumb("全国","leader");
+            if($("#modelName").text()){
+              breadcrumb("机型","modelName");
+            }else{
+              breadcrumb("全国","leader");
+            }
             
             var orderLogic = $("#orderLogic").val();
         	var cycleType = $("#cycleType").val();
@@ -701,6 +739,7 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+          	var modelName = $("#modelName").text();//机型
             
             if("day"==cycleType)
         		$("#tren").html("日别趋势图");
@@ -708,13 +747,16 @@ window.addEventListener('DOMContentLoaded', function() {
         		$("#tren").html("周别趋势图");
         	else if("month"==cycleType)
         		$("#tren").html("月度趋势图");
+          else if("year"==cycleType)
+        		$("#tren").html("年度趋势图");
             
             initTags(null);
 
             $.ajax({
                 url: "/ptDataShow/salesAll/salesAllData?orderLogic="+ orderLogic +"&cycleType=" + cycleType + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName),
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName)
+                + "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     //console.log(response);
@@ -770,7 +812,9 @@ window.addEventListener('DOMContentLoaded', function() {
                     	var html = "";
                         for (var i = 0; i < bizUnits.length; i++) {
                             if(bizUnits[i].level==1){
-                            	firstLevel.push(bizUnits[i]);
+                            	if("" != bizUnits[i].department){//去掉事业部为空的模块 2018/09/04
+                            		firstLevel.push(bizUnits[i]);
+                            	}
                             }else{
                             	secondLevel.push(bizUnits[i]);
                             }
@@ -795,7 +839,8 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table u-table-b" id="sale-table' + i + '">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th>项目</th><th>销量（台）</th><th>销售额（万）</th></tr>';
+                        	//html += '                    <tr><th>项目</th><th>销量（台）</th><th>销售额（万）</th></tr>';
+                          html += '                    <tr><th code="projectName">项目</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
                         	
@@ -873,8 +918,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '                <tbody>';
                         	
                         	for (var j = 0; j < secondLevel.length; j++) {
-                        		if(secondLevel[j].projectName==firstLevel[i].projectName)
-                        		    html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		if(secondLevel[j].projectName==firstLevel[i].projectName){
+                              var url = getLink("modelName",secondLevel[j].modelName,"01");
+                                 	html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
+                                    html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                              //html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                            }
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
