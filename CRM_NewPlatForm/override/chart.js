@@ -486,7 +486,7 @@ function getBarLine(datas,Id){
 			itemWidth: 14,
 			itemHeight: 5,
 			top: 0,
-			right: 20,
+			left: 'center',
 			data: legendDatas,
       align:"left",
       verticalAlign:"top"
