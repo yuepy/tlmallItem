@@ -408,7 +408,15 @@ window.addEventListener('DOMContentLoaded', function() {
             }
             
             //面包屑导航
-        	breadcrumb("业务人员","saler");
+        	//breadcrumb("业务人员","saler");
+          var firstkey = getFirstParamKey();
+          if(firstkey =="customerName"){
+            breadcrumb("客户","customer");
+          }else if(firstkey =="modelName"){
+            breadcrumb("机型","modelName");
+          }else{
+            breadcrumb("业务人员","saler");
+          }
             
             var orderLogic = $("#orderLogic").val();
         	var cycleType = $("#cycleType").val();
@@ -424,6 +432,8 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+          	var customerName = $("#customerName").text();//客户
+            var modelName = $("#modelName").text();//机型
             
             if("day"==cycleType)
         		$("#tren").html("日别趋势图");
@@ -431,13 +441,16 @@ window.addEventListener('DOMContentLoaded', function() {
         		$("#tren").html("周别趋势图");
         	else if("month"==cycleType)
         		$("#tren").html("月度趋势图");
+          else if("year"==cycleType)
+        		$("#tren").html("年度趋势图");
             
             initTags(null);
 
             $.ajax({
                 url: "/ptDataShow/salesAll/salesAllData?orderLogic="+ orderLogic +"&cycleType=" + cycleType + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName),
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) 
+                + "&customerName=" + encodeURIComponent(customerName)+ "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     //console.log(response);
@@ -633,13 +646,17 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table u-table-b" id="sale-table' + i + '">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th>机型</th><th>销量（台）</th><th>销售额（万）</th></tr>';
+                          html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
+                        	//html += '                    <tr><th>机型</th><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
                         	
                         	for (var j = 0; j < secondLevel.length; j++) {
-                        		if(secondLevel[j].projectName==firstLevel[i].projectName)
-                        		    html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		if(secondLevel[j].projectName==firstLevel[i].projectName){
+                              var url = getLink("modelName",secondLevel[j].modelName,"07");//style="text-decoration:none;"
+                              html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
+                              html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                            }
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
@@ -682,7 +699,10 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#modelTable").empty();
                     if(models) {
                         for (var i = 0; i < models.length; i++) {
-                            var html = '<tr><td>' + models[i].name + '</td><td>' + models[i].reachQty + '</td><td>' + models[i].reachAmt + '</td></tr>';
+                          var url = getLink("modelName",models[i].name,"07");
+                         	var html = '<tr><td><a href="'+url+'" title="'+models[i].name+'" style="text-decoration:none;letter-spacing:normal">'+models[i].name+'</td>';
+                            html += '<td>' + models[i].reachQty + '</td><td>' + models[i].reachAmt + '</td></tr>';
+                            //var html = '<tr><td>' + models[i].name + '</td><td>' + models[i].reachQty + '</td><td>' + models[i].reachAmt + '</td></tr>';
                             $("#modelTable").append(html);
                         }
                     }
@@ -693,7 +713,10 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#custTable").empty();
                     if(customerName) {
                         for (var i = 0; i < customerName.length; i++) {
-                            var html = '<tr><td>' + customerName[i].name + '</td><td>' + customerName[i].reachQty + '</td><td>' + customerName[i].reachAmt + '</td></tr>';
+                          var url = getLink("customerName",customerName[i].name,"07");
+                        	var html = '<tr><td><a href="'+url+'" title="'+customerName[i].name+'">'+customerName[i].name+'</td>';
+                            html += '<td>' + customerName[i].reachQty + '</td><td>' + customerName[i].reachAmt + '</td></tr>';
+                            //var html = '<tr><td>' + customerName[i].name + '</td><td>' + customerName[i].reachQty + '</td><td>' + customerName[i].reachAmt + '</td></tr>';
                             $("#custTable").append(html);
                         }
                     }
@@ -723,7 +746,7 @@ window.addEventListener('DOMContentLoaded', function() {
         
       
       	window.timeSaleInit = function() {
-        	
+          	
         	//订单取数逻辑
         	if($("#orderLogic_hidden").text())
         		$("#orderLogic").val($("#orderLogic_hidden").text());
@@ -748,9 +771,32 @@ window.addEventListener('DOMContentLoaded', function() {
             // 	$("#selDay").val($("#date").text());
             // else
             // 	$("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+          
+          //后添加的逻辑，修改时间显示问题
+          	//后添加的逻辑，修改时间显示问题
+          	var selDate = $("#selDay")[0].value;
+            var newDate = date.getFullYear() + '-' + month + '-' + strDate;
+          	var oldDate = $("#date").text();
+          	if(selDate == "" && oldDate == ""){
+              $("#selDay").val(date.getFullYear() + '-' + month + '-' + strDate);
+            }
+            if(selDate == "" && oldDate !=""){
+              $("#selDay").val(oldDate);
+            }
+            if(selDate != "" && selDate != newDate){
+              $("#selDay").val(selDate);
+            }
             
             //面包屑导航
-        	breadcrumb("业务人员","saler");
+        	//breadcrumb("业务人员","saler");
+          var firstkey = getFirstParamKey();
+          if(firstkey =="customerName"){
+            breadcrumb("客户","customer");
+          }else if(firstkey =="modelName"){
+            breadcrumb("机型","modelName");
+          }else{
+            breadcrumb("业务人员","saler");
+          }
             
             var orderLogic = $("#orderLogic").val();
         	var cycleType = $("#cycleType").val();
@@ -766,6 +812,8 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+          	var customerName = $("#customerName").text();//客户
+            var modelName = $("#modelName").text();//机型
             
             if("day"==cycleType)
         		$("#tren").html("日别趋势图");
@@ -773,13 +821,16 @@ window.addEventListener('DOMContentLoaded', function() {
         		$("#tren").html("周别趋势图");
         	else if("month"==cycleType)
         		$("#tren").html("月度趋势图");
+          else if("year"==cycleType)
+        		$("#tren").html("年度趋势图");
             
             initTags(null);
 
             $.ajax({
                 url: "/ptDataShow/salesAll/salesAllData?orderLogic="+ orderLogic +"&cycleType=" + cycleType + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName),
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) 
+                + "&customerName=" + encodeURIComponent(customerName)+ "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     //console.log(response);
@@ -975,13 +1026,17 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table u-table-b" id="sale-table' + i + '">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th>机型</th><th>销量（台）</th><th>销售额（万）</th></tr>';
+                        	//html += '                    <tr><th>机型</th><th>销量（台）</th><th>销售额（万）</th></tr>';
+                          html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
                         	
                         	for (var j = 0; j < secondLevel.length; j++) {
-                        		if(secondLevel[j].projectName==firstLevel[i].projectName)
-                        		    html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		if(secondLevel[j].projectName==firstLevel[i].projectName){
+                              var url = getLink("modelName",secondLevel[j].modelName,"07");//style="text-decoration:none;"
+                              html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
+                              html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                            }
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
@@ -1024,7 +1079,9 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#modelTable").empty();
                     if(models) {
                         for (var i = 0; i < models.length; i++) {
-                            var html = '<tr><td>' + models[i].name + '</td><td>' + models[i].reachQty + '</td><td>' + models[i].reachAmt + '</td></tr>';
+                          var url = getLink("modelName",models[i].name,"07");
+                         	var html = '<tr><td><a href="'+url+'" title="'+models[i].name+'" style="text-decoration:none;letter-spacing:normal">'+models[i].name+'</td>';
+                            html += '<td>' + models[i].reachQty + '</td><td>' + models[i].reachAmt + '</td></tr>';
                             $("#modelTable").append(html);
                         }
                     }
@@ -1035,14 +1092,17 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#custTable").empty();
                     if(customerName) {
                         for (var i = 0; i < customerName.length; i++) {
-                            var html = '<tr><td>' + customerName[i].name + '</td><td>' + customerName[i].reachQty + '</td><td>' + customerName[i].reachAmt + '</td></tr>';
+                          var url = getLink("customerName",customerName[i].name,"07");
+                        	var html = '<tr><td><a href="'+url+'" title="'+customerName[i].name+'">'+customerName[i].name+'</td>';
+                            html += '<td>' + customerName[i].reachQty + '</td><td>' + customerName[i].reachAmt + '</td></tr>';
                             $("#custTable").append(html);
                         }
                     }
                     tableSH("cust-table", tr_minH-2);
-                    
+                  
                   	/**点击排序*/
                     clickThSortCommon();
+                    
                     // 门店表格
                     /*var storeName = response.storeName;
                     $("#storeTable").empty();
@@ -1059,7 +1119,6 @@ window.addEventListener('DOMContentLoaded', function() {
                     console.log("Error:获取后台数据失败！");
                 }
             });
-
         }	
       
         // 配置：百度地图

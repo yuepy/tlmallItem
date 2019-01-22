@@ -113,7 +113,9 @@ function getLink(key,value,type){
     var bizUnitName = $("#bizUnitName").text();
     var officeName = $("#officeName").text();
     var salerName = $("#salerName").text();
-    
+    var customerName = $("#customerName").text();
+    var modelName = $("#modelName").text();
+  
     var link = "/ptDataShow/salesAll/salesOverview";
     link += "?" + key + "=" + encodeURIComponent(value);
     link += "&type=" + type;
@@ -135,6 +137,10 @@ function getLink(key,value,type){
     	link += '&officeName=' + officeName;
     if(salerName && key!='salerName')
     	link += '&salerName=' + salerName;
+  	if(customerName && key!='customerName')
+    	link += '&customerName=' + customerName;
+    if(modelName && key!='modelName')
+    	link += '&modelName=' + modelName;
     return link;
 }
 
@@ -220,6 +226,19 @@ function getParam(paramName) {
         while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
     } 
     return paramValue == "" && (paramValue = null), paramValue 
+}
+
+/**
+ * 获取点一个参数
+ */
+function getFirstParamKey(){
+	var key = "";
+	var url = window.location.search; 
+	if ( url.indexOf("?") == 0 && url.indexOf("=") > 1) { 
+		var strs = url.substr(1).split("&"); 
+		key = strs[0].substring(0,(strs[0].indexOf("=")));
+    } 
+	return key;
 }
 
 /*改url*/
