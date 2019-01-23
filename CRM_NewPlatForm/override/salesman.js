@@ -1039,9 +1039,25 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // 百度地图信息窗内容
         function inforContent(datas, index) {
-            var content = '<div class="popup-bd"><div class="box"><h6 class="title" title="' + datas[index].name + '">' + datas[index].name + '</h6><div class="address clearfix"><h6><i class="icon-markads"></i>地址：</h6>' + '<p title="' + datas[index].address + '">' + datas[index].address + '</p></div>' + '<div class="content"><div class="one a"><span>销量：</span><b>' + toQfw(datas[index].salesNums) + '</b></div>' + '<div class="one b"><span>金额：</span><b>' + toQfw(datas[index].sumNums) + '</b>' + '</div></div></div></div>';
-
-            return content;
+          if (datas.length > 0){
+        		var type = datas[0].type;
+        		var storeName="";
+        		var custName="";
+        		if (type == "store") {
+        			storeName = datas[index].name;
+        		}else {
+        			custName = datas[index].name;
+        		}
+        		var loginName = $("#loginName").text();
+        		var encoder = $("#encoder").text();
+        		var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+        		+ "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+        		+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&drill=" + encodeURIComponent($("#drill").text())
+        		+ "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)+ "&modelName=" + encodeURIComponent($("#modelName").text());
+        		var content = '<div class="popup-bd"><div class="box"><h6 class="title" title="' + datas[index].name + '"><a href="' +link + '" style="color:#fff">'  + datas[index].name + '</a></h6><div class="address clearfix"><h6><i class="icon-markads"></i>地址：</h6>' + '<p title="' + datas[index].address + '">' + datas[index].address + '</p></div>' + '<div class="content"><div class="one a"><span>销量：</span><b>' + toQfw(datas[index].salesNums) + '</b></div>' + '<div class="one b"><span>金额：</span><b>' + toQfw(datas[index].sumNums) + '</b>' + '</div></div></div></div>';
+        		
+        		return content;
+        	}
         }
 
         function addClickHandler(BDmap, content, marker, point) {
