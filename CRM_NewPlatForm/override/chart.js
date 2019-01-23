@@ -155,11 +155,11 @@ function getLines(datas, Id) {
 		},
 		legend: {
 			icon:"rect",
-			itemGap: 15,
+			itemGap: 10,
 			itemWidth: 18,
 			itemHeight: 5,
 			top: 15,
-			right: 15,
+			right: 'auto',
 			data: legendDatas
 		},
 		xAxis: [{
@@ -486,7 +486,7 @@ function getBarLine(datas,Id){
 			itemWidth: 14,
 			itemHeight: 5,
 			top: 0,
-			right: 20,
+			left: 'center',
 			data: legendDatas,
       align:"left",
       verticalAlign:"top"
