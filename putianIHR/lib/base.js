@@ -105,10 +105,10 @@
                 tblpstabs.querySelectorAll("a")[1].click();
             }
             //华为附件上传当页刷新的问题
-
+						
             if (doc.body.textContent.indexOf("加班申请") !== -1||doc.body.textContent.indexOf("请假申请") !== -1||doc.body.textContent.indexOf("公出") !== -1||doc.body.textContent.indexOf("忘打卡") !== -1||doc.body.textContent.indexOf("外派探亲") !== -1||doc.body.textContent.indexOf("自助查看个人信息") !== -1) {
                 if (topWindow.EAPI.isAndroid()) {
-                    window.yspCheckIn.isRefresh(true);
+                    window.yspCheckIn.isRefresh(false);
                 }
               
               

@@ -141,9 +141,10 @@
     },
     doAction_uiControl74_3xXdrR: function (data, elem) {
       if (data.eventType == "addFile") {
-        if (ysp.appMain.isAndroid()) {
-          window.yspCheckIn.isRefresh(true);
-        }var ind = parseInt(data.dataCustom);var th = elem.querySelectorAll("th");[].forEach.call(th, function (item, index) {
+        // if (ysp.appMain.isAndroid()) {
+        //   window.yspCheckIn.isRefresh(true);
+        // }
+        var ind = parseInt(data.dataCustom);var th = elem.querySelectorAll("th");[].forEach.call(th, function (item, index) {
           if (item.textContent == "更新者") {
             var tr = item.parentElement.parentElement.querySelectorAll("tr[id]");tr[ind - 1].querySelectorAll("td")[3].querySelector("input").click();
           }

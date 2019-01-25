@@ -26,7 +26,8 @@
         if (group[0].indexOf("time") != -1) {
           // trs[group[2]].querySelectorAll("input")[0].value = group[1].replace(/-/g, "/");
           var href = elem.ownerDocument.defaultView.location.href;if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
-            var date = group[1].split("-");trs[group[2]].querySelectorAll("input")[0].value = date[2] + "/" + date[1] + "/" + date[0];
+            var date = group[1].split("-");
+            trs[group[2]].querySelectorAll("input")[0].value = date[2] + "/" + date[1] + "/" + date[0];
           } else {
             trs[group[2]].querySelectorAll("input")[0].value = group[1].replace(/-/g, "/");
           }trs[group[2]].querySelectorAll("input")[0].dispatchEvent(new Event("change"));trs[group[2]].querySelectorAll("input")[0].nextElementSibling.click();elem.ownerDocument.querySelector("#bodyCalendar").querySelector('a[tabindex="0"]').parentElement.click();
