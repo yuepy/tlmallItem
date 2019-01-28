@@ -427,7 +427,7 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
-          	var modelName = $("#modelName").text();//机型
+            var modelName = $("#modelName").text().replace(/\+/g,'%2B');//机型
             
             if("day"==cycleType)
         		$("#tren").html("日别趋势图");
@@ -459,13 +459,13 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#yearAmt").html(response.yearAmt);*/
                 	
                 	$("#dayQty").html(numChange(response.dayQty));
-                    $("#dayAmt").html(numChange(response.dayAmt.toFixed(2)));
+                    $("#dayAmt").html(toQfw_new(response.dayAmt.toFixed(2),true));
                     $("#monthQty").html(numChange(response.monthQty));
-                    $("#monthAmt").html(numChange(response.monthAmt.toFixed(2)));
+                    $("#monthAmt").html(toQfw_new(response.monthAmt.toFixed(2),true));
                     $("#weekQty").html(numChange(response.weekQty));
-                    $("#weekAmt").html(numChange(response.weekAmt.toFixed(2)));
+                    $("#weekAmt").html(toQfw_new(response.weekAmt.toFixed(2),true));
                     $("#yearQty").html(numChange(response.yearQty));
-                    $("#yearAmt").html(numChange(response.yearAmt.toFixed(2)));
+                    $("#yearAmt").html(toQfw_new(response.yearAmt.toFixed(2),true));
 
                     // 全国地图
                     var mapDatas = response.cityValues;
@@ -653,7 +653,7 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
-          	var modelName = $("#modelName").text();//机型
+            var modelName = $("#modelName").text().replace(/\+/g,'%2B');//机型
             
             if("day"==cycleType)
         		$("#tren").html("日别趋势图");
@@ -685,13 +685,13 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#yearAmt").html(response.yearAmt);*/
                 	
                 	$("#dayQty").html(numChange(response.dayQty));
-                    $("#dayAmt").html(numChange(response.dayAmt.toFixed(2)));
+                    $("#dayAmt").html(toQfw_new(response.dayAmt.toFixed(2),true));
                     $("#monthQty").html(numChange(response.monthQty));
-                    $("#monthAmt").html(numChange(response.monthAmt.toFixed(2)));
+                    $("#monthAmt").html(toQfw_new(response.monthAmt.toFixed(2),true));
                     $("#weekQty").html(numChange(response.weekQty));
-                    $("#weekAmt").html(numChange(response.weekAmt.toFixed(2)));
+                    $("#weekAmt").html(toQfw_new(response.weekAmt.toFixed(2),true));
                     $("#yearQty").html(numChange(response.yearQty));
-                    $("#yearAmt").html(numChange(response.yearAmt.toFixed(2)));
+                    $("#yearAmt").html(toQfw_new(response.yearAmt.toFixed(2),true));
 
                     // 全国地图
                     var mapDatas = response.cityValues;
