@@ -260,6 +260,7 @@
       EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?'+user);
       EnCoderXhr.send();
     }
+    
 	}
   //安卓物理返回键 - 客户端调用
   topWin.AndroidBack = function(){
@@ -408,7 +409,6 @@
   }
   //向当前页面动态添加提示语 .  (div)
   var addMarkedModule = function(str){
-    debugger;
     if(!str && typeof str !== 'string')return ;
     if(!ysp.runtime && !ysp.runtime.Browser) return ;
     var currentWindow = ysp.runtime.Browser.activeBrowser.contentWindow;

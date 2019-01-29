@@ -991,13 +991,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
             var maxNum = getMaxValue(datas);
             var visual = numToShow(maxNum);
-
             $("#" + Id).parent().find(".u-visualmap").remove();
             $("#" + Id).parent().append('<div class="u-visualmap"><div class="max">' + visual[1] + '+</div>' + '<div class="min">0</div><h6>销量</h6></div>');
 
             $("#" + Id).parent().find(".totalContent").remove();
             if(totalDatas){
-                $("#" + Id).parent().append('<div class="u-box-infors">' + '<div class="title">太力总部</div>' + '<div class="content">' + '<div class="a"><span>销量：</span><b>' + toQfw(totalDatas[0].value) + ' 台</b></div>' + '<div class="b"><span>销售额：</span><b>' + toQfw(totalDatas[1].value) + ' 万</b></div>' + '</div></div>');
+                $("#" + Id).parent().append('<div class="u-box-infors">' + '<div class="title">太力总部</div>' + '<div class="content">' + '<div class="a"><span>销量：</span><b>' + toQfw(totalDatas[0].value) + ' 台</b></div>' + '<div class="b"><span>销售额：</span><b>' + toQfw_new(totalDatas[1].value.toFixed(2)) + ' 万</b></div>' + '</div></div>');
             }
             var option = {
                 tooltip: {
@@ -1007,7 +1006,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     backgroundColor: 'rgba(0,0,0,0)',
                     formatter: function formatter(params) {
                         try {
-                            var tip = '<div class="m-tooltip">' + '<div class="title">' + params.data.company + '</div>' + '<div class="content">' + '<div class="a"><span>销量</span><b>' + toQfw(params.value) + '</b></div>' + '<div class="b"><span>销售额</span><b> ' + toQfw(params.data.sum) + '</b></div></div></div>';
+                            var tip = '<div class="m-tooltip">' + '<div class="title">' + params.data.company + '</div>' + '<div class="content">' + '<div class="a"><span>销量</span><b>' + toQfw(params.value) + '</b></div>' + '<div class="b"><span>销售额</span><b> ' + toQfw_new(params.data.sum.toFixed(2)) + '</b></div></div></div>';
                             return tip;
                         } catch (e) {
                             return;
@@ -1064,7 +1063,7 @@ window.addEventListener('DOMContentLoaded', function() {
             };
 
             // 载入配置显示地图
-            //chart.setOption(option);
+            // chart.setOption(option);
             document.getElementById("map").setAttribute('option',JSON.stringify(option));//2018/02/09
             chart.on('click', function(params) {
                 //console.log(params.name);
@@ -1077,7 +1076,8 @@ window.addEventListener('DOMContentLoaded', function() {
                 var orderLogic = $("#orderLogic").val();
                 var projectName = $("#projectName").text();
                 
-                var link = "/ptDataShow/salesAll/salesOverview?type=04&branchName=" + encodeURIComponent(params.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + '&cycleType='+ cycleType + '&orderLogic='+ orderLogic + '&projectName=' + encodeURIComponent(projectName);
+                var modelName = $("#modelName").text().replace(/\+/g,'%2B');//机型
+                var link = "/ptDataShow/salesAll/salesOverview?type=04&branchName=" + encodeURIComponent(params.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + '&cycleType='+ cycleType + '&orderLogic='+ orderLogic + '&projectName=' + encodeURIComponent(projectName)+'&modelName=' + encodeURIComponent(modelName);
                 window.location.href = link;
             });
         }
