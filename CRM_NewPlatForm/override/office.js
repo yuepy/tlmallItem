@@ -352,13 +352,12 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
-          	var modelName = $("#modelName").text();
             var drill = $("#drill").text();
 
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + drill,
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
                 async: false,
                 success: function (response) {
                     // console.log(response);
@@ -501,11 +500,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                              	var link = '/ptDataShow/salesPlan/salesOverview?type=06&projectName='+ encodeURIComponent($("#projectName").text())
-                                + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text()) + '&branchName=' + encodeURIComponent(branchName)
-                                + "&officeName=" + encodeURIComponent($("#officeName").text())+ "&modelName=" + encodeURIComponent(model.name)
-                                + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
-                                var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
                             }
@@ -539,7 +534,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             for(var i =0; i< response.salerName.length ;i++) {
                                 var saler = response.salerName[i];
                                 var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(saler.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                    + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)+ "&modelName=" + encodeURIComponent(modelName)
+                                    + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
                                     + "&officeName=" + encodeURIComponent(officeName) + "&drill=" + encodeURIComponent($("#drill").text());
                                 // if($("#drill").text() == '0') {
                                 //     link = '#';
@@ -637,7 +632,8 @@ window.addEventListener('DOMContentLoaded', function() {
       
       
       window.timeInit = function() {
-					// 年计划或月计划
+
+            // 年计划或月计划
             var isYear = '0';
             if ($("#planTypeSelect").val() == 'month') {
                 isYear = '0';
@@ -660,13 +656,12 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
-          	var modelName = $("#modelName").text();
             var drill = $("#drill").text();
 
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + drill,
+                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
                 async: false,
                 success: function (response) {
                     // console.log(response);
@@ -809,11 +804,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                              	var link = '/ptDataShow/salesPlan/salesOverview?type=06&projectName='+ encodeURIComponent($("#projectName").text())
-                                + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text()) + '&branchName=' + encodeURIComponent(branchName)
-                                + "&officeName=" + encodeURIComponent($("#officeName").text())+ "&modelName=" + encodeURIComponent(model.name)
-                                + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
-                                var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
                             }
@@ -847,7 +838,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             for(var i =0; i< response.salerName.length ;i++) {
                                 var saler = response.salerName[i];
                                 var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(saler.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                    + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)+ "&modelName=" + encodeURIComponent(modelName)
+                                    + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
                                     + "&officeName=" + encodeURIComponent(officeName) + "&drill=" + encodeURIComponent($("#drill").text());
                                 // if($("#drill").text() == '0') {
                                 //     link = '#';
@@ -1913,9 +1904,9 @@ window.addEventListener('DOMContentLoaded', function() {
                 if(isYear!='1') {
                     var link = "";
                     if(Id.indexOf("bizUnit") != -1){
-                        link = '/ptDataShow/salesPlan/salesOverview?type=06&bizUnitName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()+ "&modelName=" + encodeURIComponent(modelName) + "&drill=bizUnit";
+                        link = '/ptDataShow/salesPlan/salesOverview?type=06&bizUnitName=' + encodeURIComponent(params.name) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
                     }else if(Id.indexOf("project") != -1){
-                        link = '/ptDataShow/salesPlan/salesOverview?type=06&projectName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()+ "&modelName=" + encodeURIComponent(modelName) + "&drill=oneProject";
+                        link = '/ptDataShow/salesPlan/salesOverview?type=06&projectName=' + encodeURIComponent(params.name) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
                     }
                     window.location.href = link;
                 }
