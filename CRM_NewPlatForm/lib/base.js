@@ -99,6 +99,10 @@
     }
     return str<10?'0'+str.toString() : str.toString();
   }
+  //Android 切后台刷新
+  topWin.isReload = function(){
+    top.yspCheckIn.isRefresh(true);
+  }
   //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单;  ( + 安卓端) 
   var loginTimeOut = function(str){
     var flag = confirm(str);
