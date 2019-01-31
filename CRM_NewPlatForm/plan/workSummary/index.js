@@ -21,7 +21,8 @@
           ysp.appMain.back();ysp.customHelper.BackReload();
         } else {
           //刷新
-          top.yspCheckIn.isRefresh(true);ysp.customHelper.AndroidBackFn();
+          top.yspCheckIn.isRefresh(true); //ysp.customHelper.AndroidBackFn();
+          ysp.appMain.back();
         }
       }if ("click" == data.eventType) {
         var index = data.dataCustom;elem.querySelector("#businessDepartment").querySelectorAll("li")[index].querySelector("input").click();
