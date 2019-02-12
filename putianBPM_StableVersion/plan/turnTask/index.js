@@ -223,8 +223,10 @@
             var processa = item.querySelector(".mini-panel-title");if (processa) ;data.processTit.push(processa.textContent);
           });
         } //提交日期
-        var timetit = elem.querySelector("#form1").querySelector("#table1").querySelectorAll("td")[0];var timecon = elem.querySelector("#form1").querySelector("#table1").querySelectorAll("td")[1].querySelector("input");data.time.push(timetit.textContent.replace(/\s+/g, ""));data.time.push(timecon.value); //基础信息表格
-        var basetit = elem.querySelectorAll(".table")[1].querySelectorAll("tbody tr");if (basetit) {
+        var timetit = elem.querySelector("#form1") && elem.querySelector("#form1").querySelector("#table1") && elem.querySelector("#form1").querySelector("#table1").querySelectorAll("td")[0];var timecon = elem.querySelector("#form1") && elem.querySelector("#form1").querySelector("#table1") && elem.querySelector("#form1").querySelector("#table1").querySelectorAll("td")[1].querySelector("input");if (timetit && timecon) {
+          data.time.push(timetit.textContent.replace(/\s+/g, ""));data.time.push(timecon.value);
+        } //基础信息表格
+        var basetit = elem.querySelectorAll(".table")[1] && elem.querySelectorAll(".table")[1].querySelectorAll("tbody tr");if (basetit) {
           [].map.call(basetit, function (item, index) {
             var a = item.querySelectorAll(".form_label");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
               data.base.tit.push(d.textContent.replace(/\s+/g, ""));
@@ -233,7 +235,7 @@
             });
           });
         } //转正信息
-        var turntit = elem.querySelectorAll(".table")[2].querySelectorAll("tbody tr");if (turntit) {
+        var turntit = elem.querySelectorAll(".table")[2] && elem.querySelectorAll(".table")[2].querySelectorAll("tbody tr");if (turntit) {
           [].map.call(turntit, function (item, index) {
             var a = item.querySelectorAll(".form_label");var b = item.querySelectorAll("td:nth-child(2n)");[].map.call(a, function (d, i) {
               data.turn.tit.push(d.textContent.replace(/\s+/g, ""));
@@ -242,24 +244,24 @@
             });
           });
         } //备注
-        var mark = elem.querySelectorAll(".table")[3].querySelector("tbody tr td textarea");if (mark) {
+        var mark = elem.querySelectorAll(".table")[3] && elem.querySelectorAll(".table")[3].querySelector("tbody tr td textarea");if (mark) {
           data.remark = mark.value;
         } //附件信息
-        var ann = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a");if (elem.querySelectorAll(".mini-panel")[3].style.display != "none") {
+        var ann = elem.querySelectorAll(".mini-panel")[3] && elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a");if (elem.querySelectorAll(".mini-panel")[3] && elem.querySelectorAll(".mini-panel")[3].style.display != "none") {
           [].map.call(ann, function (item, index) {
             data.annex.push(item.textContent);
           });
         } else {
           data.annex.push("none");
         } //总结
-        var total = elem.querySelectorAll(".mini-panel")[4].querySelector("#table1").querySelector(".mini-textbox-input");var totalshow = elem.querySelectorAll(".mini-panel")[4].querySelector("#table1").querySelector(".mini-textbox-readOnly");if (total) {
+        var total = elem.querySelectorAll(".mini-panel")[4] && elem.querySelectorAll(".mini-panel")[4].querySelector("#table1") && elem.querySelectorAll(".mini-panel")[4].querySelector("#table1").querySelector(".mini-textbox-input");var totalshow = elem.querySelectorAll(".mini-panel")[4] && elem.querySelectorAll(".mini-panel")[4].querySelector("#table1") && elem.querySelectorAll(".mini-panel")[4].querySelector("#table1").querySelector(".mini-textbox-readOnly");if (total) {
           data.total.push(total.value);if (totalshow) {
             data.total.push("false");
           } else {
             data.total.push("");
           }
         } //是否显示感叹号
-        var errtip = elem.querySelectorAll(".mini-panel")[4].querySelector("#table1").querySelector(".mini-errorIcon");if (errtip) {
+        var errtip = elem.querySelectorAll(".mini-panel")[4] && elem.querySelectorAll(".mini-panel")[4].querySelector("#table1") && elem.querySelectorAll(".mini-panel")[4].querySelector("#table1").querySelector(".mini-errorIcon");if (errtip) {
           data.errorTip = "true";
         } //审批意见
         var sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");if (sugg) {
@@ -281,11 +283,13 @@
       //   elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a")[i].click();
       // } 
       else if (data.eventType == "enclosure") {
-          var i = data.dataCustom;var _btn = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());if (ysp.appMain.isIOS()) {
+          var i = data.dataCustom;var _btn = elem.querySelectorAll(".mini-panel")[3].querySelectorAll("tbody tr td a")[i];var url = _btn.href;var num = url.lastIndexOf(".");var type = url.slice(num);var string = encodeURIComponent(_btn.textContent.trim());debugger;if (ysp.appMain.isIOS()) {
             top.EAPI.openWindow(url + '?_ysp_filepreview=1&_ysp_ftpEncoding=gbk');
           } else if (ysp.appMain.isAndroid()) {
             // top.location.href = url;
-            var _url = "ftp://hr-sit:123456@ftp.putiantaili.com//" + string;yspUser.openDocument("{'ftpDownloadUrl': '" + url + "','fileName':'1" + type + "','ftpEncoding':'GBK'}");
+            var _url = "ftp://hr-sit:123456@ftp.putiantaili.com//" + string;setTimeout(function () {
+              yspUser.openDocument("{'ftpDownloadUrl': '" + url + "','fileName':'1" + type + "','ftpEncoding':'GBK'}");
+            }, 1000);
           }
         } else if (data.eventType == 'change1') {
           var data = data.dataCustom;elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)").querySelector("textarea").value = data;elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)").querySelector("textarea").dispatchEvent(new Event('change'));
