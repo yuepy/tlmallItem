@@ -1,7 +1,7 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control6_RWT0cx: function (elem) {
-      if (elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("考勤信息") == -1) {
+      if (elem.ownerDocument.querySelector("#selected") && elem.ownerDocument.querySelector("#selected").textContent == "员工自助" && elem.ownerDocument.body.textContent.indexOf("假期申请") == -1 || elem.ownerDocument.querySelector("#selected") && elem.ownerDocument.querySelector("#selected").textContent == "经理自助" && elem.ownerDocument.body.textContent.indexOf("考勤信息") == -1) {
         return "未授权";
       }
     }, doAction_uiControl6_PZE4AI: function (data, elem) {
