@@ -56,9 +56,18 @@ function breadcrumb(role,roleCode){
         if($("#drill").text() == "oneProject") {
             map.role = role+'单项目';
             map.roleCode = roleCode+'oneProject';
+        }if($("#drill").text() == "oneModel") {
+            map.role = role+'单产品';
+            map.roleCode = roleCode+'oneModel';
         }else if($("#drill").text() == "moreProject"){
             map.role = role+'多项目';
             map.roleCode = roleCode+'moreProject';
+        }else if($("#drill").text() == "oneCust"){
+            map.role = role+'单客户';
+            map.roleCode = roleCode+'oneCust';
+        }else if($("#drill").text() == "oneStore"){
+            map.role = role+'单门店';
+            map.roleCode = roleCode+'oneStore';
         }else if($("#drill").text() == "bizUnit") {
             if("全国事业部" == role){
                 map.role = role;

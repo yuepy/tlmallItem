@@ -1,160 +1,3 @@
-/*
-干掉原网页的.wrapper(body下包裹整个显示内容的div);
-然后创建一个自定义DOM结构，添加到body上；
-分别需要添加的DOM id : 
-销量与销售额：
-todayQty\todayAmt\monthQty\monthAmt\yearQty\yearAmt\
-客户与门店拜访：
-clientCount\vistClientCount\storeCount\vistStoreCount\saleManCount
-*/
-debugger;
-window.addEventListener('DOMContentLoaded', function() {
-  var wrapperOrigin = document.querySelector('.g-main');
-  var wrapper = document.createElement('div');
-  if (wrapper) {
-    wrapper.style.background = '#F7F7F7';
-    wrapper.style.height = '100vh';
-    wrapper.style.padding = '0';
-    var href = wrapper.ownerDocument.defaultView.document.location.href;
-    //如果匹配的地址正确，则将.wrapper里面的html清空
-    if (href && href.indexOf('configType') != -1) {
-      wrapperOrigin.style.display = "none";
-      /*
-      // 创建style
-      */
-      var style = document.createElement('style');
-      style.setAttribute("type", "text/css");
-      var cssString = ".fakeWrapper{background: #fff; border-radius: 8px; padding: 5px 0 10px 0;}" +
-        ".fakeWrapper:last-child{margin-top: 10px; border-radius: 8px;}" +
-        ".header{padding: 10px 10px 10px 0}" +
-        ".fakeWrapper:first-child .header span{font-size: 12px;color:#fff;background:#4796ed;border-radius:0 10px 10px 0;padding-left:10px;padding:2px;width:72px;display:block;}" +
-        ".fakeWrapper:last-child .header span{font-size: 12px;color:#fff;background:#e7350d;border-radius:0 10px 10px 0;padding-left:10px;padding:2px;width:72px;display:block;}" +
-        ".content > div{display: flex; justify-content: flex-start; align-items: center; margin: 0 20px; padding-bottom: 10px}" +
-        ".content-item{display: flex; flex-direction: column; align-items: center; width: 33%}" +
-        ".fakeWrapper:first-child .content-item h2{font-size: 18px; text-align: center; font-weight: 400;padding-bottom:10px;color:#4796ed;}" +
-        ".fakeWrapper:last-child .content-item h2{font-size: 18px; text-align: center; font-weight: 400;padding-bottom:10px;color:#e7350d;}" +
-        ".content-item span{font-size: 10px; color: #999; display: block; text-align: center}" +
-        "#cardIframe1{-webkit-border-radius:none;border-radius:none;-webkit-box-shadow:none;box-shadow:none;}";
-      var cssText = document.createTextNode(cssString);
-      style.appendChild(cssText);
-      document.head.appendChild(style);
-      //创建本月销量和本月销售额内容块
-      var fakeWrapper_sales = document.createElement('div');
-      fakeWrapper_sales.className = 'fakeWrapper';
-      wrapper.appendChild(fakeWrapper_sales);
-      //创建标题部分DOM
-      var header = document.createElement('div');
-      header.className = 'header';
-      var header_span = document.createElement('span');
-      var header_text = document.createTextNode('本月销量');
-      //将标题文本挂到span中
-      header_span.appendChild(header_text);
-      header.appendChild(header_span);
-      //把标题部分DOM挂载到fakeWrapper_sales
-      fakeWrapper_sales.appendChild(header);
-      //创建内容部分
-      var content = document.createElement('div');
-      content.className = 'content';
-      //分别创建两个div，挂到content上，数据呈两行展示
-      var content_row_0 = document.createElement('div');
-      content.appendChild(content_row_0);
-      //创建3个div，3个一组挂在content_row_0上
-      //目标销量
-      var div0 = document.createElement('div');
-      div0.className = 'content-item';
-      var h20 = document.createElement('h2');
-      h20.id = 'totalTargetQty';
-      var span0 = document.createElement('span');
-      var span_text = document.createTextNode('目标销量(万台)');
-      span0.appendChild(span_text);
-      div0.appendChild(h20);
-      div0.appendChild(span0);
-      //销量达成
-      var div1 = document.createElement('div');
-      div1.className = 'content-item';
-      var h21 = document.createElement('h2');
-      h21.id = 'totalReachQty';
-      var span1 = document.createElement('span');
-      var span_text = document.createTextNode('销量达成(万台)');
-      span1.appendChild(span_text);
-      div1.appendChild(h21);
-      div1.appendChild(span1);
-      //销量达成率
-      var div2 = document.createElement('div');
-      div2.className = 'content-item';
-      var h22 = document.createElement('h2');
-      h22.id = 'totalReachQtyRate';
-      var span2 = document.createElement('span');
-      var span_text = document.createTextNode('销量达成率(%)');
-      span2.appendChild(span_text);
-      div2.appendChild(h22);
-      div2.appendChild(span2);
-      content_row_0.appendChild(div0);
-      content_row_0.appendChild(div1);
-      content_row_0.appendChild(div2);
-      //把内容部分DOM挂载到fakeWrapper_sales
-      fakeWrapper_sales.appendChild(content);
-      //创建本月销售额
-      var fakeWrapper_client = document.createElement('div');
-      fakeWrapper_client.className = 'fakeWrapper';
-      wrapper.appendChild(fakeWrapper_client);
-      //创建标题部分DOM
-      var header_client = document.createElement('div');
-      header_client.className = 'header';
-      var header_client_span = document.createElement('span');
-      var header_client_text = document.createTextNode('本月销售额');
-      //将标题文本挂到span中
-      header_client_span.appendChild(header_client_text);
-      header_client.appendChild(header_client_span);
-      //把标题部分DOM挂载到fakeWrapper_sales
-      fakeWrapper_client.appendChild(header_client);
-      //创建内容部分
-      var content_client = document.createElement('div');
-      content_client.className = 'content';
-      //分别创建两个div，挂到content_client上，数据呈两行展示
-      var content_client_row_0 = document.createElement('div');
-      content_client.appendChild(content_client_row_0);
-      //创建3个div，3个一组挂在content_client_row_0上
-      //目标销售额
-      var div0_client = document.createElement('div');
-      div0_client.className = 'content-item';
-      var h20_client = document.createElement('h2');
-      h20_client.id = 'totalTargetAmt';
-      var span0_client = document.createElement('span');
-      var span_client_text = document.createTextNode('目标销售额(万元)');
-      span0_client.appendChild(span_client_text);
-      div0_client.appendChild(h20_client);
-      div0_client.appendChild(span0_client);
-      //销售额达成
-      var div1_client = document.createElement('div');
-      div1_client.className = 'content-item';
-      var h21_client = document.createElement('h2');
-      h21_client.id = 'totalReachAmt';
-      var span1_client = document.createElement('span');
-      var span_client_text = document.createTextNode('销售额达成(万元)');
-      span1_client.appendChild(span_client_text);
-      div1_client.appendChild(h21_client);
-      div1_client.appendChild(span1_client);
-      //销售额达成率
-      var div2_client = document.createElement('div');
-      div2_client.className = 'content-item';
-      var h22_client = document.createElement('h2');
-      h22_client.id = 'totalReachAmtRate';
-      var span2_client = document.createElement('span');
-      var span_client_text = document.createTextNode('销售额达成率(%)');
-      span2_client.appendChild(span_client_text);
-      div2_client.appendChild(h22_client);
-      div2_client.appendChild(span2_client);
-      content_client_row_0.appendChild(div0_client);
-      content_client_row_0.appendChild(div1_client);
-      content_client_row_0.appendChild(div2_client);
-      //把内容部分DOM挂载到fakeWrapper_client
-      //debugger;
-      fakeWrapper_client.appendChild(content_client);
-      document.body.insertBefore(wrapper, wrapperOrigin);
-    }
-  }
-}, false);
 /******/ (function(modules) { // webpackBootstrap
     /******/ 	// The module cache
     /******/ 	var installedModules = {};
@@ -271,16 +114,99 @@ window.addEventListener('DOMContentLoaded', function() {
             arr.push(visualMaxUnit);
             return arr;
         }
+        //模块宽度拖拽
+    	function bindResize(el,Lbox,Rbox,LRwrap) {
+    	//鼠标的 X 和 Y 轴坐标
+    	var x = 0;
+    	$(el).mousedown(function (e) {
+    	//按下元素后，计算当前鼠标与对象计算后的坐标
+    	x = e.clientX - el.offsetWidth - Lbox.width();
+    	el.setCapture ? (
+    	el.setCapture(),
+    	el.onmousemove = function (ev) {
+    		mouseMove(ev || event);
+    	},
+    	el.onmouseup = mouseUp
+    	) : (
+    	$(document).bind("mousemove", mouseMove).bind("mouseup", mouseUp)
+    	);
+    	e.preventDefault();
+    	});
+    	//移动事件
+    	function mouseMove(e) {
+    		if(e.clientX>290 && e.clientX<1280){
+    			Lbox.width(e.clientX - x); 
+    			Rbox.width(LRwrap.width()-e.clientX  + x - 15);
+    		}
+    		reloadW();
+    		init();
+    	}
+    	//停止事件
+    	function mouseUp() {
+    	el.releaseCapture ? (
+    	el.releaseCapture(),
+    	el.onmousemove = el.onmouseup = null
+    	) : (
+    	$(document).unbind("mousemove", mouseMove).unbind("mouseup", mouseUp)
+    	);
+    	}
+    	}
+    	
+    	//table拖拽
+		function tableDrag(tableId){
+			var tTD;
+			var table = document.getElementById(tableId);
+			if(table){
+				if(table.rows) {
+					for (var i = 0; i < table.rows[0].cells.length; i++) {
+						table.rows[0].cells[i].onmousedown = function() {
+							tTD = this;
+							if (event.offsetX > tTD.offsetWidth - 10) {
+								tTD.mouseDown = true;
+								tTD.oldX = event.x;
+								tTD.oldWidth = tTD.offsetWidth;
+							}
+						};
+						table.rows[0].cells[i].onmouseup = function() {
+							if (tTD == undefined) tTD = this;
+							tTD.mouseDown = false;
+							tTD.style.cursor = 'default';
+						};
+						table.rows[0].cells[i].onmousemove = function() {
+							if (event.offsetX > this.offsetWidth - 10)
+								this.style.cursor = 'col-resize';
+							else
+								this.style.cursor = 'default';
+							if (tTD == undefined) tTD = this;
+							if (tTD.mouseDown != null && tTD.mouseDown == true) {
+								tTD.style.cursor = 'default';
+								if (tTD.oldWidth + (event.x - tTD.oldX) > 0)
+									tTD.width = tTD.oldWidth + (event.x - tTD.oldX);
+								tTD.style.width = tTD.width;
+								tTD.style.cursor = 'col-resize';
+								table = tTD;
+								while (table.tagName != 'TABLE') table = table.parentElement;
+								for (var j = 0; j < table.rows.length; j++) {
+									table.rows[j].cells[tTD.cellIndex].width = tTD.width;
+								}
+							}
+						};
+					}
+				}
+			}
+		}
 
-        $(function () {
+    	function reloadW(){
             // 为适配不同分辨率，动态计算高度
             var mapW = $(".spaceDimen .chart").width();
             var mapH = $(".spaceDimen .chart").height(mapW * 0.84);
             var barLineW = $(".timeDimen .l-chart").width();
             var barLineH = $(".timeDimen .l-chart,.timeDimen .r-chart").height(barLineW * 1.18);
-            
+
             $(".m-body").height(parseInt($("body").height())-parseInt($(".m-body").css("top"))-20);
-            
+    	}
+        $(function () {
+        	reloadW();
             //tableSH("bsPersonnel-table", 4);
             //tableSH("salesReach-table", 4);
             //tableSH("HW-table", 4);
@@ -305,15 +231,23 @@ window.addEventListener('DOMContentLoaded', function() {
             }
 
             init();
+            $(".lefth").append('<div id="dragbar"></div>');
+        	$("#dragbar").height($(".lefth").height());
 
+	        bindResize(document.getElementById('dragbar'),$('.lefth'),$('.righth'),$('.m-boxs'));
             laydate({
                 elem: '#selDay',
+                isclear: false,
                 // min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
                 max: laydate.now(), //+1代表明天，+2代表后天，以此类推
                 choose: function(datas){ //选择日期完毕的回调
                     //alert('得到：'+datas);
                     init();
                 }
+            });
+
+            $("body").delegate("#laydate_today","click", function(){
+                init();
             });
 
             $("#planTypeSelect").change(function () {
@@ -362,7 +296,7 @@ window.addEventListener('DOMContentLoaded', function() {
             }
 
             //面包屑导航
-            breadcrumb("销售人员","saler");
+            breadcrumb("客户门店","cust");
 
             // 当前的月份
             var date = $("#selDay").val();
@@ -376,13 +310,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
-          	var modelName = $("#modelName").text();
+            var custName = $("#custName").text();
+            var storeName = $("#storeName").text();
+            var modelName = $("#modelName").text();
             var drill = $("#drill").text();
-
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                  + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + drill,
+                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill
+                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)+ "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     console.log(response);
@@ -484,12 +420,12 @@ window.addEventListener('DOMContentLoaded', function() {
                                     for(var j =0; j< projects.length ;j++) {
                                         var link = '#';
                                         if(isYear!='1') {
-                                           link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&modelName=" + encodeURIComponent($("#modelName").text())
-                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
-                                        
+                                            link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
+                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
+                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())+ "&modelName=" + encodeURIComponent($("#modelName").text());
                                         }
-                                      	tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
+                                        tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                             + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
                                     }
                                     tableHtml = tableHtml + '</tbody></table></div>';
@@ -497,6 +433,12 @@ window.addEventListener('DOMContentLoaded', function() {
                                     // 整体区域HTML
                                     var html = '<div class="m-box bizUnitProject">' + salesRank + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
                                     $("#projectRankPlaceHolder").before(html);
+                        	        //产品销售达成
+                        	        if(isYear=="1" && $("#projectRankPlaceHolder tbody tr").length == 0){
+                        	        	$("#projectRankPlaceHolder").hide();
+                        	        }else{
+                        	        	$("#projectRankPlaceHolder").show();
+                        	        }
                                     getBars(barData,  bizUnits[k].name, 'bizUnit' + k);
                                     tableSH("bizUnit" + k, 4);
                                 }
@@ -527,9 +469,11 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())+ "&modelName=" + encodeURIComponent(model.name)
-                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
+                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel"
+                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                + "&modelName=" + encodeURIComponent(model.name);
                                 var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
@@ -541,11 +485,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + encodeURIComponent($("#drill").text())
-								+ "&custName=" + encodeURIComponent(client.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
                                     + toThousands(client.targetAmt) + '</td><td>' + toThousands(client.reachAmt) + '</td><td>' + client.reachAmtRate + '%</td></tr>';
                                 $("#clientTable").append(html);
                             }
@@ -556,11 +496,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + encodeURIComponent($("#drill").text())
-								+ "&storeName=" + encodeURIComponent(store.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
                                     + toThousands(store.targetAmt) + '</td><td>' + toThousands(store.reachAmt) + '</td><td>' + store.reachAmtRate + '%</td></tr>';
                                 $("#storeTable").append(html);
                             }
@@ -595,13 +531,22 @@ window.addEventListener('DOMContentLoaded', function() {
                         getLines(LineDatas, "lines");
 
                     }
-									//选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-        	        	$(".u-table-b").show();
-        	        }
+                    tableDrag("bizUnit0");
+                    tableDrag("bizUnit1");
+                    tableDrag("bizUnit2");
+                    tableDrag("bizUnit3");
+                    tableDrag("bizUnit4");
+                    tableDrag("client-table");
+        	        tableDrag("store-table");
+        	        tableDrag("model-table");
+        	        //选择维度为年时，表格无数据，隐藏表格
+        	        $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
@@ -643,9 +588,8 @@ window.addEventListener('DOMContentLoaded', function() {
             getBars(sx_barsDatas, '三星事业部', 'barsSX');
             getBars(fx_barsDatas, '分销事业部', 'barsFX');*/
         }
-      
-      window.timeInit = function() {
-					// 年计划或月计划
+      	 window.timeInit = function() {
+           // 年计划或月计划
             var isYear = '0';
             if ($("#planTypeSelect").val() == 'month') {
                 isYear = '0';
@@ -654,7 +598,7 @@ window.addEventListener('DOMContentLoaded', function() {
             }
 
             //面包屑导航
-            breadcrumb("销售人员","saler");
+            breadcrumb("客户门店","cust");
 
             // 当前的月份
             var date = $("#selDay").val();
@@ -668,13 +612,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
-          	var modelName = $("#modelName").text();
+            var custName = $("#custName").text();
+            var storeName = $("#storeName").text();
+            var modelName = $("#modelName").text();
             var drill = $("#drill").text();
-
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                  + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + drill,
+                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill
+                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)+ "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     console.log(response);
@@ -776,12 +722,12 @@ window.addEventListener('DOMContentLoaded', function() {
                                     for(var j =0; j< projects.length ;j++) {
                                         var link = '#';
                                         if(isYear!='1') {
-                                           link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&modelName=" + encodeURIComponent($("#modelName").text())
-                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
-                                        
+                                            link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
+                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
+                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())+ "&modelName=" + encodeURIComponent($("#modelName").text());
                                         }
-                                      	tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
+                                        tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                             + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
                                     }
                                     tableHtml = tableHtml + '</tbody></table></div>';
@@ -789,6 +735,12 @@ window.addEventListener('DOMContentLoaded', function() {
                                     // 整体区域HTML
                                     var html = '<div class="m-box bizUnitProject">' + salesRank + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
                                     $("#projectRankPlaceHolder").before(html);
+                        	        //产品销售达成
+                        	        if(isYear=="1" && $("#projectRankPlaceHolder tbody tr").length == 0){
+                        	        	$("#projectRankPlaceHolder").hide();
+                        	        }else{
+                        	        	$("#projectRankPlaceHolder").show();
+                        	        }
                                     getBars(barData,  bizUnits[k].name, 'bizUnit' + k);
                                     tableSH("bizUnit" + k, 4);
                                 }
@@ -819,9 +771,11 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())+ "&modelName=" + encodeURIComponent(model.name)
-                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
+                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel"
+                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                + "&modelName=" + encodeURIComponent(model.name);
                                 var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
@@ -833,11 +787,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + encodeURIComponent($("#drill").text())
-								+ "&custName=" + encodeURIComponent(client.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
                                     + toThousands(client.targetAmt) + '</td><td>' + toThousands(client.reachAmt) + '</td><td>' + client.reachAmtRate + '%</td></tr>';
                                 $("#clientTable").append(html);
                             }
@@ -848,11 +798,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + encodeURIComponent($("#drill").text())
-								+ "&storeName=" + encodeURIComponent(store.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
                                     + toThousands(store.targetAmt) + '</td><td>' + toThousands(store.reachAmt) + '</td><td>' + store.reachAmtRate + '%</td></tr>';
                                 $("#storeTable").append(html);
                             }
@@ -887,19 +833,28 @@ window.addEventListener('DOMContentLoaded', function() {
                         getLines(LineDatas, "lines");
 
                     }
-									//选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-        	        	$(".u-table-b").show();
-        	        }
+                    tableDrag("bizUnit0");
+                    tableDrag("bizUnit1");
+                    tableDrag("bizUnit2");
+                    tableDrag("bizUnit3");
+                    tableDrag("bizUnit4");
+                    tableDrag("client-table");
+        	        tableDrag("store-table");
+        	        tableDrag("model-table");
+        	        //选择维度为年时，表格无数据，隐藏表格
+        	        $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
                 }
             });
-        }
+         }
 
         //销量达成率排名悬浮窗
         function suspBySalesCountReach(rank) {
@@ -994,11 +949,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // 配置：百度地图
         function getBDMap(mapName, datas, Id) {
-						console.log(mapName);
-            console.log(datas);
-          	document.getElementById("map").setAttribute('option',JSON.stringify(datas));//zyt
+						document.getElementById("map").setAttribute('option',JSON.stringify(datas));
             document.getElementById("map").setAttribute('optionName',mapName);
-          
             var BDmap = new BMap.Map(Id, {
                 enableMapClick: false
             }); // 创建Map实例
@@ -1039,25 +991,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // 百度地图信息窗内容
         function inforContent(datas, index) {
-          if (datas.length > 0){
-        		var type = datas[0].type;
-        		var storeName="";
-        		var custName="";
-        		if (type == "store") {
-        			storeName = datas[index].name;
-        		}else {
-        			custName = datas[index].name;
-        		}
-        		var loginName = $("#loginName").text();
-        		var encoder = $("#encoder").text();
-        		var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-        		+ "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-        		+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&drill=" + encodeURIComponent($("#drill").text())
-        		+ "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)+ "&modelName=" + encodeURIComponent($("#modelName").text());
-        		var content = '<div class="popup-bd"><div class="box"><h6 class="title" title="' + datas[index].name + '"><a href="' +link + '" style="color:#fff">'  + datas[index].name + '</a></h6><div class="address clearfix"><h6><i class="icon-markads"></i>地址：</h6>' + '<p title="' + datas[index].address + '">' + datas[index].address + '</p></div>' + '<div class="content"><div class="one a"><span>销量：</span><b>' + toQfw(datas[index].salesNums) + '</b></div>' + '<div class="one b"><span>金额：</span><b>' + toQfw(datas[index].sumNums) + '</b>' + '</div></div></div></div>';
-        		
-        		return content;
-        	}
+            var content = '<div class="popup-bd"><div class="box"><h6 class="title" title="' + datas[index].name + '">' + datas[index].name + '</h6><div class="address clearfix"><h6><i class="icon-markads"></i>地址：</h6>' + '<p title="' + datas[index].address + '">' + datas[index].address + '</p></div>' + '<div class="content"><div class="one a"><span>销量：</span><b>' + toQfw(datas[index].salesNums) + '</b></div>' + '<div class="one b"><span>金额：</span><b>' + toQfw(datas[index].sumNums) + '</b>' + '</div></div></div></div>';
+
+            return content;
         }
 
         function addClickHandler(BDmap, content, marker, point) {
@@ -1302,7 +1238,11 @@ window.addEventListener('DOMContentLoaded', function() {
             };
 
             //chart.setOption(option);
-          document.getElementById("barLines").setAttribute('option',JSON.stringify(option))//zyt
+          document.getElementById("barLines").setAttribute('option',JSON.stringify(option))
+        	chart.resize({
+        		width:$(".timeDimen .l-chart").width(),
+        		height:$(".timeDimen .l-chart").height()
+        	});
         }
 
         // 配置：折线图
@@ -1431,11 +1371,23 @@ window.addEventListener('DOMContentLoaded', function() {
             };
 
             //chart.setOption(option);
-          document.getElementById("lines").setAttribute('option',JSON.stringify(option))//zyt
+          document.getElementById("lines").setAttribute('option',JSON.stringify(option))
+        	chart.resize({
+        		width:$(".timeDimen .r-chart").width(),
+        		height:$(".timeDimen .r-chart").height()
+        	});
         }
 
         // 配置：多柱状图
         function getBars(datas, titleText, Id) {
+
+            var isYear = '0';
+            if ($("#planTypeSelect").val() == 'month') {
+                isYear = '0';
+            } else if ($("#planTypeSelect").val() == 'year') {
+                isYear = '1';
+            }
+
             var chart = echarts.init(document.getElementById(Id));
             window.onresize = chart.resize;
 
@@ -1451,6 +1403,19 @@ window.addEventListener('DOMContentLoaded', function() {
             // 当月天数
             var day = new Date(year, month, 0);
             var days = day.getDate();
+            if (isYear == '1') {  // 年计划不显示时间轴
+                days = 0;
+            } else { // 月计划如果不是当月也不显示时间轴
+                var selYearMonthStr = $("#selDay").val().substring(0, 7);
+                var curMonthStr = month;
+                if (month < 10) {
+                    curMonthStr = "0" + month;
+                }
+                var curYearMonthStr = year + "-" + curMonthStr;
+                if (curYearMonthStr != selYearMonthStr) {
+                    days = 0;
+                }
+            }
 
             var option = {
                 color: ["#43caff", '#2c81ff', '#ed9429', '#ed694f', '#ed694f'],
@@ -1560,7 +1525,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     axisLabel: {
                         show: true
                     },
-                    data: [""]
+                    data: [titleText]
                 },
                 series: [{
                     name: '目标销量',
@@ -1742,75 +1707,69 @@ window.addEventListener('DOMContentLoaded', function() {
             };
             //chart.setOption(option);
 						if("bizUnit0" == Id){
-              document.getElementById("bizUnit0").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit0").setAttribute('titleText',titleText);
+            	document.getElementById("bizUnit0").setAttribute('datas',JSON.stringify(datas));//zyt
+            	document.getElementById("bizUnit0").setAttribute('titleText',titleText);
             }else if("bizUnit1" == Id){
-              document.getElementById("bizUnit1").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit1").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit1").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit1").setAttribute('titleText',titleText);
             }else if("bizUnit2" == Id){
-              document.getElementById("bizUnit2").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit2").setAttribute('datas',JSON.stringify(datas));//zyt
               document.getElementById("bizUnit2").setAttribute('titleText',titleText);
             }else if("bizUnit3" == Id){
               document.getElementById("bizUnit3").setAttribute('datas',JSON.stringify(datas));
               document.getElementById("bizUnit3").setAttribute('titleText',titleText)
             }else if("bizUnit4" == Id){
-              document.getElementById("bizUnit4").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit4").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit4").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit4").setAttribute('titleText',titleText);
             }else if("bizUnit5" == Id){
-              document.getElementById("bizUnit5").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit5").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit5").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit5").setAttribute('titleText',titleText);
             }else if("bizUnit6" == Id){
-              document.getElementById("bizUnit6").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("bizUnit6").setAttribute('titleText',titleText)
+               document.getElementById("bizUnit6").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit6").setAttribute('titleText',titleText);      
             }else if("bizUnit7" == Id){
                document.getElementById("bizUnit7").setAttribute('datas',JSON.stringify(datas));//zyt
                document.getElementById("bizUnit7").setAttribute('titleText',titleText);
             }else if("bizUnit8" == Id){
                document.getElementById("bizUnit8").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit8").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit8").setAttribute('titleText',titleText);
             }else if("bizUnit9" == Id){
-              document.getElementById("bizUnit9").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("bizUnit9").setAttribute('titleText',titleText)
+               document.getElementById("bizUnit9").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit9").setAttribute('titleText',titleText);      
             }else if("bizUnit10" == Id){
-              document.getElementById("bizUnit10").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("bizUnit10").setAttribute('titleText',titleText)
+               document.getElementById("bizUnit10").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit10").setAttribute('titleText',titleText);
+            }else if("bizUnit11" == Id){
+               document.getElementById("bizUnit11").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit11").setAttribute('titleText',titleText);
+            }else if("bizUnit12" == Id){
+               document.getElementById("bizUnit12").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit12").setAttribute('titleText',titleText);      
+            }else if("bizUnit13" == Id){
+               document.getElementById("bizUnit13").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit13").setAttribute('titleText',titleText);
+            }else if("bizUnit14" == Id){
+               document.getElementById("bizUnit14").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit14").setAttribute('titleText',titleText);
+            }else if("bizUnit15" == Id){
+               document.getElementById("bizUnit15").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit15").setAttribute('titleText',titleText);      
+            }else if("bizUnit16" == Id){
+               document.getElementById("bizUnit16").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit16").setAttribute('titleText',titleText);
+            }else if("bizUnit17" == Id){
+               document.getElementById("bizUnit17").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit17").setAttribute('titleText',titleText);
+            }else if("bizUnit18" == Id){
+               document.getElementById("bizUnit18").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit18").setAttribute('titleText',titleText);      
+            }else if("bizUnit19" == Id){
+               document.getElementById("bizUnit19").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit19").setAttribute('titleText',titleText);
+            }else if("bizUnit20" == Id){
+               document.getElementById("bizUnit20").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit20").setAttribute('titleText',titleText);      
             }
-          
-          	if("project-0" == Id){
-              document.getElementById("project-0").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-0").setAttribute('titleText',titleText);
-            }else if("project-1" == Id){
-              document.getElementById("project-1").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-1").setAttribute('titleText',titleText);
-            }else if("project-2" == Id){
-              document.getElementById("project-2").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-2").setAttribute('titleText',titleText);
-            }else if("project-3" == Id){
-              document.getElementById("project-3").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("project-3").setAttribute('titleText',titleText)
-            }else if("project-4" == Id){
-              document.getElementById("project-4").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-4").setAttribute('titleText',titleText);
-            }else if("project-5" == Id){
-              document.getElementById("project-5").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-5").setAttribute('titleText',titleText);
-            }else if("project-6" == Id){
-              document.getElementById("project-6").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("project-6").setAttribute('titleText',titleText)
-            }else if("project-7" == Id){
-               document.getElementById("project-7").setAttribute('datas',JSON.stringify(datas));//zyt
-               document.getElementById("project-7").setAttribute('titleText',titleText);
-            }else if("project-8" == Id){
-               document.getElementById("project-8").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-8").setAttribute('titleText',titleText);
-            }else if("project-9" == Id){
-              document.getElementById("project-9").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("project-9").setAttribute('titleText',titleText)
-            }else if("project-10" == Id){
-              document.getElementById("project-10").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("project-10").setAttribute('titleText',titleText)
-            }
-          
             chart.on('click', function(params) {
                 var loginName = $("#loginName").text();
                 var encoder = $("#encoder").text();
@@ -1824,13 +1783,23 @@ window.addEventListener('DOMContentLoaded', function() {
                 if(isYear!='1') {
                     var link = "";
                     if(Id.indexOf("bizUnit") != -1){
-                        link = '/ptDataShow/salesPlan/salesOverview?type=07&bizUnitName=' + encodeURIComponent(params.name) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                        link = '/ptDataShow/salesPlan/salesOverview?type=08&bizUnitName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
+                            + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&salerName=" + encodeURIComponent($("#salerName").text())
+                            + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit"
+                            + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text());;
                     }else if(Id.indexOf("project") != -1){
-                        link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName=' + encodeURIComponent(params.name) + "&branchName=" + encodeURIComponent($("#branchName").text())+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                        link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
+                            + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&salerName=" + encodeURIComponent($("#salerName").text())
+                            + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
+                            + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text());;
                     }
                     window.location.href = link;
                 }
             });
+        	chart.resize({
+        		width:$(".businessDimen .chart-bars").width(),
+        		height:$(".businessDimen .chart-bars").height()
+        	});
         }
 
         /***/ })
