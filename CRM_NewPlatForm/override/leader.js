@@ -356,11 +356,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var modelName = $("#modelName").text();
             var drill = $("#drill").text();
 
             $.ajax({
-                url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
-                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type 
+                + "&filter_userId=" + loginName + '&encoder=' + encoder
+                + "&modelName=" + encodeURIComponent($("#modelName").text())
+                + "&branchName=" + encodeURIComponent(branchName) 
+                + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
                 async: false,
                 success: function (response) {
@@ -398,7 +402,10 @@ window.addEventListener('DOMContentLoaded', function() {
                                 var link = '#';
                                 // 年计划不允许钻取
                                 if(isYear != '1') {
-                                    link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(branches[i].name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=" + $("#drill").text();
+                                    link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(branches[i].name) 
+                                    + "&filter_userId=" + loginName 
+                                    + "&modelName=" + modelName 
+                                    + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=" + $("#drill").text();
                                 }
                                 var html = '<tr><td><a href="'+ link +'">' + branches[i].name.substr(11) + '</a></td><td>' + toThousands(branches[i].targetQty) + '</td><td>' + toThousands(branches[i].reachQty) + '</td><td>' + branches[i].reachQtyRate + '%</td><td>'
                                     + toThousands(branches[i].targetAmt) + '</td><td>' + toThousands(branches[i].reachAmt) + '</td><td>' + branches[i].reachAmtRate + '%</td></tr>';
@@ -425,7 +432,11 @@ window.addEventListener('DOMContentLoaded', function() {
                                 for(var j =0; j< projects.length ;j++) {
                                     var prjLink = '#';
                                     if(isYear != '1') {
-                                        prjLink = "/ptDataShow/salesPlan/salesOverview?type=03&projectName=" + encodeURIComponent(projects[j].name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                        prjLink = "/ptDataShow/salesPlan/salesOverview?type=03&projectName=" + encodeURIComponent(projects[j].name) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder 
+                                        + '&date='+ $("#selDay").val() 
+                                        + '&modelName='+ $("#modelName").text() 
+                                        + "&drill=oneProject";
                                     }
                                     // 如果是大客户事业部那么下面的项目也不让他点击
                                     if('大客户业务部' == bizUnits[k].name){
@@ -559,11 +570,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var modelName = $("#modelName").text();
             var drill = $("#drill").text();
 
             $.ajax({
-                url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
-                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type 
+                + "&filter_userId=" + loginName + '&encoder=' + encoder
+                + "&modelName=" + encodeURIComponent($("#modelName").text())
+                + "&branchName=" + encodeURIComponent(branchName) 
+                + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
                 async: false,
                 success: function (response) {
@@ -601,7 +616,10 @@ window.addEventListener('DOMContentLoaded', function() {
                                 var link = '#';
                                 // 年计划不允许钻取
                                 if(isYear != '1') {
-                                    link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(branches[i].name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=" + $("#drill").text();
+                                    link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(branches[i].name) 
+                                    + "&filter_userId=" + loginName 
+                                    + "&modelName=" + modelName 
+                                    + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=" + $("#drill").text();
                                 }
                                 var html = '<tr><td><a href="'+ link +'">' + branches[i].name.substr(11) + '</a></td><td>' + toThousands(branches[i].targetQty) + '</td><td>' + toThousands(branches[i].reachQty) + '</td><td>' + branches[i].reachQtyRate + '%</td><td>'
                                     + toThousands(branches[i].targetAmt) + '</td><td>' + toThousands(branches[i].reachAmt) + '</td><td>' + branches[i].reachAmtRate + '%</td></tr>';
@@ -628,7 +646,11 @@ window.addEventListener('DOMContentLoaded', function() {
                                 for(var j =0; j< projects.length ;j++) {
                                     var prjLink = '#';
                                     if(isYear != '1') {
-                                        prjLink = "/ptDataShow/salesPlan/salesOverview?type=03&projectName=" + encodeURIComponent(projects[j].name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                        prjLink = "/ptDataShow/salesPlan/salesOverview?type=03&projectName=" + encodeURIComponent(projects[j].name) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder 
+                                        + '&date='+ $("#selDay").val() 
+                                        + '&modelName='+ $("#modelName").text() 
+                                        + "&drill=oneProject";
                                     }
                                     // 如果是大客户事业部那么下面的项目也不让他点击
                                     if('大客户业务部' == bizUnits[k].name){
@@ -674,7 +696,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         getLines(LineDatas, "lines");
 
                     }
-										//选择维度为年时，表格无数据，隐藏表格
+                  //选择维度为年时，表格无数据，隐藏表格
         	        if(isYear == "1"){
         	        	$(".u-table-b").hide();
         	        }
@@ -686,6 +708,54 @@ window.addEventListener('DOMContentLoaded', function() {
                     console.log("Error:获取后台数据失败！");
                 }
             });
+
+
+            // data:地图数据(value:销量数据，sum:销售额数据)
+            //var mapDatas = [{ name: "北京市", value: 3111400, sum: 34324, company: "北京分公司" }, { name: "山东省", value: 200, sum: 3414, company: "山东分公司" }, { name: "辽宁省", value: 300, sum: 14324, company: "辽宁分公司" }, { name: "广东省", value: 100, sum: 34240, company: "广东分公司" }];
+
+            // mapTotal：太力总部统计数据
+            //var mapTotal = [{ name: "销量", value: 890000 }, { name: "销售额", value: 890000 }];
+
+            // 地图初始化
+
+
+            // data:销售达成月度趋势图
+            /*	    var barLineDatas = [{
+                        name: '销量达成(万)',
+                        data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+                    }, {
+                        name: '销售额达成(千万)',
+                        data: [{ time: '2017-2', value: 62 }, { time: '2017-3', value: 56 }, { time: '2017-4', value: 76 }, { time: '2017-5', value: 68 }, { time: '2017-6', value: 98 }, { time: '2017-7', value: 94 }]
+                    }, {
+                        name: '销量达成率',
+                        data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+                    }, {
+                        name: '销售额达成率',
+                        data: [{ time: '2017-2', value: 12 }, { time: '2017-3', value: 16 }, { time: '2017-4', value: 26 }, { time: '2017-5', value: 48 }, { time: '2017-6', value: 38 }, { time: '2017-7', value: 24 }]
+                    }];
+                    getBarLines(barLineDatas, "barLines"); */
+
+
+            // data:销售达成月度趋势图
+            /*	    var LineDatas = [{
+                        name: '销量达成(万)',
+                        data: [{ time: '近8周', value: 46 }, { time: '近7周', value: 86 }, { time: '近6周', value: 78 }, { time: '近5周', value: 88 }, { time: '近4周', value: 84 }, { time: '近3周', value: 52 }, { time: '近2周', value: 12 }, { time: '近1周', value: 44 }]
+                    }, {
+                        name: '销售额达成(千万)',
+                        data: [{ time: '近8周', value: 12 }, { time: '近7周', value: 16 }, { time: '近6周', value: 26 }, { time: '近5周', value: 38 }, { time: '近4周', value: 84 }, { time: '近3周', value: 24 }, { time: '近2周', value: 90 }, { time: '近1周', value: 44 }]
+                    }];
+                    getLines(LineDatas, "lines");*/
+
+            // data:业务维度数据
+            //var hw_barsDatas = [{ name: "目标销量", value: 600 }, { name: "销量达成", value: 600 }, { name: "目标销售额", value: 300 }, { name: "销售额达成", value: 200 }];
+            //var sx_barsDatas = [{ name: "目标销量", value: 400 }, { name: "销量达成", value: 250 }, { name: "目标销售额", value: 200 }, { name: "销售额达成", value: 100 }];
+            //var fx_barsDatas = [{ name: "目标销量", value: 350 }, { name: "销量达成", value: 200 }, { name: "目标销售额", value: 150 }, { name: "销售额达成", value: 90 }];
+            //var dkh_barsDatas = [{ name: "目标销量", value: 700 }, { name: "销量达成", value: 550 }, { name: "目标销售额", value: 350 }, { name: "销售额达成", value: 200 }];
+            //getBars(hw_barsDatas, '华为业务群销售达成', 'barsSX');
+            //getBars(sx_barsDatas, '三星事业部销售达成', 'barsSX');
+            //getBars(fx_barsDatas, '分销事业部销售达成', 'barsFX');
+            //getBars(dkh_barsDatas, '大客户事业部销售达成', 'barsDKH');
+
         }
 
         // 配置：中国地图
@@ -792,7 +862,10 @@ window.addEventListener('DOMContentLoaded', function() {
                 var isYear = '0';
                 if ($("#planTypeSelect").val() == 'month') {
                     isYear = '0';
-                    link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(params.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val();
+                    link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(params.name) 
+                    + "&modelName=" + encodeURIComponent($("#modelName").text())
+                    + "&filter_userId=" + loginName 
+                    + '&encoder=' + encoder + '&date='+ $("#selDay").val();
                     window.location.href = link;
                 } else if ($("#planTypeSelect").val() == 'year') {
                     isYear = '1';
@@ -1559,8 +1632,12 @@ window.addEventListener('DOMContentLoaded', function() {
                 } else if ($("#planTypeSelect").val() == 'year') {
                     isYear = '1';
                 }
-                if('大客户业务部'!=params.name && isYear!='1') {
-                    var link = '/ptDataShow/salesPlan/salesOverview?type=02&bizUnitName=' + encodeURIComponent(params.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                // if('大客户业务部'!=titleText && isYear!='1') {
+                if(isYear!='1') {
+                    var link = '/ptDataShow/salesPlan/salesOverview?type=02&bizUnitName=' + encodeURIComponent(titleText) + "&filter_userId=" + loginName 
+                    + '&encoder=' + encoder
+                    + "&modelName=" + encodeURIComponent($("#modelName").text())
+                    + '&date='+ $("#selDay").val() + "&drill=bizUnit";
                     window.location.href = link;
                 }
             });
