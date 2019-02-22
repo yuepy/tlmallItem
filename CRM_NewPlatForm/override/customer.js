@@ -1,3 +1,4 @@
+debugger
 /******/ (function(modules) { // webpackBootstrap
     /******/ 	// The module cache
     /******/ 	var installedModules = {};
@@ -62,17 +63,6 @@
                 $(e).siblings(".content").height(table_minHeight).css("overflow", "hidden");
                 $(e).find("span").text("展开");
             }
-        };
-
-        // 方法：数字千分位转换
-        function toQfw(num) {
-            var str_num = num.toString();
-            var result = "";
-            while (str_num.length > 3) {
-                result = "," + str_num.slice(-3) + result;
-                str_num = str_num.slice(0, str_num.length - 3);
-            }
-            return str_num + result;
         };
 
         // 获取地图数据最大值
@@ -287,6 +277,9 @@
 
         function init() {
 
+        	//导出明细数据
+            //exportDetailDatas();
+        	
             // 年计划或月计划
             var isYear = '0';
             if ($("#planTypeSelect").val() == 'month') {
@@ -318,7 +311,8 @@
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                  + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
                  + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill
-                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)+ "&modelName=" + encodeURIComponent(modelName),
+                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)
+                 + "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     console.log(response);
@@ -340,21 +334,21 @@
                         $("#clientTable").empty();
                         $("#storeTable").empty();
 
-                        if(response.rank.value){
+                        if(response.rank){
 
                             // 销售人员排行
-                            $("#branchName").text(response.rank.branchName);
-                            $("#officeName").text(response.rank.value.officeName);
-                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
+//                            $("#branchName").text(response.rank.branchName);
+//                            $("#officeName").text(response.rank.value.officeName);
+//                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
 
                             //数据中的达成率添加%
                             response = addPercentSigns(response);
 
                             //销量达成排名悬浮窗
-                            $("#rankQty").html(suspBySalesCountReach(response.rank));
+//                            $("#rankQty").html(suspBySalesCountReach(response.rank));
 
                             //销售额达成排名悬浮窗
-                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
+//                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
 
                             // TODO 获取经纬度
                             // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
@@ -398,15 +392,15 @@
                             if(response.bizUnits) {
                                 var bizUnits = response.bizUnits;
                                 for (var k = 0; k < bizUnits.length; k++) {
-                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
-                                    var deptSalesCountReachRankA;
-                                    var deptSalesAmountReachRankA;
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额(万)", value: bizUnits[k].targetAmt }, { name: "销售额达成(万)", value: bizUnits[k].reachAmt }];
+                                    var deptSalesCountReachRankA="";
+                                    var deptSalesAmountReachRankA="";
                                     for(var i in response.ranks){
-                                        if(response.ranks[i].value.department == bizUnits[k].name){
-                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
-                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
-                                            break;
-                                        }
+//                                        if(response.ranks[i].value.department == bizUnits[k].name){
+//                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
+//                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
+//                                            break;
+//                                        }
                                     }
                                     var salesRank = '<ul class="sales-rank"><li><span>'+bizUnits[k].name+'</span></li><li><span>销量达成</span>'+deptSalesCountReachRankA+'</li><li><span>销售额达成</span>'+deptSalesAmountReachRankA+'</li></ul>';
                                     // 图表HTML
@@ -423,7 +417,8 @@
                                             link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
                                                 + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
                                                 + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
-                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())+ "&modelName=" + encodeURIComponent($("#modelName").text());
+                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                                + "&modelName=" + encodeURIComponent($("#modelName").text());
                                         }
                                         tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                             + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
@@ -458,7 +453,7 @@
                                     // $("#projectRankPlaceHolder").before(rankHtml);
                                     $("#projectRankPlaceHolder").before(barHtml);
 
-                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额(万)", value: rank.value.targetAmt }, { name: "销售额达成(万)", value: rank.value.reachAmt }];
                                     getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
                                 }
                             }
@@ -519,7 +514,30 @@
                             data: response.monthReachAmtRates
                         }];
                         getBarLines(barLineDatas, "barLines");
-
+                        //导出
+                        var monthReachQtys = response.monthReachQtys;
+                    	var monthReachAmts = response.monthReachAmts;
+                    	var monthReachQtyRates = response.monthReachQtyRates;
+                    	var monthReachAmtRates = response.monthReachAmtRates;
+                        $("#barLines_export").unbind("click").click(function(){
+                        	var columns = [{"display":"月别","name":"month"},
+                        	               {"display":"销量达成(万)","name":"qty"},
+                        	               {"display":"销售额达成(千万)","name":"amt"},
+                        	               {"display":"销量达成率","name":"qtyRate"},
+                        	               {"display":"销售额达成率","name":"amtRate"}];
+            				var exportList = [];
+            				for(var i=0;i<monthReachQtys.length;i++){
+            					var tObj = {};
+            					tObj.month = "\t"+monthReachQtys[i].time+"\t";
+            					tObj.qty = monthReachQtys[i].value;
+            					tObj.amt = monthReachAmts[i].value;
+            					tObj.qtyRate = monthReachQtyRates[i].value+"%";
+            					tObj.amtRate = monthReachAmtRates[i].value+"%";
+            					exportList.push(tObj);
+            				}
+            				downExcel(columns,exportList,"销售达成月度趋势");
+                        })
+                        
                         // 周别
                         var LineDatas = [{
                             name: '销量达成(万)',
@@ -529,6 +547,21 @@
                             data: response.weekAmts
                         }];
                         getLines(LineDatas, "lines");
+                        //导出
+                        var weekQtys = response.weekQtys;
+                    	var weekAmts = response.weekAmts;
+                        $("#lines_export").unbind("click").click(function(){
+                        	var columns = [{"display":"周期","name":"week"},{"display":"销量达成(万)","name":"qty"},{"display":"销售额达成(千万)","name":"amt"}];
+            				var exportList = [];
+            				for(var i=0;i<weekQtys.length;i++){
+            					var tObj = {};
+            					tObj.week = weekQtys[i].time;
+            					tObj.qty = weekQtys[i].value;
+            					tObj.amt = weekAmts[i].value;;
+            					exportList.push(tObj);
+            				}
+            				downExcel(columns,exportList,"销售达成周别趋势");
+                        })
 
                     }
                     tableDrag("bizUnit0");
@@ -588,8 +621,12 @@
             getBars(sx_barsDatas, '三星事业部', 'barsSX');
             getBars(fx_barsDatas, '分销事业部', 'barsFX');*/
         }
-      	 window.timeInit = function() {
-           // 年计划或月计划
+      window.timeInit = function() {
+
+        	//导出明细数据
+          //  exportDetailDatas();
+        	
+            // 年计划或月计划
             var isYear = '0';
             if ($("#planTypeSelect").val() == 'month') {
                 isYear = '0';
@@ -620,7 +657,8 @@
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                  + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
                  + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill
-                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)+ "&modelName=" + encodeURIComponent(modelName),
+                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)
+                 + "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     console.log(response);
@@ -642,21 +680,21 @@
                         $("#clientTable").empty();
                         $("#storeTable").empty();
 
-                        if(response.rank.value){
+                        if(response.rank){
 
                             // 销售人员排行
-                            $("#branchName").text(response.rank.branchName);
-                            $("#officeName").text(response.rank.value.officeName);
-                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
+//                            $("#branchName").text(response.rank.branchName);
+//                            $("#officeName").text(response.rank.value.officeName);
+//                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
 
                             //数据中的达成率添加%
                             response = addPercentSigns(response);
 
                             //销量达成排名悬浮窗
-                            $("#rankQty").html(suspBySalesCountReach(response.rank));
+//                            $("#rankQty").html(suspBySalesCountReach(response.rank));
 
                             //销售额达成排名悬浮窗
-                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
+//                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
 
                             // TODO 获取经纬度
                             // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
@@ -700,15 +738,15 @@
                             if(response.bizUnits) {
                                 var bizUnits = response.bizUnits;
                                 for (var k = 0; k < bizUnits.length; k++) {
-                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
-                                    var deptSalesCountReachRankA;
-                                    var deptSalesAmountReachRankA;
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额(万)", value: bizUnits[k].targetAmt }, { name: "销售额达成(万)", value: bizUnits[k].reachAmt }];
+                                    var deptSalesCountReachRankA="";
+                                    var deptSalesAmountReachRankA="";
                                     for(var i in response.ranks){
-                                        if(response.ranks[i].value.department == bizUnits[k].name){
-                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
-                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
-                                            break;
-                                        }
+//                                        if(response.ranks[i].value.department == bizUnits[k].name){
+//                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
+//                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
+//                                            break;
+//                                        }
                                     }
                                     var salesRank = '<ul class="sales-rank"><li><span>'+bizUnits[k].name+'</span></li><li><span>销量达成</span>'+deptSalesCountReachRankA+'</li><li><span>销售额达成</span>'+deptSalesAmountReachRankA+'</li></ul>';
                                     // 图表HTML
@@ -725,7 +763,8 @@
                                             link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
                                                 + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
                                                 + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
-                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())+ "&modelName=" + encodeURIComponent($("#modelName").text());
+                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                                + "&modelName=" + encodeURIComponent($("#modelName").text());
                                         }
                                         tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                             + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
@@ -760,7 +799,7 @@
                                     // $("#projectRankPlaceHolder").before(rankHtml);
                                     $("#projectRankPlaceHolder").before(barHtml);
 
-                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额(万)", value: rank.value.targetAmt }, { name: "销售额达成(万)", value: rank.value.reachAmt }];
                                     getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
                                 }
                             }
@@ -821,7 +860,30 @@
                             data: response.monthReachAmtRates
                         }];
                         getBarLines(barLineDatas, "barLines");
-
+                        //导出
+                        var monthReachQtys = response.monthReachQtys;
+                    	var monthReachAmts = response.monthReachAmts;
+                    	var monthReachQtyRates = response.monthReachQtyRates;
+                    	var monthReachAmtRates = response.monthReachAmtRates;
+                        $("#barLines_export").unbind("click").click(function(){
+                        	var columns = [{"display":"月别","name":"month"},
+                        	               {"display":"销量达成(万)","name":"qty"},
+                        	               {"display":"销售额达成(千万)","name":"amt"},
+                        	               {"display":"销量达成率","name":"qtyRate"},
+                        	               {"display":"销售额达成率","name":"amtRate"}];
+            				var exportList = [];
+            				for(var i=0;i<monthReachQtys.length;i++){
+            					var tObj = {};
+            					tObj.month = "\t"+monthReachQtys[i].time+"\t";
+            					tObj.qty = monthReachQtys[i].value;
+            					tObj.amt = monthReachAmts[i].value;
+            					tObj.qtyRate = monthReachQtyRates[i].value+"%";
+            					tObj.amtRate = monthReachAmtRates[i].value+"%";
+            					exportList.push(tObj);
+            				}
+            				downExcel(columns,exportList,"销售达成月度趋势");
+                        })
+                        
                         // 周别
                         var LineDatas = [{
                             name: '销量达成(万)',
@@ -831,6 +893,21 @@
                             data: response.weekAmts
                         }];
                         getLines(LineDatas, "lines");
+                        //导出
+                        var weekQtys = response.weekQtys;
+                    	var weekAmts = response.weekAmts;
+                        $("#lines_export").unbind("click").click(function(){
+                        	var columns = [{"display":"周期","name":"week"},{"display":"销量达成(万)","name":"qty"},{"display":"销售额达成(千万)","name":"amt"}];
+            				var exportList = [];
+            				for(var i=0;i<weekQtys.length;i++){
+            					var tObj = {};
+            					tObj.week = weekQtys[i].time;
+            					tObj.qty = weekQtys[i].value;
+            					tObj.amt = weekAmts[i].value;;
+            					exportList.push(tObj);
+            				}
+            				downExcel(columns,exportList,"销售达成周别趋势");
+                        })
 
                     }
                     tableDrag("bizUnit0");
@@ -854,7 +931,42 @@
                     console.log("Error:获取后台数据失败！");
                 }
             });
-         }
+
+            // data:销售达成月度趋势图
+/*            var barLineDatas = [{
+                name: '销量达成(万)',
+                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+            }, {
+                name: '销售额达成(千万)',
+                data: [{ time: '2017-2', value: 62 }, { time: '2017-3', value: 56 }, { time: '2017-4', value: 76 }, { time: '2017-5', value: 68 }, { time: '2017-6', value: 98 }, { time: '2017-7', value: 94 }]
+            }, {
+                name: '销量达成率',
+                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+            }, {
+                name: '销售额达成率',
+                data: [{ time: '2017-2', value: 12 }, { time: '2017-3', value: 16 }, { time: '2017-4', value: 26 }, { time: '2017-5', value: 48 }, { time: '2017-6', value: 38 }, { time: '2017-7', value: 24 }]
+            }];
+            getBarLines(barLineDatas, "barLines");*/
+
+            // data:销售达成月度趋势图
+/*            var LineDatas = [{
+                name: '销量(万)',
+                data: [{ time: '近8周', value: 46 }, { time: '近7周', value: 86 }, { time: '近6周', value: 78 }, { time: '近5周', value: 88 }, { time: '近4周', value: 84 }, { time: '近3周', value: 52 }, { time: '近2周', value: 12 }, { time: '近1周', value: 44 }]
+            }, {
+                name: '销售额(千万)',
+                data: [{ time: '近8周', value: 12 }, { time: '近7周', value: 16 }, { time: '近6周', value: 26 }, { time: '近5周', value: 38 }, { time: '近4周', value: 84 }, { time: '近3周', value: 24 }, { time: '近2周', value: 90 }, { time: '近1周', value: 44 }]
+            }];
+            getLines(LineDatas, "lines");*/
+
+            // data:业务维度数据
+/*            var hw_barsDatas = [{ name: "目标销量", value: 600 }, { name: "销量达成", value: 600 }, { name: "目标销售额", value: 300 }, { name: "销售额达成", value: 200 }];
+            var sx_barsDatas = [{ name: "目标销量", value: 400 }, { name: "销量达成", value: 250 }, { name: "目标销售额", value: 200 }, { name: "销售额达成", value: 100 }];
+            var fx_barsDatas = [{ name: "目标销量", value: 350 }, { name: "销量达成", value: 200 }, { name: "目标销售额", value: 150 }, { name: "销售额达成", value: 90 }];
+            var dkh_barsDatas = [{ name: "目标销量", value: 700 }, { name: "销量达成", value: 550 }, { name: "目标销售额", value: 350 }, { name: "销售额达成", value: 200 }];
+            getBars(hw_barsDatas, '华为业务群', 'barsHW');
+            getBars(sx_barsDatas, '三星事业部', 'barsSX');
+            getBars(fx_barsDatas, '分销事业部', 'barsFX');*/
+        }
 
         //销量达成率排名悬浮窗
         function suspBySalesCountReach(rank) {
@@ -949,6 +1061,7 @@
 
         // 配置：百度地图
         function getBDMap(mapName, datas, Id) {
+
 						document.getElementById("map").setAttribute('option',JSON.stringify(datas));
             document.getElementById("map").setAttribute('optionName',mapName);
             var BDmap = new BMap.Map(Id, {
@@ -1370,7 +1483,7 @@
                 }]
             };
 
-            //chart.setOption(option);
+            // chart.setOption(option);
           document.getElementById("lines").setAttribute('option',JSON.stringify(option))
         	chart.resize({
         		width:$(".timeDimen .r-chart").width(),
@@ -1705,7 +1818,7 @@
 
                 }]
             };
-            //chart.setOption(option);
+            // chart.setOption(option);
 						if("bizUnit0" == Id){
             	document.getElementById("bizUnit0").setAttribute('datas',JSON.stringify(datas));//zyt
             	document.getElementById("bizUnit0").setAttribute('titleText',titleText);
@@ -1770,6 +1883,74 @@
                document.getElementById("bizUnit20").setAttribute('datas',JSON.stringify(datas));//zyt
                document.getElementById("bizUnit20").setAttribute('titleText',titleText);      
             }
+          
+          
+          
+						if("project-0" == Id){
+            	document.getElementById("project-0").setAttribute('datas',JSON.stringify(datas));//zyt
+            	document.getElementById("project-0").setAttribute('titleText',titleText);
+            }else if("project-1" == Id){
+               document.getElementById("project-1").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-1").setAttribute('titleText',titleText);
+            }else if("project-2" == Id){
+               document.getElementById("project-2").setAttribute('datas',JSON.stringify(datas));//zyt
+              document.getElementById("project-2").setAttribute('titleText',titleText);
+            }else if("project-3" == Id){
+              document.getElementById("project-3").setAttribute('datas',JSON.stringify(datas));
+              document.getElementById("project-3").setAttribute('titleText',titleText)
+            }else if("project-4" == Id){
+               document.getElementById("project-4").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-4").setAttribute('titleText',titleText);
+            }else if("project-5" == Id){
+               document.getElementById("project-5").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-5").setAttribute('titleText',titleText);
+            }else if("project-6" == Id){
+               document.getElementById("project-6").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-6").setAttribute('titleText',titleText);      
+            }else if("project-7" == Id){
+               document.getElementById("project-7").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-7").setAttribute('titleText',titleText);
+            }else if("project-8" == Id){
+               document.getElementById("project-8").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-8").setAttribute('titleText',titleText);
+            }else if("project-9" == Id){
+               document.getElementById("project-9").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-9").setAttribute('titleText',titleText);      
+            }else if("project-10" == Id){
+               document.getElementById("project-10").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-10").setAttribute('titleText',titleText);
+            }else if("project-11" == Id){
+               document.getElementById("project-11").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-11").setAttribute('titleText',titleText);
+            }else if("project-12" == Id){
+               document.getElementById("project-12").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-12").setAttribute('titleText',titleText);      
+            }else if("project-13" == Id){
+               document.getElementById("project-13").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-13").setAttribute('titleText',titleText);
+            }else if("project-14" == Id){
+               document.getElementById("project-14").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-14").setAttribute('titleText',titleText);
+            }else if("project-15" == Id){
+               document.getElementById("project-15").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-15").setAttribute('titleText',titleText);      
+            }else if("project-16" == Id){
+               document.getElementById("project-16").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-16").setAttribute('titleText',titleText);
+            }else if("project-17" == Id){
+               document.getElementById("project-17").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-17").setAttribute('titleText',titleText);
+            }else if("project-18" == Id){
+               document.getElementById("project-18").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-18").setAttribute('titleText',titleText);      
+            }else if("project-19" == Id){
+               document.getElementById("project-19").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-19").setAttribute('titleText',titleText);
+            }else if("project-20" == Id){
+               document.getElementById("project-20").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-20").setAttribute('titleText',titleText);      
+            }
+
             chart.on('click', function(params) {
                 var loginName = $("#loginName").text();
                 var encoder = $("#encoder").text();
@@ -1784,12 +1965,16 @@
                     var link = "";
                     if(Id.indexOf("bizUnit") != -1){
                         link = '/ptDataShow/salesPlan/salesOverview?type=08&bizUnitName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
-                            + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&salerName=" + encodeURIComponent($("#salerName").text())
+                            + "&officeName=" + encodeURIComponent($("#officeName").text())
+                            + "&modelName=" + encodeURIComponent($("#modelName").text())
+                            + "&salerName=" + encodeURIComponent($("#salerName").text())
                             + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit"
                             + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text());;
                     }else if(Id.indexOf("project") != -1){
                         link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
-                            + "&officeName=" + encodeURIComponent($("#officeName").text()) + "&salerName=" + encodeURIComponent($("#salerName").text())
+                            + "&officeName=" + encodeURIComponent($("#officeName").text()) 
+                            + "&modelName=" + encodeURIComponent($("#modelName").text()) 
+                            + "&salerName=" + encodeURIComponent($("#salerName").text())
                             + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
                             + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text());;
                     }

@@ -516,7 +516,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
-                                var html = '<tr><td><a href="#" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+                                + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                                + "&officeName=" + encodeURIComponent(officeName)
+                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneCust"
+								+ "&custName=" + encodeURIComponent(client.name);
+                                var html = '<tr><td><a href="'+link+'" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
                                     + toThousands(client.targetAmt) + '</td><td>' + toThousands(client.reachAmt) + '</td><td>' + client.reachAmtRate + '%</td></tr>';
                                 $("#clientTable").append(html);
                             }
@@ -527,7 +532,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
-                                var html = '<tr><td><a href="#" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+                                + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                                + "&officeName=" + encodeURIComponent(officeName) 
+                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneStore"
+								+ "&storeName=" + encodeURIComponent(store.name);
+                                var html = '<tr><td><a href="'+link+'" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
                                     + toThousands(store.targetAmt) + '</td><td>' + toThousands(store.reachAmt) + '</td><td>' + store.reachAmtRate + '%</td></tr>';
                                 $("#storeTable").append(html);
                             }
@@ -637,7 +647,8 @@ window.addEventListener('DOMContentLoaded', function() {
       
       
       window.timeInit = function() {
-					// 年计划或月计划
+
+            // 年计划或月计划
             var isYear = '0';
             if ($("#planTypeSelect").val() == 'month') {
                 isYear = '0';
@@ -824,7 +835,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
-                                var html = '<tr><td><a href="#" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+                                + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                                + "&officeName=" + encodeURIComponent(officeName)
+                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneCust"
+								+ "&custName=" + encodeURIComponent(client.name);
+                                var html = '<tr><td><a href="'+link+'" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
                                     + toThousands(client.targetAmt) + '</td><td>' + toThousands(client.reachAmt) + '</td><td>' + client.reachAmtRate + '%</td></tr>';
                                 $("#clientTable").append(html);
                             }
@@ -835,7 +851,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
-                                var html = '<tr><td><a href="#" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
+                                + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
+                                + "&officeName=" + encodeURIComponent(officeName) 
+                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneStore"
+								+ "&storeName=" + encodeURIComponent(store.name);
+                                var html = '<tr><td><a href="'+link+'" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
                                     + toThousands(store.targetAmt) + '</td><td>' + toThousands(store.reachAmt) + '</td><td>' + store.reachAmtRate + '%</td></tr>';
                                 $("#storeTable").append(html);
                             }
@@ -898,6 +919,49 @@ window.addEventListener('DOMContentLoaded', function() {
                     console.log("Error:获取后台数据失败！");
                 }
             });
+
+            // data:地图数据(value:销量数据，sum:销售额数据)
+           // var mapDatas = [{ name: "朝阳市", value: 31100, sum: 3432, company: "朝阳办事处" }, { name: "铁岭市", value: 200, sum: 3414, company: "铁岭办事处" }, { name: "锦州市", value: 300, sum: 1432, company: "锦州办事处" }, { name: "本溪市", value: 100, sum: 342, company: "本溪办事处" }];
+
+            // 省份名称
+           // var provinceName = '辽宁省';
+            // 地图初始化
+           // getMap(mapDatas, provinceName, "map");
+
+            // data:销售达成月度趋势图
+/*            var barLineDatas = [{
+                name: '销量达成(万)',
+                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+            }, {
+                name: '销售额达成(千万)',
+                data: [{ time: '2017-2', value: 62 }, { time: '2017-3', value: 56 }, { time: '2017-4', value: 76 }, { time: '2017-5', value: 68 }, { time: '2017-6', value: 98 }, { time: '2017-7', value: 94 }]
+            }, {
+                name: '销量达成率',
+                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+            }, {
+                name: '销售额达成率',
+                data: [{ time: '2017-2', value: 12 }, { time: '2017-3', value: 16 }, { time: '2017-4', value: 26 }, { time: '2017-5', value: 48 }, { time: '2017-6', value: 38 }, { time: '2017-7', value: 24 }]
+            }];*/
+            //getBarLines(barLineDatas, "barLines");
+
+            // data:销售达成月度趋势图
+/*            var LineDatas = [{
+                name: '销量(万)',
+                data: [{ time: '近8周', value: 46 }, { time: '近7周', value: 86 }, { time: '近6周', value: 78 }, { time: '近5周', value: 88 }, { time: '近4周', value: 84 }, { time: '近3周', value: 52 }, { time: '近2周', value: 12 }, { time: '近1周', value: 44 }]
+            }, {
+                name: '销售额(千万)',
+                data: [{ time: '近8周', value: 12 }, { time: '近7周', value: 16 }, { time: '近6周', value: 26 }, { time: '近5周', value: 38 }, { time: '近4周', value: 84 }, { time: '近3周', value: 24 }, { time: '近2周', value: 90 }, { time: '近1周', value: 44 }]
+            }];*/
+            //getLines(LineDatas, "lines");
+
+            // data:业务维度数据
+            //var hw_barsDatas = [{ name: "目标销量", value: 600 }, { name: "销量达成", value: 600 }, { name: "目标销售额", value: 300 }, { name: "销售额达成", value: 200 }];
+            //var sx_barsDatas = [{ name: "目标销量", value: 400 }, { name: "销量达成", value: 250 }, { name: "目标销售额", value: 200 }, { name: "销售额达成", value: 100 }];
+            //var fx_barsDatas = [{ name: "目标销量", value: 350 }, { name: "销量达成", value: 200 }, { name: "目标销售额", value: 150 }, { name: "销售额达成", value: 90 }];
+            //var dkh_barsDatas = [{ name: "目标销量", value: 700 }, { name: "销量达成", value: 550 }, { name: "目标销售额", value: 350 }, { name: "销售额达成", value: 200 }];
+            //getBars(hw_barsDatas, '华为业务群', 'barsHW');
+            //getBars(sx_barsDatas, '三星事业部', 'barsSX');
+            //getBars(fx_barsDatas, '分销事业部', 'barsFX');
         }
 
         //销量达成率排名悬浮窗

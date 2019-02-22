@@ -482,7 +482,9 @@ window.addEventListener('DOMContentLoaded', function() {
                                 }
                                 var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(sman.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
                                     + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                    + "&officeName=" + encodeURIComponent(officeName) + "&drill=" + drill;
+                                    + "&officeName=" + encodeURIComponent(officeName) 
+                                    + "&modelName=" +  encodeURIComponent($("#modelName").text()) 
+                                    + "&drill=" + drill;
                                 var html = '<tr><td><a href="'+link+'" title="' + sman.name + '">' + sman.name + '</a></td><td>' + toThousands(sman.targetQty) + '</td><td>' + toThousands(sman.reachQty) + '</td><td>' + sman.reachQtyRate + '%</td><td>'
                                     + toThousands(sman.targetAmt) + '</td><td>' + toThousands(sman.reachAmt) + '</td><td>' + sman.reachAmtRate + '%</td></tr>';
                                 $("#salemanTable").append(html);
@@ -725,7 +727,9 @@ window.addEventListener('DOMContentLoaded', function() {
                                 }
                                 var link = '/ptDataShow/salesPlan/salesOverview?type=07&salerName=' + encodeURIComponent(sman.id) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
                                     + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                    + "&officeName=" + encodeURIComponent(officeName) + "&drill=" + drill;
+                                    + "&officeName=" + encodeURIComponent(officeName) 
+                                    + "&modelName=" +  encodeURIComponent($("#modelName").text()) 
+                                    + "&drill=" + drill;
                                 var html = '<tr><td><a href="'+link+'" title="' + sman.name + '">' + sman.name + '</a></td><td>' + toThousands(sman.targetQty) + '</td><td>' + toThousands(sman.reachQty) + '</td><td>' + sman.reachQtyRate + '%</td><td>'
                                     + toThousands(sman.targetAmt) + '</td><td>' + toThousands(sman.reachAmt) + '</td><td>' + sman.reachAmtRate + '%</td></tr>';
                                 $("#salemanTable").append(html);
@@ -1785,7 +1789,10 @@ window.addEventListener('DOMContentLoaded', function() {
                     if(!drill){
                         drill = "moreProject";
                     }
-                    var link = '/ptDataShow/salesPlan/salesOverview?type=05&projectName=' + encodeURIComponent(params.name) + "&branchName=" + encodeURIComponent($("#branchName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=" + drill;
+                    var link = '/ptDataShow/salesPlan/salesOverview?type=05&projectName=' + encodeURIComponent(titleText) 
+                    + "&branchName=" + encodeURIComponent($("#branchName").text()) 
+                    + "&modelName=" +  encodeURIComponent($("#modelName").text())
+                    + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
                     window.location.href = link;
                 }
             });
