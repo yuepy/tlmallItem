@@ -355,12 +355,16 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var modelName = $("#modelName").text();
             var drill = $("#drill").text();
 
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
+                + "&officeName=" + encodeURIComponent(officeName) 
+                + "&salerName=" + encodeURIComponent(salerName) 
+                + "&modelName=" + encodeURIComponent(modelName) 
+                + "&drill=" + drill,
                 async: false,
                 success: function (response) {
                     // console.log(response);
@@ -405,7 +409,11 @@ window.addEventListener('DOMContentLoaded', function() {
                                     var project = response.projectName[i];
                                     var link = '#';
                                     if(isYear!='1') {
-                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName='
+                                        + encodeURIComponent(project.name) 
+                                        + '&bizUnitName=' + encodeURIComponent(bizUnitName) 
+                                        + '&modelName=' + encodeURIComponent(modelName) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
                                     }
                                     var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + toThousands(project.targetQty) + '</td><td>' + toThousands(project.reachQty) + '</td><td>' + project.reachQtyRate + '%</td><td>'
                                         + toThousands(project.targetAmt) + '</td><td>' + toThousands(project.reachAmt) + '</td><td>' + project.reachAmtRate + '%</td></tr>';
@@ -420,7 +428,10 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(projectName) 
+                                + '&modelName=' + encodeURIComponent(model.name)
+                                + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
+                                var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
                             }
@@ -434,7 +445,11 @@ window.addEventListener('DOMContentLoaded', function() {
                                 var branchName = branch.name.substring(11);
                                 var link = '#';
                                 if(isYear!='1') {
-                                    link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) + '&branchName=' + encodeURIComponent(branch.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                                    link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) 
+                                    + '&branchName=' + encodeURIComponent(branch.name) 
+                                    + '&modelName=' + encodeURIComponent(modelName) 
+                                    + "&filter_userId=" + loginName + '&encoder=' 
+                                    + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
                                 }
                                 var html = '<tr><td><a href="'+ link+'" title="' + branchName + '">' + branchName + '</a></td><td>' + toThousands(branch.targetQty) + '</td><td>' + toThousands(branch.reachQty) + '</td><td>' + branch.reachQtyRate + '%</td><td>'
                                     + toThousands(branch.targetAmt) + '</td><td>' + toThousands(branch.reachAmt) + '</td><td>' + branch.reachAmtRate + '%</td></tr>';
@@ -526,7 +541,7 @@ window.addEventListener('DOMContentLoaded', function() {
            // getBars(hw_barsDatas, '华为业务群', 'barsHW');
         }
       
-      window.timeInit = function() {
+      window.timeInit = function(){
 
             // 年计划或月计划
             var isYear = '0';
@@ -551,12 +566,16 @@ window.addEventListener('DOMContentLoaded', function() {
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var modelName = $("#modelName").text();
             var drill = $("#drill").text();
 
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                 + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill,
+                + "&officeName=" + encodeURIComponent(officeName) 
+                + "&salerName=" + encodeURIComponent(salerName) 
+                + "&modelName=" + encodeURIComponent(modelName) 
+                + "&drill=" + drill,
                 async: false,
                 success: function (response) {
                     // console.log(response);
@@ -601,7 +620,11 @@ window.addEventListener('DOMContentLoaded', function() {
                                     var project = response.projectName[i];
                                     var link = '#';
                                     if(isYear!='1') {
-                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName='
+                                        + encodeURIComponent(project.name) 
+                                        + '&bizUnitName=' + encodeURIComponent(bizUnitName) 
+                                        + '&modelName=' + encodeURIComponent(modelName) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
                                     }
                                     var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + toThousands(project.targetQty) + '</td><td>' + toThousands(project.reachQty) + '</td><td>' + project.reachQtyRate + '%</td><td>'
                                         + toThousands(project.targetAmt) + '</td><td>' + toThousands(project.reachAmt) + '</td><td>' + project.reachAmtRate + '%</td></tr>';
@@ -616,7 +639,10 @@ window.addEventListener('DOMContentLoaded', function() {
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                var html = '<tr><td><a href="#" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(projectName) 
+                                + '&modelName=' + encodeURIComponent(model.name)
+                                + '&bizUnitName=' + encodeURIComponent(bizUnitName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
+                                var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
                             }
@@ -630,7 +656,11 @@ window.addEventListener('DOMContentLoaded', function() {
                                 var branchName = branch.name.substring(11);
                                 var link = '#';
                                 if(isYear!='1') {
-                                    link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) + '&branchName=' + encodeURIComponent(branch.name) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                                    link = '/ptDataShow/salesPlan/salesOverview?type=04&bizUnitName='+ encodeURIComponent(bizUnitName) 
+                                    + '&branchName=' + encodeURIComponent(branch.name) 
+                                    + '&modelName=' + encodeURIComponent(modelName) 
+                                    + "&filter_userId=" + loginName + '&encoder=' 
+                                    + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
                                 }
                                 var html = '<tr><td><a href="'+ link+'" title="' + branchName + '">' + branchName + '</a></td><td>' + toThousands(branch.targetQty) + '</td><td>' + toThousands(branch.reachQty) + '</td><td>' + branch.reachQtyRate + '%</td><td>'
                                     + toThousands(branch.targetAmt) + '</td><td>' + toThousands(branch.reachAmt) + '</td><td>' + branch.reachAmtRate + '%</td></tr>';
@@ -679,6 +709,47 @@ window.addEventListener('DOMContentLoaded', function() {
                     console.log("Error:获取后台数据失败！");
                 }
             });
+
+
+            // data:地图数据(value:销量数据，sum:销售额数据)
+            //var mapDatas = [{ name: "北京市", value: 3111400, sum: 34324, company: "北京分公司" }, { name: "山东省", value: 200, sum: 3414, company: "山东分公司" }, { name: "辽宁省", value: 300, sum: 14324, company: "辽宁分公司" }, { name: "广东省", value: 100, sum: 34240, company: "广东分公司" }];
+            // mapTotal：太力总部统计数据
+            //ar mapTotal = [{ name: "销量", value: 890000 }, { name: "销售额", value: 890000 }];
+            // 地图初始化
+            //getMap(mapDatas, mapTotal, "map");
+
+            // data:销售达成月度趋势图
+/*            var barLineDatas = [{
+                name: '销量达成(万)',
+                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+            }, {
+                name: '销售额达成(千万)',
+                data: [{ time: '2017-2', value: 62 }, { time: '2017-3', value: 56 }, { time: '2017-4', value: 76 }, { time: '2017-5', value: 68 }, { time: '2017-6', value: 98 }, { time: '2017-7', value: 94 }]
+            }, {
+                name: '销量达成率',
+                data: [{ time: '2017-2', value: 52 }, { time: '2017-3', value: 46 }, { time: '2017-4', value: 86 }, { time: '2017-5', value: 78 }, { time: '2017-6', value: 88 }, { time: '2017-7', value: 84 }]
+            }, {
+                name: '销售额达成率',
+                data: [{ time: '2017-2', value: 12 }, { time: '2017-3', value: 16 }, { time: '2017-4', value: 26 }, { time: '2017-5', value: 48 }, { time: '2017-6', value: 38 }, { time: '2017-7', value: 24 }]
+            }];
+            getBarLines(barLineDatas, "barLines");*/
+
+            // data:销售达成月度趋势图
+/*            var LineDatas = [{
+                name: '销量(万)',
+                data: [{ time: '近8周', value: 46 }, { time: '近7周', value: 86 }, { time: '近6周', value: 78 }, { time: '近5周', value: 88 }, { time: '近4周', value: 84 }, { time: '近3周', value: 52 }, { time: '近2周', value: 12 }, { time: '近1周', value: 44 }]
+            }, {
+                name: '销售额(千万)',
+                data: [{ time: '近8周', value: 12 }, { time: '近7周', value: 16 }, { time: '近6周', value: 26 }, { time: '近5周', value: 38 }, { time: '近4周', value: 84 }, { time: '近3周', value: 24 }, { time: '近2周', value: 90 }, { time: '近1周', value: 44 }]
+            }];
+            getLines(LineDatas, "lines");*/
+
+            // data:业务维度数据
+            //var hw_barsDatas = [{ name: "目标销量", value: 417866 }, { name: "销量达成", value: 122701 }, { name: "目标销售额", value: 336784400 }, { name: "销售额达成", value: 133615417 }];
+            //var sx_barsDatas = [{ name: "目标销量", value: 400 }, { name: "销量达成", value: 250 }, { name: "目标销售额", value: 200 }, { name: "销售额达成", value: 100 }];
+            //var fx_barsDatas = [{ name: "目标销量", value: 350 }, { name: "销量达成", value: 200 }, { name: "目标销售额", value: 150 }, { name: "销售额达成", value: 90 }];
+            //var dkh_barsDatas = [{ name: "目标销量", value: 700 }, { name: "销量达成", value: 550 }, { name: "目标销售额", value: 350 }, { name: "销售额达成", value: 200 }];
+           // getBars(hw_barsDatas, '华为业务群', 'barsHW');
         }
 
         // 配置：中国地图
@@ -785,7 +856,10 @@ window.addEventListener('DOMContentLoaded', function() {
                 }
                 var loginName = $("#loginName").text();
                 var encoder = $("#encoder").text();
-                var link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(params.name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").html()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                var link = "/ptDataShow/salesPlan/salesOverview?type=04&branchName=" + encodeURIComponent(params.name) 
+                + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").html()) 
+                + '&modelName=' + encodeURIComponent($("#modelName").html()) 
+                + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
                 if(isYear != '1') {
                     window.location.href = link;
                 }

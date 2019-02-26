@@ -1,3 +1,4 @@
+debugger
 /******/ (function(modules) { // webpackBootstrap
     /******/ 	// The module cache
     /******/ 	var installedModules = {};
@@ -288,7 +289,7 @@
             }
 
             //面包屑导航
-            breadcrumb("销售人员","saler");
+            breadcrumb("客户门店","cust");
 
             // 当前的月份
             var date = $("#selDay").val();
@@ -302,13 +303,16 @@
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var custName = $("#custName").text();
+            var storeName = $("#storeName").text();
             var modelName = $("#modelName").text();
             var drill = $("#drill").text();
-
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                  + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + drill,
+                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill
+                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)
+                 + "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     console.log(response);
@@ -330,21 +334,21 @@
                         $("#clientTable").empty();
                         $("#storeTable").empty();
 
-                        if(response.rank.value){
+                        if(response.rank){
 
                             // 销售人员排行
-                            $("#branchName").text(response.rank.branchName);
-                            $("#officeName").text(response.rank.value.officeName);
-                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
+//                            $("#branchName").text(response.rank.branchName);
+//                            $("#officeName").text(response.rank.value.officeName);
+//                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
 
                             //数据中的达成率添加%
                             response = addPercentSigns(response);
 
                             //销量达成排名悬浮窗
-                            $("#rankQty").html(suspBySalesCountReach(response.rank));
+//                            $("#rankQty").html(suspBySalesCountReach(response.rank));
 
                             //销售额达成排名悬浮窗
-                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
+//                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
 
                             // TODO 获取经纬度
                             // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
@@ -388,15 +392,15 @@
                             if(response.bizUnits) {
                                 var bizUnits = response.bizUnits;
                                 for (var k = 0; k < bizUnits.length; k++) {
-                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额(万)", value: bizUnits[k].targetAmt }, { name: "销售额达成(万)", value: bizUnits[k].reachAmt }];
-                                    var deptSalesCountReachRankA;
-                                    var deptSalesAmountReachRankA;
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
+                                    var deptSalesCountReachRankA="";
+                                    var deptSalesAmountReachRankA="";
                                     for(var i in response.ranks){
-                                        if(response.ranks[i].value.department == bizUnits[k].name){
-                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
-                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
-                                            break;
-                                        }
+//                                        if(response.ranks[i].value.department == bizUnits[k].name){
+//                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
+//                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
+//                                            break;
+//                                        }
                                     }
                                     var salesRank = '<ul class="sales-rank"><li><span>'+bizUnits[k].name+'</span></li><li><span>销量达成</span>'+deptSalesCountReachRankA+'</li><li><span>销售额达成</span>'+deptSalesAmountReachRankA+'</li></ul>';
                                     // 图表HTML
@@ -410,10 +414,11 @@
                                     for(var j =0; j< projects.length ;j++) {
                                         var link = '#';
                                         if(isYear!='1') {
-                                            link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text()) 
-                                                + "&modelName=" + encodeURIComponent($("#modelName").text())
-                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                            link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
+                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
+                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                                + "&modelName=" + encodeURIComponent($("#modelName").text());
                                         }
                                         tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                             + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
@@ -448,7 +453,7 @@
                                     // $("#projectRankPlaceHolder").before(rankHtml);
                                     $("#projectRankPlaceHolder").before(barHtml);
 
-                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额(万)", value: rank.value.targetAmt }, { name: "销售额达成(万)", value: rank.value.reachAmt }];
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
                                     getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
                                 }
                             }
@@ -459,10 +464,11 @@
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
                                 + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
-                                + "&modelName=" + encodeURIComponent(model.name)
-                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
+                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel"
+                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                + "&modelName=" + encodeURIComponent(model.name);
                                 var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
@@ -474,12 +480,7 @@
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) 
-                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneCust"
-								+ "&custName=" + encodeURIComponent(client.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
                                     + toThousands(client.targetAmt) + '</td><td>' + toThousands(client.reachAmt) + '</td><td>' + client.reachAmtRate + '%</td></tr>';
                                 $("#clientTable").append(html);
                             }
@@ -490,12 +491,7 @@
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) 
-                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneStore"
-								+ "&storeName=" + encodeURIComponent(store.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
                                     + toThousands(store.targetAmt) + '</td><td>' + toThousands(store.reachAmt) + '</td><td>' + store.reachAmtRate + '%</td></tr>';
                                 $("#storeTable").append(html);
                             }
@@ -625,10 +621,10 @@
             getBars(sx_barsDatas, '三星事业部', 'barsSX');
             getBars(fx_barsDatas, '分销事业部', 'barsFX');*/
         }
-      window.timeInit = function ()  {
+      window.timeInit = function() {
 
         	//导出明细数据
-            //exportDetailDatas();
+          //  exportDetailDatas();
         	
             // 年计划或月计划
             var isYear = '0';
@@ -639,7 +635,7 @@
             }
 
             //面包屑导航
-            breadcrumb("销售人员","saler");
+            breadcrumb("客户门店","cust");
 
             // 当前的月份
             var date = $("#selDay").val();
@@ -653,13 +649,16 @@
             var bizUnitName = $("#bizUnitName").text();
             var officeName = $("#officeName").text();
             var salerName = $("#salerName").text();
+            var custName = $("#custName").text();
+            var storeName = $("#storeName").text();
             var modelName = $("#modelName").text();
             var drill = $("#drill").text();
-
             $.ajax({
                 url: "/ptDataShow/salesPlan/salesOverviewData?isYear=" + isYear + "&date=" + date + "&type=" + type + "&filter_userId=" + loginName + '&encoder=' + encoder
                  + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&modelName=" + encodeURIComponent(modelName) + "&drill=" + drill,
+                 + "&officeName=" + encodeURIComponent(officeName) + "&salerName=" + encodeURIComponent(salerName) + "&drill=" + drill
+                 + "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)
+                 + "&modelName=" + encodeURIComponent(modelName),
                 async: false,
                 success: function (response) {
                     console.log(response);
@@ -681,21 +680,21 @@
                         $("#clientTable").empty();
                         $("#storeTable").empty();
 
-                        if(response.rank.value){
+                        if(response.rank){
 
                             // 销售人员排行
-                            $("#branchName").text(response.rank.branchName);
-                            $("#officeName").text(response.rank.value.officeName);
-                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
+//                            $("#branchName").text(response.rank.branchName);
+//                            $("#officeName").text(response.rank.value.officeName);
+//                            $("#rankName").html(response.rank.value.branchName+"—"+response.rank.value.officeName+"—"+response.rank.value.name);
 
                             //数据中的达成率添加%
                             response = addPercentSigns(response);
 
                             //销量达成排名悬浮窗
-                            $("#rankQty").html(suspBySalesCountReach(response.rank));
+//                            $("#rankQty").html(suspBySalesCountReach(response.rank));
 
                             //销售额达成排名悬浮窗
-                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
+//                            $("#rankAmt").html(suspBySalesAmountReach(response.rank));
 
                             // TODO 获取经纬度
                             // 百度地图数据（data:坐标、门店名称、地址、销量、金额）
@@ -739,15 +738,15 @@
                             if(response.bizUnits) {
                                 var bizUnits = response.bizUnits;
                                 for (var k = 0; k < bizUnits.length; k++) {
-                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额(万)", value: bizUnits[k].targetAmt }, { name: "销售额达成(万)", value: bizUnits[k].reachAmt }];
-                                    var deptSalesCountReachRankA;
-                                    var deptSalesAmountReachRankA;
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
+                                    var deptSalesCountReachRankA="";
+                                    var deptSalesAmountReachRankA="";
                                     for(var i in response.ranks){
-                                        if(response.ranks[i].value.department == bizUnits[k].name){
-                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
-                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
-                                            break;
-                                        }
+//                                        if(response.ranks[i].value.department == bizUnits[k].name){
+//                                            deptSalesCountReachRankA = suspByDeptSalesCountReach(response.ranks[i]);
+//                                            deptSalesAmountReachRankA = suspByDeptSalesAmountReach(response.ranks[i]);
+//                                            break;
+//                                        }
                                     }
                                     var salesRank = '<ul class="sales-rank"><li><span>'+bizUnits[k].name+'</span></li><li><span>销量达成</span>'+deptSalesCountReachRankA+'</li><li><span>销售额达成</span>'+deptSalesAmountReachRankA+'</li></ul>';
                                     // 图表HTML
@@ -761,10 +760,11 @@
                                     for(var j =0; j< projects.length ;j++) {
                                         var link = '#';
                                         if(isYear!='1') {
-                                            link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text()) 
-                                                + "&modelName=" + encodeURIComponent($("#modelName").text())
-                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                            link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent(projects[j].name) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                                + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
+                                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
+                                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                                + "&modelName=" + encodeURIComponent($("#modelName").text());
                                         }
                                         tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ link +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                             + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
@@ -799,7 +799,7 @@
                                     // $("#projectRankPlaceHolder").before(rankHtml);
                                     $("#projectRankPlaceHolder").before(barHtml);
 
-                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额(万)", value: rank.value.targetAmt }, { name: "销售额达成(万)", value: rank.value.reachAmt }];
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
                                     getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
                                 }
                             }
@@ -810,10 +810,11 @@
                         if(response.modelName) {
                             for(var i =0; i< response.modelName.length ;i++) {
                                 var model = response.modelName[i];
-                                link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
+                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName='+ encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
                                 + '&branchName=' + encodeURIComponent(branchName) + "&officeName=" + encodeURIComponent($("#officeName").text())
-                                + "&modelName=" + encodeURIComponent(model.name)
-                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel";
+                                + "&salerName=" + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneModel"
+                                + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text())
+                                + "&modelName=" + encodeURIComponent(model.name);
                                 var html = '<tr><td><a href="'+link+'" title="' + model.name + '">' + model.name + '</a></td><td>' + toThousands(model.targetQty) + '</td><td>' + toThousands(model.reachQty) + '</td><td>' + model.reachQtyRate + '%</td><td>'
                                     + toThousands(model.targetAmt) + '</td><td>' + toThousands(model.reachAmt) + '</td><td>' + model.reachAmtRate + '%</td></tr>';
                                 $("#modelTable").append(html);
@@ -825,12 +826,7 @@
                         if(response.customerName) {
                             for(var i =0; i< response.customerName.length ;i++) {
                                 var client = response.customerName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) 
-                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneCust"
-								+ "&custName=" + encodeURIComponent(client.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + client.name + '">' + client.name + '</a></td><td>' + toThousands(client.targetQty) + '</td><td>' + toThousands(client.reachQty) + '</td><td>' + client.reachQtyRate + '%</td><td>'
                                     + toThousands(client.targetAmt) + '</td><td>' + toThousands(client.reachAmt) + '</td><td>' + client.reachAmtRate + '%</td></tr>';
                                 $("#clientTable").append(html);
                             }
@@ -841,12 +837,7 @@
                         if(response.storeName) {
                             for(var i =0; i< response.storeName.length ;i++) {
                                 var store = response.storeName[i];
-                                var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent(salerName) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-                                + "&branchName=" + encodeURIComponent(branchName) + "&projectName=" + encodeURIComponent(projectName) + "&bizUnitName=" + encodeURIComponent(bizUnitName)
-                                + "&officeName=" + encodeURIComponent(officeName) 
-                                + "&modelName=" + encodeURIComponent(modelName) + "&drill=oneStore"
-								+ "&storeName=" + encodeURIComponent(store.name);
-                                var html = '<tr><td><a href="'+link+'" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
+                                var html = '<tr><td><a href="#" title="' + store.name + '">' + store.name + '</a></td><td>' + toThousands(store.targetQty) + '</td><td>' + toThousands(store.reachQty) + '</td><td>' + store.reachQtyRate + '%</td><td>'
                                     + toThousands(store.targetAmt) + '</td><td>' + toThousands(store.reachAmt) + '</td><td>' + store.reachAmtRate + '%</td></tr>';
                                 $("#storeTable").append(html);
                             }
@@ -1070,11 +1061,9 @@
 
         // 配置：百度地图
         function getBDMap(mapName, datas, Id) {
-						console.log(mapName);
-            console.log(datas);
-          	document.getElementById("map").setAttribute('option',JSON.stringify(datas));//zyt
+
+						document.getElementById("map").setAttribute('option',JSON.stringify(datas));
             document.getElementById("map").setAttribute('optionName',mapName);
-          
             var BDmap = new BMap.Map(Id, {
                 enableMapClick: false
             }); // 创建Map实例
@@ -1115,29 +1104,9 @@
 
         // 百度地图信息窗内容
         function inforContent(datas, index) {
-        	if (datas.length > 0){
-        		var type = datas[index].type;
-        		var storeName="";
-        		var custName="";
-        		var drill="";
-        		if (type == "store") {
-        			storeName = datas[index].name;
-        			drill = "oneStore";
-        		}else {
-        			custName = datas[index].name;
-        			drill = "oneCust";
-        		}
-        		var loginName = $("#loginName").text();
-        		var encoder = $("#encoder").text();
-        		var link = '/ptDataShow/salesPlan/salesOverview?type=08&salerName=' + encodeURIComponent($("#salerName").text()) + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val()
-        		+ "&branchName=" + encodeURIComponent($("#branchName").text()) + "&projectName=" + encodeURIComponent($("#projectName").text()) + "&bizUnitName=" + encodeURIComponent($("#bizUnitName").text())
-        		+ "&officeName=" + encodeURIComponent($("#officeName").text()) + "&drill=" + encodeURIComponent(drill)
-        		+ "&custName=" + encodeURIComponent(custName)+ "&storeName=" + encodeURIComponent(storeName)
-        		+ "&modelName=" + encodeURIComponent($("#modelName").text());
-        		var content = '<div class="popup-bd"><div class="box"><h6 class="title" title="' + datas[index].name + '"><a href="' +link + '" style="color:#fff">'  + datas[index].name + '</a></h6><div class="address clearfix"><h6><i class="icon-markads"></i>地址：</h6>' + '<p title="' + datas[index].address + '">' + datas[index].address + '</p></div>' + '<div class="content"><div class="one a"><span>销量：</span><b>' + toQfw(datas[index].salesNums) + '</b></div>' + '<div class="one b"><span>金额：</span><b>' + toQfw(datas[index].sumNums) + '</b>' + '</div></div></div></div>';
-        		
-        		return content;
-        	}
+            var content = '<div class="popup-bd"><div class="box"><h6 class="title" title="' + datas[index].name + '">' + datas[index].name + '</h6><div class="address clearfix"><h6><i class="icon-markads"></i>地址：</h6>' + '<p title="' + datas[index].address + '">' + datas[index].address + '</p></div>' + '<div class="content"><div class="one a"><span>销量：</span><b>' + toQfw(datas[index].salesNums) + '</b></div>' + '<div class="one b"><span>金额：</span><b>' + toQfw(datas[index].sumNums) + '</b>' + '</div></div></div></div>';
+
+            return content;
         }
 
         function addClickHandler(BDmap, content, marker, point) {
@@ -1382,7 +1351,7 @@
             };
 
             //chart.setOption(option);
-          document.getElementById("barLines").setAttribute('option',JSON.stringify(option))//zyt
+          document.getElementById("barLines").setAttribute('option',JSON.stringify(option))
         	chart.resize({
         		width:$(".timeDimen .l-chart").width(),
         		height:$(".timeDimen .l-chart").height()
@@ -1514,8 +1483,8 @@
                 }]
             };
 
-            //chart.setOption(option);
-          document.getElementById("lines").setAttribute('option',JSON.stringify(option))//zyt
+            // chart.setOption(option);
+          document.getElementById("lines").setAttribute('option',JSON.stringify(option))
         	chart.resize({
         		width:$(".timeDimen .r-chart").width(),
         		height:$(".timeDimen .r-chart").height()
@@ -1849,75 +1818,137 @@
 
                 }]
             };
-            //chart.setOption(option);
+            // chart.setOption(option);
 						if("bizUnit0" == Id){
-              document.getElementById("bizUnit0").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit0").setAttribute('titleText',titleText);
+            	document.getElementById("bizUnit0").setAttribute('datas',JSON.stringify(datas));//zyt
+            	document.getElementById("bizUnit0").setAttribute('titleText',titleText);
             }else if("bizUnit1" == Id){
-              document.getElementById("bizUnit1").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit1").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit1").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit1").setAttribute('titleText',titleText);
             }else if("bizUnit2" == Id){
-              document.getElementById("bizUnit2").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit2").setAttribute('datas',JSON.stringify(datas));//zyt
               document.getElementById("bizUnit2").setAttribute('titleText',titleText);
             }else if("bizUnit3" == Id){
               document.getElementById("bizUnit3").setAttribute('datas',JSON.stringify(datas));
               document.getElementById("bizUnit3").setAttribute('titleText',titleText)
             }else if("bizUnit4" == Id){
-              document.getElementById("bizUnit4").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit4").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit4").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit4").setAttribute('titleText',titleText);
             }else if("bizUnit5" == Id){
-              document.getElementById("bizUnit5").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit5").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit5").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit5").setAttribute('titleText',titleText);
             }else if("bizUnit6" == Id){
-              document.getElementById("bizUnit6").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("bizUnit6").setAttribute('titleText',titleText)
+               document.getElementById("bizUnit6").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit6").setAttribute('titleText',titleText);      
             }else if("bizUnit7" == Id){
                document.getElementById("bizUnit7").setAttribute('datas',JSON.stringify(datas));//zyt
                document.getElementById("bizUnit7").setAttribute('titleText',titleText);
             }else if("bizUnit8" == Id){
                document.getElementById("bizUnit8").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("bizUnit8").setAttribute('titleText',titleText);
+               document.getElementById("bizUnit8").setAttribute('titleText',titleText);
             }else if("bizUnit9" == Id){
-              document.getElementById("bizUnit9").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("bizUnit9").setAttribute('titleText',titleText)
+               document.getElementById("bizUnit9").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit9").setAttribute('titleText',titleText);      
             }else if("bizUnit10" == Id){
-              document.getElementById("bizUnit10").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("bizUnit10").setAttribute('titleText',titleText)
+               document.getElementById("bizUnit10").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit10").setAttribute('titleText',titleText);
+            }else if("bizUnit11" == Id){
+               document.getElementById("bizUnit11").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit11").setAttribute('titleText',titleText);
+            }else if("bizUnit12" == Id){
+               document.getElementById("bizUnit12").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit12").setAttribute('titleText',titleText);      
+            }else if("bizUnit13" == Id){
+               document.getElementById("bizUnit13").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit13").setAttribute('titleText',titleText);
+            }else if("bizUnit14" == Id){
+               document.getElementById("bizUnit14").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit14").setAttribute('titleText',titleText);
+            }else if("bizUnit15" == Id){
+               document.getElementById("bizUnit15").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit15").setAttribute('titleText',titleText);      
+            }else if("bizUnit16" == Id){
+               document.getElementById("bizUnit16").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit16").setAttribute('titleText',titleText);
+            }else if("bizUnit17" == Id){
+               document.getElementById("bizUnit17").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit17").setAttribute('titleText',titleText);
+            }else if("bizUnit18" == Id){
+               document.getElementById("bizUnit18").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit18").setAttribute('titleText',titleText);      
+            }else if("bizUnit19" == Id){
+               document.getElementById("bizUnit19").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit19").setAttribute('titleText',titleText);
+            }else if("bizUnit20" == Id){
+               document.getElementById("bizUnit20").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("bizUnit20").setAttribute('titleText',titleText);      
             }
           
-          	if("project-0" == Id){
-              document.getElementById("project-0").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-0").setAttribute('titleText',titleText);
+          
+          
+						if("project-0" == Id){
+            	document.getElementById("project-0").setAttribute('datas',JSON.stringify(datas));//zyt
+            	document.getElementById("project-0").setAttribute('titleText',titleText);
             }else if("project-1" == Id){
-              document.getElementById("project-1").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-1").setAttribute('titleText',titleText);
+               document.getElementById("project-1").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-1").setAttribute('titleText',titleText);
             }else if("project-2" == Id){
-              document.getElementById("project-2").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-2").setAttribute('datas',JSON.stringify(datas));//zyt
               document.getElementById("project-2").setAttribute('titleText',titleText);
             }else if("project-3" == Id){
               document.getElementById("project-3").setAttribute('datas',JSON.stringify(datas));
               document.getElementById("project-3").setAttribute('titleText',titleText)
             }else if("project-4" == Id){
-              document.getElementById("project-4").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-4").setAttribute('titleText',titleText);
+               document.getElementById("project-4").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-4").setAttribute('titleText',titleText);
             }else if("project-5" == Id){
-              document.getElementById("project-5").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-5").setAttribute('titleText',titleText);
+               document.getElementById("project-5").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-5").setAttribute('titleText',titleText);
             }else if("project-6" == Id){
-              document.getElementById("project-6").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("project-6").setAttribute('titleText',titleText)
+               document.getElementById("project-6").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-6").setAttribute('titleText',titleText);      
             }else if("project-7" == Id){
                document.getElementById("project-7").setAttribute('datas',JSON.stringify(datas));//zyt
                document.getElementById("project-7").setAttribute('titleText',titleText);
             }else if("project-8" == Id){
                document.getElementById("project-8").setAttribute('datas',JSON.stringify(datas));//zyt
-              document.getElementById("project-8").setAttribute('titleText',titleText);
+               document.getElementById("project-8").setAttribute('titleText',titleText);
             }else if("project-9" == Id){
-              document.getElementById("project-9").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("project-9").setAttribute('titleText',titleText)
+               document.getElementById("project-9").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-9").setAttribute('titleText',titleText);      
             }else if("project-10" == Id){
-              document.getElementById("project-10").setAttribute('datas',JSON.stringify(datas));
-              document.getElementById("project-10").setAttribute('titleText',titleText)
+               document.getElementById("project-10").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-10").setAttribute('titleText',titleText);
+            }else if("project-11" == Id){
+               document.getElementById("project-11").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-11").setAttribute('titleText',titleText);
+            }else if("project-12" == Id){
+               document.getElementById("project-12").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-12").setAttribute('titleText',titleText);      
+            }else if("project-13" == Id){
+               document.getElementById("project-13").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-13").setAttribute('titleText',titleText);
+            }else if("project-14" == Id){
+               document.getElementById("project-14").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-14").setAttribute('titleText',titleText);
+            }else if("project-15" == Id){
+               document.getElementById("project-15").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-15").setAttribute('titleText',titleText);      
+            }else if("project-16" == Id){
+               document.getElementById("project-16").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-16").setAttribute('titleText',titleText);
+            }else if("project-17" == Id){
+               document.getElementById("project-17").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-17").setAttribute('titleText',titleText);
+            }else if("project-18" == Id){
+               document.getElementById("project-18").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-18").setAttribute('titleText',titleText);      
+            }else if("project-19" == Id){
+               document.getElementById("project-19").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-19").setAttribute('titleText',titleText);
+            }else if("project-20" == Id){
+               document.getElementById("project-20").setAttribute('datas',JSON.stringify(datas));//zyt
+               document.getElementById("project-20").setAttribute('titleText',titleText);      
             }
 
             chart.on('click', function(params) {
@@ -1933,17 +1964,19 @@
                 if(isYear!='1') {
                     var link = "";
                     if(Id.indexOf("bizUnit") != -1){
-                        link = '/ptDataShow/salesPlan/salesOverview?type=07&bizUnitName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
-                            + "&officeName=" + encodeURIComponent($("#officeName").text()) 
-                            + "&modelName=" + encodeURIComponent($("#modelName").text()) 
+                        link = '/ptDataShow/salesPlan/salesOverview?type=08&bizUnitName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
+                            + "&officeName=" + encodeURIComponent($("#officeName").text())
+                            + "&modelName=" + encodeURIComponent($("#modelName").text())
                             + "&salerName=" + encodeURIComponent($("#salerName").text())
-                            + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                            + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=bizUnit"
+                            + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text());;
                     }else if(Id.indexOf("project") != -1){
-                        link = '/ptDataShow/salesPlan/salesOverview?type=07&projectName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
+                        link = '/ptDataShow/salesPlan/salesOverview?type=08&projectName=' + encodeURIComponent(titleText) + "&branchName=" + encodeURIComponent($("#branchName").text())
                             + "&officeName=" + encodeURIComponent($("#officeName").text()) 
                             + "&modelName=" + encodeURIComponent($("#modelName").text()) 
                             + "&salerName=" + encodeURIComponent($("#salerName").text())
-                            + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                            + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject"
+                            + "&custName=" + encodeURIComponent($("#custName").text()) + "&storeName=" + encodeURIComponent($("#storeName").text());;
                     }
                     window.location.href = link;
                 }
