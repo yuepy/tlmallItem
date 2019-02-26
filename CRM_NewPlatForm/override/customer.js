@@ -392,7 +392,7 @@ debugger
                             if(response.bizUnits) {
                                 var bizUnits = response.bizUnits;
                                 for (var k = 0; k < bizUnits.length; k++) {
-                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额(万)", value: bizUnits[k].targetAmt }, { name: "销售额达成(万)", value: bizUnits[k].reachAmt }];
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
                                     var deptSalesCountReachRankA="";
                                     var deptSalesAmountReachRankA="";
                                     for(var i in response.ranks){
@@ -453,7 +453,7 @@ debugger
                                     // $("#projectRankPlaceHolder").before(rankHtml);
                                     $("#projectRankPlaceHolder").before(barHtml);
 
-                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额(万)", value: rank.value.targetAmt }, { name: "销售额达成(万)", value: rank.value.reachAmt }];
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
                                     getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
                                 }
                             }
@@ -738,7 +738,7 @@ debugger
                             if(response.bizUnits) {
                                 var bizUnits = response.bizUnits;
                                 for (var k = 0; k < bizUnits.length; k++) {
-                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额(万)", value: bizUnits[k].targetAmt }, { name: "销售额达成(万)", value: bizUnits[k].reachAmt }];
+                                    var barData = [{ name: "目标销量", value: bizUnits[k].targetQty }, { name: "销量达成", value: bizUnits[k].reachQty }, { name: "目标销售额", value: bizUnits[k].targetAmt }, { name: "销售额达成", value: bizUnits[k].reachAmt }];
                                     var deptSalesCountReachRankA="";
                                     var deptSalesAmountReachRankA="";
                                     for(var i in response.ranks){
@@ -799,7 +799,7 @@ debugger
                                     // $("#projectRankPlaceHolder").before(rankHtml);
                                     $("#projectRankPlaceHolder").before(barHtml);
 
-                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额(万)", value: rank.value.targetAmt }, { name: "销售额达成(万)", value: rank.value.reachAmt }];
+                                    var hw_barsDatas = [{ name: "目标销量", value: rank.value.targetQty }, { name: "销量达成", value: rank.value.reachQty }, { name: "目标销售额", value: rank.value.targetAmt }, { name: "销售额达成", value: rank.value.reachAmt }];
                                     getBars(hw_barsDatas, rank.value.projectName, "project-" + i);
                                 }
                             }
