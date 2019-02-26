@@ -118,15 +118,21 @@
     getData_control275_2EgUIJ: function (elem) {
       if (elem) {
         var data = { dataLabel: [], flag: [], flags: [] };var a_s = elem.querySelector('#tab-head').querySelectorAll("li");for (var i = 0; i < a_s.length; i++) {
-          var asText = a_s[i].textContent;if (asText.indexOf("销售报表") == -1) {
-            data.dataLabel.push([asText]);
+          var asText = a_s[i].textContent;if (asText != '年度项目达成') {
+            if (asText.indexOf("销售报表") == -1) {
+              data.dataLabel.push([asText]);
+            }
           }
         }return data;
       }return [];
     },
     doAction_uiControl248_nQhTnd: function (data, elem) {
       if (data.eventType == 'click') {
-        var index = +data.dataCustom.index;var lis = elem.querySelector('#tab-head').querySelectorAll("li");lis[index].click();
+        var index = +data.dataCustom.index;var lis = elem.querySelector('#tab-head').querySelectorAll("li");if (index == 1) {
+          lis[2].click();
+        } else {
+          lis[index].click();
+        }
       }
     },
     getTemplate_uiControl248_nQhTnd: function () {
