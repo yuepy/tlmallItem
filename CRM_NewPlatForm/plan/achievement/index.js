@@ -1083,7 +1083,8 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";
+          saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart18.getAttribute('datas')), titleText: bizUnitChart18.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart19) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit19"]');var displayNoneBlock = table.getAttribute("style").indexOf("none");if (displayNoneBlock == -1) {
@@ -1119,8 +1120,7 @@
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart19.getAttribute('datas')), titleText: bizUnitChart19.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnitChart20) {
-        var businessData = [];
-        var table = elem.querySelector('table[id="bizUnit20"]');var displayNoneBlock = table.getAttribute("style").indexOf("none");if (displayNoneBlock == -1) {
+        var businessData = [];var table = elem.querySelector('table[id="bizUnit20"]');var displayNoneBlock = table.getAttribute("style").indexOf("none");if (displayNoneBlock == -1) {
           var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
             var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
               if (subIndex == 0) {
@@ -1150,8 +1150,11 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart20.getAttribute('datas')), titleText: bizUnitChart20.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";
+          saleReachedTitleLength = "";saleReachedBranchFlag = "";
+          saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo,
+          saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnitChart20.getAttribute('datas')), titleText: bizUnitChart20.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnit0) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit0"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -1162,7 +1165,8 @@
             }
           });content.push(item);
         });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit0' };var rank = bizUnit0.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        var salesReachedNo;
+        var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
@@ -1173,14 +1177,16 @@
             var indexStart = lis[1].querySelector("a") && lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a") && lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a") && lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = saleReached && JSON.parse(saleReached);
           } else {
             saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a") && lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = saleTitle && JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle && saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle && saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle && saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+          } /****销售额达成排名****/
+          saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a") && lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = saleTitle && JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle && saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle && saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle && saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
             var saleIndexStart = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a") && lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = saleMoney && JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";
-          saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+          rankFlag = "false";
+          salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";
+          saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit0.getAttribute('datas')), titleText: bizUnit0.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnit1) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit1"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
@@ -1191,7 +1197,9 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit1' };var rank = bizUnit1.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit1' };
+        var rank = bizUnit1.previousElementSibling;
+        var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
@@ -1199,8 +1207,7 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;
-          var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1222,12 +1229,45 @@
             }
           });content.push(item);
         });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit2' };var rank = bizUnit2.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        var salesReachedNo;
+        var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
-        var saleMoneyOfficeFlag;
-        //是否有办事处
+        var saleMoneyOfficeFlag; //是否有办事处
+        var saleMoneyPersonFlag; //是否有销售人员
+        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
+          } else {
+            saleReachedText = [];
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");
+          var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
+          } else {
+            saleMoneyText = [];
+          }
+        } else {
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag,
+          saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit2.getAttribute('datas')), titleText: bizUnit2.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+      }if (bizUnit3) {
+        var businessData = [];var table = elem.querySelector('table[id="bizUnit3"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
+          var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
+            if (subIndex == 0) {
+              titles.push(ysp.customHelper.trim(subItem.textContent));
+            } else {
+              item.push(ysp.customHelper.trim(subItem.textContent));
+            }
+          });content.push(item);
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');
+        var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit3' };var rank = bizUnit3.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        var saleReachedOfficeFlag; //是否有办事处
+        var saleReachedPersonFlag; //是否有销售人员
+        var saleMoneyNo;var saleMoneyText;
+        var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
+        var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
           rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
@@ -1241,39 +1281,8 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit2.getAttribute('datas')), titleText: bizUnit2.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
-      }if (bizUnit3) {
-        var businessData = [];var table = elem.querySelector('table[id="bizUnit3"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
-          var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
-            if (subIndex == 0) {
-              titles.push(ysp.customHelper.trim(subItem.textContent));
-            } else {
-              item.push(ysp.customHelper.trim(subItem.textContent));
-            }
-          });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');
-        businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit3' };var rank = bizUnit3.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
-        var saleReachedOfficeFlag; //是否有办事处
-        var saleReachedPersonFlag; //是否有销售人员
-        var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
-        var saleMoneyOfficeFlag; //是否有办事处
-        var saleMoneyPersonFlag; //是否有销售人员
-        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");
-          saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
-            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
-          } else {
-            saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
-          } else {
-            saleMoneyText = [];
-          }
-        } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag,
-          saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit3.getAttribute('datas')), titleText: bizUnit3.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag,
+          saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit3.getAttribute('datas')), titleText: bizUnit3.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnit4) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit4"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -1291,7 +1300,8 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");
+          var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1302,8 +1312,7 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength,
-          saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit4.getAttribute('datas')), titleText: bizUnit4.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit4.getAttribute('datas')), titleText: bizUnit4.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnit5) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit5"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -1321,8 +1330,7 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");
-          var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1343,8 +1351,10 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit6' };var rank = bizUnit6.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '',
+          businessTitle: 'bizUnit6' };var rank = bizUnit6.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag;
+        //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
@@ -1362,7 +1372,8 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit6.getAttribute('datas')), titleText: bizUnit6.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText,
+          saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit6.getAttribute('datas')), titleText: bizUnit6.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnit7) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit7"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -1372,20 +1383,22 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit7' };var rank = bizUnit7.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        });var flag = table.parentElement.nextElementSibling;
+        var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit7' };var rank = bizUnit7.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
-        var saleMoneyOfficeFlag;
-        //是否有办事处
+        var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));
+          var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;
+          saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
             var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
@@ -1402,8 +1415,11 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit8' };var rank = bizUnit8.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles,
+          content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit8' };
+        var rank = bizUnit8.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        var salesReachedNo;
+        var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
@@ -1421,8 +1437,7 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag,
-          saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit8.getAttribute('datas')), titleText: bizUnit8.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit8.getAttribute('datas')), titleText: bizUnit8.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (bizUnit9) {
         var businessData = [];var table = elem.querySelector('table[id="bizUnit9"]');var trs = table.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -1435,14 +1450,12 @@
         });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit9' };var rank = bizUnit9.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
-        var saleReachedPersonFlag;
-        //是否有销售人员
+        var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/
-          salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1463,53 +1476,8 @@
               item.push(ysp.customHelper.trim(subItem.textContent));
             }
           });content.push(item);
-        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit10' };var rank = bizUnit10.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;
-        var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
-        var saleReachedOfficeFlag; //是否有办事处
-        var saleReachedPersonFlag; //是否有销售人员
-        var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
-        var saleMoneyOfficeFlag; //是否有办事处
-        var saleMoneyPersonFlag; //是否有销售人员
-        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);
-          saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
-            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
-          } else {
-            saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
-          } else {
-            saleMoneyText = [];
-          }
-        } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag,
-          saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit10.getAttribute('datas')), titleText: bizUnit10.getAttribute('titleText'), selectid: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
-      }if (project0) {
-        var rank = project0.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
-        var saleReachedOfficeFlag; //是否有办事处
-        var saleReachedPersonFlag; //是否有销售人员
-        var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
-        var saleMoneyOfficeFlag; //是否有办事处
-        var saleMoneyPersonFlag; //是否有销售人员
-        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;
-          saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
-            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
-          } else {
-            saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
-          } else {
-            saleMoneyText = [];
-          }
-        } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project0.getAttribute('datas')), titleText: project0.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
-      }if (project1) {
-        var rank = project1.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        });var flag = table.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: '', businessTitle: 'bizUnit10' };var rank = bizUnit10.previousElementSibling;
+        var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
@@ -1522,8 +1490,53 @@
           } else {
             saleReachedText = [];
           } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");
-            var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
+          } else {
+            saleMoneyText = [];
+          }
+        } else {
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(bizUnit10.getAttribute('datas')), titleText: bizUnit10.getAttribute('titleText'), selectid: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+      }if (project0) {
+        var rank = project0.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;
+        var saleReachedBranchFlag; //是否有分公司
+        var saleReachedOfficeFlag; //是否有办事处
+        var saleReachedPersonFlag; //是否有销售人员
+        var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
+        var saleMoneyOfficeFlag; //是否有办事处
+        var saleMoneyPersonFlag; //是否有销售人员
+        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
+          } else {
+            saleReachedText = [];
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
+          } else {
+            saleMoneyText = [];
+          }
+        } else {
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText,
+          saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project0.getAttribute('datas')), titleText: project0.getAttribute('titleText'), selectId: selectId,
+            dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+      }if (project1) {
+        var rank = project1.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        var saleReachedOfficeFlag; //是否有办事处
+        var saleReachedPersonFlag;
+        //是否有销售人员
+        var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
+        var saleMoneyOfficeFlag; //是否有办事处
+        var saleMoneyPersonFlag; //是否有销售人员
+        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
+          } else {
+            saleReachedText = [];
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
@@ -1591,10 +1604,9 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";
-          saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project4.getAttribute('datas')), titleText: project4.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
-      }if (project5 && rank.querySelectorAll("li")[1].querySelector('a')) {
+      }if (project5) {
         var rank = project5.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
@@ -1602,9 +1614,9 @@
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
-        if (null != rank) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");
-          var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
+          rankFlag = "true";
+          var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1614,10 +1626,9 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";
-          saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project5.getAttribute('datas')), titleText: project5.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
-      }if (project6 && rank.querySelectorAll("li")[1].querySelector('a')) {
+      }if (project6) {
         var rank = project6.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
@@ -1625,9 +1636,8 @@
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
-        if (null != rank) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");
-          saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+        if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1640,7 +1650,8 @@
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project6.getAttribute('datas')), titleText: project6.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project7) {
-        var rank = project7.previousElementSibling;var rankFlag; //判断是否有排序功能。
+        var rank = project7.previousElementSibling;
+        var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
@@ -1648,8 +1659,7 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));
-          var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1680,10 +1690,8 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";
-          saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project8.getAttribute('datas')), titleText: project8.getAttribute('titleText'),
-            selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project8.getAttribute('datas')), titleText: project8.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project9) {
         var rank = project9.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -1732,24 +1740,23 @@
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
-        var saleMoneyOfficeFlag; //是否有办事处
+        var saleMoneyOfficeFlag;
+        //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
           rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
-            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);
-            saleReachedText = JSON.parse(saleReached);
+            var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");
+          saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
             var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo,
-          saleMoneyText: saleMoneyText,
-          saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project11.getAttribute('datas')), titleText: project11.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project11.getAttribute('datas')), titleText: project11.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project12) {
         var rank = project12.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -1759,13 +1766,13 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";
-          var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
           } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);
+            saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
@@ -1792,8 +1799,7 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText,
-          saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project13.getAttribute('datas')), titleText: project13.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project13.getAttribute('datas')), titleText: project13.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project14) {
         var rank = project14.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -1817,8 +1823,7 @@
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project14.getAttribute('datas')), titleText: project14.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project15) {
         var rank = project15.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;
-        var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
@@ -1836,8 +1841,7 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag,
-          saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project15.getAttribute('datas')), titleText: project15.getAttribute('titleText'), selectId: selectId, dateId: dateId } };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project15.getAttribute('datas')), titleText: project15.getAttribute('titleText'), selectId: selectId, dateId: dateId } };!!echartItem && echartDatas.push(echartItem);
       }if (project16) {
         var rank = project16.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -1852,14 +1856,14 @@
           } else {
             saleReachedText = [];
           } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");
-            var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project16.getAttribute('datas')), titleText: project16.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo,
+          saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project16.getAttribute('datas')), titleText: project16.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project17) {
         var rank = project17.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -1879,7 +1883,8 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";
+          saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project17.getAttribute('datas')), titleText: project17.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project18) {
         var rank = project18.previousElementSibling;var rankFlag; //判断是否有排序功能。
@@ -1894,16 +1899,15 @@
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");
+          saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
             var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";
-          salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project18.getAttribute('datas')),
-            titleText: project18.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project18.getAttribute('datas')), titleText: project18.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project19) {
         var rank = project19.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -1930,7 +1934,8 @@
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
-        var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
+        var saleMoneyNo;var saleMoneyText;
+        var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
@@ -1939,18 +1944,19 @@
           } else {
             saleReachedText = [];
           } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");
+            var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = {
-          rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project20.getAttribute('datas')), titleText: project20.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";
+          saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";
+          saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project20.getAttribute('datas')), titleText: project20.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project21) {
         var rank = project21.previousElementSibling;var rankFlag; //判断是否有排序功能。
-        var salesReachedNo;var saleReachedText;
-        var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
+        var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
         var saleReachedOfficeFlag; //是否有办事处
         var saleReachedPersonFlag; //是否有销售人员
         var saleMoneyNo;var saleMoneyText;var saleMoneyTitleLength;var saleMoneyBranchFlag; //是否有分公司
@@ -1961,7 +1967,8 @@
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
-          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);
+          saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
             var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
@@ -1978,8 +1985,7 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;
-          var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -1989,8 +1995,8 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";
-          saleMoneyPersonFlag = "";
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";
+          saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project22.getAttribute('datas')), titleText: project22.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project23) {
         var rank = project23.previousElementSibling;var rankFlag; //判断是否有排序功能。
@@ -2027,14 +2033,15 @@
           } else {
             saleReachedText = [];
           } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
-            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);
-            saleMoneyText = JSON.parse(saleMoney);
+            var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project24.getAttribute('datas')), titleText: project24.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: {
+            datas: JSON.parse(project24.getAttribute('datas')), titleText: project24.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };
+        !!echartItem && echartDatas.push(echartItem);
       }if (project25) {
         var rank = project25.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -2055,9 +2062,7 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag
-        };var echartItem = { echartData: { datas: JSON.parse(project25.getAttribute('datas')), titleText: project25.getAttribute('titleText'),
-            selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project25.getAttribute('datas')), titleText: project25.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project26) {
         var rank = project26.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -2067,7 +2072,8 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");
+          var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -2088,8 +2094,7 @@
         var saleMoneyOfficeFlag; //是否有办事处
         var saleMoneyPersonFlag; //是否有销售人员
         if (null != rank && rank.querySelectorAll("li")[1].querySelector('a')) {
-          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);
-          saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
+          rankFlag = "true";var reg = /[\u4E00-\u9FA5]/g;var lis = rank.querySelectorAll("li"); /****销量达成排名****/salesReachedNo = ysp.customHelper.trim(lis[1].querySelector("a").textContent.replace(reg, ''));var titleStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[");var titleEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("]");var title = lis[1].querySelector("a").getAttribute("onmouseover").substring(titleStart, titleEnd + 1);saleReachedTitleLength = JSON.parse(title).length;saleReachedBranchFlag = title.indexOf("分公司");saleReachedOfficeFlag = title.indexOf("办事处");saleReachedPersonFlag = title.indexOf("销售人员");if ("0" != salesReachedNo) {
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
@@ -2100,8 +2105,8 @@
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag,
-          saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project27.getAttribute('datas')), titleText: project27.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag,
+          saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project27.getAttribute('datas')), titleText: project27.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project28) {
         var rank = project28.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -2121,9 +2126,9 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag,
-          saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project28.getAttribute('datas')), titleText: project28.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";
+          saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project28.getAttribute('datas')), titleText: project28.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project29) {
         var rank = project29.previousElementSibling;var rankFlag; //判断是否有排序功能。
         var salesReachedNo;var saleReachedText;var saleReachedTitleLength;var saleReachedBranchFlag; //是否有分公司
@@ -2143,9 +2148,7 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";
-          saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";
-          saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project29.getAttribute('datas')), titleText: project29.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (project30) {
         var rank = project30.previousElementSibling;var rankFlag; //判断是否有排序功能。
@@ -2166,9 +2169,7 @@
             saleMoneyText = [];
           }
         } else {
-          rankFlag = "false";salesReachedNo = "";
-          saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";
-          saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
+          rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
         }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(project30.getAttribute('datas')), titleText: project30.getAttribute('titleText'), selectId: selectId, dateId: dateId }, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (barsHW) {
         var businessData = [];var table = elem.querySelector('table[id^="HW-table"]');var displayNoneBlock = table.getAttribute("style").indexOf("none");if (displayNoneBlock == -1) {
@@ -2195,16 +2196,14 @@
             var indexStart = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("[{");var indexEnd = lis[1].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleReached = lis[1].querySelector("a").getAttribute("onmouseover").substring(indexStart, indexEnd + 2);saleReachedText = JSON.parse(saleReached);
           } else {
             saleReachedText = [];
-          } /****销售额达成排名****/
-          saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
+          } /****销售额达成排名****/saleMoneyNo = ysp.customHelper.trim(lis[2].querySelector("a").textContent.replace(reg, ''));var saleTitleStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[");var saleTitleEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("]");var saleTitle = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleTitleStart, saleTitleEnd + 1);saleMoneyTitleLength = JSON.parse(saleTitle).length;saleMoneyBranchFlag = saleTitle.indexOf("分公司");saleMoneyOfficeFlag = saleTitle.indexOf("办事处");saleMoneyPersonFlag = saleTitle.indexOf("销售人员");if ("0" != saleMoneyNo) {
             var saleIndexStart = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("[{");var saleIndexEnd = lis[2].querySelector("a").getAttribute("onmouseover").indexOf("}]");var saleMoney = lis[2].querySelector("a").getAttribute("onmouseover").substring(saleIndexStart, saleIndexEnd + 2);saleMoneyText = JSON.parse(saleMoney);
           } else {
             saleMoneyText = [];
           }
         } else {
           rankFlag = "false";salesReachedNo = "";saleReachedText = "";saleReachedTitleLength = "";saleReachedBranchFlag = "";saleReachedOfficeFlag = "";saleReachedPersonFlag = "";saleMoneyNo = "";saleMoneyText = "";saleMoneyTitleLength = "";saleMoneyBranchFlag = "";saleMoneyOfficeFlag = "";saleMoneyPersonFlag = "";
-        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(barsHW.getAttribute('datas')), titleText: barsHW.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData
-        };!!echartItem && echartDatas.push(echartItem);
+        }var rankData = { rankFlag: rankFlag, salesReachedNo: salesReachedNo, saleReachedText: saleReachedText, saleReachedTitleLength: saleReachedTitleLength, saleReachedBranchFlag: saleReachedBranchFlag, saleReachedOfficeFlag: saleReachedOfficeFlag, saleReachedPersonFlag: saleReachedPersonFlag, saleMoneyNo: saleMoneyNo, saleMoneyText: saleMoneyText, saleMoneyTitleLength: saleMoneyTitleLength, saleMoneyBranchFlag: saleMoneyBranchFlag, saleMoneyOfficeFlag: saleMoneyOfficeFlag, saleMoneyPersonFlag: saleMoneyPersonFlag };var echartItem = { echartData: { datas: JSON.parse(barsHW.getAttribute('datas')), titleText: barsHW.getAttribute('titleText'), selectId: selectId, dateId: dateId }, businessData: businessData, rankData: rankData };!!echartItem && echartDatas.push(echartItem);
       }if (typeSalseTable) {
         var businessData = [];var titles = [];var content = [];var displayNoneBlock = typeSalseTable.getAttribute("style").indexOf("none");if (displayNoneBlock == -1) {
           var trs = typeSalseTable.querySelectorAll('tr');[].forEach.call(trs, function (item, index) {
@@ -2218,7 +2217,8 @@
           });var flag = typeSalseTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = typeSalseTable.parentElement.previousElementSibling.textContent;businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: textName, businessTitle: 'typeSalse-table' };
         } else {
           businessData = "";
-        }var echartItem = { echartData: { datas: '', titleText: '' }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        }
+        var echartItem = { echartData: { datas: '', titleText: '' }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }if (modelTable) {
         var businessData = [];var trs = modelTable.querySelectorAll('tr');var titles = [];var content = [];[].forEach.call(trs, function (item, index) {
           var tds = item.querySelectorAll('th');tds = tds.length !== 0 ? tds : item.querySelectorAll('td');var item = [];[].forEach.call(tds, function (subItem, subIndex) {
@@ -2242,7 +2242,8 @@
           });var flag = typeSalesTable.parentElement.nextElementSibling;var flagUp = flag.classList.contains('Up');var flagDown = flag.classList.contains('Down');var textName = typeSalesTable.parentElement.previousElementSibling.textContent;businessData = { titles: titles, content: content, flagUp: flagUp, flagDown: flagDown, textName: textName, businessTitle: 'typeSalesTable' };
         } else {
           businessData = "";
-        }var echartItem = { echartData: { datas: '', titleText: '' }, businessData: businessData };!!echartItem && echartDatas.push(echartItem);
+        }var echartItem = { echartData: { datas: '', titleText: '' },
+          businessData: businessData };!!echartItem && echartDatas.push(echartItem);
       }return echartDatas;
     },
     doAction_uiControl170_pTz0rB: function (data, elem) {

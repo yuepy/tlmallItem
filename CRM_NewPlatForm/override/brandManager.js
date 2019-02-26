@@ -1785,10 +1785,6 @@ window.addEventListener('DOMContentLoaded', function() {
                     isYear = '1';
                 }
                 if(isYear!='1') {
-                    var drill = $("#drill").text();
-                    if(!drill){
-                        drill = "moreProject";
-                    }
                     var link = '/ptDataShow/salesPlan/salesOverview?type=05&projectName=' + encodeURIComponent(titleText) 
                     + "&branchName=" + encodeURIComponent($("#branchName").text()) 
                     + "&modelName=" +  encodeURIComponent($("#modelName").text())
@@ -1796,6 +1792,10 @@ window.addEventListener('DOMContentLoaded', function() {
                     window.location.href = link;
                 }
             });
+        	chart.resize({
+        		width:$(".businessDimen .chart-bars").width(),
+        		height:$(".businessDimen .chart-bars").height()
+        	});
         }
 
         /***/ })
