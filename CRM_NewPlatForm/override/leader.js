@@ -424,7 +424,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                 // 图表HTML
                                 var barMap = '<div class="chart chart-bars" id="bizUnitChart' + k + '"></div>';
                                 // 表格HTML
-                                var tableHtml = '<div class="content"><table style="word-wrap:break-word; word-break:break-all" class="table u-table-b" id="bizUnit'+ k +'"><thead><tr><th>项目</th><th class="sort">目标销量</th><th class="sort">销量达成</th><th class="sort">销量达成率</th><th class="sort">目标销售额(万)</th><th class="sort">销售额达成(万)</th><th class="sort">销售额达成率</th></tr></thead><tbody>';
+                               var tableHtml = '<div class="content"><table style="word-wrap:break-word; word-break:break-all" class="table u-table-b" id="bizUnit'+ k +'"><thead><tr><th>项目</th><th class="sort">目标销量</th><th class="sort">销量达成</th><th class="sort">销量达成率</th><th class="sort">目标销售额(万)</th><th class="sort">销售额达成(万)</th><th class="sort">销售额达成率</th></tr></thead><tbody>';
                                 //tableHtml = tableHtml + '<tr><td title="合计">合计</td><td>' + bizUnits[k].targetQty + '</td><td>' + bizUnits[k].reachQty + '</td><td>' + bizUnits[k].reachQtyRate + '%</td><td>'
                                 //    + bizUnits[k].targetAmt + '</td><td>' + bizUnits[k].reachAmt + '</td><td>' + bizUnits[k].reachAmtRate + '%</td></tr>';
 
@@ -437,11 +437,18 @@ window.addEventListener('DOMContentLoaded', function() {
                                         + '&date='+ $("#selDay").val() 
                                         + '&modelName='+ $("#modelName").text() 
                                         + "&drill=oneProject";
+                                    }else if(isYear=='1' && Number(date.substring(0,4)) > 2018){
+                                    	prjLink = "/ptDataShow/salesPlan/salesOverview?type=01&projectName=" + encodeURIComponent(projects[j].name) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder 
+                                        + '&date='+ $("#selDay").val() 
+                                        + '&modelName='+ $("#modelName").text() 
+                                        + "&drill=oneProject&isYear="+isYear
+                                        + "&bizUnitName="+bizUnits[k].name;
                                     }
                                     // 如果是大客户事业部那么下面的项目也不让他点击
-                                    if('大客户业务部' == bizUnits[k].name){
-                                        prjLink = '#';
-                                    }
+                                    // if('大客户业务部' == bizUnits[k].name){
+                                    //     prjLink = '#';
+                                    // }
                                     tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ prjLink +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                         + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
                                 }
@@ -450,6 +457,12 @@ window.addEventListener('DOMContentLoaded', function() {
                                 // 整体区域HTML
                                 var html = '<div class="m-box bizUnitProject">' + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
                                 $("#projectRankPlaceHolder").before(html);
+                              	//产品销售达成
+                                if($("#projectRankPlaceHolder tbody tr").length == 0){//isYear=="1"
+                                  $("#projectRankPlaceHolder").hide();
+                                }else{
+                                  $("#projectRankPlaceHolder").show();
+                                }
                                 getBars(barData,  bizUnits[k].name, 'bizUnitChart' + k);
                                 tableSH("bizUnit" + k, 4);
                             }
@@ -483,12 +496,19 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     }
                   //选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-        	        	$(".u-table-b").show();
-        	        }
+        	        // if(isYear == "1"){
+        	        // 	$(".u-table-b").hide();
+        	        // }
+        	        // if(isYear == "0"){
+        	        // 	$(".u-table-b").show();
+        	        // }
+                  $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
@@ -651,11 +671,18 @@ window.addEventListener('DOMContentLoaded', function() {
                                         + '&date='+ $("#selDay").val() 
                                         + '&modelName='+ $("#modelName").text() 
                                         + "&drill=oneProject";
+                                    }else if(isYear=='1' && Number(date.substring(0,4)) > 2018){
+                                    	prjLink = "/ptDataShow/salesPlan/salesOverview?type=01&projectName=" + encodeURIComponent(projects[j].name) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder 
+                                        + '&date='+ $("#selDay").val() 
+                                        + '&modelName='+ $("#modelName").text() 
+                                        + "&drill=oneProject&isYear="+isYear
+                                        + "&bizUnitName="+bizUnits[k].name;
                                     }
                                     // 如果是大客户事业部那么下面的项目也不让他点击
-                                    if('大客户业务部' == bizUnits[k].name){
-                                        prjLink = '#';
-                                    }
+                                    // if('大客户业务部' == bizUnits[k].name){
+                                    //     prjLink = '#';
+                                    // }
                                     tableHtml = tableHtml + '<tr><td title="' + projects[j].name +'"><a href="'+ prjLink +'" title="' + projects[j].name + '">' + projects[j].name + '</a></td><td>' + toThousands(projects[j].targetQty) + '</td><td>' + toThousands(projects[j].reachQty) + '</td><td>' + projects[j].reachQtyRate + '%</td><td>'
                                         + toThousands(projects[j].targetAmt) + '</td><td>' + toThousands(projects[j].reachAmt) + '</td><td>' + projects[j].reachAmtRate + '%</td></tr>';
                                 }
@@ -664,6 +691,12 @@ window.addEventListener('DOMContentLoaded', function() {
                                 // 整体区域HTML
                                 var html = '<div class="m-box bizUnitProject">' + barMap + tableHtml + '<a href="javascript:;" class="btn-display" onclick="displayTable(this)"><span>展开</span><i class="icon"></i></a></div>';
                                 $("#projectRankPlaceHolder").before(html);
+                              	//产品销售达成
+                                if($("#projectRankPlaceHolder tbody tr").length == 0){//isYear=="1"
+                                  $("#projectRankPlaceHolder").hide();
+                                }else{
+                                  $("#projectRankPlaceHolder").show();
+                                }
                                 getBars(barData,  bizUnits[k].name, 'bizUnitChart' + k);
                                 tableSH("bizUnit" + k, 4);
                             }
@@ -697,12 +730,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     }
                   //选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-        	        	$(".u-table-b").show();
-        	        }
+        	        $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
@@ -1639,6 +1673,14 @@ window.addEventListener('DOMContentLoaded', function() {
                     + "&modelName=" + encodeURIComponent($("#modelName").text())
                     + '&date='+ $("#selDay").val() + "&drill=bizUnit";
                     window.location.href = link;
+                }else{//年度
+                	if(getParam("drill") != "oneProject"){
+                		var link = '/ptDataShow/salesPlan/salesOverview?type=01&bizUnitName=' + encodeURIComponent(titleText) + "&filter_userId=" + loginName 
+                        + '&encoder=' + encoder+"&isYear="+isYear
+                        + "&modelName=" + encodeURIComponent($("#modelName").text())
+                        + '&date='+ $("#selDay").val() + "&drill=bizUnit";
+                        window.location.href = link;
+                	}
                 }
             });
         }

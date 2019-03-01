@@ -522,12 +522,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     }
 										//选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-                    $(".u-table-b").show();
-                  }
+        	        $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
@@ -767,12 +768,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     }
 										//选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-                    $(".u-table-b").show();
-                  }
+        	        $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");

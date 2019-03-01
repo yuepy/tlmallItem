@@ -397,10 +397,15 @@ window.addEventListener('DOMContentLoaded', function() {
                         $("#projectTable").empty();
                         $("#modelTable").empty();
                         $("#branchTable").empty();
+                      	$("#barsHW").remove();
                         if(response.rank.value){
-
+														$("#barsHW_div").prepend('<div class="chart chart-bars" id="barsHW"></div>');
                             // 时间轴 图
                             var hw_barsDatas = [{ name: "目标销量", value: response.totalTargetQty }, { name: "销量达成", value: response.totalReachQty }, { name: "目标销售额", value: response.totalTargetAmtOriginal }, { name: "销售额达成", value: response.totalReachAmtOriginal }];
+                          	var tempTitleName = response.rank.value.name;
+                            if(isYear=='1' && "oneProject" == getParam("drill")){
+                            	tempTitleName = projectName;
+                            }
                             getBars(hw_barsDatas, response.rank.value.name, 'barsHW');
 
                             // 项目列表
@@ -409,10 +414,15 @@ window.addEventListener('DOMContentLoaded', function() {
                                     var project = response.projectName[i];
                                     var link = '#';
                                     if(isYear!='1') {
-                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName='
-                                        + encodeURIComponent(project.name) 
+                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) 
                                         + '&bizUnitName=' + encodeURIComponent(bizUnitName) 
                                         + '&modelName=' + encodeURIComponent(modelName) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                    }else{
+                                    	link = '/ptDataShow/salesPlan/salesOverview?type=02&projectName=' + encodeURIComponent(project.name) 
+                                        + '&bizUnitName=' + encodeURIComponent(bizUnitName) 
+                                        + '&modelName=' + encodeURIComponent(modelName) 
+                                        + "&isYear="+isYear
                                         + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
                                     }
                                     var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + toThousands(project.targetQty) + '</td><td>' + toThousands(project.reachQty) + '</td><td>' + project.reachQtyRate + '%</td><td>'
@@ -487,12 +497,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     }
 									//选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-        	        	$(".u-table-b").show();
-        	        }
+        	        $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
@@ -608,10 +619,15 @@ window.addEventListener('DOMContentLoaded', function() {
                         $("#projectTable").empty();
                         $("#modelTable").empty();
                         $("#branchTable").empty();
+                      	$("#barsHW").remove();
                         if(response.rank.value){
-
+														$("#barsHW_div").prepend('<div class="chart chart-bars" id="barsHW"></div>');
                             // 时间轴 图
                             var hw_barsDatas = [{ name: "目标销量", value: response.totalTargetQty }, { name: "销量达成", value: response.totalReachQty }, { name: "目标销售额", value: response.totalTargetAmtOriginal }, { name: "销售额达成", value: response.totalReachAmtOriginal }];
+                          	var tempTitleName = response.rank.value.name;
+                            if(isYear=='1' && "oneProject" == getParam("drill")){
+                            	tempTitleName = projectName;
+                            }
                             getBars(hw_barsDatas, response.rank.value.name, 'barsHW');
 
                             // 项目列表
@@ -620,10 +636,15 @@ window.addEventListener('DOMContentLoaded', function() {
                                     var project = response.projectName[i];
                                     var link = '#';
                                     if(isYear!='1') {
-                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName='
-                                        + encodeURIComponent(project.name) 
+                                        link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(project.name) 
                                         + '&bizUnitName=' + encodeURIComponent(bizUnitName) 
                                         + '&modelName=' + encodeURIComponent(modelName) 
+                                        + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                                    }else{
+                                    	link = '/ptDataShow/salesPlan/salesOverview?type=02&projectName=' + encodeURIComponent(project.name) 
+                                        + '&bizUnitName=' + encodeURIComponent(bizUnitName) 
+                                        + '&modelName=' + encodeURIComponent(modelName) 
+                                        + "&isYear="+isYear
                                         + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
                                     }
                                     var html = '<tr><td><a href="'+ link +'" title="' + project.name + '">' + project.name + '</a></td><td>' + toThousands(project.targetQty) + '</td><td>' + toThousands(project.reachQty) + '</td><td>' + project.reachQtyRate + '%</td><td>'
@@ -698,12 +719,13 @@ window.addEventListener('DOMContentLoaded', function() {
 
                     }
 									//选择维度为年时，表格无数据，隐藏表格
-        	        if(isYear == "1"){
-        	        	$(".u-table-b").hide();
-        	        }
-                  if(isYear == "0"){
-        	        	$(".u-table-b").show();
-        	        }
+        	        $(".u-table-b").each(function(){
+        	        	if($(this).find("tbody tr").length==0){
+        	        		$(this).hide();
+        	        	}else{
+        	        		$(this).show();
+        	        	}
+        	        });
                 },
                 error: function () {
                     console.log("Error:获取后台数据失败！");
