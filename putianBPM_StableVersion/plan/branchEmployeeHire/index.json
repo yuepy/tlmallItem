@@ -213,7 +213,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
-      "monitored": false,
+      "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
@@ -435,6 +435,39 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control270_AzWEH0": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control270_AzWEH0"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -454,7 +487,8 @@
         "control251_PgZ7w4",
         "control252_QgodO9",
         "control253_0sTlPq",
-        "control254_nyyVaR"
+        "control254_nyyVaR",
+        "control270_AzWEH0"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -521,6 +555,26 @@
         {
           "toContextId": "context1_ceUML4",
           "toModelId": "pendingTask"
+        }
+      ]
+    },
+    "flow155_tCVgKV": {
+      "fromContextId": "context44_N9LLxT",
+      "fromAction": "doAction",
+      "fromControlId": "control248_srSJBT",
+      "toContexts": [
+        {
+          "toContextId": "context44_N9LLxT"
+        }
+      ]
+    },
+    "flow161_SX6omZ": {
+      "fromContextId": "context44_N9LLxT",
+      "fromAction": "doAction",
+      "fromControlId": "control249_V785xr",
+      "toContexts": [
+        {
+          "toContextId": "context44_N9LLxT"
         }
       ]
     }
@@ -710,6 +764,21 @@
           }
         },
         {
+          "id": "uiControl264_6osOkR",
+          "controlId": "control270_AzWEH0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl264_6osOkR",
+                "onGetTemplate": "getTemplate_uiControl264_6osOkR"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl244_DXZrvI",
           "controlId": "control251_PgZ7w4",
           "display": {
@@ -771,7 +840,8 @@
         "context44_N9LLxT": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=278434&branchEmployeeHire",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=511940&branchEmployeeHire",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283015&branchEmployeeHire"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283015&branchEmployeeHire",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=282781&branchEmployeeHire"
         ]
       }
     },

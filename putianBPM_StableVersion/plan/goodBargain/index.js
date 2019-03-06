@@ -96,30 +96,19 @@
     },
     getData_control177_d2DXkd: function (elem) {
       if (elem) {
-        var arr = [];
-        var tit = elem.querySelector(".form_label");
-        arr.push(tit.textContent);
-        var content = elem.querySelector("textarea");
-        arr.push(content.textContent);
-        return arr;
-      }
-      return [];
+        var arr = [];var tit = elem.querySelector(".form_label");arr.push(tit.textContent);var content = elem.querySelector("textarea");arr.push(content.textContent);return arr;
+      }return [];
     },
     doAction_uiControl170_UFvWod: function (data, elem) {
       if (data.eventType == 'change') {
-        var d = data.dataCustom;
-        if (d[0] == 'ysp-agree') {
-          elem.querySelector("textarea").value = d[1];
-          var key = elem.querySelector("textarea");
-          key.value = d[1];
-          var $v = $(key);
-          $v.trigger('change');
+        var d = data.dataCustom;if (d[0] == 'ysp-agree') {
+          elem.querySelector("textarea").value = d[1];var key = elem.querySelector("textarea");key.value = d[1];var $v = $(key);$v.trigger('change');
         }
       }
     },
     getTemplate_uiControl170_UFvWod: function () {
       var selfTemplate = "import { Component } from 'react';\nexport default class extends Component {\n  onChange(e){\n    var target=e.target;\n    var handler = this.props.customHandler;\n    if(handler){\n      handler({\n        data:[e.target.className,e.target.value,e.target.dataset.key],\n        eventType:\"change\"\n      })\n    }\n  }\n  render() {\n    var data = this.props.customData || [];\n    var _this = this;\n    return (\n      <div className=\"ysp-flowsheet ysp-datafrom2 area\">{data&&data.length>0 ? <div className='ysp-Approval-opinions'>\n        <span>{data[0]}</span>\n      \t<ATextarea defaultValue={data[1]} onBlur={_this.onChange.bind(_this)} className='ysp-agree'/>\n      </div> : \"\"}</div>\n    )\n  }\n};";
-      return "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\"react\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \"onChange\",\n    value: function onChange(e) {\n      var target = e.target;\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          data: [e.target.className, e.target.value, e.target.dataset.key],\n          eventType: \"change\"\n        });\n      }\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      var data = this.props.customData || [];\n      var _this = this;\n      return React.createElement(\n        \"div\",\n        { className: \"ysp-flowsheet ysp-datafrom2 area\" },\n        data && data.length > 0 ? React.createElement(\n          \"div\",\n          { className: \"ysp-Approval-opinions\" },\n          React.createElement(\n            \"span\",\n            null,\n            data[0]\n          ),\n          React.createElement(ATextarea, { defaultValue: data[1], onBlur: _this.onChange.bind(_this), className: \"ysp-agree\" })\n        ) : \"\"\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;\n;";
+      return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "onChange",\n    value: function onChange(e) {\n      var target = e.target;\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          data: [e.target.className, e.target.value, e.target.dataset.key],\n          eventType: "change"\n        });\n      }\n    }\n  }, {\n    key: "render",\n    value: function render() {\n      var data = this.props.customData || [];\n      var _this = this;\n      return React.createElement(\n        "div",\n        { className: "ysp-flowsheet ysp-datafrom2 area" },\n        data && data.length > 0 ? React.createElement(\n          "div",\n          { className: "ysp-Approval-opinions" },\n          React.createElement(\n            "span",\n            null,\n            data[0]\n          ),\n          React.createElement(ATextarea, { defaultValue: data[1], onBlur: _this.onChange.bind(_this), className: "ysp-agree" })\n        ) : ""\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;\n;';
     },
 
     getData_control180_qbH13x: function (elem) {
@@ -423,112 +412,63 @@
     },
     getData_control190_Aw3o9T: function (elem) {
       if (elem) {
-        var arr = { status: [], headOne: [], titleOne: [], contentOne: [], headTwo: [], titleTwo: [], contentTwo: [], headThree: [], titleThree: [], contentThree: [] };
-        var div1 = elem.querySelector("#div1");
-        var div2 = elem.querySelector("#div2");
-        var div3 = elem.querySelector("#div3"); //显示隐藏状态
-        var a = div1.getAttribute("style");
-        arr.status.push(a);
-        var b = div2.getAttribute("style");
-        arr.status.push(b);
-        var c = div3.getAttribute("style");
-        arr.status.push(c);
-        if (a == "display: none;") {
-          arr.titleOne.push("");
-          arr.contentOne.push("");
+        var arr = { status: [], headOne: [], titleOne: [], contentOne: [], headTwo: [], titleTwo: [], contentTwo: [], headThree: [], titleThree: [], contentThree: [] };var div1 = elem.querySelector("#div1");var div2 = elem.querySelector("#div2");var div3 = elem.querySelector("#div3"); //显示隐藏状态
+        var a = div1.getAttribute("style");arr.status.push(a);var b = div2.getAttribute("style");arr.status.push(b);var c = div3.getAttribute("style");arr.status.push(c);if (a == "display: none;") {
+          arr.titleOne.push("");arr.contentOne.push("");
         } else {
           //标题
           var tit = div1.querySelectorAll(".mini-toolbar"); //表格标题
           for (var i = 0; i < tit.length; i++) {
             arr.headOne.push(tit[i].textContent.trim());
-          }
-          var tab1 = div1.querySelectorAll(".mini-grid-columns-view");
-          for (var i = 0; i < tab1.length; i++) {
-            var tab = tab1[i].querySelector("table");
-            var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");
-            var con = [];
-            for (var j = 0; j < ths.length; j++) {
+          }var tab1 = div1.querySelectorAll(".mini-grid-columns-view");for (var i = 0; i < tab1.length; i++) {
+            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];for (var j = 0; j < ths.length; j++) {
               con.push(ths[j].textContent);
-            }
-            arr.titleOne.push(con);
+            }arr.titleOne.push(con);
           } //表格内容
-          var tab2 = div1.querySelectorAll(".mini-grid-rows-view");
-          for (var n = 0; n < tab2.length; n++) {
-            var tab = tab2[n].querySelector("table");
-            var trs = tab.querySelectorAll("tr");
-            var cons = [];
-            for (var i = 1; i < trs.length; i++) {
-              var con = [];
-              var tds = trs[i].querySelectorAll("td");
-              for (var j = 1; j < tds.length; j++) {
+          var tab2 = div1.querySelectorAll(".mini-grid-rows-view");for (var n = 0; n < tab2.length; n++) {
+            var tab = tab2[n].querySelector("table");var trs = tab.querySelectorAll("tr");var cons = [];for (var i = 1; i < trs.length; i++) {
+              var con = [];var tds = trs[i].querySelectorAll("td");for (var j = 1; j < tds.length; j++) {
                 con.push(tds[j].textContent);
-              }
-              cons.push(con);
-            }
-            arr.contentOne.push(cons);
+              }cons.push(con);
+            }arr.contentOne.push(cons);
           }
-        }
-        if (b == "display: none;") {
-          arr.titleTwo.push("");
-          arr.contentTwo.push("");
+        }if (b == "display: none;") {
+          arr.titleTwo.push("");arr.contentTwo.push("");
         } else {
           //标题
           var tit = div2.querySelectorAll(".mini-toolbar"); //表格标题
           for (var i = 0; i < tit.length; i++) {
             arr.headTwo.push(tit[i].textContent.trim());
-          }
-          var tab1 = div2.querySelectorAll(".mini-grid-columns-view");
-          for (var i = 0; i < tab1.length; i++) {
-            var tab = tab1[i].querySelector("table");
-            var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");
-            var con = [];
-            for (var j = 0; j < ths.length; j++) {
+          }var tab1 = div2.querySelectorAll(".mini-grid-columns-view");for (var i = 0; i < tab1.length; i++) {
+            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];for (var j = 0; j < ths.length; j++) {
               con.push(ths[j].textContent);
-            }
-            arr.titleTwo.push(con);
+            }arr.titleTwo.push(con);
           } //表格内容
-          var tab2 = div2.querySelectorAll(".mini-grid-rows-view");
-          for (var n = 0; n < tab2.length; n++) {
-            var tab = tab2[n].querySelector("table");
-            var trs = tab.querySelectorAll("tr");
-            var cons = [];
-            for (var i = 1; i < trs.length; i++) {
-              var con = [];
-              var tds = trs[i].querySelectorAll("td");
-              for (var j = 1; j < tds.length; j++) {
+          var tab2 = div2.querySelectorAll(".mini-grid-rows-view");for (var n = 0; n < tab2.length; n++) {
+            var tab = tab2[n].querySelector("table");var trs = tab.querySelectorAll("tr");var cons = [];for (var i = 1; i < trs.length; i++) {
+              var con = [];var tds = trs[i].querySelectorAll("td");for (var j = 1; j < tds.length; j++) {
                 con.push(tds[j].textContent);
-              }
-              cons.push(con);
-            }
-            arr.contentTwo.push(cons);
+              }cons.push(con);
+            }arr.contentTwo.push(cons);
           }
-        }
-        if (c == "display: none;") {
-          arr.titleThree.push("");
-          arr.contentThree.push("");
+        }if (c == "display: none;") {
+          arr.titleThree.push("");arr.contentThree.push("");
         } else {
           //标题
           var tit = div3.querySelectorAll(".mini-toolbar"); //表格标题
           for (var i = 0; i < tit.length; i++) {
             arr.headThree.push(tit[i].textContent.trim());
-          }
-          var tab1 = div3.querySelectorAll(".mini-grid-columns-view");
-          for (var i = 0; i < tab1.length; i++) {
-            var tab = tab1[i].querySelector("table");
-            var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");
-            var con = [];
-            if (tab.querySelector("tbody").querySelectorAll("tr").length == 2) {
+          }var tab1 = div3.querySelectorAll(".mini-grid-columns-view");for (var i = 0; i < tab1.length; i++) {
+            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];if (tab.querySelector("tbody").querySelectorAll("tr").length == 2) {
               for (var j = 0; j < ths.length; j++) {
                 con.push(ths[j].textContent);
               }
             } else {
               for (var j = 0; j < 3; j++) {
                 con.push(ths[j].textContent);
-              }
-              for (var j = 4; j < ths.length; j++) {
+              }for (var j = 4; j < ths.length; j++) {
                 con.push(ths[j].textContent);
-              }
-              con.push(ths[3].textContent);
+              }con.push(ths[3].textContent);
             } // [].forEach.call(arr.headThree,function(d,i){//zyt
             //         if(d=="大盘价"){
             //           for(var j=0;j<ths.length;j++){
@@ -551,30 +491,20 @@
             //       }
             arr.titleThree.push(con);
           } //表格内容
-          var tab2 = div3.querySelectorAll(".mini-grid-rows-view");
-          for (var n = 0; n < tab2.length; n++) {
-            var tab = tab2[n].querySelector("table");
-            var trs = tab.querySelectorAll("tr");
-            var cons = [];
-            for (var i = 1; i < trs.length; i++) {
-              var con = [];
-              var tds = trs[i].querySelectorAll("td");
-              for (var j = 1; j < tds.length; j++) {
+          var tab2 = div3.querySelectorAll(".mini-grid-rows-view");for (var n = 0; n < tab2.length; n++) {
+            var tab = tab2[n].querySelector("table");var trs = tab.querySelectorAll("tr");var cons = [];for (var i = 1; i < trs.length; i++) {
+              var con = [];var tds = trs[i].querySelectorAll("td");for (var j = 1; j < tds.length; j++) {
                 con.push(tds[j].textContent);
-              }
-              cons.push(con);
-            }
-            arr.contentThree.push(cons);
+              }cons.push(con);
+            }arr.contentThree.push(cons);
           }
-        }
-        return arr;
-      }
-      return [];
+        }return arr;
+      }return [];
     },
     doAction_uiControl183_00AQUJ: function (data, elem) {},
     getTemplate_uiControl183_00AQUJ: function () {
       var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var cards = data&&data.status.length>0&&data.status[0] == null?  <div> \n          {data.headOne.map(function(dd,ii){\n            return(\n              <div>\n                <div className="ysp-total">\n                  <h1>{dd}</h1>\n                </div>\n                {data && data.contentOne[ii].map(function(d,i){\n          return(\n              <div className="ysp-flowsheet-twoPart">\n                <div className="ysp-flowsheet-twoPart-card">\n                  <p className="ysp-twoPart-cardTit">\n                    <span>\n                      <b></b>\n                      {d[0]}\n                    </span>\n                  </p>\n                  {d.map(function(item,index){\n                    if(index !== 0){\n                      return( \n                        <div>\n                          <span>{data.titleOne[ii][index]}</span>\n                          <label>{item}</label>\n                        </div>\n                      )\n                    }\n                  })\n                  }\n              </div>\n              </div>\n          )\n        })}\n              </div>\n            )\n          })}</div>\t : data&&data.status.length>0&&data.status[1] == null?  <div> \n          {data.headTwo.map(function(dd,ii){\n            return(\n              <div>\n                <div className="ysp-total">\n                  <h1>{dd}</h1>\n                </div>\n                {data && data.contentTwo[ii].map(function(d,i){\n          return(\n              <div className="ysp-flowsheet-twoPart">\n                <div className="ysp-flowsheet-twoPart-card">\n                  <p className="ysp-twoPart-cardTit">\n                    <span>\n                      <b></b>\n                      {d[0]}\n                    </span>\n                  </p>\n                  {d.map(function(item,index){\n                    if(index !== 0){\n                      return( \n                        <div>\n                          <span>{data.titleTwo[ii][index]}</span>\n                          <label>{item}</label>\n                        </div>\n                      )\n                    }\n                  })\n                  }\n              </div>\n              </div>\n          )\n        })}\n              </div>\n            )\n          })}</div>\t :  data&&data.status.length>0&&data.status[2] == null?  <div> \n          {data.headThree.map(function(dd,ii){\n            return(\n              <div>\n                <div className="ysp-total">\n                  <h1>{dd}</h1>\n                </div>\n                {data && data.contentThree[ii].map(function(d,i){\n          return(\n              <div className="ysp-flowsheet-twoPart">\n                <div className="ysp-flowsheet-twoPart-card">\n                  <p className="ysp-twoPart-cardTit">\n                    <span>\n                      <b></b>\n                      {d[0]}\n                    </span>\n                  </p>\n                  {d.map(function(item,index){\n                    if(index !== 0){\n                      return( \n                        <div>\n                          <span>{data.titleThree[ii][index]}</span>\n                          <label>{item}</label>\n                        </div>\n                      )\n                    }\n                  })\n                  }\n              </div>\n              </div>\n          )\n        })}\n              </div>\n            )\n          })}</div>\t\t\n         : "" ;\n    // var aa=[];\n    // aa.push(<div>hahah</div>)\n    return (\n        <div className="ysp-flowsheet ysp-datafrom2">{data!=="" ? <div>{cards}</div> : ""}</div>\n    )\n  }\n});';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    var cards = data && data.status.length > 0 && data.status[0] == null ? React.createElement(\n      "div",\n      null,\n      data.headOne.map(function (dd, ii) {\n        return React.createElement(\n          "div",\n          null,\n          React.createElement(\n            "div",\n            { className: "ysp-total" },\n            React.createElement(\n              "h1",\n              null,\n              dd\n            )\n          ),\n          data && data.contentOne[ii].map(function (d, i) {\n            return React.createElement(\n              "div",\n              { className: "ysp-flowsheet-twoPart" },\n              React.createElement(\n                "div",\n                { className: "ysp-flowsheet-twoPart-card" },\n                React.createElement(\n                  "p",\n                  { className: "ysp-twoPart-cardTit" },\n                  React.createElement(\n                    "span",\n                    null,\n                    React.createElement("b", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      "div",\n                      null,\n                      React.createElement(\n                        "span",\n                        null,\n                        data.titleOne[ii][index]\n                      ),\n                      React.createElement(\n                        "label",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[1] == null ? React.createElement(\n      "div",\n      null,\n      data.headTwo.map(function (dd, ii) {\n        return React.createElement(\n          "div",\n          null,\n          React.createElement(\n            "div",\n            { className: "ysp-total" },\n            React.createElement(\n              "h1",\n              null,\n              dd\n            )\n          ),\n          data && data.contentTwo[ii].map(function (d, i) {\n            return React.createElement(\n              "div",\n              { className: "ysp-flowsheet-twoPart" },\n              React.createElement(\n                "div",\n                { className: "ysp-flowsheet-twoPart-card" },\n                React.createElement(\n                  "p",\n                  { className: "ysp-twoPart-cardTit" },\n                  React.createElement(\n                    "span",\n                    null,\n                    React.createElement("b", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      "div",\n                      null,\n                      React.createElement(\n                        "span",\n                        null,\n                        data.titleTwo[ii][index]\n                      ),\n                      React.createElement(\n                        "label",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[2] == null ? React.createElement(\n      "div",\n      null,\n      data.headThree.map(function (dd, ii) {\n        return React.createElement(\n          "div",\n          null,\n          React.createElement(\n            "div",\n            { className: "ysp-total" },\n            React.createElement(\n              "h1",\n              null,\n              dd\n            )\n          ),\n          data && data.contentThree[ii].map(function (d, i) {\n            return React.createElement(\n              "div",\n              { className: "ysp-flowsheet-twoPart" },\n              React.createElement(\n                "div",\n                { className: "ysp-flowsheet-twoPart-card" },\n                React.createElement(\n                  "p",\n                  { className: "ysp-twoPart-cardTit" },\n                  React.createElement(\n                    "span",\n                    null,\n                    React.createElement("b", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      "div",\n                      null,\n                      React.createElement(\n                        "span",\n                        null,\n                        data.titleThree[ii][index]\n                      ),\n                      React.createElement(\n                        "label",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : "";\n    // var aa=[];\n    // aa.push(<div>hahah</div>)\n    return React.createElement(\n      "div",\n      { className: "ysp-flowsheet ysp-datafrom2" },\n      data !== "" ? React.createElement(\n        "div",\n        null,\n        cards\n      ) : ""\n    );\n  }\n});';
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData;\n    var cards = data && data.status.length > 0 && data.status[0] == null ? React.createElement(\n      \"div\",\n      null,\n      data.headOne.map(function (dd, ii) {\n        return React.createElement(\n          \"div\",\n          null,\n          React.createElement(\n            \"div\",\n            { className: \"ysp-total\" },\n            React.createElement(\n              \"h1\",\n              null,\n              dd\n            )\n          ),\n          data && data.contentOne[ii].map(function (d, i) {\n            return React.createElement(\n              \"div\",\n              { className: \"ysp-flowsheet-twoPart\" },\n              React.createElement(\n                \"div\",\n                { className: \"ysp-flowsheet-twoPart-card\" },\n                React.createElement(\n                  \"p\",\n                  { className: \"ysp-twoPart-cardTit\" },\n                  React.createElement(\n                    \"span\",\n                    null,\n                    React.createElement(\"b\", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      \"div\",\n                      null,\n                      React.createElement(\n                        \"span\",\n                        null,\n                        data.titleOne[ii][index]\n                      ),\n                      React.createElement(\n                        \"label\",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[1] == null ? React.createElement(\n      \"div\",\n      null,\n      data.headTwo.map(function (dd, ii) {\n        return React.createElement(\n          \"div\",\n          null,\n          React.createElement(\n            \"div\",\n            { className: \"ysp-total\" },\n            React.createElement(\n              \"h1\",\n              null,\n              dd\n            )\n          ),\n          data && data.contentTwo[ii].map(function (d, i) {\n            return React.createElement(\n              \"div\",\n              { className: \"ysp-flowsheet-twoPart\" },\n              React.createElement(\n                \"div\",\n                { className: \"ysp-flowsheet-twoPart-card\" },\n                React.createElement(\n                  \"p\",\n                  { className: \"ysp-twoPart-cardTit\" },\n                  React.createElement(\n                    \"span\",\n                    null,\n                    React.createElement(\"b\", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      \"div\",\n                      null,\n                      React.createElement(\n                        \"span\",\n                        null,\n                        data.titleTwo[ii][index]\n                      ),\n                      React.createElement(\n                        \"label\",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[2] == null ? React.createElement(\n      \"div\",\n      null,\n      data.headThree.map(function (dd, ii) {\n        return React.createElement(\n          \"div\",\n          null,\n          React.createElement(\n            \"div\",\n            { className: \"ysp-total\" },\n            React.createElement(\n              \"h1\",\n              null,\n              dd\n            )\n          ),\n          data && data.contentThree[ii].map(function (d, i) {\n            return React.createElement(\n              \"div\",\n              { className: \"ysp-flowsheet-twoPart\" },\n              React.createElement(\n                \"div\",\n                { className: \"ysp-flowsheet-twoPart-card\" },\n                React.createElement(\n                  \"p\",\n                  { className: \"ysp-twoPart-cardTit\" },\n                  React.createElement(\n                    \"span\",\n                    null,\n                    React.createElement(\"b\", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      \"div\",\n                      null,\n                      React.createElement(\n                        \"span\",\n                        null,\n                        data.titleThree[ii][index]\n                      ),\n                      React.createElement(\n                        \"label\",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : \"\";\n    // var aa=[];\n    // aa.push(<div>hahah</div>)\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-flowsheet ysp-datafrom2\" },\n      data !== \"\" ? React.createElement(\n        \"div\",\n        null,\n        cards\n      ) : \"\"\n    );\n  }\n});";
     },
     getData_control181_ptwra5: function (elem) {
       if (elem) {
@@ -663,8 +593,7 @@
       //红色提示
       if (!elem) {
         return;
-      }
-      if (elem && elem.contentWindow && elem.contentWindow.document) {
+      }if (elem && elem.contentWindow && elem.contentWindow.document) {
         if (elem.contentWindow.document.querySelector(".mini-tips-danger")) {
           return elem.contentWindow.document.querySelector(".mini-tips-danger").innerHTML;
         }
@@ -673,7 +602,36 @@
     doAction_uiControl168_kqEBpB: function (data, elem) {},
     getTemplate_uiControl168_kqEBpB: function () {
       var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData||[]\n    return (\n      <div className="ysp_alert_tips">\n        {data==""? <div></div>:<div className="ysp_alert_words"><span\tdangerouslySetInnerHTML={{__html:data}}></span></div>}\n      </div>\n    )\n  }\n});';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData || [];\n    return React.createElement(\n      "div",\n      { className: "ysp_alert_tips" },\n      data == "" ? React.createElement("div", null) : React.createElement(\n        "div",\n        { className: "ysp_alert_words" },\n        React.createElement("span", { dangerouslySetInnerHTML: { __html: data } })\n      )\n    );\n  }\n});';
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData || [];\n    return React.createElement(\n      \"div\",\n      { className: \"ysp_alert_tips\" },\n      data == \"\" ? React.createElement(\"div\", null) : React.createElement(\n        \"div\",\n        { className: \"ysp_alert_words\" },\n        React.createElement(\"span\", { dangerouslySetInnerHTML: { __html: data } })\n      )\n    );\n  }\n});";
+    },
+    getData_control137_ecW4TU: function (elem) {
+      //loading 加载。
+      if (!elem) {
+        return;
+      }if (elem) {
+        var loading = elem.contentDocument.querySelector("body").querySelector(".mini-mask");var _loading = elem.ownerDocument.querySelector(".mini-mask");if (loading) {
+          var show = loading.querySelector('.mini-mask-loading');if (show && show.style.display == 'block') {
+            return true;
+          }
+        } else if (_loading) {
+          var _show = _loading.querySelector('.mini-mask-loading');if (_show && _show.style.display == 'block') {
+            return true;
+          }
+        } else {
+          return false;
+        }
+      }
+    },
+    doAction_uiControl130_Tg1fS0: function (data, elem) {
+      if (data.eventType == "show") {
+        ysp.appMain.showLoading();
+      } else if (data.eventType == "hide") {
+        ysp.appMain.hideLoading();
+      }
+    },
+    getTemplate_uiControl130_Tg1fS0: function () {
+      var selfTemplate = 'import {Component} from \'react\';\nexport default class extends Component {\n// componentWillReceiveProps(props){\n//   // debugger;\n//   var show=props.customData;\n//   var handler=props.customHandler;\n//   if(show&&handler){\n//     handler({\n//       eventType:"show"\n//     })\n//   }else{\n//     handler({\n//       eventType:"hide"\n//     })\n//   }\n// }\n   render(){\n    var data = this.props.customData;\n    if(data){\n    \treturn(\n        <div className="ysp-loadEffect-background">\n          <div className="ysp-loadEffect">\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n          </div>\n        </div>\n    \t)  \n    }else{\n      return(\n \xA0 \xA0  \t<div></div> \n      )\n    }\n  }\n}';
+      return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "render",\n\n    // componentWillReceiveProps(props){\n    //   // debugger;\n    //   var show=props.customData;\n    //   var handler=props.customHandler;\n    //   if(show&&handler){\n    //     handler({\n    //       eventType:"show"\n    //     })\n    //   }else{\n    //     handler({\n    //       eventType:"hide"\n    //     })\n    //   }\n    // }\n    value: function render() {\n      var data = this.props.customData;\n      if (data) {\n        return React.createElement(\n          "div",\n          { className: "ysp-loadEffect-background" },\n          React.createElement(\n            "div",\n            { className: "ysp-loadEffect" },\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null)\n          )\n        );\n      } else {\n        return React.createElement("div", null);\n      }\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     }
   }, "goodBargain");
 })(window, ysp);

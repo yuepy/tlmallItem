@@ -306,6 +306,39 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control274_r0WyhE": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control274_r0WyhE"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -318,7 +351,8 @@
         "control114_OlCFKb",
         "control115_9ZIkTM",
         "control140_WT4rHc",
-        "control171_DwwBeJ"
+        "control171_DwwBeJ",
+        "control274_r0WyhE"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -487,6 +521,21 @@
           }
         },
         {
+          "id": "uiControl268_ZRtAZB",
+          "controlId": "control274_r0WyhE",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl268_ZRtAZB",
+                "onGetTemplate": "getTemplate_uiControl268_ZRtAZB"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl133_cHGd64",
           "controlId": "control140_WT4rHc",
           "display": {
@@ -539,7 +588,8 @@
       "contexts": {
         "context30_kSkk8F": [
           "移动端页面",
-          "待处理任务"
+          "待处理任务",
+          "已处理的任务"
         ]
       }
     },
@@ -552,7 +602,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283792&visitRelative",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=283976&askForLeave",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317867&visitRelative",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=512828&visitRelative"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=512828&visitRelative",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=512740&visitRelative"
         ]
       }
     },
@@ -593,6 +644,33 @@
             "taskFromList$value",
             "taskListId",
             "toast"
+          ],
+          [
+            "$cell$",
+            "__modalmini-",
+            "endT",
+            "endT$text",
+            "endT$value",
+            "likeQ",
+            "likeQ$text",
+            "likeSearch",
+            "mini-",
+            "mini-$",
+            "mini-$ck$",
+            "mini-$emptytext",
+            "mini-$filter$",
+            "mini-$headerCell$",
+            "mini-$row$",
+            "mini-$summary$",
+            "sponsor",
+            "sponsor$text",
+            "startT",
+            "startT$text",
+            "startT$value",
+            "tableSearch",
+            "taskFromList",
+            "taskFromList$value",
+            "taskListId"
           ]
         ]
       }

@@ -5,7 +5,9 @@
   "jsFile": "index.js",
   "requires": {
     "Address": "../Address/index.json",
-    "noFound": "../noFound/index.json"
+    "noFound": "../noFound/index.json",
+    "upFileScan": "../upFileScan/index.json",
+    "processForm": "../processForm/index.json"
   },
   "chineseName": "地址（B2B销售订单）",
   "description": "",
@@ -107,6 +109,10 @@
         {
           "toContextId": "context23_OydA9m",
           "toModelId": "noFound"
+        },
+        {
+          "toContextId": "context8_ddpRhS",
+          "toModelId": "processForm"
         }
       ]
     },
@@ -121,6 +127,10 @@
         {
           "toContextId": "context23_OydA9m",
           "toModelId": "noFound"
+        },
+        {
+          "toContextId": "context15_gNZcJO",
+          "toModelId": "upFileScan"
         }
       ]
     }
@@ -177,7 +187,8 @@
           "192.168.220.51:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11360029",
           "192.168.220.51:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o11360039",
           "192.168.220.51:8000/ptsoa/MaterialManager/orderManagement/fn_salesOrderManage/saleAddr.jsp?orderNum=440190000580",
-          "192.168.220.51:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o13790001"
+          "192.168.220.51:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o13790001",
+          "192.168.220.51:8000/ptsoa/MaterialManager/orderManagement/B2BSale/BtbAddr.jsp?orderNum=o21182721"
         ]
       }
     },

@@ -105,8 +105,8 @@
           top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
         } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
           top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
-        } else if (title.indexOf("离职管理") !== -1) {
-          top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
+        } else if (title.indexOf("离职/退休管理") !== -1 || title.indexOf("离职管理(辞职)") !== -1) {
+          win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
           win._ysp_top.tenderType = "positionChange";
         } else if (title.indexOf("销假申请") !== -1) {

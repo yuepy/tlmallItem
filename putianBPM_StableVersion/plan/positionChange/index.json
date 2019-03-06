@@ -125,64 +125,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control137_0hQbBk": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              0,
-              5
-            ],
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control137_0hQbBk"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
-    "control138_xm5sDF": {
-      "location": {
-        "data": {
-          "tagName": "BODY"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "ordinal": [
-              0,
-              5
-            ],
-            "value": "/HTML[1]/BODY[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control138_xm5sDF"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control136_P2r8Ou": {
       "location": {
         "data": {
@@ -505,6 +447,39 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control275_5IChxV": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control275_5IChxV"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -513,8 +488,6 @@
         "control130_yhEqFD",
         "control131_9ga2oZ",
         "control133_HRK9R1",
-        "control137_0hQbBk",
-        "control138_xm5sDF",
         "control136_P2r8Ou",
         "control166_l6VtG4",
         "control30_viXbcS",
@@ -523,7 +496,8 @@
         "control132_4yLakw",
         "control152_2zM9Ru",
         "control153_VJp29c",
-        "control265_CeSfCJ"
+        "control265_CeSfCJ",
+        "control275_5IChxV"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -719,6 +693,21 @@
           }
         },
         {
+          "id": "uiControl269_waMHf1",
+          "controlId": "control275_5IChxV",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl269_waMHf1",
+                "onGetTemplate": "getTemplate_uiControl269_waMHf1"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl259_5elwoD",
           "controlId": "control265_CeSfCJ",
           "display": {
@@ -777,36 +766,6 @@
               }
             }
           }
-        },
-        {
-          "id": "uiControl130_AswrtP",
-          "controlId": "control137_0hQbBk",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl130_AswrtP",
-                "onGetTemplate": "getTemplate_uiControl130_AswrtP"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl131_IkzH3X",
-          "controlId": "control138_xm5sDF",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl131_IkzH3X",
-                "onGetTemplate": "getTemplate_uiControl131_IkzH3X"
-              }
-            }
-          }
         }
       ]
     }
@@ -834,7 +793,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=304028&positionChange",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294104&positionChange",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=508766&positionChange",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=511394&positionChange"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=511394&positionChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=511965&positionChange"
         ]
       }
     },
