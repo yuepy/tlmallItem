@@ -304,7 +304,7 @@
       if (!elem) {
         return;
       }var data = { star: [], tit: [], con: [], pserror: [] };if (elem && elem.querySelector("[dir='ltr']") && elem.querySelector("[dir='ltr']").textContent.indexOf("开始日期") !== -1) {
-        var elem = elem.querySelectorAll("[dir='ltr']")[0].querySelector("[dir='ltr']").querySelector("tbody");var titStr = elem.querySelectorAll("th");var titCon = elem.querySelectorAll("td");if (titStr) {
+        var elem = elem.querySelectorAll("[dir='ltr']")[0].querySelector("[dir='ltr']").querySelector("tbody");var titStr = elem.querySelectorAll("th");var titCon = elem.querySelectorAll("td");var href = elem.ownerDocument.defaultView.location.href;if (titStr) {
           [].forEach.call(titStr, function (item, index) {
             //星号
             if (item.querySelector("span")) {
@@ -316,7 +316,12 @@
         }if (titCon) {
           [].forEach.call(titCon, function (item, index) {
             var ipt = item.querySelector("input");var spns = item.querySelector("span");if (ipt) {
-              data.con.push(ipt.value.replace(/\//g, "-"));data.pserror.push(ipt.getAttribute("class"));
+              // data.con.push(ipt.value.replace(/\//g, "-"));
+              if (ysp.appMain.isIOS() && ipt.getAttribute("id").indexOf("DATE") !== -1 && href.indexOf("192.168.220.110") !== -1) {
+                var date = ipt.value.split("/");data.con.push(date[2] + "-" + date[1] + "-" + date[0]);
+              } else {
+                data.con.push(ipt.value.replace(/\//g, "-"));
+              }data.pserror.push(ipt.getAttribute("class"));
             } else if (index > 0) {
               if (item.querySelector("select")) {
                 data.pserror.push(item.querySelector("select").getAttribute("class"));var sel = [];var opts = item.querySelectorAll("option");[].forEach.call(opts, function (d, i) {
@@ -340,9 +345,9 @@
       } else if (data.eventType == "timeclick") {
         var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];time.value = d;time.dispatchEvent(new Event("change"));
       } else if (data.eventType == "datechange") {
-        var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];if (ysp.appMain.isIOS() && time.getAttribute("id").indexOf("START_DATE")) {
-          var date = d.split("-");time.value = date[1] + "/" + date[2] + "/" + date[0];
-        } else if (ysp.appMain.isIOS() && time.getAttribute("id").indexOf("END_DATE")) {
+        var data = data.dataCustom;var d = data[0];var i = data[1];var time = elem.querySelectorAll("input")[i];var href = elem.ownerDocument.defaultView.location.href;if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1 && time.getAttribute("id").indexOf("START_DATE")) {
+          var date = d.split("-");time.value = date[2] + "/" + date[1] + "/" + date[0];
+        } else if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1 && time.getAttribute("id").indexOf("END_DATE")) {
           var date = d.split("-");time.value = date[2] + "/" + date[1] + "/" + date[0];
         } else {
           time.value = d.replace(/-/g, "/");
