@@ -412,112 +412,63 @@
     },
     getData_control190_Aw3o9T: function (elem) {
       if (elem) {
-        var arr = { status: [], headOne: [], titleOne: [], contentOne: [], headTwo: [], titleTwo: [], contentTwo: [], headThree: [], titleThree: [], contentThree: [] };
-        var div1 = elem.querySelector("#div1");
-        var div2 = elem.querySelector("#div2");
-        var div3 = elem.querySelector("#div3"); //显示隐藏状态
-        var a = div1.getAttribute("style");
-        arr.status.push(a);
-        var b = div2.getAttribute("style");
-        arr.status.push(b);
-        var c = div3.getAttribute("style");
-        arr.status.push(c);
-        if (a == "display: none;") {
-          arr.titleOne.push("");
-          arr.contentOne.push("");
+        var arr = { status: [], headOne: [], titleOne: [], contentOne: [], headTwo: [], titleTwo: [], contentTwo: [], headThree: [], titleThree: [], contentThree: [] };var div1 = elem.querySelector("#div1");var div2 = elem.querySelector("#div2");var div3 = elem.querySelector("#div3"); //显示隐藏状态
+        var a = div1.getAttribute("style");arr.status.push(a);var b = div2.getAttribute("style");arr.status.push(b);var c = div3.getAttribute("style");arr.status.push(c);if (a == "display: none;") {
+          arr.titleOne.push("");arr.contentOne.push("");
         } else {
           //标题
           var tit = div1.querySelectorAll(".mini-toolbar"); //表格标题
           for (var i = 0; i < tit.length; i++) {
             arr.headOne.push(tit[i].textContent.trim());
-          }
-          var tab1 = div1.querySelectorAll(".mini-grid-columns-view");
-          for (var i = 0; i < tab1.length; i++) {
-            var tab = tab1[i].querySelector("table");
-            var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");
-            var con = [];
-            for (var j = 0; j < ths.length; j++) {
+          }var tab1 = div1.querySelectorAll(".mini-grid-columns-view");for (var i = 0; i < tab1.length; i++) {
+            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];for (var j = 0; j < ths.length; j++) {
               con.push(ths[j].textContent);
-            }
-            arr.titleOne.push(con);
+            }arr.titleOne.push(con);
           } //表格内容
-          var tab2 = div1.querySelectorAll(".mini-grid-rows-view");
-          for (var n = 0; n < tab2.length; n++) {
-            var tab = tab2[n].querySelector("table");
-            var trs = tab.querySelectorAll("tr");
-            var cons = [];
-            for (var i = 1; i < trs.length; i++) {
-              var con = [];
-              var tds = trs[i].querySelectorAll("td");
-              for (var j = 1; j < tds.length; j++) {
+          var tab2 = div1.querySelectorAll(".mini-grid-rows-view");for (var n = 0; n < tab2.length; n++) {
+            var tab = tab2[n].querySelector("table");var trs = tab.querySelectorAll("tr");var cons = [];for (var i = 1; i < trs.length; i++) {
+              var con = [];var tds = trs[i].querySelectorAll("td");for (var j = 1; j < tds.length; j++) {
                 con.push(tds[j].textContent);
-              }
-              cons.push(con);
-            }
-            arr.contentOne.push(cons);
+              }cons.push(con);
+            }arr.contentOne.push(cons);
           }
-        }
-        if (b == "display: none;") {
-          arr.titleTwo.push("");
-          arr.contentTwo.push("");
+        }if (b == "display: none;") {
+          arr.titleTwo.push("");arr.contentTwo.push("");
         } else {
           //标题
           var tit = div2.querySelectorAll(".mini-toolbar"); //表格标题
           for (var i = 0; i < tit.length; i++) {
             arr.headTwo.push(tit[i].textContent.trim());
-          }
-          var tab1 = div2.querySelectorAll(".mini-grid-columns-view");
-          for (var i = 0; i < tab1.length; i++) {
-            var tab = tab1[i].querySelector("table");
-            var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");
-            var con = [];
-            for (var j = 0; j < ths.length; j++) {
+          }var tab1 = div2.querySelectorAll(".mini-grid-columns-view");for (var i = 0; i < tab1.length; i++) {
+            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];for (var j = 0; j < ths.length; j++) {
               con.push(ths[j].textContent);
-            }
-            arr.titleTwo.push(con);
+            }arr.titleTwo.push(con);
           } //表格内容
-          var tab2 = div2.querySelectorAll(".mini-grid-rows-view");
-          for (var n = 0; n < tab2.length; n++) {
-            var tab = tab2[n].querySelector("table");
-            var trs = tab.querySelectorAll("tr");
-            var cons = [];
-            for (var i = 1; i < trs.length; i++) {
-              var con = [];
-              var tds = trs[i].querySelectorAll("td");
-              for (var j = 1; j < tds.length; j++) {
+          var tab2 = div2.querySelectorAll(".mini-grid-rows-view");for (var n = 0; n < tab2.length; n++) {
+            var tab = tab2[n].querySelector("table");var trs = tab.querySelectorAll("tr");var cons = [];for (var i = 1; i < trs.length; i++) {
+              var con = [];var tds = trs[i].querySelectorAll("td");for (var j = 1; j < tds.length; j++) {
                 con.push(tds[j].textContent);
-              }
-              cons.push(con);
-            }
-            arr.contentTwo.push(cons);
+              }cons.push(con);
+            }arr.contentTwo.push(cons);
           }
-        }
-        if (c == "display: none;") {
-          arr.titleThree.push("");
-          arr.contentThree.push("");
+        }if (c == "display: none;") {
+          arr.titleThree.push("");arr.contentThree.push("");
         } else {
           //标题
           var tit = div3.querySelectorAll(".mini-toolbar"); //表格标题
           for (var i = 0; i < tit.length; i++) {
             arr.headThree.push(tit[i].textContent.trim());
-          }
-          var tab1 = div3.querySelectorAll(".mini-grid-columns-view");
-          for (var i = 0; i < tab1.length; i++) {
-            var tab = tab1[i].querySelector("table");
-            var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");
-            var con = [];
-            if (tab.querySelector("tbody").querySelectorAll("tr").length == 2) {
+          }var tab1 = div3.querySelectorAll(".mini-grid-columns-view");for (var i = 0; i < tab1.length; i++) {
+            var tab = tab1[i].querySelector("table");var ths = tab.querySelectorAll(".mini-grid-headerCell.mini-grid-bottomCell");var con = [];if (tab.querySelector("tbody").querySelectorAll("tr").length == 2) {
               for (var j = 0; j < ths.length; j++) {
                 con.push(ths[j].textContent);
               }
             } else {
               for (var j = 0; j < 3; j++) {
                 con.push(ths[j].textContent);
-              }
-              for (var j = 4; j < ths.length; j++) {
+              }for (var j = 4; j < ths.length; j++) {
                 con.push(ths[j].textContent);
-              }
-              con.push(ths[3].textContent);
+              }con.push(ths[3].textContent);
             } // [].forEach.call(arr.headThree,function(d,i){//zyt
             //         if(d=="大盘价"){
             //           for(var j=0;j<ths.length;j++){
@@ -540,30 +491,20 @@
             //       }
             arr.titleThree.push(con);
           } //表格内容
-          var tab2 = div3.querySelectorAll(".mini-grid-rows-view");
-          for (var n = 0; n < tab2.length; n++) {
-            var tab = tab2[n].querySelector("table");
-            var trs = tab.querySelectorAll("tr");
-            var cons = [];
-            for (var i = 1; i < trs.length; i++) {
-              var con = [];
-              var tds = trs[i].querySelectorAll("td");
-              for (var j = 1; j < tds.length; j++) {
+          var tab2 = div3.querySelectorAll(".mini-grid-rows-view");for (var n = 0; n < tab2.length; n++) {
+            var tab = tab2[n].querySelector("table");var trs = tab.querySelectorAll("tr");var cons = [];for (var i = 1; i < trs.length; i++) {
+              var con = [];var tds = trs[i].querySelectorAll("td");for (var j = 1; j < tds.length; j++) {
                 con.push(tds[j].textContent);
-              }
-              cons.push(con);
-            }
-            arr.contentThree.push(cons);
+              }cons.push(con);
+            }arr.contentThree.push(cons);
           }
-        }
-        return arr;
-      }
-      return [];
+        }return arr;
+      }return [];
     },
     doAction_uiControl183_00AQUJ: function (data, elem) {},
     getTemplate_uiControl183_00AQUJ: function () {
       var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var cards = data&&data.status.length>0&&data.status[0] == null?  <div> \n          {data.headOne.map(function(dd,ii){\n            return(\n              <div>\n                <div className="ysp-total">\n                  <h1>{dd}</h1>\n                </div>\n                {data && data.contentOne[ii].map(function(d,i){\n          return(\n              <div className="ysp-flowsheet-twoPart">\n                <div className="ysp-flowsheet-twoPart-card">\n                  <p className="ysp-twoPart-cardTit">\n                    <span>\n                      <b></b>\n                      {d[0]}\n                    </span>\n                  </p>\n                  {d.map(function(item,index){\n                    if(index !== 0){\n                      return( \n                        <div>\n                          <span>{data.titleOne[ii][index]}</span>\n                          <label>{item}</label>\n                        </div>\n                      )\n                    }\n                  })\n                  }\n              </div>\n              </div>\n          )\n        })}\n              </div>\n            )\n          })}</div>\t : data&&data.status.length>0&&data.status[1] == null?  <div> \n          {data.headTwo.map(function(dd,ii){\n            return(\n              <div>\n                <div className="ysp-total">\n                  <h1>{dd}</h1>\n                </div>\n                {data && data.contentTwo[ii].map(function(d,i){\n          return(\n              <div className="ysp-flowsheet-twoPart">\n                <div className="ysp-flowsheet-twoPart-card">\n                  <p className="ysp-twoPart-cardTit">\n                    <span>\n                      <b></b>\n                      {d[0]}\n                    </span>\n                  </p>\n                  {d.map(function(item,index){\n                    if(index !== 0){\n                      return( \n                        <div>\n                          <span>{data.titleTwo[ii][index]}</span>\n                          <label>{item}</label>\n                        </div>\n                      )\n                    }\n                  })\n                  }\n              </div>\n              </div>\n          )\n        })}\n              </div>\n            )\n          })}</div>\t :  data&&data.status.length>0&&data.status[2] == null?  <div> \n          {data.headThree.map(function(dd,ii){\n            return(\n              <div>\n                <div className="ysp-total">\n                  <h1>{dd}</h1>\n                </div>\n                {data && data.contentThree[ii].map(function(d,i){\n          return(\n              <div className="ysp-flowsheet-twoPart">\n                <div className="ysp-flowsheet-twoPart-card">\n                  <p className="ysp-twoPart-cardTit">\n                    <span>\n                      <b></b>\n                      {d[0]}\n                    </span>\n                  </p>\n                  {d.map(function(item,index){\n                    if(index !== 0){\n                      return( \n                        <div>\n                          <span>{data.titleThree[ii][index]}</span>\n                          <label>{item}</label>\n                        </div>\n                      )\n                    }\n                  })\n                  }\n              </div>\n              </div>\n          )\n        })}\n              </div>\n            )\n          })}</div>\t\t\n         : "" ;\n    // var aa=[];\n    // aa.push(<div>hahah</div>)\n    return (\n        <div className="ysp-flowsheet ysp-datafrom2">{data!=="" ? <div>{cards}</div> : ""}</div>\n    )\n  }\n});';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    var cards = data && data.status.length > 0 && data.status[0] == null ? React.createElement(\n      "div",\n      null,\n      data.headOne.map(function (dd, ii) {\n        return React.createElement(\n          "div",\n          null,\n          React.createElement(\n            "div",\n            { className: "ysp-total" },\n            React.createElement(\n              "h1",\n              null,\n              dd\n            )\n          ),\n          data && data.contentOne[ii].map(function (d, i) {\n            return React.createElement(\n              "div",\n              { className: "ysp-flowsheet-twoPart" },\n              React.createElement(\n                "div",\n                { className: "ysp-flowsheet-twoPart-card" },\n                React.createElement(\n                  "p",\n                  { className: "ysp-twoPart-cardTit" },\n                  React.createElement(\n                    "span",\n                    null,\n                    React.createElement("b", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      "div",\n                      null,\n                      React.createElement(\n                        "span",\n                        null,\n                        data.titleOne[ii][index]\n                      ),\n                      React.createElement(\n                        "label",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[1] == null ? React.createElement(\n      "div",\n      null,\n      data.headTwo.map(function (dd, ii) {\n        return React.createElement(\n          "div",\n          null,\n          React.createElement(\n            "div",\n            { className: "ysp-total" },\n            React.createElement(\n              "h1",\n              null,\n              dd\n            )\n          ),\n          data && data.contentTwo[ii].map(function (d, i) {\n            return React.createElement(\n              "div",\n              { className: "ysp-flowsheet-twoPart" },\n              React.createElement(\n                "div",\n                { className: "ysp-flowsheet-twoPart-card" },\n                React.createElement(\n                  "p",\n                  { className: "ysp-twoPart-cardTit" },\n                  React.createElement(\n                    "span",\n                    null,\n                    React.createElement("b", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      "div",\n                      null,\n                      React.createElement(\n                        "span",\n                        null,\n                        data.titleTwo[ii][index]\n                      ),\n                      React.createElement(\n                        "label",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[2] == null ? React.createElement(\n      "div",\n      null,\n      data.headThree.map(function (dd, ii) {\n        return React.createElement(\n          "div",\n          null,\n          React.createElement(\n            "div",\n            { className: "ysp-total" },\n            React.createElement(\n              "h1",\n              null,\n              dd\n            )\n          ),\n          data && data.contentThree[ii].map(function (d, i) {\n            return React.createElement(\n              "div",\n              { className: "ysp-flowsheet-twoPart" },\n              React.createElement(\n                "div",\n                { className: "ysp-flowsheet-twoPart-card" },\n                React.createElement(\n                  "p",\n                  { className: "ysp-twoPart-cardTit" },\n                  React.createElement(\n                    "span",\n                    null,\n                    React.createElement("b", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      "div",\n                      null,\n                      React.createElement(\n                        "span",\n                        null,\n                        data.titleThree[ii][index]\n                      ),\n                      React.createElement(\n                        "label",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : "";\n    // var aa=[];\n    // aa.push(<div>hahah</div>)\n    return React.createElement(\n      "div",\n      { className: "ysp-flowsheet ysp-datafrom2" },\n      data !== "" ? React.createElement(\n        "div",\n        null,\n        cards\n      ) : ""\n    );\n  }\n});';
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData;\n    var cards = data && data.status.length > 0 && data.status[0] == null ? React.createElement(\n      \"div\",\n      null,\n      data.headOne.map(function (dd, ii) {\n        return React.createElement(\n          \"div\",\n          null,\n          React.createElement(\n            \"div\",\n            { className: \"ysp-total\" },\n            React.createElement(\n              \"h1\",\n              null,\n              dd\n            )\n          ),\n          data && data.contentOne[ii].map(function (d, i) {\n            return React.createElement(\n              \"div\",\n              { className: \"ysp-flowsheet-twoPart\" },\n              React.createElement(\n                \"div\",\n                { className: \"ysp-flowsheet-twoPart-card\" },\n                React.createElement(\n                  \"p\",\n                  { className: \"ysp-twoPart-cardTit\" },\n                  React.createElement(\n                    \"span\",\n                    null,\n                    React.createElement(\"b\", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      \"div\",\n                      null,\n                      React.createElement(\n                        \"span\",\n                        null,\n                        data.titleOne[ii][index]\n                      ),\n                      React.createElement(\n                        \"label\",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[1] == null ? React.createElement(\n      \"div\",\n      null,\n      data.headTwo.map(function (dd, ii) {\n        return React.createElement(\n          \"div\",\n          null,\n          React.createElement(\n            \"div\",\n            { className: \"ysp-total\" },\n            React.createElement(\n              \"h1\",\n              null,\n              dd\n            )\n          ),\n          data && data.contentTwo[ii].map(function (d, i) {\n            return React.createElement(\n              \"div\",\n              { className: \"ysp-flowsheet-twoPart\" },\n              React.createElement(\n                \"div\",\n                { className: \"ysp-flowsheet-twoPart-card\" },\n                React.createElement(\n                  \"p\",\n                  { className: \"ysp-twoPart-cardTit\" },\n                  React.createElement(\n                    \"span\",\n                    null,\n                    React.createElement(\"b\", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      \"div\",\n                      null,\n                      React.createElement(\n                        \"span\",\n                        null,\n                        data.titleTwo[ii][index]\n                      ),\n                      React.createElement(\n                        \"label\",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : data && data.status.length > 0 && data.status[2] == null ? React.createElement(\n      \"div\",\n      null,\n      data.headThree.map(function (dd, ii) {\n        return React.createElement(\n          \"div\",\n          null,\n          React.createElement(\n            \"div\",\n            { className: \"ysp-total\" },\n            React.createElement(\n              \"h1\",\n              null,\n              dd\n            )\n          ),\n          data && data.contentThree[ii].map(function (d, i) {\n            return React.createElement(\n              \"div\",\n              { className: \"ysp-flowsheet-twoPart\" },\n              React.createElement(\n                \"div\",\n                { className: \"ysp-flowsheet-twoPart-card\" },\n                React.createElement(\n                  \"p\",\n                  { className: \"ysp-twoPart-cardTit\" },\n                  React.createElement(\n                    \"span\",\n                    null,\n                    React.createElement(\"b\", null),\n                    d[0]\n                  )\n                ),\n                d.map(function (item, index) {\n                  if (index !== 0) {\n                    return React.createElement(\n                      \"div\",\n                      null,\n                      React.createElement(\n                        \"span\",\n                        null,\n                        data.titleThree[ii][index]\n                      ),\n                      React.createElement(\n                        \"label\",\n                        null,\n                        item\n                      )\n                    );\n                  }\n                })\n              )\n            );\n          })\n        );\n      })\n    ) : \"\";\n    // var aa=[];\n    // aa.push(<div>hahah</div>)\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-flowsheet ysp-datafrom2\" },\n      data !== \"\" ? React.createElement(\n        \"div\",\n        null,\n        cards\n      ) : \"\"\n    );\n  }\n});";
     },
     getData_control181_ptwra5: function (elem) {
       if (elem) {
