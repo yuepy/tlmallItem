@@ -305,16 +305,19 @@
     },
     doAction_uiControl305_f4G8f6: function (data, elem) {
       if (data.eventType == 'upValue') {
-        var dateArr = data.dataCustom.split('-');var date = dateArr.map((v, i) => {
-          if (i == 0) {
-            return v + "年";
-          } else if (i == 1) {
-            return v + "月";
-          } else if (i == 2) {
-            return v + "日";
-          } else {}
-        }).join("");var input = elem.ownerDocument.querySelector('#workSummaryPlanTime'),
-            span = elem.ownerDocument.querySelector("#workSummaryPlanTimeLable span ");input.value = date, span.textContent = date;input.focus();var cwin = elem.ownerDocument.defaultView;cwin.workTime();
+        // var dateArr = data.dataCustom.split('-');
+        // var date = dateArr.map((v, i) => {
+        //   if (i == 0) {
+        //     return v + "年";
+        //   } else if (i == 1) {
+        //     return v + "月";
+        //   } else if (i == 2) {
+        //     return v + "日";
+        //   } else {}
+        // }).join("");
+        var dataValue = data.dataCustom;var input = elem.ownerDocument.querySelector('#workSummaryPlanTime'),
+            span = elem.ownerDocument.querySelector("#workSummaryPlanTimeLable span ");input.value = dataValue, span.textContent = dataValue;input.focus();var cwin = elem.ownerDocument.defaultView; //cwin.workTime();
+        cwin.changeInputTime();
       }
     },
     getTemplate_uiControl305_f4G8f6: function () {

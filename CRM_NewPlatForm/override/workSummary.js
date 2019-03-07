@@ -173,6 +173,28 @@
 		});
 	}
 
+  //后添加的
+  window.changeInputTime = function(){
+    var body = {};
+		body.planType = StringUtils.getValue($("#workSummaryPlanType").val());
+		body.planTime = StringUtils.getValue($("#workSummaryPlanTime").val());
+		ajaxUtils.sendAjax("crm/workSummary/getWorkTime", body, null, function (data) {
+			if (StringUtils.getValue(data.data) != "") {
+				$("#workSummaryPlanTime").attr("planTime", data.data);
+				$("#workSummaryPlanTimeLable span").html(data.data);
+				if (!isNotEditOrSave()) {
+					$("#save,#draft").hide();
+				} else {
+					$("#save,#draft").show();
+				}
+				doAction();
+			} else {
+				$("#save,#draft").hide();
+				clearWorkSummaryHtml();
+				layerUtils.info($("#workSummaryPlanType").val() + "下，该日期不可选择！");
+			}
+		});
+  }
 	/**
 	 * 分业务部门总结
 	 * @param {*} textareaList 
