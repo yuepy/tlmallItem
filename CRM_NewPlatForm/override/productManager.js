@@ -311,6 +311,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         $("#planTypeSelect").change(function () {
             init();
+          	repeatBreadcrumb();
         });
 
 	});
@@ -1637,6 +1638,12 @@ window.addEventListener('DOMContentLoaded', function() {
 			if(isYear!='1') {
 				var link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(titleText) 
 				+ '&modelName=' + encodeURIComponent($("#modelName").val()) 
+				+ "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+				window.location.href = link;
+			}else{
+				var link = '/ptDataShow/salesPlan/salesOverview?type=03&projectName=' + encodeURIComponent(titleText) 
+				+ '&modelName=' + encodeURIComponent($("#modelName").val()) 
+				+ "&isYear="+isYear
 				+ "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
 				window.location.href = link;
 			}
