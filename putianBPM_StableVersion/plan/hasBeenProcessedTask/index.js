@@ -86,7 +86,8 @@
     },
 
     getData_control31_vSTuCi: function (elem) {
-      if (!elem) {
+      "use strict";
+      ;if (!elem) {
         return [];
       }if (elem) {
         //获取tr的数组
@@ -98,6 +99,7 @@
       }
     },
     doAction_uiControl34_tOCHFG: function (data, elem) {
+      "use strict";
       if (data.eventType == "clickBtn") {
         var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
@@ -135,6 +137,13 @@
           win._ysp_top.tenderType = "goodBargain";
         } else if (title.indexOf("价格政策") !== -1) {
           win._ysp_top.tenderType = "pricePolicy";
+        } else if (title.indexOf("市场物料申请") !== -1) {
+          win._ysp_top.tenderType = "marketMaterialApplication";
+        } else if (title.indexOf("物料申请") !== -1 && title.indexOf("市场") == -1) {
+          //后面如果有其他物料申请，在这后面再加上判断条件
+          win._ysp_top.tenderType = "materialApplication";
+        } else if (title.indexOf("物料信息停用") !== -1) {
+          win._ysp_top.tenderType = "materialInformationDisabled";
         } else {
           top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
         }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();

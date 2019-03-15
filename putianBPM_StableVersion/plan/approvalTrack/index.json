@@ -25,7 +25,9 @@
     "branchEmployeeHire": "../branchEmployeeHire/index.json",
     "branchEmpSalary": "../branchEmpSalary/index.json",
     "pendingTask": "../pendingTask/index.json",
-    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
+    "marketMaterialApplication": "../marketMaterialApplication/index.json",
+    "materialApplication": "../materialApplication/index.json"
   },
   "chineseName": "审批轨迹",
   "description": "",
@@ -344,6 +346,14 @@
         {
           "toContextId": "context45_gtcJSo",
           "toModelId": "branchEmpSalary"
+        },
+        {
+          "toContextId": "context5_RAftgc",
+          "toModelId": "marketMaterialApplication"
+        },
+        {
+          "toContextId": "context35_5Jr3EU",
+          "toModelId": "materialApplication"
         }
       ]
     },
@@ -550,7 +560,12 @@
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&branchEmployeeHire",
           "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&branchEmpSalary",
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&branchEmpSalary",
-          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&askForLeave"
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&askForLeave",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&marketMaterialApplication",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&materialApplication",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&materialInformationDisabled",
+          "192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp&orderCancel",
+          "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&orderCancel"
         ],
         "context8_ddpRhS": [
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861",

@@ -1,0 +1,473 @@
+{
+  "version": "0.1",
+  "id": "orderCancel",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529803&orderCancel",
+  "jsFile": "index.js",
+  "requires": {
+    "approvalTrack": "../approvalTrack/index.json",
+    "orderCancel": "../orderCancel/index.json",
+    "operationLog": "../operationLog/index.json"
+  },
+  "chineseName": "简易采购订单撤销",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control284_U2B7eQ": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control284_U2B7eQ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control285_sc18ml": {
+      "location": {
+        "data": {
+          "tagName": "TR"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 1,
+            "value": [
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]",
+              "descendant::DIV[@id=\"tab\"]//DIV[@id=\"_tabs\"]//TR",
+              "descendant::DIV[@id=\"_tabs\"]//TR"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-tabs-scrollCt DIV.mini-tabs-headers.mini-tabs-header-top TABLE.mini-tabs-header TBODY TR"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/DIV[1]/DIV[3]/TABLE[1]/TBODY[1]/TR[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control285_sc18ml"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control286_D03Kxn": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"form\"]"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "/HTML[1]/BODY[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control286_D03Kxn"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
+      "componentType": "custom"
+    },
+    "control287_c5MWHS": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "BODY.body-font DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control287_c5MWHS"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context47_liBODD": {
+      "controls": [
+        "control284_U2B7eQ",
+        "control285_sc18ml",
+        "control286_D03Kxn",
+        "control287_c5MWHS"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*&orderCancel"
+      ]
+    }
+  },
+  "flows": {
+    "flow190_rT5gLt": {
+      "toContexts": [
+        {
+          "toContextId": "context47_liBODD"
+        },
+        {
+          "toContextId": "context47_liBODD",
+          "toModelId": "orderCancel"
+        }
+      ]
+    },
+    "flow191_TDccIf": {
+      "fromContextId": "context47_liBODD",
+      "fromAction": "doAction",
+      "fromControlId": "control285_sc18ml",
+      "toContexts": [
+        {
+          "toContextId": "context47_liBODD"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context9_vdtoHx",
+          "toModelId": "operationLog"
+        }
+      ]
+    },
+    "flow192_FoIEBe": {
+      "fromContextId": "context47_liBODD",
+      "fromAction": "doAction",
+      "fromControlId": "control287_c5MWHS",
+      "toContexts": [
+        {
+          "toContextId": "context47_liBODD"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page47_Hb2Dg8": {
+      "contextId": "context47_liBODD",
+      "layout": [
+        {
+          "id": "uiControl281_TSd4pu",
+          "controlId": "control284_U2B7eQ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl281_TSd4pu",
+                "onGetTemplate": "getTemplate_uiControl281_TSd4pu"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl282_Psm8wq",
+          "controlId": "control285_sc18ml",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl282_Psm8wq",
+                "onGetTemplate": "getTemplate_uiControl282_Psm8wq"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl283_dJhyoO",
+          "controlId": "control286_D03Kxn",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl283_dJhyoO",
+                "onGetTemplate": "getTemplate_uiControl283_dJhyoO"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl284_pS4lJJ",
+          "controlId": "control287_c5MWHS",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl284_pS4lJJ",
+                "onGetTemplate": "getTemplate_uiControl284_pS4lJJ"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context47_liBODD": [
+          "待处理任务"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context47_liBODD": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529803&orderCancel"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context47_liBODD": [
+          [
+            "$cell$",
+            "__modalmini-",
+            "endT",
+            "endT$text",
+            "endT$value",
+            "likeQ",
+            "likeQ$text",
+            "likeSearch",
+            "mini-",
+            "mini-$",
+            "mini-$ck$",
+            "mini-$emptytext",
+            "mini-$filter$",
+            "mini-$headerCell$",
+            "mini-$row$",
+            "mini-$summary$",
+            "permissionList",
+            "permissionList$value",
+            "startT",
+            "startT$text",
+            "startT$value",
+            "tableSearch",
+            "taskFromList",
+            "taskFromList$value",
+            "taskListId"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context47_liBODD": [
+          [
+            "bpsDatagrid",
+            "dgBtn",
+            "grayBtn",
+            "mini-button",
+            "mini-button-disabled",
+            "mini-button-iconOnly",
+            "mini-button-plain",
+            "mini-button-text",
+            "mini-buttonedit",
+            "mini-buttonedit-border",
+            "mini-buttonedit-button",
+            "mini-buttonedit-buttons",
+            "mini-buttonedit-close",
+            "mini-buttonedit-icon",
+            "mini-buttonedit-input",
+            "mini-checkboxlist",
+            "mini-checkboxlist-item",
+            "mini-checkboxlist-item-selected",
+            "mini-combobox",
+            "mini-datagrid",
+            "mini-datepicker",
+            "mini-errorIcon",
+            "mini-grid",
+            "mini-grid-border",
+            "mini-grid-bottomCell",
+            "mini-grid-cell",
+            "mini-grid-cell-inner",
+            "mini-grid-cell-nowrap",
+            "mini-grid-column-splitter",
+            "mini-grid-columns",
+            "mini-grid-columns-lock",
+            "mini-grid-columns-view",
+            "mini-grid-emptyText",
+            "mini-grid-filterCell",
+            "mini-grid-filterRow",
+            "mini-grid-filterRow-lock",
+            "mini-grid-filterRow-view",
+            "mini-grid-focus",
+            "mini-grid-headerCell",
+            "mini-grid-headerCell-inner",
+            "mini-grid-headerCell-nowrap",
+            "mini-grid-headerCell-outer",
+            "mini-grid-pager",
+            "mini-grid-rightCell",
+            "mini-grid-row",
+            "mini-grid-row-alt",
+            "mini-grid-rows",
+            "mini-grid-rows-content",
+            "mini-grid-rows-lock",
+            "mini-grid-rows-view",
+            "mini-grid-rowstable",
+            "mini-grid-scrollHeaderCell",
+            "mini-grid-summaryCell",
+            "mini-grid-summaryRow",
+            "mini-grid-summaryRow-lock",
+            "mini-grid-summaryRow-view",
+            "mini-grid-table",
+            "mini-grid-topRightCell",
+            "mini-grid-viewport",
+            "mini-grid-vscroll",
+            "mini-grid-vscroll-content",
+            "mini-hidden",
+            "mini-list-inner",
+            "mini-modal",
+            "mini-page-buttons",
+            "mini-pager",
+            "mini-pager-first",
+            "mini-pager-index",
+            "mini-pager-last",
+            "mini-pager-left",
+            "mini-pager-next",
+            "mini-pager-num",
+            "mini-pager-pages",
+            "mini-pager-prev",
+            "mini-pager-reload",
+            "mini-pager-right",
+            "mini-pager-size",
+            "mini-pager-sizetext",
+            "mini-panel",
+            "mini-panel-body",
+            "mini-panel-border",
+            "mini-panel-footer",
+            "mini-panel-header",
+            "mini-panel-header-inner",
+            "mini-panel-icon",
+            "mini-panel-title",
+            "mini-panel-toolbar",
+            "mini-panel-viewport",
+            "mini-popupedit",
+            "mini-resizer-trigger",
+            "mini-textbox",
+            "mini-textbox-border",
+            "mini-textbox-input",
+            "mini-tools",
+            "mini-tools-close",
+            "mini-tools-collapse",
+            "mini-tools-max",
+            "mini-tools-min",
+            "mini-window",
+            "mini-window-drag",
+            "nui-form-input",
+            "separator",
+            "textof_clip"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context47_liBODD": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/DIV/DIV",
+            "-/DIV/IFRAME",
+            "-/TABLE/TBODY",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/INPUT-checkbox",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/FORM/LABEL",
+            "DIV/TABLE/TBODY",
+            "FORM/LABEL/SPAN",
+            "LABEL/SPAN/INPUT-hidden",
+            "LABEL/SPAN/SPAN",
+            "SPAN/SPAN/INPUT-hidden",
+            "SPAN/SPAN/INPUT-text",
+            "SPAN/SPAN/SPAN",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TD/DIV/A",
+            "TD/DIV/DIV",
+            "TD/DIV/FORM",
+            "TD/DIV/TABLE",
+            "TD/SPAN/INPUT-text",
+            "TD/SPAN/SPAN",
+            "TR/TD/A",
+            "TR/TD/DIV",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/SPAN"
+          ]
+        ]
+      }
+    }
+  }
+}

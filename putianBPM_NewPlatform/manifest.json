@@ -1,321 +1,329 @@
 {
-    "type": "adapter",
-    "short_name": "",
-    "version": "0.0.1",
-    "runtime_version": "2.7.0",
-    "description": "",
-    "options": {
-        "resource_filter": [{
-            "url_match": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
-            ],
-            "charset": "utf-8",
-            "Accept-Language": "zh-Hans-CN",
-            "replaces": [{
-                "regexp": "\\btop\\b",
-                "sub_str": "_ysp_top"
-            }]
-        }],
+  "type": "adapter",
+  "short_name": "",
+  "version": "0.0.1",
+  "runtime_version": "2.7.0",
+  "description": "",
+  "options": {
+    "resource_filter": [
+      {
+        "url_match": [
+          "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js.*"
+        ],
+        "charset": "utf-8",
         "Accept-Language": "zh-Hans-CN",
-        "resource_intercept": {
-            "type": [
-                "image",
-                "css"
-            ],
-            "ignore": []
-        },
-        "resource_inject": [],
-        "unadapted": {
-            "timeout": 8000,
-            "rules": [{
-                "match": "*",
-                "type": "block"
-            }]
-        },
-        "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+        "replaces": [
+          {
+            "regexp": "\\btop\\b",
+            "sub_str": "_ysp_top"
+          }
+        ]
+      }
+    ],
+    "Accept-Language": "zh-Hans-CN",
+    "resource_intercept": {
+      "type": [
+        "image",
+        "css"
+      ],
+      "ignore": []
     },
-    "override_urls": [{
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/top\\.js"
-            ],
-            "target_url": "override/top.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/top.js"
-        },
+    "resource_inject": [],
+    "unadapted": {
+      "timeout": 8000,
+      "rules": [
         {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/js\\/bizform\\.js"
-            ],
-            "target_url": "override/bizform.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/bizform/js/bizform.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js"
-            ],
-            "target_url": "override/common.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/bps/wfclient/common/js/common.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/themes\\/default\\/miniui\\.css"
-            ],
-            "target_url": "override/miniui.css",
-            "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/themes/default/miniui.css"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/nui-min\\.js"
-            ],
-            "target_url": "override/nui-min.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/nui-min.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/jquery\\/jquery-1\\.6\\.2\\.min\\.js"
-            ],
-            "target_url": "override/min.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/jquery/jquery-1.6.2.min.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/js\\/componentsCore\\.js"
-            ],
-            "target_url": "override/componentsCore.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/bizform/components/js/componentsCore.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/extend\\/js\\/componentsRecover\\.js"
-            ],
-            "target_url": "override/comonentsRecover.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/extend/js/componentsRecover.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/utils\\.js"
-            ],
-            "target_url": "override/utils.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/utils.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jSignature\\/js\\/jSignature\\.min\\.js"
-            ],
-            "target_url": "override/jSignature.min.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jSignature/js/jSignature.min.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jSignature\\/js\\/flashcanvas\\.min\\.js"
-            ],
-            "target_url": "override/flashcanvas.min.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jSignature/js/flashcanvas.min.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jqprint\\/jquery\\.jqprint-0\\.3\\.js"
-            ],
-            "target_url": "override/jqprint-0.3.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jqprint/jquery.jqprint-0.3.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/pingying\\.js"
-            ],
-            "target_url": "override/pingying.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/pingying.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/ajaxupload\\/ajaxfileupload\\.js"
-            ],
-            "target_url": "override/ajaxfileupload.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/ajaxupload/ajaxfileupload.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/tools\\.min\\.js"
-            ],
-            "target_url": "override/tools.min.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/tools.min.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/uuid\\.js"
-            ],
-            "target_url": "override/uuid.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/uuid.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/loadAllUtils\\.js"
-            ],
-            "target_url": "override/loadAllUtils.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/loadAllUtils.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/fixheight\\.js"
-            ],
-            "target_url": "override/fixheight.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/fixheight.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/echart\\/dist\\/echarts\\.js"
-            ],
-            "target_url": "override/echarts.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/echart/dist/echarts.js"
-        },
-        {
-            "origin_url": [
-                "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/back\\/js\\/componentsBack\\.js"
-            ],
-            "target_url": "override/componentsBack.js",
-            "default_url": "http://192.168.220.51:8000/ptsoa/bizform/components/back/js/componentsBack.js"
+          "match": "*",
+          "type": "block"
         }
-    ],
-    "adapter_urls": [{
-            "title": "login",
-            "url": "adapter://putianBPM1/plan/login/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe\\/auth\\/login\\/login\\.jsp#",
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/coframe/auth/login/login.jsp#"
-            ]
-        },
-        {
-            "title": "approvalTrack",
-            "url": "adapter://putianBPM1/plan/approvalTrack/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/approvalTrajectory\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=398245&_winid=w1279"
-            ]
-        },
-        {
-            "title": "approveAdvice",
-            "url": "adapter://putianBPM1/plan/approveAdvice/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513"
-            ]
-        },
-        {
-            "title": "checkProcess",
-            "url": "adapter://putianBPM1/plan/checkProcess/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542"
-            ]
-        },
-        {
-            "title": "Fallback",
-            "url": "adapter://putianBPM1/plan/Fallback/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/back\\/backActivity\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777"
-            ]
-        },
-        {
-            "title": "HaveProcessingTasksDetailedInformation",
-            "url": "adapter://putianBPM1/plan/HaveProcessingTasksDetailedInformation/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/taskList\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=257481&_winid=w227"
-            ]
-        },
-        {
-            "title": "processForm",
-            "url": "adapter://putianBPM1/plan/processForm/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861"
-            ]
-        },
-        {
-            "title": "PendingTask",
-            "url": "adapter://putianBPM1/plan/PendingTask/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=858425&_winid=w2262"
-            ]
-        },
-        {
-            "title": "processedTask",
-            "url": "adapter://putianBPM1/plan/processedTask/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/hasBeenProcessedTask\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=930517&_winid=w2489"
-            ]
-        },
-        {
-            "title": "operationLog",
-            "url": "adapter://putianBPM1/plan/operationLog/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/operationLog\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bizform/operationLog.jsp?_t=691125&_winid=w4219"
-            ]
-        },
-        {
-            "title": "processMonitoring",
-            "url": "adapter://putianBPM1/plan/processMonitoring/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/processGraph\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bizform/processGraph.jsp?_t=879009&_winid=w811"
-            ]
-        },
-        {
-            "title": "index",
-            "url": "adapter://putianBPM1/plan/index/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/appMyTask\\.jsp",
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/skins\\/default\\/index\\.jsp.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
-            ]
-        },
-        {
-            "title": "clientFlowForm",
-            "url": "adapter://putianBPM1/plan/clientFlowForm/index.json",
-            "matcher": [
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?_ysp_action.*",
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?_ysp_action_type.*",
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute.jsp\\?ysp_bpm_cardList.*",
-                "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?ysp_bpm.*"
-            ],
-            "demo": [
-                "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548"
-            ]
-        }
-    ],
-    "name": "普天",
-    "default_url": "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#",
-    "scope": "putianBPM1",
-    "start_url": "enterplorer://putianBPM1/local/index.html",
-    "fixed_version": 1,
-    "update_time": 1540371973057,
-    "runtime_env": "1webview"
+      ]
+    },
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+  },
+  "override_urls": [
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/top\\.js"
+      ],
+      "target_url": "override/top.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/top.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/js\\/bizform\\.js"
+      ],
+      "target_url": "override/bizform.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/bizform/js/bizform.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/common\\/js\\/common\\.js"
+      ],
+      "target_url": "override/common.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/bps/wfclient/common/js/common.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/themes\\/default\\/miniui\\.css"
+      ],
+      "target_url": "override/miniui.css",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/themes/default/miniui.css"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/nui-min\\.js"
+      ],
+      "target_url": "override/nui-min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/nui-min.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/jquery\\/jquery-1\\.6\\.2\\.min\\.js"
+      ],
+      "target_url": "override/min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/jquery/jquery-1.6.2.min.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/js\\/componentsCore\\.js"
+      ],
+      "target_url": "override/componentsCore.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/bizform/components/js/componentsCore.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/extend\\/js\\/componentsRecover\\.js"
+      ],
+      "target_url": "override/comonentsRecover.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/extend/js/componentsRecover.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/utils\\.js"
+      ],
+      "target_url": "override/utils.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/utils.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jSignature\\/js\\/jSignature\\.min\\.js"
+      ],
+      "target_url": "override/jSignature.min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jSignature/js/jSignature.min.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jSignature\\/js\\/flashcanvas\\.min\\.js"
+      ],
+      "target_url": "override/flashcanvas.min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jSignature/js/flashcanvas.min.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/jqprint\\/jquery\\.jqprint-0\\.3\\.js"
+      ],
+      "target_url": "override/jqprint-0.3.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/jqprint/jquery.jqprint-0.3.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/pingying\\.js"
+      ],
+      "target_url": "override/pingying.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/pingying.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/ajaxupload\\/ajaxfileupload\\.js"
+      ],
+      "target_url": "override/ajaxfileupload.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/ajaxupload/ajaxfileupload.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/tools\\.min\\.js"
+      ],
+      "target_url": "override/tools.min.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/tools.min.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/uuid\\.js"
+      ],
+      "target_url": "override/uuid.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/uuid.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/loadAllUtils\\.js"
+      ],
+      "target_url": "override/loadAllUtils.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/loadAllUtils.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/plugext\\/utils\\/fixheight\\.js"
+      ],
+      "target_url": "override/fixheight.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/plugext/utils/fixheight.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/common\\/nui\\/echart\\/dist\\/echarts\\.js"
+      ],
+      "target_url": "override/echarts.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/common/nui/echart/dist/echarts.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/back\\/js\\/componentsBack\\.js"
+      ],
+      "target_url": "override/componentsBack.js",
+      "default_url": "http://192.168.220.51:8000/ptsoa/bizform/components/back/js/componentsBack.js"
+    }
+  ],
+  "adapter_urls": [
+    {
+      "title": "login",
+      "url": "adapter://putianBPM1/plan/login/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe\\/auth\\/login\\/login\\.jsp#",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/coframe/auth/login/login.jsp#"
+      ]
+    },
+    {
+      "title": "approvalTrack",
+      "url": "adapter://putianBPM1/plan/approvalTrack/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/approvalTrajectory\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/approvalTrajectory.jsp?_t=398245&_winid=w1279"
+      ]
+    },
+    {
+      "title": "approveAdvice",
+      "url": "adapter://putianBPM1/plan/approveAdvice/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=564410&_winid=w1513"
+      ]
+    },
+    {
+      "title": "checkProcess",
+      "url": "adapter://putianBPM1/plan/checkProcess/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/task.jsp?_winid=w6942&_t=1542"
+      ]
+    },
+    {
+      "title": "Fallback",
+      "url": "adapter://putianBPM1/plan/Fallback/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/back\\/backActivity\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777"
+      ]
+    },
+    {
+      "title": "HaveProcessingTasksDetailedInformation",
+      "url": "adapter://putianBPM1/plan/HaveProcessingTasksDetailedInformation/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/taskList\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/taskList.jsp?taskType=finishedSelf&_t=257481&_winid=w227"
+      ]
+    },
+    {
+      "title": "processForm",
+      "url": "adapter://putianBPM1/plan/processForm/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3061&_t=345954&_winid=w2861"
+      ]
+    },
+    {
+      "title": "PendingTask",
+      "url": "adapter://putianBPM1/plan/PendingTask/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?_t=858425&_winid=w2262"
+      ]
+    },
+    {
+      "title": "processedTask",
+      "url": "adapter://putianBPM1/plan/processedTask/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/hasBeenProcessedTask\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?_t=930517&_winid=w2489"
+      ]
+    },
+    {
+      "title": "operationLog",
+      "url": "adapter://putianBPM1/plan/operationLog/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/operationLog\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/operationLog.jsp?_t=691125&_winid=w4219"
+      ]
+    },
+    {
+      "title": "processMonitoring",
+      "url": "adapter://putianBPM1/plan/processMonitoring/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/processGraph\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/processGraph.jsp?_t=879009&_winid=w811"
+      ]
+    },
+    {
+      "title": "index",
+      "url": "adapter://putianBPM1/plan/index/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/appMyTask\\.jsp",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/skins\\/default\\/index\\.jsp.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"
+      ]
+    },
+    {
+      "title": "clientFlowForm",
+      "url": "adapter://putianBPM1/plan/clientFlowForm/index.json",
+      "matcher": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?_ysp_action.*",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?_ysp_action_type.*",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute.jsp\\?ysp_bpm_cardList.*",
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?ysp_bpm.*"
+      ],
+      "demo": [
+        "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=898726&_t=368829&_winid=w8548"
+      ]
+    }
+  ],
+  "name": "普天",
+  "default_url": "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#",
+  "scope": "putianBPM1",
+  "start_url": "enterplorer://putianBPM1/local/index.html",
+  "fixed_version": 1,
+  "update_time": 1551853266199,
+  "runtime_env": "1webview"
 }

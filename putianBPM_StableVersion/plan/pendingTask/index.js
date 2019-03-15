@@ -1,12 +1,12 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control13_9WwGn3: function (elem) {
-      if (!elem) {
+      "use strict";
+      ;if (!elem) {
         return;
       }if (elem) {
         //获取tr的数组
-        var data = [];
-        var trArr = elem.querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
+        var data = [];var trArr = elem.querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
           var tdArr = trArr[i].querySelectorAll("td");var arry = [];for (var j = 0; j < tdArr.length; j++) {
             arry.push(tdArr[j].textContent);
           }data.push(arry);arry.shift();arry.shift();
@@ -14,8 +14,11 @@
       }
     },
     doAction_uiControl14_JkLtyQ: function (data, elem) {
+      "use strict";
       if (data.eventType == "clickBtn") {
-        var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
+        var data = data.dataCustom;
+        var index = parseInt(data.index) + 2;
+        var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
         } else if (title.indexOf("假期管理") !== -1 || title.indexOf("公出") !== -1 || title.indexOf("假期申请") !== -1) {
           top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
@@ -51,6 +54,15 @@
           win._ysp_top.tenderType = "goodBargain";
         } else if (title.indexOf("价格政策") !== -1) {
           win._ysp_top.tenderType = "pricePolicy";
+        } else if (title.indexOf("市场物料申请") !== -1) {
+          win._ysp_top.tenderType = "marketMaterialApplication";
+        } else if (title.indexOf("物料申请") !== -1 && title.indexOf("市场") == -1) {
+          //后面如果有其他物料申请，在这后面再加上判断条件
+          win._ysp_top.tenderType = "materialApplication";
+        } else if (title.indexOf("物料信息停用") !== -1) {
+          win._ysp_top.tenderType = "materialInformationDisabled";
+        } else if (title.indexOf("简易采购订单撤销") !== -1) {
+          win._ysp_top.tenderType = "orderCancel";
         } else {
           top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
         }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click(); // ysp.appMain.showLoading();

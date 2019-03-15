@@ -1,0 +1,649 @@
+getTemplate_uiControl275_ewUbG6: "import {\n  Header,\n  HeaderLeft,\n  HeaderRight\n} from 'ysp-interior-components';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  onClick=(e)=>{\n    var handler=this.props.customHandler;\n     if(handler) {                                    \n       handler({\n         // data:e.target.className,\n         data:this.props.customData,\n         eventType:'click'                         \n       })\n     }\n  }\n  render() {\n    var  _this = this;\n    var data=this.props.customData\t||\t[];\n    if(data){\n      return (\n      <Header amStyle=\"primary\" title=\"工作项执行\"\tclassName=\"ysp-flex-top\">\n        <HeaderLeft>\n          <AMUI.Button amStyle=\"primary\" style={{ margin: 0 }} onClick={()=>{\n              const handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  data:data,\n                  eventType: 'back'\n                });\n              }\n            }}>\n            <span className='icon icon-left-nav'></span>\n          </AMUI.Button>\n        </HeaderLeft>\n        <HeaderRight>\n          {\tdata ? <AMUI.Button amStyle=\"primary\" style={{ margin: 0 }}\tclassName='ysp-Receive' onClick={_this.onClick} >{data}</AMUI.Button>\t: <div style={{display:'none'}}></div>\t}\n          \n        </HeaderRight>\n      </Header>\n    \t);\n    }else{\n      return(<div style={{display:'none'}}></div>)\n    }\n  }\n}"
+getData_control279_sGHaKI: ";if (!elem) {\n  return [];\n}\nif (elem) {\n  var data = [];\n  var receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2');\n\n  var _receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2\ta');\n\n  var noReceive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_3');\n  var td_0_1 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_1');\n\n  if (receive && _receive.style.display != 'none') {\n    data.push(receive.textContent);\n  } else if (noReceive) {\n    data.push(noReceive.textContent);\n  } else if (td_0_1 && td_0_1.textContent.trim() == '领取') {\n    data.push(td_0_1.textContent.trim());\n  }\n\n  return data;\n}\n"
+doAction_uiControl275_ewUbG6: >
+  // if (data.eventType == 'click') {
+
+  //   var d = data.dataCustom;
+
+  //   var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //   if (d == '领取') {
+
+  //     var td_0_1 = elem.contentWindow.document.querySelector('#td_0_1');
+
+  //     if (td_0_1.textContent.trim() == '领取') {
+
+  //       var _click =
+  elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");
+
+  //     } else {
+
+  //       var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //     }
+
+  //     _click.click();
+
+  //   } else if (d == '取消领取') {
+
+  //     var _click = elem.contentWindow.document.querySelector('#td_0_3');
+  //红色提示
+
+  //     var newRow =
+  elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];
+
+  //     var reg = /\s/;
+
+  //     if (newRow && reg.test(newRow.textContent)) {
+
+  //       if (_click) {
+
+  //         var _icon = _click.querySelector('a');
+
+  //         _icon.click();
+
+  //       } else {
+
+  //         var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //         _click.click();
+
+  //       }
+
+  //     } else {
+
+  //       if (_click) {
+
+  //         var _icon = _click.querySelector('a');
+
+  //         var _innerHTML = _click.querySelector('span').textContent;
+
+  //         _innerHTML == '取消领取' && _icon.click();
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //       } else {
+
+  //         var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //         var _innerHTML = _click.querySelector('span').textContent;
+
+  //         _click.click();
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //       }
+
+  //     }
+
+  //   } else {
+
+  //     var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //     _click.click();
+
+  //     var json = {
+
+  //       time: new Date().getTime()
+
+  //     };
+
+  //     ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //   }
+
+  // } else if (data.eventType == 'back') {
+
+  //   if (!top.EAPI.isAndroid()) {
+
+  //     var btns = elem.contentDocument.querySelector("#btn");
+
+  //     if (btns && btns.style.display != "none") {
+
+  //       if (btns.querySelector("#recover") &&
+  btns.querySelector("#recover").textContent == "追回") {
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         var btn =
+  elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //         if (btn) {
+
+  //           btn.click();
+
+  //           ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+
+  //         }
+
+  //       } else {
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         var btn =
+  elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //         if (btn) {
+
+  //           btn.click();
+
+  //           ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //         }
+
+  //       }
+
+  //     } else {
+
+  //       var json = {
+
+  //         time: new Date().getTime()
+
+  //       };
+
+  //       var btn =
+  elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //       if (btn) {
+
+  //         btn.click();
+
+  //         ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+
+  //       }
+
+  //     }
+
+  //   } else {
+
+  //     ysp.customHelper.AndroidBackFn();
+
+  //   }
+
+  // } else if (data.eventType == 'AndroidBack') {
+
+  //   ysp.customHelper.AndroidBackModel = 'PendingTask';
+
+  //   ysp.customHelper.AndroidBackFlag = 'destination';
+
+  // }
+
+  if (data.eventType == 'click') {
+    var d = data.dataCustom;
+    var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+    if (d == '领取') {
+      var td_0_1 = elem.contentWindow.document.querySelector('#td_0_1');
+
+      if (td_0_1.textContent.trim() == '领取') {
+        var _click = elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");
+      } else {
+        var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+      }
+
+      _click.click();
+    } else if (d == '取消领取') {
+      var _click = elem.contentWindow.document.querySelector('#td_0_3'); //红色提示
+      //     var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];
+      //     var reg = /\s/;
+      //     if (reg.test(newRow.textContent)) {
+      //       if (_click) {
+      //         var _icon = _click.querySelector('a');
+      //         _icon.click();
+      //       } else {
+      //         var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+      //         _click.click();
+      //       }
+      //     } else {
+
+
+      if (_click) {
+        var _icon = _click.querySelector('a');
+
+        var _innerHTML = _click.querySelector('span').textContent;
+
+        _innerHTML == '取消领取' && _icon.click();
+        var json = {
+          time: new Date().getTime()
+        };
+        setTimeout(function () {
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+        }, 50);
+      } else {
+        var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+        var _innerHTML = _click.querySelector('span').textContent;
+
+        _click.click();
+
+        var json = {
+          time: new Date().getTime()
+        };
+        setTimeout(function () {
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+        }, 50);
+      } // }
+
+    } else {
+      var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+      _click.click();
+
+      var json = {
+        time: new Date().getTime()
+      };
+      ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+    }
+  } else if (data.eventType == 'back') {
+    //待办里面#dataForm1里面的第一个input的class里没有mini-disabled
+    //   var dataForm1 = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#dataform1');
+    //   if (dataForm1) {
+    //     var disable = dataForm1.querySelector("#uuid");
+    //   } 
+    //待办里面#form1里含有#status和#statusApprove
+    //   var status = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#status');
+    //   var approveStatus = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#approveStatus');
+    //   if (disable && disable.className.indexOf("mini-disabled") == -1 || status || approveStatus) {
+    //     console.log("aa");
+    //     var json = {
+    //       time: new Date().getTime()
+    //     }; 
+    //     var btn = elem.ownerDocument.querySelector('.mini-tools-close');
+    //     if (btn) {
+    //       btn.click();
+    //       ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+    //     }
+    //   } else {
+    //     console.log("bbb");
+    //     var json = {
+    //       time: new Date().getTime()
+    //     };
+    //     var btn = elem.ownerDocument.querySelector('.mini-tools-close');
+    //     if (btn) {
+    //       btn.click();
+    //       ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+    //     }
+    //   }
+    var btns = elem.contentDocument.querySelector("#btn");
+
+    if (btns && btns.style.display != "none") {
+      if (btns.querySelector("#recover") && btns.querySelector("#recover").textContent == "追回") {
+        var json = {
+          time: new Date().getTime()
+        };
+        var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+        if (btn) {
+          btn.click();
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+        }
+      } else {
+        var json = {
+          time: new Date().getTime()
+        };
+        var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+        if (btn) {
+          btn.click();
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+        }
+      }
+    } else {
+      var json = {
+        time: new Date().getTime()
+      };
+      var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+      if (btn) {
+        btn.click();
+        ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+      }
+    }
+  }
+getTemplate_uiControl276_TKn050: "import {Tabs} from 'ysp-custom-components';\nimport {Component} from 'react';\nexport\tdefault\tclass\textends\tReact.Component{\n\tconstructor(props){\n    super(props);\n    this.state={\n      show:this.props.customData.key\n    }\n  }\n   componentDidMount(){\n    var outer=this.refs.outerWrapper.ownerDocument.querySelector('.view-wrapper')\n    \n    setTimeout(function(){\n      outer.scrollTop=0\n    },500)\n  }\n  tabsClick(e){\n  \tvar handler=this.props.customHandler;\n    var e=e.target;\n    if(this.state.show!=e.dataset.id){\n    \tthis.setState({\n      \tshow: parseInt(e.dataset.id)\n    \t})\n     if(handler) {                                    \n       handler({\n        data:[e.className,e.dataset.id],\n        eventType:'click'                         \n       })\n     \t}\n    }\n  }\n  render(){\n    var data = this.props.customData || [];\n    if(data){\n    \treturn(\n      \t<div ref=\"outerWrapper\">\n      \t\t<Tabs\tPassedCustomData={data}\ttabsClick={this.tabsClick.bind(this)}\tstateShow={this.state.show}\t/>\n      \t</div>\n    \t)  \n    }else{\n      return(<div style={{display:'none'}}></div>)\n    }  \n  }\n} "
+getData_control280_LSSZtl: |
+  ;if (!elem) {
+    return [];
+  }
+  if (elem) {
+    var data = {
+      tabs: [],
+      tabsNum: [],
+      key: {}
+    }; // console.log(elem)
+
+    var _tabs = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');
+
+    [].map.call(_tabs, function (item, i) {
+      var key = item.parentElement.classList.contains('mini-tab-active');
+      var num = item.parentElement.getAttribute("index");
+
+      if (item.innerHTML != '流程监控') {
+        if (key == true) {
+          data.tabs.push(item.innerHTML);
+          data.tabsNum.push(num);
+          data.key = i;
+        } else {
+          data.tabs.push(item.innerHTML);
+          data.tabsNum.push(num);
+        }
+      }
+    });
+    return data;
+  }
+doAction_uiControl276_TKn050: |
+  if (data.eventType == 'click') {
+    var d = data.dataCustom;
+
+    if (d[0] == 'ysp-tabs') {
+      var _tab = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');
+
+      _tab[d[1]].click();
+    }
+
+    ysp.appMain.showLoading();
+  }
+getTemplate_uiControl277_5BGb1I: "module.exports = React.createClass({\n  render: function() {\n    var data=this.props.customData||[];\n    return (\n      <div className=\"ysp_hrDetailInfo\" style={{marginTop:\"10px\"}}>\n       \t<div className=\"ysp_hrDetailInfo_title\">基础属性</div>\n        <div className=\"ysp_hrDetailInfo_content\">\n        {data&&data.length>0&&data.map(function(item,index){\n          return(\n          \t<div className=\"ysp_border\">\n            \t<span className=\"ysp_title\">{item.title}：</span>\n              <label className=\"ysp_content\">{item.content}</label>\n            </div>\n          )\n        })}  \n        </div>\n      </div>\n    )\n  }\n});\n"
+getData_control281_g5Jcwo: |
+  ;if (!elem) {
+    return;
+  }
+  if (elem) {
+    var data = [];
+    var table1 = elem.querySelector("table");
+
+    if (table1) {
+      var title = table1.querySelectorAll("td.form_label");
+
+      for (var i = 0; i < title.length; i++) {
+        debugger
+        var obj = {
+          title: "",
+          content: ""
+        };
+        obj.title = title[i].textContent.trim();
+        if (title[i].nextElementSibling.querySelectorAll("input").length > 0 &&title[i].nextElementSibling.querySelectorAll("textarea").length == 0) {
+          obj.content = title[i].nextElementSibling.querySelector('span').querySelectorAll("input")[0].value;
+        } else if (title[i].nextElementSibling.querySelectorAll("textarea").length > 0){
+          obj.content = title[i].nextElementSibling.querySelectorAll("textarea")[0].value;        
+        } else {
+          obj.content = title[i].nextElementSibling.textContent.trim();
+        }
+
+        data.push(obj);
+      }
+    }
+
+    return data;
+  }
+doAction_uiControl277_5BGb1I: ''
+getTemplate_uiControl278_dMILvQ: "import {Component} from 'react';\nexport default class extends Component{\n  blur(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:target.value,\n        eventType:\"blur\"\n      })\n    }\n  }\n  render(){\n    var data=this.props.customData;\n    \n    var _this=this;\n    if(data&&data[0]==\"审批意见\"){\n      return(\n        <div className=\"ysp-Approval-opinions\">\n          <span>审批意见：</span>\n          <ATextarea className=\"ysp-agree\" defaultValue={data[1]} onBlur={_this.blur.bind(_this)}/>\n        </div>\n      )\n    }else {\n      return(\n      \t<div></div>\n      )\n    }\n    \n  }\n}"
+getData_control282_JqnKMl: |
+  ;if (!elem) {
+    return;
+  }
+  if (elem) {
+    return ["审批意见", elem.value];
+  }
+doAction_uiControl278_dMILvQ: |
+  if (data.eventType == "blur") {
+    elem.value = data.dataCustom;
+    elem.dispatchEvent(new Event("change"));
+  }
+getTemplate_uiControl280_BoiLDL: "import {Button} from 'ysp-custom-components'\nimport {Component} from 'react';\nexport default class extends React.Component{\n  // constructor(){\n  //   super();\n  //   this.flag=false\n  // }\n  click(e){\n//     if(!this.flag){\n     \n//     this.flag=true;\n      var handler=this.props.customHandler;\n    var e=e.target;\n      //alert(\"点击了按钮\")\n      \n     if(handler) {                                    \n       handler({\n         data:{classNames:e.className,text:e.textContent},\n         eventType:'click'                         \n       })\n     }\n    // }\n  \t\n  }\n  // componentDidMount(){\n  //   var windowH=document.documentElement.clientHeight;\n  //   this.setState({\n  //   \twindowH:windowH,\n  //   })\n  //   console.log(windowH)\n  //   var btn=window.document.querySelector('.ysp-btn');\n  //   setTimeout(function(){\n  //     btn.style.top=(windowH-100)+\"px\";\n  //   },500)\n  // }\n  render(){\n    var data=this.props.customData\t||\t[];\n    var btns=data.button||[]\n    if(\tbtns\t&& btns.length>0\t){\n    \treturn(\n    \t<Button  PassedCustomData={btns} btnClick={this.click.bind(this)} />\n   \t )\n    } else{\n      return(<div style={{display:'none'}}></div>)\n    } \n  }\n}"
+getData_control283_RfukNJ: >
+  ;if (!elem) {
+    return;
+  } // if (elem && elem.querySelector("#toast") &&
+  elem.querySelector("#toast").style.display != "none") {
+
+  //   return elem.querySelector("#toast").textContent;
+
+  // }
+
+  if (elem) {
+    var data = {
+      button: [],
+      tip: ""
+    };
+    var windowDrag = elem.querySelector(".mini-window-drag");
+
+    if (windowDrag) {
+      var iframeOuter = elem.querySelector(".mini-window-drag").querySelector("iframe");
+
+      if (iframeOuter) {
+        var btns = iframeOuter.contentDocument.querySelector("#btn");
+        var agreeBtn = iframeOuter.contentDocument.querySelector('#td_0_0');
+        var disagreeBtn = iframeOuter.contentDocument.querySelector('#td_0_1');
+
+        if (btns && btns.style.display != "none" && agreeBtn) {
+          data.button.push(agreeBtn.textContent);
+        }
+
+        if (btns && btns.style.display != "none" && disagreeBtn && disagreeBtn.textContent.trim() != '领取') {
+          data.button.push(disagreeBtn.textContent);
+        }
+      } // if (elem.contentWindow.document.querySelector(".mini-tips-danger")) {
+      // return elem.contentWindow.document.querySelector(".mini-tips-danger").innerHTML;
+      // }
+      //有黑色提示框出现
+      //   var tip = elem.querySelector("#toast");
+      //   if (tip) {
+      //     data.tip = tip.textContent;
+      //   }
+
+    }
+
+    return data;
+  }
+doAction_uiControl280_BoiLDL: |
+  if (data.eventType == 'click') {
+    var d = data.dataCustom.classNames;
+
+    if (d == 'btn ysp-btn-one') {
+      var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");
+
+      _btnTwo.click();
+
+      var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');
+      console.log(redTip);
+
+      if (!redTip) {
+        setTimeout(function () {
+          var tip = elem.querySelectorAll(".mini-window-drag");
+
+          if (tip.length == 1) {
+            //_btnTwo.click(); 
+            var json = {
+              time: new Date().getTime()
+            };
+            setTimeout(function () {
+              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            }, 20);
+          }
+        }, 10);
+      }
+    } else if (d == 'btn ysp-btn-two') {
+      var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");
+
+      if (data.dataCustom.text == "执行") {
+        btnTwo.click();
+      } else if (data.dataCustom.text == "追回") {
+        btnTwo.click();
+        var json = {
+          time: new Date().getTime()
+        };
+        setTimeout(function () {
+          ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp");
+        }, 10);
+      } else {
+        //有黑色提示框出现
+        var tip = elem.querySelector("#toast");
+
+        if (tip) {
+          data.tip = tip.textContent;
+        } //**如果流程iframe存在就留在当页，如果不存在就点击同意后回到待办里***//
+
+
+        btnTwo.click();
+        var timer = setInterval(function () {
+          var redTip = elem.querySelector(".mini-window-drag"); //.querySelectorAll("iframe")[0].contentDocument.querySelector("#tab").querySelectorAll("iframe")[0].contentDocument.querySelector(".mini-tips-danger");
+
+          if (!redTip) {
+            var json = {
+              time: new Date().getTime()
+            };
+            setTimeout(function () {
+              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            }, 10);
+            clearInterval(timer);
+          }
+        }, 10);
+      }
+    }
+  }
+  ;
+getTemplate_uiControl280_cTkF9O: "import {Button} from 'ysp-custom-components'\nimport {Component} from 'react';\nexport default class extends React.Component{\n  // constructor(){\n  //   super();\n  //   this.flag=false\n  // }\n  click(e){\n//     if(!this.flag){\n     \n//     this.flag=true;\n      var handler=this.props.customHandler;\n    var e=e.target;\n      //alert(\"点击了按钮\")\n      \n     if(handler) {                                    \n       handler({\n         data:{classNames:e.className,text:e.textContent},\n         eventType:'click'                         \n       })\n     }\n    // }\n  \t\n  }\n  // componentDidMount(){\n  //   var windowH=document.documentElement.clientHeight;\n  //   this.setState({\n  //   \twindowH:windowH,\n  //   })\n  //   console.log(windowH)\n  //   var btn=window.document.querySelector('.ysp-btn');\n  //   setTimeout(function(){\n  //     btn.style.top=(windowH-100)+\"px\";\n  //   },500)\n  // }\n  render(){\n    var data=this.props.customData\t||\t[];\n    var btns=data.button||[]\n    if(\tbtns\t&& btns.length>0\t){\n    \treturn(\n    \t<Button  PassedCustomData={btns} btnClick={this.click.bind(this)} />\n   \t )\n    } else{\n      return(<div style={{display:'none'}}></div>)\n    } \n  }\n}"
+getData_control283_gTIMHc: >
+  ;if (!elem) {
+    return;
+  } // if (elem && elem.querySelector("#toast") &&
+  elem.querySelector("#toast").style.display != "none") {
+
+  //   return elem.querySelector("#toast").textContent;
+
+  // }
+
+
+  if (elem) {
+    var data = {
+      button: [],
+      tip: ""
+    };
+    var windowDrag = elem.querySelector(".mini-window-drag");
+
+    if (windowDrag) {
+      var iframeOuter = elem.querySelector(".mini-window-drag").querySelector("iframe");
+
+      if (iframeOuter) {
+        var btns = iframeOuter.contentDocument.querySelector("#btn");
+        var agreeBtn = iframeOuter.contentDocument.querySelector('#td_0_0');
+        var disagreeBtn = iframeOuter.contentDocument.querySelector('#td_0_1');
+
+        if (btns && btns.style.display != "none" && agreeBtn) {
+          data.button.push(agreeBtn.textContent);
+        }
+
+        if (btns && btns.style.display != "none" && disagreeBtn && disagreeBtn.textContent.trim() != '领取') {
+          data.button.push(disagreeBtn.textContent);
+        }
+      } // if (elem.contentWindow.document.querySelector(".mini-tips-danger")) {
+      // return elem.contentWindow.document.querySelector(".mini-tips-danger").innerHTML;
+      // }
+      //有黑色提示框出现
+      //   var tip = elem.querySelector("#toast");
+      //   if (tip) {
+      //     data.tip = tip.textContent;
+      //   }
+
+    }
+
+    return data;
+  }
+doAction_uiControl280_cTkF9O: |
+  if (data.eventType == 'click') {
+    var d = data.dataCustom.classNames;
+
+    if (d == 'btn ysp-btn-one') {
+      var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");
+
+      _btnTwo.click();
+
+      var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');
+      console.log(redTip);
+
+      if (!redTip) {
+        setTimeout(function () {
+          var tip = elem.querySelectorAll(".mini-window-drag");
+
+          if (tip.length == 1) {
+            //_btnTwo.click(); 
+            var json = {
+              time: new Date().getTime()
+            };
+            setTimeout(function () {
+              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            }, 20);
+          }
+        }, 10);
+      }
+    } else if (d == 'btn ysp-btn-two') {
+      var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");
+
+      if (data.dataCustom.text == "执行") {
+        btnTwo.click();
+      } else if (data.dataCustom.text == "追回") {
+        btnTwo.click();
+        var json = {
+          time: new Date().getTime()
+        };
+        setTimeout(function () {
+          ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp");
+        }, 10);
+      } else {
+        //有黑色提示框出现
+        var tip = elem.querySelector("#toast");
+
+        if (tip) {
+          data.tip = tip.textContent;
+        } //**如果流程iframe存在就留在当页，如果不存在就点击同意后回到待办里***//
+
+
+        btnTwo.click();
+        var timer = setInterval(function () {
+          var redTip = elem.querySelector(".mini-window-drag"); //.querySelectorAll("iframe")[0].contentDocument.querySelector("#tab").querySelectorAll("iframe")[0].contentDocument.querySelector(".mini-tips-danger");
+
+          if (!redTip) {
+            var json = {
+              time: new Date().getTime()
+            };
+            setTimeout(function () {
+              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            }, 10);
+            clearInterval(timer);
+          }
+        }, 10);
+      }
+    }
+  }
+  ;

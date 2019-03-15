@@ -189,6 +189,10 @@ body {
   border-radius: 5px;
 }
 /**********************头部固定定位start*********************************/
+div[data-componentsid="uiControl281_TSd4pu"],
+div[data-componentsid="uiControl275_ewUbG6"],
+div[data-componentsid="uiControl269_ATE5wO"],
+div[data-componentsid="uiControl262_c5O7AP"],
 div[data-componentsid="uiControl1_zxy4y7"],
 div[data-componentsid="uiControl21_n99o77"],
 div[data-componentsid="uiControl37_FOWagD"],
@@ -2406,3 +2410,55 @@ div[data-ysp-modelid="branchTurnRegular"] .errorIcon {
   right: 20px;
 }
 /***********************************分公司转正 end*******************************************/
+/***********************************简易采购订单撤销 start*******************************************/
+div[data-ysp-modelid="orderCancel"] .alertContent {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  z-index: 999999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #F4F4F4;
+}
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main {
+  margin-top: 44px;
+}
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-flowName,
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-submitPerson {
+  height: 44px;
+  line-height: 44px;
+  padding-left: 0.8125rem;
+}
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-flowName span,
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-submitPerson span {
+  font-size: 14px;
+  color: #666460;
+  display: inline-block;
+  width: 40%;
+}
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-flowName input,
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-submitPerson input {
+  width: 60%;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 1px solid #e6e6e6;
+  height: 100%;
+  line-height: 43px;
+  font-size: 15px;
+}
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-ProcessedTask-check-btnMain {
+  display: flex;
+  justify-content: center;
+  flex-direction: row ;
+  margin-top: 10px;
+}
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-ProcessedTask-check-btnMain .ysp-ProcessedTask-check-btn {
+  width: 35%;
+  border-radius: 5px;
+  margin: 0;
+}
+div[data-ysp-modelid="orderCancel"] .alertContent .ysp-ProcessedTask-main .ysp-ProcessedTask-check-btnMain .ysp-ProcessedTask-check-btn:last-child {
+  margin-left: 10%;
+}
+/***********************************简易采购订单撤销 end*******************************************/
