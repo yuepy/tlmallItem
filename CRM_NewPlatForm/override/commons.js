@@ -101,12 +101,44 @@ function breadcrumb(role,roleCode){
 
     for(var i in path){
         var session = JSON.parse(sessionStorage.getItem(path[i]));
+        
+        if(session.url.indexOf("isYear") < 0){
+        	var isYear = '0';
+            if ($("#planTypeSelect").val() == 'month') {
+                isYear = '0';
+            } else if ($("#planTypeSelect").val() == 'year') {
+                isYear = '1';
+            }
+            session.url = session.url+"&isYear="+isYear;
+        }
+        
         if(i==0)
             $(".breadcrumb").html('<li><a href="'+session.url+'">'+session.role+'</a></li>');
         else
             $(".breadcrumb").append('<li><a href="'+session.url+'">'+session.role+'</a></li>');
     }
+}
 
+/**
+ * 从新拼接年度参数
+ */
+function repeatBreadcrumb(){
+	$(".breadcrumb li").each(function(){
+		var url = $(this).find("a").attr("href");
+        	var isYear = '0';
+            if ($("#planTypeSelect").val() == 'month') {
+                isYear = '0';
+            } else if ($("#planTypeSelect").val() == 'year') {
+                isYear = '1';
+            }
+        if(url.indexOf("isYear") < 0){
+            url = url+"&isYear="+isYear;
+        }else{
+        	url = url.replace(/&isYear=1/g,"&isYear="+isYear);
+        	url = url.replace(/&isYear=0/g,"&isYear="+isYear);
+        }
+		$(this).find("a").attr("href",url);
+	})
 }
 
 //达成率字段后面添加%号

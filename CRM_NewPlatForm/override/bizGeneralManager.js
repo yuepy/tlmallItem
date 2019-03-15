@@ -312,6 +312,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
             $("#planTypeSelect").change(function () {
                 init();
+              	repeatBreadcrumb();
             });
 
         });

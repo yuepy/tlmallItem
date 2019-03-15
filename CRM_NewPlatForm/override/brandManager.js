@@ -312,6 +312,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
             $("#planTypeSelect").change(function () {
                 init();
+              	repeatBreadcrumb();
             });
         });
 
@@ -1790,6 +1791,13 @@ window.addEventListener('DOMContentLoaded', function() {
                     var link = '/ptDataShow/salesPlan/salesOverview?type=05&projectName=' + encodeURIComponent(titleText) 
                     + "&branchName=" + encodeURIComponent($("#branchName").text()) 
                     + "&modelName=" +  encodeURIComponent($("#modelName").text())
+                    + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
+                    window.location.href = link;
+                }else{
+                	var link = '/ptDataShow/salesPlan/salesOverview?type=05&projectName=' + encodeURIComponent(titleText) 
+                    + "&branchName=" + encodeURIComponent($("#branchName").text()) 
+                    + "&modelName=" +  encodeURIComponent($("#modelName").text())
+                    + "&isYear="+isYear
                     + "&filter_userId=" + loginName + '&encoder=' + encoder + '&date='+ $("#selDay").val() + "&drill=oneProject";
                     window.location.href = link;
                 }
