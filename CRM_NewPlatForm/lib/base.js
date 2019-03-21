@@ -61,12 +61,13 @@
   ysp.customHelper = {};
   //var topWin = null;
   var topWin = top;
-  topWin.setImageData = function(base64){
+  //本地调用安卓端相册 相机等功能 . 实现上传等.暂未完成,需求未明确
+  topWin.setImageData = function(base64){
     topWin.img = base64
     //top.yspCheckIn.openCamera();调用安卓端相册功能 返回值为base64格式图片 缺少Type  需要自行添加
   }
   var loginWin = null;
-  var FlagNum=0;//接口次数计数  超过十 停止重置
+  var FlagNum=0;//接口调用次数计数  超过十 停止重置
   var loginFlag = false;
   topWin.dataMenu = '';
   //IOS客户端调用.解决请求ICON接口跨域问题;
@@ -153,12 +154,14 @@
               loginFlag = true;
               if (currentAwin.frameElement && currentAwin.frameElement.name == "browserFrame2" && currentAwin.frameElement.dataset.browser) {
                 if (currentAwin.location.href.indexOf('login') !== -1) {
-                  currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html'
+                  currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
+                  //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
                   RedCoreRedMi('index');
                   //ysp.runtime.Model.setForceMatchModels(['index']);
                 }
                 if(currentAwin.frameElement.src.indexOf('login')!==-1){
                   if(ysp.runtime.Model.getActiveModel().id == 'login'){
+                    //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
                     RedCoreRedMi('index');
                     //ysp.runtime.Model.setForceMatchModels(['index']);
                     alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
@@ -193,6 +196,7 @@
       EnCoderXhr.send();
     }
 	}
+  //安卓端 . 登录方式 弃用密码代填. 暂时为独立方法,看安卓是否符合整合登录前提 , 待安卓与IOS客户端同步后整合登录方法.
   topWin.AndroidLoginIn = function(user,password){
     if(user == '' || password == ''){
       alert('用户名或密码为空,登录失败!');
@@ -221,12 +225,14 @@
               loginFlag = true;
               if (currentAwin.frameElement && currentAwin.frameElement.name == "browserFrame2" && currentAwin.frameElement.dataset.browser) {
                 if (currentAwin.location.href.indexOf('login') !== -1) {
-                  currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html'
+                  currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
+                  //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
                   RedCoreRedMi('index');
                   //ysp.runtime.Model.setForceMatchModels(['index']);
                 }
                 if(currentAwin.frameElement.src.indexOf('login')!==-1){
                   if(ysp.runtime.Model.getActiveModel().id == 'login'){
+                    //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
                     //ysp.runtime.Model.setForceMatchModels(['index']);
                     RedCoreRedMi('index');
                     alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
@@ -2464,6 +2470,9 @@
         }
       });
       aWin.addEventListener('DOMContentLoaded', function () {
+        window.onerror = function(err){
+          console.log(err);
+        }
         if (aWin.location.href.indexOf('index.html') !== -1) {
           var actionEvent = '{"target":"null","data":"closePreLoading"}';
           //关闭主webview的loading状态
