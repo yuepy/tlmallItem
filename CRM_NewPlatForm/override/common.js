@@ -381,9 +381,19 @@ function getLines(datas, Id) {
     }
     if(datas[0].data){
 	    for (var j = 0; j < datas[0].data.length; j++) {
-	        timeDatas.push((datas[0].data[j].time).substring(5));
+	        timeDatas.push(datas[0].data[j].time);
 	        salesValReach.push(datas[0].data[j].value);
-	        sumValReach.push(((datas[1].data[j].value)/10000));
+	        if(datas[1].data[j].value.toString().indexOf(".")>0){
+	        	var value1 = datas[1].data[j].value.toFixed(2);
+	        	if(value1.toString().substr(-2,2) == "00"){
+	        		value1 = datas[1].data[j].value.toFixed(0);
+	        	}else if(value1.toString().substr(-1,1) == "0"){
+	        		value1 = datas[1].data[j].value.toFixed(1);
+	        	}
+	        	sumValReach.push(value1);
+	        }else{
+	        	sumValReach.push(datas[1].data[j].value);
+	        }
 	    }
     }
     var option = {
@@ -670,4 +680,36 @@ function clickThSortCommon(){
 			$table.find("tbody").html(newHtml);
 		})
 	})
+}
+
+
+/**
+ * 2019/1/23 添加 千分位过滤
+ * @param num
+ * @param flag
+ * @returns {String}
+ */
+function toQfw_new(num,flag) {
+	var str_num = flag?(num/10000).toFixed(2).toString():num.toString();
+	var end_num = "";
+	if(str_num.indexOf(".") > 0){
+		end_num = str_num.substring(str_num.indexOf("."), str_num.length);
+		str_num = str_num.substring(0,str_num.indexOf("."));
+	}
+	if(end_num == ".00"){
+		end_num = "";
+	}
+	
+	var first_sign = "";
+	if(str_num.indexOf("-") == 0){
+		str_num = str_num.substring(1,str_num.length);
+		first_sign = "-"
+	}
+	
+	var result = "";
+	while (str_num.length > 3) {
+		result = "," + str_num.slice(-3) + result;
+		str_num = str_num.slice(0, str_num.length - 3)
+	}
+	return first_sign + str_num + result + end_num;
 }

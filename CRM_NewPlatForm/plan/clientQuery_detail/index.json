@@ -3,6 +3,9 @@
   "id": "clientQuery_detail",
   "targetURL": "http://192.168.220.82:8080/ptDataShow/reportNew/reportsByPid?isNewFlag=true&reportPid=report852&reportId=report852-1&isDateArray=true&filter_userId=SONGFEI&encoder=U09OR0ZFSSswMS8wNC8yMDE5IDE1OjU1OjE5&username=SONGFEI&a=1&branch=15&clickLi=true&click_storeId=S1079458&click_type=store",
   "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json"
+  },
   "chineseName": "库存产品明细",
   "description": "",
   "firstPaintEnable": false,
@@ -237,6 +240,10 @@
       "toContexts": [
         {
           "toContextId": "context95_7tyRdN"
+        },
+        {
+          "toContextId": "context0_pD8h1P",
+          "toModelId": "index"
         }
       ]
     }

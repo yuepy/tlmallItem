@@ -10,7 +10,8 @@
         if (!top.EAPI.isAndroid()) {
           ysp.appMain.back();ysp.customHelper.BackReload();
         } else {
-          ysp.customHelper.AndroidBackFn();
+          //ysp.customHelper.AndroidBackFn();
+          ysp.appMain.back();
         }
       }if (data.eventType == 'map') {
         top.locationBegin();

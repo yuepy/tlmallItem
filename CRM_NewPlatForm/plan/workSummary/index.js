@@ -12,12 +12,17 @@
       });data.checkSum.push(sum);return data;
     }, doAction_uiControl49_Q2Z6nE: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
+        if (top.EAPI.isAndroid()) {
+          //刷新
+          top.yspCheckIn.isRefresh(true);
+        }ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
         if (!top.EAPI.isAndroid()) {
           ysp.appMain.back();ysp.customHelper.BackReload();
         } else {
-          ysp.customHelper.AndroidBackFn();
+          //刷新
+          top.yspCheckIn.isRefresh(true); //ysp.customHelper.AndroidBackFn();
+          ysp.appMain.back();
         }
       }if ("click" == data.eventType) {
         var index = data.dataCustom;elem.querySelector("#businessDepartment").querySelectorAll("li")[index].querySelector("input").click();
@@ -163,7 +168,9 @@
         });
       } //保存草稿
       if ("save" == data.eventType) {
-        //history.go(-1);
+        if (top.EAPI.isAndroid()) {
+          top.yspCheckIn.isRefresh(true);
+        } //history.go(-1);
         elem.querySelector("#draft") && elem.querySelector("#draft").click();ysp.appMain.showLoading();setTimeout(function () {
           ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
           //更换返回方法 BackReload()回到工作台
@@ -172,14 +179,12 @@
         }, 500);
       } //提交报告
       if ("commitReport" == data.eventType) {
-        var user = data.dataCustom; /****
-                                    var cwin = elem.ownerDocument.defaultView;
-                                     if (user.length > 0 && cwin.submitReportStatus == "completed") {
-                                     ****/if (user.length) {
+        if (top.EAPI.isAndroid()) {
+          top.yspCheckIn.isRefresh(true);
+        }var user = data.dataCustom;if (user.length) {
           //history.go(-1);
           ysp.appMain.showLoading();setTimeout(function () {
-            ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
-            //更换返回方法 BackReload()回到工作台
+            ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //更换返回方法 BackReload()回到工作台
             // ysp.appMain.back();
             ysp.customHelper.back();ysp.customHelper.BackReload();
           }, 500);
@@ -252,7 +257,7 @@
       }if ("imageClick" == data.eventType) {
         if (top.EAPI.isAndroid()) {
           top.yspCheckIn.isRefresh(false);
-        };elem.querySelector("#formUploadify").querySelector('#importFile').click();
+        }elem.querySelector("#formUploadify").querySelector('#importFile').click();
       }if ("chose" == data.eventType) {
         var text = data.dataCustom;if ("华为FD业务事业部" == text) {
           elem.querySelector(".huaweiFD").querySelector("a").click();
@@ -300,16 +305,19 @@
     },
     doAction_uiControl305_f4G8f6: function (data, elem) {
       if (data.eventType == 'upValue') {
-        var dateArr = data.dataCustom.split('-');var date = dateArr.map((v, i) => {
-          if (i == 0) {
-            return v + "年";
-          } else if (i == 1) {
-            return v + "月";
-          } else if (i == 2) {
-            return v + "日";
-          } else {}
-        }).join("");var input = elem.ownerDocument.querySelector('#workSummaryPlanTime'),
-            span = elem.ownerDocument.querySelector("#workSummaryPlanTimeLable span ");input.value = date, span.textContent = date;input.focus();var cwin = elem.ownerDocument.defaultView;cwin.workTime();
+        // var dateArr = data.dataCustom.split('-');
+        // var date = dateArr.map((v, i) => {
+        //   if (i == 0) {
+        //     return v + "年";
+        //   } else if (i == 1) {
+        //     return v + "月";
+        //   } else if (i == 2) {
+        //     return v + "日";
+        //   } else {}
+        // }).join("");
+        var dataValue = data.dataCustom;var input = elem.ownerDocument.querySelector('#workSummaryPlanTime'),
+            span = elem.ownerDocument.querySelector("#workSummaryPlanTimeLable span ");input.value = dataValue, span.textContent = dataValue;input.focus();var cwin = elem.ownerDocument.defaultView; //cwin.workTime();
+        cwin.changeInputTime();
       }
     },
     getTemplate_uiControl305_f4G8f6: function () {

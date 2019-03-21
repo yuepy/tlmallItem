@@ -2,8 +2,7 @@
   ysp.runtime.Model.extendLoadingModel({
     getData_control330_6gAef1: function (elem) {
       if (elem) {
-        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');
-        if (load == null) {
+        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
           setTimeout(function () {
             ysp.appMain.hideLoading();
           }, 5000);
@@ -14,12 +13,17 @@
     },
     doAction_uiControl320_ibSXl8: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = 'http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=';ysp.customHelper.AndroidBackModel = 'questionnaireWrite';ysp.customHelper.AndroidBackFlag = 'destination';
+        if (top.EAPI.isAndroid()) {
+          //刷新问题
+          top.yspCheckIn.isRefresh(true);
+        }ysp.customHelper.AndroidBackURL = 'http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=';ysp.customHelper.AndroidBackModel = 'questionnaireWrite';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ("back" == data.eventType) {
         if (!top.EAPI.isAndroid()) {
           ysp.customHelper.BackReload('http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=');
         } else {
-          ysp.customHelper.AndroidBackFn();
+          //刷新问题
+          top.yspCheckIn.isRefresh(true); //ysp.customHelper.AndroidBackFn();
+          ysp.appMain.back();
         }
       }
     },
@@ -120,19 +124,30 @@
         var data = data.dataCustom;if ("back" == data) {
           //var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
           //ysp.appMain.reloadPage(url);
-          history.go(-1);
+          if (top.EAPI.isAndroid()) {
+            //刷新问题
+            top.yspCheckIn.isRefresh(true);
+          }history.go(-1);
         } else if ("commit" == data) {
-          elem.querySelector("#baocuncaogao").click();
+          if (top.EAPI.isAndroid()) {
+            //刷新问题
+            top.yspCheckIn.isRefresh(true);
+          }elem.querySelector("#baocuncaogao").click();
         } else {
-          var buttons = elem.ownerDocument.querySelector(".btn-box").querySelectorAll("button");for (var i = 0; i < buttons.length; i++) {
+          if (top.EAPI.isAndroid()) {
+            //刷新问题
+            top.yspCheckIn.isRefresh(true);
+          }var buttons = elem.ownerDocument.querySelector(".btn-box").querySelectorAll("button");for (var i = 0; i < buttons.length; i++) {
             if (buttons[i].getAttribute("val") == "1") {
               buttons[i].click();return;
             }
           }
         }
       } else if (data.eventType == "click") {
-        var i = data.dataCustom.i;var t = data.dataCustom.t; //console.log(data.dataCustom);
-        elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelector(".uploadBtn").querySelector(".webuploader-pick").click();
+        if (top.EAPI.isAndroid()) {
+          //刷新问题
+          top.yspCheckIn.isRefresh(false);
+        }var i = data.dataCustom.i;var t = data.dataCustom.t;elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelector(".uploadBtn").querySelector(".webuploader-pick").click();
       } else if (data.eventType == "delect") {
         var i = data.dataCustom.i;var t = data.dataCustom.t;var index = data.dataCustom.index; //console.log(data.dataCustom);
         elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelectorAll('.file-item')[index].querySelector(".file-panel").querySelector("span").click();

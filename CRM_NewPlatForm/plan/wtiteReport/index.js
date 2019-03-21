@@ -5,12 +5,19 @@
     getData_control49_hLhTy9: function (elem) {},
     doAction_uiControl53_uQ6Chf: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
+        if (top.EAPI.isAndroid()) {
+          //刷新问题
+          top.yspCheckIn.isRefresh(true);
+        }ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if (data.eventType == 'back') {
         if (!top.EAPI.isAndroid()) {
           ysp.appMain.back();ysp.customHelper.BackReload();
         } else {
-          ysp.customHelper.AndroidBackFn();
+          //ysp.customHelper.AndroidBackFn();
+          if (top.EAPI.isAndroid()) {
+            //刷新问题
+            top.yspCheckIn.isRefresh(true);
+          }ysp.appMain.back();
         }
       }
     },

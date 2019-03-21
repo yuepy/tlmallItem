@@ -100,6 +100,10 @@
     }
     return str<10?'0'+str.toString() : str.toString();
   }
+  //Android 切后台刷新
+  topWin.isReload = function(){
+    top.yspCheckIn.isRefresh(true);
+  }
   //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单;  ( + 安卓端) 
   var loginTimeOut = function(str){
     var flag = confirm(str);
@@ -266,6 +270,7 @@
       EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?'+user);
       EnCoderXhr.send();
     }
+    
 	}
   //安卓物理返回键 - 客户端调用
   topWin.AndroidBack = function(){
@@ -414,7 +419,6 @@
   }
   //向当前页面动态添加提示语 .  (div)
   var addMarkedModule = function(str){
-    debugger;
     if(!str && typeof str !== 'string')return ;
     if(!ysp.runtime && !ysp.runtime.Browser) return ;
     var currentWindow = ysp.runtime.Browser.activeBrowser.contentWindow;
