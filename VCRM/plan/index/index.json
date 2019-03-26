@@ -1,0 +1,295 @@
+{
+  "version": "0.1",
+  "id": "index",
+  "targetURL": "http://pttlcrm.com/pttlCrm/res/index.html",
+  "jsFile": "index.js",
+  "requires": {
+    "customerWorkspace": "../customerWorkspace/index.json",
+    "saleAchievement": "../saleAchievement/index.json",
+    "businesHeadquartersDC": "../businesHeadquartersDC/index.json",
+    "visitIndex": "../visitIndex/index.json"
+  },
+  "chineseName": "首页",
+  "description": "首页",
+  "controls": {
+    "control5_5GxFa5": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control5_5GxFa5"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context1_ZpWnXN": {
+      "controls": [
+        "control5_5GxFa5"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow5_fmgkeo": {
+      "toContexts": [
+        {
+          "toContextId": "context1_ZpWnXN"
+        }
+      ]
+    },
+    "flow6_6ApTcm": {
+      "fromContextId": "context1_ZpWnXN",
+      "fromAction": "doAction",
+      "fromControlId": "control5_5GxFa5",
+      "toContexts": [
+        {
+          "toContextId": "context1_ZpWnXN"
+        },
+        {
+          "toContextId": "context2_HsDgXa",
+          "toModelId": "customerWorkspace"
+        },
+        {
+          "toContextId": "context3_eTo7Aq",
+          "toModelId": "saleAchievement"
+        },
+        {
+          "toContextId": "context4_NCNuce",
+          "toModelId": "businesHeadquartersDC"
+        },
+        {
+          "toContextId": "context8_HsWDeU",
+          "toModelId": "visitIndex"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page1_KETalJ": {
+      "contextId": "context1_ZpWnXN",
+      "layout": [
+        {
+          "id": "uiControl5_Arkp0J",
+          "controlId": "control5_5GxFa5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl5_Arkp0J",
+                "onGetTemplate": "getTemplate_uiControl5_Arkp0J"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context1_ZpWnXN": [
+          "太力销售管理可视化系统"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context1_ZpWnXN": [
+          "pttlcrm.com/pttlCrm/res/index.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context1_ZpWnXN": [
+          [
+            "ImIframe",
+            "InfoIframe",
+            "brandHeader",
+            "contentContainer",
+            "currentUserName",
+            "docs-pictures",
+            "ibars-iforms-box",
+            "iframeTextName",
+            "logout",
+            "menu",
+            "mod-sideBar",
+            "noticeNum_",
+            "notice_informs",
+            "sidebarGroove",
+            "timeShow",
+            "useIframeLoginPtDatsShow"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context1_ZpWnXN": [
+          [
+            "activ",
+            "backImage",
+            "box",
+            "clearfix",
+            "client-portrait",
+            "close",
+            "content-container",
+            "content-main-region",
+            "disabled",
+            "docs-pictures",
+            "gob",
+            "halving-line",
+            "head_search",
+            "hide",
+            "ibar-adsList",
+            "ibar-code",
+            "ibar-code-content",
+            "ibar-informs-ul",
+            "ibar-msg",
+            "ibars-iforms-box",
+            "ibars-tab",
+            "icon",
+            "icon-arrow",
+            "icon-msg",
+            "icons",
+            "img",
+            "layui-layer-move",
+            "logo",
+            "m-head",
+            "m-settings",
+            "main-container",
+            "mask",
+            "menu-model",
+            "mod-sideBar",
+            "nav-menu-item",
+            "nav-menu-title",
+            "nav-menu-wrapper",
+            "shrink",
+            "sidebar-container",
+            "sidebar-container-footer",
+            "sidebar-container-footer-wrapper",
+            "sidebar-groove",
+            "title",
+            "u-help",
+            "u-time"
+          ],
+          [
+            "activ",
+            "active",
+            "backImage",
+            "box",
+            "clearfix",
+            "client-portrait",
+            "close",
+            "content-container",
+            "content-main-region",
+            "disabled",
+            "docs-pictures",
+            "gob",
+            "halving-line",
+            "head_search",
+            "hide",
+            "ibar-adsList",
+            "ibar-code",
+            "ibar-code-content",
+            "ibar-informs-ul",
+            "ibar-msg",
+            "ibars-iforms-box",
+            "ibars-tab",
+            "icon",
+            "icon-arrow",
+            "icon-msg",
+            "icons",
+            "img",
+            "layui-layer-move",
+            "logo",
+            "m-head",
+            "m-settings",
+            "main-container",
+            "mask",
+            "menu-model",
+            "mod-sideBar",
+            "nav-menu-item",
+            "nav-menu-title",
+            "nav-menu-wrapper",
+            "preview",
+            "shrink",
+            "sidebar-container",
+            "sidebar-container-footer",
+            "sidebar-container-footer-wrapper",
+            "sidebar-groove",
+            "title",
+            "u-help",
+            "u-time"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context1_ZpWnXN": [
+          [
+            "-/-/DIV",
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "-/DIV/UL",
+            "A/DIV/IMG",
+            "A/DIV/SPAN",
+            "DIV/A/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/FOOTER",
+            "DIV/DIV/H3",
+            "DIV/DIV/IFRAME",
+            "DIV/DIV/IMG",
+            "DIV/DIV/NAV",
+            "DIV/DIV/P",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/FOOTER/DIV",
+            "DIV/H3/I",
+            "DIV/NAV/UL",
+            "DIV/SPAN/A",
+            "DIV/UL/LI",
+            "FOOTER/DIV/DIV",
+            "LI/A/DIV",
+            "LI/A/I",
+            "LI/A/SPAN",
+            "LI/DIV/DIV",
+            "LI/DIV/I",
+            "LI/UL/LI",
+            "NAV/UL/LI",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/I",
+            "UL/LI/UL"
+          ]
+        ]
+      }
+    }
+  }
+}

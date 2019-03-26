@@ -48,8 +48,8 @@
             });
             if (start !== undefined) {
               item.list.splice(start, 1);
-            }
-          }
+            }
+          }
         }
       });
     }
@@ -66,7 +66,12 @@
     topWin.img = base64
     //top.yspCheckIn.openCamera();调用安卓端相册功能 返回值为base64格式图片 缺少Type  需要自行添加
   }
-  var loginWin = null;
+  var LOGINNAME = '';//登录名
+  var LOGINTIME = '';//登录时间
+  var LOGINUSED = '' ;//耗时
+  var STARTTIME = '';
+  //以上为日志内容
+  var loginWin = null;
   var FlagNum=0;//接口调用次数计数  超过十 停止重置
   var loginFlag = false;
   topWin.dataMenu = '';
@@ -160,14 +165,14 @@
                 if (currentAwin.location.href.indexOf('login') !== -1) {
                   currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
                   //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
-                  RedCoreRedMi('index');
-                  //ysp.runtime.Model.setForceMatchModels(['index']);
+                  //RedCoreRedMi('index');
+                  ysp.runtime.Model.setForceMatchModels(['index']);
                 }
                 if(currentAwin.frameElement.src.indexOf('login')!==-1){
                   if(ysp.runtime.Model.getActiveModel().id == 'login'){
                     //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
-                    RedCoreRedMi('index');
-                    //ysp.runtime.Model.setForceMatchModels(['index']);
+                    //RedCoreRedMi('index');
+                    ysp.runtime.Model.setForceMatchModels(['index']);
                     alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
                   }else{
                     alert('模板跳转!但pc地址未更换'+ysp.runtime.Model.forceMatchFlag+currentAwin.frameElement.src);
@@ -202,15 +207,18 @@
 	}
   //安卓端 . 登录方式 弃用密码代填. 暂时为独立方法,看安卓是否符合整合登录前提 , 待安卓与IOS客户端同步后整合登录方法.
   topWin.AndroidLoginIn = function(user,password){
+    STARTTIME = Date.now();
     if(user == '' || password == ''){
       alert('用户名或密码为空,登录失败!');
       return ;
     }
     if(user&&password){
-      var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
+      LOGINNAME = user;  //日志内容部分
+      LOGINTIME = new Date().getTime();
+      var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
       var EnCoderXhr = new XMLHttpRequest();
       EnCoderXhr.onreadystatechange = function(){
-        if(EnCoderXhr.readyState == 4){
+        if(EnCoderXhr.readyState == 4 && EnCoderXhr.status >=200 && EnCoderXhr.status <300 || EnCoderXhr.status == 304){
           var param = JSON.parse(EnCoderXhr.response);
           setMaxDigits(130);
           var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
@@ -231,14 +239,14 @@
                 if (currentAwin.location.href.indexOf('login') !== -1) {
                   currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
                   //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
-                  RedCoreRedMi('index');
-                  //ysp.runtime.Model.setForceMatchModels(['index']);
+                  //RedCoreRedMi('index');
+                  ysp.runtime.Model.setForceMatchModels(['index']);
                 }
                 if(currentAwin.frameElement.src.indexOf('login')!==-1){
                   if(ysp.runtime.Model.getActiveModel().id == 'login'){
                     //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
-                    //ysp.runtime.Model.setForceMatchModels(['index']);
-                    RedCoreRedMi('index');
+                    ysp.runtime.Model.setForceMatchModels(['index']);
+                    //RedCoreRedMi('index');
                     alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
                   }else{
                     alert('模板跳转!但pc地址未更换'+ysp.runtime.Model.forceMatchFlag+currentAwin.frameElement.src);
@@ -246,12 +254,24 @@
                 }
               }
               getAllMenu(currentAwin,MenuList);
+              LOGINUSED = (Date.now() - STARTTIME)/1000; //运行时间
+              var DATA = {'log':{
+                        'source':'VCRM',
+                        'type':'登录日志',
+                        'loginName':LOGINNAME,
+                        'email':'',
+                        'model':'',
+            						'loginTime':LOGINTIME,
+                        'occurTime':new Date().getTime(),
+                        'timeUsed':LOGINUSED,
+                        'failedReason':'登录成功',
+                        'uploadFailedReason':''
+          						 }
+                     }
+              top.yspCheckIn.sendLog(JSON.stringify(DATA));
             }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
               loginTimeOut('登录失败,接口返回错误,是否刷新重试');
             }
-            //else if(xhr.status >=400 ){
-            // alert('登录效验失败.请手动登录!'+LoginXhr.status);
-            // }
           }
           LoginXhr.timeout = 10000;
           LoginXhr.ontimeout = function(str){
@@ -2474,8 +2494,21 @@
         }
       });
       aWin.addEventListener('DOMContentLoaded', function () {
-        window.onerror = function(err){
-          console.log(err);
+        window.onerror = function(msg,url,line){
+          var DATA = {'log':{
+                        'source':'VCRM',
+                        'type':'错误日志',
+                        'loginName':LOGINNAME,
+                        'email':'',
+                        'model':'',
+            						'loginTime':LOGINTIME,
+                        'occurTime':new Date().getTime(),
+                        'timeUsed':LOGINUSED,
+                        'failedReason':'Error:'+msg+' | Url:'+url+' | Line:'+line,
+                        'uploadFailedReason':''
+          						 }
+                     }
+					top.yspCheckIn.sendLog(JSON.stringify(DATA))
         }
         if (aWin.location.href.indexOf('index.html') !== -1) {
           var actionEvent = '{"target":"null","data":"closePreLoading"}';
