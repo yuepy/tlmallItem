@@ -1,19 +1,17 @@
 {
   "version": "0.1",
   "id": "materialInformationDisabled",
-  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=512682&materialInformationDisabled",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529751&materialInformationDisabled",
   "jsFile": "index.js",
   "requires": {
-    "approvalTrack": "../approvalTrack/index.json",
     "pendingTask": "../pendingTask/index.json",
-    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
-    "materialInformationDisabled": "../materialInformationDisabled/index.json"
+    "approvalTrack": "../approvalTrack/index.json",
+    "approveAdvice": "../approveAdvice/index.json"
   },
   "chineseName": "物料信息停用",
   "description": "",
-  "firstPaintEnable": false,
   "controls": {
-    "control279_sGHaKI": {
+    "control285_D72UNs": {
       "location": {
         "data": {
           "tagName": "IFRAME"
@@ -42,7 +40,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control279_sGHaKI"
+        "onGetData": "getData_control285_D72UNs"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -50,7 +48,7 @@
       "frameXPath": "",
       "componentType": "custom"
     },
-    "control280_LSSZtl": {
+    "control286_a8gb9L": {
       "location": {
         "data": {
           "tagName": "TR"
@@ -82,7 +80,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control280_LSSZtl"
+        "onGetData": "getData_control286_a8gb9L"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -91,7 +89,7 @@
       "frameXPath": "//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
-    "control281_g5Jcwo": {
+    "control287_3VRixX": {
       "location": {
         "data": {
           "tagName": "DIV"
@@ -109,7 +107,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control281_g5Jcwo"
+        "onGetData": "getData_control287_3VRixX"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -117,7 +115,7 @@
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
-    "control282_JqnKMl": {
+    "control288_INa0lK": {
       "location": {
         "data": {
           "tagName": "TEXTAREA"
@@ -155,7 +153,7 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control282_JqnKMl"
+        "onGetData": "getData_control288_INa0lK"
       },
       "intendedRole": "custom",
       "roles": "element,textbox,custom",
@@ -163,7 +161,7 @@
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
     },
-    "control283_gTIMHc": {
+    "control289_10R11K": {
       "location": {
         "data": {
           "tagName": "BODY"
@@ -186,7 +184,44 @@
         ]
       },
       "events": {
-        "onGetData": "getData_control283_gTIMHc"
+        "onGetData": "getData_control289_10R11K"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control291_hWUqoW": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control291_hWUqoW"
       },
       "intendedRole": "custom",
       "roles": "element,custom",
@@ -196,13 +231,14 @@
     }
   },
   "contexts": {
-    "context46_6U0y09": {
+    "context35_8OPgnn": {
       "controls": [
-        "control279_sGHaKI",
-        "control280_LSSZtl",
-        "control281_g5Jcwo",
-        "control282_JqnKMl",
-        "control283_gTIMHc"
+        "control285_D72UNs",
+        "control286_a8gb9L",
+        "control287_3VRixX",
+        "control288_INa0lK",
+        "control289_10R11K",
+        "control291_hWUqoW"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -211,66 +247,52 @@
     }
   },
   "flows": {
-    "flow181_v1krcC": {
+    "flow179_txRGAs": {
       "toContexts": [
         {
-          "toContextId": "context46_6U0y09"
-        },
-        {
-          "toContextId": "context46_6U0y09",
-          "toModelId": "materialInformationDisabled"
+          "toContextId": "context35_8OPgnn"
         }
       ]
     },
-    "flow182_DkI3Km": {
-      "fromContextId": "context46_6U0y09",
+    "flow181_Smw7CZ": {
+      "fromContextId": "context35_8OPgnn",
       "fromAction": "doAction",
-      "fromControlId": "control282_JqnKMl",
+      "fromControlId": "control285_D72UNs",
       "toContexts": [
         {
-          "toContextId": "context46_6U0y09"
-        }
-      ]
-    },
-    "flow183_hAtzlE": {
-      "fromContextId": "context46_6U0y09",
-      "fromAction": "doAction",
-      "fromControlId": "control280_LSSZtl",
-      "toContexts": [
-        {
-          "toContextId": "context46_6U0y09"
-        },
-        {
-          "toContextId": "context7_6oqdXk",
-          "toModelId": "approvalTrack"
-        }
-      ]
-    },
-    "flow184_Ko8Fyk": {
-      "fromContextId": "context46_6U0y09",
-      "fromAction": "doAction",
-      "fromControlId": "control279_sGHaKI",
-      "toContexts": [
-        {
-          "toContextId": "context46_6U0y09"
+          "toContextId": "context35_8OPgnn"
         },
         {
           "toContextId": "context1_ceUML4",
           "toModelId": "pendingTask"
-        },
-        {
-          "toContextId": "context2_MwGkVx",
-          "toModelId": "hasBeenProcessedTask"
         }
       ]
     },
-    "flow189_Q0uOl0": {
-      "fromContextId": "context46_6U0y09",
+    "flow194_iUI4KK": {
+      "fromContextId": "context35_8OPgnn",
       "fromAction": "doAction",
-      "fromControlId": "control283_gTIMHc",
+      "fromControlId": "control286_a8gb9L",
       "toContexts": [
         {
-          "toContextId": "context46_6U0y09"
+          "toContextId": "context35_8OPgnn"
+        },
+        {
+          "toContextId": "context7_6oqdXk",
+          "toModelId": "approvalTrack"
+        },
+        {
+          "toContextId": "context10_Hyn4t6",
+          "toModelId": "approveAdvice"
+        }
+      ]
+    },
+    "flow195_26vuKr": {
+      "fromContextId": "context35_8OPgnn",
+      "fromAction": "doAction",
+      "fromControlId": "control289_10R11K",
+      "toContexts": [
+        {
+          "toContextId": "context35_8OPgnn"
         },
         {
           "toContextId": "context1_ceUML4",
@@ -280,56 +302,86 @@
     }
   },
   "pages": {
-    "page46_vnPXPZ": {
-      "contextId": "context46_6U0y09",
+    "page35_f0HBbc": {
+      "contextId": "context35_8OPgnn",
       "layout": [
         {
-          "id": "uiControl275_ewUbG6",
-          "controlId": "control279_sGHaKI",
+          "id": "uiControl280_ZBvNG4",
+          "controlId": "control285_D72UNs",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl275_ewUbG6",
-                "onGetTemplate": "getTemplate_uiControl275_ewUbG6"
+                "onDoAction": "doAction_uiControl280_ZBvNG4",
+                "onGetTemplate": "getTemplate_uiControl280_ZBvNG4"
               }
             }
           }
         },
         {
-          "id": "uiControl276_TKn050",
-          "controlId": "control280_LSSZtl",
+          "id": "uiControl281_aAbeQw",
+          "controlId": "control286_a8gb9L",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl276_TKn050",
-                "onGetTemplate": "getTemplate_uiControl276_TKn050"
+                "onDoAction": "doAction_uiControl281_aAbeQw",
+                "onGetTemplate": "getTemplate_uiControl281_aAbeQw"
               }
             }
           }
         },
         {
-          "id": "uiControl277_5BGb1I",
-          "controlId": "control281_g5Jcwo",
+          "id": "uiControl282_PbeOS7",
+          "controlId": "control287_3VRixX",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl277_5BGb1I",
-                "onGetTemplate": "getTemplate_uiControl277_5BGb1I"
+                "onDoAction": "doAction_uiControl282_PbeOS7",
+                "onGetTemplate": "getTemplate_uiControl282_PbeOS7"
               }
             }
           }
         },
         {
-          "id": "uiControl279_rxKt9B",
+          "id": "uiControl283_z68FLt",
+          "controlId": "control288_INa0lK",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl283_z68FLt",
+                "onGetTemplate": "getTemplate_uiControl283_z68FLt"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl287_W5VqFE",
+          "controlId": "control291_hWUqoW",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl287_W5VqFE",
+                "onGetTemplate": "getTemplate_uiControl287_W5VqFE"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl284_MHBd9R",
           "display": {
             "type": "sticky",
             "adapterId": "sticky",
@@ -339,7 +391,7 @@
           },
           "layout": [
             {
-              "id": "uiControl279_rxKt9Bbody",
+              "id": "uiControl284_MHBd9Rbody",
               "display": {
                 "type": "stickyBody",
                 "adapterId": "stickyBody",
@@ -349,16 +401,16 @@
               },
               "layout": [
                 {
-                  "id": "uiControl280_cTkF9O",
-                  "controlId": "control283_gTIMHc",
+                  "id": "uiControl285_AyaTDy",
+                  "controlId": "control289_10R11K",
                   "display": {
                     "adapterId": "custom",
                     "type": "custom",
                     "adapter": {
                       "templateType": "react",
                       "events": {
-                        "onDoAction": "doAction_uiControl280_cTkF9O",
-                        "onGetTemplate": "getTemplate_uiControl280_cTkF9O"
+                        "onDoAction": "doAction_uiControl285_AyaTDy",
+                        "onGetTemplate": "getTemplate_uiControl285_AyaTDy"
                       }
                     }
                   }
@@ -366,21 +418,6 @@
               ]
             }
           ]
-        },
-        {
-          "id": "uiControl278_dMILvQ",
-          "controlId": "control282_JqnKMl",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl278_dMILvQ",
-                "onGetTemplate": "getTemplate_uiControl278_dMILvQ"
-              }
-            }
-          }
         }
       ]
     }
@@ -388,23 +425,21 @@
   "matchers": {
     "page/title": {
       "contexts": {
-        "context46_6U0y09": [
+        "context35_8OPgnn": [
           "待处理任务"
         ]
       }
     },
     "page/urls": {
       "contexts": {
-        "context46_6U0y09": [
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=512682&materialInformationDisabled",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529132&materialInformationDisabled",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529755&materialInformationDisabled"
+        "context35_8OPgnn": [
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529751&materialInformationDisabled"
         ]
       }
     },
     "page/ids": {
       "contexts": {
-        "context46_6U0y09": [
+        "context35_8OPgnn": [
           [
             "$cell$",
             "__modalmini-",
@@ -431,41 +466,13 @@
             "taskFromList",
             "taskFromList$value",
             "taskListId"
-          ],
-          [
-            "$cell$",
-            "__modalmini-",
-            "endT",
-            "endT$text",
-            "endT$value",
-            "likeQ",
-            "likeQ$text",
-            "likeSearch",
-            "mini-",
-            "mini-$",
-            "mini-$ck$",
-            "mini-$emptytext",
-            "mini-$filter$",
-            "mini-$headerCell$",
-            "mini-$row$",
-            "mini-$summary$",
-            "permissionList",
-            "permissionList$value",
-            "startT",
-            "startT$text",
-            "startT$value",
-            "tableSearch",
-            "taskFromList",
-            "taskFromList$value",
-            "taskListId",
-            "toast"
           ]
         ]
       }
     },
     "page/classes": {
       "contexts": {
-        "context46_6U0y09": [
+        "context35_8OPgnn": [
           [
             "bpsDatagrid",
             "dgBtn",
@@ -576,7 +583,7 @@
     },
     "page/tagTriplets": {
       "contexts": {
-        "context46_6U0y09": [
+        "context35_8OPgnn": [
           [
             "-/-/DIV",
             "-/-/INPUT-hidden",

@@ -306,6 +306,39 @@
       "monitored": true,
       "frameXPath": "//iframe[1]<<IFRAME>>//iframe[1]<<IFRAME>>",
       "componentType": "custom"
+    },
+    "control276_NEI20P": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control276_NEI20P"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": false,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -318,7 +351,8 @@
         "control146_Cnw5RJ",
         "control147_6v85oq",
         "control148_3IHRTw",
-        "control149_N2i8LO"
+        "control149_N2i8LO",
+        "control276_NEI20P"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -534,6 +568,21 @@
           }
         },
         {
+          "id": "uiControl270_HQ8N8d",
+          "controlId": "control276_NEI20P",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl270_HQ8N8d",
+                "onGetTemplate": "getTemplate_uiControl270_HQ8N8d"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl137_xesoDX",
           "controlId": "control144_LfTq5r",
           "display": {
@@ -571,7 +620,8 @@
           "",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=281639&employeeHire",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=317914&employeeHire",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=335535&employeeHire"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=335535&employeeHire",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=511703&employeeHire"
         ]
       }
     },

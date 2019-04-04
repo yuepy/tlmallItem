@@ -1001,6 +1001,7 @@ mini.extend(mini.Control, mini.Component, {
         return this.el
     },
     mask: function(a) {
+      
         if (typeof a == "string") {
             a = {
                 html: a
@@ -1011,7 +1012,9 @@ mini.extend(mini.Control, mini.Component, {
         if (!a.cls) {
             a.cls = this._maskCls
         }
+      	
         mini.mask(a)
+      
     },
     unmask: function() {
         mini.unmask(this._getMaskWrapEl());

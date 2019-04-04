@@ -258,6 +258,43 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control273_O9Q47p": {
+      "location": {
+        "data": {
+          "tagName": "IFRAME"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.mini-panel-border DIV.mini-panel-viewport DIV.mini-panel-body IFRAME"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]/IFRAME[1]"
+          },
+          {
+            "id": "elderLevel",
+            "value": {
+              "level": 0
+            }
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control273_O9Q47p"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -270,7 +307,8 @@
         "control159_9znHgG",
         "control160_VSZgX9",
         "control161_p3Jm9l",
-        "control162_4FWxLR"
+        "control162_4FWxLR",
+        "control273_O9Q47p"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -401,6 +439,21 @@
           }
         },
         {
+          "id": "uiControl267_55bzgF",
+          "controlId": "control273_O9Q47p",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl267_55bzgF",
+                "onGetTemplate": "getTemplate_uiControl267_55bzgF"
+              }
+            }
+          }
+        },
+        {
           "id": "uiControl154_TrXhF6",
           "controlId": "control161_p3Jm9l",
           "display": {
@@ -495,7 +548,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=294223&monthChange",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=284807&monthChange",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=314832&monthChange",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=514457&monthChange"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=514457&monthChange",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=517188&monthChange"
         ]
       }
     },
