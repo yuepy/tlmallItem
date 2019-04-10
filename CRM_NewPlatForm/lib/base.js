@@ -74,7 +74,9 @@
   var loginWin = null;
   var FlagNum=0;//接口调用次数计数  超过十 停止重置
   var loginFlag = false;
-  topWin.dataMenu = '';
+  var loginEncoder = '';//作为登陆日志定位问题
+  topWin.dataMenu = '';
+  var loginFlag = false;
   //IOS客户端调用.解决请求ICON接口跨域问题;
   topWin.GetIconNum = function(summary,atMe){
     if(!summary && !atMe || summary == 'error'){
@@ -141,11 +143,15 @@
       return ;
     }
     if(user&&password){
+      ysp.customHelper.logLoginName = user;//日志内容部分
+      STARTTIME = Date.now();
+      LOGINTIME = new Date().getTime();
       var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
       var EnCoderXhr = new XMLHttpRequest();
       EnCoderXhr.onreadystatechange = function(){
         if(EnCoderXhr.readyState == 4){
           var param = JSON.parse(EnCoderXhr.response);
+          loginEncoder = param.encoder; //日志信息
           setMaxDigits(130);
           var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
           var pwd = encryptedString(encrypPublicKey,encodeURIComponent(password));
@@ -180,6 +186,7 @@
                 }
               }
               getAllMenu(currentAwin,MenuList);
+              ysp.customHelper.CONSOLELOG('VCRM','登录日志','登录成功',STARTTIME,LOGINTIME,loginEncoder);
             }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
               loginTimeOut('登录失败,接口返回错误,是否刷新重试');
             }
@@ -221,7 +228,8 @@
         if(EnCoderXhr.readyState == 4 && EnCoderXhr.status >=200 && EnCoderXhr.status <300 || EnCoderXhr.status == 304){
           var param = JSON.parse(EnCoderXhr.response);
           setMaxDigits(130);
-          var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
+          loginEncoder = param.encoder; //日志信息
+          var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
           var pwd = encryptedString(encrypPublicKey,encodeURIComponent(password));
           var body = {'loginName':user,'password':pwd,'encoder':param.encoder};
           body = JSON.stringify(body);
@@ -265,7 +273,7 @@
                         'occurTime':new Date().getTime(),
                         'timeUsed':LOGINUSED,
                         'failedReason':'登录成功',
-                        'uploadFailedReason':''
+                        'uploadFailedReason':loginEncoder
           						 }
                      }
               top.yspCheckIn.sendLog(JSON.stringify(DATA));
@@ -1299,6 +1307,28 @@
     
   }
   utils.extend(ysp.customHelper, {
+    CONSOLELOG:function(source,type,failed,startTime,loginTime,uploadFailedReason){
+      	var loginUsed = (Date.now() - startTime)/1000; //运行时间
+        var DATA = {'log':{
+                  'source':source,
+                  'type':type,
+                  'loginName':ysp.customHelper.logLoginName,
+                  'email':'',
+                  'model':'',
+                  'loginTime':loginTime,
+                  'occurTime':new Date().getTime(),
+                  'timeUsed':loginUsed,
+                  'failedReason':failed,
+                  'uploadFailedReason':uploadFailedReason
+                 }
+               }
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('YSPLOG',JSON.stringify(DATA));
+        }else{
+          top.yspCheckIn.sendLog(JSON.stringify(DATA));
+        }
+    },
+    logLoginName:'',
     addMarkedModule:addMarkedModule,
     AndroidBidFlag:'',
     AndroidBackFn:topWin.AndroidBack,

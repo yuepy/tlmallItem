@@ -494,11 +494,10 @@
       "title": "login",
       "url": "adapter://CRM_NewPlatForm/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/login"
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/login",
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/login\\/login\\.html"
       ],
-      "demo": [
-        "http://192.168.220.82:8080/pttlCrm/login"
-      ]
+      "demo": []
     },
     {
       "title": "customerWorkspace",
@@ -715,6 +714,6 @@
   "default_url": "http://192.168.220.82:8080/pttlCrm/res/index.html",
   "scope": "CRM_NewPlatForm",
   "start_url": "https://vcrm-uat.pttl.com:8080/pttlCrm/res/index.html",
-  "update_time": 1554689875641,
+  "update_time": 1554860911405,
   "runtime_env": "1webview"
 }
