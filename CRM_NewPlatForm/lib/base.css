@@ -345,6 +345,13 @@ header.ysp-client-list-header > span:first-child {
   display: flex;
   align-items: center;
   line-height: 1.5rem;
+  float: left;
+}
+.ysp-client-list-container > span:first-child {
+  width: 60%;
+}
+.ysp-client-list-container > span:last-child {
+  width: 35%;
 }
 .ysp-entry-icon {
   height: 1.2rem;
@@ -616,23 +623,27 @@ div[data-ysp-modelid="clientList"] {
 /*客户详情头部样式*/
 section.ysp-customer-details {
   background: #fff;
-  padding: 0 20px 10px 20px;
+  padding: 0 5px 10px 5px;
   border-bottom: 1px solid #e1e1e1;
 }
 section.ysp-customer-details i.ysp-customer-details-color-red {
   background: #e93b12;
-  border-radius: 10px;
-  padding: 0 15px;
+  border-radius: 8px;
+  padding: 0 8px;
 }
 section.ysp-customer-details i.ysp-customer-details-color-blue {
   background: #207bcf;
-  border-radius: 10px;
-  padding: 0 15px;
+  border-radius: 8px;
+  padding: 0 8px;
 }
 section.ysp-customer-details i.ysp-customer-details-color-grey {
   background: #ccc;
-  border-radius: 10px;
-  padding: 0 15px;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+section.ysp-customer-details i.ysp-customer-details-color-normal {
+  color: #000000!important;
+  overflow: hidden;
 }
 section.ysp-customer-details > h1 {
   font-style: normal;
@@ -647,24 +658,33 @@ section.ysp-customer-details > div {
   margin-bottom: 50px;
 }
 section.ysp-customer-details > div > span {
-  width: 50%;
   display: inline-block;
+  padding-right: 5px;
+  text-align: right;
+  overflow: hidden;
 }
 section.ysp-customer-details > div > span > i {
   display: inline-block;
   font-size: 12px;
   font-style: normal;
+  vertical-align: bottom;
 }
 section.ysp-customer-details > div > span > i:first-child {
   color: #666;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 section.ysp-customer-details > div > span > i:last-child {
   color: #fff;
 }
 section.ysp-customer-details > div > span:first-child {
-  padding-right: 10px;
-  text-align: right;
+  margin-right: 5px;
+}
+section.ysp-customer-details > div > span:first-child > i:first-child {
+  color: #666;
+  margin-right: 2px;
+}
+section.ysp-customer-details > div > span:nth-child(2) {
+  margin-right: 5px;
 }
 section.ysp-customer-details > footer > div {
   display: flex;

@@ -502,6 +502,13 @@ header.ysp-client-list-header > span:first-child {
   display: flex;
   align-items: center;
   line-height: 1.5rem;
+  float: left;
+  &:first-child{
+    width: 60%;
+  }
+  &:last-child{
+    width: 35%;
+  }
 }
 
 .ysp-entry-icon{
@@ -800,22 +807,26 @@ div[data-ysp-modelid="clientList"]{
 /*客户详情头部样式*/
 section.ysp-customer-details{
   background: #fff;
-  padding:0 20px 10px 20px;
+  padding:0 5px 10px 5px;
   border-bottom: 1px solid #e1e1e1;
   i.ysp-customer-details-color-red{
   	background:#e93b12;
-    border-radius:10px;
-    padding:0 15px;
+    border-radius:8px;
+    padding:0 8px;
   }
   i.ysp-customer-details-color-blue{
   	background:#207bcf;
-    border-radius:10px;
-    padding:0 15px;
+    border-radius:8px;
+    padding:0 8px;
   }
   i.ysp-customer-details-color-grey{
   	background:#ccc;
-    border-radius:10px;
-    padding:0 15px;
+    border-radius:8px;
+    padding:0 8px;
+  }
+  i.ysp-customer-details-color-normal{
+    color: #000000!important;
+    overflow: hidden;
   }
   >h1{
     font-style: normal;
@@ -829,24 +840,33 @@ section.ysp-customer-details{
     margin:0 auto;
     margin-bottom: 50px;
     >span{
-      width:50%;
       display: inline-block;
+      padding-right:5px;
+      text-align: right;
+      overflow: hidden;
       >i{
         display:inline-block;
         font-size: @assistantLargeFont;
         font-style:normal;
+        vertical-align:bottom;
       }
       >i:first-child{
         color:#666;
-        margin-right:10px;
+        margin-right:5px;
       }
       >i:last-child{
         color:#fff;
       }
     }
     >span:first-child{
-    	padding-right:10px;
-      text-align: right;
+      margin-right: 5px;
+      >i:first-child{
+        color:#666;
+        margin-right:2px;
+      }
+    }
+    >span:nth-child(2){
+      margin-right: 5px;
     }
   }
   >footer{
