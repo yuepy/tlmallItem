@@ -654,7 +654,8 @@ section.ysp-customer-details > h1 {
   padding: 16px 0;
 }
 section.ysp-customer-details > div {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
 }
 section.ysp-customer-details > div > span {
@@ -1371,6 +1372,39 @@ section.ysp-dialog-body-list > span:last-child > i:last-child {
 }
 .ysp-clientportrait-wrapper .tabTitle li span p {
   margin: 0;
+}
+/*
+	组件 : 搜索框样式,针对客户360，门店360，带切换
+*/
+#customSerchSwitch {
+  height: 50px;
+  text-align: center;
+  background: #CCCCCC;
+  padding: 10px;
+}
+#customSerchSwitch .serchSelect {
+  margin: 0;
+  padding: 5px;
+  width: 30%;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 3%;
+}
+#customSerchSwitch .customSerchSwitch {
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  background-image: url("images/query-icon.png");
+  background-repeat: no-repeat;
+  background-position: 38% 47%;
+  background-size: 16px;
+  padding: 5px;
+  text-align: center;
+  border: none;
+  width: 60%;
 }
 /*
 	组件 : 搜索框样式
@@ -4045,7 +4079,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   border: 1px solid #ececec;
 }
 /*搜索组件样式*/
-#customSerch .serch-btn {
+#customSerch .serch-btn,
+#customSerchSwitch .serch-btn {
   margin-left: 12px;
   padding: 3px 10px;
   border: none;
@@ -4053,7 +4088,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   color: #4359FA;
   font-weight: 600;
 }
-#customSerch .commitState-moudle .module-serch {
+#customSerch .commitState-moudle .module-serch,
+#customSerchSwitch .commitState-moudle .module-serch {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -4062,7 +4098,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   left: 0;
   z-index: 1000;
 }
-#customSerch .commitSearch-moudle .module-serch {
+#customSerch .commitSearch-moudle .module-serch,
+#customSerchSwitch .commitSearch-moudle .module-serch {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -4072,7 +4109,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   bottom: 0;
   z-index: 1000;
 }
-#customSerch .commitSearches-moudle .module-serch {
+#customSerch .commitSearches-moudle .module-serch,
+#customSerchSwitch .commitSearches-moudle .module-serch {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);

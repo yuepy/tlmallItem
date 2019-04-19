@@ -837,7 +837,8 @@ section.ysp-customer-details{
     padding: 16px 0;
   }
   >div{
-    margin:0 auto;
+    display: flex;
+    justify-content: center;
     margin-bottom: 50px;
     >span{
       display: inline-block;
@@ -1683,6 +1684,39 @@ section.ysp-dialog-body-list{
   }
 }
 /*
+	组件 : 搜索框样式,针对客户360，门店360，带切换
+*/
+#customSerchSwitch{
+  height:50px;
+  text-align:center;
+  background:#CCCCCC;
+  padding:10px;
+  .serchSelect{
+    margin: 0;
+    padding: 5px;
+    width: 30%;
+    display: inline-block;
+    font-size:16px;
+    border:none;
+    border-radius:5px;
+    margin-right: 3%;
+  }
+  .customSerchSwitch{
+    display: inline-block;
+    font-size:16px;
+    border-radius:5px;
+    background-color:#fff;
+    background-image: url("./images/query-icon.png");
+    background-repeat: no-repeat;
+    background-position: 38% 47%;
+    background-size: 16px;
+    padding:5px;
+    text-align:center;
+    border:none;
+    width:60%;
+  }
+}
+/*
 	组件 : 搜索框样式
 */
 #customSerch{
@@ -1704,6 +1738,7 @@ section.ysp-dialog-body-list{
     width:100%;
   }
 }
+
 #uiControl30_Ewc37q{
  padding:0;
   margin:0;
@@ -4619,7 +4654,7 @@ div[data-ysp-modelid="AtReportDetail"]{
 
 /*搜索组件样式*/
 
-#customSerch{
+#customSerch,#customSerchSwitch{
   .customSerch{
     
   }
