@@ -345,6 +345,13 @@ header.ysp-client-list-header > span:first-child {
   display: flex;
   align-items: center;
   line-height: 1.5rem;
+  float: left;
+}
+.ysp-client-list-container > span:first-child {
+  width: 60%;
+}
+.ysp-client-list-container > span:last-child {
+  width: 35%;
 }
 .ysp-entry-icon {
   height: 1.2rem;
@@ -616,23 +623,27 @@ div[data-ysp-modelid="clientList"] {
 /*客户详情头部样式*/
 section.ysp-customer-details {
   background: #fff;
-  padding: 0 20px 10px 20px;
+  padding: 0 5px 10px 5px;
   border-bottom: 1px solid #e1e1e1;
 }
 section.ysp-customer-details i.ysp-customer-details-color-red {
   background: #e93b12;
-  border-radius: 10px;
-  padding: 0 15px;
+  border-radius: 8px;
+  padding: 0 8px;
 }
 section.ysp-customer-details i.ysp-customer-details-color-blue {
   background: #207bcf;
-  border-radius: 10px;
-  padding: 0 15px;
+  border-radius: 8px;
+  padding: 0 8px;
 }
 section.ysp-customer-details i.ysp-customer-details-color-grey {
   background: #ccc;
-  border-radius: 10px;
-  padding: 0 15px;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+section.ysp-customer-details i.ysp-customer-details-color-normal {
+  color: #000000!important;
+  overflow: hidden;
 }
 section.ysp-customer-details > h1 {
   font-style: normal;
@@ -643,28 +654,38 @@ section.ysp-customer-details > h1 {
   padding: 16px 0;
 }
 section.ysp-customer-details > div {
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
 }
 section.ysp-customer-details > div > span {
-  width: 50%;
   display: inline-block;
+  padding-right: 5px;
+  text-align: right;
+  overflow: hidden;
 }
 section.ysp-customer-details > div > span > i {
   display: inline-block;
   font-size: 12px;
   font-style: normal;
+  vertical-align: bottom;
 }
 section.ysp-customer-details > div > span > i:first-child {
   color: #666;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 section.ysp-customer-details > div > span > i:last-child {
   color: #fff;
 }
 section.ysp-customer-details > div > span:first-child {
-  padding-right: 10px;
-  text-align: right;
+  margin-right: 5px;
+}
+section.ysp-customer-details > div > span:first-child > i:first-child {
+  color: #666;
+  margin-right: 2px;
+}
+section.ysp-customer-details > div > span:nth-child(2) {
+  margin-right: 5px;
 }
 section.ysp-customer-details > footer > div {
   display: flex;
@@ -1351,6 +1372,39 @@ section.ysp-dialog-body-list > span:last-child > i:last-child {
 }
 .ysp-clientportrait-wrapper .tabTitle li span p {
   margin: 0;
+}
+/*
+	组件 : 搜索框样式,针对客户360，门店360，带切换
+*/
+#customSerchSwitch {
+  height: 50px;
+  text-align: center;
+  background: #CCCCCC;
+  padding: 10px;
+}
+#customSerchSwitch .serchSelect {
+  margin: 0;
+  padding: 5px;
+  width: 30%;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 3%;
+}
+#customSerchSwitch .customSerchSwitch {
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  background-image: url("images/query-icon.png");
+  background-repeat: no-repeat;
+  background-position: 38% 47%;
+  background-size: 16px;
+  padding: 5px;
+  text-align: center;
+  border: none;
+  width: 60%;
 }
 /*
 	组件 : 搜索框样式
@@ -4025,7 +4079,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   border: 1px solid #ececec;
 }
 /*搜索组件样式*/
-#customSerch .serch-btn {
+#customSerch .serch-btn,
+#customSerchSwitch .serch-btn {
   margin-left: 12px;
   padding: 3px 10px;
   border: none;
@@ -4033,7 +4088,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   color: #4359FA;
   font-weight: 600;
 }
-#customSerch .commitState-moudle .module-serch {
+#customSerch .commitState-moudle .module-serch,
+#customSerchSwitch .commitState-moudle .module-serch {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -4042,7 +4098,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   left: 0;
   z-index: 1000;
 }
-#customSerch .commitSearch-moudle .module-serch {
+#customSerch .commitSearch-moudle .module-serch,
+#customSerchSwitch .commitSearch-moudle .module-serch {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
@@ -4052,7 +4109,8 @@ div[data-ysp-modelid="AtReportDetail"] .ysp-atreport-dialog div.surebtn-right-to
   bottom: 0;
   z-index: 1000;
 }
-#customSerch .commitSearches-moudle .module-serch {
+#customSerch .commitSearches-moudle .module-serch,
+#customSerchSwitch .commitSearches-moudle .module-serch {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
