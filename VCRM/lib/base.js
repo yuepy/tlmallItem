@@ -104,7 +104,7 @@
         }
       }
     }
-    xhr.open('POST','http://pttlcrm.com/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
+    xhr.open('POST','http://192.168.220.82:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
     xhr.send()
   }
   
@@ -271,7 +271,7 @@
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function(aWin, doc){
 			if (aWin) {
-        if (aWin.location.href == 'http://pttlcrm.com/pttlCrm/res/index.html') {
+        if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求PC端菜单接口,获取全部菜单列表  -- 新平台做临时调试使用 .
           getAllMenu(aWin);
         }
@@ -280,7 +280,7 @@
 
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function(aWin, doc) {
-			if (aWin.location.href == 'http://pttlcrm.com/pttlCrm/res/index.html') {
+			if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求菜单接口,获取全部菜单列表
           getAllMenu(aWin);
       }
