@@ -197,7 +197,7 @@
           }
         }return targetList;
       }if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://pttlcrm.com/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';
+        ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';
         ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
         if (!top.EAPI.isAndroid()) {
@@ -250,7 +250,7 @@
             //ysp.appMain.showLoading();
             setTimeout(function () {
               //ysp.appMain.hideLoading();
-              var url = "http://pttlcrm.com/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.back();ysp.customHelper.BackReload();
+              var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.back();ysp.customHelper.BackReload();
             }, 2000);
           }
         } //计划拜访
@@ -259,7 +259,7 @@
             //ysp.appMain.showLoading();
             setTimeout(function () {
               //ysp.appMain.hideLoading();
-              var url = "http://pttlcrm.com/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.BackReload();
+              var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.BackReload();
             }, 2000);
           }
         }
