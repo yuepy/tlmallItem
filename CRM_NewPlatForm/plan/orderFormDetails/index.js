@@ -12,7 +12,7 @@
         //  $(dataUtils.topWindow).find("iframe[name='sencondLevelIframeContainer']").css('left','30%');
         // $(dataUtils.topWindow).find("iframe[name='thirdLevelIframeContainer']").remove();//删除iframe  
         // var indexWin = ysp.customHelper.getWinFromRTByName('sourcePageFrame');
-        // indexWin && indexWin.open("http://192.168.1.227/pttlCrm/res/page/customerList/customerList.html", 'firstLevelIframeContainer'); //   ysp.customHelper.back();
+        // indexWin && indexWin.open("http://192.168.220.82:8080/pttlCrm/res/page/customerList/customerList.html", 'firstLevelIframeContainer'); //   ysp.customHelper.back();
       }if (data.eventType == 'AndroidBack') {
         // ysp.customHelper.AndroidDocument = elem.ownerDocument;
         // ysp.customHelper.AndroidName = '客户详情';
