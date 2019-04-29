@@ -16,10 +16,10 @@
         if (top.EAPI.isAndroid()) {
           //刷新问题
           top.yspCheckIn.isRefresh(true);
-        }ysp.customHelper.AndroidBackURL = 'http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=';ysp.customHelper.AndroidBackModel = 'questionnaireWrite';ysp.customHelper.AndroidBackFlag = 'destination';
+        }ysp.customHelper.AndroidBackURL = 'http://192.168.1.227/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=';ysp.customHelper.AndroidBackModel = 'questionnaireWrite';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ("back" == data.eventType) {
         if (!top.EAPI.isAndroid()) {
-          ysp.customHelper.BackReload('http://192.168.220.82:8080/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=');
+          ysp.customHelper.BackReload('http://192.168.1.227/pttlCrm/res/page/questionnaire/questionFillList.html?cId=&dateTime=');
         } else {
           //刷新问题
           top.yspCheckIn.isRefresh(true); //ysp.customHelper.AndroidBackFn();
@@ -94,11 +94,11 @@
                 panelObj.subject.type = "textarea";panelObj.subject.text = partList[j].querySelector("textarea").value;panelObj.subject.disabled = partList[j].querySelector("textarea").getAttribute("disabled");
               }if (partList[j].querySelector(".file-item")) {
                 var pics = partList[j].querySelectorAll("img");for (var k = 0; k < pics.length; k++) {
-                  var scrTitle = pics[k].getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;panelObj.subject.fileList.push(scrC);
+                  var scrTitle = pics[k].getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.1.227/pttlCrm/" + srcUrl;panelObj.subject.fileList.push(scrC);
                 }
               }if (partList[j].querySelector(".uploadBtn")) {
                 panelObj.subject.upLoadBtn = "ok";var pics = partList[j].querySelectorAll("img");for (var k = 0; k < pics.length; k++) {
-                  var scrTitle = pics[k].getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.220.82:8080/pttlCrm/" + srcUrl;panelObj.subject.picUpLoad.push(scrC);
+                  var scrTitle = pics[k].getAttribute('src');var scrTitleSplit = scrTitle && scrTitle.split("upload-dir/")[1];var srcUrl = decodeURI(scrTitleSplit);var scrC = "http://192.168.1.227/pttlCrm/" + srcUrl;panelObj.subject.picUpLoad.push(scrC);
                 }
               }if (elem.querySelector(".btn-box").querySelectorAll("button").length == 3) {
                 panelObj.upLoad = "ok";
@@ -122,7 +122,7 @@
         var i = data.dataCustom.i;var t = data.dataCustom.t;var val = data.dataCustom.val;elem.querySelectorAll(".pre-box")[i].querySelectorAll("li")[t].querySelector("textarea").value = val;
       } else if (data.eventType == "btnClick") {
         var data = data.dataCustom;if ("back" == data) {
-          //var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
+          //var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";
           //ysp.appMain.reloadPage(url);
           if (top.EAPI.isAndroid()) {
             //刷新问题

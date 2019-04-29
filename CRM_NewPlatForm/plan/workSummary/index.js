@@ -15,14 +15,14 @@
         if (top.EAPI.isAndroid()) {
           //刷新
           top.yspCheckIn.isRefresh(true);
-        }ysp.customHelper.AndroidBackURL = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
+        }ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
-        if (!top.EAPI.isAndroid()) {
-          ysp.appMain.back();ysp.customHelper.BackReload();
+        debugger;if (!top.EAPI.isAndroid()) {
+          ysp.appMain.back();
+          ysp.customHelper.BackReload('http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html', 'customerWorkspace');
         } else {
           //刷新
-          top.yspCheckIn.isRefresh(true); //ysp.customHelper.AndroidBackFn();
-          ysp.appMain.back();
+          ysp.appMain.back();ysp.customHelper.AndroidBackFn(); //top.yspCheckIn.isRefresh(true); 		
         }
       }if ("click" == data.eventType) {
         var index = data.dataCustom;elem.querySelector("#businessDepartment").querySelectorAll("li")[index].querySelector("input").click();
@@ -172,7 +172,7 @@
           top.yspCheckIn.isRefresh(true);
         } //history.go(-1);
         elem.querySelector("#draft") && elem.querySelector("#draft").click();ysp.appMain.showLoading();setTimeout(function () {
-          ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
+          ysp.appMain.hideLoading();var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //ysp.appMain.reloadPage(url);
           //更换返回方法 BackReload()回到工作台
           // ysp.appMain.back();
           ysp.customHelper.back();ysp.customHelper.BackReload();
@@ -184,7 +184,7 @@
         }var user = data.dataCustom;if (user.length) {
           //history.go(-1);
           ysp.appMain.showLoading();setTimeout(function () {
-            ysp.appMain.hideLoading();var url = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //更换返回方法 BackReload()回到工作台
+            ysp.appMain.hideLoading();var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //更换返回方法 BackReload()回到工作台
             // ysp.appMain.back();
             ysp.customHelper.back();ysp.customHelper.BackReload();
           }, 500);
