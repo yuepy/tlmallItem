@@ -3,6 +3,9 @@
   "id": "infomationInput",
   "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerDayPsi.html?rowId=11994",
   "jsFile": "index.js",
+  "requires": {
+    "index": "../index/index.json"
+  },
   "chineseName": "信息录入(日别PSI)",
   "description": "",
   "controls": {
@@ -203,6 +206,10 @@
       "toContexts": [
         {
           "toContextId": "context53_oR8JhD"
+        },
+        {
+          "toContextId": "context0_pD8h1P",
+          "toModelId": "index"
         }
       ]
     },
