@@ -1307,7 +1307,111 @@
     
   }
   utils.extend(ysp.customHelper, {
-    CONSOLELOG:function(source,type,failed,startTime,loginTime,uploadFailedReason){
+    //信息录入本地缓存部分
+    informationEntry:{
+      enterName:'', //录入客户名称
+      saveData:'',
+      enterSplit:function(url,str,num){
+        if(!url){
+          throw '未传入必要参数!';
+        } 
+        if(!(typeof url === 'string') || !(typeof str === 'string')){
+          console.error('请传入正确参数类型'+str);
+          return ;
+        } 
+        if(num){
+          if(!(typeof num === 'string')){
+            throw '请传入正确参数类型'+num;
+          }
+          return url.replace(str,num);
+        }else{
+          return url.split(str)[1];
+        }
+      },//截取URL中存在的客户编码
+    	sendData:function(obj){
+        if(!(typeof obj === 'object') || !(obj instanceof Array)){
+          throw '请传入正确参数类型'+obj;
+        }
+        // 待客户端补充方法
+        if(top.EAPI.isIOS()){
+          if(ysp.customHelper.logLoginName =='' || ysp.customHelper.informationEntry.enterName == ''){
+            alert('用户名或客户编码缺失,无法执行保存操作');
+            return ;
+          }
+          var data = {'user':ysp.customHelper.logLoginName,'stock':ysp.customHelper.informationEntry.enterName,'data':obj};
+          data = JSON.stringify(data);
+          top.EAPI.postMessageToNative('saveData',data);
+        }
+      },
+      getData:function(user,encoded){
+        // 待客户端补充方法
+      },
+      filterData:function(doc,titles,id){
+        var tableStats = { 
+        	'thead':true,
+          'tbody':true,
+          'tr':true
+        }
+        if(!doc){
+          throw '未传入正确DOM';
+        }
+        // if(!(titles instanceof Array)){
+        //   console.error('titles必须为数组类型!');
+        // }
+        if(id){
+          this.id = id;
+        }
+        if(!doc.querySelector('thead')){
+          tableStats.thead = false;
+          console.info('当前DOM中没有thead');
+          return ;
+    	  }
+        if(!doc.querySelector('tbody')){
+          tableStats.tbody = false;
+          console.info('当前DOM中没有tbody');
+          return ;
+        }
+        if(!doc.querySelector('tbody').querySelectorAll('tr')){
+          tableStats.tr = false;
+          console.info('当前DOM中表格内容为空!');
+          return ;
+        }
+        var TH = doc.querySelectorAll('th').length>0?doc.querySelectorAll('th'):doc.querySelectorAll('td');
+        var TR = doc.querySelector('tbody').querySelectorAll('tr');
+        var currentTitle = {
+          'title':[],
+          'index':[]
+        };
+        var currnetData = [];
+        titles.some(function(value,index,arr){
+        	for(var i=0;i<TH.length;i++){
+            if(value == ysp.customHelper.trim(TH[i].textContent)){
+              currentTitle.title.push(value);
+              currentTitle.index.push(i);
+            }
+          }
+        })
+        for(var i =0;i<TR.length;i++){
+          var enterData = {};
+          var TD = TR[i].querySelectorAll('td');
+          currentTitle.index.some(function(value,index,arr){
+            if(TD[value].querySelectorAll('input').length >0){
+              enterData[currentTitle.title[index]]=ysp.customHelper.trim(TD[value].querySelectorAll('input')[1].value);
+            }else{
+              enterData[currentTitle.title[index]]=ysp.customHelper.trim(TD[value].textContent);
+            }
+          })
+          currnetData.push({
+            'index':i,
+            'content':enterData
+          })
+        }
+        return currnetData;
+      }
+    },
+    //信息录入本地缓存部分
+    //系统日志部分 
+    CONSOLELOG:function(source,type,failed,startTime,loginTime,uploadFailedReason){
       	var loginUsed = (Date.now() - startTime)/1000; //运行时间
         var DATA = {'log':{
                   'source':source,
@@ -1329,14 +1433,17 @@
         }
     },
     logLoginName:'',
+    //系统日志部分 
     addMarkedModule:addMarkedModule,
-    AndroidBidFlag:'',
+    //安卓物理返回键部分
+    AndroidBidFlag:'',
     AndroidBackFn:topWin.AndroidBack,
     AndroidDocument:'',//安卓物理返回键客户门店返回元素
     AndroidName:'',//安卓物理返回键客户门店返回名称
     AndroidBackURL:'',//安卓物理返回键目标地址
     AndroidBackModel:'',//安卓物理返回键目标模板
     AndroidBackFlag:'default',//安卓物理返回键返回方法 条件 标识 default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面
+    //安卓物理返回键部分
     AndroidGetIconNum:AndroidGetIconNum, //安卓端请求待办角标数量
     CUSTOMURL:'',
     IconNum:{summary:'',atMe:''},//报告数量变量
