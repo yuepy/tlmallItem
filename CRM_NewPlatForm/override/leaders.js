@@ -471,7 +471,8 @@ window.addEventListener('DOMContentLoaded', function() {
                     $("#yearQty").html(numChange(response.yearQty));
                     $("#yearAmt").html(toQfw_new(response.yearAmt.toFixed(2),true));
 
-                    // 全国地图
+                    // 全国地图 lyh
+                  	
                     var mapDatas = response.province;
                     var mapTotal;
                     if(response.hqReachQty && response.hqReachAmt) {
@@ -485,6 +486,12 @@ window.addEventListener('DOMContentLoaded', function() {
                     }
 
                     // 趋势图
+										// lyh
+                  	[].forEach.call(response.trenAmts,function(item,index){
+                      if(item){
+                        response.trenAmts[index].value = (item.value/10000).toFixed(2);
+                      }
+                    })
                     var LineDatas = [{
                         name: '销量(台)',
                         data: response.trenQtys

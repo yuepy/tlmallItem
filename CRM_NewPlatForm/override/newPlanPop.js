@@ -772,8 +772,8 @@
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.224:8080/ptDataShow';
 
 	//生产 nginx
-	//export const SERVER_ROOT = 'http://192.168.1.227'; //服务端根路径
-	//export const LOCAL_SERVER_ROOT = 'http://192.168.1.227'; //本地服务端根路径
+	//export const SERVER_ROOT = 'http://192.168.220.82:8080'; //服务端根路径
+	//export const LOCAL_SERVER_ROOT = 'http://192.168.220.82:8080'; //本地服务端根路径
 	//export const PTDATASHOW_SERVER_ROOT = 'http://192.168.1.202/ptDataShow';
 
 	//生产 228

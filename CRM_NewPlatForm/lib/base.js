@@ -2459,6 +2459,9 @@
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
     	if(aWin){
+        if(aWin.localStorage && aWin.localStorage.getItem('menuId') != null){
+          aWin.localStorage.setItem('menuId','');
+        }
         if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
           ysp.appMain.hideLoading();
         }
@@ -2538,7 +2541,11 @@
                         'uploadFailedReason':''
           						 }
                      }
-					top.yspCheckIn.sendLog(JSON.stringify(DATA))
+					if(top.EAPI.isAndroid()){
+            top.yspCheckIn.sendLog(JSON.stringify(DATA))
+          }else{
+            top.EAPI.postMessageToNative('YSPLOG',JSON.stringify(DATA));
+          }
         }
         if (aWin.location.href.indexOf('index.html') !== -1) {
           var actionEvent = '{"target":"null","data":"closePreLoading"}';

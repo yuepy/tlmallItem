@@ -472,7 +472,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         getMap([], mapTotal, "map");
                     }
 
-                    // 月度趋势图
+                   
                     var LineDatas = [{
                         name: '销量(台)',
                         data: response.trenQtys

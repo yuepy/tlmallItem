@@ -366,7 +366,7 @@ function showLineBar(){
 }
 
 
-//配置：折线图
+//配置：折线图   lyh  4-24
 function getLines(datas, Id) {
     var chart = echarts.init(document.getElementById(Id));
     window.onresize = chart.resize;
@@ -384,11 +384,14 @@ function getLines(datas, Id) {
 	        timeDatas.push(datas[0].data[j].time);
 	        salesValReach.push(datas[0].data[j].value);
 	        if(datas[1].data[j].value.toString().indexOf(".")>0){
-	        	var value1 = datas[1].data[j].value.toFixed(2);
+	        	//var value1 = datas[1].data[j].value.toFixed(2);
+            var value1 = datas[1].data[j].value;
 	        	if(value1.toString().substr(-2,2) == "00"){
-	        		value1 = datas[1].data[j].value.toFixed(0);
-	        	}else if(value1.toString().substr(-1,1) == "0"){
-	        		value1 = datas[1].data[j].value.toFixed(1);
+	        		// value1 = datas[1].data[j].value.toFixed(0);
+              value1 = datas[1].data[j].value;
+	        	}else if(value1.toString().substr(-1,1) == "0"){
+              // value1 = datas[1].data[j].value.toFixed(0);
+	        		value1 = datas[1].data[j].value;
 	        	}
 	        	sumValReach.push(value1);
 	        }else{
