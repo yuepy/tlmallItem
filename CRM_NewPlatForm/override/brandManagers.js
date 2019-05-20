@@ -954,7 +954,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	            for (var j = 0; j < datas[0].data.length; j++) {
 	                timeDatas.push((datas[0].data[j].time).substring(5));
 	                salesValReach.push(datas[0].data[j].value);
-	                sumValReach.push((datas[1].data[j].value)/10000);
+	                sumValReach.push(datas[1].data[j].value);
 	            }
             }
             var option = {
