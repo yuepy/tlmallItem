@@ -517,7 +517,9 @@
                       });
                     } else if (_id.id == 'datagridsub' && _id.classList.contains('mini-disabled') == false && _id.querySelector(".mini-grid-columns-view").textContent.indexOf("付款银行") !== -1) {
                       //付款申请单明细（奖金管理、出纳、分公司出纳）3.8
-                      var sheep = _id.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');var datagridsub = elem.querySelector("#datagridsub");sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
+
+                      var sheep = _id.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');var datagridsub = elem.querySelector("#datagridsub");
+                      sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
                         //item.classList.contains("mini-grid-newRow") == false
                         if (datagridsub && datagridsub.classList.contains("mini-disabled")) {
                           var bridge = item.querySelectorAll('td');var children = [];bridge.length > 0 && [].forEach.call(bridge, function (val, index) {
@@ -540,7 +542,8 @@
                           }
                         });switch (_id.id) {case 'datagrid3':
                             data.datagrid3.cont.push(children);break;case 'XTHJG':
-                            data.XTHJG.cont.push(children);break;case 'THJL':
+                            data.XTHJG.cont.push(children);
+                            break;case 'THJL':
                             data.THJL.cont.push(children);break;case 'KCBJ':
                             data.KCBJ.cont.push(children);break;case 'ZDJL':
                             data.ZDJL.cont.push(children);break;case 'QQTHBC':
@@ -599,7 +602,8 @@
                     }
                   });if (gridRowsV) {
                     var sheep = _id.querySelectorAll('.mini-panel-viewport .mini-grid-rows-view .mini-grid-table	.mini-grid-row');sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
-                      var bridge = item.querySelectorAll('td');var children = [];bridge.length > 0 && [].forEach.call(bridge, function (val, index) {
+                      var bridge = item.querySelectorAll('td');var children = [];
+                      bridge.length > 0 && [].forEach.call(bridge, function (val, index) {
                         var _bridge = val.textContent;_bridge && children.push(_bridge);
                       });data.twoPartCont.push(children);
                     });
@@ -633,7 +637,8 @@
               }
             } else if (_td.length == 1 && !_td[0].querySelector('a') && _td[0].textContent.trim() != '') {
               switch (_id.id) {case 'XTHJG':
-                  data.XTHJG.DetailTitle.push(title.textContent.trim());break;case 'THJL':
+                  data.XTHJG.DetailTitle.push(title.textContent.trim());break;
+                case 'THJL':
                   data.THJL.DetailTitle.push(title.textContent.trim());break;case 'KCBJ':
                   data.KCBJ.DetailTitle.push(title.textContent.trim());break;case 'ZDJL':
                   data.ZDJL.DetailTitle.push(title.textContent.trim());break;case 'QQTHBC':
@@ -654,7 +659,8 @@
                   data.total.push(item.innerHTML.replace(/总计/, ' '));break;}
             });
           }
-        }var datagrid1 = elem.contentWindow.document.querySelector('#datagrid1');var datagrid2 = elem.contentWindow.document.querySelector('#datagrid2');var datagrid3 = elem.contentWindow.document.querySelector('#datagrid3');var datagridsub = elem.contentWindow.document.querySelector('#datagridsub');var XTHJG = elem.contentWindow.document.querySelector('#XTHJG');var THJL = elem.contentWindow.document.querySelector('#THJL');var KCBJ = elem.contentWindow.document.querySelector('#KCBJ');var ZDJL = elem.contentWindow.document.querySelector('#ZDJL');var QQTHBC = elem.contentWindow.document.querySelector('#QQTHBC');var _body = elem.contentWindow.document;if (datagrid1) {
+        }var datagrid1 = elem.contentWindow.document.querySelector('#datagrid1');var datagrid2 = elem.contentWindow.document.querySelector('#datagrid2');var datagrid3 = elem.contentWindow.document.querySelector('#datagrid3');var datagridsub = elem.contentWindow.document.querySelector('#datagridsub');
+        var XTHJG = elem.contentWindow.document.querySelector('#XTHJG');var THJL = elem.contentWindow.document.querySelector('#THJL');var KCBJ = elem.contentWindow.document.querySelector('#KCBJ');var ZDJL = elem.contentWindow.document.querySelector('#ZDJL');var QQTHBC = elem.contentWindow.document.querySelector('#QQTHBC');var _body = elem.contentWindow.document;if (datagrid1) {
           detailTitle(_body);detailed(datagrid1);addUpTo(datagrid1);
         }if (datagrid3) {
           detailTitle(_body);detailed(datagrid3);addUpTo(datagrid3);
@@ -710,8 +716,10 @@
                   //分公司采购付款申请
                   if (item.querySelectorAll('span').length > 0) {
                     var _span = item.querySelectorAll('span')[0];
-                  }var _childNodesOne = item.childNodes[1];var download = item.querySelector('#Filelist');var policyType = item.querySelector('#policyType');var _zero = item.querySelectorAll('.mini-list-inner');var _br = item.querySelectorAll('br');var deptName = item.querySelector('#deptName');if (typeof _span != 'undefined' && _span && _childNodesOne && _childNodesOne.nodeName != 'DIV') {
-                    var one = item.childNodes[1];var three = item.childNodes[3];var _spanChild = _span.childNodes[0].firstChild;if (one.nodeName == 'SPAN' && item.childNodes.length == 3) {
+                  }var _childNodesOne = item.childNodes[1];var download = item.querySelector('#Filelist');var policyType = item.querySelector('#policyType');var _zero = item.querySelectorAll('.mini-list-inner');var _br = item.querySelectorAll('br');var deptName = item.querySelector('#deptName'); // debugger;
+                  if (typeof _span != 'undefined' && _span && _childNodesOne && _childNodesOne.nodeName != 'DIV') {
+                    var one = item.childNodes[1];var three = item.childNodes[3];var _spanChild = _span.childNodes[0].firstChild;
+                    if (one.nodeName == 'SPAN' && item.childNodes.length == 3) {
                       if (typeof _span != 'undefined') {
                         var date = item.querySelector('#contractSealDate');var backStatus = item.querySelector('#backStatus');var contractSignStatus = item.querySelector('#contractSignStatus');var contractSealStatus = item.querySelector('#contractSealStatus');var advanceBalance = item.querySelector('#advanceBalance');var other = item.querySelector('#other');var shenpiMoney = item.querySelector('#shenpiMoney');var yesNo = item.querySelector('#yesNo');var overdue = item.querySelector('#overdue');var confirmAmount = item.querySelector('#confirmAmount');var applyPaymentDays = item.querySelector("input[name='applyPaymentDays']");var hidden = item.querySelector('span').classList.contains('mini-textbox-disabled');var paymentFollowupPerson = item.querySelector('#paymentFollowupPerson');var _hidden = item.querySelector('span').classList.contains('mini-buttonedit-disabled');var receiveTime = item.querySelector('#receiveTime');var receiveType = item.querySelector('#receiveType');if (date) {
                           if (hidden || _hidden) {
@@ -723,8 +731,7 @@
                           if (hidden || _hidden) {
                             var children = {};var _bridge = _span.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                           } else {
-                            var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);var _name = item.querySelector('span').id;_bridge && _name && (children.id = _name);_bridge && (children.attr = 'OTHER');var err = item.querySelectorAll('.mini-errorIcon');
-                            err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                            var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);var _name = item.querySelector('span').id;_bridge && _name && (children.id = _name);_bridge && (children.attr = 'OTHER');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                           }
                         } else if (overdue) {
                           if (overdue.style.display != 'none') {
@@ -739,9 +746,11 @@
                         } else if (yesNo) {
                           if (yesNo.style.display != 'none') {
                             if (hidden || _hidden) {
-                              var children = {};var _bridge = _span.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
+                              var children = {};
+                              var _bridge = _span.childNodes[0].firstChild;var err = item.querySelectorAll('.mini-errorIcon');children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');err.length > 0 ? children.err = true : children.err = false;
                             } else {
-                              var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SHENPIMONEY');_bridge && (children.parent = 'dataform1');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;children.id = 'mini-36';children.sign = 'yesNo';
+                              var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'SHENPIMONEY');_bridge && (children.parent = 'dataform1');var err = item.querySelectorAll('.mini-errorIcon');
+                              err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;children.id = 'mini-36';children.sign = 'yesNo';
                             }
                           } else {
                             var children = {};children.cont = [];var _bridge = _span.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'HIDDEN');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 ? children.err = true : children.err = false;
@@ -784,10 +793,10 @@
                           }
                         } else if (confirmAmount) {
                           if (hidden || _hidden) {
-                            var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                            var children = {};var _bridge = _span.childNodes[0].firstChild;children.cont = [];
+                            _bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'INPUT');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                           } else {
-                            var children = {};
-                            children.cont = [];var _bridge = _span.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'OTHER');_bridge && (children.id = 'confirmAmount');_bridge && (children.parent = 'dataform1');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                            var children = {};children.cont = [];var _bridge = _span.childNodes[0].firstChild;_bridge && children.cont.push(_bridge.value);_bridge && (children.attr = 'OTHER');_bridge && (children.id = 'confirmAmount');_bridge && (children.parent = 'dataform1');var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                           }
                         } else if (other) {
                           if (hidden || _hidden) {
@@ -825,21 +834,23 @@
                       }
                     } else if (item.childNodes.length == 5 && one.nodeName == 'INPUT' && three.nodeName == 'SPAN') {
                       if (_span.childNodes.length > 1) {
-                        var children = {};children.cont = [];_spanChild && children.cont.push(_spanChild.value);_spanChild && (children.attr = _spanChild.nodeName);var err = item.querySelectorAll('.mini-errorIcon');
-                        err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
+                        var children = {};children.cont = [];_spanChild && children.cont.push(_spanChild.value);_spanChild && (children.attr = _spanChild.nodeName);var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       } else {
                         var children = {};children.cont = [];children.cont.push(_span.textContent);children.attr = _span.nodeName;var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                       }
                     } else if (item.childNodes.length == 5 && one.nodeName == 'SPAN' && three.nodeName == 'SPAN') {
                       var children = {};children.cont = [];var sheep = item.childNodes[1].childNodes[0].firstChild;var _sheep = item.childNodes[3].childNodes[0].firstChild;var storageModel = item.querySelector('#storageModel');var storageModelNumber = item.querySelector('#storageModelNumber');if (storageModel && storageModelNumber) {
-                        children.cont.push(item.childNodes[0].textContent.trim());children.cont.push(item.childNodes[1].querySelector('input').value);children.cont.push(item.childNodes[2].textContent.trim());children.cont.push(item.childNodes[3].querySelector('input').value);children.attr = 'STORAGEMODEL';
+                        children.cont.push(item.childNodes[0].textContent.trim());children.cont.push(item.childNodes[1].querySelector('input').value);children.cont.push(item.childNodes[2].textContent.trim());children.cont.push(item.childNodes[3].querySelector('input').value);
+                        children.attr = 'STORAGEMODEL';
                       } else {
                         sheep && children.cont.push(sheep.value);sheep && children.cont.push(_sheep.value);children.attr = 'TIME';
                       }var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                     } else if (one.nodeName == 'TABLE' && item.childNodes.length == 3) {
-                      var children = {};children.cont = [];var trLength = item.childNodes[1].querySelectorAll('tbody')[0].childNodes.length;if (trLength == 2) {
+                      var children = {};
+                      children.cont = [];var trLength = item.childNodes[1].querySelectorAll('tbody')[0].childNodes.length;if (trLength == 2) {
                         var tdCont = item.childNodes[1].querySelectorAll('tbody>tr>td')[0].childNodes.length;if (tdCont == 3) {
-                          var first = item.childNodes[1].querySelectorAll('tbody>tr>td')[0].childNodes[0];var _input = item.childNodes[1].querySelector('tbody>tr>td').childNodes[1].querySelector('.mini-buttonedit-input');var second = item.childNodes[1].querySelectorAll('tbody>tr>td')[0].childNodes[2];first && children.cont.push(first.textContent.trim());_input && children.cont.push(_input.value);second && children.cont.push(second.textContent.trim());
+                          var first = item.childNodes[1].querySelectorAll('tbody>tr>td')[0].childNodes[0];
+                          var _input = item.childNodes[1].querySelector('tbody>tr>td').childNodes[1].querySelector('.mini-buttonedit-input');var second = item.childNodes[1].querySelectorAll('tbody>tr>td')[0].childNodes[2];first && children.cont.push(first.textContent.trim());_input && children.cont.push(_input.value);second && children.cont.push(second.textContent.trim());
                         }
                       } else if (trLength == 4) {
                         var first = item.querySelectorAll('.mini-radiobuttonlist-item	input');var second = item.querySelectorAll('.mini-textbox	.mini-textbox-input');var third = item.querySelectorAll('.mini-textbox')[0].parentElement;var _third = item.querySelectorAll('.mini-textbox')[1].parentElement;var _label = item.querySelectorAll('.mini-radiobuttonlist-item	label');if (first[0].checked == true) {
@@ -847,6 +858,7 @@
                         } else if (first[1].checked == true) {
                           _label[1] && children.cont.push(_label[1].textContent);second[1] && children.cont.push(second[1].value);_third && children.cont.push(_third.textContent.trim());
                           children.attr = 'THREE';
+
                         } else {
                           children.cont.push('');children.attr = 'INPUT';
                         }
@@ -859,7 +871,8 @@
                       var children = {};children.cont = [];var value = item.querySelector('textarea');value && children.cont.push(value.value);children.attr = 'TEXTAREA';var err = item.querySelectorAll('.mini-errorIcon');err.length > 0 && err[0].nodeName == 'SPAN' ? children.err = true : children.err = false;
                     }
                   } else if (item.id == 'pay' && item.querySelector('a')) {
-                    var children = {};children.cont = [];var _a = item.querySelector('a');children.cont.push(_a.textContent);children.attr = 'RETURN';children.parent = 'pay';
+                    var children = {};children.cont = [];var _a = item.querySelector('a');children.cont.push(_a.textContent);children.attr = 'RETURN';
+                    children.parent = 'pay';
                   } else if (item.querySelector('a') && item.id == 'sale') {
                     //console.log('1');
                     var children = {};children.cont = [];var _a = item.querySelector('a');children.cont.push(_a.textContent);children.attr = 'RETURN';children.parent = 'sale';
@@ -1015,21 +1028,25 @@
             });data.FGSCGFK.type = "payOffDetail";
           }
         } //dataform2下内容(临时额度流程)
-        var dataform2 = elem.contentWindow.document.querySelector('#dataform2');var tableC = elem.contentWindow.document.querySelectorAll('.table-c');if (elem.contentWindow.document.querySelectorAll('.table-c')[1]) {
+        var dataform2 = elem.contentWindow.document.querySelector('#dataform2');
+        var tableC = elem.contentWindow.document.querySelectorAll('.table-c');if (elem.contentWindow.document.querySelectorAll('.table-c')[1]) {
           var nuiFormTable = elem.contentWindow.document.querySelectorAll('.table-c')[1].previousElementSibling.classList.contains('nui-form-table');
         }if (nuiFormTable) {
           var table = elem.contentWindow.document.querySelectorAll('.table-c')[1].previousElementSibling.querySelectorAll('table tr td');table.length > 0 && [].forEach.call(table, function (item, i) {
             if (i % 2 == 0 && item.parentElement.style.display != 'none' && item.style.display != 'none' && item.parentElement.parentElement.parentElement.style.display != 'none' && item.childNodes.length >= 1) {
               var children = {};var star = item.querySelector('span');if (star && star.style.display != 'none') {
-                var _title = item.textContent;children.key = '*';children.title = _title.trim().replace(/：/g, '');
+                var _title = item.textContent;
+                children.key = '*';children.title = _title.trim().replace(/：/g, '');
               } else {
                 var _title = item.textContent;children.title = _title.trim().replace(/：/g, '');
               }data.threePartTitle.push(children);
             } else if (i % 2 == 1 && item.parentElement.style.display != 'none' && item.style.display != 'none' && item.parentElement.parentElement.parentElement.style.display != 'none' && item.childNodes.length > 1) {
               var children = {};children.cont = [];if (item.childNodes.length == 3 && item.childNodes[1].nodeName == 'SPAN') {
-                var _input = item.querySelector('.mini-textbox-input');var hidden = item.querySelector('span').classList.contains('mini-textbox-disabled');var _hidden = item.querySelector('span').classList.contains('mini-buttonedit-disabled');var textarea = item.querySelector('textarea');if (textarea) {
+                var _input = item.querySelector('.mini-textbox-input');var hidden = item.querySelector('span').classList.contains('mini-textbox-disabled');var _hidden = item.querySelector('span').classList.contains('mini-buttonedit-disabled');var textarea = item.querySelector('textarea');
+                if (textarea) {
                   if (hidden || _hidden) {
-                    var _input = item.querySelector('span>span>textarea').value;children.cont.push(_input);children.attr = 'TEXTAREA';
+                    var _input = item.querySelector('span>span>textarea').value;children.cont.push(_input);
+                    children.attr = 'TEXTAREA';
                   } else {
                     var _input = item.querySelector('span>span>textarea').value;children.cont.push(_input);children.attr = 'CANTEXTAREA';var _id = item.querySelector('span').id;_id && (children.parenID = _id);
                   }
@@ -1040,6 +1057,7 @@
                     var _up = item.querySelector('.mini-buttonedit-up');if (_up) {
                       var _input = item.querySelector('span>span>input').value;
                       children.cont.push(_input);children.attr = 'CANINPUTADDNUM';var _id = item.querySelector('span').id;_id && (children.parenID = _id);
+
                     } else {
                       var _input = item.querySelector('span>span>input').value;children.cont.push(_input);children.attr = 'CANINPUTNUM';var _id = item.querySelector('span').id;_id && (children.parenID = _id);
                     }
@@ -1058,7 +1076,8 @@
           }table.length > 0 && [].forEach.call(table, function (item, i) {
             if (i % 2 == 0 && item.parentElement.style.display != 'none' && item.style.display != 'none' && item.parentElement.parentElement.parentElement.style.display != 'none' && item.childNodes.length >= 1) {
               var star = item.querySelector('span');if (star && star.style.display != 'none') {
-                var children = {};var _title = item.textContent;children.key = '*';_title.trim() != '' && (children.title = _title.trim().replace(/：/g, ''));
+                var children = {};
+                var _title = item.textContent;children.key = '*';_title.trim() != '' && (children.title = _title.trim().replace(/：/g, ''));
               } else {
                 var _title = item.textContent;var children = {};_title.trim() != '' && (children.title = _title.trim().replace(/：/g, ''));
               }data.threePartTitle.push(children);
@@ -1100,16 +1119,17 @@
             } else {
               var sheep = n1.querySelectorAll('.mini-radiobuttonlist-item input');children.checked = [];sheep.length > 0 && [].forEach.call(sheep, function (item, i) {
                 var _cont = item.nextElementSibling.textContent.trim();children.cont.push(_cont);children.checked.push(item.checked);
-              });children.parenID = n1.id;children.attr = 'RADIO';
+              });children.parenID = n1.id;
+              children.attr = 'RADIO';
             }var err = n1.querySelector("div[title='This field is required.']");err ? children.err = true : children.err = false;data.threePartCont.push(children);
           };function canInput(n1) {
             var children = {};children.cont = [];var hidden = n1.classList.contains('mini-textbox-disabled');var _hidden = n1.classList.contains('mini-buttonedit-disabled');var _input = n1.querySelector('input');if (hidden || _hidden) {
-              _input && children.cont.push(_input.value);children.attr = 'INPUT';
+              _input && children.cont.push(_input.value);
+              children.attr = 'INPUT';
             } else {
               _input && children.cont.push(_input.value);children.parenID = n1.id;children.attr = 'CANINPUT';
             }var err = n1.querySelector("div[title='This field is required.']");err ? children.err = true : children.err = false;n1.nextSibling && n1.nextSibling.textContent.trim() != "" && children.cont.push(n1.nextSibling.textContent.trim());data.threePartCont.push(children);
-          }var isBelowJcPrice = cause.querySelector('#isBelowJcPrice');
-          var sqPrice = cause.querySelector('#sqPrice');var isBelowKsPrice = cause.querySelector('#isBelowKsPrice');var ksPrice = cause.querySelector('#ksPrice');if (isBelowJcPrice) {
+          }var isBelowJcPrice = cause.querySelector('#isBelowJcPrice');var sqPrice = cause.querySelector('#sqPrice');var isBelowKsPrice = cause.querySelector('#isBelowKsPrice');var ksPrice = cause.querySelector('#ksPrice');if (isBelowJcPrice) {
             radio(isBelowJcPrice);
           }if (sqPrice) {
             radio(sqPrice);
@@ -1158,8 +1178,7 @@
             TotalTF('XTHJG');
           }if (data.THJL) {
             TotalTF('THJL');
-          }
-          if (data.KCBJ) {
+          }if (data.KCBJ) {
             TotalTF('KCBJ');
           }if (data.ZDJL) {
             TotalTF('ZDJL');
@@ -1170,8 +1189,8 @@
           data.modify = elem.contentWindow.document.querySelector('textarea[id="modifyContent$text"]').value;data.modifyBol = true;
         }return data;
       }
-    }, doAction_uiControl22_QmOw34: function (data, elem) {
-      debugger;if (data.eventType == 'change') {
+    },  doAction_uiControl22_QmOw34: function (data, elem) {
+      if (data.eventType == 'change') {
         var d = data.dataCustom;if (d[0] == 'ysp-agree') {
           var key = elem.contentWindow.document.querySelectorAll('#approval	.nui-form-table textarea')[0];key.value = d[1];var $v = $(key);$v.trigger('change');
         } else if (d[0] == 'ysp-can-input') {
@@ -1224,46 +1243,20 @@
             var _icon = elem.contentWindow.document.querySelector('#receiveType	.mini-buttonedit-icon');_icon.dispatchEvent(new Event("focus"));_icon.click();break;case 'ysp-receive-type-cont':
             var _input = elem.contentWindow.document.querySelector('#receiveType>span>input');_input.dispatchEvent(new Event("focus"));_input.click();break;case 'ysp-dialog-cont':
             var _icon = elem.contentWindow.document.querySelectorAll('#mini-38	.mini-listbox-items	tr')[d[1]];_icon.dispatchEvent(new Event("focus"));_icon.click();break;case 'ysp-Download-Attachment':
-            var _btn = elem.contentWindow.document.querySelectorAll("#Filelist	a")[d[1]];var url = _btn.href; //       var xhr = new XMLHttpRequest();
-            //       xhr.open('GET', url, false);
-            //       xhr.onreadystatechange = function () {
-            //         if (xhr.status == 200 && xhr.readyState == 4) {
-            //           if (ysp.appMain.isIOS()) {
-            //             top.EAPI.openWindow(url + '&_ysp_filepreview=1');
-            //           } else if (ysp.appMain.isAndroid()) {
-            //             // 方法一：top.location.href = url;
-            //             //方法二：
-            //             // var type = "." + data.dataCustom.type;
-            //             var cook = elem.ownerDocument.cookie;
-            //             var options = {
-            //               extInfo: "",
-            //               type: "document",
-            //               downloadType: "get",
-            //               docName: "服务协议",
-            //               docType: ".doc",
-            //               downloadUrl: url,
-            //               downloadHttpHeaders: {
-            //                 cookie: cook
-            //               },
-            //               uploadUrl: '',
-            //               uploadHttpHeaders: {
-            //                 cookie: cook
-            //               },
-            //               uploadHttpParams: []
-            //             };
-            //             ysp.appMain.openDocument(options);
-
-            //           }
-            //         } else {
-            //           elem.ownerDocument.defaultView.open(url, '404 - found');
-            //         }
-            //       };
-            //       xhr.send();
-            if (ysp.appMain.isIOS()) {
-              top.EAPI.openWindow(url + '?_ysp_filepreview=1');
-            } else if (ysp.appMain.isAndroid()) {
-              yspUser.filePreview(url, '', '');
-            }break;case 'ysp-Enclosure-Delete':
+            var _btn = elem.contentWindow.document.querySelectorAll("#Filelist	a")[d[1]];var url = _btn.href;var xhr = new XMLHttpRequest();xhr.open('GET', url, false);xhr.onreadystatechange = function () {
+              if (xhr.status == 200 && xhr.readyState == 4) {
+                if (ysp.appMain.isIOS()) {
+                  top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+                } else if (ysp.appMain.isAndroid()) {
+                  // 方法一：top.location.href = url;
+                  //方法二：
+                  // var type = "." + data.dataCustom.type;
+                  var cook = elem.ownerDocument.cookie;var options = { extInfo: "", type: "document", downloadType: "get", docName: "服务协议", docType: ".doc", downloadUrl: url, downloadHttpHeaders: { cookie: cook }, uploadUrl: '', uploadHttpHeaders: { cookie: cook }, uploadHttpParams: [] };ysp.appMain.openDocument(options);
+                }
+              } else {
+                elem.ownerDocument.defaultView.open(url, '404 - found');
+              }
+            };xhr.send();break;case 'ysp-Enclosure-Delete':
             if (d[2] == 'dataform1') {
               var _btn = elem.contentWindow.document.querySelectorAll('#dataform1>table>tbody>tr>td	a')[d[1]];_btn.click();
             } else if (d[2] == 'form1') {
@@ -1276,25 +1269,17 @@
               var _btn = elem.contentWindow.document.querySelectorAll('.mini-popup	tr')[d[1]].querySelectorAll('td')[1];_btn.focus();_btn.click();
             }, 50);_icon.dispatchEvent(new Event("change"));break;case 'ysp-belowKsPeice':
             var _btn = elem.contentWindow.document.querySelectorAll('' + '#' + d[2] + '	input' + '');_btn[d[1]].click();break;case 'ysp-ReturnGoods':
-            var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '	a' + '');var url = _btn.href; //       var xhr = new XMLHttpRequest();
-            //       xhr.open('GET', url, false);
-            //       xhr.onreadystatechange = function () {
-            //         if (xhr.status == 200 && xhr.readyState == 4) {
-            //           if (ysp.appMain.isIOS()) {
-            //             top.EAPI.openWindow(url + '&_ysp_filepreview=1');
-            //           } else if (ysp.appMain.isAndroid()) {
-            //             top.location.href = url;
-            //           }
-            //         } else {
-            //           elem.ownerDocument.defaultView.open(url, '404 - found');
-            //         }
-            //       };
-            //       xhr.send();
-            if (ysp.appMain.isIOS()) {
-              top.EAPI.openWindow(url + '?_ysp_filepreview=1');
-            } else if (ysp.appMain.isAndroid()) {
-              yspUser.filePreview(url, '', '');
-            }break;case 'ysp-cause':
+            var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '	a' + '');var url = _btn.href;var xhr = new XMLHttpRequest();xhr.open('GET', url, false);xhr.onreadystatechange = function () {
+              if (xhr.status == 200 && xhr.readyState == 4) {
+                if (ysp.appMain.isIOS()) {
+                  top.EAPI.openWindow(url + '&_ysp_filepreview=1');
+                } else if (ysp.appMain.isAndroid()) {
+                  top.location.href = url;
+                }
+              } else {
+                elem.ownerDocument.defaultView.open(url, '404 - found');
+              }
+            };xhr.send();break;case 'ysp-cause':
             var _btn = elem.contentWindow.document.querySelectorAll('' + '#' + d[2] + '	.mini-radiobuttonlist-item' + '')[d[1]].querySelector('input');_btn.click();break;case 'btn btn-xs btn-primary btn-hollow ysp-check':
             var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '').nextElementSibling;_btn.click();break;case 'ysp-inputRadio':
             var _btn = elem.contentWindow.document.querySelector('' + '#' + d[2] + '').querySelectorAll("input")[d[1]];_btn.click();break;case 'ysp-checkboxes':
@@ -1344,7 +1329,8 @@
       } else if (data.eventType == 'numblur') {
         var d = data.dataCustom;var _input = elem.contentWindow.document.querySelector('' + '#' + d[2] + '>span>input');_input.dispatchEvent(new Event("focus"));_input.value = d[1];_input.dispatchEvent(new Event("change"));
       } else if (data.eventType == 'addNumblur') {
-        var d = data.dataCustom;var _input = elem.contentWindow.document.querySelector('' + '#' + d[2] + '>span>input');_input.dispatchEvent(new Event("focus"));_input.value = d[1];_input.dispatchEvent(new Event("change"));
+        var d = data.dataCustom;
+        var _input = elem.contentWindow.document.querySelector('' + '#' + d[2] + '>span>input');_input.dispatchEvent(new Event("focus"));_input.value = d[1];_input.dispatchEvent(new Event("change"));
       } else if (data.eventType == 'moreOnClick') {
         var d = data.dataCustom;if (d == "svpCfo") {
           /*公司收文里的选择高级副总裁或财务总监*/var _input = elem.contentWindow.document.querySelector("#svpCfo .mini-buttonedit-buttons .mini-buttonedit-button");window._input = _input;window._input.focus();window._input.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, cancelable: true, view: window._input.ownerDocument.defaultView }));window._input.click();
@@ -1359,8 +1345,7 @@
         } else if (d == "deptHead") {
           var _input = elem.contentWindow.document.querySelector("#deptHead .mini-buttonedit-buttons .mini-buttonedit-close");_input.click();
         } else if (d == "deptApprover") {
-          var _input = elem.contentWindow.document.querySelector("#deptApprover .mini-buttonedit-buttons .mini-buttonedit-close");
-          _input.click();
+          var _input = elem.contentWindow.document.querySelector("#deptApprover .mini-buttonedit-buttons .mini-buttonedit-close");_input.click();
         }
       } else if (data.eventType == "oneClick") {
         var d = data.dataCustom;if (d == "isFinish") {
@@ -1882,7 +1867,7 @@
       return '"use strict";\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require("react");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: "render",\n\n    // componentWillReceiveProps(props){\n    //   // debugger;\n    //   var show=props.customData;\n    //   var handler=props.customHandler;\n    //   if(show&&handler){\n    //     handler({\n    //       eventType:"show"\n    //     })\n    //   }else{\n    //     handler({\n    //       eventType:"hide"\n    //     })\n    //   }\n    // }\n    value: function render() {\n      var data = this.props.customData;\n      if (data) {\n        return React.createElement(\n          "div",\n          { className: "ysp-loadEffect-background" },\n          React.createElement(\n            "div",\n            { className: "ysp-loadEffect" },\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null),\n            React.createElement("span", null)\n          )\n        );\n      } else {\n        return React.createElement("div", null);\n      }\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control303_UXRJye: function (elem) {
-      ;if (elem && elem.ownerDocument.querySelectorAll('.mini-window-drag').length > 1 && (elem.querySelector('.mini-panel-title').textContent == '内容信息列表' || elem.querySelector('.mini-panel-title').textContent.indexOf('折让') || elem.querySelector('.mini-panel-title').textContent.indexOf('余额'))) {
+      if (elem && elem.ownerDocument.querySelectorAll('.mini-window-drag').length > 1 && (elem.querySelector('.mini-panel-title').textContent == '内容信息列表' || elem.querySelector('.mini-panel-title').textContent.indexOf('折让') || elem.querySelector('.mini-panel-title').textContent.indexOf('余额'))) {
         var data = {};data.list = [];data.header = elem.querySelector('.mini-panel-title').textContent;data.title = [];var contentDom = elem.querySelector('.mini-panel-viewport').querySelector('iframe').contentDocument; //list
         var trArr = contentDom.querySelectorAll('table[class="mini-grid-table mini-grid-rowstable"]')[1].querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
           var tdArr = trArr[i].querySelectorAll("td");var arry = [];for (var j = 0; j < tdArr.length; j++) {

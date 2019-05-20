@@ -60,7 +60,34 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": "",
-      "componentType": "custom"
+      "componentType": "custom",
+    "version": "0.1",
+    "id": "pendingTask",
+    "targetURL": "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp",
+    "jsFile": "index.js",
+    "requires": {
+        "processForm": "../processForm/index.json",
+        "askForLeave": "../askForLeave/index.json",
+        "forgetCard": "../forgetCard/index.json",
+        "checkProcess": "../checkProcess/index.json",
+        "pendingTask": "../pendingTask/index.json",
+        "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
+        "turnTask": "../turnTask/index.json",
+        "departure": "../departure/index.json",
+        "beginToWork": "../beginToWork/index.json",
+        "addWork": "../addWork/index.json",
+        "visitRelative": "../visitRelative/index.json",
+        "employeeHire": "../employeeHire/index.json",
+        "branchRelease": "../branchRelease/index.json",
+        "positionChange": "../positionChange/index.json",
+        "monthChange": "../monthChange/index.json",
+        "goodBargain": "../goodBargain/index.json",
+        "pricePolicy": "../pricePolicy/index.json",
+        "branchTurnRegular": "../branchTurnRegular/index.json",
+        "innerPositionChange": "../innerPositionChange/index.json",
+        "morePositionChange": "../morePositionChange/index.json",
+        "branchEmployeeHire": "../branchEmployeeHire/index.json",
+        "branchEmpSalary": "../branchEmpSalary/index.json"
     },
     "control15_yQS0TR": {
       "location": {
@@ -271,13 +298,34 @@
         {
           "toContextId": "context1_ceUML4"
         },
-        {
-          "toContextId": "context8_ddpRhS",
-          "toModelId": "processForm"
-        },
-        {
-          "toContextId": "context31_NhG3EK",
-          "toModelId": "askForLeave"
+        "flow8_xHUQQm": {
+            "fromContextId": "context1_ceUML4",
+            "fromAction": "doAction",
+            "fromControlId": "control13_9WwGn3",
+            "toContexts": [{
+                    "toContextId": "context1_ceUML4"
+                },
+                {
+                    "toContextId": "context8_ddpRhS",
+                    "toModelId": "processForm"
+                },
+                {
+                    "toContextId": "context31_NhG3EK",
+                    "toModelId": "askForLeave"
+                },
+                {
+                    "toContextId": "context28_MTJvP1",
+                    "toModelId": "forgetCard"
+                },
+                {
+                    "toContextId": "context11_uaf3pg",
+                    "toModelId": "checkProcess"
+                },
+                {
+                    "toContextId": "context41_WzBtqX",
+                    "toModelId": "branchTurnRegular"
+                }
+            ]
         },
         {
           "toContextId": "context28_MTJvP1",
