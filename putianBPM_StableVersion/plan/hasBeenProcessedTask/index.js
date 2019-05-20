@@ -135,6 +135,12 @@
           win._ysp_top.tenderType = "goodBargain";
         } else if (title.indexOf("价格政策") !== -1) {
           win._ysp_top.tenderType = "pricePolicy";
+        } else if (title.indexOf("物料申请") !== -1) {
+          top.pendTitle = "物料申请";win._ysp_top.tenderType = "materialApplication";
+        } else if (title.indexOf("物料信息停用") !== -1) {
+          top.pendTitle = "物料信息停用";win._ysp_top.tenderType = "materialInformationDisabled";
+        } else if (title.indexOf("简易采购订单撤销") !== -1) {
+          top.pendTitle = "简易采购订单撤销";win._ysp_top.tenderType = "orderCancel";
         } else {
           top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
         }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();

@@ -41,7 +41,8 @@
                 var _innerHTML = _click.querySelector('span').textContent;_click.querySelector("a").click();
               } else {
                 var _click = elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");_click.click();
-              }var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+              }
+              var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }
         } else {

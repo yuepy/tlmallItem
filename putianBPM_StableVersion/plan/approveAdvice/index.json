@@ -25,7 +25,10 @@
     "pendingTask": "../pendingTask/index.json",
     "addWork": "../addWork/index.json",
     "forgetCard": "../forgetCard/index.json",
-    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
+    "materialApplication": "../materialApplication/index.json",
+    "orderCancel": "../orderCancel/index.json",
+    "materialInformationDisabled": "../materialInformationDisabled/index.json"
   },
   "chineseName": "已办查看表单-审批意见",
   "description": "",
@@ -321,6 +324,18 @@
         {
           "toContextId": "context28_MTJvP1",
           "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context5_GWonk5",
+          "toModelId": "materialApplication"
+        },
+        {
+          "toContextId": "context46_PKBHRz",
+          "toModelId": "orderCancel"
+        },
+        {
+          "toContextId": "context35_8OPgnn",
+          "toModelId": "materialInformationDisabled"
         }
       ]
     },
@@ -517,7 +532,10 @@
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&branchEmployeeHire",
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&branchEmpSalary",
           "192.168.220.51:8000/ptsoa/bizform/operationLog.jsp&branchEmpSalary",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=411657&processForm"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=411657&processForm",
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&materialApplication",
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&orderCancel",
+          "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp&materialInformationDisabled"
         ],
         "context4_d60WvN": [
           "192.168.220.51:8000/ptsoa/bizform/components/back/backActivity.jsp?_winid=w6320&_t=308777",

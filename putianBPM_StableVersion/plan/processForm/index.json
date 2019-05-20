@@ -611,6 +611,41 @@
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control303_UXRJye": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "BODY.body-font DIV.mini-panel.mini-window.mini-window-drag DIV.mini-panel-border"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[4]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control303_UXRJye"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -629,7 +664,8 @@
         "control61_S2UifR",
         "control67_28ok7e",
         "control168_3Cu2Vn",
-        "control269_evf5a5"
+        "control269_evf5a5",
+        "control303_UXRJye"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -817,6 +853,44 @@
       "fromContextId": "context8_ddpRhS",
       "fromAction": "doAction",
       "fromControlId": "control168_3Cu2Vn",
+        }
+      ]
+    },
+    "flow62_hV282y": {
+      "toContexts": [
+        {
+          "toContextId": "context8_ddpRhS"
+        },
+        {
+          "toContextId": "context1_ceUML4",
+          "toModelId": "pendingTask"
+        }
+      ]
+    },
+    "flow193_68Aa3y": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control303_UXRJye",
+      "toContexts": [
+        {
+          "toContextId": "context8_ddpRhS"
+          "toContextId": "context28_MTJvP1",
+          "toModelId": "forgetCard"
+        },
+        {
+          "toContextId": "context31_NhG3EK",
+          "toModelId": "askForLeave"
+        },
+        {
+          "toContextId": "context31_GRspED",
+          "toModelId": "branchRelease"
+        }
+      ]
+    },
+    "flow131_vTZfoc": {
+      "fromContextId": "context8_ddpRhS",
+      "fromAction": "doAction",
+      "fromControlId": "control168_3Cu2Vn",
       "toContexts": [
         {
           "toContextId": "context8_ddpRhS"
@@ -880,6 +954,98 @@
         {
           "id": "uiControl22_QmOw34",
           "controlId": "control21_GeryA0",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl22_QmOw34",
+                "onGetTemplate": "getTemplate_uiControl22_QmOw34"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl300_KhiHyP",
+          "controlId": "control303_UXRJye",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl300_KhiHyP",
+                "onGetTemplate": "getTemplate_uiControl300_KhiHyP"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl263_CCXCMS",
+          "controlId": "control269_evf5a5",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl263_CCXCMS",
+                "onGetTemplate": "getTemplate_uiControl263_CCXCMS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl33_sIcNwa",
+          "controlId": "control41_0ETlac",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl33_sIcNwa",
+                "onGetTemplate": "getTemplate_uiControl33_sIcNwa"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl58_J9dV1F",
+          "controlId": "control61_S2UifR",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl58_J9dV1F",
+                "onGetTemplate": "getTemplate_uiControl58_J9dV1F"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl5_yflben",
+          "controlId": "control4_TiKwZC",
+          "id": "uiControl20_HR4ggS",
+          "controlId": "control19_s257i7",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl5_yflben",
+                "onGetTemplate": "getTemplate_uiControl5_yflben"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl48_9tAoWb",
+          "controlId": "control49_PTRE8T",
           "display": {
             "adapterId": "custom",
             "type": "custom",
@@ -1078,7 +1244,8 @@
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=411661&processForm",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=411645&processForm",
           "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=516609&processForm",
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3468573&processForm"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=3468573&processForm",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=530379&processForm"
         ],
         "context10_zlXaLZ": [
           "192.168.220.51:8000/ptsoa/bizform/components/approval/approvalMsgList.jsp?_t=867767&_winid=w6448",

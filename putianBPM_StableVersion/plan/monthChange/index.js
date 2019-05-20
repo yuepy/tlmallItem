@@ -134,6 +134,7 @@
           });if (item.querySelector("td:nth-child(2)").querySelector("input")) {
             data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);
           } else if (item.querySelector("td:nth-child(4)").querySelector("input:last-child")) {
+            data.base.con.push(item.querySelector("td:nth-child(4)").querySelector('span').querySelector("input:last-child").value);
             data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
           } // data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);
           // data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
@@ -141,8 +142,8 @@
           [].map.call(a, function (d, i) {
             data.base.tit.push(d.textContent.replace(/\s+/g, ""));
           });[].map.call(b, function (m, n) {
-            if (m.querySelector("input")) {
-              data.base.con.push(m.querySelector("input").value);
+            if (m.querySelector('span') && m.querySelector('span').querySelector("input")) {
+              data.base.con.push(m.querySelector('span').querySelector("input").value);
             }
           });
         }
@@ -180,7 +181,9 @@
           data.annex.push(item.textContent);
         });
       } //审批意见
-      var sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");data.surggest.push(sugg.querySelector("textarea").value);if (sugg.querySelector(".mini-textbox-readOnly")) {
+      var sugg = elem.querySelector("#approval .nui-form-table tbody tr td:nth-child(2)");if (sugg.querySelector("textarea")) {
+        data.surggest.push(sugg.querySelector("textarea").value);
+      }if (sugg.querySelector(".mini-textbox-readOnly")) {
         data.surggest.push("true");
       } else {
         data.surggest.push("");
