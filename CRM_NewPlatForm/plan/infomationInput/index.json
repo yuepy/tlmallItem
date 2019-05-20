@@ -214,6 +214,45 @@
       "monitored": false,
       "frameXPath": "",
       "componentType": "custom"
+    },
+    "control379_FaJ7bh": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": [
+              "descendant::DIV[@id=\"dayPSI\"]//TABLE[@id=\"psiEnterTable\"]",
+              "descendant::TABLE[@id=\"psiEnterTable\"]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.collectionPSIentercontent DIV.collectionPSIentercontentborder TABLE.table.collectionPSI-table"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control379_FaJ7bh"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
@@ -223,7 +262,8 @@
         "control212_Cymneo",
         "control213_TwrNlh",
         "control204_50rAzZ",
-        "control377_epo1DG"
+        "control377_epo1DG",
+        "control379_FaJ7bh"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -296,12 +336,37 @@
           "toContextId": "context53_oR8JhD"
         }
       ]
+    },
+    "flow299_TbVFcE": {
+      "fromContextId": "context53_oR8JhD",
+      "fromAction": "doAction",
+      "fromControlId": "control379_FaJ7bh",
+      "toContexts": [
+        {
+          "toContextId": "context53_oR8JhD"
+        }
+      ]
     }
   },
   "pages": {
     "page53_OMoPAA": {
       "contextId": "context53_oR8JhD",
       "layout": [
+        {
+          "id": "uiControl210_CVeeGa",
+          "controlId": "control213_TwrNlh",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl210_CVeeGa",
+                "onGetTemplate": "getTemplate_uiControl210_CVeeGa"
+              }
+            }
+          }
+        },
         {
           "id": "uiControl187_1hG0iv",
           "controlId": "control190_oOp3N1",
@@ -363,16 +428,16 @@
           }
         },
         {
-          "id": "uiControl210_CVeeGa",
-          "controlId": "control213_TwrNlh",
+          "id": "uiControl365_VArUX4",
+          "controlId": "control379_FaJ7bh",
           "display": {
             "adapterId": "custom",
             "type": "custom",
             "adapter": {
               "templateType": "react",
               "events": {
-                "onDoAction": "doAction_uiControl210_CVeeGa",
-                "onGetTemplate": "getTemplate_uiControl210_CVeeGa"
+                "onDoAction": "doAction_uiControl365_VArUX4",
+                "onGetTemplate": "getTemplate_uiControl365_VArUX4"
               }
             }
           }
@@ -686,6 +751,27 @@
             "-/-/SCRIPT",
             "-/DIV/DIV",
             "-/DIV/IFRAME",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/SPAN/BUTTON",
+            "DIV/SPAN/INPUT-text",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TD/INPUT-hidden",
+            "TR/TD/INPUT-text"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
             "DIV/A/I",
             "DIV/DIV/A",
             "DIV/DIV/DIV",

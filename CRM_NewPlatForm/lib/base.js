@@ -77,6 +77,17 @@
   var loginEncoder = '';//作为登陆日志定位问题
   topWin.dataMenu = '';
   var loginFlag = false;
+  //信息录入 - 本地存储部分 (取赋值操作)
+  topWin.pageBackfill=function(state,obj){
+    switch(state){
+      case 'false':state = false;break;
+      case 'true':state = true;
+    }
+    ysp.customHelper.informationEntry.isSave = state;
+    //obj = JSON.parse(obj);
+    ysp.customHelper.informationEntry.saveData = obj;
+  }
+  //信息录入 - 本地存储部分 (取赋值操作)
   //IOS客户端调用.解决请求ICON接口跨域问题;
   topWin.GetIconNum = function(summary,atMe){
     if(!summary && !atMe || summary == 'error'){
@@ -220,6 +231,7 @@
       return ;
     }
     if(user&&password){
+      ysp.customHelper.logLoginName = user;
       LOGINNAME = user;  //日志内容部分
       LOGINTIME = new Date().getTime();
       var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
@@ -1304,12 +1316,16 @@
   //页面加载Loading . 数据加载中 , 数据请求时机 ,页面调用会判断当前数据请求是否成功,请求中时加载loading . 请求成功时 ,关闭loading
   function _isLoading(){
     var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow; //当前激活window . 
-    
   }
   utils.extend(ysp.customHelper, {
     //信息录入本地缓存部分
     informationEntry:{
       enterName:'', //录入客户名称
+      basic:{
+        'user':'',
+        'stock':''
+      },
+			isSave:false,
       saveData:'',
       enterSplit:function(url,str,num){
         if(!url){
@@ -1333,19 +1349,108 @@
           throw '请传入正确参数类型'+obj;
         }
         // 待客户端补充方法
+        if(ysp.customHelper.logLoginName =='' || ysp.customHelper.informationEntry.enterName == ''){
+          alert('用户名或客户编码缺失,无法执行保存操作');
+          return ;
+        }
+        var data = {'user':ysp.customHelper.logLoginName,'stock':this.enterName,'data':obj};
+        data = JSON.stringify(data);
         if(top.EAPI.isIOS()){
-          if(ysp.customHelper.logLoginName =='' || ysp.customHelper.informationEntry.enterName == ''){
-            alert('用户名或客户编码缺失,无法执行保存操作');
-            return ;
-          }
-          var data = {'user':ysp.customHelper.logLoginName,'stock':ysp.customHelper.informationEntry.enterName,'data':obj};
-          data = JSON.stringify(data);
           top.EAPI.postMessageToNative('saveData',data);
+        }else if(top.EAPI.isAndroid()){
+          top.yspCheckIn && top.yspCheckIn.insertData(data);
         }
       },
       getData:function(user,encoded){
+        if(!user && !encoded){
+          this.basic.user = ysp.customHelper.logLoginName;
+        	this.basic.stock = this.enterName;
+        }else{
+          var data = JSON.stringify({
+            'user':user,
+            'stock':encoded
+        	})
+        }
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('getData',data);
+        }else if(top.EAPI.isAndroid()){
+          this.saveData = top.yspCheckIn.queryData(this.basic.user,this.basic.stock);
+          if(JSON.parse(this.saveData).data.length<1){
+            this.isSave = false;
+          }else{
+            this.isSave = true;
+          }
+        }
         // 待客户端补充方法
       },
+      deleteData:function(user,encoded){
+        if(!user && !encoded){
+          var data = this.basic;
+        }else{
+          var data = JSON.stringify({
+            'user':user,
+            'stock':encoded
+        	})
+        }
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('deleteData',data);
+        }else if(top.EAPI.isAndroid()){
+          top.yspCheckIn.deleteData(this.basic.user,this.basic.stock);
+        }
+      },
+      backfill:function(doc,titles,obj){
+        if(!doc){
+          throw '未传入正确DOM';
+        }
+        if(!obj) throw '未找到数据,无法回填值!';
+        if(!doc.querySelector('thead')){
+          console.info('当前DOM中没有thead');
+          return ;
+    	  }
+        if(!doc.querySelector('tbody')){
+          console.info('当前DOM中没有tbody');
+          return ;
+        }
+        if(!doc.querySelector('tbody').querySelectorAll('tr')){
+          console.info('当前DOM中表格内容为空!');
+          return ;
+        }
+        obj = JSON.parse(obj);
+        var TH = doc.querySelectorAll('th').length>0?doc.querySelectorAll('th'):doc.querySelectorAll('td');
+        var TR = doc.querySelector('tbody').querySelectorAll('tr');
+        if(TR && TR.length>0){
+          this.isSave = false; //初始化是否回填状态,防止无限回填;
+        }
+        var currentTitle = {
+          'title':[],
+          'index':[]
+        };
+        var currnetData = [];
+        titles.some(function(value,index,arr){
+        	for(var i=0;i<TH.length;i++){
+            if(value == ysp.customHelper.trim(TH[i].textContent)){
+              currentTitle.title.push(value);
+              currentTitle.index.push(i);
+            }
+          }
+        })
+        for(var i = 0;i<TR.length;i++){
+          var TD = TR[i].querySelectorAll('td');
+          if(i == obj.data[i].index){
+            currentTitle.title.some(function(value,index,arr){
+              for(k in obj.data[i].content){
+                if(obj.data[i].content.hasOwnProperty(value)){
+                  if(TD[currentTitle.index[index]].querySelectorAll('input').length >0){
+                    TD[currentTitle.index[index]].querySelectorAll('input')[1].value = obj.data[i].content[value];
+                  }else{
+                    TD[currentTitle.index[index]].textContent = obj.data[i].content[value];
+                  }
+                }
+              }
+            })
+          }
+        }
+      },
       filterData:function(doc,titles,id){
         var tableStats = { 
         	'thead':true,
@@ -1355,9 +1460,6 @@
         if(!doc){
           throw '未传入正确DOM';
         }
-        // if(!(titles instanceof Array)){
-        //   console.error('titles必须为数组类型!');
-        // }
         if(id){
           this.id = id;
         }

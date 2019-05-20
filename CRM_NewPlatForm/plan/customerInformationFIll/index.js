@@ -39,8 +39,12 @@
     },
     doAction_uiControl176_cUGqtJ: function (data, elem) {
       if (data.eventType == "click") {
-        var A = elem.querySelector("tbody").querySelectorAll('a')[0].href;ysp.customHelper.informationEntry.enterName = ysp.customHelper.informationEntry.enterSplit(A, 'userId='); //以上为信息录入存储部分
-        ysp.customHelper.pageId();var i = data.dataCustom.i;var val = data.dataCustom.val;elem.querySelector("tbody").querySelectorAll("tr")[i].querySelectorAll("td")[val].querySelector("a").click();
+        var A = elem.querySelector("tbody").querySelectorAll('a')[0].href;ysp.customHelper.informationEntry.enterName = ysp.customHelper.informationEntry.enterSplit(A, 'userId=');var backfillData = JSON.stringify({ 'user': ysp.customHelper.logLoginName, 'stock': ysp.customHelper.informationEntry.enterName });if (top.EAPI.isIOS()) {
+          //top.EAPI.postMessageToNative('getData', backfillData);
+          ysp.customHelper.informationEntry.getData.call(top, ysp.customHelper.logLoginName, ysp.customHelper.informationEntry.enterName); //以上为信息录入存储部分
+        } else {
+          ysp.customHelper.informationEntry.getData();
+        }ysp.customHelper.pageId();var i = data.dataCustom.i;var val = data.dataCustom.val;elem.querySelector("tbody").querySelectorAll("tr")[i].querySelectorAll("td")[val].querySelector("a").click();
       }if (data.eventType == "showLoading") {
         // setTimeout(function () {
         //   ysp.appMain.showLoading();
