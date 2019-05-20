@@ -169,6 +169,11 @@
         // 以下两个方法用于修改原页面中的错误, 但执行时机不同
         // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
         onTargetLoad: function(aWin, doc) {
+            //redcore 客户端升级代码  --  5-5
+            // if(ysp.runtime.Model.getActiveModel() && ysp.runtime.Model.getActiveModel().id != 'login' && aWin.location.href.indexOf('login.jsp') != -1){
+            //   //aWin.frameElement.src= 'http://192.168.220.51:8000/ptsoa/coframe/auth/login/login.jsp' 
+            //   aWin.location.href = 'http://192.168.220.51:8000/ptsoa/coframe/auth/login/login.jsp';
+            // }
             //用于作用于原网页第一次进入时的点击;
             if (aWin && doc) {
                 if (doc.querySelector('#workItemTabs')) {

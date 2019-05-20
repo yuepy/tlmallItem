@@ -121,7 +121,6 @@
           //     var reg = /\s/;
           //     if (reg.test(newRow.textContent)) {
           //       if (_click) {
-
           //         var _icon = _click.querySelector('a');
           //         _icon.click();
           //       } else {
@@ -149,6 +148,7 @@
         //   } 
         //待办里面#form1里含有#status和#statusApprove
         //   var status = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#status');
+
         //   var approveStatus = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#approveStatus');
         //   if (disable && disable.className.indexOf("mini-disabled") == -1 || status || approveStatus) {
         //     console.log("aa");
@@ -173,11 +173,13 @@
         //   }
         var btns = elem.contentDocument.querySelector("#btn");if (btns && btns.style.display != "none") {
           if (btns.querySelector("#recover") && btns.querySelector("#recover").textContent == "追回") {
-            var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];if (btn) {
+            var json = { time: new Date().getTime()
+            };var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];if (btn) {
               btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
             }
           } else {
-            var json = { time: new Date().getTime() };var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];if (btn) {
+            var json = { time: new Date().getTime() };
+            var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];if (btn) {
               btn.click();ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
             }
           }

@@ -5,6 +5,7 @@
   "jsFile": "index.js",
   "chineseName": "销售退货申请",
   "description": "",
+  "firstPaintEnable": false,
   "controls": {
     "control91_nNWPRx": {
       "location": {
@@ -40,6 +41,10 @@
         "data": {
           "tagName": "TABLE"
         },
+        "userData": {
+          "data": [],
+          "force": false
+        },
         "locators": [
           {
             "id": "@class/word",
@@ -69,7 +74,9 @@
         "control92_3dpU8k"
       ],
       "anchors": [],
-      "urlAnchor": []
+      "urlAnchor": [
+        "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/SellManager\\/saleAfterManage\\/fn_saleReturnApply\\/saleReturnApplySummary\\.jsp.*"
+      ]
     }
   },
   "flows": {

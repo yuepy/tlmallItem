@@ -6,7 +6,8 @@
   "requires": {
     "pendingTask": "../pendingTask/index.json",
     "approvalTrack": "../approvalTrack/index.json",
-    "approveAdvice": "../approveAdvice/index.json"
+    "approveAdvice": "../approveAdvice/index.json",
+    "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json"
   },
   "chineseName": "物料信息停用",
   "description": "",
@@ -265,6 +266,10 @@
         {
           "toContextId": "context1_ceUML4",
           "toModelId": "pendingTask"
+        },
+        {
+          "toContextId": "context2_MwGkVx",
+          "toModelId": "hasBeenProcessedTask"
         }
       ]
     },
@@ -433,7 +438,8 @@
     "page/urls": {
       "contexts": {
         "context35_8OPgnn": [
-          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529751&materialInformationDisabled"
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=529751&materialInformationDisabled",
+          "192.168.220.51:8000/ptsoa/bizform/forwardByWorkItem.jsp?workItemID=531065&materialInformationDisabled"
         ]
       }
     },
