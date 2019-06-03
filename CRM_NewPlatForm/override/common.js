@@ -6,13 +6,16 @@ if(getParam("a")=="1" || getParam("firstFlag")=="true"){
 function initTags(clickButten){
 	
 	var parms = {};
-	
+	  parms.type = $("#type").text();
     var cycleType = $("#cycleType").val();
     var orderLogic = $("#orderLogic").val();
     
     var date=$("#selDay").val();
     var loginName=$("#loginName").text();
     
+  	/** 4月13添加参数loginName **/
+    parms.loginName = loginName;
+  
     if($("#branchName").text())
     	parms.branchName=$("#branchName").text();
     if($("#projectName").text())
@@ -54,8 +57,8 @@ function ajaxData_2143(parms) {
 			var rows = data.Rows;
 			var html = '<option value="" selected="selected" ></option>';
 			for(var i in rows){
-				if(rows[i].departmentId&&rows[i].department)
-				   html += '<option value="'+rows[i].departmentId+'">'+rows[i].department+'</option>';
+			if(rows[i].departmentId&&rows[i].department && rows[i].department != "电信业务事业部")
+					html += '<option value="'+rows[i].departmentId+'">'+rows[i].department+'</option>';
 			}
 			$("#departmentId").html(html);
 		},
@@ -114,6 +117,10 @@ function getLink(key,value,type){
     var officeName = $("#officeName").text();
     var salerName = $("#salerName").text();
     
+    var customerName = $("#customerName").text();
+    var modelName = $("#modelName").text().replace(/\+/g,'%2B');//机型
+    var storeName = $("#storeName").text();
+    
     var link = "/ptDataShow/salesAll/salesOverview";
     link += "?" + key + "=" + encodeURIComponent(value);
     link += "&type=" + type;
@@ -135,7 +142,33 @@ function getLink(key,value,type){
     	link += '&officeName=' + officeName;
     if(salerName && key!='salerName')
     	link += '&salerName=' + salerName;
+    if(customerName && key!='customerName')
+    	link += '&customerName=' + encodeURIComponent(customerName);
+    if(modelName && key!='modelName')
+    	link += '&modelName=' + encodeURIComponent(modelName);
+    if(storeName && key!='storeName')
+    	link += '&storeName=' + encodeURIComponent(storeName);
+    
     return link;
+}
+function getLinkForSearch(key,value,type){
+	if(!key || !value)
+		return '#';
+	
+	var loginName = $("#loginName").text();
+	var encoder = $("#encoder").text();
+	var cycleType = $("#cycleType").val();
+	var orderLogic = $("#orderLogic").val();
+	
+	var link = "/ptDataShow/salesAll/salesOverview";
+	link += "?" + key + "=" + encodeURIComponent(value);
+	link += "&type=" + type;
+	link += "&filter_userId=" + loginName;
+	link += '&encoder=' + encoder;
+	link += '&date=' + $("#selDay").val(); 
+	link += '&cycleType=' + cycleType;
+	link += '&orderLogic=' + orderLogic; 
+	return link;
 }
 
 
@@ -220,6 +253,19 @@ function getParam(paramName) {
         while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
     } 
     return paramValue == "" && (paramValue = null), paramValue 
+}
+
+/**
+ * 获取点一个参数
+ */
+function getFirstParamKey(){
+	var key = "";
+	var url = window.location.search; 
+	if ( url.indexOf("?") == 0 && url.indexOf("=") > 1) { 
+		var strs = url.substr(1).split("&"); 
+		key = strs[0].substring(0,(strs[0].indexOf("=")));
+    } 
+	return key;
 }
 
 /*改url*/
@@ -347,7 +393,7 @@ function showLineBar(){
 }
 
 
-//配置：折线图
+//配置：折线图   lyh  4-24
 function getLines(datas, Id) {
     var chart = echarts.init(document.getElementById(Id));
     window.onresize = chart.resize;
@@ -362,9 +408,22 @@ function getLines(datas, Id) {
     }
     if(datas[0].data){
 	    for (var j = 0; j < datas[0].data.length; j++) {
-	        timeDatas.push((datas[0].data[j].time).substring(5));
+	        timeDatas.push(datas[0].data[j].time);
 	        salesValReach.push(datas[0].data[j].value);
-	        sumValReach.push(((datas[1].data[j].value)/10000));
+	        if(datas[1].data[j].value.toString().indexOf(".")>0){
+	        	//var value1 = datas[1].data[j].value.toFixed(2);
+            var value1 = datas[1].data[j].value;
+	        	if(value1.toString().substr(-2,2) == "00"){
+	        		// value1 = datas[1].data[j].value.toFixed(0);
+              value1 = datas[1].data[j].value;
+	        	}else if(value1.toString().substr(-1,1) == "0"){
+              // value1 = datas[1].data[j].value.toFixed(0);
+	        		value1 = datas[1].data[j].value;
+	        	}
+	        	sumValReach.push(value1);
+	        }else{
+	        	sumValReach.push(datas[1].data[j].value);
+	        }
 	    }
     }
     var option = {
@@ -651,4 +710,199 @@ function clickThSortCommon(){
 			$table.find("tbody").html(newHtml);
 		})
 	})
+}
+
+
+/**
+ * 2019/1/23 添加 千分位过滤
+ * @param num
+ * @param flag
+ * @returns {String}
+ */
+function toQfw_new(num,flag) {
+	var str_num = flag?(num/10000).toFixed(2).toString():num.toString();
+	var end_num = "";
+	if(str_num.indexOf(".") > 0){
+		end_num = str_num.substring(str_num.indexOf("."), str_num.length);
+		str_num = str_num.substring(0,str_num.indexOf("."));
+	}
+	if(end_num == ".00"){
+		end_num = "";
+	}
+	
+	var first_sign = "";
+	if(str_num.indexOf("-") == 0){
+		str_num = str_num.substring(1,str_num.length);
+		first_sign = "-"
+	}
+	
+	var result = "";
+	while (str_num.length > 3) {
+		result = "," + str_num.slice(-3) + result;
+		str_num = str_num.slice(0, str_num.length - 3)
+	}
+	return first_sign + str_num + result + end_num;
+}
+
+$(function(){
+	$("#selectSearch").on("change",function(){
+		$("#searchInput").val("");
+	})
+	$("#orderLogic").on("change",function(){
+		$("#searchInput").val("");
+	})
+	$("#cycleType").on("change",function(){
+		$("#searchInput").val("");
+	})
+	//自动补全控件
+	if($('#searchInput').length>0){
+		setAutocomplete("/ptDataShow/salesAll/getSearchData",function(suggestions){
+      debugger
+	    	var selectType = $("#selectSearch").val();
+	    	if(suggestions){
+    			var suggObj = JSON.parse(suggestions.data);
+    			var link = "";
+		    	if("salerName" == selectType){
+		    		link = getLinkForSearch("salerName",suggObj.salesman_id,"07");
+		    		link += '&branchName=' + suggObj.branchName;
+		    		link += '&officeName=' + suggObj.officeName;
+		    	}else if("customerName" == selectType){
+		    		link = getLinkForSearch("customerName",suggObj.customerName,"07");
+		    		link += '&branchName=' + suggObj.branchName;
+		    		link += '&officeName=' + suggObj.officeName;
+		    		link += '&salerName=' + suggObj.salesman_id;
+		    	}else if("storeName" == selectType){
+		    		link = getLinkForSearch("storeName",suggObj.storeName,"07");
+		    		link += '&branchName=' + suggObj.branchName;
+		    		link += '&officeName=' + suggObj.officeName;
+		    		link += '&salerName=' + suggObj.salesman_id;
+		    	}
+		    	
+		    	if(link != ""){
+		    		var path = sessionStorage.getItem("path")?sessionStorage.getItem("path"):"";
+		    		if(path && path.indexOf("-") > -1){
+		    			path = path.substr(0,path.indexOf("-"))
+		    			sessionStorage.setItem("path",path);
+		    		}
+		    		window.location.href = link;
+		    	}
+	    	}
+	    });
+	}
+	
+	//当前纬度
+	setCurrentLatitudeText();
+})
+//发送ajax请求
+function setAutocomplete(service,callBack){
+	$('#searchInput').autocomplete({
+		ajaxSettings:{
+			dataType: "json",
+		},
+		getSearchParam:getSearchParam,
+		serviceUrl: service,
+	    onSelect: function(suggestion) {
+    		if(callBack){
+	    		callBack(suggestion);
+	    	}
+	    }
+	});
+	
+	function getSearchParam(){
+		var body = {};
+		body[$("#selectSearch").val()] = $("#searchInput").val();
+		body.loginName = $("#loginName").text();
+	    //body.branchName = $("#branchName").text();
+	    //body.projectName = $("#projectName").text();
+	    //body.bizUnitName = $("#bizUnitName").text();
+	    //body.officeName = $("#officeName").text();
+	    //body.salesman_id = $("#salerName").text();
+	    //body.customerName = $("#customerName").text();
+	    //body.modelName = $("#modelName").text().replace(/\+/g,'%2B');//机型
+	    //body.storeName = $("#storeName").text();
+		body.date = $("#selDay").val();
+		body.cycleType = $("#cycleType").val();
+		body.orderLogic = $("#orderLogic").val();
+		return body;
+	}
+	
+}
+
+/**
+ * 设置当前纬度
+ */
+function setCurrentLatitudeText(){
+	var text = "";
+	var branchName = $("#branchName").text();
+	if(null != branchName && "" != branchName){
+		branchName = branchName.substring(11,branchName.length);
+		text += branchName;
+	}
+	if (branchName == "太力总部") {
+		return;
+	}
+	var projectName = $("#projectName").text();
+	if(null != projectName && "" != projectName){
+		text += "-"+projectName;
+	}
+	var bizUnitName = $("#bizUnitName").text();
+	if(null != bizUnitName && "" != bizUnitName){
+		text += "-"+bizUnitName;
+	}
+	
+	var officeName = $("#officeName").text();
+	if(null != officeName && "" != officeName){
+		text += "-"+officeName;
+	}
+	var salerName = $("#salerName").text();
+	if(null != salerName && "" != salerName){
+		text += "-"+salerName;
+		$.ajax({
+			type : "POST",
+			url : "/ptDataShow//salesAll/getSalerName",
+			data : {"salesman_id":salerName},
+			dataType : "json",
+			success : function(data) {
+				if(data && data.salerName != ""){
+					text = text.replace(salerName,data.salerName);
+				}
+				
+				var customerName = $("#customerName").text();
+				if(null != customerName && "" != customerName){
+					text += "-"+customerName;
+				}
+				var storeName = $("#storeName").text();
+				if(null != storeName && "" != storeName){
+					text += "-"+storeName;
+				}
+				var modelName = $("#modelName").text();
+				if(null != modelName && "" != modelName){
+					text += "-"+modelName;
+				}
+				$(".current").show();
+				$("#currentText").html(text);
+				$("#currentText").css("max-width",($(window).width() * 0.5 - 350) + "px");
+				$("#currentText").css("font-size","17px");
+				$("#currentText").attr("title",text);
+			},
+		});
+	}else {
+		var customerName = $("#customerName").text();
+		if(null != customerName && "" != customerName){
+			text += "-"+customerName;
+		}
+		var storeName = $("#storeName").text();
+		if(null != storeName && "" != storeName){
+			text += "-"+storeName;
+		}
+		var modelName = $("#modelName").text();
+		if(null != modelName && "" != modelName){
+			text += "-"+modelName;
+		}
+		$(".current").show();
+		$("#currentText").html(text);
+		$("#currentText").css("max-width",($(window).width() * 0.5 - 350) + "px");
+		$("#currentText").css("font-size","17px");
+		$("#currentText").attr("title",text);
+	}
 }

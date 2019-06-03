@@ -12,7 +12,8 @@
         data.WJLX.push(quType[i].textContent);
       }var quTypeValue = el.querySelector("#quType").selectedIndex;data.WJLXValue.push(quTypeValue);var status = el.querySelector("#status").querySelectorAll("option");for (var i = 0; i < status.length; i++) {
         data.ZT.push(status[i].textContent);
-      }var statusValue = el.querySelector("#status").selectedIndex;data.ZTValue.push(statusValue);var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
+      }var statusValue = el.querySelector("#status").selectedIndex;
+      data.ZTValue.push(statusValue);var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
         setTimeout(function () {
           ysp.appMain.hideLoading();
         }, 5000);
@@ -22,13 +23,13 @@
     },
     doAction_uiControl316_O3sq7E: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackModel = 'index';
-        ysp.customHelper.AndroidBackFlag = 'PageClose';
+        ysp.customHelper.AndroidBackModel = 'index';ysp.customHelper.AndroidBackFlag = 'PageClose';
       }if (data.eventType == 'back') {
         if (!top.EAPI.isAndroid()) {
           elem.ownerDocument.defaultView.close();
         } else {
-          ysp.customHelper.AndroidBackFn();
+          //ysp.customHelper.AndroidBackFn();
+          ysp.appMain.back();
         }
       }if (data.eventType == "select") {
         var value = data.dataCustom.value;var text = data.dataCustom.text;var selectEl;if ("归属机构" == text) {
@@ -44,7 +45,8 @@
         } else if (selectEl.dispatchEvent) {
           selectEl.dispatchEvent(new Event('change'));
         } else {
-          selectEl.dispatchEvent(new MouseEvent('click', { view: selectEl.ownerDocument.defaultView, bubbles: true, cancelable: true }));
+          selectEl.dispatchEvent(new MouseEvent('click', { view: selectEl.ownerDocument.defaultView, bubbles: true,
+            cancelable: true }));
         }
       }if ("buttonClick" == data.eventType) {
         var text = data.dataCustom;if ("重置" == text) {

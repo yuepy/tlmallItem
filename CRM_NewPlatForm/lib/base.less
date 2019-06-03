@@ -41,6 +41,7 @@ html,body{
 // }
 body {
 	-webkit-overflow-scrolling: initial !important;
+  user-select: none;
 }
 
 //字体变量
@@ -501,6 +502,13 @@ header.ysp-client-list-header > span:first-child {
   display: flex;
   align-items: center;
   line-height: 1.5rem;
+  float: left;
+  &:first-child{
+    width: 60%;
+  }
+  &:last-child{
+    width: 35%;
+  }
 }
 
 .ysp-entry-icon{
@@ -799,60 +807,82 @@ div[data-ysp-modelid="clientList"]{
 /*客户详情头部样式*/
 section.ysp-customer-details{
   background: #fff;
-  padding:0 20px 10px 20px;
+  padding:0 5px 10px 5px;
   border-bottom: 1px solid #e1e1e1;
   i.ysp-customer-details-color-red{
   	background:#e93b12;
-    border-radius:10px;
-    padding:0 15px;
+    border-radius:8px;
+    padding:0 8px;
   }
   i.ysp-customer-details-color-blue{
   	background:#207bcf;
-    border-radius:10px;
-    padding:0 15px;
+    border-radius:8px;
+    padding:0 8px;
   }
   i.ysp-customer-details-color-grey{
   	background:#ccc;
-    border-radius:10px;
-    padding:0 15px;
+    border-radius:8px;
+    padding:0 8px;
+  }
+  i.ysp-customer-details-color-normal{
+    color: #000000!important;
+    overflow: hidden;
   }
   >h1{
     font-style: normal;
     color:#000;
     font-size: @importantFont;
     margin:0 auto;
-    text-align: center;
-    padding: 16px 0;
+    text-align: left;
+    padding: 16px 0 5px 10px;
   }
   >div{
-    margin:0 auto;
-    margin-bottom: 50px;
+    //display: flex;
+    //justify-content: left;
+    width: auto;
+    overflow-x: scroll;
+    padding-left: 10px;
     >span{
-      width:50%;
       display: inline-block;
+      padding-right:5px;
+      text-align: right;
+      overflow: hidden;
       >i{
         display:inline-block;
         font-size: @assistantLargeFont;
         font-style:normal;
+        vertical-align:bottom;
       }
       >i:first-child{
         color:#666;
-        margin-right:10px;
+        margin-right:5px;
       }
       >i:last-child{
         color:#fff;
       }
     }
     >span:first-child{
-    	padding-right:10px;
-      text-align: right;
+      margin-right: 5px;
+      >i:first-child{
+        color:#666;
+        margin-right:2px;
+      }
+    }
+    >span:nth-child(2){
+      margin-right: 5px;
     }
   }
+  // .leftCtrl{
+  //   display: block;
+  //   padding-left: 10px;
+  //   // justify-content: left;
+  // }
   >footer{
+    padding-left: 10px;
     >div{
     	display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: center;     
       >ul{
         display: flex;
         justify-content: flex-start;
@@ -944,6 +974,7 @@ section.ysp-customer-details{
 .ysp-rightbill-icon,
 .ysp-clientportait-icon,
 .ysp-salerebate-icon,
+.ysp-customer-lable-icon,
 .ysp-orderform-icon,
 .ysp-visit-react-icon,
 .ysp-sales-reached-icon,
@@ -1015,6 +1046,9 @@ section.ysp-customer-details{
 
 .ysp-salerebate-icon{
   background-image: url("./images/salerebate-icon.png");
+}
+.ysp-customer-lable-icon{
+  background-image: url("./images/customer-tag.png");
 }
 .ysp-rightbill-icon{
   background-image: url("./images/rightbill-icon.png");
@@ -1658,6 +1692,39 @@ section.ysp-dialog-body-list{
   }
 }
 /*
+	组件 : 搜索框样式,针对客户360，门店360，带切换
+*/
+#customSerchSwitch{
+  height:50px;
+  text-align:center;
+  background:#CCCCCC;
+  padding:10px;
+  .serchSelect{
+    margin: 0;
+    padding: 5px;
+    width: 30%;
+    display: inline-block;
+    font-size:16px;
+    border:none;
+    border-radius:5px;
+    margin-right: 3%;
+  }
+  .customSerchSwitch{
+    display: inline-block;
+    font-size:16px;
+    border-radius:5px;
+    background-color:#fff;
+    background-image: url("./images/query-icon.png");
+    background-repeat: no-repeat;
+    background-position: 38% 47%;
+    background-size: 16px;
+    padding:5px;
+    text-align:center;
+    border:none;
+    width:60%;
+  }
+}
+/*
 	组件 : 搜索框样式
 */
 #customSerch{
@@ -1679,6 +1746,7 @@ section.ysp-dialog-body-list{
     width:100%;
   }
 }
+
 #uiControl30_Ewc37q{
  padding:0;
   margin:0;
@@ -3688,10 +3756,13 @@ __________________*/
               }
               >span:last-child{
                 display: inline-block;
-                padding:2px;
+                padding:2px 10%;
                 width: 100%;
                 text-align: center;
                 margin-left: 5px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
               } 
             }
           }
@@ -4145,7 +4216,7 @@ __________________*/
         }
       }
       .dialog-title,.dialog-content{
-          line-height: 3;
+        line-height: 3;
         text-align: center;
       }
     
@@ -4591,7 +4662,7 @@ div[data-ysp-modelid="AtReportDetail"]{
 
 /*搜索组件样式*/
 
-#customSerch{
+#customSerch,#customSerchSwitch{
   .customSerch{
     
   }
@@ -14176,7 +14247,28 @@ div[data-ysp-modelid="workPlanCustomStore"]{
 .screenText{
   width: 40px;
 }
-
+.mapText{
+  width: 62px;
+  margin-right: 10px;
+}
+.mapClock{
+  display: block;
+  //height: 20px;
+  //width: 20px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-image: url(./images/yspMapLoad.png);
+  background-position: 0;
+  padding-left: 20px;
+}
+div[data-componentsid="uiControl34_5PKNHW"],div[data-componentsid="uiControl7_7ZETAx"]{
+  >div{
+    >span:nth-child(3){
+      width: 0px !important;
+      flex: none !important;
+    }
+  }
+}
 
 .ysp-workSummary-business{
   background: #fff;
@@ -14274,6 +14366,7 @@ div[data-componentsid="uiControl50_m3HABT"],div[data-componentsid="uiControl54_S
   z-index: 9999;
   overflow: auto;
   margin-top: 45px;
+  padding-bottom: 60px;
   >div:nth-child(1){
     padding: 10px;
     border-bottom: 1px solid #ececec;
@@ -14342,7 +14435,10 @@ div[data-componentsid="uiControl50_m3HABT"],div[data-componentsid="uiControl54_S
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     >span:nth-child(1){
       display: block;
       margin: auto 0;
@@ -14362,6 +14458,7 @@ div[data-componentsid="uiControl50_m3HABT"],div[data-componentsid="uiControl54_S
       background: #4796ed;
       text-align: center;
       padding-top: 5%;
+      margin-right: 60px;
     }
     
   }
@@ -16446,7 +16543,7 @@ div[data-ysp-modelid="achievement"]{
 .ysp-search-chose-shadow{
   background: rgba(120,120,120,0.5);
   width: 100%;
-  height: 92%;
+  height: 100vh;
   left:0;
   top:0;
   position:fixed;
@@ -16459,7 +16556,7 @@ div[data-ysp-modelid="achievement"]{
 
 .ysp-search-chose{
   width: 90%;
-  height: 92%;
+  height: 100vh;
   left:50px;
   top:0;
   background-color: #fff;
@@ -16469,6 +16566,7 @@ div[data-ysp-modelid="achievement"]{
   z-index: 99999;
   overflow: auto;
   margin-top: 45px;
+  padding-bottom: 46px;
   .ysp-search-chose-time{
     padding: 10px;
     border-bottom: 1px solid #ececec;
@@ -17129,7 +17227,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
           font-size: 12px;
         }
       }
-    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.JHDCZL_YD,.SYBDC_YD,.BSCDCOffice_YD,.CPDCOffice_YD,.XSYEZL_YD,.YDXSDC_YD,.BSCDC_YD,.XSRYDC_YD,.FGSDC_YD,.NDXSDC_YD,.XMDC_YD,.CPDC_YD,.KHMDDC_YD{
+    .GZT_YD,.BFZL_YD,.ATWDBG_YD,.KHXXLR_YD,.GZZJ_YD,.BFCK_YD,.JHDCZL_YD,.SYBDC_YD,.BSCDCOffice_YD,.CPDCOffice_YD,.XSYEZL_YD,.YDXSDC_YD,.BSCDC_YD,.XSRYDC_YD,.FGSDC_YD,.NDXSDC_YD,.XMDC_YD,.CPDC_YD,.KHMDDC_YD,.ZNSHG_YD{
       margin-bottom: 10px;
       //background:@workspace;
       .list-icon;
@@ -17165,7 +17263,7 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
           font-size: 12px;
         }
       }
-    .CHCX_YD,.CPSXJXXCX_YD,.KCCC_YD{
+    .CHCX_YD,.CPSXJXXCX_YD,.KCCC_YD,.FHKHCX_YD{
       margin-bottom: 10px;
       //background:@workspace;
       .list-icon;
@@ -17568,3 +17666,1026 @@ div[data-ysp-modelid="questionnaireFeedbackSum"]{
 //     }
 //   }
 // }
+
+//360客户新添加客户标签入口
+div[data-componentsid="uiControl341_2SyALa"]{
+ .create-label{
+    display:flex;
+    height:50px;
+    padding:10px;
+    justify-content: space-between;
+    align-items:center;
+    background-color:rgb(242,242,242);
+    border-bottom:1px solid rgb(225,225,225);
+  span{
+    color:rgb(106,106,106);
+    font-size: 18px;
+  }
+  div.to-add-btn{
+    color:rgb(69,146,230);
+    font-size: 18px;
+    background-color:#FFF;
+    padding:0 12px;
+    text-align:center;
+    border-radius: 6px;
+    border:1px solid rgb(69,146,230);
+  }
+ 
+  }
+ .business-manage-list{
+    ul li{
+      display:flex;
+      padding: 10px 10px 10px 0;
+      margin-left:10px;
+      justify-content: space-between;
+      align-items:center;
+      >span{
+        width:32px;
+        height:32px; 
+        background:url('images/ysp-workSummary-delete.png') right center/22px 22px no-repeat #FFF;
+      }
+      &:not(:last-child){
+          border-bottom:1px solid rgb(224,224,224);
+      }
+      .top{
+        margin-bottom:0px;
+        color:rgb(0,0,0);
+        font-size:20px;
+      }
+      >div{
+        flex:1;
+        margin-right:8px;
+        color:rgb(163,163,163);
+      }
+      div.bottom{
+        display: flex;
+        flex-direction:column;
+      }
+    }
+  }
+ section.dialog-content{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    min-height:100vh;
+    margin-top:43px; 
+    textarea{
+      min-height: 110px;
+      border:none;
+      margin-bottom:0;
+      padding-left: 10px;
+    }
+    .tag-name-select{
+      select{
+        margin-right:.75rem;
+        border:none;
+        background:#FFF url(images/ysp-achievement-pre-icon.png) no-repeat right center;
+        background-origin: padding-box;
+        color:rgb(65,136,224);
+        padding:.75rem;
+        height:30px;
+        box-sizing: content-box;
+      }
+    }
+    .tag-name-unselect{
+      select{
+        margin-right:.75rem;
+        border:none;
+        background:#FFF url(images/ysp-achievement-pre-open-icon.jpg) no-repeat right center;
+        background-origin: padding-box;
+        color:rgb(65,136,224);
+        padding:.75rem;
+        height:30px;
+        box-sizing: content-box;
+      }
+    }
+    .tag-name,.user-defined-tag,.tag-remark{
+      height:40px;
+      margin-left:10px;
+      display:flex;
+      align-items:center;
+      color:rgb(118,118,118);
+    }
+    .tag-name-select,.tag-name-unselect{
+      display:flex;
+      align-items: center;
+      height:70px;
+      background-color:#FFF;
+      border-bottom:1px solid rgb(223,223,223);
+      border-top:1px solid rgb(223,223,223);
+    }
+    .defined-tag-area,.tag-remark-area{
+      height:110px;
+      background-color:#FFF;
+      border-bottom:1px solid rgb(223,223,223);
+      border-top:1px solid rgb(223,223,223);
+    }
+    .btn-area{
+      display:flex;
+      justify-content:space-between;
+      align-items: center;
+      flex:1;
+      padding:0 10px;
+      .btn-to-cancel,.btn-to-ensure{
+      	border-radius:6px;
+        width:44vw;
+        text-align:center;
+        padding:6px 60px;
+      }
+      .btn-to-cancel{
+        border:1px solid rgb(204,204,204);
+        color:rgb(106,106,106);
+        background-color:#FFF;
+      }
+      .btn-to-ensure{
+        color:rgb(255,255,255);
+        background-color:rgb(72,149,237);
+      }
+    }
+  }
+}
+//图片为空时的字段提示样式
+.no-image-content{
+    text-align: center;
+    width: 100%;
+    background-color: #FFF;
+    display: flex;
+    margin-top: 15px;
+    min-height: 50px;
+    align-items: center;
+    padding-left: 15px;
+}
+/***************智能生活馆start**************/
+div[data-ysp-modelid="intelligentLivingHall"]{
+  background: #f0eff5;
+  overflow: hidden;
+}
+//时间样式
+.ysp-living-hall-time{
+  background: #fff;
+  padding: 10px;
+  .livingTimeSearch{
+  	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >div:first-child{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      select{
+        flex: 1;
+        margin: 0;
+        padding: 0;
+        border-radius: 6px;
+        background: #fff;
+        padding: 0px 60px 0px 10px;
+        font-size:12px;
+        display: block;
+        height: 30px;
+        background-size: 20px;
+        background-position: 70px;
+        background-repeat: no-repeat;
+        background-image: url(./images/down-arrow-icon.png);
+      }
+    }
+    >div:nth-child(2){
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      >i:first-child{
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 15px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-date-icon.png);
+        margin-top: 2px;
+      }
+      >span:nth-child(2){
+        color: #999999;
+        margin-left: 8px;
+        margin-right: 20px;
+      }
+      >i:nth-child(3){
+        display: block;
+        height: 20px;
+        width: 20px;
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-image: url(./images/ysp-achievement-pre-icon.png);
+        margin-top: 4px;
+      } 
+    }
+  }
+}
+//销量样式
+.ysp-livingHall-index{
+  margin: 5px 5px;
+  padding-top: 10px;
+  background: #fff !important;
+  border-radius: 10px;
+  overflow-x: auto;
+  //padding: 10px 10px 4px 10px;
+	.ysp-livingHall-sales{
+    display: flex;
+    justify-content: space-between;
+    .listItem{
+      //flex: 1;
+      display: flex;
+      font-size: @fontBase;
+      text-align: center;
+      width: 15px;
+      h2{
+        //font-size: @fontBase;
+        font-size:18px;
+        font-weight: 400;
+        margin: 0 0 5px 5px;
+        padding: 0;
+        color: #2c81ff;
+      }
+      .itemColor{
+        color: #e7350d !important;
+      }
+      span{
+        display: flex;
+        width: 80px;
+        color: #999;
+        font-size: 10px;
+        padding-left: 16px;
+      }
+      div:first-child{
+        margin-bottom: 20px;
+      }
+      .listItemDay{
+        border-radius: 10px;
+        background: #4796ed;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+        margin-left: 5px;
+      }
+      .listItemWeek{
+        border-radius: 10px;
+        background: #e7350d;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+      .listItemMonth{
+        border-radius: 10px;
+        background: #ffbe00;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+      .listItemYear{
+        border-radius: 10px;
+        background: #4796ed;
+        padding: 5px 15px 3px 15px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+      .listItemOrder{
+        border-radius: 10px;
+        background: #e7350d;
+        padding: 5px 20px 3px 20px;
+        color: #fff;
+        display: flex;
+        width: 70px;
+      }
+    }
+  }
+}
+//系统生成标签的唯一标识
+div[data-componentsid="uiControl343_b3ulqU"]{
+  .sys-generate-tags{
+    display:flex;
+    height:50px;
+    padding:10px;
+    align-items:center;
+    background-color:rgb(242,242,242);
+    color:rgb(106,106,106);
+    font-size:18px;
+    border-top:1px solid rgb(228,228,228);
+    border-bottom:1px solid rgb(228,228,228);
+  }
+  .custom-sys-tags{
+    padding:10px 20px 10px 10px;
+    display:flex;
+    flex-wrap:wrap;
+    .item-sys-tags{
+      margin:10px 25px 0 0;
+      display: flex;
+      padding:5px 25px;
+      text-align:center;
+      color:rgb(74,136,225);
+      border:1px solid rgb(74,136,225);
+      border-radius:5px;
+    }
+  }
+}
+div[data-componentsid="uiControl344_T4NX0E"]{
+  font-family:"Microsoft YaHei";
+  .visit-report-tag{
+    display:flex;
+    height:50px;
+    padding:10px;
+    align-items:center;
+    background-color:rgb(242,242,242);
+    color:rgb(106,106,106);
+    font-size:18px;
+    border-top:1px solid rgb(228,228,228);
+    border-bottom:1px solid rgb(228,228,228);
+  }
+  .report-tag-list{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    color:rgb(163,163,163);
+    .temporary-add{
+      color:rgb(0,0,0);
+      font-size:20px;
+      margin:10px 0;
+    }
+    .center{
+      display: flex;
+      width:80vw;
+      justify-content: space-between;
+    }
+    .bottom{
+      margin-bottom:10px;
+    }
+  }
+  .report-tag-list>li{
+    &:not(:last-child){
+      border-bottom:1px solid rgb(224,224,224);
+    }
+     
+  }
+  
+}
+.blank-area-tips{
+  display:flex;
+  height:160px;
+  background-color:#FFF;
+}
+.bottom-area-bg{
+  display:flex;
+  height:80px;
+  border-top:1px solid rgb(224,224,224);
+  background-color:rgb(242,242,242);
+}
+div[data-ysp-modelid="customerLabel"]{
+  padding-bottom:0;
+  min-height: inherit;
+  div[data-componentsid="uiControl345_fUtgMV"]{
+    height: 0;
+    min-height:0;
+  }
+}
+//图表样式
+.ysp-livingHall-header-wrapper{
+   background: white;
+   border-radius: 10px;
+   padding-top: 5px;
+   margin-top: 5px;
+  .ysp-livingHall-header-container{
+    height: 30px;
+    position: relative;
+    padding-left: 20px;
+    margin: 0px 5px 5px 15px;
+    i{
+    	display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all .4s ease-in-out;
+    }
+    i.date{
+      left: -4px;
+    	top: 3px;
+    	background-image: url(./images/ysp-livingHall-ZB.png);
+    }
+    i.space{
+      left: -4px;
+    	top: 3px;
+    	background-image: url(./images/ysp-livingHall-QS.png);
+    }
+    i:last-child{
+      right: 10px;
+    	top: 3px;
+    	background-image: url(./images/up-arrow-icon.png);
+    }
+    .active{
+    	//transform: rotate(180deg);
+      right: 10px !important;
+    	top: 3px !important;
+    	background-image: url(./images/down-arrow.png) !important;
+    }
+  }
+}
+//产品系列占比趋势样式
+.ysp-livingHall-header-select-wrapper{
+   background: white;
+   border-radius: 10px;
+   padding-top: 5px;
+   margin-top: 5px;
+  .ysp-livingHall-header-select-container{
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    select{
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      border-radius: 6px;
+      background: #fff;
+      padding: 0px 30px 0px 10px;
+      font-size: 12px;
+      display: block;
+      height: 30px;
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: 45px;
+      background-image: url(images/down-arrow-icon.png);
+      option{
+        font-size: 12px !important;
+      }
+    }
+    span:nth-child(3),span:nth-child(4){
+      width: 20%
+    }
+    i{
+      width: 20px;
+      height: 20px;
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    i.date{
+    	background-image: url(./images/ysp-livingHall-ZB.png);
+    }
+    i.space{
+      background-image: url(./images/ysp-livingHall-FD.png)
+    }
+  }
+  .ysp-livingHall-echart{
+    width: 100vh;
+    top:0;
+    background-color: #fff;
+    position:fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    overflow: auto;
+    transform: rotate(90deg);
+    .ysp-livingHall-echart-hared{
+      height: 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      // transform: rotate(90deg);
+      transform-origin: 1% 100%;
+      div:first-child{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 70%;
+      }
+      div:nth-child(2){
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      select{
+        flex: 1;
+        margin: 0;
+        padding: 0;
+        border-radius: 6px;
+        background: #fff;
+        padding: 0px 30px 0px 10px;
+        font-size: 12px;
+        display: block;
+        height: 30px;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: right;
+        background-image: url(images/down-arrow-icon.png);
+        option{
+          font-size: 12px !important;
+        }
+      }
+      span:nth-child(3),span:nth-child(4){
+        width: 25%;
+        margin-left: 5px;
+      }
+      i{
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      i.date{
+        margin-right: 5px;
+        background-image: url(./images/ysp-livingHall-ZB.png);
+      }
+      i.space{
+        background-image: url(./images/ysp-livingHall-FD.png)
+      }
+    }
+    .ysp-livingHall-screen{
+      // transform: rotate(90deg) translateY(30px) translateX(30px);
+      // transform: rotate(90deg);
+      transform-origin: 35% 50%;
+      height:336px;
+      width:345px
+    }
+    // @media(orientation:landscape){
+    //   div{
+    //     height: 30px;
+    //   }
+    // }
+  }
+}
+
+//最后表格
+.ysp-livingHall-table-header-wrapper{
+   background: white;
+   border-radius: 10px;
+   padding-top: 5px;
+   margin-top: 5px;
+   // min-height: 100px;
+  padding-bottom: 1px;
+  .ysp-livingHall-table-header-container{
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    select{
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      border-radius: 6px;
+      background: #fff;
+      padding: 0px 30px 0px 10px;
+      font-size: 12px;
+      display: block;
+      height: 30px;
+      background-size: 20px;
+      background-position: 55px;
+      background-repeat: no-repeat;
+      background-image: url(images/down-arrow-icon.png);
+      option{
+        font-size: 12px !important;
+      }
+    }
+    span:nth-child(2){
+      margin-left: -20px;
+    }
+    span:nth-child(3){
+      width: 22%;
+      margin-left: -30px;
+    }
+    i{
+    	width: 20px;
+      height: 20px;
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    i.date{
+      left: -4px;
+    	top: 3px;
+    	background-image: url(./images/ysp-livingHall-iphone.png);
+    }
+    i:last-child{
+      right: 10px;
+    	top: 3px;
+    	background-image: url(./images/up-arrow-icon.png);
+    }
+    .active{
+    	//transform: rotate(180deg);
+      right: 10px !important;
+    	top: 3px !important;
+    	background-image: url(./images/down-arrow.png) !important;
+    }
+  }
+  .ysp-livingHall-table-head{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #f0eff5 !important;
+    margin: 10px;
+    span{
+      width: 33%;
+      text-align: center;
+    }
+  }
+  .ysp-livingHall-table-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid #ececec;
+    span{
+      width: 33%;
+      text-align: center;
+    }
+    span:first-child{
+      color: #4796ed;
+      font-size: 12px;
+    }
+  }
+  .undefaultList{
+    display: none;
+  }
+  .ysp-livingHall-table-content-par{
+    position:relative;
+  }
+  .ysp-sale-achievement-grid-expand-icon{
+    height: .7rem;
+    width: 1.2rem;
+    background-image: url("images/ysp-atreport-moredown.png");
+    background-size: 100% 100%;
+    position: absolute;
+    left: 49%;
+    bottom: 5px;
+  }
+}
+/***************智能生活馆end**************/
+
+
+/*****************************分货客户查询start*******************************************/
+
+div[data-ysp-modelid="clientQuery"]{
+  // background-color: #f2f2f2;
+}
+.ysp-clientcontent{
+  // background-color: #f2f2f2;
+  /*未钻取层显示内容*/
+  .ysp-content-top_a{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin-left: 20px;
+    .ysp-content_body{
+      // padding-left: 20px;
+      font-size: 14px;
+      color: #999999;
+      width: 100%;
+      .ysp-content-body-top{
+        color: #4796ed;
+        font-size: 16px;
+        padding: 5px 0;
+      }
+      .ysp-content-body-center{
+        display: flex;
+        justify-content: space-between;
+        >div{
+          width: 50%;
+          padding: 5px 0;
+        }
+      }
+      .ysp-content-body-bottom{
+        padding: 5px 0;
+        // border-bottom: 1px solid #ccc;
+      }
+    }
+    .ysp-content_icon{
+      width: 50px;
+      background: url(./images/visitcalendar-pre-icon.png) 50% 50% no-repeat;
+      background-size: 20%;
+    }
+  }
+  /*钻取层显示内容*/
+  .ysp-content-no_top_a{
+    .ysp-content_body{
+      font-size: 14px;
+      color: #999999;
+      margin-left: 20px;
+      .ysp-content-body-top{
+        color: #4796ed;
+        font-size: 16px;
+        padding: 5px 0;
+        padding-right: 10px;
+      }
+      .ysp-content-body-center{
+        display: flex;
+        justify-content: space-between;
+        padding: 2px 0;
+        >div{
+          width: 50%;
+        }
+      }
+      .ysp-content-body-center:last-child{
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+}
+
+
+.clientTime{
+  z-index: 1000;
+  .moudle-time{
+    z-index: 1000000;
+  }
+}
+
+
+.closeSelect{
+  >div{
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+  >div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    >span{
+      padding: 10px 20px;
+      padding-left: 40px;
+      border-radius: 5px;
+      background: url(./images/plantime.png) no-repeat;
+      background-position: 10% 50%;
+      background-size: 10%;
+      background-color: #f2f2f2;
+    }
+    >i{
+      padding: 10px 0;
+    }
+  }
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ececec;
+}
+
+
+/*分页*/
+.ysp-client_page{
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+  .ysp-client_page-prevbtn{
+    width: 20%;
+    height: 44px;
+    background-image: url(./images/ysp-client-prev.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    margin-left: 10px;
+    background-position: left 50%;
+  }
+  .ysp-client_page-nextbtn{
+    width: 20%;
+    height: 44px;
+    background-image: url(./images/ysp-client-next.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: right 50%;
+    margin-right: 10px;
+  }
+  .ysp-client_page-ipt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    >span{
+      // line-height: 44px;
+      margin: 0 5px;
+    }
+    >span:nth-child(2){
+      display: flex;
+      justify-content: space-between;
+      height: 44px;
+      line-height: 44px;
+      align-items: center;
+      input{
+        margin: 0;
+        height: 30px;
+        width: 60px;
+        border-radius: 5px;
+      }
+    }
+    >span:nth-child(3){
+      background-color: #4796ed;
+      color: #fff;
+      padding: 5px 10px;
+      // line-height: 44px;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+.ysp_check_nextbtn{
+    background-image: url(./images/ysp-client-checknext.png) !important;
+}
+
+.ysp_check_prevbtn{
+  background-image: url(./images/ysp-client-checkprev.png) !important;
+  // transform: rotatex(180deg);
+}
+//筛选图标
+div[data-ysp-modelid="saleAchievement"],div[data-ysp-modelid="achievement"],div[data-ysp-modelid="clientQuery"],div[data-ysp-modelid="clientQuery_detail"],div[data-ysp-modelid="goodsMessages"],div[data-ysp-modelid="productFrom"],div[data-ysp-modelid="stockInquire"]{
+  .ysp-header-edit-icon{
+    background:url(./images/ysp-workSummend-screen.png) no-repeat;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.clientQuery_detail_title{
+  background-color: #cfcfcf;
+  padding: 10px 20px;
+  font-size: 14px;
+  // padding-left: 20px;
+}
+
+
+/*****************************分货客户查询end*******************************************/
+
+/*****************************销售业绩总揽，计划达成筛选功能start*******************************************/
+.fixWrapper{
+  position: fixed;
+  left: 0;
+  top: 43px;
+  right: 0;
+  bottom: 0;
+  // 黑色背景,透明度
+  background:rgba(0,0,0,0.5);
+  // 层级位于弹出层父级之下
+  z-index: 150;
+  .fixShadow{
+    position: relative;
+    float: left;
+    height: 100vh!important;
+    // 在遮罩层之上
+    z-index: 160;
+    width: 15%;
+    height: 100%;
+  }
+  .fixContent{
+    position: relative;
+    float: left;
+    height: 100vh;
+    // 在遮罩层之上
+    z-index: 160;
+    background: #FFFFFF;
+    width: 85%;
+    height: calc(100vh-5px);
+    padding: 10px 0 0 10px;
+    overflow: scroll;
+    .fix{
+      border-bottom: 0.1px solid #F0F0F0;
+    }
+    .fixTitle{
+      font-weight: 500;
+      color: #000000;
+    }
+    .dateOpt{
+       padding: 10px;
+     	 width: 100%;
+      .dateList{
+        padding: 5px 0 5px 10px;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px;
+        margin-top: 5px;
+        span:first-child{
+          font-size: 12px;
+          display: inline-block;
+          width: 80%;
+        }
+        span:last-child{
+          display: inline-block;
+          width: 20%;
+          i{
+            width: 15px;
+            height: 15px;
+            display: block;
+            margin: 0 auto;
+            background: url(./images/time.png) no-repeat;
+            background-size: 15px 15px;
+          }
+        } 
+      }
+    }
+    .timeOpt{
+       padding: 10px;
+     	 width: 100%;
+      .timeList{
+        padding: 10px 0 5px 0;
+        span{
+          display: inline-block;
+          width: 30%;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 3px;
+          background:#F2F2F2;
+          margin-right: 3%;
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+    .searchOpt{
+       padding: 10px;
+     	 width: 100%;
+      .searchList{
+        padding: 10px 0 0 0;
+      	select{
+          margin: 0;
+          padding: 0;
+          display: inline-block;
+          width: 30%;
+          height: 30px;
+          line-height: 30px;
+          border: 1px solid #CCCCCC;
+          border-radius: 3px;
+          font-size: 12px;
+          padding: 0 5px 0 10px;
+        }
+        input{
+          margin: 0;
+          padding: 0;
+          display: inline-block;
+          width: 60%;
+          margin-left: 6%;
+          height: 30px;
+          line-height: 30px;
+          border: 1px solid #CCCCCC;
+          border-radius: 3px;
+          outline: none;
+          text-indent: 20px;
+          background-image: url("images/query-icon.png");
+          background-repeat: no-repeat;
+          background-position: 20% 47%;
+          background-size: 16px;
+          text-align: center;
+        }  
+      }
+    }
+    .searchRes{
+      padding: 10px;
+     	width: 95%;
+      height: 200px;
+      overflow-y: scroll;
+      margin-bottom: 25px;
+      background: #F2F2F2;
+      ul{
+        li{
+          font-size: 14px;
+          width: 100%;
+          padding: 5px 0 5px 5px;
+          word-wrap: break-word;
+          word-break: break-all;
+          overflow: hidden;
+          
+        }
+        .select{
+          color: #F00;
+        }
+      }
+    }
+    .fixSelected{
+      color: #F00;
+      border: 1px solid #F00;
+      background: #FFFFFF!important;
+    }
+    .inquire{
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 85%;
+      height:50px;
+      text-align: center;
+      line-height: 50px;
+      color: #FFFFFF;
+      background: #4895ED;
+    }
+  }
+}
+/*****************************销售业绩总揽，计划达成筛选功能end*******************************************/
+
+/*   __客户360  5-31 lyh  基本信息滑动__   */
+.basicScroll{
+    min-width: 100%;
+    overflow: scroll;
+    white-space: nowrap;
+}
+.fixContent{
+  height: 100vh;
+}
+/*   __客户360  5-31 lyh  基本信息滑动__   */

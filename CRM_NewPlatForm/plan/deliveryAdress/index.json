@@ -68,13 +68,50 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
+    },
+    "control378_mhTltX": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"mainContainer\"]//DIV[@id=\"recAddr-border\"]/DIV[1]/DIV[2]",
+              "descendant::DIV[@id=\"mainContainer\"]//DIV[@id=\"recAddr-border\"]//DIV",
+              "descendant::DIV[@id=\"recAddr-border\"]//DIV"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.recAddr.content DIV.commpnPage"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control378_mhTltX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
     }
   },
   "contexts": {
     "context47_hOq8gs": {
       "controls": [
         "control166_2meerB",
-        "control167_LhO04M"
+        "control167_LhO04M",
+        "control378_mhTltX"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -134,6 +171,21 @@
               }
             }
           }
+        },
+        {
+          "id": "uiControl364_S2KBku",
+          "controlId": "control378_mhTltX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl364_S2KBku",
+                "onGetTemplate": "getTemplate_uiControl364_S2KBku"
+              }
+            }
+          }
         }
       ]
     }
@@ -149,7 +201,8 @@
     "page/urls": {
       "contexts": {
         "context47_hOq8gs": [
-          "192.168.1.227/pttlCrm/cust/customerInfo/getCustomerShipAddress"
+          "192.168.1.227/pttlCrm/cust/customerInfo/getCustomerShipAddress",
+          "192.168.1.227/pttlCrm/cust/customerInfo/getCustomerShipAddressAttac"
         ]
       }
     },
@@ -165,6 +218,22 @@
             "clientMenu",
             "leftArrow",
             "mainContainer",
+            "publicHead",
+            "recAddr-border",
+            "rightArrow"
+          ],
+          [
+            "Close",
+            "Page",
+            "Page_attac",
+            "attacBodyContent",
+            "bodyContent",
+            "brandHeader",
+            "clientInfoMenu",
+            "clientMenu",
+            "leftArrow",
+            "mainContainer",
+            "page_selectPageNum",
             "publicHead",
             "recAddr-border",
             "rightArrow"
@@ -193,6 +262,30 @@
             "receipt-address-head",
             "right-arrow",
             "serch",
+            "table"
+          ],
+          [
+            "active",
+            "addition-rec",
+            "additionrec-head",
+            "additon-rec",
+            "address-receipt",
+            "commpnPage",
+            "content",
+            "head",
+            "head-detile",
+            "head-tab",
+            "head-title",
+            "left-arrow",
+            "pagination",
+            "recAddr",
+            "receipt-address-head",
+            "right-arrow",
+            "skip",
+            "skip-num",
+            "skip-right-icon",
+            "skip_count",
+            "skip_right_goto",
             "table"
           ]
         ]
@@ -223,6 +316,32 @@
             "THEAD/TR/TH",
             "TR/TD/INPUT-checkbox",
             "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/DIV/BUTTON",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H2",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "LI/SELECT/OPTION",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/INPUT-checkbox",
+            "UL/LI/A",
+            "UL/LI/INPUT-number",
+            "UL/LI/SELECT",
+            "UL/LI/SPAN"
           ]
         ]
       }

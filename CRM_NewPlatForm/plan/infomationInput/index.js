@@ -9,13 +9,14 @@
       //   data.push(elem.textContent);
       // }
       if (elem) {
-        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
-          setTimeout(function () {
-            ysp.appMain.hideLoading();
-          }, 5000);
-        } else {
-          ysp.appMain.showLoading();
-        }return load;
+        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading'); // if (load == null) {
+        //   setTimeout(function () {
+        //     ysp.appMain.hideLoading();
+        //   }, 5000);
+        // } else {
+        //   ysp.appMain.showLoading();
+        // }
+        return load;
       }
     },
     doAction_uiControl187_1hG0iv: function (data, elem) {

@@ -148,7 +148,7 @@
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.1\\.227\\/pttlCrm\\/res\\/js\\/customerVisitInfo\\.js"
+        "http:\\/\\/192\\.168\\.1\\.227\\/pttlCrm\\/res\\/js\\/customerVisitInfo\\.js.*"
       ],
       "target_url": "override/customerVisitInfo.js",
       "default_url": "http://192.168.1.227/pttlCrm/res/js/customerVisitInfo.js"
@@ -225,10 +225,10 @@
     },
     {
       "origin_url": [
-        "http:\\/\\/192\\.168\\.1\\.227\\/ptDataShow\\/js\\/salesAll\\/common\\.js.*"
+        "http:\\/\\/192\\.168\\.1\\.227\\/ptDataShow\\/js\\/salesAll\\/common\\.js"
       ],
       "target_url": "override/common.js",
-      "default_url": "http://192.168.1.227/ptDataShow/js/salesAll/common.js.*"
+      "default_url": "http://192.168.1.227/ptDataShow/js/salesAll/common.js"
     },
     {
       "origin_url": [
@@ -274,14 +274,14 @@
     },
     {
       "origin_url": [
-        "http://192.168.1.227/pttlCrm/res/js/workSummary.js"
+        "http:\\/\\/192\\.168\\.1\\.227\\/pttlCrm\\/res\\/js\\/workSummary\\.js.*"
       ],
       "target_url": "override/workSummary.js",
       "default_url": "http://192.168.1.227/pttlCrm/res/js/workSummary.js"
     },
     {
       "origin_url": [
-        "http://192.168.1.227/pttlCrm/res/js/newPlanPop.js"
+        "http:\\/\\/192\\.168\\.1\\.227\\/pttlCrm\\/res\\/js\\/newPlanPop\\.js.*"
       ],
       "target_url": "override/newPlanPop.js",
       "default_url": "http://192.168.1.227/pttlCrm/res/js/newPlanPop.js"
@@ -292,6 +292,34 @@
       ],
       "target_url": "override/commons.js",
       "default_url": "http://192.168.1.227/ptDataShow/js/salesReach/common.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.1\\.227\\/ptDataShow\\/js\\/smartLife\\/smartLife\\.js"
+      ],
+      "target_url": "override/smartLife.js",
+      "default_url": "http://192.168.1.227/ptDataShow/js/smartLife/smartLife.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.1\\.227\\/ptDataShow\\/js\\/smartLife\\/chart\\.js"
+      ],
+      "target_url": "override/chart.js",
+      "default_url": "http://192.168.1.227/ptDataShow/js/smartLife/chart.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.1\\.227\\/ptDataShow\\/js\\/smartLife\\/dataAll\\.js"
+      ],
+      "target_url": "override/dataAll.js",
+      "default_url": "http://192.168.1.227/ptDataShow/js/smartLife/dataAll.js"
+    },
+    {
+      "origin_url": [
+        "http:\\/\\/192\\.168\\.1\\.227\\/ptDataShow\\/js\\/salesReach\\/customer\\.js.*"
+      ],
+      "target_url": "override/customer.js",
+      "default_url": "http://192.168.1.227/ptDataShow/js/salesReach/customer.js.*"
     }
   ],
   "adapter_urls": [
@@ -466,11 +494,10 @@
       "title": "login",
       "url": "adapter://CRM_NewPlatForm/plan/login/index.json",
       "matcher": [
-        "^http:\\/\\/192\\.168\\.1\\.227\\/pttlCrm\\/login"
+        "^http:\\/\\/192\\.168\\.1\\.227\\/pttlCrm\\/login",
+        "http:\\/\\/192\\.168\\.1\\.227\\/pttlCrm\\/res\\/page\\/login\\/login\\.html"
       ],
-      "demo": [
-        "http://192.168.1.227/pttlCrm/login"
-      ]
+      "demo": []
     },
     {
       "title": "customerWorkspace",
@@ -686,7 +713,7 @@
   "name": "普天CRM_新平台",
   "default_url": "http://192.168.1.227/pttlCrm/res/index.html",
   "scope": "CRM_NewPlatForm",
-  "start_url": "https://vcrm-uat.pttl.com:8080/pttlCrm/res/index.html",
-  "update_time": 1556518244656,
+  "start_url": "http://192.168.1.227/pttlCrm/res/index.html",
+  "update_time": 1559526631760,
   "runtime_env": "1webview"
 }

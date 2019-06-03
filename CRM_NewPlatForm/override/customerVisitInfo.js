@@ -1379,7 +1379,6 @@
 	            $("#huaweiFDTags").html(getBusinessTags(item.huaweiFDList));
 	            $("#huaweiExperienceStoreTags").html(getBusinessTags(item.huaweiExperienceStoreList));
 	            $("#huaweiFuseTags").html(getBusinessTags(item.huaweiFuseList));
-	            $("#huaweiProvincePackageTags").html(getBusinessTags(item.huaweiProvincePackageList));
 	            $("#samsungDivisonTags").html(getBusinessTags(item.samsungDivisonList));
 	            $("#fenXiaoDivisonTags").html(getBusinessTags(item.fenXiaoDivisonList));
 	            $("#otherInforTags").html(getBusinessTags(item.otherInforList));
@@ -1423,8 +1422,7 @@
 	    //$(".m-popBox>#body>.content>.center").height(popInforsH);
 	}
 	function render() {
-     var temp = '\n        <div class="content">\n            <div class="center">\n                <!--\u62A5\u544A-->\n                <div class="m-report-infors">\n                    <div class="content" id="reportContent">\n                        <div class="header clearfix">\n                            <span>\u62DC\u8BBF\u5BF9\u8C61\uFF1A</span>\n                            <input type="text" id="VisitTarget" name="VisitTarget" maxlength=\'50\'/>\n                            <span>\u804C\u52A1\uFF1A</span>\n                            <input type="text" id="TargetPosition" name="TargetPosition" maxlength=\'50\'/>\n                            <span>\u62DC\u8BBF\u65F6\u957F\uFF1A</span>\n                            <select id="VisitTime" name="VisitTime" style="width:120px;height:30px;">\n                                <option value="">--\u8BF7\u9009\u62E9--</option>\n                                <option value="10\u5206\u949F">10\u5206\u949F</option>\n                                <option value="30\u5206\u949F">30\u5206\u949F</option>\n                                <option value="60\u5206\u949F">60\u5206\u949F</option>\n                                <option value="60\u5206\u949F\u4EE5\u4E0A">60\u5206\u949F\u4EE5\u4E0A</option>\n                            </select>\n                            <!--<a href="javascript:;" class="inform-coll">\u4FE1\u606F\u91C7\u96C6</a>-->\n                        </div>\n                        <div class="body clearfix" id="reportImportContent">\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3AFD</h6>\n                                <textarea name="huaweiFD" id="huaweiFD" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiFDTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u4F53\u9A8C\u5E97</h6>\n                                <textarea name="HuaweiExperienceStore" id="HuaweiExperienceStore" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiExperienceStoreTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u878D\u5408</h6>\n                                <textarea name="HuaweiFuse" id="HuaweiFuse" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiFuseTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u7701\u5305</h6>\n                                <textarea name="HuaweiProvincePackage" id="HuaweiProvincePackage" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiProvincePackageTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u4E09\u661F</h6>\n                                <textarea name="SamsungDivison" id="SamsungDivison" autoHeight="true"></textarea>\n                                <div class="tags-box" id="samsungDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8</h6>\n                                <textarea name="FenXiaoDivison" id="FenXiaoDivison" autoHeight="true"></textarea>\n                                <div class="tags-box" id="fenXiaoDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5176\u4ED6\u4FE1\u606F</h6>\n                                <textarea name="OtherInfor" id="OtherInfor" autoHeight="true"></textarea>\n                                <div class="tags-box" id="otherInforTags"></div>\n                            </div>\n\n                            <div class="m-uploading">\n                                <h6 class="title">\u4E0A\u4F20\u7167\u7247</h6>\n                                <div class="imagesBox" style="height:auto;">\n                                    <div class="uploadBtn" id="filePicker"></div>\n                                    <div class="images" id="fileList">\n                                        <!--.temp\u5360\u4F4D\u7528\u7684-->\n                                        <div class="temp"></div>\n                                    </div>\n                                </div>\n                                <a href="javascript:;" class="textBtn"></a>\n                            </div>\n                        \n                            <div class="lists-one lists-one1">\n                                <h6 class="title">\u6C47\u62A5</h6>\n                                <div class="chate-open">\n                                    <a href="javascript:;" id="DisplayContact"><em>+</em>\u9009\u62E9\u5BF9\u8C61</a>\n                                </div>\n                                <div class="chate-box" id="ContactUsers">\n                                    <!-- <span><i class="icon chate-del"></i>\u7956\u5927\u5BFF</span> -->\n                                </div>\n                            </div>\n\n                        </div>\n\n                        <div class="footer">\n                            <div class="m-btns m-btns-rd">\n                                <!--\u7981\u7528\u72B6\u6001\uFF0C\u6DFB\u52A0\u7C7B\u540Ddisabled-->\n                                <a href="javascript:;" class="u-btn u-btn-success"\n                                    id="customerReportPopBtnSuccess">\u4FDD\u5B58\u8349\u7A3F</a>\n                                <a href="javascript:;" class="u-btn u-btn-primary"\n                                    id="customerReportPopBtnPrimary">\u786E\u8BA4</a>\n                                <a href="javascript:;" class="u-btn u-btn-default" id="customerReportPopBack">\u8FD4\u56DE</a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class="m-contact" id="ContactAlert"><span id="dragtop"></span><span id="dragright"></span><span id="dragbottom"></span><span id="dragleft"></span></div>\n    ';
-	    
+	    var temp = '\n        <div class="content">\n            <div class="center">\n                <!--\u62A5\u544A-->\n                <div class="m-report-infors">\n                    <div class="content" id="reportContent">\n                        <div class="header clearfix">\n                            <span>\u62DC\u8BBF\u5BF9\u8C61\uFF1A</span>\n                            <input type="text" id="VisitTarget" name="VisitTarget" maxlength=\'50\'/>\n                            <span>\u804C\u52A1\uFF1A</span>\n                            <input type="text" id="TargetPosition" name="TargetPosition" maxlength=\'50\'/>\n                            <span>\u62DC\u8BBF\u65F6\u957F\uFF1A</span>\n                            <select id="VisitTime" name="VisitTime" style="width:120px;height:30px;">\n                                <option value="">--\u8BF7\u9009\u62E9--</option>\n                                <option value="10\u5206\u949F">10\u5206\u949F</option>\n                                <option value="30\u5206\u949F">30\u5206\u949F</option>\n                                <option value="60\u5206\u949F">60\u5206\u949F</option>\n                                <option value="60\u5206\u949F\u4EE5\u4E0A">60\u5206\u949F\u4EE5\u4E0A</option>\n                            </select>\n                            <!--<a href="javascript:;" class="inform-coll">\u4FE1\u606F\u91C7\u96C6</a>-->\n                        </div>\n                        <div class="body clearfix" id="reportImportContent">\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3AFD\u4E1A\u52A1\u4E8B\u4E1A\u90E8</h6>\n                                <textarea name="huaweiFD" id="huaweiFD" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiFDTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u534E\u4E3A\u4F53\u9A8C\u5E97\u4E1A\u52A1\u4E8B\u4E1A\u90E8</h6>\n                                <textarea name="HuaweiExperienceStore" id="HuaweiExperienceStore" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiExperienceStoreTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u878D\u5408\u53CA\u914D\u4EF6\u4E1A\u52A1\u4E8B\u4E1A\u90E8</h6>\n                                <textarea name="HuaweiFuse" id="HuaweiFuse" autoHeight="true"></textarea>\n                                <div class="tags-box" id="huaweiFuseTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u4E09\u661F\u4E1A\u52A1\u4E8B\u4E1A\u90E8</h6>\n                                <textarea name="SamsungDivison" id="SamsungDivison" autoHeight="true"></textarea>\n                                <div class="tags-box" id="samsungDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5927\u5BA2\u6237\u4E1A\u52A1\u90E8</h6>\n                                <textarea name="FenXiaoDivison" id="FenXiaoDivison" autoHeight="true"></textarea>\n                                <div class="tags-box" id="fenXiaoDivisonTags"></div>\n                            </div>\n                            <div class="lists-one">\n                                <h6>\u5176\u4ED6\u4FE1\u606F</h6>\n                                <textarea name="OtherInfor" id="OtherInfor" autoHeight="true"></textarea>\n                                <div class="tags-box" id="otherInforTags"></div>\n                            </div>\n\n                            <div class="m-uploading">\n                                <h6 class="title">\u4E0A\u4F20\u7167\u7247</h6>\n                                <div class="imagesBox" style="height:auto;">\n                                    <div class="uploadBtn" id="filePicker"></div>\n                                    <div class="images" id="fileList">\n                                        <!--.temp\u5360\u4F4D\u7528\u7684-->\n                                        <div class="temp"></div>\n                                    </div>\n                                </div>\n                                <a href="javascript:;" class="textBtn"></a>\n                            </div>\n                        \n                            <div class="lists-one lists-one1">\n                                <h6 class="title">\u6C47\u62A5</h6>\n                                <div class="chate-open">\n                                    <a href="javascript:;" id="DisplayContact"><em>+</em>\u9009\u62E9\u5BF9\u8C61</a>\n                                </div>\n                                <div class="chate-box" id="ContactUsers">\n                                    <!-- <span><i class="icon chate-del"></i>\u7956\u5927\u5BFF</span> -->\n                                </div>\n                            </div>\n\n                        </div>\n\n\n                        <div class="footer">\n                            <div class="m-btns m-btns-rd">\n                                <!--\u7981\u7528\u72B6\u6001\uFF0C\u6DFB\u52A0\u7C7B\u540Ddisabled-->\n                                <a href="javascript:;" class="u-btn u-btn-success"\n                                    id="customerReportPopBtnSuccess">\u4FDD\u5B58\u8349\u7A3F</a>\n                                <a href="javascript:;" class="u-btn u-btn-primary"\n                                    id="customerReportPopBtnPrimary">\u786E\u8BA4</a>\n                                <a href="javascript:;" class="u-btn u-btn-default" id="customerReportPopBack">\u8FD4\u56DE</a>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class="m-contact" id="ContactAlert"><span id="dragtop"></span><span id="dragright"></span><span id="dragbottom"></span><span id="dragleft"></span></div>\n    ';
 	    return temp;
 	}
 	function initFn(data) {
@@ -2059,7 +2057,10 @@
 	                $("#huaweiFD").val(StringUtils.globReplace(item.huaweiFD)); //华为FD
 	                $("#HuaweiExperienceStore").val(StringUtils.globReplace(item.huaweiExperienceStore)); //华为体验店
 	                $("#HuaweiFuse").val(StringUtils.globReplace(item.huaweiFuse)); //华为融合
-	                $("#HuaweiProvincePackage").val(StringUtils.globReplace(item.huaweiProvincePackage)); //华为省包
+                /****
+	                $("#HuaweiProvincePackage").val(StringUtils.globReplace(item.huaweiProvincePackage)); 
+                  **/
+                  //华为省包
 	                $("#SamsungDivison").val(StringUtils.globReplace(item.xCommentsSanXing)); //三星事业部
 	                $("#FenXiaoDivison").val(StringUtils.globReplace(item.xCommentsFenxiao)); //大客户业务部
 	                $("#OtherInfor").val(StringUtils.globReplace(item.xCommentsOther)); //其他信息
@@ -2115,7 +2116,9 @@
 	                $("#huaweiFD").val(""); //华为FD
 	                $("#HuaweiExperienceStore").val(""); //华为体验店
 	                $("#HuaweiFuse").val(""); //华为融合
+                /***
 	                $("#HuaweiProvincePackage").val(""); //华为省包
+                  ***/
 	                $("#SamsungDivison").val(""); //三星事业部
 	                $("#FenXiaoDivison").val(""); //分销事业部
 	                $("#OtherInfor").val(""); //其他信息  
@@ -2204,9 +2207,56 @@
 	        data[$(this).attr("name")] = textVal;
 	        content += textVal;
 	    });
-	    data["VisitTarget"] = $("#VisitTarget").val();
+	    /***data["VisitTarget"] = $("#VisitTarget").val();
 	    data["TargetPosition"] = $("#TargetPosition").val();
-	    data["VisitTime"] = $("#VisitTime").val();
+	    data["VisitTime"] = $("#VisitTime").val();***/
+			var visitTarget = $("#VisitTarget").val();
+      if(visitTarget == ""){
+          layerUtils.info("请填写拜访对象！");
+          return ;
+      } 
+      if(visitTarget.length > 50){
+          layerUtils.info("拜访对象数据长度超限！");
+          return;
+      } 
+      data["VisitTarget"] = visitTarget;
+
+      var targetPosition = $("#TargetPosition").val();
+      if(targetPosition == ""){
+          layerUtils.info("请填写职务！");
+          return ;
+      } 
+      if(targetPosition.length > 50){
+          layerUtils.info("职务数据长度超限！");
+          return;
+      }
+      data["TargetPosition"] = targetPosition;
+
+      var visitTime = $("#VisitTime").val();
+      if(visitTime == ""){
+          layerUtils.info("请填写拜访时长！");
+          return ;
+      } 
+      data["VisitTime"] = visitTime;
+
+      var msg = "";
+      var deptId = ['huaweiFD','HuaweiExperienceStore','HuaweiFuse','SamsungDivison','FenXiaoDivison','OtherInfor'];
+      for (var i=0;i<deptId.length;i++){ 
+          var temp = data[deptId[i]].replace(/[^\u4e00-\u9fa5]/gi,"");
+          if(((data[deptId[i]].length - temp.length) + temp.length * 3) > 1500){
+              if(deptId[i] == 'huaweiFD'){msg = "华为FD内容长度超限!";}
+              if(deptId[i] == 'HuaweiExperienceStore'){msg = "华为体验店内容长度超限!";}
+              if(deptId[i] == 'HuaweiFuse'){msg = "华为融合内容长度超限!";}
+              if(deptId[i] == 'SamsungDivison'){msg = "三星内容长度超限!";}
+              if(deptId[i] == 'FenXiaoDivison'){msg = "大客户业务部内容长度超限!";}
+              if(deptId[i] == 'OtherInfor'){msg = "其他信息内容长度超限!";}
+              break;
+          }
+      }
+      if(msg != ""){
+          layerUtils.error(msg);
+          return;
+      }
 
 	    if (content == "") {
 	        layerUtils.info("请至少填写一个内容！");
@@ -2244,13 +2294,6 @@
 	        }
 	    });
 	    data.huaweiFuseTags = huaweiFuseTags;
-	    var huaweiProvincePackageTags = "";
-	    $("#huaweiProvincePackageTags button").each(function () {
-	        if ($(this).attr('class') == 'activ') {
-	            huaweiProvincePackageTags += $(this).text() + ",";
-	        }
-	    });
-	    data.huaweiProvincePackageTags = huaweiProvincePackageTags;
 	    var samsungDivisonTags = "";
 	    $("#samsungDivisonTags button").each(function () {
 	        if ($(this).attr('class') == 'activ') {
@@ -2289,11 +2332,20 @@
 	            //if(data.ReportStatus == "已提交"){
 	            referenceParentHtmlFn("报告", data.row_Id); //刷新父页面
 	            //}
-            	layerUtils.success('提交成功！', { time: 1000 });//后添加
+            	if(data.ReportStatus == "已提交"){
+                	layerUtils.success('提交成功！', { time: 1000 });//后添加
+	            }else if(data.ReportStatus == "草稿"){
+                  layerUtils.success('保存成功！', { time: 1000 });//后添加     
+             	}else{
+                
+              }
+            	
 	            iframeUtils.hideSecondIframe(); //关闭
-	        } else {
-	            layerUtils.error("保存失败！");
-	        }
+	        }else if(reslult.message != null && reslult.message != ''){
+            layerUtils.error(reslult.message);
+          } else {
+                layerUtils.error("保存失败！");
+            }
 	        reportSubmit = '0';
 	    });
 	}
@@ -2340,7 +2392,7 @@
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	var load = exports.load = function load(data) {
-	    $("#body").html(render()); //加载静态页面
+	    $("#body").html(render()); //加载静态页面
 	    $(window).resize(function () {
 	        initReportCss();
 	    });
@@ -2362,7 +2414,7 @@
 	        //签到可用
 	        inintPageHtmlFn();//PC注释掉 移动端要解开
 	        initMap();
-	        $("#longitude").attr("style", "display:none;"); //签到经度
+	        $("#longitude").attr("style", "display:none;"); //签到经度
 	        $("#latitude").attr("style", "display:none;"); //签到纬度
 	        $("#address").attr("style", "display:none;"); //地址
         	
@@ -2374,6 +2426,14 @@
               }
               doAction(data);
           });
+        
+       	// $(".customersign-active").unbind('click').on('click', function() {
+         	// if ($("#address").html() == "") {
+         	// layerUtils.info("请等待地图加载完毕！");
+         	// return;
+         	// }
+         	// doAction(data);
+         	// });
 	    }
 
 	    /** PC端 禁用签到 */
@@ -2448,7 +2508,9 @@
 	                signIn(param, referenceParentHtmlFn, data);
 	            } else {
 	                signInOutScope = '1';
+                	window.closeModel();
 	                layerUtils.info("当前签到位置与客户地址距离超过500米,请填写备注信息！");
+                	
 	                return;
 	            }
 	        });
@@ -2459,10 +2521,9 @@
 
 	var signSubmit = '0';
 	function signIn(param, referenceParentHtmlFn, data) {
-	    if (signSubmit == '1') {
+	    if (signSubmit == '1') {
 	        return;
 	    }
-    debugger;
 	    signSubmit = '1';
 	    param.signInOutScope = signInOutScope;
 	    ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignIn", param, null, function (reslult) {
@@ -2742,6 +2803,7 @@
 	                signOut(param, referenceParentHtmlFn, data);
 	            } else {
 	                signOutOutScope = '1';
+                	window.closeModel();
 	                layerUtils.info("当前签出位置与签到地址距离超过500米,请填写备注信息！");
 	                return;
 	            }

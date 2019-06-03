@@ -99,34 +99,40 @@
     getData_control124_1ZAE1L: function (elem) {
       if (!elem) {
         return;
-      }var data = [];var tds = elem.querySelectorAll("td");var obj = {};for (var i = 1; i < tds.length; i++) {
+      }var data = [];var tds = elem.querySelectorAll("td");var obj = {};for (var i = 0; i < tds.length; i++) {
         var _string = tds[i].getAttribute("aria-describedby");var _index = _string.lastIndexOf('_');var _str = _string.substring(_index + 1);var _textContent = tds[i].textContent;switch (_str) {case "targetSalesCount":
             obj.targetSalesCount = _textContent.trim();break;case "realSalesCount":
             obj.realSalesCount = _textContent.trim();break;case "targetSalesAmount":
             obj.targetSalesAmount = _textContent.trim();break;case "realSalesAmount":
             obj.realSalesAmount = _textContent.trim();break;case "salesCountPercent":
-            obj.salesCountPercent = parseFloat(_textContent.trim());break;case "salesAmountPercent":
-            obj.salesAmountPercent = parseFloat(_textContent.trim());break;}
+            obj.salesCountPercent = _textContent.trim();break;case "salesAmountPercent":
+            obj.salesAmountPercent = _textContent.trim();break;}
       }data.push(obj);return data;
     },
     doAction_uiControl114_XrbJwG: function (data, elem) {},
     getTemplate_uiControl114_XrbJwG: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lists = data.map(function(d,i){\n      return (\n        <div>\n          <h5 className="title"><i class="icon"></i><span>\u603B\u8BA1</span></h5>\n          <ul>\n            <li><span>\u76EE\u6807\u9500\u91CF</span><b>{data[i].targetSalesCount}</b></li>\n            <li><span>\u76EE\u6807\u9500\u552E\u989D</span><b>{data[i].targetSalesAmount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u91CF</span><b>{data[i].realSalesCount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u552E\u989D</span><b>{data[i].realSalesAmount}</b></li>\n            <li><span>\u9500\u91CF\u8FBE\u6210\u7387</span><b>{data[i].salesCountPercent}%</b></li>\n            <li><span>\u9500\u552E\u989D\u8FBE\u6210\u7387</span><b>{data[i].salesAmountPercent}%</b></li>\n          </ul>\n        </div>\n      )\n    });\n    \n    return (\n      <div className="ysp-tableList-boxSum">\n        {lists}\n      </div>\n    )\n  }\n});';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    var lists = data.map(function (d, i) {\n      return React.createElement(\n        "div",\n        null,\n        React.createElement(\n          "h5",\n          { className: "title" },\n          React.createElement("i", { "class": "icon" }),\n          React.createElement(\n            "span",\n            null,\n            "\\u603B\\u8BA1"\n          )\n        ),\n        React.createElement(\n          "ul",\n          null,\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u76EE\\u6807\\u9500\\u91CF"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].targetSalesCount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u76EE\\u6807\\u9500\\u552E\\u989D"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].targetSalesAmount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u5B9E\\u9645\\u9500\\u91CF"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].realSalesCount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u5B9E\\u9645\\u9500\\u552E\\u989D"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].realSalesAmount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u9500\\u91CF\\u8FBE\\u6210\\u7387"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].salesCountPercent,\n              "%"\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].salesAmountPercent,\n              "%"\n            )\n          )\n        )\n      );\n    });\n\n    return React.createElement(\n      "div",\n      { className: "ysp-tableList-boxSum" },\n      lists\n    );\n  }\n});';
+      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lists = data && data.map(function(d,i){\n      return (\n        <div>\n          <h5 className="title"><i class="icon"></i><span>\u603B\u8BA1</span></h5>\n          <ul>\n            <li><span>\u76EE\u6807\u9500\u91CF</span><b>{data[i].targetSalesCount}</b></li>\n            <li><span>\u76EE\u6807\u9500\u552E\u989D</span><b>{data[i].targetSalesAmount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u91CF</span><b>{data[i].realSalesCount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u552E\u989D</span><b>{data[i].realSalesAmount}</b></li>\n            <li><span>\u9500\u91CF\u8FBE\u6210\u7387</span><b>{data[i].salesCountPercent}</b></li>\n            <li><span>\u9500\u552E\u989D\u8FBE\u6210\u7387</span><b>{data[i].salesAmountPercent}</b></li>\n          </ul>\n        </div>\n      )\n    });\n    \n    return (\n      <div className="ysp-tableList-boxSum">\n        {lists}\n      </div>\n    )\n  }\n});';
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    var lists = data && data.map(function (d, i) {\n      return React.createElement(\n        "div",\n        null,\n        React.createElement(\n          "h5",\n          { className: "title" },\n          React.createElement("i", { "class": "icon" }),\n          React.createElement(\n            "span",\n            null,\n            "\\u603B\\u8BA1"\n          )\n        ),\n        React.createElement(\n          "ul",\n          null,\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u76EE\\u6807\\u9500\\u91CF"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].targetSalesCount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u76EE\\u6807\\u9500\\u552E\\u989D"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].targetSalesAmount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u5B9E\\u9645\\u9500\\u91CF"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].realSalesCount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u5B9E\\u9645\\u9500\\u552E\\u989D"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].realSalesAmount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u9500\\u91CF\\u8FBE\\u6210\\u7387"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].salesCountPercent\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].salesAmountPercent\n            )\n          )\n        )\n      );\n    });\n\n    return React.createElement(\n      "div",\n      { className: "ysp-tableList-boxSum" },\n      lists\n    );\n  }\n});';
     },
 
     getData_control275_2EgUIJ: function (elem) {
       if (elem) {
         var data = { dataLabel: [], flag: [], flags: [] };var a_s = elem.querySelector('#tab-head').querySelectorAll("li");for (var i = 0; i < a_s.length; i++) {
-          var asText = a_s[i].textContent;if (asText.indexOf("销售报表") == -1) {
-            data.dataLabel.push([asText]);
+          var asText = a_s[i].textContent;if (asText != '年度项目达成') {
+            if (asText.indexOf("销售报表") == -1) {
+              data.dataLabel.push([asText]);
+            }
           }
         }return data;
       }return [];
     },
     doAction_uiControl248_nQhTnd: function (data, elem) {
       if (data.eventType == 'click') {
-        var index = +data.dataCustom.index;var lis = elem.querySelector('#tab-head').querySelectorAll("li");lis[index].click();
+        var index = +data.dataCustom.index;var lis = elem.querySelector('#tab-head').querySelectorAll("li");if (index == 1) {
+          lis[2].click();
+        } else {
+          lis[index].click();
+        }
       }
     },
     getTemplate_uiControl248_nQhTnd: function () {
@@ -481,23 +487,23 @@
               //             break;
               //         }
               //       }
-            }if (a) {
+            }if (a >= 0) {
               titleIdx = a;
-            } else if (b) {
+            } else if (b >= 0) {
               titleIdx = b;
-            } else if (c) {
+            } else if (c >= 0) {
               titleIdx = c;
-            } else if (d) {
+            } else if (d >= 0) {
               titleIdx = d;
-            } else if (e) {
+            } else if (e >= 0) {
               titleIdx = e;
-            } else if (f) {
+            } else if (f >= 0) {
               titleIdx = f;
-            } else if (g) {
+            } else if (g >= 0) {
               titleIdx = g;
-            } else if (h) {
+            } else if (h >= 0) {
               titleIdx = h;
-            } else if (l) {
+            } else if (l >= 0) {
               titleIdx = l;
             }if (!_tds[titleIdx].querySelector("a")) {
               deepFlag = false;
@@ -550,11 +556,11 @@
                     for (var z = 0; z < rankTrs.length; z++) {
                       //所有的排名数据
                       var bb = {};var rankTds = rankTrs[z].querySelectorAll("td");for (var w = 0; w < rankTds.length; w++) {
-                        if ("report15" == reportId || "report16" == reportId || "report2-1" == reportId || "report21" == reportId) {
+                        if ("report15" == reportId || "report2-1" == reportId || "report21" == reportId) {
                           bb.branchName = rankTds[1].textContent;bb.salesAmountPercent = rankTds[4].textContent.substr(0, rankTds[4].textContent.length - 1);bb.rank = rankTds[5].textContent;
                         } else if ("report18" == reportId || "report34" == reportId || "report23-1" == reportId) {
                           bb.salerName = rankTds[3].textContent;bb.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);bb.rank = rankTds[6].textContent;
-                        } else if ("report20" == reportId || "report22" == reportId || "report2-1-1" == reportId) {
+                        } else if ("report16" == reportId || "report20" == reportId || "report22" == reportId || "report2-1-1" == reportId) {
                           bb.branchName = rankTds[1].textContent;bb.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);bb.rank = rankTds[6].textContent;
                         } else if ("report33" == reportId) {
                           bb.officeName = rankTds[2].textContent;bb.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);bb.rank = rankTds[6].textContent;
@@ -576,11 +582,11 @@
                     for (var z1 = 0; z1 < rankTrs.length; z1++) {
                       var dd = {};if (rankTrs[z1].getAttribute("class") == "activ") {
                         var rankTds = rankTrs[z1].querySelectorAll("td");for (var w1 = 0; w1 < rankTds.length; w1++) {
-                          if ("report15" == reportId || "report16" == reportId || "report2-1" == reportId || "report21" == reportId) {
+                          if ("report15" == reportId || "report2-1" == reportId || "report21" == reportId) {
                             dd.branchName = rankTds[1].textContent;dd.salesAmountPercent = rankTds[4].textContent.substr(0, rankTds[4].textContent.length - 1);dd.rank = rankTds[5].textContent;
                           } else if ("report18" == reportId || "report34" == reportId || "report23-1" == reportId) {
                             dd.salerName = rankTds[3].textContent;dd.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);dd.rank = rankTds[6].textContent;
-                          } else if ("report20" == reportId || "report22" == reportId || "report2-1-1" == reportId) {
+                          } else if ("report16" == reportId || "report20" == reportId || "report22" == reportId || "report2-1-1" == reportId) {
                             dd.branchName = rankTds[1].textContent;dd.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);dd.rank = rankTds[6].textContent;
                           } else if ("report33" == reportId) {
                             dd.officeName = rankTds[2].textContent;dd.salesAmountPercent = rankTds[5].textContent.substr(0, rankTds[5].textContent.length - 1);dd.rank = rankTds[6].textContent;

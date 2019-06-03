@@ -41,10 +41,12 @@
             }data.contentType.push(spanData);
           }
         });
-      }var spansTwo = optionAll[2].querySelectorAll("span");if (spansTwo.length > 0) {
+      }
+      var spansTwo = optionAll[2].querySelectorAll("span");if (spansTwo.length > 0) {
         [].forEach.call(spansTwo, function (span, index) {
           if (0 != index) {
-            var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
+            var spanData = [];var text = span.textContent;
+            spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
               spanData.push(true);
             } else {
               spanData.push(false);
@@ -64,8 +66,7 @@
       }var spansFour = optionAll[4].querySelectorAll("span");if (spansFour.length > 0) {
         [].forEach.call(spansFour, function (span, index) {
           if (0 != index) {
-            var spanData = [];
-            var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
+            var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
               spanData.push(true);
             } else {
               spanData.push(false);
