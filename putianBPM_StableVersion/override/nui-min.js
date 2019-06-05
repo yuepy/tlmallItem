@@ -18972,6 +18972,7 @@ mini.extend(mini.Tabs, mini.Control, {
         this._headerMenu.setItems(b)
     },
     _doMenuSelectTab: function(c) {
+      debugger;
         var b = c.item;
         var a = this._getTabBy_Id(b.id);
         this.activeTab(a)
@@ -19195,6 +19196,7 @@ mini.extend(mini.Tabs, mini.Control, {
         return this.activeIndex
     },
     activeTab: function(a) {
+      debugger;
       //wxl，tab页切换，改变面板里iframe地址
        _ysp_top.history.pushState(a.url + "&" + _ysp_top.tenderType, null, a.url + '&' + _ysp_top.tenderType);
         this.setActiveIndex(a)
