@@ -153,36 +153,6 @@
       "monitored": true,
       "frameXPath": ""
     },
-    "control122_ThVhza": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "BODY.body-bg DIV.g-main DIV.m-header"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control122_ThVhza"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "monitored": true,
-      "frameXPath": ""
-    },
     "control174_u04FZR": {
       "location": {
         "data": {
@@ -278,38 +248,6 @@
       "roles": "element,custom",
       "monitored": true,
       "frameXPath": ""
-    },
-    "control379_1a8e9o": {
-      "location": {
-        "data": {
-          "tagName": "DIV"
-        },
-        "userData": {
-          "data": [],
-          "force": false
-        },
-        "locators": [
-          {
-            "id": "@class/word",
-            "prob": 1,
-            "value": "DIV.g-main DIV.m-body DIV.filter-search.reach-center"
-          },
-          {
-            "id": "path/ordinal",
-            "prob": 1,
-            "value": "/HTML[1]/BODY[1]/DIV[2]/DIV[2]/DIV[3]"
-          }
-        ]
-      },
-      "events": {
-        "onGetData": "getData_control379_1a8e9o"
-      },
-      "intendedRole": "custom",
-      "roles": "element,custom",
-      "ignoreVisibility": true,
-      "monitored": true,
-      "frameXPath": "",
-      "componentType": "custom"
     }
   },
   "contexts": {
@@ -319,11 +257,9 @@
         "control128_5Gm11K",
         "control138_3EstT8",
         "control173_yZJTIx",
-        "control122_ThVhza",
         "control174_u04FZR",
         "control257_pLPdT2",
-        "control258_htTdgO",
-        "control379_1a8e9o"
+        "control258_htTdgO"
       ],
       "anchors": [],
       "urlAnchor": [
@@ -333,16 +269,6 @@
   },
   "flows": {
     "flow90_2Xd8a2": {
-      "toContexts": [
-        {
-          "toContextId": "context30_fLMQCM"
-        }
-      ]
-    },
-    "flow157_axsnxy": {
-      "fromContextId": "context30_fLMQCM",
-      "fromAction": "doAction",
-      "fromControlId": "control122_ThVhza",
       "toContexts": [
         {
           "toContextId": "context30_fLMQCM"
@@ -413,36 +339,6 @@
               "events": {
                 "onDoAction": "doAction_uiControl121_Umg5QL",
                 "onGetTemplate": "getTemplate_uiControl121_Umg5QL"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl365_RwDQcb",
-          "controlId": "control379_1a8e9o",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl365_RwDQcb",
-                "onGetTemplate": "getTemplate_uiControl365_RwDQcb"
-              }
-            }
-          }
-        },
-        {
-          "id": "uiControl120_Fgb2zu",
-          "controlId": "control122_ThVhza",
-          "display": {
-            "adapterId": "custom",
-            "type": "custom",
-            "adapter": {
-              "templateType": "react",
-              "events": {
-                "onDoAction": "doAction_uiControl120_Fgb2zu",
-                "onGetTemplate": "getTemplate_uiControl120_Fgb2zu"
               }
             }
           }
