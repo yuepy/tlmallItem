@@ -135,6 +135,7 @@
             data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);
           } else if (item.querySelector("td:nth-child(4)").querySelector("input:last-child")) {
             data.base.con.push(item.querySelector("td:nth-child(4)").querySelector('span').querySelector("input:last-child").value);
+            data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
           } // data.base.con.push(item.querySelector("td:nth-child(2)").querySelector("input").value);
           // data.base.con.push(item.querySelector("td:nth-child(4)").querySelector("input:last-child").value);
         } else {

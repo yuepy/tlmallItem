@@ -59,9 +59,7 @@
       if(ysp.customHelper.AndroidBackFlag == 'destination'){
         ysp.customHelper.BackReload(url,model);
       }
-      // if(ysp.customHelper.AndroidBackFlag == 'BigData'){
-      //   ysp.runtime.Browser.activeBrowser.contentWindow.histroy.back();
-      // }
+      
       if(ysp.customHelper.AndroidBackFlag == 'AndroidHistory'){
         ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
       }
