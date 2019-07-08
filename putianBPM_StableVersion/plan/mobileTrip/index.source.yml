@@ -1,0 +1,624 @@
+getTemplate_uiControl301_9UHihR: |-
+  module.exports = React.createClass({
+    render: function() {
+      return (
+        <div>
+          自定义组件用来适配基本组件无法适配的页面元素，您可以通过右键打开该自定义组件编辑器进行编辑
+        </div>
+      )
+    }
+  });
+getData_control304_4fobJJ: return elem.tagName
+doAction_uiControl301_9UHihR: ''
+getTemplate_uiControl301_aK6cKH: "import {\n  Header,\n  HeaderLeft,\n  HeaderRight\n} from 'ysp-interior-components';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  onClick=(e)=>{\n    var handler=this.props.customHandler;\n     if(handler) {                                    \n       handler({\n         // data:e.target.className,\n         data:this.props.customData,\n         eventType:'click'                         \n       })\n     }\n  }\n  render() {\n    var  _this = this;\n    var data=this.props.customData\t||\t[];\n    if(data){\n      return (\n      <Header amStyle=\"primary\" title=\"工作项执行\"\tclassName=\"ysp-flex-top\">\n        <HeaderLeft>\n          <AMUI.Button amStyle=\"primary\" style={{ margin: 0 }} onClick={()=>{\n              const handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  data:data,\n                  eventType: 'back'\n                });\n              }\n            }}>\n            <span className='icon icon-left-nav'></span>\n          </AMUI.Button>\n        </HeaderLeft>\n        <HeaderRight>\n          {\tdata ? <AMUI.Button amStyle=\"primary\" style={{ margin: 0 }}\tclassName='ysp-Receive' onClick={_this.onClick} >{data}</AMUI.Button>\t: <div style={{display:'none'}}></div>\t}\n          \n        </HeaderRight>\n      </Header>\n    \t);\n    }else{\n      return(<div style={{display:'none'}}></div>)\n    }\n  }\n}"
+getData_control304_9xOOrh: ";\nif (!elem) {\n  return [];\n}\nif (elem) {\n  var data = [];\n  var receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2');\n\n  var _receive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_2\ta');\n\n  var noReceive = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_3');\n  var td_0_1 = elem.contentWindow && elem.contentWindow.document.querySelector('#td_0_1');\n\n  if (receive && _receive.style.display != 'none') {\n    data.push(receive.textContent);\n  } else if (noReceive) {\n    data.push(noReceive.textContent);\n  } else if (td_0_1 && td_0_1.textContent.trim() == '领取') {\n    data.push(td_0_1.textContent.trim());\n  }\n\n  return data;\n}\n"
+doAction_uiControl301_aK6cKH: >
+  // if (data.eventType == 'click') {
+
+  //   var d = data.dataCustom;
+
+  //   var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //   if (d == '领取') {
+
+  //     var td_0_1 = elem.contentWindow.document.querySelector('#td_0_1');
+
+  //     if (td_0_1.textContent.trim() == '领取') {
+
+  //       var _click =
+  elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");
+
+  //     } else {
+
+  //       var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //     }
+
+  //     _click.click();
+
+  //   } else if (d == '取消领取') {
+
+  //     var _click = elem.contentWindow.document.querySelector('#td_0_3');
+  //红色提示
+
+  //     var newRow =
+  elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];
+
+  //     var reg = /\s/;
+
+  //     if (newRow && reg.test(newRow.textContent)) {
+
+  //       if (_click) {
+
+  //         var _icon = _click.querySelector('a');
+
+  //         _icon.click();
+
+  //       } else {
+
+  //         var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //         _click.click();
+
+  //       }
+
+  //     } else {
+
+  //       if (_click) {
+
+  //         var _icon = _click.querySelector('a');
+
+  //         var _innerHTML = _click.querySelector('span').textContent;
+
+  //         _innerHTML == '取消领取' && _icon.click();
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //       } else {
+
+  //         var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //         var _innerHTML = _click.querySelector('span').textContent;
+
+  //         _click.click();
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //       }
+
+  //     }
+
+  //   } else {
+
+  //     var _click =
+  elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+  //     _click.click();
+
+  //     var json = {
+
+  //       time: new Date().getTime()
+
+  //     };
+
+  //     ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //   }
+
+  // } else if (data.eventType == 'back') {
+
+  //   if (!top.EAPI.isAndroid()) {
+
+  //     var btns = elem.contentDocument.querySelector("#btn");
+
+  //     if (btns && btns.style.display != "none") {
+
+  //       if (btns.querySelector("#recover") &&
+  btns.querySelector("#recover").textContent == "追回") {
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         var btn =
+  elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //         if (btn) {
+
+  //           btn.click();
+
+  //           ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+
+  //         }
+
+  //       } else {
+
+  //         var json = {
+
+  //           time: new Date().getTime()
+
+  //         };
+
+  //         var btn =
+  elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //         if (btn) {
+
+  //           btn.click();
+
+  //           ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+
+  //         }
+
+  //       }
+
+  //     } else {
+
+  //       var json = {
+
+  //         time: new Date().getTime()
+
+  //       };
+
+  //       var btn =
+  elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+  //       if (btn) {
+
+  //         btn.click();
+
+  //         ysp.appMain.getActiveWindow().history.pushState(json, "",
+  "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+
+  //       }
+
+  //     }
+
+  //   } else {
+
+  //     ysp.customHelper.AndroidBackFn();
+
+  //   }
+
+  // } else if (data.eventType == 'AndroidBack') {
+
+  //   ysp.customHelper.AndroidBackModel = 'PendingTask';
+
+  //   ysp.customHelper.AndroidBackFlag = 'destination';
+
+  // }
+
+  if (data.eventType == 'click') {
+    var d = data.dataCustom;
+    var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+    if (d == '领取') {
+      var td_0_1 = elem.contentWindow.document.querySelector('#td_0_1');
+
+      if (td_0_1.textContent.trim() == '领取') {
+        var _click = elem.contentWindow.document.querySelector('#td_0_1').querySelector("a");
+      } else {
+        var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+      }
+
+      _click.click();
+    } else if (d == '取消领取') {
+      var _click = elem.contentWindow.document.querySelector('#td_0_3'); //红色提示
+      //     var newRow = elem.contentDocument.querySelectorAll("iframe")[0].contentDocument.querySelectorAll(".mini-grid-rowstable")[1];
+      //     var reg = /\s/;
+      //     if (reg.test(newRow.textContent)) {
+      //       if (_click) {
+      //         var _icon = _click.querySelector('a');
+      //         _icon.click();
+      //       } else {
+      //         var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+      //         _click.click();
+      //       }
+      //     } else {
+
+
+      if (_click) {
+        var _icon = _click.querySelector('a');
+
+        var _innerHTML = _click.querySelector('span').textContent;
+
+        _innerHTML == '取消领取' && _icon.click();
+        var json = {
+          time: new Date().getTime()
+        };
+        setTimeout(function () {
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+        }, 50);
+      } else {
+        var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+        var _innerHTML = _click.querySelector('span').textContent;
+
+        _click.click();
+
+        var json = {
+          time: new Date().getTime()
+        };
+        setTimeout(function () {
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+        }, 50);
+      } // }
+
+    } else {
+      var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
+
+      _click.click();
+
+      var json = {
+        time: new Date().getTime()
+      };
+      ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+    }
+  } else if (data.eventType == 'back') {
+    //待办里面#dataForm1里面的第一个input的class里没有mini-disabled
+    //   var dataForm1 = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#dataform1');
+    //   if (dataForm1) {
+    //     var disable = dataForm1.querySelector("#uuid");
+    //   } 
+    //待办里面#form1里含有#status和#statusApprove
+    //   var status = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#status');
+    //   var approveStatus = elem.contentWindow.document.querySelectorAll("iframe")[0].contentDocument.querySelector('#approveStatus');
+    //   if (disable && disable.className.indexOf("mini-disabled") == -1 || status || approveStatus) {
+    //     console.log("aa");
+    //     var json = {
+    //       time: new Date().getTime()
+    //     }; 
+    //     var btn = elem.ownerDocument.querySelector('.mini-tools-close');
+    //     if (btn) {
+    //       btn.click();
+    //       ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+    //     }
+    //   } else {
+    //     console.log("bbb");
+    //     var json = {
+    //       time: new Date().getTime()
+    //     };
+    //     var btn = elem.ownerDocument.querySelector('.mini-tools-close');
+    //     if (btn) {
+    //       btn.click();
+    //       ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+    //     }
+    //   }
+    var btns = elem.contentDocument.querySelector("#btn");
+
+    if (btns && btns.style.display != "none") {
+      if (btns.querySelector("#recover") && btns.querySelector("#recover").textContent == "追回") {
+        var json = {
+          time: new Date().getTime()
+        };
+        var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+        if (btn) {
+          btn.click();
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+        }
+      } else {
+        var json = {
+          time: new Date().getTime()
+        };
+        var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+        if (btn) {
+          btn.click();
+          ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+        }
+      }
+    } else {
+      var json = {
+        time: new Date().getTime()
+      };
+      var btn = elem.ownerDocument.querySelectorAll('.mini-tools-close')[1];
+
+      if (btn) {
+        btn.click();
+        ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp?");
+      }
+    }
+  }
+getTemplate_uiControl302_fPpA35: "import {Tabs} from 'ysp-custom-components';\nimport {Component} from 'react';\nexport\tdefault\tclass\textends\tReact.Component{\n\tconstructor(props){\n    super(props);\n    this.state={\n      show:this.props.customData.key\n    }\n  }\n   componentDidMount(){\n    var outer=this.refs.outerWrapper.ownerDocument.querySelector('.view-wrapper')\n    \n    setTimeout(function(){\n      outer.scrollTop=0\n    },500)\n  }\n  tabsClick(e){\n  \tvar handler=this.props.customHandler;\n    var e=e.target;\n    if(this.state.show!=e.dataset.id){\n    \tthis.setState({\n      \tshow: parseInt(e.dataset.id)\n    \t})\n     if(handler) {                                    \n       handler({\n        data:[e.className,e.dataset.id],\n        eventType:'click'                         \n       })\n     \t}\n    }\n  }\n  render(){\n    var data = this.props.customData || [];\n    if(data){\n    \treturn(\n      \t<div ref=\"outerWrapper\">\n      \t\t<Tabs\tPassedCustomData={data}\ttabsClick={this.tabsClick.bind(this)}\tstateShow={this.state.show}\t/>\n      \t</div>\n    \t)  \n    }else{\n      return(<div style={{display:'none'}}></div>)\n    }  \n  }\n} "
+getData_control305_fSxTz3: |
+  ;
+  if (!elem) {
+    return [];
+  }
+  if (elem) {
+    var data = {
+      tabs: [],
+      tabsNum: [],
+      key: {}
+    }; // console.log(elem)
+
+    var _tabs = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');
+
+    [].map.call(_tabs, function (item, i) {
+      var key = item.parentElement.classList.contains('mini-tab-active');
+      var num = item.parentElement.getAttribute("index");
+
+      if (item.innerHTML != '流程监控') {
+        if (key == true) {
+          data.tabs.push(item.innerHTML);
+          data.tabsNum.push(num);
+          data.key = i;
+        } else {
+          data.tabs.push(item.innerHTML);
+          data.tabsNum.push(num);
+        }
+      }
+    });
+    return data;
+  }
+doAction_uiControl302_fPpA35: |
+  if (data.eventType == 'click') {
+    var d = data.dataCustom;
+
+    if (d[0] == 'ysp-tabs') {
+      var _tab = elem.querySelectorAll('.mini-tabs-scrollCt .mini-tabs-header span');
+
+      _tab[d[1]].click();
+    }
+
+    ysp.appMain.showLoading();
+  }
+getTemplate_uiControl303_7yZf8R: |-
+  module.exports = React.createClass({
+    render: function() {
+      var _this = this;
+      var data=this.props.customData||[];
+      if(data&&data.length>0){
+        return (
+          <div className="ysp_hrDetailInfo" style={{marginTop:"10px"}}>
+            <div className="ysp_hrDetailInfo_title">详细信息</div>
+            <div className="ysp_hrDetailInfo_content">
+            {data&&data.length>0&&data.map(function(item,index){
+              return(
+                <div className="ysp_border">
+                  <span className="ysp_title">{item.title}：</span>
+                  <label className="ysp_content">
+                    {item.content}
+                  </label>
+                </div>
+              )
+            })}  
+            </div>
+          </div>
+        )
+      }else{
+        return(<div></div>)
+      }
+    }
+  });
+getData_control306_p28xfO: |
+  if (!elem) {
+    return;
+  }
+  var data = [];
+  var content = elem.querySelectorAll("span.mini-textbox");
+  if(!content) return;
+  for (var i = 0; i < content.length; i++) {
+    var obj = {
+      title: "",
+      content: ""
+    };
+    obj.content = content[i].querySelector("input.mini-textbox-input").value;
+    obj.title = content[i].parentNode.previousElementSibling.textContent.trim();
+    data.push(obj);
+  }
+  return data;
+doAction_uiControl303_7yZf8R: ''
+getTemplate_uiControl304_7bSSt4: "module.exports = React.createClass({\n  showList:function(e){\n    var target=e.currentTarget;\n    // var handler=this.props.customHandler;\n    // if(handler) {                                    \n    //  handler({\n    //   eventType:'showList'                         \n    //  })\n    // }\n    target.ownerDocument.querySelectorAll('.ysp-flowsheet-twoPart-alert')[target.getAttribute('num')].style.display = 'block';\n  },\n  hideList:function(e){\n    var target=e.currentTarget;\n    target.ownerDocument.querySelectorAll('.ysp-flowsheet-twoPart-alert')[target.getAttribute('num')].style.display = 'none';\n  },\n  agree:function(e){\n    var target=e.target;\n    if(target.className=='selected'){\n      return;\n    }\n    var handler=this.props.customHandler;\n    if(handler) {                                    \n     handler({\n      eventType:'agree',\n      data:[target.textContent,target.parentNode.getAttribute('num')]\n     })\n    }\n  },\n  render: function() {\n    var data = this.props.customData || [];\n    var _this=this;\n    if(data){\n      return (\n        <div className=\"ysp-flowsheet\" style={{'marginBottom':'10px'}}>\n          <div className=\"ysp-flowsheet-twoPart\">\n            {data&&data.content&&data.content.map(function(d,i){\n              return(\n                <div className=\"ysp-flowsheet-twoPart-list\">\n                  <div className=\"ysp-flowsheet-twoPart-card\">\n                    <div className=\"ysp-flowsheet-twoPart-div\" onClick={_this.showList} num={i}>\n                      <span>{d[2]}</span>\n                      <span>{d[3]}</span>\n                      <span>{d[6]}</span>\n                    </div>\n                    <div onClick={_this.showList} num={i}>\n                      <span>出差地点：</span>\n                      <label>{d[d.length-2]}</label>\n                    </div>       \n                    <ul className=\"ysp-flowsheet-twoPart-button\" num={i}>\n                      <li className={d[d.length-1]=='不同意'?'selected':'unselected'} onClick={_this.agree}>不同意</li>\n                      <li className={d[d.length-1]=='同意'?'selected':'unselected'} onClick={_this.agree}>同意</li>\n                    </ul>\n                  </div>\n                  <div className=\"ysp-flowsheet-twoPart-alert\" style={{'display':'none'}}>\n                    <div className=\"alert-shadow\"></div>\n                    <div className=\"ysp-flowsheet-twoPart-card twoPart-list\">\n                      {d.map(function(dd,ii){\n                        return(\n                          <div>\n                            <span>{data.title[ii]}</span>\n                            <label>{dd}</label>\n                          </div>\n                        )\n                      })}\n                      <div className=\"close-btn\" onClick={_this.hideList} num={i}>\n                      \t<div>关闭</div>\n                      </div>\n                    </div>\n                  </div>\n                </div>              \t\n              )\n            })}            \n          </div>\n        </div>\n      )\n    }else{\n      return(<div></div>)\n    }\n  }\n});"
+getData_control307_iP05B5: >-
+  if(!elem){
+    return;
+  }
+
+  var data = {};
+
+  data.title = [];
+
+  var titleData =
+  elem.querySelector('.mini-grid-columns-view').querySelector('table.mini-grid-table').querySelectorAll('tr')[1];
+
+  for(var i=1; i<titleData.querySelectorAll('td').length; i++){
+    data.title.push(titleData.querySelectorAll('td')[i].textContent.trim());
+  }
+
+  data.content = [];
+
+  var contentData =
+  elem.querySelector('.mini-grid-rows-view')&&elem.querySelector('.mini-grid-rows-view').querySelector('table.mini-grid-table')&&elem.querySelector('.mini-grid-rows-view').querySelector('table.mini-grid-table').querySelectorAll('tr');
+
+  if(contentData&&contentData[1]&&contentData[1].style.display=='none'){
+    for(var i=2; i<contentData.length; i++){
+      var arr = [];
+      for(var j=1; j<contentData[i].querySelectorAll('td').length; j++){
+        arr.push(contentData[i].querySelectorAll('td')[j].textContent.trim());
+      }
+      data.content.push(arr);
+    }
+  }
+
+  return data;
+doAction_uiControl304_7bSSt4: "if (data.eventType == 'agree') {\n  ysp.appMain.showLoading();\n  var num = parseInt(data.dataCustom[1]);\n  var td = elem.querySelector('.mini-grid-rows-view').querySelector('table.mini-grid-table').querySelectorAll('.mini-grid-row')[num].querySelectorAll('.mini-grid-cell');\n  var e = elem.ownerDocument.createEvent(\"MouseEvents\");\n  e.initEvent(\"mousedown\", true, true);　　　　　　　　　　　　　　\n  td[td.length-1].dispatchEvent(e);\n  setTimeout(function(){\n    td[td.length-1].querySelector('div').click();\n  },300)\n  setTimeout(function(){\n    var selectInput = elem.ownerDocument.querySelector('.mini-grid-editwrap').querySelector('.mini-buttonedit-input');\n    var e = selectInput.ownerDocument.createEvent(\"MouseEvents\");\n  \te.initEvent(\"mousedown\", true, true);　\n    selectInput.dispatchEvent(e);\n    selectInput.dispatchEvent(new Event('focus'));\n    selectInput.click()\n  },500)\n  setTimeout(function(){\n    var agrees = elem.ownerDocument.querySelector('.mini-listbox-items').querySelectorAll('.mini-listbox-item');\n    for(var i=0;i<agrees.length;i++){\n      if(agrees[i].className.indexOf('selected')==-1){\n        agrees[i].click();\n        break;\n      }\n    }\n    var e = elem.ownerDocument.createEvent(\"MouseEvents\");\n  \te.initEvent(\"mousedown\", true, true);　\n    td[td.length-2].dispatchEvent(e);\n    ysp.appMain.hideLoading()\n  },800)\n}"
+getTemplate_uiControl305_CuRuC5: "import {Component} from 'react';\nexport default class extends Component{\n  blur(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:target.value,\n        eventType:\"blur\"\n      })\n    }\n  }\n  render(){\n    var data=this.props.customData;\n    \n    var _this=this;\n    if(data&&data[0]==\"审批意见\"){\n      return(\n        <div className=\"ysp-Approval-opinions\">\n          <span>审批意见：</span>\n          <ATextarea className=\"ysp-agree\" defaultValue={data[1]} onBlur={_this.blur.bind(_this)}/>\n        </div>\n      )\n    }else {\n      return(\n      \t<div></div>\n      )\n    }\n    \n  }\n}"
+getData_control308_0VEPAC: >
+  ;
+
+  if
+  (!elem||(elem.ownerDocument.querySelector('#approval').style.display=='none'))
+  {
+    return;
+  }
+
+  if (elem) {
+    return ["审批意见", elem.value];
+  }
+doAction_uiControl305_CuRuC5: |
+  if (data.eventType == "blur") {
+    elem.value = data.dataCustom;
+    elem.dispatchEvent(new Event("change"));
+  }
+getTemplate_uiControl307_CVZMf9: "module.exports = React.createClass({\n  approval:function(e) {\n    var target = e.target;\n    var shadow = target.ownerDocument.querySelector('.ysp-btn-list').querySelector('.alert-shadow');\n    var approval = target.ownerDocument.querySelector('.ysp-btn-list').querySelector('.ysp-btn-approval');\n    if(target.className=='alert-shadow'){\n      shadow.style.display = 'none';\n      approval.style.display = 'none'; \n    }else{\n      shadow.style.display = 'block';\n      approval.style.display = 'block'; \n    }\n  },\n  submit:function(e) {\n    var handler=this.props.customHandler;\n    if(handler) {                                    \n     handler({\n      data:{classNames:'btn ysp-btn-two',text:'提交'},\n      eventType:'click'                         \n     })\n    }\n  },\n  textInput:function(e) {\n    var target = e.target;\n    var handler=this.props.customHandler;\n    if(handler) {                                    \n     handler({\n      data:target.value,\n      eventType:'textInput'                         \n     })\n    }\n  },\n  render: function() {\n    var _this = this;\n    var data=this.props.customData||[];\n    if(data&&data.button&&data.button.length>0){\n      return (\n        <div className=\"ysp-btn-list\">\n        \t<div className=\"ysp-btn-m\">\n            <div className=\"ysp-btn-twoBtn\" style={{'display':'block'}}>\n              <AMUI.Button className='ysp-btn-one' onClick={_this.approval}>\n                审批意见\n              </AMUI.Button>\n              <AMUI.Button className='ysp-btn-two' onClick={_this.submit}>\n                提交\n              </AMUI.Button>\n            </div>                \n          </div>\n          <div className=\"alert-shadow\" style={{'display':'none'}} onClick={_this.approval}></div>\n          <div className=\"ysp-btn-approval\" style={{'display':'none'}}>\n          \t<div className=\"ysp_hrDetailInfo_title\">审批意见</div>\n            <textarea onChange={_this.textInput}></textarea>\n            <div className=\"alert-approval-btn\">\n            \t<div onClick={_this.submit}>提交</div>\n            </div>\n          </div>\n        </div>     \n      )\n    }else{\n      return(<div></div>)\n    }\n  }\n});"
+getData_control309_2PcLCk: |
+  ;
+  if (!elem) {
+    return;
+  } 
+  if (elem) {
+    var data = {
+      button: [],
+      tip: ""
+    };
+    var windowDrag = elem.querySelector(".mini-window-drag");
+
+    if (windowDrag) {
+      var iframeOuter = elem.querySelector(".mini-window-drag").querySelector("iframe");
+
+      if (iframeOuter) {
+        var btns = iframeOuter.contentDocument.querySelector("#btn");
+        var agreeBtn = iframeOuter.contentDocument.querySelector('#td_0_0');
+        var disagreeBtn = iframeOuter.contentDocument.querySelector('#td_0_1');
+
+        if (btns && btns.style.display != "none" && agreeBtn) {
+          data.button.push(agreeBtn.textContent);
+        }
+
+        if (btns && btns.style.display != "none" && disagreeBtn && disagreeBtn.textContent.trim() != '领取') {
+          data.button.push(disagreeBtn.textContent);
+        }
+      } 
+    }
+
+    return data;
+  }
+doAction_uiControl307_CVZMf9: |
+  if (data.eventType == 'click') {
+    debugger
+    var d = data.dataCustom.classNames;
+
+    if (d == 'btn ysp-btn-one') {
+      var _btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_1')[0].querySelector(".mini-button");
+
+      _btnTwo.click();
+
+      var redTip = elem.querySelector(".mini-window-drag").querySelector('iframe').contentWindow.document.querySelector('#tab iframe').contentWindow.document.querySelector('.mini-tips-danger');
+      console.log(redTip);
+
+      if (!redTip) {
+        setTimeout(function () {
+          var tip = elem.querySelectorAll(".mini-window-drag");
+
+          if (tip.length == 1) {
+            //_btnTwo.click(); 
+            var json = {
+              time: new Date().getTime()
+            };
+            setTimeout(function () {
+              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            }, 20);
+          }
+        }, 10);
+      }
+    } else if (d == 'btn ysp-btn-two') {
+      var btnTwo = elem.querySelector(".mini-window-drag").querySelectorAll("iframe")[0].contentDocument.querySelectorAll('#td_0_0')[0].querySelector("a");
+
+      if (data.dataCustom.text == "执行") {
+        btnTwo.click();
+      } else if (data.dataCustom.text == "追回") {
+        btnTwo.click();
+        var json = {
+          time: new Date().getTime()
+        };
+        setTimeout(function () {
+          ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/hasBeenProcessedTask.jsp");
+        }, 10);
+      } else {
+        //有黑色提示框出现
+        var tip = elem.querySelector("#toast");
+
+        if (tip) {
+          data.tip = tip.textContent;
+        } //**如果流程iframe存在就留在当页，如果不存在就点击同意后回到待办里***//
+
+
+        btnTwo.click();
+        var timer = setInterval(function () {
+          var redTip = elem.querySelector(".mini-window-drag"); //.querySelectorAll("iframe")[0].contentDocument.querySelector("#tab").querySelectorAll("iframe")[0].contentDocument.querySelector(".mini-tips-danger");
+
+          if (!redTip) {
+            var json = {
+              time: new Date().getTime()
+            };
+            setTimeout(function () {
+              ysp.appMain.getActiveWindow().history.replaceState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp");
+            }, 10);
+            clearInterval(timer);
+          }
+        }, 10);
+      }
+    }
+  }else if(data.eventType == 'textInput'){
+     var text = data.dataCustom;
+     var textarea = elem.querySelector(".mini-window-drag").querySelector("iframe").contentDocument.querySelector("iframe").contentDocument.querySelector('textarea[class="mini-textbox-input"]'); 
+     textarea.value = text;
+  }
+  ;
+getTemplate_uiControl308_TAzTKl: "import {Component} from 'react';\nexport default class extends Component {\n// componentWillReceiveProps(props){\n//   // debugger;\n//   var show=props.customData;\n//   var handler=props.customHandler;\n//   if(show&&handler){\n//     handler({\n//       eventType:\"show\"\n//     })\n//   }else{\n//     handler({\n//       eventType:\"hide\"\n//     })\n//   }\n// }\n   render(){\n    var data = this.props.customData;\n    if(data){\n      return(\n        <div className=\"ysp-loadEffect-background\">\n          <div className=\"ysp-loadEffect\">\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n          </div>\n        </div>\n      )  \n    }else{\n      return(\n \_ \_    <div></div> \n      )\n    }\n  }\n}\n"
+getData_control310_fGIIJl: |
+  //loading 加载。
+  if (!elem) {
+    return;
+  }
+  if (elem) {
+    var loading = elem.contentDocument.querySelector("body").querySelector(".mini-mask");
+
+    var _loading = elem.ownerDocument.querySelector(".mini-mask");
+
+    if (loading) {
+      var show = loading.querySelector('.mini-mask-loading');
+
+      if (show && show.style.display == 'block') {
+        return true;
+      }
+    } else if (_loading) {
+      var _show = _loading.querySelector('.mini-mask-loading');
+
+      if (_show && _show.style.display == 'block') {
+        return true;
+      }
+    } else {
+      return false;
+    }
+  }
+doAction_uiControl308_TAzTKl: |
+  if (data.eventType == "show") {
+    ysp.appMain.showLoading();
+  } else if (data.eventType == "hide") {
+    ysp.appMain.hideLoading();
+  }

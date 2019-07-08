@@ -185,7 +185,7 @@
   "adapter_urls": [
     {
       "title": "login",
-      "url": "adapter://putianBPM_StableVersion/plan/login/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/login/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe\\/auth\\/login\\/login\\.jsp#",
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/coframe.*"
@@ -196,7 +196,7 @@
     },
     {
       "title": "approvalTrack",
-      "url": "adapter://putianBPM_StableVersion/plan/approvalTrack/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/approvalTrack/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/approvalTrajectory\\.jsp.*"
       ],
@@ -206,7 +206,7 @@
     },
     {
       "title": "approveAdvice",
-      "url": "adapter://putianBPM_StableVersion/plan/approveAdvice/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/approveAdvice/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/approval\\/approvalMsgList\\.jsp.*"
       ],
@@ -216,7 +216,7 @@
     },
     {
       "title": "checkProcess",
-      "url": "adapter://putianBPM_StableVersion/plan/checkProcess/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/checkProcess/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/task\\.jsp.*"
       ],
@@ -226,7 +226,7 @@
     },
     {
       "title": "Fallback",
-      "url": "adapter://putianBPM_StableVersion/plan/Fallback/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/Fallback/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/components\\/back\\/backActivity\\.jsp.*"
       ],
@@ -236,7 +236,7 @@
     },
     {
       "title": "HaveProcessingTasksDetailedInformation",
-      "url": "adapter://putianBPM_StableVersion/plan/HaveProcessingTasksDetailedInformation/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/HaveProcessingTasksDetailedInformation/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/taskList\\.jsp.*"
       ],
@@ -246,7 +246,7 @@
     },
     {
       "title": "processForm",
-      "url": "adapter://putianBPM_StableVersion/plan/processForm/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/processForm/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp.*"
       ],
@@ -256,7 +256,7 @@
     },
     {
       "title": "operationLog",
-      "url": "adapter://putianBPM_StableVersion/plan/operationLog/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/operationLog/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/operationLog\\.jsp.*"
       ],
@@ -266,7 +266,7 @@
     },
     {
       "title": "processMonitoring",
-      "url": "adapter://putianBPM_StableVersion/plan/processMonitoring/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/processMonitoring/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/processGraph\\.jsp.*"
       ],
@@ -276,7 +276,7 @@
     },
     {
       "title": "clientFlowForm",
-      "url": "adapter://putianBPM_StableVersion/plan/clientFlowForm/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/clientFlowForm/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bizform\\/forwardByWorkItem\\.jsp\\?_ysp_action.*",
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/dispatchTaskExecute\\.jsp\\?_ysp_action_type.*",
@@ -289,7 +289,7 @@
     },
     {
       "title": "pendingTask",
-      "url": "adapter://putianBPM_StableVersion/plan/pendingTask/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/pendingTask/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/pendingTask\\.jsp"
       ],
@@ -299,7 +299,7 @@
     },
     {
       "title": "hasBeenProcessedTask",
-      "url": "adapter://putianBPM_StableVersion/plan/hasBeenProcessedTask/index.json",
+      "url": "adapter://putianBPM_StableVersion_release/plan/hasBeenProcessedTask/index.json",
       "matcher": [
         "^http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/bps\\/wfclient\\/task\\/app\\/taskTabPage\\/hasBeenProcessedTask\\.jsp"
       ],
@@ -310,8 +310,8 @@
   ],
   "name": "普天",
   "default_url": "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#",
-  "scope": "putianBPM_StableVersion",
-  "start_url": "enterplorer://putianBPM_StableVersion/local/index.html",
+  "scope": "putianBPM_StableVersion_release",
+  "start_url": "http://192.168.220.51:8000/ptsoa/skins/default/index.jsp#",
   "fixed_version": 1,
-  "update_time": 1558338277998
+  "update_time": 1562551373054
 }

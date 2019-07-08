@@ -1,0 +1,336 @@
+getData_control2_zMHUvs: |
+  if (!elem) {
+    return [];
+  }
+  if (elem) {
+    // var data=elem.ownerDocument.defaultView.frameElementownerDocument.parentNode.querySelectorAll(".mini-tab-active")[1].querySelector("span").textContent
+    var data = "";
+    return data;
+  }
+doAction_uiControl3_IvaT14: |
+  if (data.eventType === 'back') {
+    // var win = elem.ownerDocument.defaultView;
+    // var parentWin = win.parent;
+    // parentWin && parentWin.location.reload();
+    //   var num = 0;
+    //   var a = setInterval(function () {
+    //     num++;
+    //     if (num == 4) {
+    //       clearInterval(a);
+    //     }
+    //     window.EAPI.back();
+    //   }, 50);
+    // var newUrl = ysp.appMain.getActiveWindow();
+    // newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp"; //新平台方法
+    // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
+    //   ysp.EAPI.closeWindow();
+    // } else {
+    //   var newUrl = ysp.appMain.getActiveWindow();
+    //   newUrl.location.href = "http://192.168.220.51:8000/ptsoa/bps/wfclient/task/app/appMyTask.jsp";
+    // }
+    top.EAPI.closeWindow();
+  }
+getTemplate_uiControl3_IvaT14: |-
+  import {
+    Header,
+    HeaderLeft,
+    HeaderRight
+  } from 'ysp-interior-components';
+
+  export default class extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      let _this = this;
+      return (
+        <Header amStyle="primary" title="已处理的任务">
+          <HeaderLeft>
+            <AMUI.Button amStyle="primary" style={{ margin: 0 }} onClick={()=>{
+                const handler = _this.props.customHandler;
+                if (handler) {
+                  handler({
+                    eventType: 'back'
+                  });
+                }
+              }}>
+              <span className='icon icon-left-nav'></span>
+            </AMUI.Button>
+          </HeaderLeft>
+          <HeaderRight>
+            <AMUI.Button amStyle="primary" style={{ margin: 0 ,display:'none'}}></AMUI.Button>
+          </HeaderRight>
+        </Header>
+      );
+    }
+  }
+getData_control3_okxCib: |
+  if (elem) {
+    var data = {
+      allSelect: [],
+      flowName: "",
+      time: []
+    }; // console.log(elem)
+    // $(elem).children('tr').each(function (idx, item) {
+    //   var child = {
+    //     content: []
+    //   };
+    //   var str = $(item).children('td').eq(0).text();
+    //   var s = str.replace(/：/g, "");
+    //   child.title = s;
+    //   $(item).children('td').eq(1).find('div table tbody tr td div').eq(0).children('div').each(function (i, v) {
+    //     var children = {
+    //       cont: []
+    //     };
+    //     children.title = v.textContent;
+    //     children.cont = $(v).children('input')[0].checked;
+    //     child.content.push(children);
+    //   });
+    //   data.allSelect.push(child);
+    // });
+
+    data.flowName = $(elem).find("#likeSearch").find("#likeQ").find("input").eq(0).val();
+    data.submitPerson = $(elem).find("#likeSearch").find("#sponsor").find("input").eq(0).val();
+    data.time.push($(elem).find("#startT").find("input").eq(0).val());
+    data.time.push($(elem).find("#endT").find("input").eq(0).val());
+    return data;
+  }
+  return '';
+doAction_uiControl4_ZqhwT7: |
+  if (data.eventType == "click") {
+    var d = data.dataCustom;
+    var q = $(elem).children('tr');
+    q.eq(d[0]).children('td').eq(1).find('div table tbody tr td div').eq(0).children('div').eq(d[1]).find('input').click();
+  } else if (data.eventType == 'blur') {
+    $(elem).find('.grayBtn').click();
+  } else if (data.eventType == "showLoading") {
+    ysp.appMain.showLoading();
+  } else if (data.eventType == "hideLoading") {
+    ysp.appMain.hideLoading();
+  } else if (data.eventType == "inputBlur") {
+    if (data.dataCustom.i == "0") {
+      var flowName = elem.querySelector("#likeSearch").querySelector("#likeQ").querySelectorAll("input")[0];
+      flowName.dispatchEvent(new Event("focus"));
+      flowName.dispatchEvent(new Event("mousedown"));
+      flowName.value = data.dataCustom.val;
+      flowName.dispatchEvent(new Event("change"));
+    } else {
+      var submitPerson = elem.querySelector("#likeSearch").querySelector("#sponsor").querySelectorAll("input")[0];
+      submitPerson.dispatchEvent(new Event("focus"));
+      submitPerson.dispatchEvent(new Event("mousedown"));
+      submitPerson.value = data.dataCustom.val;
+      submitPerson.dispatchEvent(new Event("change"));
+    }
+  } else if (data.eventType == "startTChange") {
+    var startT = elem.querySelector("#startT").querySelectorAll("input")[0];
+    startT.dispatchEvent(new Event("focus"));
+    startT.dispatchEvent(new Event("mousedown"));
+    startT.value = data.dataCustom;
+    startT.dispatchEvent(new Event("change"));
+    startT.dispatchEvent(new Event("mouseout"));
+  } else if (data.eventType == "endTChange") {
+    var endT = elem.querySelector("#endT").querySelectorAll("input")[0];
+    endT.dispatchEvent(new Event("focus"));
+    endT.dispatchEvent(new Event("mousedown"));
+    endT.value = data.dataCustom;
+    endT.dispatchEvent(new Event("change"));
+    endT.dispatchEvent(new Event("mouseout"));
+  }
+getTemplate_uiControl4_ZqhwT7: "export default class extends React.Component{\n  constructor(props){\n    super(props);\n    this.state={\n      show:true\n    }\n  }\n  componentDidMount(){\n    var outer=this.refs.outerWrapper.ownerDocument.querySelector('.view-wrapper') \n    setTimeout(function(){\n      outer.scrollTop=0\n    },500)\n  }\n  showLoading(){\n    var handler=this.props.customHandler;\n    handler&&handler({\n      eventType:'showLoading'\n    })\n  }\n  hideLoading(){\n    var handler=this.props.customHandler;\n    handler&&handler({\n      eventType:'hideLoading'\n    })\n  }\n  stChange=(e)=>{\n    var handler=this.props.customHandler;\n     if(handler) {                                    \n       handler({\n         data:e.target.value,\n         eventType:'startTChange'                         \n       })\n     }\n  }\n  etChange=(e)=>{\n    var handler=this.props.customHandler;\n     if(handler) {                                    \n       handler({\n         data:e.target.value,\n         eventType:'endTChange'                         \n       })\n     }\n  }\n  flowBlur=(e)=>{\n    var handler=this.props.customHandler;\n     if(handler) {                                    \n       handler({\n         data:{val:e.target.value,i:e.target.getAttribute(\"data-index\")},\n         eventType:'inputBlur'                         \n       })\n     }\n  }\n  render(){\n    const {\tcustomData,customHandler\t}=this.props;\n    return(\n    \t<div className=\"ysp-ProcessedTask-main\" ref=\"outerWrapper\">\n      \t<b onClick={()=>{this.setState({show:!this.state.show})}}>\n          查询\n          <span className={\tthis.state.show\t?\t'ysp-blue-bottom-icon'\t:\t'ysp-blue-top-icon'}></span>\n        </b>\n        <Inquiry stateShow={this.state.show} click={(i,idx)=>{customHandler({data:[i,idx],eventType:'click'})}} blur={()=>{customHandler({data:'1',eventType:'blur'});this.showLoading();this.hideLoading()}}  startChange={this.stChange.bind(this)} endChange={this.etChange.bind(this)} inputBlur={this.flowBlur.bind(this)}\tData={customData}/>\n      </div>\n    )\n  }\n}\nclass Inquiry extends React.Component{\n  \n  render(){\n    var data=this.props.Data ||\t[];\n    var allSelect=data.allSelect ||\t[];\n    var flowName=data.flowName||\"\";\n    var submitPerson=data.submitPerson||\"\";\n    var time=data.time||[];\n    return(\n        <div className=\"ysp-ProcessedTask-check-main\" style={{ display:this.props.stateShow\t?\t'none':'block'}}>\n          \n        \t<div className=\"ysp-flowName\">\n            <span className=\"ysp-flowName-span\">流程实例名称</span>\n            <AInput\t className='ysp-flowName-input' value={flowName} onBlur={this.props.inputBlur} data-index=\"0\"/>\n        \t</div>\n        \t<div className=\"ysp-submitPerson\">\n            <span className=\"ysp-submitPerson-span\">发起人</span>\n            <AInput\t className='ysp-submitPerson-input' value={submitPerson} onBlur={this.props.inputBlur} data-index=\"1\"/>\n        \t</div>\n        \t<div className=\"ysp-flowTime\">\n            <span className=\"ysp-flowTime-title\">到达时间</span>\n            <input className=\"ysp-startT\" type=\"date\" onChange={this.props.startChange} value={time[0]}/>\n          </div>\n        \t<div\tclassName=\"ysp-toTime\">\n            <span\tclassName=\"ysp-flowTime-title\">\n              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至\n            </span>\n            <input className=\"ysp-endT\" type=\"date\" onChange={this.props.endChange} value={time[1]}/>\n        \t</div>\n        \t<div className='ysp-ProcessedTask-check-btnMain'>\n        \t\t<AMUI.Button onClick={()=>{this.props.blur()}} amStyle='primary' className='ysp-ProcessedTask-check-btn'>查询</AMUI.Button>\n        \t</div>\n        </div>\n    )\n  }\n}"
+getData_control31_vSTuCi: |
+  if (!elem) {
+    return [];
+  }
+  if (elem) {
+    //获取tr的数组
+    var data = [];
+    var trArr = elem.querySelector("tbody").querySelectorAll("tr");
+
+    for (var i = 0; i < trArr.length; i++) {
+      var tdArr = trArr[i].querySelectorAll("td");
+      var arry = [];
+
+      for (var j = 0; j < tdArr.length; j++) {
+        arry.push(tdArr[j].textContent);
+      }
+
+      data.push(arry);
+      arry.shift();
+      arry.shift();
+    }
+
+    data.shift();
+    data.shift();
+    return data;
+  }
+doAction_uiControl34_tOCHFG: |
+  if (data.eventType == "clickBtn") {
+    var data = data.dataCustom;
+    var index = parseInt(data.index) + 2;
+    var i = data.i;
+    var title = data.title;
+    var win = elem.ownerDocument.defaultView;
+
+    if (title && title.indexOf("总部转正") !== -1) {
+      top.pendTitle = "总部转正";
+      win._ysp_top.tenderType = "turnTask";
+    } else if (title.indexOf("假期管理") !== -1 || (title.indexOf("公出") !== -1 && title.indexOf("移动打卡") == -1) || title.indexOf("假期申请") !== -1) {
+      top.pendTitle = "假期申请";
+      win._ysp_top.tenderType = "askForLeave";
+    } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
+      top.pendTitle = "分公司离职管理流程(解除)";
+      win._ysp_top.tenderType = "branchRelease";
+    } else if (title.indexOf("离职/退休管理") !== -1 || title.indexOf("离职管理(辞职)") !== -1) {
+      win._ysp_top.tenderType = "departure";
+    } else if (title.indexOf("员工职位变动") !== -1) {
+      win._ysp_top.tenderType = "positionChange";
+    } else if (title.indexOf("销假申请") !== -1) {
+      win._ysp_top.tenderType = "beginToWork";
+    } else if (title.indexOf("内部职位变动") !== -1 || title.indexOf("分公司间职位变动") !== -1) {
+      win._ysp_top.tenderType = "innerPositionChange";
+    } else if (title.indexOf("批量提交员工职位变更") !== -1) {
+      win._ysp_top.tenderType = "morePositionChange";
+    } else if (title.indexOf("总部月度编制变动") !== -1 || title.indexOf("月度编制") !== -1) {
+      win._ysp_top.tenderType = "monthChange";
+    } else if (title.indexOf("忘打卡") !== -1) {
+      top.pendTitle = "忘打卡";
+      win._ysp_top.tenderType = "forgetCard";
+    } else if (title.indexOf("加班申请") !== -1) {
+      top.pendTitle = "加班申请";
+      win._ysp_top.tenderType = "addWork";
+    } else if (title.indexOf("外派探亲资格") !== -1) {
+      top.pendTitle = "外派探亲资格";
+      win._ysp_top.tenderType = "visitRelative";
+    } else if (title.indexOf("员工录用") !== -1) {
+      top.pendTitle = "员工录用";
+      win._ysp_top.tenderType = "employeeHire";
+    } else if (title.indexOf("分公司录用审批") !== -1) {
+      win._ysp_top.tenderType = "branchEmployeeHire";
+    } else if (title.indexOf("分公司员工个别薪酬") !== -1) {
+      win._ysp_top.tenderType = "branchEmpSalary";
+    } else if (title.indexOf("分公司转正") !== -1 || title.indexOf("有关") !== -1 && title.indexOf("转正") !== -1) {
+      win._ysp_top.tenderType = "branchTurnRegular";
+    } else if (title.indexOf("特价申请") !== -1) {
+      win._ysp_top.tenderType = "goodBargain";
+    } else if (title.indexOf("价格政策") !== -1) {
+      win._ysp_top.tenderType = "pricePolicy";
+    } else if (title.indexOf("物料申请") !== -1) {
+      top.pendTitle = "物料申请";
+      win._ysp_top.tenderType = "materialApplication";
+    } else if (title.indexOf("物料信息停用") !== -1) {
+      top.pendTitle = "物料信息停用";
+      win._ysp_top.tenderType = "materialInformationDisabled";
+    } else if (title.indexOf("简易采购订单撤销") !== -1) {
+      top.pendTitle = "简易采购订单撤销";
+      win._ysp_top.tenderType = "orderCancel";
+    } else if (title.indexOf("移动打卡") !== -1) {
+      top.pendTitle = "移动打卡公出出差";
+      win._ysp_top.tenderType = "mobileTrip";
+    } else {
+      top.pendTitle = "第一期38个流程";
+      win._ysp_top.tenderType = "processForm";
+    }
+
+    elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();
+    ysp.appMain.showLoading();
+  }
+getTemplate_uiControl34_tOCHFG: "import {Component} from 'react'\nexport default class extends React.Component{\n  constructor(props){\n    super(props);\n    this.state={\n      show:-1\n    }\n  }\n  componentWillReceiveProps(){\n  \tthis.setState({\n      show:-1\n    })\n\t}\n//   componentDidMount(){\n//     var list=this.refs.list;\n//     setTimeout(function(){\n//       list.window.location.reload()\n//     },500)\n    \n//   }\n  upDown=(e)=>{\n    var target=e.target;\n    if(\tthis.state.show\t!=target.dataset.key){\n    \tthis.setState({\n      \tshow:target.dataset.key\n    \t})   \n    }else{\n      this.setState({\n      \tshow:-1\n   \t\t})\n    }\n  }\n  clickBtn(e){\n    var target=e.target;\n  \tvar handler=this.props.customHandler;\n    var title1=target.parentElement.parentElement.parentElement.querySelector(\".ysp_top_title\").textContent;\n    if(handler){\n      handler({\n        data:{index:target.getAttribute(\"data-index\"),i:target.dataset.i,title:title1},\n        eventType:\"clickBtn\"\n      })\n    }\n  }\n  render(){\n    var data=this.props.customData||[];\n    var _this=this;\n    return(\n    \t<div className=\"ysp_waitingTask_list\" ref=\"list\">\n        {data.length>0? \n          data.map((d,i)=>{\n          \treturn(\n            \t<div className=\"ysp_list_item\">\n              \t<div className=\"ysp_item_top\">\n                  <i></i>\n                  <span className=\"ysp_top_title\">{d[0]}</span>\n                  <span className=\"ysp_top_status\">{d[1]}</span>\n                </div>\n                <div className=\"ysp_item_bottom\">\n                \t<div className=\"ysp_bottom_left\">\n                    <div>提交时间：{d[2]}</div>\n                    <div>到达时间：{d[3]}</div>\n                    <div>完成时间：{d[4]}</div>\n                  </div>\n                  <i className={this.state.show==i\t?\t'ysp_bottom_Up'\t:\t'ysp_bottom_Down'\t} onClick={_this.upDown}\tdata-key={i}></i>\n                  <div className=\"ysp_btn_panel\" style={{display:\tthis.state.show\t==\ti\t?\t'block'\t:\t'none'\t}}>\n                  \t<button className=\"ysp_btn_do\" onClick={_this.clickBtn.bind(_this)} data-index={i} data-i=\"0\">查看表单</button>\n                    <button className=\"ysp_btn_check\" onClick={_this.clickBtn.bind(_this)} data-index={i} data-i=\"1\">查看</button>\n                  </div>\n                </div>\n              </div>\n            )\n        \t}) : <div style={{textAlign:'center'}}>暂无数据</div>\n        }\n      </div>\n    )\n  }\n}"
+getData_control32_De10RW: |
+  if (elem) {
+    var data = {};
+    var _PagesMessage = elem.querySelector('.mini-pager-right').textContent;
+    data.PagesMessage = _PagesMessage;
+    var _PageNumber = elem.querySelector('.mini-pager-num').value;
+    data.PageNumber = _PageNumber;
+    var _PageCount = elem.querySelector('.mini-pager-pages').textContent;
+    data.PageCount = _PageCount;
+    return data;
+  }
+  return '';
+doAction_uiControl35_5ATlOD: |
+  if (data.eventType == "click") {
+    var d = data.dataCustom;
+
+    switch (d) {
+      case 'ysp-PagesMessage-leftBM-icon':
+        var btnId = elem.querySelector('.mini-pager-first').parentNode;
+        console.log(btnId);
+        btnId.click();
+        break;
+
+      case 'ysp-PagesMessage-left-icon':
+        var btnId = elem.querySelector('.mini-pager-prev').parentNode;
+        btnId.click();
+        break;
+
+      case 'ysp-PagesMessage-right-icon':
+        var btnId = elem.querySelector('.mini-pager-next').parentNode;
+        btnId.click();
+        break;
+
+      case 'ysp-PagesMessage-rightBM-icon':
+        var btnId = elem.querySelector('.mini-pager-last').parentNode;
+        btnId.click();
+        break;
+    }
+  } else if (data.eventType == "selectChange") {
+    elem.querySelector(".mini-buttonedit-input").focus();
+    elem.querySelector(".mini-buttonedit-input").click();
+    setTimeout(function () {
+      elem.ownerDocument.querySelector(".mini-listbox-items").querySelectorAll("tr")[data.dataCustom.ind].click();
+    }, 50);
+  } else if (data.eventType == "inputChange") {
+    elem.querySelector(".mini-pager-num").value = data.dataCustom;
+    elem.querySelector(".mini-pager-num").dispatchEvent(new Event('change'));
+  }
+getTemplate_uiControl35_5ATlOD: "import {Page} from 'ysp-custom-components';\nimport {Component} from 'react';\nexport default class\textends Component{\n  pagesClick(e){\n    var\t_this=this;\n    var handler=_this.props.customHandler;\n    var target=e.target;\n     if(handler) {                                    \n       handler({\n         data:target.className,\n         eventType:'click'                         \n       })\n     }\n  }\n  selectChange(e){\n    var\t_this=this;\n    var handler=_this.props.customHandler;\n    var target=e.target;\n     if(handler) {                                    \n       handler({\n         data:{ind:target.selectedIndex,val:target.value},\n         eventType:'selectChange'                         \n       })\n     }\n  }\n  inputChange(e){\n    var\t_this=this;\n    var handler=_this.props.customHandler;\n    var target=e.target;\n     if(handler) {                                    \n       handler({\n         data:target.value,\n         eventType:'inputChange'                         \n       })\n     }\n  }\n  render(){\n    const {\tcustomData,customHandler\t}=this.props;\n    var _this=this;\n    if(customData){\n      return(\n        <div>\n          <Page\tPassedCustomData={customData}\tpagesClick={_this.pagesClick.bind(_this)} inputChange={_this.inputChange.bind(_this)} selectChange={_this.selectChange.bind(_this)} />\t\n        </div>\n      )\n    }else{\n      return(\n        <div style={{display:'none'}}></div>\n      )\n    } \n  }\n}"
+getData_control33_mC6qBZ: |
+  //loading 加载。
+  if (!elem) {
+    return;
+  }
+  if (elem && elem.contentWindow && elem.contentWindow.document) {
+    var loading = elem.contentWindow.document.querySelector('.mini-mask');
+
+    if (loading) {
+      var _loading = loading.querySelector('.mini-mask-loading');
+
+      if (_loading && _loading.style.display == 'block' && _loading.textContent.trim() == '加载中...') {
+        console.log('1');
+        return [true];
+      } else {
+        return;
+      }
+    }
+  }
+doAction_uiControl36_Ttzy8D: ''
+getTemplate_uiControl36_Ttzy8D: "\nexport default class extends React.Component{\n  render(){\n    var data = this.props.customData || [];\n    if(data\t&&\tdata[0]==true){\n    \treturn(\n        <div className=\"ysp-loadEffect-background\">\n          <div className=\"ysp-loadEffect\">\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n            <span></span>\n          </div>\n        </div>  \n    \t)  \n    }else{\n      return(\n \_ \_  \t<div></div> \n      )\n    }\n  }\n}"
+getData_control34_4J65en: >
+  if (!elem) {
+    return;
+  }
+
+  if (elem && elem.querySelector("#toast") &&
+  elem.querySelector("#toast").style.display != "none") {
+    return elem.querySelector("#toast").textContent;
+  }
+doAction_uiControl59_WNwJUr: ''
+getTemplate_uiControl59_WNwJUr: |-
+  import {Component} from 'react';
+  export default class extends React.Component{
+    componentDidUpdate(props){
+      var data=this.props.customData;
+      var toastWord=this.refs.yspToast;; 
+      setTimeout(function(){
+        toastWord.style.display="none";
+      },2000)
+    }
+    render() {
+      var data=this.props.customData||[]
+      return (
+        <div className="ysp_alert_tips" ref="yspToast" onClick={(e)=>{e.target.style.display="none"}}>
+          {data==""? "":<div className="ysp_alert_words"><span style={{height:"40px"}}>{data}</span></div>}
+        </div>
+      )
+    }
+  };

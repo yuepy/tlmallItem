@@ -1,0 +1,182 @@
+{
+  "version": "0.1",
+  "id": "deSummary",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/SellManager/sellExecute/deliveryApplication/doDeSummary.jsp?applyNum=FH-272-20190621-8826",
+  "jsFile": "index.js",
+  "chineseName": "汇总模板（发货审批）",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control308_TSi1lh": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control308_TSi1lh"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control311_2XyLC6": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control311_2XyLC6"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context48_rHwTQC": {
+      "controls": [
+        "control308_TSi1lh",
+        "control311_2XyLC6"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/SellManager\\/sellExecute\\/deliveryApplication\\/doDeSummary\\.jsp.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow199_lv6DDr": {
+      "toContexts": [
+        {
+          "toContextId": "context48_rHwTQC"
+        }
+      ]
+    },
+    "flow202_Oef4hr": {
+      "fromContextId": "context48_rHwTQC",
+      "fromAction": "doAction",
+      "fromControlId": "control308_TSi1lh",
+      "toContexts": [
+        {
+          "toContextId": "context48_rHwTQC"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page48_Ikmh6y": {
+      "contextId": "context48_rHwTQC",
+      "layout": [
+        {
+          "id": "uiControl305_FflVz2",
+          "controlId": "control308_TSi1lh",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl305_FflVz2",
+                "onGetTemplate": "getTemplate_uiControl305_FflVz2"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl309_mQwEfy",
+          "controlId": "control311_2XyLC6",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl309_mQwEfy",
+                "onGetTemplate": "getTemplate_uiControl309_mQwEfy"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context48_rHwTQC": [
+          "模板汇总"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context48_rHwTQC": [
+          "192.168.220.51:8000/ptsoa/SellManager/sellExecute/deliveryApplication/doDeSummary.jsp?applyNum=FH-272-20190621-8826"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context48_rHwTQC": [
+          [
+            "datagrid",
+            "download",
+            "excelDownload",
+            "flowId"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context48_rHwTQC": [
+          [
+            "form_label",
+            "icon-download",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context48_rHwTQC": [
+          [
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TR/TD/A"
+          ]
+        ]
+      }
+    }
+  }
+}

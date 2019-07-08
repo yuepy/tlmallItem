@@ -1,0 +1,191 @@
+{
+  "version": "0.1",
+  "id": "dowSummary",
+  "targetURL": "http://192.168.220.51:8000/ptsoa/SellManager/sellExecute/fn_downstreamLower/dowSummary.jsp?orderNum=FLH012019041010003557",
+  "jsFile": "index.js",
+  "chineseName": "明细（下游折扣返利函）",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control314_wv8BLz": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control314_wv8BLz"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control315_fdmXI1": {
+      "location": {
+        "data": {
+          "tagName": "TABLE"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/TABLE[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control315_fdmXI1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": true,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context50_Xei3lX": {
+      "controls": [
+        "control314_wv8BLz",
+        "control315_fdmXI1"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "http:\\/\\/192\\.168\\.220\\.51:8000\\/ptsoa\\/SellManager\\/sellExecute\\/fn_downstreamLower\\/dowSummary\\.jsp.*"
+      ]
+    }
+  },
+  "flows": {
+    "flow205_Ta73tM": {
+      "toContexts": [
+        {
+          "toContextId": "context50_Xei3lX"
+        }
+      ]
+    },
+    "flow206_221Vtq": {
+      "fromContextId": "context50_Xei3lX",
+      "fromAction": "doAction",
+      "fromControlId": "control314_wv8BLz",
+      "toContexts": [
+        {
+          "toContextId": "context50_Xei3lX"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page50_E4k24P": {
+      "contextId": "context50_Xei3lX",
+      "layout": [
+        {
+          "id": "uiControl312_mZgwyh",
+          "controlId": "control314_wv8BLz",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl312_mZgwyh",
+                "onGetTemplate": "getTemplate_uiControl312_mZgwyh"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl313_KM6xVB",
+          "controlId": "control315_fdmXI1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl313_KM6xVB",
+                "onGetTemplate": "getTemplate_uiControl313_KM6xVB"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context50_Xei3lX": [
+          "订单审核明细"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context50_Xei3lX": [
+          "192.168.220.51:8000/ptsoa/SellManager/sellExecute/fn_downstreamLower/dowSummary.jsp?orderNum=FLH012019041010003557",
+          "192.168.220.51:8000/ptsoa/SellManager/sellExecute/fn_downstreamLower/dowSummary.jsp?orderNum=FLH01201905230001"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context50_Xei3lX": [
+          [
+            "datagrid",
+            "download",
+            "excelDownload",
+            "flowId"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context50_Xei3lX": [
+          [
+            "form_label",
+            "icon-download",
+            "mini-button",
+            "mini-button-icon",
+            "mini-button-text"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context50_Xei3lX": [
+          [
+            "-/-/IFRAME",
+            "-/-/SCRIPT",
+            "-/-/TABLE",
+            "-/TABLE/TBODY",
+            "TABLE/TBODY/TR",
+            "TBODY/TR/TD",
+            "TD/A/SPAN",
+            "TR/TD/A"
+          ]
+        ]
+      }
+    }
+  }
+}

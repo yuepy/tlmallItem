@@ -86,6 +86,7 @@
     },
 
     getData_control31_vSTuCi: function (elem) {
+      "use strict";
       if (!elem) {
         return [];
       }if (elem) {
@@ -98,10 +99,11 @@
       }
     },
     doAction_uiControl34_tOCHFG: function (data, elem) {
+      "use strict";
       if (data.eventType == "clickBtn") {
         var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
           top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
-        } else if (title.indexOf("假期管理") !== -1 || title.indexOf("公出") !== -1 || title.indexOf("假期申请") !== -1) {
+        } else if (title.indexOf("假期管理") !== -1 || title.indexOf("公出") !== -1 && title.indexOf("移动打卡") == -1 || title.indexOf("假期申请") !== -1) {
           top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
         } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
           top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
@@ -141,6 +143,8 @@
           top.pendTitle = "物料信息停用";win._ysp_top.tenderType = "materialInformationDisabled";
         } else if (title.indexOf("简易采购订单撤销") !== -1) {
           top.pendTitle = "简易采购订单撤销";win._ysp_top.tenderType = "orderCancel";
+        } else if (title.indexOf("移动打卡") !== -1) {
+          top.pendTitle = "移动打卡公出出差";win._ysp_top.tenderType = "mobileTrip";
         } else {
           top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
         }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click();ysp.appMain.showLoading();

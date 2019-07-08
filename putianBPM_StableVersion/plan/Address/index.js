@@ -11,6 +11,7 @@
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _yspInteriorComponents = require('ysp-interior-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.onClick = function (e) {\n      var handler = _this2.props.customHandler;\n      if (handler) {\n        handler({\n          // data:e.target.className,\n          data: _this2.props.customData,\n          eventType: 'click'\n        });\n      }\n    };\n\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n      var _this = this;\n      var data = this.props.customData || [];\n      if (data) {\n        return React.createElement(\n          _yspInteriorComponents.Header,\n          { amStyle: 'primary', title: '\\u5DE5\\u4F5C\\u9879\\u6267\\u884C', className: 'ysp-flex-top' },\n          React.createElement(\n            _yspInteriorComponents.HeaderLeft,\n            null,\n            React.createElement(\n              AMUI.Button,\n              { amStyle: 'primary', style: { margin: 0 }, onClick: function onClick() {\n                  var handler = _this.props.customHandler;\n                  if (handler) {\n                    handler({\n                      data: data,\n                      eventType: 'back'\n                    });\n                  }\n                } },\n              React.createElement('span', { className: 'icon icon-left-nav' })\n            )\n          ),\n          React.createElement(\n            _yspInteriorComponents.HeaderRight,\n            null,\n            data ? React.createElement(\n              AMUI.Button,\n              { amStyle: 'primary', style: { margin: 0 }, className: 'ysp-Receive', onClick: _this.onClick },\n              data\n            ) : React.createElement('div', { style: { display: 'none' } })\n          )\n        );\n      } else {\n        return React.createElement('div', { style: { display: 'none' } });\n      }\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;";
     },
     getData_control60_40OEw6: function (elem) {
+      'use strict';
       if (!elem) {
         return;
       }if (elem) {
@@ -32,20 +33,27 @@
       }
     },
     doAction_uiControl57_IzXfNJ: function (data, elem) {
+      'use strict';
       if (data.eventType == 'click') {
-        var d = data.dataCustom;var line = parseInt(d[1]) + 1;var column = parseInt(d[2]);var _btn = elem.querySelectorAll('tr')[line].querySelectorAll('td')[column].querySelector('a');var url = _btn.href;elem.ownerDocument.defaultView.open(url);if (ysp.appMain.isIOS()) {
-          if (url.indexOf("jpg") !== -1 || url.indexOf("png") !== -1) {
-            ysp.appMain.openWindow(url);
-          } else {
-            ysp.appMain.openWindow(url + '&_ysp_filepreview=1');
-          }
+        var d = data.dataCustom;var line = parseInt(d[1]) + 1;var column = parseInt(d[2]);debugger;var _btn = elem.querySelectorAll('tr')[line].querySelectorAll('td')[column].querySelector('a');var url = _btn.href; // elem.ownerDocument.defaultView.open(url);
+        if (ysp.appMain.isIOS()) {
+          top.EAPI.openWindow(url + '?_ysp_filepreview=1');
         } else if (ysp.appMain.isAndroid()) {
-          if (url.indexOf("jpg") !== -1 || url.indexOf("png") !== -1) {
-            ysp.appMain.openWindow(url);
-          } else {
-            _btn.click();
-          }
-        } //   var xhr = new XMLHttpRequest();
+          yspUser.filePreview(url, '', '');
+        } // if (ysp.appMain.isIOS()) {
+        //   if (url.indexOf("jpg") !== -1 || url.indexOf("png") !== -1) {
+        //     ysp.appMain.openWindow(url);
+        //   } else {
+        //     ysp.appMain.openWindow(url + '&_ysp_filepreview=1');
+        //   }
+        // } else if (ysp.appMain.isAndroid()) {
+        //   if (url.indexOf("jpg") !== -1 || url.indexOf("png") !== -1) {
+        //     ysp.appMain.openWindow(url);
+        //   } else {
+        //     _btn.click();
+        //   }
+        // } 
+        //   var xhr = new XMLHttpRequest();
         //   xhr.open('GET', url, false);
         //   xhr.onreadystatechange = function () {
         //     if (xhr.status == 200 && xhr.readyState == 4) {

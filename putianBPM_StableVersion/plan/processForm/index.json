@@ -9,7 +9,6 @@
     "approvalTrack": "../approvalTrack/index.json",
     "operationLog": "../operationLog/index.json",
     "processMonitoring": "../processMonitoring/index.json",
-    "processForm": "../processForm/index.json",
     "upFileScan": "../upFileScan/index.json",
     "Summary": "../Summary/index.json",
     "Address": "../Address/index.json",
@@ -27,7 +26,10 @@
     "batchDetail": "../batchDetail/index.json",
     "saleCredit": "../saleCredit/index.json",
     "hasBeenProcessedTask": "../hasBeenProcessedTask/index.json",
-    "pendingTask": "../pendingTask/index.json"
+    "pendingTask": "../pendingTask/index.json",
+    "deSummary": "../deSummary/index.json",
+    "orderNum": "../orderNum/index.json",
+    "dowSummary": "../dowSummary/index.json"
   },
   "chineseName": "流程单",
   "description": "",
@@ -680,15 +682,12 @@
       "fromControlId": "control19_s257i7",
       "toContexts": [
         {
-          "toContextId": "context8_ddpRhS"
+          "toContextId": "context8_ddpRhS",
+          "toModelId": "processForm"
         },
         {
           "toContextId": "context9_vdtoHx",
           "toModelId": "operationLog"
-        },
-        {
-          "toContextId": "context8_ddpRhS",
-          "toModelId": "processForm"
         },
         {
           "toContextId": "context10_Hyn4t6",
@@ -799,6 +798,18 @@
         {
           "toContextId": "context40_ARAl5Z",
           "toModelId": "saleCredit"
+        },
+        {
+          "toContextId": "context48_rHwTQC",
+          "toModelId": "deSummary"
+        },
+        {
+          "toContextId": "context49_tznxdb",
+          "toModelId": "orderNum"
+        },
+        {
+          "toContextId": "context50_Xei3lX",
+          "toModelId": "dowSummary"
         }
       ]
     },

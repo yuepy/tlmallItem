@@ -1,12 +1,12 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control13_9WwGn3: function (elem) {
+      "use strict";
       if (!elem) {
         return;
       }if (elem) {
         //获取tr的数组
-        var data = [];
-        var trArr = elem.querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
+        var data = [];var trArr = elem.querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
           var tdArr = trArr[i].querySelectorAll("td");var arry = [];for (var j = 0; j < tdArr.length; j++) {
             arry.push(tdArr[j].textContent);
           }data.push(arry);arry.shift();arry.shift();
@@ -14,13 +14,17 @@
       }
     },
     doAction_uiControl14_JkLtyQ: function (data, elem) {
+      "use strict";
       if (data.eventType == "clickBtn") {
-        var data = data.dataCustom;var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
-          top.pendTitle = "总部转正";win._ysp_top.tenderType = "turnTask";
-        } else if (title.indexOf("假期管理") !== -1 || title.indexOf("公出") !== -1 || title.indexOf("假期申请") !== -1) {
+        var data = data.dataCustom;
+        var index = parseInt(data.index) + 2;var i = data.i;var title = data.title;var win = elem.ownerDocument.defaultView;if (title && title.indexOf("总部转正") !== -1) {
+          top.pendTitle = "总部转正";
+          win._ysp_top.tenderType = "turnTask";
+        } else if (title.indexOf("假期管理") !== -1 || title.indexOf("公出") !== -1 && title.indexOf("移动打卡") == -1 || title.indexOf("假期申请") !== -1) {
           top.pendTitle = "假期申请";win._ysp_top.tenderType = "askForLeave";
         } else if (title.indexOf("分公司离职管理流程(解除)") !== -1) {
-          top.pendTitle = "分公司离职管理流程(解除)";win._ysp_top.tenderType = "branchRelease";
+          top.pendTitle = "分公司离职管理流程(解除)";
+          win._ysp_top.tenderType = "branchRelease";
         } else if (title.indexOf("离职/退休管理") !== -1 || title.indexOf("离职管理(辞职)") !== -1) {
           top.pendTitle = "离职管理";win._ysp_top.tenderType = "departure";
         } else if (title.indexOf("员工职位变动") !== -1) {
@@ -57,8 +61,11 @@
           top.pendTitle = "物料信息停用";win._ysp_top.tenderType = "materialInformationDisabled";
         } else if (title.indexOf("简易采购订单撤销") !== -1) {
           top.pendTitle = "简易采购订单撤销";win._ysp_top.tenderType = "orderCancel";
+        } else if (title.indexOf("移动打卡") !== -1) {
+          top.pendTitle = "移动打卡公出出差";win._ysp_top.tenderType = "mobileTrip";
         } else {
-          top.pendTitle = "第一期38个流程";win._ysp_top.tenderType = "processForm";
+          top.pendTitle = "第一期38个流程";
+          win._ysp_top.tenderType = "processForm";
         }elem.querySelector("tbody").querySelectorAll("tr")[index].querySelectorAll("td")[1].querySelectorAll("a")[i].click(); // ysp.appMain.showLoading();
       }
     },
