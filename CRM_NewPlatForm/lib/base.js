@@ -153,8 +153,9 @@
       alert('用户名或密码为空,登录失败!');
       return ;
     }
-    if(user&&password){
-      ysp.customHelper.logLoginName = user;//日志内容部分
+    ysp.customHelper.TimeScope.startTime();
+    if (user && password) {
+      ysp.customHelper.logLoginName = user; //日志内容部分
       STARTTIME = Date.now();
       LOGINTIME = new Date().getTime();
       var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
@@ -196,10 +197,11 @@
                   }
                 }
               }
-              getAllMenu(currentAwin,MenuList);
-              ysp.customHelper.CONSOLELOG('VCRM','登录日志','登录成功',STARTTIME,LOGINTIME,loginEncoder);
-            }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
-              loginTimeOut('登录失败,接口返回错误,是否刷新重试');
+              getAllMenu(currentAwin, MenuList);
+              ysp.customHelper.TimeScope.timeScope();
+              ysp.customHelper.CONSOLELOG('VCRM', '登录日志', '登录成功', STARTTIME, LOGINTIME, loginEncoder);
+            } else if (EnCoderXhr.status >= 400 && EnCoderXhr.readyState == 4) {
+              loginTimeOut('登录失败,接口返回错误,是否刷新重试');
             }
             //else if(xhr.status >=400 ){
             // alert('登录效验失败.请手动登录!'+LoginXhr.status);
@@ -230,9 +232,10 @@
       alert('用户名或密码为空,登录失败!');
       return ;
     }
-    if(user&&password){
+    ysp.customHelper.TimeScope.startTime();
+    if (user && password) {
       ysp.customHelper.logLoginName = user;
-      LOGINNAME = user;  //日志内容部分
+      LOGINNAME = user; //日志内容部分
       LOGINTIME = new Date().getTime();
       var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
       var EnCoderXhr = new XMLHttpRequest();
@@ -273,24 +276,25 @@
                   }
                 }
               }
-              getAllMenu(currentAwin,MenuList);
-              LOGINUSED = (Date.now() - STARTTIME)/1000; //运行时间
-              var DATA = {'log':{
-                        'source':'VCRM',
-                        'type':'登录日志',
-                        'loginName':LOGINNAME,
-                        'email':'',
-                        'model':'',
-            						'loginTime':LOGINTIME,
-                        'occurTime':new Date().getTime(),
-                        'timeUsed':LOGINUSED,
-                        'failedReason':'登录成功',
-                        'uploadFailedReason':loginEncoder
-          						 }
-                     }
-              top.yspCheckIn.sendLog(JSON.stringify(DATA));
-            }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
-              loginTimeOut('登录失败,接口返回错误,是否刷新重试');
+              getAllMenu(currentAwin, MenuList);
+              LOGINUSED = (Date.now() - STARTTIME) / 1000; //运行时间
+              var DATA = { 'log': {
+                  'source': 'VCRM',
+                  'type': '登录日志',
+                  'loginName': LOGINNAME,
+                  'email': '',
+                  'model': '',
+                  'loginTime': LOGINTIME,
+                  'occurTime': new Date().getTime(),
+                  'timeUsed': LOGINUSED,
+                  'failedReason': '登录成功',
+                  'uploadFailedReason': loginEncoder
+                }
+              };
+              ysp.customHelper.TimeScope.timeScope();
+              top.yspCheckIn.sendLog(JSON.stringify(DATA));
+            } else if (EnCoderXhr.status >= 400 && EnCoderXhr.readyState == 4) {
+              loginTimeOut('登录失败,接口返回错误,是否刷新重试');
             }
           }
           LoginXhr.timeout = 10000;
@@ -1317,8 +1321,64 @@
   function _isLoading(){
     var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow; //当前激活window . 
   }
-  utils.extend(ysp.customHelper, {
-    //信息录入本地缓存部分
+  //页面时间输出 - 监控加载时间
+  function startTime(){
+    localStorage.setItem('startTime',new Date().getTime());
+  }
+  function timeScope(doc){
+    var document = top.document;
+    var startTime = localStorage.getItem('startTime');
+    var endTime = new Date().getTime();
+  	if(!startTime){
+      return ;
+    }
+    if(top.EAPI.isAndroid()){
+      var elem = document.querySelector('#mobileMainContent').querySelector('.timeScope');
+      var body = document.querySelector('#mobileMainContent');
+    }else{
+      var elem = document.querySelector('#engine_browser') && document.querySelector('#engine_browser').contentWindow.document.body.querySelector('.timeScope');
+    var body = document.querySelector('#engine_browser') && document.querySelector('#engine_browser').contentWindow.document.body;
+    }
+    var time = ((endTime - startTime)/1000+1).toFixed(2)+'s';
+    ysp.customHelper.TimeScope.totalTime += time;
+    localStorage.removeItem('startTime');
+    if(!doc){
+      alert(time);
+    }
+    if(!elem){
+      var div = document.createElement('div');
+      var text = document.createTextNode(time);
+      div.className = 'timeScope';
+      if(body){body.appendChild(div);}
+    }else{
+      elem.textContent = time;
+    }
+  }
+  utils.extend(ysp.customHelper, {
+    //页面时间输出
+    TimeScope:{
+      'startTime':startTime,
+      'timeScope':timeScope,
+      'totalTime':0
+    },
+    //日志上传
+    CONSOLELOG: function CONSOLELOG(source, type, failed, startTime, loginTime, uploadFailedReason) {
+      var loginUsed = (Date.now() - startTime) / 1000; //运行时间
+      var DATA = { 'log': {
+          'source': source,
+          'type': type,
+          'loginName': ysp.customHelper.logLoginName,
+          'email': '',
+          'model': '',
+          'loginTime': loginTime,
+          'occurTime': new Date().getTime(),
+          'timeUsed': loginUsed,
+          'failedReason': failed,
+          'uploadFailedReason': uploadFailedReason
+          }
+        }
+  },
+    //信息录入本地缓存部分
     informationEntry:{
       enterName:'', //录入客户名称
       basic:{
@@ -2654,6 +2714,7 @@
     // 以下两个方法用于修改原页面中的错误, 但执行时机不同
     // 当目标页面加载完onload时执行, aWin为当前页面的window对象, doc为当前页面的document对象
     onTargetLoad: function onTargetLoad(aWin, doc) {
+      ysp.customHelper.TimeScope.timeScope(document);
       if (aWin) {
         if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
           //在登录成功时,请求PC端菜单接口,获取全部菜单列表  -- 新平台做临时调试使用 .
@@ -2667,9 +2728,10 @@
     },
     // 目标页面加载前执行, aWin为当前页面的window对象, doc为当前页面的document对象
     beforeTargetLoad: function beforeTargetLoad(aWin, doc) {
-    	if(aWin){
-        if(aWin.localStorage && aWin.localStorage.getItem('menuId') != null){
-          aWin.localStorage.setItem('menuId','');
+      ysp.customHelper.TimeScope.startTime();
+      if (aWin) {
+        if (aWin.localStorage && aWin.localStorage.getItem('menuId') != null) {
+          aWin.localStorage.setItem('menuId', '');
         }
         if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
           ysp.appMain.hideLoading();
