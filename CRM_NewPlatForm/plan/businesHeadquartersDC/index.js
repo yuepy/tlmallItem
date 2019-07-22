@@ -140,6 +140,8 @@
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this));\n\n    _this2.render = function () {\n      var data = _this2.props.customData && _this2.props.customData.dataLabel;\n      var flag = _this2.props.customData && _this2.props.customData.flag;\n      var flags = _this2.props.customData && _this2.props.customData.flags;\n      var _this = _this2;\n      return React.createElement(\n        \'div\',\n        { className: \'.ysp-dialog-hander-op\', style: { display: _this2.state.open ? \'block\' : \'none\' } },\n        React.createElement(_yspCustomComponents.Overlay, null),\n        React.createElement(\n          \'div\',\n          { className: \'ysp-dialog-hander\' },\n          React.createElement(\n            \'ul\',\n            null,\n            data && data.map(function (d, i) {\n              return React.createElement(\n                \'li\',\n                { \'data-index\': i, onClick: function onClick(e) {\n                    var target = e.target;\n                    var index = target.dataset.index;\n                    var handler = _this2.props.customHandler;\n                    if (handler) {\n                      handler({\n                        data: {\n                          index: index,\n                          flag: flag,\n                          flags: flags\n                        },\n                        eventType: \'click\'\n                      });\n                    }\n                    _this.toogleSwitch();\n                    var evt = new Event(\'ysp-change-title\');\n                    evt.title = e.target.textContent;\n                    window.dispatchEvent(evt);\n                  } },\n                d\n              );\n            })\n          ),\n          React.createElement(\n            \'button\',\n            { onClick: function onClick() {\n                _this.toogleSwitch();\n              } },\n            \'\\u53D6\\u6D88\'\n          )\n        )\n      );\n    };\n\n    _this2.state = {\n      open: false\n    };\n    window.addEventListener(\'ysp-dialog-close\', _this2.toogleSwitch.bind(_this2), false);\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'componentWillUnmount\',\n    value: function componentWillUnmount() {\n      window.removeEventListener(\'ysp-dialog-close\', this.toogleSwitch.bind(this), false);\n    }\n  }, {\n    key: \'toogleSwitch\',\n    value: function toogleSwitch() {\n      this.setState({\n        open: !this.state.open\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control253_wPBgTz: function (elem) {
+      'use strict';
+
       if (!elem) {
         return;
       }var dataMonth = elem.ownerDocument.querySelector('#searchHead') && elem.ownerDocument.querySelector('#searchHead').querySelector('input[name="filter_month"]');if (dataMonth) {
@@ -149,13 +151,21 @@
       }
     },
     doAction_uiControl173_btOVow: function (data, elem) {
+      'use strict';
+
       if (data.eventType == 'upValue') {
         var val = data.dataCustom;var valLength = val.length;if (4 != valLength) {
           //月度销售达成
-          var monthLength = +val.substr(5);var inputMonth = elem.querySelector("#searchHead").querySelector('input[name="filter_month"]');inputMonth.focus();elem.querySelector('div[class="datepicker-months"]').querySelector("tbody").querySelectorAll("span")[monthLength - 1].click();
+          // var monthLength = +val.substr(5);
+          // var inputMonth = elem.querySelector("#searchHead").querySelector('input[name="filter_month"]');
+          // inputMonth.focus();
+          // elem.querySelector('div[class="datepicker-months"]').querySelector("tbody").querySelectorAll("span")[monthLength - 1].click();
+          var inputYear = elem.querySelector("#searchHead").querySelector('input[name="filter_month"]'); // inputYear.focus();
+          inputYear.value = data.dataCustom;elem.ownerDocument.defaultView.sessionStorage.setItem("myMonth", data.dataCustom);var queryBtnSearch = elem.ownerDocument.querySelector("#queryBtnSearch");queryBtnSearch.click();
         } else {
           //年度销售达成
-          var inputYear = elem.querySelector("#searchHead").querySelector('input[name="filter_year"]');inputYear.focus();inputYear.value = data.dataCustom;var queryBtnSearch = elem.ownerDocument.querySelector("#queryBtnSearch");queryBtnSearch.click();
+          var inputYear = elem.querySelector("#searchHead").querySelector('input[name="filter_year"]'); // inputYear.focus();
+          inputYear.value = data.dataCustom;elem.ownerDocument.defaultView.sessionStorage.setItem("myYear", data.dataCustom);var queryBtnSearch = elem.ownerDocument.querySelector("#queryBtnSearch");queryBtnSearch.click();
         } //inputMonth.value = data.dataCustom;
         //var queryBtnSearch = elem.ownerDocument.querySelector("#queryBtnSearch");
         //queryBtnSearch.click();
@@ -167,12 +177,13 @@
     },
 
     getData_control116_kIDcZ0: function (elem) {
+      "use strict";
       if (!elem) {
         return [];
       }if (elem) {
-        var data = [];var trs = elem.querySelector("#table_list_1").querySelectorAll("tr");var reportId = elem.querySelector('input[name="reportId"]').value;var titleIdx = null;var deepFlag = true;var strFuc = function (_obj) {
+        var data = [];var trs = elem.querySelector("#table_list_1").querySelectorAll("tr");var reportId = elem.querySelector('input[name="reportId"]').value;var titleIdx = null;var deepFlag = true;var strFuc = function strFuc(_obj) {
           var _string = _obj.getAttribute("aria-describedby");var _index = _string.lastIndexOf('_');var _str = _string.substring(_index + 1);return _str;
-        };if (!titleIdx) {
+        };debugger;if (!titleIdx) {
           var _tds = trs[1] && trs[1].querySelectorAll("td");var a, b, c, d, e, f, g, h, l;if (_tds) {
             if ("report34-2" == reportId || "report34-1" == reportId || "report49" == reportId) {
               //销售代表（客户与门店达成）、（产品销售达成）
@@ -183,10 +194,25 @@
                   }
                 }
               } else if ("report49" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    a = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  a = numTemp[0];
+                } else if (numTemp[1]) {
+                  a = numTemp[1];
+                } else if (numTemp[2]) {
+                  a = numTemp[2];
+                } else if (numTemp[3]) {
+                  a = numTemp[3];
                 }
               }
             } else if ("report34" == reportId || "report33" == reportId || "report33-1" == reportId || "report33-1-1" == reportId || "report48" == reportId) {
@@ -210,10 +236,25 @@
                   }
                 }
               } else if ("report33-1-1" == reportId || "report48" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    b = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  b = numTemp[0];
+                } else if (numTemp[1]) {
+                  b = numTemp[1];
+                } else if (numTemp[2]) {
+                  b = numTemp[2];
+                } else if (numTemp[3]) {
+                  b = numTemp[3];
                 }
               }
             } else if ("report15" == reportId || "report16" == reportId || "report16-1" == reportId) {
@@ -231,10 +272,25 @@
                   }
                 }
               } else if ("report16-1" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    e = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  e = numTemp[0];
+                } else if (numTemp[1]) {
+                  e = numTemp[1];
+                } else if (numTemp[2]) {
+                  e = numTemp[2];
+                } else if (numTemp[3]) {
+                  e = numTemp[3];
                 }
               }
             } else if ("report20" == reportId || "report46" == reportId) {
@@ -246,10 +302,25 @@
                   }
                 }
               } else if ("report46" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    f = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  f = numTemp[0];
+                } else if (numTemp[1]) {
+                  f = numTemp[1];
+                } else if (numTemp[2]) {
+                  f = numTemp[2];
+                } else if (numTemp[3]) {
+                  f = numTemp[3];
                 }
               }
             } else if ("report17" == reportId || "report18" == reportId || "report18-1" == reportId || "report19" == reportId) {
@@ -288,16 +359,46 @@
                   }
                 }
               } else if ("report29-1" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    h = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  h = numTemp[0];
+                } else if (numTemp[1]) {
+                  h = numTemp[1];
+                } else if (numTemp[2]) {
+                  h = numTemp[2];
+                } else if (numTemp[3]) {
+                  h = numTemp[3];
                 }
               } else if ("report45" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    h = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  h = numTemp[0];
+                } else if (numTemp[1]) {
+                  h = numTemp[1];
+                } else if (numTemp[2]) {
+                  h = numTemp[2];
+                } else if (numTemp[3]) {
+                  h = numTemp[3];
                 }
               }
             } else if ("report31" == reportId || "report31-1" == reportId || "report31-1-1" == reportId || "report31-1-1-1" == reportId) {
@@ -342,10 +443,25 @@
                   }
                 }
               } else if ("report1-1-1" == reportId || "report4-1" == reportId || "report43" == reportId || "report2-1-1-1" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    l = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  l = numTemp[0];
+                } else if (numTemp[1]) {
+                  l = numTemp[1];
+                } else if (numTemp[2]) {
+                  l = numTemp[2];
+                } else if (numTemp[3]) {
+                  l = numTemp[3];
                 }
               } else if ("report1-2" == reportId || "report2" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -382,10 +498,25 @@
                   }
                 }
               } else if ("report8" == reportId || "report44" == reportId || "report10-1" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    l = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  l = numTemp[0];
+                } else if (numTemp[1]) {
+                  l = numTemp[1];
+                } else if (numTemp[2]) {
+                  l = numTemp[2];
+                } else if (numTemp[3]) {
+                  l = numTemp[3];
                 }
               } else if ("report9" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -433,10 +564,25 @@
                   }
                 }
               } else if ("report27" == reportId || "report22-1" == reportId || "report47" == reportId) {
-                for (var n = 0; n < _tds.length; n++) {
+                var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                  //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
-                    l = n;
+                    numTemp[0] = n;
+                  } else if ("modelId" == _str) {
+                    numTemp[1] = n;
+                  } else if ("projectSeries" == _str) {
+                    numTemp[2] = n;
+                  } else if ("projectName" == _str) {
+                    numTemp[3] = n;
                   }
+                }if (numTemp[0]) {
+                  l = numTemp[0];
+                } else if (numTemp[1]) {
+                  l = numTemp[1];
+                } else if (numTemp[2]) {
+                  l = numTemp[2];
+                } else if (numTemp[3]) {
+                  l = numTemp[3];
                 }
               } else if ("report22" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -506,7 +652,19 @@
             } else if (l >= 0) {
               titleIdx = l;
             }if (!_tds[titleIdx].querySelector("a")) {
-              deepFlag = false;
+              deepFlag = false; /**当无法下钻的时候，标题按照机型，机型编码，任务产品系列，项目的优先级依次往下找，
+                                	 titleSite存标题的指针，按照指针位置往下找标题
+                                   （逻辑为机型没数据，标题就找机型编码，以此类推） yue add*/var titleSite = new Array(4);for (var n = 0; n < _tds.length; n++) {
+                var _str = strFuc(_tds[n]);if ("modelName" == _str) {
+                  titleSite[0] = n;
+                } else if ("modelId" == _str) {
+                  titleSite[1] = n;
+                } else if ("projectSeries" == _str) {
+                  titleSite[2] = n;
+                } else if ("projectName" == _str) {
+                  titleSite[3] = n;
+                }
+              }
             }
           }
         }for (var i = 1; i < trs.length; i++) {
@@ -517,18 +675,44 @@
           }obj.reportIds = reportId;for (var j = 0; j < tds.length; j++) {
             var _str = strFuc(tds[j]);var _textContent = tds[j].textContent.trim();if ("report34-2" == reportId || "report34-1" == reportId || "report18-1" == reportId || "report31-1-1-1" == reportId || "report1-2-1-1-1" == reportId || "report23-1-1" == reportId || "report2-2-1-1" == reportId || "report9-1-1-1" == reportId) {
               var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
-                titles = tds[titleIdx + 1].textContent.trim();
+                if (titleSite[1]) {
+                  titles = tds[titleSite[1]].textContent.trim();
+                }if ("" == titles) {
+                  if (titleSite[2]) {
+                    titles = tds[titleSite[2]].textContent.trim();
+                  }if ("" == titles) {
+                    if (titleSite[3]) {
+                      titles = tds[titleSite[3]].textContent.trim();
+                    }
+                  }
+                }
               }obj.title = titles;
             } else if ("report49" == reportId || "report33-1-1" == reportId || "report48" == reportId || "report16-1" == reportId || "report46" == reportId || "report29-1" == reportId || "report45" == reportId || "report1-1-1" == reportId || "report4-1" == reportId || "report43" == reportId || "report44" == reportId || "report47" == reportId) {
               var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
-                titles = tds[titleIdx - 2].textContent.trim();if ("" == titles) {
-                  titles = tds[titleIdx - 4].textContent.trim();
+                if (titleSite[1]) {
+                  titles = tds[titleSite[1]].textContent.trim();
+                }if ("" == titles) {
+                  if (titleSite[2]) {
+                    titles = tds[titleSite[2]].textContent.trim();
+                  }if ("" == titles) {
+                    if (titleSite[3]) {
+                      titles = tds[titleSite[3]].textContent.trim();
+                    }
+                  }
                 }
               }obj.title = titles;
             } else if ("report2-1-1-1" == reportId || "report8" == reportId || "report10-1" == reportId || "report27" == reportId || "report22-1" == reportId) {
               var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
-                titles = tds[titleIdx - 2].textContent.trim();if ("" == titles) {
-                  titles = tds[titleIdx - 5].textContent.trim();
+                if (titleSite[1]) {
+                  titles = tds[titleSite[1]].textContent.trim();
+                }if ("" == titles) {
+                  if (titleSite[2]) {
+                    titles = tds[titleSite[2]].textContent.trim();
+                  }if ("" == titles) {
+                    if (titleSite[3]) {
+                      titles = tds[titleSite[3]].textContent.trim();
+                    }
+                  }
                 }
               }obj.title = titles;
             } else if ("report31" == reportId || "report23" == reportId) {
@@ -618,6 +802,7 @@
       }
     },
     doAction_uiControl113_KRsmxE: function (data, elem) {
+      "use strict";
       if (!elem) {
         return;
       }var trs = elem.querySelector("#table_list_1").querySelectorAll("tr");if (data.eventType === 'click') {
@@ -631,7 +816,7 @@
     },
     getTemplate_uiControl113_KRsmxE: function () {
       var selfTemplate = 'import {\n  Component\n} from \'react\';\nimport {\n  Dialog,\n  ComplexHeader,\n  CustomHeader\n} from \'ysp-custom-components\';\n\nexport default class extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n    \tclose: true,\n      idx: null\n    } \n  }\n  \n  handleClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.currentTarget;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: index\n      });\n    }\n  }\n  \n  handleRank(e){\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if(handler){\n      handler({\n        eventType:\'clickRank\',\n        data: index\n      })\n    }\n    this.setState({\n      close: !this.state.close,\n      idx: e.target.dataset.index\n    });\n  }\n  \n  render() {\n    var data = this.props.customData;\n    var reportIds = data && data.length >0 && data[0].reportIds;\n    var _this = this;\n    var lists;\n    var a = 0;\n    \t{data && data.length > 0 ?\n      lists = data.map(function(d,i){\n        return (\n            <div className="item">\n              <div className={d.deepFlag?"left":"left wd"}>\n                <h5 className="title">\n                  {\n                    d.rank && d.rank.num !="" ? \n                      <i className={d.rank.num>3?\'rank-else\':\'rank-top\'} onClick={d.rank.rankFlag ?_this.handleRank.bind(_this) : \'\'} data-index={i}>\n                        {d.rank.num}\n                      </i> : \'\'\n                  }\n                  {d.title?d.title:d.projectSeries}</h5>\n                {\n                  d.titles ? <h5 className="titlesXM">{d.titles}</h5> : \'\'\n                }\n                <ul>\n                  <li><span>\u76EE\u6807\u9500\u91CF</span><b>{d.targetSalesCount}</b></li>\n                  <li><span>\u5B9E\u9645\u9500\u91CF</span><b>{d.realSalesCount}</b>\n                    {\n                      d.salesCountBigCustomer !=null || d.salesCountBigCustomer !=undefined ? \n                        <span>\n                          {\n                            "report43" == reportIds || "report44" == reportIds \n                            || "report45" == reportIds ? \n                              <span style={{marginRight:0}}>\n                                (\u603B\u90E8\uFF1A\n                              </span>\n                              :\n                            \t<span style={{marginRight:0}}>\n                                (\u5927\u5BA2\u6237\uFF1A\n                              </span>\n                          }\n                        \t\n                          <b>\n                            {d.salesCountBigCustomer})\n                          </b>\n                        </span> : \'\'\n                    }\n                    </li>\n                  <li><span>\u76EE\u6807\u9500\u552E\u989D</span><b>{d.targetSalesAmount}</b></li>\n                  <li><span>\u5B9E\u9645\u9500\u552E\u989D</span><b>{d.realSalesAmount}</b>\n                    {\n                      d.salesAmountBigCustomer!=null || d.salesAmountBigCustomer!=undefined ?\n                        <span>\n                          {\n                            "report43" == reportIds || "report44" == reportIds \n                            || "report45" == reportIds ?\n                              <span style={{marginRight:0}}>\n                               (\u603B\u90E8\uFF1A\n                              </span>\n                               :\n                              <span style={{marginRight:0}}>\n                               (\u5927\u5BA2\u6237\uFF1A\n                              </span>\n                          }\n                        \t\n                          <b> \n                            {d.salesAmountBigCustomer})\n                          </b>\n                        </span>\n                         : \'\'\n                    }\n                    \n                    \n                  </li>\n                </ul>\n              </div>\n              <div className={d.deepFlag?"right":"right mg0"}>\n                  <div className="top">\n                    <div><em>{d.salesCountPercent}</em>%</div>\n                    <h5>\u9500\u91CF\u8FBE\u6210\u7387</h5>\n                  </div>\n                  <div className="btm">\n                      <div><em>{d.salesAmountPercent}</em>%</div>\n                      <h5>\u9500\u552E\u989D\u8FBE\u6210\u7387</h5>\n                    </div>\n              </div>\n               { d.deepFlag?<i class="ysp-cardlist-icon" onClick={_this.handleClick.bind(_this)} data-index={i}></i>:"" }\n\n           \t\t { d.rank && d.rank.data && d.rank.data.length > 0 ?\n              \t<DialogRank \n                  dataIndex = {i} \n                  customData = {d.rank} \n                  close = {_this.state.close} \n                  openIndex = {_this.state.idx}\n                  handleRank = {_this.handleRank.bind(_this)}\n                />:\'\'}\n            </div>\n        )  \n      })\n      :\n \xA0 \xA0 \xA0lists = <div className="ysp-no-datass" \n                style={{\'marginLeft\':\'-15px\',\'background\':\'#F0EFF5\'}}>\n                <div></div>\n                <div>\u6682\u65F6\u6CA1\u6709\u6570\u636E~</div>\n              </div>\n      }\n\n    return (\n      <div className="ysp-tableLists-box">\n        {lists}\n      </div>\n    )\n  }\n};\n\n// DialogRank \u6392\u540D\u9875\u9762\nclass DialogRank extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    var data = this.props.customData;\n    var dataLists = data.data;\n    var index = data.num;\n    //var dataMain = data.data[index-1];\n    var dataMain = data.chooseData && data.chooseData[0];\n    var rankReportId = data && data.reportId;\n    var _this = this;\n    var _close = true;\n    if(_this.props.dataIndex == _this.props.openIndex){\n      _close = false;\n    }else{\n      _close = true;\n    }\n    \n    // console.log(data);\n    return (\n      <Dialog close={_close} dataId={_this.props.dataIndex}>\n        <CustomHeader \n \xA0 \xA0 \xA0 \xA0 \xA0 data={{centerText:"\u9500\u552E\u8FBE\u6210\u6392\u540D",rightText:"\u7B5B\u9009"}} \n           backIsShow={true} \n           back={_this.props.handleRank} \n           filterIsShow={false} \n           filter={()=>{console.info("header filter ...")}}/>\n        <div className="ysp-rank-lists">\n          <div className="main">\n            <i className="rank-main">{dataMain.rank}</i>\n            <span className="title">\n              {"report15" == rankReportId || "report16" == rankReportId \n               || "report20" == rankReportId || "report22" == rankReportId \n               || "report10" == rankReportId || "report2-1" == rankReportId \n               || "report2-1-1" == rankReportId || "report21" == rankReportId\n                ? dataMain.branchName : "report33" == rankReportId \n               || "report33-1" == rankReportId ? dataMain.officeName : \n              \t"report34" == rankReportId || "report18" == rankReportId \n               || "report31-1-1" == rankReportId || "report9-1-1" == rankReportId \n               || "report2-2-1" == rankReportId || "report23-1" == rankReportId \n               || "report1-2-1-1" == rankReportId\n                ? dataMain.salerName : ""\n              }\n            </span>\n            <div className="infos">\n              \t<div><b>{dataMain.salesAmountPercent}</b>%</div>\n              \t<h5>\u9500\u552E\u989D\u8FBE\u6210\u7387</h5>\n            </div>\n          </div>\n          \n          <div className="itemLists">\n            {\n              dataLists.map(function(d,i){\n                return (\n                \t<div className={i==index-1?\'item item-main\':\'item\'}>\n                    {\n                      <i className={i!=index-1?(d.rank>3?\'rank-else\':\'rank-top\'):\'rank-main\'}>{d.rank}</i>\n                    }\n                    <span className="title">\n                      {"report15" == rankReportId || "report16" == rankReportId \n                       || "report20" == rankReportId || "report22" == rankReportId \n                       || "report10" == rankReportId || "report2-1" == rankReportId \n                       || "report2-1-1" == rankReportId || "report21" == rankReportId\n                        ? d.branchName : "report33" == rankReportId \n                       || "report33-1" == rankReportId ? d.officeName : \n                      \t"report34" == rankReportId || "report18" == rankReportId \n                       || "report31-1-1" == rankReportId || "report9-1-1" == rankReportId \n                       || "report2-2-1" == rankReportId || "report23-1" == rankReportId \n                       || "report1-2-1-1" == rankReportId\n                        ? d.salerName : ""\n                      }\n                    </span>\n                    <div className="infos">\n                        <div><b>{d.salesAmountPercent}</b>%</div>\n                        <h5>\u9500\u552E\u989D\u8FBE\u6210\u7387</h5>\n                    </div>\n                  </div>  \n                )\n              })\n            }\n          </div>\n          \n        </div>\n      </Dialog>\n    )\n  }\n}';
-      return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.state = {\n      close: true,\n      idx: null\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: 'handleClick',\n    value: function handleClick(e) {\n      var handler = this.props.customHandler;\n      var target = e.currentTarget;\n      var index = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: 'click',\n          data: index\n        });\n      }\n    }\n  }, {\n    key: 'handleRank',\n    value: function handleRank(e) {\n      var handler = this.props.customHandler;\n      var target = e.target;\n      var index = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: 'clickRank',\n          data: index\n        });\n      }\n      this.setState({\n        close: !this.state.close,\n        idx: e.target.dataset.index\n      });\n    }\n  }, {\n    key: 'render',\n    value: function render() {\n      var data = this.props.customData;\n      var reportIds = data && data.length > 0 && data[0].reportIds;\n      var _this = this;\n      var lists;\n      var a = 0;\n      {\n        data && data.length > 0 ? lists = data.map(function (d, i) {\n          return React.createElement(\n            'div',\n            { className: 'item' },\n            React.createElement(\n              'div',\n              { className: d.deepFlag ? \"left\" : \"left wd\" },\n              React.createElement(\n                'h5',\n                { className: 'title' },\n                d.rank && d.rank.num != \"\" ? React.createElement(\n                  'i',\n                  { className: d.rank.num > 3 ? 'rank-else' : 'rank-top', onClick: d.rank.rankFlag ? _this.handleRank.bind(_this) : '', 'data-index': i },\n                  d.rank.num\n                ) : '',\n                d.title ? d.title : d.projectSeries\n              ),\n              d.titles ? React.createElement(\n                'h5',\n                { className: 'titlesXM' },\n                d.titles\n              ) : '',\n              React.createElement(\n                'ul',\n                null,\n                React.createElement(\n                  'li',\n                  null,\n                  React.createElement(\n                    'span',\n                    null,\n                    '\\u76EE\\u6807\\u9500\\u91CF'\n                  ),\n                  React.createElement(\n                    'b',\n                    null,\n                    d.targetSalesCount\n                  )\n                ),\n                React.createElement(\n                  'li',\n                  null,\n                  React.createElement(\n                    'span',\n                    null,\n                    '\\u5B9E\\u9645\\u9500\\u91CF'\n                  ),\n                  React.createElement(\n                    'b',\n                    null,\n                    d.realSalesCount\n                  ),\n                  d.salesCountBigCustomer != null || d.salesCountBigCustomer != undefined ? React.createElement(\n                    'span',\n                    null,\n                    \"report43\" == reportIds || \"report44\" == reportIds || \"report45\" == reportIds ? React.createElement(\n                      'span',\n                      { style: { marginRight: 0 } },\n                      '(\\u603B\\u90E8\\uFF1A'\n                    ) : React.createElement(\n                      'span',\n                      { style: { marginRight: 0 } },\n                      '(\\u5927\\u5BA2\\u6237\\uFF1A'\n                    ),\n                    React.createElement(\n                      'b',\n                      null,\n                      d.salesCountBigCustomer,\n                      ')'\n                    )\n                  ) : ''\n                ),\n                React.createElement(\n                  'li',\n                  null,\n                  React.createElement(\n                    'span',\n                    null,\n                    '\\u76EE\\u6807\\u9500\\u552E\\u989D'\n                  ),\n                  React.createElement(\n                    'b',\n                    null,\n                    d.targetSalesAmount\n                  )\n                ),\n                React.createElement(\n                  'li',\n                  null,\n                  React.createElement(\n                    'span',\n                    null,\n                    '\\u5B9E\\u9645\\u9500\\u552E\\u989D'\n                  ),\n                  React.createElement(\n                    'b',\n                    null,\n                    d.realSalesAmount\n                  ),\n                  d.salesAmountBigCustomer != null || d.salesAmountBigCustomer != undefined ? React.createElement(\n                    'span',\n                    null,\n                    \"report43\" == reportIds || \"report44\" == reportIds || \"report45\" == reportIds ? React.createElement(\n                      'span',\n                      { style: { marginRight: 0 } },\n                      '(\\u603B\\u90E8\\uFF1A'\n                    ) : React.createElement(\n                      'span',\n                      { style: { marginRight: 0 } },\n                      '(\\u5927\\u5BA2\\u6237\\uFF1A'\n                    ),\n                    React.createElement(\n                      'b',\n                      null,\n                      d.salesAmountBigCustomer,\n                      ')'\n                    )\n                  ) : ''\n                )\n              )\n            ),\n            React.createElement(\n              'div',\n              { className: d.deepFlag ? \"right\" : \"right mg0\" },\n              React.createElement(\n                'div',\n                { className: 'top' },\n                React.createElement(\n                  'div',\n                  null,\n                  React.createElement(\n                    'em',\n                    null,\n                    d.salesCountPercent\n                  ),\n                  '%'\n                ),\n                React.createElement(\n                  'h5',\n                  null,\n                  '\\u9500\\u91CF\\u8FBE\\u6210\\u7387'\n                )\n              ),\n              React.createElement(\n                'div',\n                { className: 'btm' },\n                React.createElement(\n                  'div',\n                  null,\n                  React.createElement(\n                    'em',\n                    null,\n                    d.salesAmountPercent\n                  ),\n                  '%'\n                ),\n                React.createElement(\n                  'h5',\n                  null,\n                  '\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387'\n                )\n              )\n            ),\n            d.deepFlag ? React.createElement('i', { 'class': 'ysp-cardlist-icon', onClick: _this.handleClick.bind(_this), 'data-index': i }) : \"\",\n            d.rank && d.rank.data && d.rank.data.length > 0 ? React.createElement(DialogRank, {\n              dataIndex: i,\n              customData: d.rank,\n              close: _this.state.close,\n              openIndex: _this.state.idx,\n              handleRank: _this.handleRank.bind(_this)\n            }) : ''\n          );\n        }) : lists = React.createElement(\n          'div',\n          { className: 'ysp-no-datass',\n            style: { 'marginLeft': '-15px', 'background': '#F0EFF5' } },\n          React.createElement('div', null),\n          React.createElement(\n            'div',\n            null,\n            '\\u6682\\u65F6\\u6CA1\\u6709\\u6570\\u636E~'\n          )\n        );\n      }\n\n      return React.createElement(\n        'div',\n        { className: 'ysp-tableLists-box' },\n        lists\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;\n\n// DialogRank \u6392\u540D\u9875\u9762\n\nvar DialogRank = function (_React$Component2) {\n  _inherits(DialogRank, _React$Component2);\n\n  function DialogRank(props) {\n    _classCallCheck(this, DialogRank);\n\n    return _possibleConstructorReturn(this, (DialogRank.__proto__ || Object.getPrototypeOf(DialogRank)).call(this, props));\n  }\n\n  _createClass(DialogRank, [{\n    key: 'render',\n    value: function render() {\n      var data = this.props.customData;\n      var dataLists = data.data;\n      var index = data.num;\n      //var dataMain = data.data[index-1];\n      var dataMain = data.chooseData && data.chooseData[0];\n      var rankReportId = data && data.reportId;\n      var _this = this;\n      var _close = true;\n      if (_this.props.dataIndex == _this.props.openIndex) {\n        _close = false;\n      } else {\n        _close = true;\n      }\n\n      // console.log(data);\n      return React.createElement(\n        _yspCustomComponents.Dialog,\n        { close: _close, dataId: _this.props.dataIndex },\n        React.createElement(_yspCustomComponents.CustomHeader, {\n          data: { centerText: \"\u9500\u552E\u8FBE\u6210\u6392\u540D\", rightText: \"\u7B5B\u9009\" },\n          backIsShow: true,\n          back: _this.props.handleRank,\n          filterIsShow: false,\n          filter: function filter() {\n            console.info(\"header filter ...\");\n          } }),\n        React.createElement(\n          'div',\n          { className: 'ysp-rank-lists' },\n          React.createElement(\n            'div',\n            { className: 'main' },\n            React.createElement(\n              'i',\n              { className: 'rank-main' },\n              dataMain.rank\n            ),\n            React.createElement(\n              'span',\n              { className: 'title' },\n              \"report15\" == rankReportId || \"report16\" == rankReportId || \"report20\" == rankReportId || \"report22\" == rankReportId || \"report10\" == rankReportId || \"report2-1\" == rankReportId || \"report2-1-1\" == rankReportId || \"report21\" == rankReportId ? dataMain.branchName : \"report33\" == rankReportId || \"report33-1\" == rankReportId ? dataMain.officeName : \"report34\" == rankReportId || \"report18\" == rankReportId || \"report31-1-1\" == rankReportId || \"report9-1-1\" == rankReportId || \"report2-2-1\" == rankReportId || \"report23-1\" == rankReportId || \"report1-2-1-1\" == rankReportId ? dataMain.salerName : \"\"\n            ),\n            React.createElement(\n              'div',\n              { className: 'infos' },\n              React.createElement(\n                'div',\n                null,\n                React.createElement(\n                  'b',\n                  null,\n                  dataMain.salesAmountPercent\n                ),\n                '%'\n              ),\n              React.createElement(\n                'h5',\n                null,\n                '\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387'\n              )\n            )\n          ),\n          React.createElement(\n            'div',\n            { className: 'itemLists' },\n            dataLists.map(function (d, i) {\n              return React.createElement(\n                'div',\n                { className: i == index - 1 ? 'item item-main' : 'item' },\n                React.createElement(\n                  'i',\n                  { className: i != index - 1 ? d.rank > 3 ? 'rank-else' : 'rank-top' : 'rank-main' },\n                  d.rank\n                ),\n                React.createElement(\n                  'span',\n                  { className: 'title' },\n                  \"report15\" == rankReportId || \"report16\" == rankReportId || \"report20\" == rankReportId || \"report22\" == rankReportId || \"report10\" == rankReportId || \"report2-1\" == rankReportId || \"report2-1-1\" == rankReportId || \"report21\" == rankReportId ? d.branchName : \"report33\" == rankReportId || \"report33-1\" == rankReportId ? d.officeName : \"report34\" == rankReportId || \"report18\" == rankReportId || \"report31-1-1\" == rankReportId || \"report9-1-1\" == rankReportId || \"report2-2-1\" == rankReportId || \"report23-1\" == rankReportId || \"report1-2-1-1\" == rankReportId ? d.salerName : \"\"\n                ),\n                React.createElement(\n                  'div',\n                  { className: 'infos' },\n                  React.createElement(\n                    'div',\n                    null,\n                    React.createElement(\n                      'b',\n                      null,\n                      d.salesAmountPercent\n                    ),\n                    '%'\n                  ),\n                  React.createElement(\n                    'h5',\n                    null,\n                    '\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387'\n                  )\n                )\n              );\n            })\n          )\n        )\n      );\n    }\n  }]);\n\n  return DialogRank;\n}(React.Component);";
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.state = {\n      close: true,\n      idx: null\n    };\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'handleClick\',\n    value: function handleClick(e) {\n      var handler = this.props.customHandler;\n      var target = e.currentTarget;\n      var index = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: \'click\',\n          data: index\n        });\n      }\n    }\n  }, {\n    key: \'handleRank\',\n    value: function handleRank(e) {\n      var handler = this.props.customHandler;\n      var target = e.target;\n      var index = target.dataset.index;\n      if (handler) {\n        handler({\n          eventType: \'clickRank\',\n          data: index\n        });\n      }\n      this.setState({\n        close: !this.state.close,\n        idx: e.target.dataset.index\n      });\n    }\n  }, {\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData;\n      var reportIds = data && data.length > 0 && data[0].reportIds;\n      var _this = this;\n      var lists;\n      var a = 0;\n      {\n        data && data.length > 0 ? lists = data.map(function (d, i) {\n          return React.createElement(\n            \'div\',\n            { className: \'item\' },\n            React.createElement(\n              \'div\',\n              { className: d.deepFlag ? "left" : "left wd" },\n              React.createElement(\n                \'h5\',\n                { className: \'title\' },\n                d.rank && d.rank.num != "" ? React.createElement(\n                  \'i\',\n                  { className: d.rank.num > 3 ? \'rank-else\' : \'rank-top\', onClick: d.rank.rankFlag ? _this.handleRank.bind(_this) : \'\', \'data-index\': i },\n                  d.rank.num\n                ) : \'\',\n                d.title ? d.title : d.projectSeries\n              ),\n              d.titles ? React.createElement(\n                \'h5\',\n                { className: \'titlesXM\' },\n                d.titles\n              ) : \'\',\n              React.createElement(\n                \'ul\',\n                null,\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u76EE\\u6807\\u9500\\u91CF\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.targetSalesCount\n                  )\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u5B9E\\u9645\\u9500\\u91CF\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.realSalesCount\n                  ),\n                  d.salesCountBigCustomer != null || d.salesCountBigCustomer != undefined ? React.createElement(\n                    \'span\',\n                    null,\n                    "report43" == reportIds || "report44" == reportIds || "report45" == reportIds ? React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u603B\\u90E8\\uFF1A\'\n                    ) : React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u5927\\u5BA2\\u6237\\uFF1A\'\n                    ),\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesCountBigCustomer,\n                      \')\'\n                    )\n                  ) : \'\'\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u76EE\\u6807\\u9500\\u552E\\u989D\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.targetSalesAmount\n                  )\n                ),\n                React.createElement(\n                  \'li\',\n                  null,\n                  React.createElement(\n                    \'span\',\n                    null,\n                    \'\\u5B9E\\u9645\\u9500\\u552E\\u989D\'\n                  ),\n                  React.createElement(\n                    \'b\',\n                    null,\n                    d.realSalesAmount\n                  ),\n                  d.salesAmountBigCustomer != null || d.salesAmountBigCustomer != undefined ? React.createElement(\n                    \'span\',\n                    null,\n                    "report43" == reportIds || "report44" == reportIds || "report45" == reportIds ? React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u603B\\u90E8\\uFF1A\'\n                    ) : React.createElement(\n                      \'span\',\n                      { style: { marginRight: 0 } },\n                      \'(\\u5927\\u5BA2\\u6237\\uFF1A\'\n                    ),\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesAmountBigCustomer,\n                      \')\'\n                    )\n                  ) : \'\'\n                )\n              )\n            ),\n            React.createElement(\n              \'div\',\n              { className: d.deepFlag ? "right" : "right mg0" },\n              React.createElement(\n                \'div\',\n                { className: \'top\' },\n                React.createElement(\n                  \'div\',\n                  null,\n                  React.createElement(\n                    \'em\',\n                    null,\n                    d.salesCountPercent\n                  ),\n                  \'%\'\n                ),\n                React.createElement(\n                  \'h5\',\n                  null,\n                  \'\\u9500\\u91CF\\u8FBE\\u6210\\u7387\'\n                )\n              ),\n              React.createElement(\n                \'div\',\n                { className: \'btm\' },\n                React.createElement(\n                  \'div\',\n                  null,\n                  React.createElement(\n                    \'em\',\n                    null,\n                    d.salesAmountPercent\n                  ),\n                  \'%\'\n                ),\n                React.createElement(\n                  \'h5\',\n                  null,\n                  \'\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\'\n                )\n              )\n            ),\n            d.deepFlag ? React.createElement(\'i\', { \'class\': \'ysp-cardlist-icon\', onClick: _this.handleClick.bind(_this), \'data-index\': i }) : "",\n            d.rank && d.rank.data && d.rank.data.length > 0 ? React.createElement(DialogRank, {\n              dataIndex: i,\n              customData: d.rank,\n              close: _this.state.close,\n              openIndex: _this.state.idx,\n              handleRank: _this.handleRank.bind(_this)\n            }) : \'\'\n          );\n        }) : lists = React.createElement(\n          \'div\',\n          { className: \'ysp-no-datass\',\n            style: { \'marginLeft\': \'-15px\', \'background\': \'#F0EFF5\' } },\n          React.createElement(\'div\', null),\n          React.createElement(\n            \'div\',\n            null,\n            \'\\u6682\\u65F6\\u6CA1\\u6709\\u6570\\u636E~\'\n          )\n        );\n      }\n\n      return React.createElement(\n        \'div\',\n        { className: \'ysp-tableLists-box\' },\n        lists\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;\n\n// DialogRank \u6392\u540D\u9875\u9762\n\nvar DialogRank = function (_React$Component2) {\n  _inherits(DialogRank, _React$Component2);\n\n  function DialogRank(props) {\n    _classCallCheck(this, DialogRank);\n\n    return _possibleConstructorReturn(this, (DialogRank.__proto__ || Object.getPrototypeOf(DialogRank)).call(this, props));\n  }\n\n  _createClass(DialogRank, [{\n    key: \'render\',\n    value: function render() {\n      var data = this.props.customData;\n      var dataLists = data.data;\n      var index = data.num;\n      //var dataMain = data.data[index-1];\n      var dataMain = data.chooseData && data.chooseData[0];\n      var rankReportId = data && data.reportId;\n      var _this = this;\n      var _close = true;\n      if (_this.props.dataIndex == _this.props.openIndex) {\n        _close = false;\n      } else {\n        _close = true;\n      }\n\n      // console.log(data);\n      return React.createElement(\n        _yspCustomComponents.Dialog,\n        { close: _close, dataId: _this.props.dataIndex },\n        React.createElement(_yspCustomComponents.CustomHeader, {\n          data: { centerText: "\u9500\u552E\u8FBE\u6210\u6392\u540D", rightText: "\u7B5B\u9009" },\n          backIsShow: true,\n          back: _this.props.handleRank,\n          filterIsShow: false,\n          filter: function filter() {\n            console.info("header filter ...");\n          } }),\n        React.createElement(\n          \'div\',\n          { className: \'ysp-rank-lists\' },\n          React.createElement(\n            \'div\',\n            { className: \'main\' },\n            React.createElement(\n              \'i\',\n              { className: \'rank-main\' },\n              dataMain.rank\n            ),\n            React.createElement(\n              \'span\',\n              { className: \'title\' },\n              "report15" == rankReportId || "report16" == rankReportId || "report20" == rankReportId || "report22" == rankReportId || "report10" == rankReportId || "report2-1" == rankReportId || "report2-1-1" == rankReportId || "report21" == rankReportId ? dataMain.branchName : "report33" == rankReportId || "report33-1" == rankReportId ? dataMain.officeName : "report34" == rankReportId || "report18" == rankReportId || "report31-1-1" == rankReportId || "report9-1-1" == rankReportId || "report2-2-1" == rankReportId || "report23-1" == rankReportId || "report1-2-1-1" == rankReportId ? dataMain.salerName : ""\n            ),\n            React.createElement(\n              \'div\',\n              { className: \'infos\' },\n              React.createElement(\n                \'div\',\n                null,\n                React.createElement(\n                  \'b\',\n                  null,\n                  dataMain.salesAmountPercent\n                ),\n                \'%\'\n              ),\n              React.createElement(\n                \'h5\',\n                null,\n                \'\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\'\n              )\n            )\n          ),\n          React.createElement(\n            \'div\',\n            { className: \'itemLists\' },\n            dataLists.map(function (d, i) {\n              return React.createElement(\n                \'div\',\n                { className: i == index - 1 ? \'item item-main\' : \'item\' },\n                React.createElement(\n                  \'i\',\n                  { className: i != index - 1 ? d.rank > 3 ? \'rank-else\' : \'rank-top\' : \'rank-main\' },\n                  d.rank\n                ),\n                React.createElement(\n                  \'span\',\n                  { className: \'title\' },\n                  "report15" == rankReportId || "report16" == rankReportId || "report20" == rankReportId || "report22" == rankReportId || "report10" == rankReportId || "report2-1" == rankReportId || "report2-1-1" == rankReportId || "report21" == rankReportId ? d.branchName : "report33" == rankReportId || "report33-1" == rankReportId ? d.officeName : "report34" == rankReportId || "report18" == rankReportId || "report31-1-1" == rankReportId || "report9-1-1" == rankReportId || "report2-2-1" == rankReportId || "report23-1" == rankReportId || "report1-2-1-1" == rankReportId ? d.salerName : ""\n                ),\n                React.createElement(\n                  \'div\',\n                  { className: \'infos\' },\n                  React.createElement(\n                    \'div\',\n                    null,\n                    React.createElement(\n                      \'b\',\n                      null,\n                      d.salesAmountPercent\n                    ),\n                    \'%\'\n                  ),\n                  React.createElement(\n                    \'h5\',\n                    null,\n                    \'\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\'\n                  )\n                )\n              );\n            })\n          )\n        )\n      );\n    }\n  }]);\n\n  return DialogRank;\n}(React.Component);';
     }
   }, "businesHeadquartersDC");
 })(window, ysp);

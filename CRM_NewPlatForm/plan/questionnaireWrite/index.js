@@ -12,19 +12,18 @@
         data.WJLX.push(quType[i].textContent);
       }var quTypeValue = el.querySelector("#quType").selectedIndex;data.WJLXValue.push(quTypeValue);var status = el.querySelector("#status").querySelectorAll("option");for (var i = 0; i < status.length; i++) {
         data.ZT.push(status[i].textContent);
-      }var statusValue = el.querySelector("#status").selectedIndex;data.ZTValue.push(statusValue);var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading'); // if (load == null) {
-      //   setTimeout(function () {
-      //     ysp.appMain.hideLoading();
-      //   }, 5000);
-      // } else {
-      //   ysp.appMain.showLoading();
-      // }
-      data.loadingFlag.push(load);return data;
+      }var statusValue = el.querySelector("#status").selectedIndex;
+      data.ZTValue.push(statusValue);var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
+        setTimeout(function () {
+          ysp.appMain.hideLoading();
+        }, 5000);
+      } else {
+        ysp.appMain.showLoading();
+      }data.loadingFlag.push(load);return data;
     },
     doAction_uiControl316_O3sq7E: function (data, elem) {
       if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackModel = 'index';
-        ysp.customHelper.AndroidBackFlag = 'PageClose';
+        ysp.customHelper.AndroidBackModel = 'index';ysp.customHelper.AndroidBackFlag = 'PageClose';
       }if (data.eventType == 'back') {
         if (!top.EAPI.isAndroid()) {
           elem.ownerDocument.defaultView.close();
@@ -46,7 +45,8 @@
         } else if (selectEl.dispatchEvent) {
           selectEl.dispatchEvent(new Event('change'));
         } else {
-          selectEl.dispatchEvent(new MouseEvent('click', { view: selectEl.ownerDocument.defaultView, bubbles: true, cancelable: true }));
+          selectEl.dispatchEvent(new MouseEvent('click', { view: selectEl.ownerDocument.defaultView, bubbles: true,
+            cancelable: true }));
         }
       }if ("buttonClick" == data.eventType) {
         var text = data.dataCustom;if ("重置" == text) {
@@ -81,9 +81,7 @@
     doAction_uiControl318_TVQnXL: function (data, elem) {
       if ("click" == data.eventType) {
         var index = data.customData; //elem.ownerDocument.querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelectorAll("td")[7].querySelector("a").click();
-        var as = elem.ownerDocument.querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelector("a");var aurl = as.getAttribute('url');if (aurl.indexOf('http://192.168.220.82:8080') == -1) {
-          var url = aurl.split('../')[1];url = 'http://192.168.220.82:8080/pttlCrm/res/page/' + url;as.setAttribute('url', url);
-        }as && as.click();
+        var as = elem.ownerDocument.querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelector("a");as && as.click();
       }
     },
     getTemplate_uiControl318_TVQnXL: function () {

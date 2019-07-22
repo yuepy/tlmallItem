@@ -2,14 +2,13 @@
   ysp.runtime.Model.extendLoadingModel({
     getData_control330_6gAef1: function (elem) {
       if (elem) {
-        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading'); // if (load == null) {
-        //   setTimeout(function () {
-        //     ysp.appMain.hideLoading();
-        //   }, 5000);
-        // } else {
-        //   ysp.appMain.showLoading();
-        // }
-        return load;
+        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
+          setTimeout(function () {
+            ysp.appMain.hideLoading();
+          }, 5000);
+        } else {
+          ysp.appMain.showLoading();
+        }return load;
       }
     },
     doAction_uiControl320_ibSXl8: function (data, elem) {
