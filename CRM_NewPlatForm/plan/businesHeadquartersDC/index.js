@@ -213,6 +213,8 @@
                   a = numTemp[2];
                 } else if (numTemp[3]) {
                   a = numTemp[3];
+                } else {
+                  a = 0;
                 }
               }
             } else if ("report34" == reportId || "report33" == reportId || "report33-1" == reportId || "report33-1-1" == reportId || "report48" == reportId) {
@@ -255,6 +257,8 @@
                   b = numTemp[2];
                 } else if (numTemp[3]) {
                   b = numTemp[3];
+                } else {
+                  b = 0;
                 }
               }
             } else if ("report15" == reportId || "report16" == reportId || "report16-1" == reportId) {
@@ -291,6 +295,8 @@
                   e = numTemp[2];
                 } else if (numTemp[3]) {
                   e = numTemp[3];
+                } else {
+                  e = 0;
                 }
               }
             } else if ("report20" == reportId || "report46" == reportId) {
@@ -321,6 +327,8 @@
                   f = numTemp[2];
                 } else if (numTemp[3]) {
                   f = numTemp[3];
+                } else {
+                  f = 0;
                 }
               }
             } else if ("report17" == reportId || "report18" == reportId || "report18-1" == reportId || "report19" == reportId) {
@@ -378,6 +386,8 @@
                   h = numTemp[2];
                 } else if (numTemp[3]) {
                   h = numTemp[3];
+                } else {
+                  h = 0;
                 }
               } else if ("report45" == reportId) {
                 var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
@@ -399,6 +409,8 @@
                   h = numTemp[2];
                 } else if (numTemp[3]) {
                   h = numTemp[3];
+                } else {
+                  h = 0;
                 }
               }
             } else if ("report31" == reportId || "report31-1" == reportId || "report31-1-1" == reportId || "report31-1-1-1" == reportId) {
@@ -462,6 +474,8 @@
                   l = numTemp[2];
                 } else if (numTemp[3]) {
                   l = numTemp[3];
+                } else {
+                  l = 0;
                 }
               } else if ("report1-2" == reportId || "report2" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -517,6 +531,8 @@
                   l = numTemp[2];
                 } else if (numTemp[3]) {
                   l = numTemp[3];
+                } else {
+                  l = 0;
                 }
               } else if ("report9" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -583,6 +599,8 @@
                   l = numTemp[2];
                 } else if (numTemp[3]) {
                   l = numTemp[3];
+                } else {
+                  l = 0;
                 }
               } else if ("report22" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
