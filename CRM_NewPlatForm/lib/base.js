@@ -1332,7 +1332,7 @@
   	if(!startTime){
       return ;
     }
-    if(top.EAPI.isAndroid()){
+    if(top.EAPI.isAndroid() || top.EAPI.isIOS()){
       var elem = document.querySelector('#mobileMainContent').querySelector('.timeScope');
       var body = document.querySelector('#mobileMainContent');
     }else{
