@@ -1,0 +1,846 @@
+{
+  "version": "0.1",
+  "id": "saleAchievement",
+  "targetURL": "http://192.168.220.82:8080/ptDataShow/salesAll/salesOverview?filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDMvMTgvMjAxOSAxNTo1MToyOQ==&username=WANGDONG&a=1",
+  "jsFile": "index.js",
+  "chineseName": "销售业绩总览",
+  "description": "",
+  "controls": {
+    "control11_ThDMIk": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control11_ThDMIk"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control12_kcDHC2": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg DIV.g-main DIV.m-header"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control12_kcDHC2"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control13_L1JJEt": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.body-bg"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control13_L1JJEt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control14_GTshaR": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.g-main DIV.m-body DIV.m-box-datas.m-box-sales.clearfix"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control14_GTshaR"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control15_6NsPCD": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"bizUnitTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-body DIV.m-boxs.clearfix DIV.right.righth"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control15_6NsPCD"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control16_VLH6O4": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"bizUnitTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-body DIV.m-boxs.clearfix DIV.right.righth"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control16_VLH6O4"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control17_iWqWkX": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"bizUnitTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-body DIV.m-boxs.clearfix DIV.right.righth"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control17_iWqWkX"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control18_XOl7u1": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"bizUnitTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-body DIV.m-boxs.clearfix DIV.right.righth"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control18_XOl7u1"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control19_wR0bo2": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"bizUnitTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-body DIV.m-boxs.clearfix DIV.right.righth"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control19_wR0bo2"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control20_NoBz0w": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 3,
+            "value": "descendant::DIV[@id=\"bizUnitTable\"]"
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-body DIV.m-boxs.clearfix DIV.right.righth"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control20_NoBz0w"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control21_6hNy5C": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.m-boxs.clearfix DIV.left.lefth DIV.timeDimen"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control21_6hNy5C"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control22_ABsXdt": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.left.lefth DIV.spaceDimen DIV.chart"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[4]/DIV[1]/DIV[1]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control22_ABsXdt"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context3_eTo7Aq": {
+      "controls": [
+        "control11_ThDMIk",
+        "control12_kcDHC2",
+        "control13_L1JJEt",
+        "control14_GTshaR",
+        "control15_6NsPCD",
+        "control16_VLH6O4",
+        "control17_iWqWkX",
+        "control18_XOl7u1",
+        "control19_wR0bo2",
+        "control20_NoBz0w",
+        "control21_6hNy5C",
+        "control22_ABsXdt"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow9_D4mu4D": {
+      "toContexts": [
+        {
+          "toContextId": "context3_eTo7Aq"
+        }
+      ]
+    },
+    "flow10_Gz4SRn": {
+      "fromContextId": "context3_eTo7Aq",
+      "fromAction": "doAction",
+      "fromControlId": "control11_ThDMIk",
+      "toContexts": [
+        {
+          "toContextId": "context3_eTo7Aq"
+        }
+      ]
+    },
+    "flow11_oVmmdH": {
+      "fromContextId": "context3_eTo7Aq",
+      "fromAction": "doAction",
+      "fromControlId": "control12_kcDHC2",
+      "toContexts": [
+        {
+          "toContextId": "context3_eTo7Aq"
+        }
+      ]
+    },
+    "flow12_PQIMPt": {
+      "fromContextId": "context3_eTo7Aq",
+      "fromAction": "doAction",
+      "fromControlId": "control13_L1JJEt",
+      "toContexts": [
+        {
+          "toContextId": "context3_eTo7Aq"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page3_DiFDNX": {
+      "contextId": "context3_eTo7Aq",
+      "layout": [
+        {
+          "id": "uiControl11_ZypqTD",
+          "controlId": "control11_ThDMIk",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl11_ZypqTD",
+                "onGetTemplate": "getTemplate_uiControl11_ZypqTD"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl12_eBcyu8",
+          "controlId": "control12_kcDHC2",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl12_eBcyu8",
+                "onGetTemplate": "getTemplate_uiControl12_eBcyu8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl13_IUcnHM",
+          "controlId": "control13_L1JJEt",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl13_IUcnHM",
+                "onGetTemplate": "getTemplate_uiControl13_IUcnHM"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl14_G8bw3d",
+          "controlId": "control14_GTshaR",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl14_G8bw3d",
+                "onGetTemplate": "getTemplate_uiControl14_G8bw3d"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl15_HzZoqT",
+          "controlId": "control15_6NsPCD",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl15_HzZoqT",
+                "onGetTemplate": "getTemplate_uiControl15_HzZoqT"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl16_sZ4QVz",
+          "controlId": "control16_VLH6O4",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl16_sZ4QVz",
+                "onGetTemplate": "getTemplate_uiControl16_sZ4QVz"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl17_64vsqS",
+          "controlId": "control17_iWqWkX",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl17_64vsqS",
+                "onGetTemplate": "getTemplate_uiControl17_64vsqS"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl18_lt2CeA",
+          "controlId": "control18_XOl7u1",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl18_lt2CeA",
+                "onGetTemplate": "getTemplate_uiControl18_lt2CeA"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl19_ON9T6p",
+          "controlId": "control19_wR0bo2",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl19_ON9T6p",
+                "onGetTemplate": "getTemplate_uiControl19_ON9T6p"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl20_4Q34WZ",
+          "controlId": "control20_NoBz0w",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl20_4Q34WZ",
+                "onGetTemplate": "getTemplate_uiControl20_4Q34WZ"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl21_hTdSqq",
+          "controlId": "control21_6hNy5C",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl21_hTdSqq",
+                "onGetTemplate": "getTemplate_uiControl21_hTdSqq"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl22_Zc9CgN",
+          "controlId": "control22_ABsXdt",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl22_Zc9CgN",
+                "onGetTemplate": "getTemplate_uiControl22_Zc9CgN"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context3_eTo7Aq": [
+          "销售业绩总览-总部领导"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context3_eTo7Aq": [
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDMvMTgvMjAxOSAxNTo1MToyOQ==&username=WANGDONG&a=1",
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDMvMTgvMjAxOSAxNjowMzowMQ==&username=WANGDONG&a=1",
+          "192.168.220.82:8080/ptDataShow/salesAll/salesOverview?filter_userId=WANGDONG&encoder=V0FOR0RPTkcrMDMvMTgvMjAxOSAxNjoyMToyOQ==&username=WANGDONG&a=1"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context3_eTo7Aq": [
+          [
+            "bizUnit-table",
+            "bizUnitName",
+            "bizUnitTable",
+            "branchName",
+            "branchTable",
+            "configType",
+            "cycleType",
+            "cycleType_hidden",
+            "data_",
+            "date",
+            "dayAmt",
+            "dayQty",
+            "departmentId",
+            "drill",
+            "encoder",
+            "lines",
+            "loginName",
+            "map",
+            "materialColor",
+            "modelId",
+            "modelName",
+            "monthAmt",
+            "monthQty",
+            "officeName",
+            "orderLogic",
+            "orderLogic_hidden",
+            "projectId",
+            "projectName",
+            "sale-table",
+            "salerName",
+            "selDay",
+            "tren",
+            "type",
+            "weekAmt",
+            "weekQty",
+            "yearAmt",
+            "yearQty"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context3_eTo7Aq": [
+          [
+            "a",
+            "activ",
+            "b",
+            "box",
+            "branch-sales",
+            "breadcrumb",
+            "btn-display",
+            "businessDimen",
+            "chart",
+            "clear-btn",
+            "clearfix",
+            "content",
+            "g-main",
+            "header",
+            "icon",
+            "icon-line",
+            "laydate-icon",
+            "left",
+            "lefth",
+            "m-body",
+            "m-box",
+            "m-box-datas",
+            "m-box-sales",
+            "m-boxs",
+            "m-header",
+            "mask",
+            "max",
+            "min",
+            "one",
+            "overview",
+            "right",
+            "righth",
+            "sel",
+            "sel-box",
+            "spaceDimen",
+            "table",
+            "table-content",
+            "time-sel-box",
+            "timeDimen",
+            "title",
+            "trend",
+            "u-selt",
+            "u-table-b",
+            "u-time",
+            "u-title",
+            "u-visualmap"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context3_eTo7Aq": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/CANVAS",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/H1/A",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TH/FONT",
+            "UL/LI/A"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/-/VAR",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/EM",
+            "DIV/DIV/H1",
+            "DIV/DIV/H2",
+            "DIV/DIV/H5",
+            "DIV/DIV/H6",
+            "DIV/DIV/I",
+            "DIV/DIV/INPUT-button",
+            "DIV/DIV/INPUT-null",
+            "DIV/DIV/SELECT",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TABLE",
+            "DIV/DIV/UL",
+            "DIV/H1/A",
+            "DIV/SELECT/OPTION",
+            "DIV/TABLE/TBODY",
+            "DIV/TABLE/THEAD",
+            "DIV/UL/LI",
+            "TABLE/TBODY/TR",
+            "TABLE/THEAD/TR",
+            "TBODY/TR/TD",
+            "THEAD/TR/TH",
+            "TR/TD/A",
+            "TR/TH/FONT",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "version": "0.1",
+  "id": "vistiSign",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/visit/customerVisitPlan/addCustomerSignIn",
+  "jsFile": "index.js",
+  "chineseName": "签到",
+  "description": "",
+  "firstPaintEnable": false,
+  "controls": {
+    "control30_f7D6RB": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "BODY.overhidden"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control30_f7D6RB"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control31_oVZmnW": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control31_oVZmnW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control32_gaNOOW": {
+      "location": {
+        "data": {
+          "tagName": "HTML"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control32_gaNOOW"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control33_CSdPBZ": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@id/word",
+            "prob": 2,
+            "value": [
+              "descendant::DIV[@id=\"body\"]//DIV[@id=\"customersign-content\"]/DIV[4]",
+              "descendant::DIV[@id=\"customersign-content\"]/DIV[4]"
+            ]
+          },
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "DIV.body DIV.content DIV.customersigin-mapbutton"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]/DIV[4]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control33_CSdPBZ"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "ignoreVisibility": false,
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context5_C0h1F8": {
+      "controls": [
+        "control30_f7D6RB",
+        "control31_oVZmnW",
+        "control32_gaNOOW",
+        "control33_CSdPBZ"
+      ],
+      "anchors": [],
+      "urlAnchor": [
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/customerSign.html",
+        "^http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/visit\\/customerVisitPlan\\/addCustomerSignIn",
+        "http:\\/\\/192\\.168\\.220\\.82:8080\\/pttlCrm\\/res\\/page\\/visitManager\\/visitLook\\/customerSign.html"
+      ]
+    }
+  },
+  "flows": {
+    "flow17_KQQZeT": {
+      "toContexts": [
+        {
+          "toContextId": "context5_C0h1F8"
+        }
+      ]
+    },
+    "flow18_1BEs2T": {
+      "fromContextId": "context5_C0h1F8",
+      "fromAction": "doAction",
+      "fromControlId": "control30_f7D6RB",
+      "toContexts": [
+        {
+          "toContextId": "context5_C0h1F8"
+        }
+      ]
+    },
+    "flow19_ho1CKZ": {
+      "fromContextId": "context5_C0h1F8",
+      "fromAction": "doAction",
+      "fromControlId": "control32_gaNOOW",
+      "toContexts": [
+        {
+          "toContextId": "context5_C0h1F8"
+        }
+      ]
+    },
+    "flow20_NJT8F0": {
+      "fromContextId": "context5_C0h1F8",
+      "fromAction": "doAction",
+      "fromControlId": "control33_CSdPBZ",
+      "toContexts": [
+        {
+          "toContextId": "context5_C0h1F8"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page5_C03tup": {
+      "contextId": "context5_C0h1F8",
+      "layout": [
+        {
+          "id": "uiControl30_GHG2fU",
+          "controlId": "control30_f7D6RB",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl30_GHG2fU",
+                "onGetTemplate": "getTemplate_uiControl30_GHG2fU"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl31_veoOr8",
+          "controlId": "control31_oVZmnW",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl31_veoOr8",
+                "onGetTemplate": "getTemplate_uiControl31_veoOr8"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl32_TDsQNp",
+          "controlId": "control32_gaNOOW",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl32_TDsQNp",
+                "onGetTemplate": "getTemplate_uiControl32_TDsQNp"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl33_KcxLDn",
+          "controlId": "control33_CSdPBZ",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl33_KcxLDn",
+                "onGetTemplate": "getTemplate_uiControl33_KcxLDn"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context5_C0h1F8": [
+          "拜访-报告"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context5_C0h1F8": [
+          "192.168.220.82:8080/pttlCrm/visit/customerVisitPlan/addCustomerSignIn"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context5_C0h1F8": [
+          [
+            "CloseReportPopRoot",
+            "address",
+            "allmap",
+            "body",
+            "csAddress",
+            "csLatitude",
+            "csLongitude",
+            "customersign-content",
+            "headCustomer",
+            "header",
+            "latitude",
+            "longitude",
+            "planCreateDate",
+            "planDate",
+            "remarktextname",
+            "signOrReportPop",
+            "signTime",
+            "zoomer"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context5_C0h1F8": [
+          [
+            "BMapLabel",
+            "BMap_Marker",
+            "BMap_cpyCtrl",
+            "BMap_mask",
+            "BMap_noprint",
+            "BMap_zoomer",
+            "anchorBL",
+            "body",
+            "content",
+            "customersigin-mapbutton",
+            "customersign-active",
+            "customersign-map",
+            "customersign-mapcontent",
+            "customersign-mapcontent-text",
+            "customersign-mapcontent-textbottomspan",
+            "customersign-mapcontent-textdiv",
+            "customersign-mapcontent-texttopspan",
+            "customersign-remark",
+            "customersign-remarktext",
+            "customersign-remarktextarea",
+            "customersign-unactive",
+            "g-doc",
+            "header",
+            "infors",
+            "m-nav",
+            "m-popBox",
+            "pano_close",
+            "pano_pc_indoor_exit",
+            "sign",
+            "title",
+            "z-act"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context5_C0h1F8": [
+          [
+            "-/-/DIV",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/IMG",
+            "DIV/A/SPAN",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/IMG",
+            "DIV/DIV/INPUT-hidden",
+            "DIV/DIV/LABEL",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/TEXTAREA",
+            "DIV/DIV/UL",
+            "DIV/SPAN/DIV",
+            "DIV/SPAN/EM",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "SPAN/DIV/IMG",
+            "UL/LI/A"
+          ]
+        ]
+      }
+    }
+  }
+}
