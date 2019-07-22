@@ -75,6 +75,7 @@ doAction_uiControl63_ax7qQG: |
     }
   } //图标尺寸  48 * 48   文字大小 17px
   if (data.eventType == 'click_infomation') {
+    debugger
     var src = data.dataCustom.url;
     var title = data.dataCustom.title;
     openUrl(src, title);

@@ -12,8 +12,7 @@
         }if (atMe == null) {
           atMe = 0;
         }
-      }return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation, ClientOrStore: ClientOrStore,
-        IconNum: { atMe: atMe, summary: summary } };
+      }return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation, ClientOrStore: ClientOrStore, IconNum: { atMe: atMe, summary: summary } };
     },
     doAction_uiControl63_ax7qQG: function (data, elem) {
       'use strict';
@@ -41,12 +40,13 @@
         }
       } //图标尺寸  48 * 48   文字大小 17px
       if (data.eventType == 'click_infomation') {
-        var src = data.dataCustom.url;var title = data.dataCustom.title;openUrl(src, title);
+        debugger;var src = data.dataCustom.url;var title = data.dataCustom.title;openUrl(src, title);
       } //请求大数据参数接口 . 拼接地址进行跳转
       function openUrl(src, title) {
         ysp.appMain.showLoading();var xhr = new XMLHttpRequest();xhr.onreadystatechange = function () {
           if (xhr.readyState == 4) {
-            var obj = JSON.parse(xhr.response);var branch = obj.branch.match(/\d+/) ? obj.branch.match(/\d+/)[0] : obj.branch;if (obj.position == '总部领导' || obj.position == '事业部总经理' || obj.position == '产品经理' || obj.position == '大客户业务部总经理' || obj.position == '总部客户经理' || obj.position == '电商平台运营中心客户管理部' || obj.position == '电商平台运营中心产品运营部' || obj.position == '电商平台运营中心商务管理部' || obj.position == '事业部商务人员' || obj.position == '智能生活馆') {
+            var obj = JSON.parse(xhr.response);var branch = obj.branch.match(/\d+/) ? obj.branch.match(/\d+/)[0] : obj.branch;
+            if (obj.position == '总部领导' || obj.position == '事业部总经理' || obj.position == '产品经理' || obj.position == '大客户业务部总经理' || obj.position == '总部客户经理' || obj.position == '电商平台运营中心客户管理部' || obj.position == '电商平台运营中心产品运营部' || obj.position == '电商平台运营中心商务管理部' || obj.position == '事业部商务人员' || obj.position == '智能生活馆') {
               src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku4Manager?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1';
             } else if (obj.position == '分公司分总' || obj.position == '品牌经理' || obj.position == '分公司电商中心经理') {
               src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku4Manager?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1' : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1' : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1';
