@@ -1,7 +1,3 @@
-'use strict';
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //订阅模式
 (function (exports) {
   function PSubscribe() {
@@ -13,19 +9,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var exist = false;
       this.topicList.forEach(function (item) {
         if (item.topic === topic) {
-          exist = true;
+          exist = true; 
           item.list.push({
             callback: cb,
             caller: caller
           });
-        }
-      });
+        }
+      });
       if (!exist) {
         this.topicList.push({
           topic: topic,
           list: [{
             callback: cb,
-            caller: caller
+            caller: caller 
           }]
         });
       }
@@ -52,8 +48,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             });
             if (start !== undefined) {
               item.list.splice(start, 1);
-            }
-          }
+            }
+          }
         }
       });
     }
@@ -65,86 +61,97 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   ysp.customHelper = {};
   //var topWin = null;
   var topWin = top;
-  //本地调用安卓端相册 相机等功能 . 实现上传等.暂未完成,需求未明确
-  topWin.setImageData = function (base64) {
-    topWin.img = base64;
-    //top.yspCheckIn.openCamera();调用安卓端相册功能 返回值为base64格式图片 缺少Type  需要自行添加
-  };
-  var LOGINNAME = ''; //登录名
-  var LOGINTIME = ''; //登录时间
-  var LOGINUSED = ''; //耗时
+  //本地调用安卓端相册 相机等功能 . 实现上传等.暂未完成,需求未明确
+  topWin.setImageData = function(base64){
+    topWin.img = base64
+    //top.yspCheckIn.openCamera();调用安卓端相册功能 返回值为base64格式图片 缺少Type  需要自行添加
+  }
+  var LOGINNAME = '';//登录名
+  var LOGINTIME = '';//登录时间
+  var LOGINUSED = '' ;//耗时
   var STARTTIME = '';
-  //以上为日志内容
-  var loginWin = null;
-  var FlagNum = 0; //接口调用次数计数  超过十 停止重置
+  //以上为日志内容
+  var loginWin = null;
+  var FlagNum=0;//接口调用次数计数  超过十 停止重置
   var loginFlag = false;
-  var loginEncoder = ''; //作为登陆日志定位问题
-  topWin.dataMenu = '';
-  var loginFlag = false;
-  //IOS客户端调用.解决请求ICON接口跨域问题;
-  topWin.GetIconNum = function (summary, atMe) {
-    if (!summary && !atMe || summary == 'error') {
-      if (summary == 'error') {
-        console.info('未登录成功,请稍后!');
+  var loginEncoder = '';//作为登陆日志定位问题
+  topWin.dataMenu = '';
+  var loginFlag = false;
+  //信息录入 - 本地存储部分 (取赋值操作)
+  topWin.pageBackfill=function(state,obj){
+    switch(state){
+      case 'false':state = false;break;
+      case 'true':state = true;
+    }
+    ysp.customHelper.informationEntry.isSave = state;
+    //obj = JSON.parse(obj);
+    ysp.customHelper.informationEntry.saveData = obj;
+  }
+  //信息录入 - 本地存储部分 (取赋值操作)
+  //IOS客户端调用.解决请求ICON接口跨域问题;
+  topWin.GetIconNum = function(summary,atMe){
+    if(!summary && !atMe || summary == 'error'){
+      if(summary =='error'){
+        console.info('未登录成功,请稍后!');
       }
-      return;
+      return ;
     }
     ysp.customHelper.IconNum.summary = summary.split('=')[1];
     ysp.customHelper.IconNum.atMe = atMe.split('=')[1];
-    localStorage.setItem('atMe', atMe.split('=')[1]);
-    localStorage.setItem('summary', summary.split('=')[1]);
-  };
-  // 普天总线接口 - 时间戳拼接
-  var timeStamp = function timeStamp() {
+    localStorage.setItem('atMe',atMe.split('=')[1]);
+    localStorage.setItem('summary',summary.split('=')[1]);
+  }
+  // 普天总线接口 - 时间戳拼接
+  var timeStamp = function(){
     var date = new Date();
     var year = date.getFullYear().toString();
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
+    var month = date.getMonth()+1;
+    var day = date. getDate();
     var hours = date.getHours();
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
-    return addZero(year) + addZero(month) + addZero(day) + addZero(hours) + addZero(minutes) + addZero(seconds);
-  };
-  var addZero = function addZero(str) {
-    if (str == '') {
-      return;
+    return addZero(year)+addZero(month)+addZero(day)+addZero(hours)+addZero(minutes)+addZero(seconds);
+  }
+  var addZero = function(str){
+    if(str == ''){
+      return ;
     }
-    return str < 10 ? '0' + str.toString() : str.toString();
-  };
+    return str<10?'0'+str.toString() : str.toString();
+  }
   //Android 切后台刷新
-  topWin.isReload = function () {
+  topWin.isReload = function(){
     top.yspCheckIn.isRefresh(true);
-  };
-  //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单;  ( + 安卓端) 
-  var loginTimeOut = function loginTimeOut(str) {
+  }
+  //IOS端 登录方式 避开常规登录 用单独接口请求判断状态进行跳转登录(不走密码管家) 登录成功后调取菜单;  ( + 安卓端) 
+  var loginTimeOut = function(str){
     var flag = confirm(str);
-    if (flag) {
-      ysp.runtime.Browser.activeBrowser.contentWindow.reload();
-    }
-  };
-  //强制匹配方案
-  var RedCoreRedMi = function RedCoreRedMi(modelId) {
-    var Model = ysp.runtime.Model;
-    Model.init();
-    var modelURL = Model.basePath + '/plan/' + modelId + '/index.json';
-    var model = Model.models[modelURL];
-    if (model) {
-      Model.models = _defineProperty({}, modelURL, model);
-      Model.pushModel(model);
-    } else {
-      ysp.utils.getJSON(modelURL).then(function (data) {
+      if(flag){
+        ysp.runtime.Browser.activeBrowser.contentWindow.reload();
+      }
+  }
+  //强制匹配方案
+  var RedCoreRedMi =function(modelId) {
+      var Model = ysp.runtime.Model;
+      Model.init();
+      var modelURL = Model.basePath + '/plan/' + modelId + '/index.json';
+      var model = Model.models[modelURL];
+      if (model) {
+        Model.models = {[modelURL]: model};
+        Model.pushModel(model);
+      }else {
+        ysp.utils.getJSON(modelURL).then(function (data) {
         // 配置的 targetURL 优先
         data.path = modelURL;
-        var dd = Model.parse(data);
-        Model.pushModel(dd);
-        RedCoreRedMi(modelId);
+        var dd = Model.parse(data)
+        Model.pushModel(dd)
+        RedCoreRedMi(modelId)
       });
     }
-  };
-  topWin.IOSLoginIn = function (user, password) {
-    if (user == '' || password == '') {
-      alert('用户名或密码为空,登录失败!');
-      return;
+  }
+  topWin.IOSLoginIn = function(user,password){
+    if(user == '' || password == ''){
+      alert('用户名或密码为空,登录失败!');
+      return ;
     }
     ysp.customHelper.TimeScope.startTime();
     if (user && password) {
@@ -153,40 +160,40 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       LOGINTIME = new Date().getTime();
       var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
       var EnCoderXhr = new XMLHttpRequest();
-      EnCoderXhr.onreadystatechange = function () {
-        if (EnCoderXhr.readyState == 4) {
+      EnCoderXhr.onreadystatechange = function(){
+        if(EnCoderXhr.readyState == 4){
           var param = JSON.parse(EnCoderXhr.response);
           loginEncoder = param.encoder; //日志信息
           setMaxDigits(130);
-          var encrypPublicKey = new RSAKeyPair(param.publicExponent, '', param.modulus);
-          var pwd = encryptedString(encrypPublicKey, encodeURIComponent(password));
-          var body = { 'loginName': user, 'password': pwd, 'encoder': param.encoder };
+          var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
+          var pwd = encryptedString(encrypPublicKey,encodeURIComponent(password));
+          var body = {'loginName':user,'password':pwd,'encoder':param.encoder};
           body = JSON.stringify(body);
           var LoginXhr = new XMLHttpRequest();
-          LoginXhr.onreadystatechange = function () {
+          LoginXhr.onreadystatechange = function(){
             //每次响应状态都起一个Loading . -- 防止白屏无loading 运行时关闭loading 请求时间过长等问题 .
             ysp.appMain.showLoading();
-            if (LoginXhr.status == 200 && LoginXhr.readyState == 4) {
+            if(LoginXhr.status == 200 && LoginXhr.readyState == 4){
               var MenuList = JSON.parse(LoginXhr.response).listMenu;
               ALLMENU = MenuList;
               var localMenuList = JSON.stringify(MenuList);
-              localStorage.setItem('listMenuForMobile', localMenuList);
+              localStorage.setItem('listMenuForMobile',localMenuList);
               loginFlag = true;
               if (currentAwin.frameElement && currentAwin.frameElement.name == "browserFrame2" && currentAwin.frameElement.dataset.browser) {
                 if (currentAwin.location.href.indexOf('login') !== -1) {
                   currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
                   //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
-                  //RedCoreRedMi('index');
+                  //RedCoreRedMi('index');
                   ysp.runtime.Model.setForceMatchModels(['index']);
                 }
-                if (currentAwin.frameElement.src.indexOf('login') !== -1) {
-                  if (ysp.runtime.Model.getActiveModel().id == 'login') {
+                if(currentAwin.frameElement.src.indexOf('login')!==-1){
+                  if(ysp.runtime.Model.getActiveModel().id == 'login'){
                     //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
                     //RedCoreRedMi('index');
                     ysp.runtime.Model.setForceMatchModels(['index']);
-                    alert('登录成功! . 页面未跳转' + ysp.runtime.Model.forceMatchFlag + ysp.runtime.Model.getActiveModel().id);
-                  } else {
-                    alert('模板跳转!但pc地址未更换' + ysp.runtime.Model.forceMatchFlag + currentAwin.frameElement.src);
+                    alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
+                  }else{
+                    alert('模板跳转!但pc地址未更换'+ysp.runtime.Model.forceMatchFlag+currentAwin.frameElement.src);
                   }
                 }
               }
@@ -197,74 +204,75 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               loginTimeOut('登录失败,接口返回错误,是否刷新重试');
             }
             //else if(xhr.status >=400 ){
-            // alert('登录效验失败.请手动登录!'+LoginXhr.status);
-            // }
-          };
+            // alert('登录效验失败.请手动登录!'+LoginXhr.status);
+            // }
+          }
           LoginXhr.timeout = 10000;
-          LoginXhr.ontimeout = function (str) {
-            loginTimeOut('登录接口请求超时,是否刷新重试');
-          };
-          LoginXhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
+          LoginXhr.ontimeout = function(str){
+            loginTimeOut('登录接口请求超时,是否刷新重试');
+          }
+          LoginXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
           LoginXhr.send(body);
-        } else if (EnCoderXhr.status >= 400 && EnCoderXhr.readyState == 4) {
-          loginTimeOut('未获取到Encoder,是否刷新重试');
+        }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
+          loginTimeOut('未获取到Encoder,是否刷新重试');
         }
-      };
+      }
       EnCoderXhr.timeout = 10000;
-      EnCoderXhr.ontimeout = function () {
-        loginTimeOut('Encoder获取,是否刷新重试');
-      };
-      EnCoderXhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?' + user);
+      EnCoderXhr.ontimeout = function(){
+        loginTimeOut('Encoder获取,是否刷新重试');
+      }
+      EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?'+user);
       EnCoderXhr.send();
     }
-  };
-  //安卓端 . 登录方式 弃用密码代填. 暂时为独立方法,看安卓是否符合整合登录前提 , 待安卓与IOS客户端同步后整合登录方法.
-  topWin.AndroidLoginIn = function (user, password) {
+	}
+  //安卓端 . 登录方式 弃用密码代填. 暂时为独立方法,看安卓是否符合整合登录前提 , 待安卓与IOS客户端同步后整合登录方法.
+  topWin.AndroidLoginIn = function(user,password){
     STARTTIME = Date.now();
-    if (user == '' || password == '') {
-      alert('用户名或密码为空,登录失败!');
-      return;
+    if(user == '' || password == ''){
+      alert('用户名或密码为空,登录失败!');
+      return ;
     }
     ysp.customHelper.TimeScope.startTime();
     if (user && password) {
+      ysp.customHelper.logLoginName = user;
       LOGINNAME = user; //日志内容部分
       LOGINTIME = new Date().getTime();
-      var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
+      var currentAwin = ysp.runtime.Browser.activeBrowser.contentWindow;
       var EnCoderXhr = new XMLHttpRequest();
-      EnCoderXhr.onreadystatechange = function () {
-        if (EnCoderXhr.readyState == 4 && EnCoderXhr.status >= 200 && EnCoderXhr.status < 300 || EnCoderXhr.status == 304) {
+      EnCoderXhr.onreadystatechange = function(){
+        if(EnCoderXhr.readyState == 4 && EnCoderXhr.status >=200 && EnCoderXhr.status <300 || EnCoderXhr.status == 304){
           var param = JSON.parse(EnCoderXhr.response);
           setMaxDigits(130);
-          loginEncoder = param.encoder; //日志信息
-          var encrypPublicKey = new RSAKeyPair(param.publicExponent, '', param.modulus);
-          var pwd = encryptedString(encrypPublicKey, encodeURIComponent(password));
-          var body = { 'loginName': user, 'password': pwd, 'encoder': param.encoder };
+          loginEncoder = param.encoder; //日志信息
+          var encrypPublicKey = new RSAKeyPair(param.publicExponent,'',param.modulus);
+          var pwd = encryptedString(encrypPublicKey,encodeURIComponent(password));
+          var body = {'loginName':user,'password':pwd,'encoder':param.encoder};
           body = JSON.stringify(body);
           var LoginXhr = new XMLHttpRequest();
-          LoginXhr.onreadystatechange = function () {
+          LoginXhr.onreadystatechange = function(){
             //每次响应状态都起一个Loading . -- 防止白屏无loading 运行时关闭loading 请求时间过长等问题 .
             ysp.appMain.showLoading();
-            if (LoginXhr.status == 200 && LoginXhr.readyState == 4) {
+            if(LoginXhr.status == 200 && LoginXhr.readyState == 4){
               var MenuList = JSON.parse(LoginXhr.response).listMenu;
               ALLMENU = MenuList;
               var localMenuList = JSON.stringify(MenuList);
-              localStorage.setItem('listMenuForMobile', localMenuList);
+              localStorage.setItem('listMenuForMobile',localMenuList);
               loginFlag = true;
               if (currentAwin.frameElement && currentAwin.frameElement.name == "browserFrame2" && currentAwin.frameElement.dataset.browser) {
                 if (currentAwin.location.href.indexOf('login') !== -1) {
                   currentAwin.frameElement.src = 'http://192.168.220.82:8080/pttlCrm/res/index.html';
-                  //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
-                  //RedCoreRedMi('index');
+                  //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
+                  //RedCoreRedMi('index');
                   ysp.runtime.Model.setForceMatchModels(['index']);
                 }
-                if (currentAwin.frameElement.src.indexOf('login') !== -1) {
-                  if (ysp.runtime.Model.getActiveModel().id == 'login') {
+                if(currentAwin.frameElement.src.indexOf('login')!==-1){
+                  if(ysp.runtime.Model.getActiveModel().id == 'login'){
                     //有可能出现登录框 . 如果不稳定 . 使用下面ysp.runtime.Model.setForceMatchModels(['index']);
                     ysp.runtime.Model.setForceMatchModels(['index']);
                     //RedCoreRedMi('index');
-                    alert('登录成功! . 页面未跳转' + ysp.runtime.Model.forceMatchFlag + ysp.runtime.Model.getActiveModel().id);
-                  } else {
-                    alert('模板跳转!但pc地址未更换' + ysp.runtime.Model.forceMatchFlag + currentAwin.frameElement.src);
+                    alert('登录成功! . 页面未跳转'+ysp.runtime.Model.forceMatchFlag+ysp.runtime.Model.getActiveModel().id);
+                  }else{
+                    alert('模板跳转!但pc地址未更换'+ysp.runtime.Model.forceMatchFlag+currentAwin.frameElement.src);
                   }
                 }
               }
@@ -288,51 +296,52 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             } else if (EnCoderXhr.status >= 400 && EnCoderXhr.readyState == 4) {
               loginTimeOut('登录失败,接口返回错误,是否刷新重试');
             }
-          };
+          }
           LoginXhr.timeout = 10000;
-          LoginXhr.ontimeout = function (str) {
-            loginTimeOut('登录接口请求超时,是否刷新重试');
-          };
-          LoginXhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
+          LoginXhr.ontimeout = function(str){
+            loginTimeOut('登录接口请求超时,是否刷新重试');
+          }
+          LoginXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/loginInForMobile');
           LoginXhr.send(body);
-        } else if (EnCoderXhr.status >= 400 && EnCoderXhr.readyState == 4) {
-          loginTimeOut('未获取到Encoder,是否刷新重试');
+        }else if(EnCoderXhr.status>=400 && EnCoderXhr.readyState == 4){
+          loginTimeOut('未获取到Encoder,是否刷新重试');
         }
-      };
+      }
       EnCoderXhr.timeout = 10000;
-      EnCoderXhr.ontimeout = function () {
-        loginTimeOut('Encoder获取,是否刷新重试');
-      };
-      EnCoderXhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?' + user);
+      EnCoderXhr.ontimeout = function(){
+        loginTimeOut('Encoder获取,是否刷新重试');
+      }
+      EnCoderXhr.open('POST','http://192.168.220.82:8080/pttlCrm/login/getEncoderForMobile?'+user);
       EnCoderXhr.send();
     }
-  };
-  //安卓物理返回键 - 客户端调用
-  topWin.AndroidBack = function () {
-    var url = ysp.customHelper.AndroidBackURL; //待跳转目标地址
-    var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
-    var name = ysp.customHelper.AndroidName; //客户门店返回名称标识
-    var currentElem = ysp.customHelper.AndroidDocument; // 客户门店返回主元素
+    
+	}
+  //安卓物理返回键 - 客户端调用
+  topWin.AndroidBack = function(){
+    var url = ysp.customHelper.AndroidBackURL;  //待跳转目标地址
+    var model = ysp.customHelper.AndroidBackModel; //待跳转目标模板
+    var name = ysp.customHelper.AndroidName; //客户门店返回名称标识
+    var currentElem = ysp.customHelper.AndroidDocument; // 客户门店返回主元素
     var BigFlag = ysp.customHelper.AndroidBidFlag;
-    if (ysp.customHelper.AndroidBackFlag == 'default') {
+    if(ysp.customHelper.AndroidBackFlag == 'default'){
       ysp.customHelper.back();
     }
-    if (ysp.customHelper.AndroidBackFlag == 'PageClose') {
-      if (ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer') {
+    if(ysp.customHelper.AndroidBackFlag == 'PageClose'){
+      if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
       ysp.runtime.Browser.activeBrowser.contentWindow.close();
-      if (url == '' && model) {
-        ysp.customHelper.BackReload('', model);
+      if(url == '' && model){
+         ysp.customHelper.BackReload('',model);
       }
     }
-    if (ysp.customHelper.AndroidBackFlag == 'destination' && url != '') {
-      if (ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer') {
+    if(ysp.customHelper.AndroidBackFlag == 'destination' && url != ''){
+      if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
-      ysp.customHelper.BackReload(url, model);
+      ysp.customHelper.BackReload(url,model);
     }
-    if (ysp.customHelper.AndroidBackFlag == 'BigData') {
+    if(ysp.customHelper.AndroidBackFlag == 'BigData'){
       var a = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('a');
       var index = 0;
       for (var i = 0; i < a.length; i++) {
@@ -341,53 +350,53 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }
       if (index > 1) {
-        index -= 1;
-        var aL = a.length;
-        if (aL - index > 1) {
-          a[aL - 2].click();
-        } else {
-          a[index - 1].click();
-        }
-        setTimeout(function () {
-          ysp.appMain.hideLoading();
-        }, 1000);
+         index -= 1;
+         var aL = a.length;
+         if (aL - index > 1) {
+           a[aL - 2].click();
+         } else {
+           a[index - 1].click();
+         }
+         	 setTimeout(function () {
+           ysp.appMain.hideLoading();
+         }, 1000);
       } else {
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
     }
-    if (ysp.customHelper.AndroidBackFlag == 'SaleBigData') {
+    if(ysp.customHelper.AndroidBackFlag == 'SaleBigData'){
       var li = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('li').length;
-      li > 1 ? ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.runtime.Browser.activeBrowser.contentWindow.close();
+  li > 1 ? ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.runtime.Browser.activeBrowser.contentWindow.close();
     }
-    if (ysp.customHelper.AndroidBackFlag == "reachBigData") {
+    if(ysp.customHelper.AndroidBackFlag == "reachBigData"){
       //达成物理返回
       var li = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('#searchHead').querySelectorAll('li').length;
-      li > 1 ? ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('#searchHead').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.runtime.Browser.activeBrowser.contentWindow.close();
+  li > 1 ? ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('#searchHead').querySelectorAll('li')[li - 2].querySelector('a').click() : ysp.runtime.Browser.activeBrowser.contentWindow.close();
     }
-    if (ysp.customHelper.AndroidBackFlag == 'AndroidHistory') {
-      ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
+    if(ysp.customHelper.AndroidBackFlag == 'AndroidHistory'){
+      ysp.runtime.Browser.activeBrowser.contentWindow.history.go(-1);
     }
-    if (ysp.customHelper.AndroidBackFlag == 'Client&Store') {
-      ysp.customHelper.toPlan(currentElem, name, model);
+    if(ysp.customHelper.AndroidBackFlag == 'Client&Store'){
+      ysp.customHelper.toPlan(currentElem, name, model)
     }
-    if (ysp.customHelper.AndroidBackFlag == 'ClientorStory') {
-      if (ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer') {
+    if(ysp.customHelper.AndroidBackFlag == 'ClientorStory'){
+      if(ysp.runtime.Browser.activeBrowser.contentWindow.frameElement.name == 'sencondLevelIframeContainer'){
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
     }
-    if (ysp.customHelper.AndroidBackFlag == 'indexBack') {
+    if(ysp.customHelper.AndroidBackFlag == 'indexBack'){
       if (top.EAPI.isAndroid() && top.yspCheckIn && top.yspCheckIn.backMarking) {
         top.yspCheckIn.backMarking('indexFlag');
       }
-      console.log('溜了溜了 !!!');
+      console.log('溜了溜了 !!!');
     }
-    if (ysp.customHelper.AndroidBackFlag == 'ClientStoreOrder') {
-      //客户、门店订单详情返回
-      ysp.appMain.back();
+    if(ysp.customHelper.AndroidBackFlag == 'ClientStoreOrder'){
+      //客户、门店订单详情返回
+      ysp.appMain.back();
     }
-    if (ysp.customHelper.AndroidBackFlag == 'VisitBack') {
+    if(ysp.customHelper.AndroidBackFlag == 'VisitBack'){
       //拜访总览物理键返回
-      if (ysp.customHelper.BackFlag > 1) {
+      if (ysp.customHelper.BackFlag >1) {
         ysp.customHelper.BackFlag = ysp.customHelper.BackFlag - 1;
         ysp.runtime.Browser.activeBrowser.contentWindow.history.back();
       } else if (ysp.customHelper.BackFlag == 1) {
@@ -397,72 +406,74 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         ysp.runtime.Browser.activeBrowser.contentWindow.close();
       }
     }
-    if (ysp.customHelper.AndroidBackFlag == 'clientQuery_back') {
+    if(ysp.customHelper.AndroidBackFlag=='clientQuery_back'){
       //分货客户查询物理键返回
       ysp.runtime.Browser.activeBrowser.contentWindow.close();
     }
-
-    if (ysp.customHelper.AndroidBackFlag == 'clientQuery_detail_back') {
+    
+    if(ysp.customHelper.AndroidBackFlag=='clientQuery_detail_back'){
       //分货客户查询详情物理键返回
-      var a = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a');
-      var index = 0;
+        var a = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a');
+        var index = 0;
 
-      for (var i = 0; i < a.length; i++) {
-        // if (a[i].onclick != null) {
-        index++; // }
-      }
-
-      if (index > 1) {
-        index -= 1;
-        var aL = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a').length;
-
-        if (aL - index > 1) {
-          ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a')[aL - 2].click();
-        } else {
-          ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a')[index - 1].click();
+        for (var i = 0; i < a.length; i++) {
+          // if (a[i].onclick != null) {
+          index++; // }
         }
 
-        ysp.appMain.showLoading();
-        setTimeout(function () {
-          ysp.appMain.hideLoading();
-        }, 1000);
-      }
-    }
+        if (index > 1) {
+          index -= 1;
+          var aL = ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a').length;
 
+          if (aL - index > 1) {
+            ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a')[aL - 2].click();
+          } else {
+            ysp.runtime.Browser.activeBrowser.contentWindow.document.querySelector('.breadcrumb1').querySelectorAll('a')[index - 1].click();
+          }
+
+          ysp.appMain.showLoading();
+          setTimeout(function () {
+            ysp.appMain.hideLoading();
+          }, 1000);
+        }
+    }
+    
+    
+    
     //恢复默认值
-    ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default' : '';
+    ysp.customHelper.AndroidBackFlag != 'indexBack' ? ysp.customHelper.AndroidBackFlag == 'default':'';
     ysp.customHelper.AndroidBackURL = '';
     ysp.customHelper.AndroidBackModel = '';
-    ysp.customHelper.AndroidDocument = '';
-    ysp.customHelper.AndroidName = '';
-    //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
-    //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
-  };
-  //安卓端判断VPN状态 - 客户端调用
-  topWin.AndroidVpn = function (str) {
-    if (!str) return;
-    //str == '0'?'':alert('当前VPN断开 - 稍后重连请刷新');
-  };
-  //安卓端判断当前请求网络状态 - 客户端调用
-  topWin.AndroidLine = function (str) {
-    if (!str) return;
-  };
-  topWin.IOSLine = function (str) {
-    if (!str) return;
-  };
-  //向当前页面动态添加提示语 .  (div)
-  var addMarkedModule = function addMarkedModule(str) {
-    if (!str && typeof str !== 'string') return;
-    if (!ysp.runtime && !ysp.runtime.Browser) return;
+    ysp.customHelper.AndroidDocument = '';
+    ysp.customHelper.AndroidName = '';
+    //default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面 BigData:为大数据钻取返回 . AndroidHistory:针对与页面后退一步返回
+    //Client&Store : 针对客户||门店返回方案  ClientorStory:针对客户门店360返回列表方案
+  }
+  //安卓端判断VPN状态 - 客户端调用
+  topWin.AndroidVpn = function(str){
+    if(!str) return ;
+    //str == '0'?'':alert('当前VPN断开 - 稍后重连请刷新');
+  }
+  //安卓端判断当前请求网络状态 - 客户端调用
+  topWin.AndroidLine = function(str){
+    if(!str)return ;
+  }
+  topWin.IOSLine = function(str){
+    if(!str)return ;
+  }
+  //向当前页面动态添加提示语 .  (div)
+  var addMarkedModule = function(str){
+    if(!str && typeof str !== 'string')return ;
+    if(!ysp.runtime && !ysp.runtime.Browser) return ;
     var currentWindow = ysp.runtime.Browser.activeBrowser.contentWindow;
     var currentDoc = currentWindow.document;
     var div = currentDoc.createElement('div');
     var text = currentDoc.createTextNode(str);
-    div.setAttribute('class', 'addMarked');
+    div.setAttribute('class','addMarked');
     div.appendChild(text);
     currentDoc.body.appendChild(div);
-  };
-  var forEach = Array.prototype.forEach;
+  }
+  var forEach = Array.prototype.forEach;
   var currentModelID = ""; //当前动作
   var singleTaskManager = null; //单例任务池
   var taskTimeoutId;
@@ -471,9 +482,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   var currentSecondMenuId;
   var isFirstLoaded = true;
   var getAllMenuStatus; //该状态判断当前是否已经拿到PC端全部菜单信息
-  var ALLMENU = []; //所有菜单列表集合
-  var removeMenuAll = ['我是被筛除的菜单:']; //所有被指定删除菜单的集合
-  //菜单筛选 , 将全部菜单按照{name:'',url:''}格式存储至ALLMENU;
+  var ALLMENU = []; //所有菜单列表集合
+  var removeMenuAll = ['我是被筛除的菜单:']; //所有被指定删除菜单的集合
+  //菜单筛选 , 将全部菜单按照{name:'',url:''}格式存储至ALLMENU;
   function AllMobileMenu(All) {
     [].forEach.call(All, function (oneItem, oneIndex) {
       //当前oneItem为一级菜单.
@@ -512,42 +523,82 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     });
   }
   //安卓端请求ICON角标数量 - ;
-  function AndroidGetIconNum(summary, atMe) {
+  function AndroidGetIconNum(summary,atMe){
     this.summary = summary;
     this.atMe = atMe;
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
-        if (xhr.response != '') {
+    xhr.onreadystatechange = function(){
+      if(xhr.status >= 200 && xhr.status <300 || xhr.status == 304){
+        if(xhr.response != ''){
           var obj = JSON.parse(xhr.response);
-          if (obj.summaryReportCount && obj.atMeUnreadReportCount) {
+          if(obj.summaryReportCount && obj.atMeUnreadReportCount){
             ysp.customHelper.IconNum.summary = obj.summaryReportCount;
-            ysp.customHelper.IconNum.atMe = obj.atMeUnreadReportCount;
-            localStorage.setItem('atMe', obj.atMeUnreadReportCount);
-            localStorage.setItem('summary', obj.summaryReportCount);
+    				ysp.customHelper.IconNum.atMe = obj.atMeUnreadReportCount;
+            localStorage.setItem('atMe',obj.atMeUnreadReportCount);
+            localStorage.setItem('summary',obj.summaryReportCount);
           }
         }
       }
-    };
-    xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
-    xhr.send();
+    }
+    xhr.open('POST','http://192.168.220.82:8080/pttlCrm/crm/workSummary/getWorkBenchSummaryCount');
+    xhr.send()
   }
   // 请求首页面所有一级\二级\三级菜\\\\\                                                                                                              单
-  function getAllMenu(aWin, menuList) {
-    //取值localStorage内接口数据,进行菜单渲染
-    var _this = this;
-    if (aWin.localStorage.listMenuForMobile && !loginFlag && !menuList) {
+  function getAllMenu(aWin,menuList) {
+   	//取值localStorage内接口数据,进行菜单渲染
+    var _this = this;
+    if(aWin.localStorage.listMenuForMobile && !loginFlag && !menuList){
       var AllMenu = JSON.parse(decodeURIComponent(aWin.localStorage.listMenuForMobile));
-      if (AllMenu == '' || AllMenu == '{"isHaveSession":"no"}') {
+      if(AllMenu == '' || AllMenu == '{"isHaveSession":"no"}'){
         console.error('当前菜单为空,具体原因为PC端未将菜单传入');
         alert('请双击刷新低栏VCRM图标,重新加载');
-      } else {
-        if (top.EAPI.isIOS()) {
+      }else{
+        if(top.EAPI.isIOS()){
           //top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
-        } else {
-            //AndroidGetIconNum(); // 安卓端ICON数量取值;
-          }
-        ALLMENU = AllMenu;
+        }else{
+          //AndroidGetIconNum(); // 安卓端ICON数量取值;
+        }
+          ALLMENU = AllMenu;
+          //console.log(ALLMENU)
+          //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
+          //AllMobileMenu(AllMenu);
+          //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
+          // if(ALLMENU != '' && AllMenu){
+          //   //正式环境暂时没有效验
+          //    var SessionXhr = new XMLHttpRequest();
+          //    SessionXhr.onreadystatechange = function(){
+          //     if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+          //       var encoder = JSON.parse(SessionXhr.response).encoder;
+          //       var userId = JSON.parse(SessionXhr.response).userId;
+          //       if(encoder && userId){
+          //         var encoderXHR = new XMLHttpRequest();
+          //         //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+          //       encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+          //         //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+          //         encoderXHR.send();
+          //       }else{
+          //         console.error('AndEncoder接口请求失败!')
+          //       }
+          //     }
+          //   }
+          //    SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+          //    SessionXhr.send();
+          // }
+      }
+    }
+    if(aWin.localStorage.listMenuForMobile && menuList && loginFlag){
+      //IOS独有得菜单获取方法 - menuList是菜单集合 具体实现请看IOSLoginIn方法
+      //var AllMenu = JSON.parse(decodeURIComponent(aWin.localStorage.listMenuForMobile));
+      var AllMenu = menuList;
+      if(AllMenu == '' || AllMenu == '{"isHaveSession":"no"}'){
+        console.error('当前菜单为空,具体原因为PC端未将菜单传入');
+        alert('请双击刷新低栏VCRM图标,重新加载');
+      }else{
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
+        }
+      }
+      	ALLMENU = AllMenu;
         //console.log(ALLMENU)
         //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
         //AllMobileMenu(AllMenu);
@@ -563,7 +614,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         //         var encoderXHR = new XMLHttpRequest();
         //         //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
         //       encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-        //         //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
         //         encoderXHR.send();
         //       }else{
         //         console.error('AndEncoder接口请求失败!')
@@ -573,151 +623,112 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         //    SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
         //    SessionXhr.send();
         // }
-      }
     }
-    if (aWin.localStorage.listMenuForMobile && menuList && loginFlag) {
-      //IOS独有得菜单获取方法 - menuList是菜单集合 具体实现请看IOSLoginIn方法
-      //var AllMenu = JSON.parse(decodeURIComponent(aWin.localStorage.listMenuForMobile));
-      var AllMenu = menuList;
-      if (AllMenu == '' || AllMenu == '{"isHaveSession":"no"}') {
-        console.error('当前菜单为空,具体原因为PC端未将菜单传入');
-        alert('请双击刷新低栏VCRM图标,重新加载');
-      } else {
-        if (top.EAPI.isIOS()) {
-          top.EAPI.postMessageToNative('GetIconNum', ''); //给客户端发消息 - 请求角标数据
-        }
-      }
-      ALLMENU = AllMenu;
-      //console.log(ALLMENU)
-      //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
-      //AllMobileMenu(AllMenu);
-      //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
-      // if(ALLMENU != '' && AllMenu){
-      //   //正式环境暂时没有效验
-      //    var SessionXhr = new XMLHttpRequest();
-      //    SessionXhr.onreadystatechange = function(){
-      //     if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-      //       var encoder = JSON.parse(SessionXhr.response).encoder;
-      //       var userId = JSON.parse(SessionXhr.response).userId;
-      //       if(encoder && userId){
-      //         var encoderXHR = new XMLHttpRequest();
-      //         //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-      //       encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-      //         encoderXHR.send();
-      //       }else{
-      //         console.error('AndEncoder接口请求失败!')
-      //       }
-      //     }
-      //   }
-      //    SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-      //    SessionXhr.send();
-      // }
-    }
-    //请求接口获取连接方式,暂时弃用
-    //     if(window.XMLHttpRequest){
-    //       var xhr = new XMLHttpRequest();
-    //       xhr.onreadystatechange = function () {
-    //         if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 && !getAllMenuStatus) {
-    //           if (xhr.responseText == '{"isHaveSession":"no"}') {
-    //             console.info('系统正在登录中...');
-    //             if(FlagNum<10){
-    //               setTimeout(getAllMenu(), 3000);
-    //             }else{
-    //               FlagNum = 0;
-    //             }
-    //           } else if (xhr.status == 200 && xhr.readyState == 4) {
-    //             if(top.EAPI.isIOS()){
-    //               top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
-    //             }else{
-    //             	AndroidGetIconNum(); // 安卓端ICON数量取值;
-    //             }
-    //             getAllMenuStatus = true; 
-    //             //此状态说明当前已经全部拿到PC端所有菜单信息;
-    //             var AllMenu = JSON.parse(xhr.response);
-    //             //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
-    //             ALLMENU = AllMenu;
-    //             //console.log(ALLMENU)
-    //             //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
-    //             //AllMobileMenu(AllMenu);
-    //             //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
-    //             if(ALLMENU != '' && AllMenu){
-    //                var SessionXhr = new XMLHttpRequest();
-    //                SessionXhr.onreadystatechange = function(){
-    //                 if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
-    //                   var encoder = JSON.parse(SessionXhr.response).encoder;
-    //                   var userId = JSON.parse(SessionXhr.response).userId;
-    //                   if(encoder && userId){
-    //                     var encoderXHR = new XMLHttpRequest();
-    //                     //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
-    //                   encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
-    //                     //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
-    //                     encoderXHR.send();
-    //                   }else{
-    //                     console.error('AndEncoder接口请求失败!')
-    //                   }
-    //                 }
-    //               }
-    //                SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
-    //                SessionXhr.send();
-    //             }
-    //           }
-    //         } else if (xhr.status >= 400) {
-    //           console.warn('请求失败,可能正在登陆中,3s后重新请求');
-    //           //3s后重新请求菜单列表
-    //           if(FlagNum<10){
-    //             FlagNum+=1;
-    //             setTimeout(function () {
-    //             	getAllMenu();
-    //           	}, 3000);
-    //           }else{
-    //             FlagNum=0;
-    //           }
-    //         }
-    //       };
-    //       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
-    //       xhr.send();
-    //     }else{
-    //       console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
-    //     }
+    //请求接口获取连接方式,暂时弃用
+//     if(window.XMLHttpRequest){
+//       var xhr = new XMLHttpRequest();
+//       xhr.onreadystatechange = function () {
+//         if (xhr.status == 200 && xhr.status < 300 || xhr.status == 304 && !getAllMenuStatus) {
+//           if (xhr.responseText == '{"isHaveSession":"no"}') {
+//             console.info('系统正在登录中...');
+//             if(FlagNum<10){
+//               setTimeout(getAllMenu(), 3000);
+//             }else{
+//               FlagNum = 0;
+//             }
+//           } else if (xhr.status == 200 && xhr.readyState == 4) {
+//             if(top.EAPI.isIOS()){
+//               top.EAPI.postMessageToNative('GetIconNum', '');//给客户端发消息 - 请求角标数据
+//             }else{
+//             	AndroidGetIconNum(); // 安卓端ICON数量取值;
+//             }
+//             getAllMenuStatus = true; 
+//             //此状态说明当前已经全部拿到PC端所有菜单信息;
+//             var AllMenu = JSON.parse(xhr.response);
+//             //当前方法为接口只存在移动端菜单时可以直接想ALLMENU里面添加菜单信息
+//             ALLMENU = AllMenu;
+//             //console.log(ALLMENU)
+//             //当前方法为接口存在全部菜单权限时.用来筛选移动端菜单权限
+//             //AllMobileMenu(AllMenu);
+//             //studio中无法存储两个session 导致大数据无法进入 此处进行模拟请求session
+//             if(ALLMENU != '' && AllMenu){
+//                var SessionXhr = new XMLHttpRequest();
+//                SessionXhr.onreadystatechange = function(){
+//                 if(SessionXhr.status == 200 && SessionXhr.status <300 || Selection.status == 304){
+//                   var encoder = JSON.parse(SessionXhr.response).encoder;
+//                   var userId = JSON.parse(SessionXhr.response).userId;
+//                   if(encoder && userId){
+//                     var encoderXHR = new XMLHttpRequest();
+//                     //4G网络下无法通过请求  , 暂时通过GET请求解决 . 
+//                   encoderXHR.open('GET','http://192.168.220.82:8080/ptDataShow/login/crmLogin?filter_userId='+userId+'&encoder='+encoder,false);
+//                     //encoderXHR.send({'filter_userId':'ZHAOWEI','encoder':'WkhBT1dFSSswOC8wNy8yMDE4IDIwOjE0OjUy'});
+//                     encoderXHR.send();
+//                   }else{
+//                     console.error('AndEncoder接口请求失败!')
+//                   }
+//                 }
+//               }
+//                SessionXhr.open('GET','http://192.168.220.82:8080/pttlCrm/homepage/getUserIdAndEncoder',false);
+//                SessionXhr.send();
+//             }
+//           }
+//         } else if (xhr.status >= 400) {
+//           console.warn('请求失败,可能正在登陆中,3s后重新请求');
+//           //3s后重新请求菜单列表
+//           if(FlagNum<10){
+//             FlagNum+=1;
+//             setTimeout(function () {
+//             	getAllMenu();
+//           	}, 3000);
+//           }else{
+//             FlagNum=0;
+//           }
+//         }
+//       };
+//       xhr.open('POST', 'http://192.168.220.82:8080/pttlCrm/sys/auth/rela/getSystemLeftMenuListForMobile',false);
+//       xhr.send();
+//     }else{
+//       console.error('对象只有一个,当前代码并没有兼容别的对象!!!!');
+//     }
   }
   //按照传进来的名称来配置二级菜单
-  function _getTargetMenus(arr, removeName) {
-    //arr为当前要筛选的菜单名称 removeName为要排除相似的菜单名称. ps:移动端和PC名称相似却不相同,或者统一名称在移动端特殊展示
-    var Allmenus = [];
-    if (typeof arr === "string") {
+  function _getTargetMenus(arr,removeName) {
+    //arr为当前要筛选的菜单名称 removeName为要排除相似的菜单名称. ps:移动端和PC名称相似却不相同,或者统一名称在移动端特殊展示
+    var Allmenus = [];
+    if (typeof arr === "string") {
       arr = [arr];
     }
-    if (typeof removeName === 'string') {
+    if(typeof removeName === 'string'){
       removeName = [removeName];
     }
-    if (removeName) {
-      removeName.some(function (current, index, arr) {
-        for (var i = 0; i < ALLMENU.length; i++) {
-          if (ALLMENU[i].name.indexOf(current) !== -1) {
-            removeMenuAll.push(ALLMENU.splice(i, 1));
-            //打印removeMenuAll 可以得到筛选排除的所有菜单;
-            //ALLMENU.splice(i,1);
+    if(removeName){
+      removeName.some(function(current,index,arr){
+        for(var i = 0;i<ALLMENU.length;i++){
+          if(ALLMENU[i].name.indexOf(current) !== -1){
+            removeMenuAll.push(ALLMENU.splice(i,1));
+            //打印removeMenuAll 可以得到筛选排除的所有菜单;
+            //ALLMENU.splice(i,1);
           }
         }
-      });
+      })
     }
-    arr.some(function (current, index, arr) {
+    arr.some(function (current, index, arr) {
       for (var i = 0; i < ALLMENU.length; i++) {
         //在全部菜单中按照条件筛选出移动端可以进入的目标菜单及有效url存入数组.
         if (ALLMENU[i].name.indexOf(current) !== -1) {
-          //针对三级菜单地址进行截取,保证url有效
-          if (ALLMENU[i].url.indexOf('../') !== -1) {
-            ALLMENU[i].url = ALLMENU[i].url.replace('../.', '');
-            ALLMENU[i].url = ALLMENU[i].url.replace(/^\s+/, '');
+          //针对三级菜单地址进行截取,保证url有效
+          if(ALLMENU[i].url.indexOf('../') !== -1){
+            ALLMENU[i].url = ALLMENU[i].url.replace('../.','');
+            ALLMENU[i].url = ALLMENU[i].url.replace(/^\s+/,'');
           }
-          if (current.indexOf('(新)') != -1) {
-            current = current.replace('(新)', '');
+          if(current.indexOf('(新)')!=-1){
+            current = current.replace('(新)','');
           }
-          var menus = {
-            name: current,
+          var menus = {
+            name: current,
             url: ALLMENU[i].url,
-            code: ALLMENU[i].code,
-            current: ALLMENU[i].name
+            code:ALLMENU[i].code,
+            current:ALLMENU[i].name
           };
           Allmenus.push(menus);
           break;
@@ -885,10 +896,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     // }
     onceExecuteFlag = false;
     if (topWin.location.href.indexOf('login') != -1) {
-      if (top.EAPI.isIOS()) {
-        // executePlan('login');  //测试登录框问题 lyh
-      }
-    }
+      if(top.EAPI.isIOS()){
+       // executePlan('login');  //测试登录框问题 lyh
+      }
+    }
   }
 
   function _getThirdMenuList(parentId, callback) {
@@ -1284,31 +1295,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       refreshWin();
     }
   }
-  //页面地址返回刷新问题与返回工作台问题.有参数可以刷新至固定地址,无参数默认回到工作台
-  function _BackReload(url, model) {
-    if (url && typeof url !== 'string') {
-      console.info(url + '!字符串,可不行');
+  //页面地址返回刷新问题与返回工作台问题.有参数可以刷新至固定地址,无参数默认回到工作台
+  function _BackReload(url,model){
+    if(url && typeof url !== 'string'){
+      console.info(url+'!字符串,可不行');
     }
-    if (model && typeof model !== 'string') {
-      console.info(model + '模板名称也得是字符串!');
+    if(model && typeof model !== 'string'){
+      console.info(model+'模板名称也得是字符串!');
     }
     var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow;
-    if (url && !model) {
-      currentWin.location.href = url;
-    } else if (!url && !model) {
+    if(url && !model){
+      currentWin.location.href = url
+    }else if(!url && !model){
       currentWin.location.href = 'http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html';
     }
-    if (url == '' && model) {
+    if(url=='' && model){
       ysp.runtime.Model.setForceMatchModels([model]);
     }
-    if (url && model) {
+    if(url && model){
       currentWin.location.href = url;
       ysp.runtime.Model.setForceMatchModels([model]);
     }
   }
-  //页面加载Loading . 数据加载中 , 数据请求时机 ,页面调用会判断当前数据请求是否成功,请求中时加载loading . 请求成功时 ,关闭loading
-  function _isLoading() {
-    var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow; //当前激活window . 
+  //页面加载Loading . 数据加载中 , 数据请求时机 ,页面调用会判断当前数据请求是否成功,请求中时加载loading . 请求成功时 ,关闭loading
+  function _isLoading(){
+    var currentWin = ysp.runtime.Browser.activeBrowser.contentWindow; //当前激活window . 
   }
   //页面时间输出 - 监控加载时间
   function startTime(){
@@ -1364,30 +1375,244 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           'timeUsed': loginUsed,
           'failedReason': failed,
           'uploadFailedReason': uploadFailedReason
+          }
         }
-      };
-      if (top.EAPI.isIOS()) {
-        top.EAPI.postMessageToNative('YSPLOG', JSON.stringify(DATA));
-      } else {
-        top.yspCheckIn.sendLog(JSON.stringify(DATA));
-      }
+  },
+    //信息录入本地缓存部分
+    informationEntry:{
+      enterName:'', //录入客户名称
+      basic:{
+        'user':'',
+        'stock':''
+      },
+			isSave:false,
+      saveData:'',
+      enterSplit:function(url,str,num){
+        if(!url){
+          throw '未传入必要参数!';
+        } 
+        if(!(typeof url === 'string') || !(typeof str === 'string')){
+          console.error('请传入正确参数类型'+str);
+          return ;
+        } 
+        if(num){
+          if(!(typeof num === 'string')){
+            throw '请传入正确参数类型'+num;
+          }
+          return url.replace(str,num);
+        }else{
+          return url.split(str)[1];
+        }
+      },//截取URL中存在的客户编码
+    	sendData:function(obj){
+        if(!(typeof obj === 'object') || !(obj instanceof Array)){
+          throw '请传入正确参数类型'+obj;
+        }
+        // 待客户端补充方法
+        if(ysp.customHelper.logLoginName =='' || ysp.customHelper.informationEntry.enterName == ''){
+          alert('用户名或客户编码缺失,无法执行保存操作');
+          return ;
+        }
+        var data = {'user':ysp.customHelper.logLoginName,'stock':this.enterName,'data':obj};
+        data = JSON.stringify(data);
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('saveData',data);
+        }else if(top.EAPI.isAndroid()){
+          top.yspCheckIn && top.yspCheckIn.insertData(data);
+        }
+      },
+      getData:function(user,encoded){
+        if(!user && !encoded){
+          this.basic.user = ysp.customHelper.logLoginName;
+        	this.basic.stock = this.enterName;
+        }else{
+          var data = JSON.stringify({
+            'user':user,
+            'stock':encoded
+        	})
+        }
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('getData',data);
+        }else if(top.EAPI.isAndroid()){
+          this.saveData = top.yspCheckIn.queryData(this.basic.user,this.basic.stock);
+          if(JSON.parse(this.saveData).data.length<1){
+            this.isSave = false;
+          }else{
+            this.isSave = true;
+          }
+        }
+        // 待客户端补充方法
+      },
+      deleteData:function(user,encoded){
+        if(!user && !encoded){
+          var data = this.basic;
+        }else{
+          var data = JSON.stringify({
+            'user':user,
+            'stock':encoded
+        	})
+        }
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('deleteData',data);
+        }else if(top.EAPI.isAndroid()){
+          top.yspCheckIn.deleteData(this.basic.user,this.basic.stock);
+        }
+      },
+      backfill:function(doc,titles,obj){
+        if(!doc){
+          throw '未传入正确DOM';
+        }
+        if(!obj) throw '未找到数据,无法回填值!';
+        if(!doc.querySelector('thead')){
+          console.info('当前DOM中没有thead');
+          return ;
+    	  }
+        if(!doc.querySelector('tbody')){
+          console.info('当前DOM中没有tbody');
+          return ;
+        }
+        if(!doc.querySelector('tbody').querySelectorAll('tr')){
+          console.info('当前DOM中表格内容为空!');
+          return ;
+        }
+        obj = JSON.parse(obj);
+        var TH = doc.querySelectorAll('th').length>0?doc.querySelectorAll('th'):doc.querySelectorAll('td');
+        var TR = doc.querySelector('tbody').querySelectorAll('tr');
+        if(TR && TR.length>0){
+          this.isSave = false; //初始化是否回填状态,防止无限回填;
+        }
+        var currentTitle = {
+          'title':[],
+          'index':[]
+        };
+        var currnetData = [];
+        titles.some(function(value,index,arr){
+        	for(var i=0;i<TH.length;i++){
+            if(value == ysp.customHelper.trim(TH[i].textContent)){
+              currentTitle.title.push(value);
+              currentTitle.index.push(i);
+            }
+          }
+        })
+        for(var i = 0;i<TR.length;i++){
+          var TD = TR[i].querySelectorAll('td');
+          if(i == obj.data[i].index){
+            currentTitle.title.some(function(value,index,arr){
+              for(k in obj.data[i].content){
+                if(obj.data[i].content.hasOwnProperty(value)){
+                  if(TD[currentTitle.index[index]].querySelectorAll('input').length >0){
+                    TD[currentTitle.index[index]].querySelectorAll('input')[1].value = obj.data[i].content[value];
+                  }else{
+                    TD[currentTitle.index[index]].textContent = obj.data[i].content[value];
+                  }
+                }
+              }
+            })
+          }
+        }
+      },
+      filterData:function(doc,titles,id){
+        var tableStats = { 
+        	'thead':true,
+          'tbody':true,
+          'tr':true
+        }
+        if(!doc){
+          throw '未传入正确DOM';
+        }
+        if(id){
+          this.id = id;
+        }
+        if(!doc.querySelector('thead')){
+          tableStats.thead = false;
+          console.info('当前DOM中没有thead');
+          return ;
+    	  }
+        if(!doc.querySelector('tbody')){
+          tableStats.tbody = false;
+          console.info('当前DOM中没有tbody');
+          return ;
+        }
+        if(!doc.querySelector('tbody').querySelectorAll('tr')){
+          tableStats.tr = false;
+          console.info('当前DOM中表格内容为空!');
+          return ;
+        }
+        var TH = doc.querySelectorAll('th').length>0?doc.querySelectorAll('th'):doc.querySelectorAll('td');
+        var TR = doc.querySelector('tbody').querySelectorAll('tr');
+        var currentTitle = {
+          'title':[],
+          'index':[]
+        };
+        var currnetData = [];
+        titles.some(function(value,index,arr){
+        	for(var i=0;i<TH.length;i++){
+            if(value == ysp.customHelper.trim(TH[i].textContent)){
+              currentTitle.title.push(value);
+              currentTitle.index.push(i);
+            }
+          }
+        })
+        for(var i =0;i<TR.length;i++){
+          var enterData = {};
+          var TD = TR[i].querySelectorAll('td');
+          currentTitle.index.some(function(value,index,arr){
+            if(TD[value].querySelectorAll('input').length >0){
+              enterData[currentTitle.title[index]]=ysp.customHelper.trim(TD[value].querySelectorAll('input')[1].value);
+            }else{
+              enterData[currentTitle.title[index]]=ysp.customHelper.trim(TD[value].textContent);
+            }
+          })
+          currnetData.push({
+            'index':i,
+            'content':enterData
+          })
+        }
+        return currnetData;
+      }
     },
-    logLoginName: '',
-    addMarkedModule: addMarkedModule,
-    AndroidBidFlag: '',
-    AndroidBackFn: topWin.AndroidBack,
-    AndroidDocument: '', //安卓物理返回键客户门店返回元素
-    AndroidName: '', //安卓物理返回键客户门店返回名称
-    AndroidBackURL: '', //安卓物理返回键目标地址
-    AndroidBackModel: '', //安卓物理返回键目标模板
-    AndroidBackFlag: 'default', //安卓物理返回键返回方法 条件 标识 default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面
-    AndroidGetIconNum: AndroidGetIconNum, //安卓端请求待办角标数量
-    CUSTOMURL: '',
-    IconNum: { summary: '', atMe: '' }, //报告数量变量
-    BackFlag: 0, // 拜访总览逐级返回标识
-    filter_userId: null, //存储大数据session请求参数 
-    encode: null, //存储大数据session请求参数 
-    BackReload: _BackReload,
+    //信息录入本地缓存部分
+    //系统日志部分 
+    CONSOLELOG:function(source,type,failed,startTime,loginTime,uploadFailedReason){
+      	var loginUsed = (Date.now() - startTime)/1000; //运行时间
+        var DATA = {'log':{
+                  'source':source,
+                  'type':type,
+                  'loginName':ysp.customHelper.logLoginName,
+                  'email':'',
+                  'model':'',
+                  'loginTime':loginTime,
+                  'occurTime':new Date().getTime(),
+                  'timeUsed':loginUsed,
+                  'failedReason':failed,
+                  'uploadFailedReason':uploadFailedReason
+                 }
+               }
+        if(top.EAPI.isIOS()){
+          top.EAPI.postMessageToNative('YSPLOG',JSON.stringify(DATA));
+        }else{
+          top.yspCheckIn.sendLog(JSON.stringify(DATA));
+        }
+    },
+    logLoginName:'',
+    //系统日志部分 
+    addMarkedModule:addMarkedModule,
+    //安卓物理返回键部分
+    AndroidBidFlag:'',
+    AndroidBackFn:topWin.AndroidBack,
+    AndroidDocument:'',//安卓物理返回键客户门店返回元素
+    AndroidName:'',//安卓物理返回键客户门店返回名称
+    AndroidBackURL:'',//安卓物理返回键目标地址
+    AndroidBackModel:'',//安卓物理返回键目标模板
+    AndroidBackFlag:'default',//安卓物理返回键返回方法 条件 标识 default:为默认返回 destination:为跳转目标URL地址 PageClose:为关闭页面
+    //安卓物理返回键部分
+    AndroidGetIconNum:AndroidGetIconNum, //安卓端请求待办角标数量
+    CUSTOMURL:'',
+    IconNum:{summary:'',atMe:''},//报告数量变量
+		BackFlag:0, // 拜访总览逐级返回标识
+    filter_userId:null,//存储大数据session请求参数 
+    encode:null,//存储大数据session请求参数 
+    BackReload:_BackReload,
     getTargetMenus: _getTargetMenus,
     getTableData: _getTableData,
     trim: _trim,
@@ -1398,7 +1623,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     bigPicture: _bigPicture,
     refreshWinAfterWinName: _refreshWinAfterWinName,
     getTableClassData: _getTableClassData,
-    backTopHead: _backTopHead,
+    backTopHead:_backTopHead,
     getRTWin: function getRTWin() {
       var aWin = ysp.runtime.Browser.activeBrowser.contentWindow;
       if (aWin) {
@@ -2492,8 +2717,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       ysp.customHelper.TimeScope.timeScope(document);
       if (aWin) {
         if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
-          //在登录成功时,请求PC端菜单接口,获取全部菜单列表  -- 新平台做临时调试使用 .
-          getAllMenu(aWin);
+          //在登录成功时,请求PC端菜单接口,获取全部菜单列表  -- 新平台做临时调试使用 .
+          getAllMenu(aWin);
           // var _this = this;
           // var xhr = new aWin.XMLHttpRequest();
           // xhr.open('GET', 'http://192.168.220.82:8080/pttlCrm/login/addMobileLoginLog', true);
@@ -2508,32 +2733,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         if (aWin.localStorage && aWin.localStorage.getItem('menuId') != null) {
           aWin.localStorage.setItem('menuId', '');
         }
-        if (aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null) {
+        if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') == null ){
           ysp.appMain.hideLoading();
         }
-        if (aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null) {
-          ysp.appMain.hideLoading();
+    		if(aWin.localStorage && aWin.localStorage.getItem('layerLoading') != null ){
+        	ysp.appMain.hideLoading();
         }
-      }
-      //调试IOS登录框问题 - 地址变成特殊地址 
-      if (aWin.location.href.indexOf('ysp_mobile') !== -1 && top.EAPI.isIOS()) {
+    	}
+      //调试IOS登录框问题 - 地址变成特殊地址 
+      if(aWin.location.href.indexOf('ysp_mobile')!==-1 && top.EAPI.isIOS()){
         aWin.location.href = 'http://192.168.220.82:8080/pttlCrm/login';
         top.EAPI.postMessageToNative('IOSLoginIn', '');
-        ysp.appMain.showLoading();
-      }
-      if (aWin.location.href.indexOf('ysp_mobile') !== -1 && top.EAPI.isAndroid()) {
+        ysp.appMain.showLoading();
+      }
+      if(aWin.location.href.indexOf('ysp_mobile') !==-1 && top.EAPI.isAndroid()){
         top.yspCheckIn.crmLogin();
       }
-      if (aWin.location.href.indexOf('login') !== -1 && top.EAPI.isIOS()) {
+      if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isIOS()){
         topWin.currentWindow = aWin;
         top.EAPI.postMessageToNative('IOSLoginIn', '');
       }
-      if (aWin.location.href.indexOf('login') !== -1 && top.EAPI.isAndroid()) {
+      if(aWin.location.href.indexOf('login') !==-1 && top.EAPI.isAndroid()){
         top.yspCheckIn.crmLogin();
       }
-      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
-        //在登录成功时,请求菜单接口,获取全部菜单列表
-        getAllMenu(aWin);
+      if (aWin.location.href == 'http://192.168.220.82:8080/pttlCrm/res/index.html') {
+          //在登录成功时,请求菜单接口,获取全部菜单列表
+          getAllMenu(aWin);
       }
       //为了使移动端的日期方法toLocaleDateString和移动端保持一致
       aWin.Date.prototype.toLocaleDateString = function () {
@@ -2558,7 +2783,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         topWin = aWin;
         if (aWin.location.href.indexOf('login') !== -1) {
           ysp.runtime.Model.setForceMatchModels(['login']);
-          //console.log('打印几次,+++++++')
+          //console.log('打印几次,+++++++')
         }
       }
       aWin.Object.defineProperty(aWin, 'getTopWin', {
@@ -2573,26 +2798,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       });
       aWin.addEventListener('DOMContentLoaded', function () {
-        window.onerror = function (msg, url, line) {
-          var DATA = { 'log': {
-              'source': 'VCRM',
-              'type': '错误日志',
-              'loginName': LOGINNAME,
-              'email': '',
-              'model': '',
-              'loginTime': LOGINTIME,
-              'occurTime': new Date().getTime(),
-              'timeUsed': LOGINUSED,
-              'failedReason': 'Error:' + msg + ' | Url:' + url + ' | Line:' + line,
-              'uploadFailedReason': ''
-            }
-          };
-          if (top.EAPI.isAndroid()) {
-            top.yspCheckIn.sendLog(JSON.stringify(DATA));
-          } else {
-            top.EAPI.postMessageToNative('YSPLOG', JSON.stringify(DATA));
+        window.onerror = function(msg,url,line){
+          var DATA = {'log':{
+                        'source':'VCRM',
+                        'type':'错误日志',
+                        'loginName':LOGINNAME,
+                        'email':'',
+                        'model':'',
+            						'loginTime':LOGINTIME,
+                        'occurTime':new Date().getTime(),
+                        'timeUsed':LOGINUSED,
+                        'failedReason':'Error:'+msg+' | Url:'+url+' | Line:'+line,
+                        'uploadFailedReason':''
+          						 }
+                     }
+					if(top.EAPI.isAndroid()){
+            top.yspCheckIn.sendLog(JSON.stringify(DATA))
+          }else{
+            top.EAPI.postMessageToNative('YSPLOG',JSON.stringify(DATA));
           }
-        };
+        }
         if (aWin.location.href.indexOf('index.html') !== -1) {
           var actionEvent = '{"target":"null","data":"closePreLoading"}';
           //关闭主webview的loading状态
@@ -2780,12 +3005,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return str ? str.replace(/(^\s*)|(\s*$)/g, "") : '';
   }
   /*调用场景：点击回到页面顶部.将scrollTop 置为0 */
-  function _backTopHead(elem) {
-    if (elem.nodeType != 1) {
-      console.error('当前elem不是正确元素,赶紧查一下的!!!');
-      return;
+  function _backTopHead(elem){
+    if(elem.nodeType != 1){
+      console.error('当前elem不是正确元素,赶紧查一下的!!!')
+      return ;
     }
-    elem.scrollTop = 0;
+      elem.scrollTop = 0;
   }
   /*调用场景：页面返回时使用*/
   function _back(type) {
