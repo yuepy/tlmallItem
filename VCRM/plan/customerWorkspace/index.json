@@ -1,0 +1,659 @@
+{
+  "version": "0.1",
+  "id": "customerWorkspace",
+  "targetURL": "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html",
+  "jsFile": "index.js",
+  "requires": {
+    "vistiSign": "../vistiSign/index.json",
+    "visitSignOut": "../visitSignOut/index.json",
+    "workPlanCustomStore": "../workPlanCustomStore/index.json"
+  },
+  "chineseName": "工作台",
+  "description": "",
+  "controls": {
+    "control6_WcEOT3": {
+      "location": {
+        "data": {
+          "tagName": "BODY"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "value": "HTML.js.no-touch.csstransitions BODY"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control6_WcEOT3"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control7_bhIXEe": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.bench-wrap.clearfix DIV.bench-l DIV.bench-box"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control7_bhIXEe"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control8_I7nDbk": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.bench-l DIV.bench-box DIV.bench-tit"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control8_I7nDbk"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control9_xPuSfI": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              2
+            ],
+            "value": "DIV.bench-l DIV.bench-box DIV.plan"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control9_xPuSfI"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control10_BLDkke": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              0,
+              4
+            ],
+            "value": "DIV.bench-wrap.clearfix DIV.bench-r DIV.bench-box.bench-box-r"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[1]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control10_BLDkke"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control23_t3xRNp": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              2
+            ],
+            "value": "DIV.bench-l DIV.bench-box DIV.plan"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[1]/DIV[2]/DIV[3]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control23_t3xRNp"
+      },
+      "intendedRole": "custom",
+      "roles": "element,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    },
+    "control29_rcNDeg": {
+      "location": {
+        "data": {
+          "tagName": "DIV"
+        },
+        "userData": {
+          "data": [],
+          "force": false
+        },
+        "locators": [
+          {
+            "id": "@class/word",
+            "prob": 1,
+            "ordinal": [
+              1,
+              4
+            ],
+            "value": "DIV.bench-wrap.clearfix DIV.bench-r DIV.bench-box.bench-box-r"
+          },
+          {
+            "id": "path/ordinal",
+            "prob": 1,
+            "value": "/HTML[1]/BODY[1]/DIV[1]/DIV[2]/DIV[2]/DIV[2]"
+          }
+        ]
+      },
+      "events": {
+        "onGetData": "getData_control29_rcNDeg"
+      },
+      "intendedRole": "custom",
+      "roles": "element,link,custom",
+      "monitored": true,
+      "frameXPath": "",
+      "componentType": "custom"
+    }
+  },
+  "contexts": {
+    "context2_HsDgXa": {
+      "controls": [
+        "control6_WcEOT3",
+        "control7_bhIXEe",
+        "control8_I7nDbk",
+        "control9_xPuSfI",
+        "control10_BLDkke",
+        "control23_t3xRNp",
+        "control29_rcNDeg"
+      ],
+      "anchors": [],
+      "urlAnchor": []
+    }
+  },
+  "flows": {
+    "flow7_pFOuS2": {
+      "toContexts": [
+        {
+          "toContextId": "context2_HsDgXa"
+        }
+      ]
+    },
+    "flow8_1Dz0FF": {
+      "fromContextId": "context2_HsDgXa",
+      "fromAction": "doAction",
+      "fromControlId": "control6_WcEOT3",
+      "toContexts": [
+        {
+          "toContextId": "context2_HsDgXa"
+        }
+      ]
+    },
+    "flow15_OS8DQo": {
+      "fromContextId": "context2_HsDgXa",
+      "fromAction": "doAction",
+      "fromControlId": "control7_bhIXEe",
+      "toContexts": [
+        {
+          "toContextId": "context2_HsDgXa"
+        }
+      ]
+    },
+    "flow16_BvqVKA": {
+      "fromContextId": "context2_HsDgXa",
+      "fromAction": "doAction",
+      "fromControlId": "control23_t3xRNp",
+      "toContexts": [
+        {
+          "toContextId": "context2_HsDgXa"
+        },
+        {
+          "toContextId": "context5_C0h1F8",
+          "toModelId": "vistiSign"
+        },
+        {
+          "toContextId": "context6_DNzLem",
+          "toModelId": "visitSignOut"
+        }
+      ]
+    },
+    "flow25_hca8qy": {
+      "fromContextId": "context2_HsDgXa",
+      "fromAction": "doAction",
+      "fromControlId": "control8_I7nDbk",
+      "toContexts": [
+        {
+          "toContextId": "context2_HsDgXa"
+        },
+        {
+          "toContextId": "context7_MAgw2r",
+          "toModelId": "workPlanCustomStore"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "page2_uwwrbi": {
+      "contextId": "context2_HsDgXa",
+      "layout": [
+        {
+          "id": "uiControl6_LUdZGu",
+          "controlId": "control6_WcEOT3",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl6_LUdZGu",
+                "onGetTemplate": "getTemplate_uiControl6_LUdZGu"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl7_FEJHCr",
+          "controlId": "control7_bhIXEe",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl7_FEJHCr",
+                "onGetTemplate": "getTemplate_uiControl7_FEJHCr"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl8_0p7tBn",
+          "controlId": "control8_I7nDbk",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl8_0p7tBn",
+                "onGetTemplate": "getTemplate_uiControl8_0p7tBn"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl9_BvaQpc",
+          "controlId": "control9_xPuSfI",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl9_BvaQpc",
+                "onGetTemplate": "getTemplate_uiControl9_BvaQpc"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl23_79IykW",
+          "controlId": "control23_t3xRNp",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl23_79IykW",
+                "onGetTemplate": "getTemplate_uiControl23_79IykW"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl10_XzDBn6",
+          "controlId": "control10_BLDkke",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl10_XzDBn6",
+                "onGetTemplate": "getTemplate_uiControl10_XzDBn6"
+              }
+            }
+          }
+        },
+        {
+          "id": "uiControl29_eQLUtB",
+          "controlId": "control29_rcNDeg",
+          "display": {
+            "adapterId": "custom",
+            "type": "custom",
+            "adapter": {
+              "templateType": "react",
+              "events": {
+                "onDoAction": "doAction_uiControl29_eQLUtB",
+                "onGetTemplate": "getTemplate_uiControl29_eQLUtB"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "matchers": {
+    "page/title": {
+      "contexts": {
+        "context2_HsDgXa": [
+          "客户信息列表"
+        ]
+      }
+    },
+    "page/urls": {
+      "contexts": {
+        "context2_HsDgXa": [
+          "192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"
+        ]
+      }
+    },
+    "page/ids": {
+      "contexts": {
+        "context2_HsDgXa": [
+          [
+            "calendar",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "custom-date",
+            "custom-month",
+            "custom-next",
+            "custom-prev",
+            "custom-year",
+            "myAppUl",
+            "myDataUl",
+            "newPlanAddButton",
+            "newPlanDeleteButton",
+            "newTempVisitButton",
+            "planEaiId",
+            "planRowId",
+            "tempPlanList",
+            "viewAtMyReport",
+            "viewWorkAtme",
+            "visitPlanList",
+            "workPlan",
+            "workPlanHaveConstitute",
+            "workPlanNoConstitute",
+            "workSummaryAddBtn"
+          ],
+          [
+            "baogao-OKL",
+            "calendar",
+            "chooseCustomerCodes",
+            "chooseStoreCodes",
+            "chooseVisitInfo",
+            "currentSelectDay",
+            "custom-date",
+            "custom-month",
+            "custom-next",
+            "custom-prev",
+            "custom-year",
+            "myAppUl",
+            "myDataUl",
+            "newPlanAddButton",
+            "newPlanDeleteButton",
+            "newTempVisitButton",
+            "planEaiId",
+            "planRowId",
+            "qiantui-OKL",
+            "qidandao-OKL",
+            "tempPlanList",
+            "viewAtMyReport",
+            "viewWorkAtme",
+            "visitPlanList",
+            "workPlan",
+            "workPlanHaveConstitute",
+            "workPlanNoConstitute",
+            "workSummaryAddBtn"
+          ]
+        ]
+      }
+    },
+    "page/classes": {
+      "contexts": {
+        "context2_HsDgXa": [
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "clearfix",
+            "date-tit",
+            "did",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "num",
+            "plan",
+            "self",
+            "temporary",
+            "time",
+            "workbench"
+          ],
+          [
+            "bench-box",
+            "bench-box-r",
+            "bench-l",
+            "bench-r",
+            "bench-tit",
+            "bench-wrap",
+            "calendar",
+            "calendar-cell",
+            "clearfix",
+            "close-btn",
+            "customer",
+            "customer-visit-detail",
+            "customer-visit-reach",
+            "date-tit",
+            "did",
+            "fc-body",
+            "fc-calendar",
+            "fc-five-rows",
+            "fc-head",
+            "fc-row",
+            "fc-today",
+            "i-left",
+            "i-right",
+            "i-sign",
+            "icon",
+            "icon-title",
+            "list",
+            "look",
+            "m-crumb",
+            "mask",
+            "menu-item-icon",
+            "num",
+            "p-name",
+            "plan",
+            "psiStatistics",
+            "psiSummary-day-customer",
+            "psiSummary-day-hes",
+            "psiSummary-week-customer",
+            "psiSummary-week-hes",
+            "report",
+            "salesPlanDetail",
+            "salesTask",
+            "self",
+            "statistics",
+            "store-visit-detail",
+            "store-visit-reach",
+            "temporary",
+            "time",
+            "visitlook",
+            "workBanchOperate_tempCustomerCode",
+            "workbench",
+            "z-done",
+            "z-yet"
+          ]
+        ]
+      }
+    },
+    "page/tagTriplets": {
+      "contexts": {
+        "context2_HsDgXa": [
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/H4/I",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI"
+          ],
+          [
+            "-/-/DIV",
+            "-/-/INPUT-hidden",
+            "-/-/SCRIPT",
+            "-/DIV/DIV",
+            "DIV/A/I",
+            "DIV/DIV/A",
+            "DIV/DIV/DIV",
+            "DIV/DIV/H1",
+            "DIV/DIV/H4",
+            "DIV/DIV/I",
+            "DIV/DIV/SPAN",
+            "DIV/DIV/UL",
+            "DIV/H4/I",
+            "DIV/SPAN/B",
+            "DIV/SPAN/SPAN",
+            "DIV/UL/LI",
+            "LI/A/I",
+            "LI/A/SPAN",
+            "LI/DIV/A",
+            "LI/DIV/SPAN",
+            "UL/LI/A",
+            "UL/LI/DIV",
+            "UL/LI/INPUT-hidden"
+          ]
+        ]
+      }
+    }
+  }
+}

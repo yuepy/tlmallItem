@@ -5,14 +5,13 @@
         return;
       }var data = [];if (elem) {
         //data.push(elem.textContent);
-        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading'); // if (load == null) {
-        //   setTimeout(function () {
-        //     ysp.appMain.hideLoading();
-        //   }, 5000);
-        // } else {
-        //   ysp.appMain.showLoading();
-
-        // }
+        var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');if (load == null) {
+          setTimeout(function () {
+            ysp.appMain.hideLoading();
+          }, 5000);
+        } else {
+          ysp.appMain.showLoading();
+        }
       } //return data;
     },
     doAction_uiControl196_bTth6n: function (data, elem) {
