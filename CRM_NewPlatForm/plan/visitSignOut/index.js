@@ -23,7 +23,7 @@
     },
     getData_control27_y3wmHu: function (elem) {
       if (elem) {
-        var data = {};data.Time = elem.querySelector('.customersign-mapcontent-textbottomspan').textContent;data.Textarea = elem.querySelector('#remarktextname').value;data.button = elem.querySelector('.customersigin-mapbutton').querySelectorAll('span').length;data.address = elem.querySelector('#address').textContent;data.state = elem.querySelector('.customersign-active') ? true : false;data.lng = elem.querySelector('#longitude').textContent;data.lat = elem.querySelector('#latitude').textContent;data.customerLng = elem.querySelector('#csLongitude').value;data.customerLat = elem.querySelector('#csLatitude').value;
+        var data = {};data.Time = elem.querySelector('.customersign-mapcontent-textbottomspan').textContent;data.Textarea = elem.querySelector('#remarktextname').value;data.button = elem.querySelector('.customersigin-mapbutton').querySelectorAll('span').length;data.address = '';data.state = elem.querySelector('.customersign-active') ? true : false;data.lng = elem.querySelector('#longitude').textContent;data.lat = elem.querySelector('#latitude').textContent;data.customerLng = elem.querySelector('#csLongitude').value;data.customerLat = elem.querySelector('#csLatitude').value;
       }return data;return;
     },
     doAction_uiControl14_9G0eR7: function (data, elem) {
