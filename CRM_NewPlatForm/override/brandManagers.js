@@ -512,7 +512,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th><font size="3" color="red">'+firstLevel[i].qty+'</font></th><th><font size="3" color="red">'+firstLevel[i].amt.toFixed(2)+'</font></th></tr>';
+                        	html += '                    <tr><th><font size="3" color="red">'+toQfw_new(firstLevel[i].qty,false)+'</font></th><th><font size="3" color="red">'+toQfw_new(firstLevel[i].amt.toFixed(2),false)+'</font></th></tr>';
                         	html += '                    <tr><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '            </table>';
@@ -523,17 +523,17 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '            <table class="table u-table-b" id="sale-table' + i + '">';
                         	html += '        	     <thead>';
                         	//html += '                    <tr><th>机型</th><th>销量</th><th>销售额</th></tr>';
-                          html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
+                        	html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
-                        	
+
                         	for (var j = 0; j < secondLevel.length; j++) {
                         		if(secondLevel[j].projectName==firstLevel[i].projectName){
-                              var url = getLink("modelName",secondLevel[j].modelName,"05");
+                        			var url = getLink("modelName",secondLevel[j].modelName,"05");//style="text-decoration:none;"
                         			html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
-                              html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                              //html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                            }  
+                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
+                        			//html += '        <tr><td title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		}
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
@@ -575,7 +575,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     if(officeName) {
                         for (var i = 0; i < officeName.length; i++) {
                         	var url = getLink("officeName",officeName[i].name,"06");
-                            var html = '<tr><td><a href="'+url+'" title="' + officeName[i].name + '">' + officeName[i].name + '</a></td><td>' + officeName[i].reachQty + '</td><td>' + officeName[i].reachAmt.toFixed(2) + '</td></tr>';
+                            var html = '<tr><td><a href="'+url+'" title="' + officeName[i].name + '">' + officeName[i].name + '</a></td><td>' + toQfw_new(officeName[i].reachQty,false) + '</td><td>' + toQfw_new(officeName[i].reachAmt.toFixed(2),false) + '</td></tr>';
                             $("#officeTable").append(html);
                         }
                     }
@@ -592,7 +592,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
       
       
-      	window.timeSaleInit = function() {
+      	window.timeSaleInit = function () {
         	//订单取数逻辑
         	if($("#orderLogic_hidden").text())
         		$("#orderLogic").val($("#orderLogic_hidden").text());
@@ -739,7 +739,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th><font size="3" color="red">'+firstLevel[i].qty+'</font></th><th><font size="3" color="red">'+firstLevel[i].amt.toFixed(2)+'</font></th></tr>';
+                        	html += '                    <tr><th><font size="3" color="red">'+toQfw_new(firstLevel[i].qty,false)+'</font></th><th><font size="3" color="red">'+toQfw_new(firstLevel[i].amt.toFixed(2),false)+'</font></th></tr>';
                         	html += '                    <tr><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '            </table>';
@@ -750,17 +750,17 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '            <table class="table u-table-b" id="sale-table' + i + '">';
                         	html += '        	     <thead>';
                         	//html += '                    <tr><th>机型</th><th>销量</th><th>销售额</th></tr>';
-                          html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
+                        	html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
-                        	
+
                         	for (var j = 0; j < secondLevel.length; j++) {
                         		if(secondLevel[j].projectName==firstLevel[i].projectName){
-                              var url = getLink("modelName",secondLevel[j].modelName,"05");
+                        			var url = getLink("modelName",secondLevel[j].modelName,"05");//style="text-decoration:none;"
                         			html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
-                              html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                              //html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                            }  
+                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
+                        			//html += '        <tr><td title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		}
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
@@ -802,7 +802,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     if(officeName) {
                         for (var i = 0; i < officeName.length; i++) {
                         	var url = getLink("officeName",officeName[i].name,"06");
-                            var html = '<tr><td><a href="'+url+'" title="' + officeName[i].name + '">' + officeName[i].name + '</a></td><td>' + officeName[i].reachQty + '</td><td>' + officeName[i].reachAmt.toFixed(2) + '</td></tr>';
+                            var html = '<tr><td><a href="'+url+'" title="' + officeName[i].name + '">' + officeName[i].name + '</a></td><td>' + toQfw_new(officeName[i].reachQty,false) + '</td><td>' + toQfw_new(officeName[i].reachAmt.toFixed(2),false) + '</td></tr>';
                             $("#officeTable").append(html);
                         }
                     }
@@ -877,7 +877,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     backgroundColor: 'rgba(0,0,0,0)',
                     formatter: function formatter(params) {
                         try {
-                            var tip = '<div class="m-tooltip">' + '<div class="title">' + params.data.company + '</div>' + '<div class="content">' + '<div class="a"><span>销量</span><b>' + toQfw(params.value) + '</b></div>' + '<div class="b"><span>销售额</span><b> ' + toQfw(params.data.sum) + '</b></div></div></div>';
+                            var tip = '<div class="m-tooltip">' + '<div class="title">' + params.data.company + '</div>' + '<div class="content">' + '<div class="a"><span>销量</span><b>' + toQfw(params.value) + '</b></div>' + '<div class="b"><span>销售额</span><b> ' + toQfw_new(params.data.sum.toFixed(2)) + '</b></div></div></div>';
                             return tip;
                         } catch (e) {
                             return;

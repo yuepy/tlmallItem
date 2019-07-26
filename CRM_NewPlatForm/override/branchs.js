@@ -495,7 +495,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             }
                         }
                         for (var i = 0; i < firstLevel.length; i++) {
-                          var dep_url = getLink("bizUnitName",firstLevel[i].department,"04");
+                            var dep_url = getLink("bizUnitName",firstLevel[i].department,"04");
                         	html += '<div class="businessDimen">';
                         	html += '    <div class="u-title">';
                         	html += '        <i class="icon-line"></i>';
@@ -505,7 +505,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th><font size="3" color="red">'+firstLevel[i].qty+'</font></th><th><font size="3" color="red">'+firstLevel[i].amt.toFixed(2)+'</font></th></tr>';
+                        	html += '                    <tr><th><font size="3" color="red">'+toQfw_new(firstLevel[i].qty,false)+'</font></th><th><font size="3" color="red">'+toQfw_new(firstLevel[i].amt.toFixed(2),false)+'</font></th></tr>';
                         	html += '                    <tr><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '            </table>';
@@ -518,11 +518,11 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '                    <tr><th>项目</th><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody';
-                        	
+
                         	for (var j = 0; j < secondLevel.length; j++) {
                         		if(secondLevel[j].department==firstLevel[i].department){
                         			var url = getLink("projectName",secondLevel[j].projectName,"04");
-                        			html += '        <tr><td><a href="'+url+'" title="' + secondLevel[j].projectName + '">'+secondLevel[j].projectName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        			html += '        <tr><td><a href="'+url+'" title="' + secondLevel[j].projectName + '">'+secondLevel[j].projectName+'</td><td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
                         		}
                         	}
                         	html += '                </tbody>';
@@ -587,7 +587,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             	secondLevel.push(projectName[i]);
                             }
                         }
-                        for (var i = 0; i < firstLevel.length; i++) {
+                         for (var i = 0; i < firstLevel.length; i++) {
                         	html += '<div class="businessDimen">';
                         	html += '    <div class="u-title">';
                         	html += '        <i class="icon-line"></i>';
@@ -597,7 +597,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th><font size="3" color="red">'+firstLevel[i].qty+'</font></th><th><font size="3" color="red">'+firstLevel[i].amt.toFixed(2)+'</font></th></tr>';
+                        	html += '                    <tr><th><font size="3" color="red">'+toQfw_new(firstLevel[i].qty,false)+'</font></th><th><font size="3" color="red">'+toQfw_new(firstLevel[i].amt.toFixed(2),false)+'</font></th></tr>';
                         	html += '                    <tr><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '            </table>';
@@ -610,14 +610,14 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
-                        	
+
                         	for (var j = 0; j < secondLevel.length; j++) {
                         		if(secondLevel[j].projectName==firstLevel[i].projectName){
-                              var url = getLink("modelName",secondLevel[j].modelName,"04");
+                        			var url = getLink("modelName",secondLevel[j].modelName,"04");//style="text-decoration:none;"
                         			html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
-                                    html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                              //html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                            } 
+                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
+                        			//html += '        <tr><td title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		}
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
@@ -658,23 +658,26 @@ window.addEventListener('DOMContentLoaded', function() {
                     // 机型表格
                     var modelName = response.modelName;
                     $("#modelTable").empty();
-                    if(modelName) {                   
-                       for (var i = 0; i < modelName.length; i++) {
-                        	var modelName_title = modelName[i].name;
-                        	var nodelName_show = modelName_title;
-                        	if(null != modelName_title && modelName_title.length>11){
-                        		nodelName_show = modelName_title.substring(0,11)+"...";
-                        	}
-                        	var reachQty_num = Number(modelName[i].reachQty);
-                        	var reachAmt_num = Number(modelName[i].reachAmt);
-                        	if(reachQty_num !=0 && reachAmt_num != 0){
-                        		//var html = '<tr><td title="'+modelName_title+'">'+nodelName_show+'</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
-                            var url = getLink("modelName",modelName_title,"04");
-                            var html = '<tr><td><a href="'+url+'" title="'+modelName_title+'" style="text-decoration:none;letter-spacing:normal">'+modelName_title+'</td>';
-                                html += '<td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
-                        		$("#modelTable").append(html);
-                        	}                            
+                    if(modelName) {
+                      for (var i = 0; i < modelName.length; i++) {
+                        /**
+                         * 3月8号添加
+                         */
+                        var modelName_title = modelName[i].name;
+                        var nodelName_show = modelName_title;
+                        if(null != modelName_title && modelName_title.length>11){
+                          nodelName_show = modelName_title.substring(0,11)+"...";
                         }
+                        var reachQty_num = Number(modelName[i].reachQty);
+                        var reachAmt_num = Number(modelName[i].reachAmt);
+                        if(reachQty_num !=0 && reachAmt_num != 0){
+                          //var html = '<tr><td title="'+modelName_title+'">'+nodelName_show+'</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
+                          var url = getLink("modelName",modelName_title,"04");//
+                            var html = '<tr><td><a href="'+url+'" title="'+modelName_title+'" style="text-decoration:none;letter-spacing:normal">'+modelName_title+'</td>';
+                              html += '<td>' + toQfw_new(modelName[i].reachQty,false) + '</td><td>' + toQfw_new(modelName[i].reachAmt.toFixed(2),false) + '</td></tr>';
+                          $("#modelTable").append(html);
+                        }
+                      }
                     }
                     tableSH("model-table", tr_minH-2);
                     
@@ -684,7 +687,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     if(offices) {
                         for (var i = 0; i < offices.length; i++) {
                         	var url = getLink("officeName",offices[i].name,"06");
-                            var html = '<tr><td><a href="'+url+'" title="' + offices[i].name + '">' + offices[i].name + '</a></td><td>' + offices[i].reachQty + '</td><td>' + offices[i].reachAmt + '</td></tr>';
+                            var html = '<tr><td><a href="'+url+'" title="' + offices[i].name + '">' + offices[i].name + '</a></td><td>' + toQfw_new(offices[i].reachQty,false) + '</td><td>' + toQfw_new(offices[i].reachAmt.toFixed(2),false) + '</td></tr>';
                             $("#officeTable").append(html);
                         }
                     }
@@ -701,7 +704,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
       
       
-      window.timeSaleInit = function() {
+      window.timeSaleInit = function () {
         	
         	//订单取数逻辑
         	if($("#orderLogic_hidden").text())
@@ -829,7 +832,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     var bizUnits = response.department;
                     $("#bizUnitTable").empty();
                     if(bizUnits) {
-                    	//bizUnits = departmentbak(bizUnits);
+                    	// bizUnits = departmentbak(bizUnits);
                     	var firstLevel = [];
                     	var secondLevel = [];
                     	var html = "";
@@ -843,7 +846,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             }
                         }
                         for (var i = 0; i < firstLevel.length; i++) {
-                          var dep_url = getLink("bizUnitName",firstLevel[i].department,"04");
+                            var dep_url = getLink("bizUnitName",firstLevel[i].department,"04");
                         	html += '<div class="businessDimen">';
                         	html += '    <div class="u-title">';
                         	html += '        <i class="icon-line"></i>';
@@ -853,7 +856,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th><font size="3" color="red">'+firstLevel[i].qty+'</font></th><th><font size="3" color="red">'+firstLevel[i].amt.toFixed(2)+'</font></th></tr>';
+                        	html += '                    <tr><th><font size="3" color="red">'+toQfw_new(firstLevel[i].qty,false)+'</font></th><th><font size="3" color="red">'+toQfw_new(firstLevel[i].amt.toFixed(2),false)+'</font></th></tr>';
                         	html += '                    <tr><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '            </table>';
@@ -866,11 +869,11 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '                    <tr><th>项目</th><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody';
-                        	
+
                         	for (var j = 0; j < secondLevel.length; j++) {
                         		if(secondLevel[j].department==firstLevel[i].department){
                         			var url = getLink("projectName",secondLevel[j].projectName,"04");
-                        			html += '        <tr><td><a href="'+url+'" title="' + secondLevel[j].projectName + '">'+secondLevel[j].projectName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        			html += '        <tr><td><a href="'+url+'" title="' + secondLevel[j].projectName + '">'+secondLevel[j].projectName+'</td><td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
                         		}
                         	}
                         	html += '                </tbody>';
@@ -935,7 +938,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             	secondLevel.push(projectName[i]);
                             }
                         }
-                        for (var i = 0; i < firstLevel.length; i++) {
+                         for (var i = 0; i < firstLevel.length; i++) {
                         	html += '<div class="businessDimen">';
                         	html += '    <div class="u-title">';
                         	html += '        <i class="icon-line"></i>';
@@ -945,7 +948,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '        <div class="table-content">';
                         	html += '            <table class="table">';
                         	html += '        	     <thead>';
-                        	html += '                    <tr><th><font size="3" color="red">'+firstLevel[i].qty+'</font></th><th><font size="3" color="red">'+firstLevel[i].amt.toFixed(2)+'</font></th></tr>';
+                        	html += '                    <tr><th><font size="3" color="red">'+toQfw_new(firstLevel[i].qty,false)+'</font></th><th><font size="3" color="red">'+toQfw_new(firstLevel[i].amt.toFixed(2),false)+'</font></th></tr>';
                         	html += '                    <tr><th>销量（台）</th><th>销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '            </table>';
@@ -958,14 +961,14 @@ window.addEventListener('DOMContentLoaded', function() {
                         	html += '                    <tr><th code="modelName">机型</th><th code="qty">销量（台）</th><th code="amt">销售额（万）</th></tr>';
                         	html += '                </thead>';
                         	html += '                <tbody>';
-                        	
+
                         	for (var j = 0; j < secondLevel.length; j++) {
                         		if(secondLevel[j].projectName==firstLevel[i].projectName){
-                              var url = getLink("modelName",secondLevel[j].modelName,"04");
+                        			var url = getLink("modelName",secondLevel[j].modelName,"04");//style="text-decoration:none;"
                         			html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
-                                    html += '<td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                              //html += '        <tr><td>'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
-                            } 
+                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
+                        			//html += '        <tr><td title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
+                        		}
                         	}
                         	html += '                </tbody>';
                         	html += '            </table>';
@@ -1006,23 +1009,26 @@ window.addEventListener('DOMContentLoaded', function() {
                     // 机型表格
                     var modelName = response.modelName;
                     $("#modelTable").empty();
-                    if(modelName) {                   
-                       for (var i = 0; i < modelName.length; i++) {
-                        	var modelName_title = modelName[i].name;
-                        	var nodelName_show = modelName_title;
-                        	if(null != modelName_title && modelName_title.length>11){
-                        		nodelName_show = modelName_title.substring(0,11)+"...";
-                        	}
-                        	var reachQty_num = Number(modelName[i].reachQty);
-                        	var reachAmt_num = Number(modelName[i].reachAmt);
-                        	if(reachQty_num !=0 && reachAmt_num != 0){
-                        		//var html = '<tr><td title="'+modelName_title+'">'+nodelName_show+'</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
-                            var url = getLink("modelName",modelName_title,"04");
-                            var html = '<tr><td><a href="'+url+'" title="'+modelName_title+'" style="text-decoration:none;letter-spacing:normal">'+modelName_title+'</td>';
-                                html += '<td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
-                        		$("#modelTable").append(html);
-                        	}                            
+                    if(modelName) {
+                      for (var i = 0; i < modelName.length; i++) {
+                        /**
+                         * 3月8号添加
+                         */
+                        var modelName_title = modelName[i].name;
+                        var nodelName_show = modelName_title;
+                        if(null != modelName_title && modelName_title.length>11){
+                          nodelName_show = modelName_title.substring(0,11)+"...";
                         }
+                        var reachQty_num = Number(modelName[i].reachQty);
+                        var reachAmt_num = Number(modelName[i].reachAmt);
+                        if(reachQty_num !=0 && reachAmt_num != 0){
+                          //var html = '<tr><td title="'+modelName_title+'">'+nodelName_show+'</td><td>' + modelName[i].reachQty + '</td><td>' + modelName[i].reachAmt + '</td></tr>';
+                          var url = getLink("modelName",modelName_title,"04");//
+                            var html = '<tr><td><a href="'+url+'" title="'+modelName_title+'" style="text-decoration:none;letter-spacing:normal">'+modelName_title+'</td>';
+                              html += '<td>' + toQfw_new(modelName[i].reachQty,false) + '</td><td>' + toQfw_new(modelName[i].reachAmt.toFixed(2),false) + '</td></tr>';
+                          $("#modelTable").append(html);
+                        }
+                      }
                     }
                     tableSH("model-table", tr_minH-2);
                     
@@ -1110,7 +1116,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     backgroundColor: 'rgba(0,0,0,0)',
                     formatter: function formatter(params) {
                         try {
-                            var tip = '<div class="m-tooltip">' + '<div class="title">' + params.data.company + '</div>' + '<div class="content">' + '<div class="a"><span>销量</span><b>' + toQfw(params.value) + '</b></div>' + '<div class="b"><span>销售额</span><b> ' + toQfw(params.data.sum) + '</b></div></div></div>';
+                            var tip = '<div class="m-tooltip">' + '<div class="title">' + params.data.company + '</div>' + '<div class="content">' + '<div class="a"><span>销量</span><b>' + toQfw(params.value) + '</b></div>' + '<div class="b"><span>销售额</span><b> ' + toQfw_new(params.data.sum.toFixed(2)) + '</b></div></div></div>';
                             return tip;
                         } catch (e) {
                             return;

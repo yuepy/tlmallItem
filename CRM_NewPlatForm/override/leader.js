@@ -1345,14 +1345,15 @@ window.addEventListener('DOMContentLoaded', function() {
             var day = new Date(year, month, 0);
             var days = day.getDate();
             if (isYear == '1') {  // 年计划 不是当年不显示时间轴
-            	var selYearStr = $("#selDay").val().substring(0, 4);
-            	var curYear = year;
-            	if (curYear != selYearStr) {
+                day = Math.ceil(( new Date() - new Date(new Date().getFullYear().toString()))/(24*60*60*1000));
+                var selYearStr = $("#selDay").val().substring(0, 4);
+                var curYear = year;
+                if (curYear != selYearStr) {
                     days = 0;
                 }else {
-                	days = getYearDayCount();
+                    days = getYearDayCount();
+                    nowDate = day;
                 }
-            	day = Math.ceil(( new Date() - new Date(new Date().getFullYear().toString()))/(24*60*60*1000));
             } else { // 月计划如果不是当月也不显示时间轴
                 var selYearMonthStr = $("#selDay").val().substring(0, 7);
                 var curMonthStr = month;
