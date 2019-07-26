@@ -68,8 +68,13 @@
           "tagName": "TR"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "customJS",
+              "value": "return doc.querySelectorAll('tr[class=\"ui-jqgrid-labels\"]')[0]"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -109,6 +114,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"
@@ -119,8 +125,13 @@
           "tagName": "TR"
         },
         "userData": {
-          "data": [],
-          "force": false
+          "data": [
+            {
+              "method": "customJS",
+              "value": "return doc.querySelectorAll(\".ui-jqgrid-sdiv\")[0].querySelector(\"table\")"
+            }
+          ],
+          "force": true
         },
         "locators": [
           {
@@ -160,6 +171,7 @@
       },
       "intendedRole": "custom",
       "roles": "element,custom",
+      "ignoreVisibility": true,
       "monitored": true,
       "frameXPath": "",
       "componentType": "custom"

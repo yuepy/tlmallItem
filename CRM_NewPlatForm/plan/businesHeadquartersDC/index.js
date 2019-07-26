@@ -54,6 +54,8 @@
       return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class(props) {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));\n\n    _this2.render = function () {\n      var _this = _this2;\n      return React.createElement(\n        \'div\',\n        null,\n        React.createElement(_yspCustomComponents.ComplexHeader, {\n          data: { centerText: _this2.state.centerText, rightText: "\u65F6\u95F4" },\n          backIsShow: true,\n          back: function back() {\n            var handler = _this.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: \'back\'\n              });\n            }\n          },\n          centerTime: _this2.props.customData && _this2.props.customData.value,\n          closeIsShow: false,\n          close: function close() {\n            var handler = _this.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: \'close\'\n              });\n            }\n          },\n          timeChange: function timeChange(e) {\n            console.log(\'change\', EAPI.isIOS());\n            if (EAPI.isIOS()) {\n              return;\n            }\n            var handler = _this2.props.customHandler;\n            if (handler) {\n              handler({\n                data: {\n                  value: e.target.value,\n                  len: _this2.props.customData && _this2.props.customData.len\n                },\n                eventType: \'change\'\n              });\n            }\n          },\n          timeBlur: function timeBlur(e) {\n            console.log(\'blur\', EAPI.isIOS());\n            if (!EAPI.isIOS()) {\n              return;\n            }\n            var handler = _this2.props.customHandler;\n            if (handler) {\n              handler({\n                data: {\n                  value: e.target.value,\n                  len: _this2.props.customData && _this2.props.customData.len\n                },\n                eventType: \'change\'\n              });\n            }\n          },\n          moreIsShow: _this2.state.titleName == "\u5E74\u5EA6\u4E8B\u4E1A\u90E8\u8FBE\u6210" ? true : _this2.state.moreLength ? _this2.state.titleLength : false,\n          hander: function hander() {\n            var evt = new Event(\'ysp-dialog-close\');\n            evt.value = \'\u6210\u4E86\';\n            window.dispatchEvent(evt);\n          },\n          filterIsShow: true,\n          filter: function filter() {\n            var handler = _this2.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: \'time\'\n              });\n            }\n          },\n          time: function time(e) {\n            var evt = new Event(\'ysp-time-show\');\n            window.dispatchEvent(evt);\n          }\n        })\n      );\n    };\n\n    _this2.state = {\n      centerText: "\u9500\u552E\u8FBE\u6210",\n      moreLength: props.customData.moreLength,\n      flag: props.customData.flag,\n      titleLength: props.customData.titleLength,\n      titleName: props.customData.titleName\n    };\n    return _this2;\n  }\n  // componentDidMount(){\n  //   var _this = this;\n  //   ysp.customHelper.AndroidBackFlag = \'SaleBigData\';\n  //   var handler = _this.props.customHandler;\n  //   if (handler) {\n  //     handler({\n  //       eventType: \'AndroidBack\'\n  //     });\n  //   }\n  // }\n\n\n  _createClass(_class, [{\n    key: \'componentWillReceiveProps\',\n    value: function componentWillReceiveProps(nextProps) {\n      this.setState({\n        moreLength: nextProps.customData.moreLength,\n        flag: nextProps.customData.flag,\n        titleLength: nextProps.customData.titleLength,\n        titleName: nextProps.customData.titleName\n      });\n    }\n  }, {\n    key: \'componentDidMount\',\n    value: function componentDidMount() {\n      window.addEventListener(\'ysp-change-title\', this.changeTitle.bind(this), false);\n      this.setState({\n        centerText: this.props.customData.title\n      });\n      //android\u7269\u7406\u8FD4\u56DE\u952E\n      ysp.customHelper.AndroidBackFlag = \'reachBigData\';\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          eventType: \'AndroidBack\'\n        });\n      }\n    }\n  }, {\n    key: \'componentDidUpdate\',\n    value: function componentDidUpdate() {\n      var sTitle = this.state.centerText;\n      var rTitle = this.props.customData.title;\n      if (sTitle != rTitle) {\n        this.setState({\n          centerText: rTitle\n        });\n      }\n    }\n  }, {\n    key: \'changeTitle\',\n    value: function changeTitle(e) {\n      var title = e.title;\n      this.setState({\n        centerText: title\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control89_EwPocV: function (elem) {
+      "use strict";
+
       if (!elem) {
         return;
       }var data = [];var ths = elem.querySelectorAll("th");for (var i = 0; i < ths.length; i++) {
@@ -63,6 +65,8 @@
       }return data;
     },
     doAction_uiControl65_OItCfI: function (data, elem) {
+      "use strict";
+
       var eventType = data.eventType;var customData = data.customData;var index = +customData;if (eventType == 'click') {
         var titleBtns = elem.querySelectorAll("th");if (0 == index) {
           for (var i = 0; i < titleBtns.length; i++) {
@@ -93,10 +97,12 @@
     },
     getTemplate_uiControl65_OItCfI: function () {
       var selfTemplate = "module.exports = React.createClass({\n  handleClick: function(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data:index\n      });\n    }\n    \n    target.classList.add(\"active\");\n  \tvar _broNode = target.parentNode.childNodes;\n    var _broNodeLen = _broNode.length;\n    \n    for(var i=0; i<_broNodeLen; i++){\n      var _asc = _broNode[i].querySelector(\".ui-asc\");\n      var _desc = _broNode[i].querySelector(\".ui-desc\");\n      \n      if(i == index){\n        if(_asc.classList.contains('ui-disabled')==true){\n\u3000\u3000\u3000\u3000\t\t_asc.classList.remove(\"ui-disabled\");\n      \t\t _desc.classList.add(\"ui-disabled\");\n      \t}else{\n        \t_asc.classList.add(\"ui-disabled\");\n      \t\t_desc.classList.remove(\"ui-disabled\");\n        }\n      }else{\n        _broNode[i].classList.remove(\"active\");\n      \t_asc.classList.add(\"ui-disabled\");\n      \t_desc.classList.add(\"ui-disabled\");\n      }\n    }\n  },\n  componentDidUpdate(){\n    var elem=this.refs.toTop.ownerDocument.querySelector(\".view-wrapper\");\n    setTimeout(function(){\n      elem.scrollTop=0;\n    },500)\n  },\n  render: function() {\n    var _this = this;\n    var data = this.props.data.customData;\n    var titleBtn = data.map(function(d,i){\n      return (\n        <div className=\"ysp-table-titleItem\" \n          onClick={_this.handleClick.bind(_this)} data-index={i}>\n          {data[i].title == \"\u5B9E\u9645\u9500\u91CF\u603B\u8BA1\" ? \"\u5B9E\u9645\u9500\u91CF\" : data[i].title == \"\u5B9E\u9645\u9500\u552E\u603B\u8BA1\" ? \"\u5B9E\u9645\u9500\u552E\u989D\" : data[i].title}\n          <span className=\"ysp-s-ico\">\n            <span className=\"ui-asc ui-disabled\"></span>\n            <span className=\"ui-desc ui-disabled\"></span>\n          </span>\n        </div>\n      )\n    });\n    \n    return (\n      <div className=\"ysp-table-titles\" ref=\"toTop\">\n        {titleBtn}\n      </div>\n    )\n  }\n})";
-      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  handleClick: function handleClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: 'click',\n        data: index\n      });\n    }\n\n    target.classList.add(\"active\");\n    var _broNode = target.parentNode.childNodes;\n    var _broNodeLen = _broNode.length;\n\n    for (var i = 0; i < _broNodeLen; i++) {\n      var _asc = _broNode[i].querySelector(\".ui-asc\");\n      var _desc = _broNode[i].querySelector(\".ui-desc\");\n\n      if (i == index) {\n        if (_asc.classList.contains('ui-disabled') == true) {\n          _asc.classList.remove(\"ui-disabled\");\n          _desc.classList.add(\"ui-disabled\");\n        } else {\n          _asc.classList.add(\"ui-disabled\");\n          _desc.classList.remove(\"ui-disabled\");\n        }\n      } else {\n        _broNode[i].classList.remove(\"active\");\n        _asc.classList.add(\"ui-disabled\");\n        _desc.classList.add(\"ui-disabled\");\n      }\n    }\n  },\n  componentDidUpdate: function componentDidUpdate() {\n    var elem = this.refs.toTop.ownerDocument.querySelector(\".view-wrapper\");\n    setTimeout(function () {\n      elem.scrollTop = 0;\n    }, 500);\n  },\n\n  render: function render() {\n    var _this = this;\n    var data = this.props.data.customData;\n    var titleBtn = data.map(function (d, i) {\n      return React.createElement(\n        \"div\",\n        { className: \"ysp-table-titleItem\",\n          onClick: _this.handleClick.bind(_this), \"data-index\": i },\n        data[i].title == \"\u5B9E\u9645\u9500\u91CF\u603B\u8BA1\" ? \"\u5B9E\u9645\u9500\u91CF\" : data[i].title == \"\u5B9E\u9645\u9500\u552E\u603B\u8BA1\" ? \"\u5B9E\u9645\u9500\u552E\u989D\" : data[i].title,\n        React.createElement(\n          \"span\",\n          { className: \"ysp-s-ico\" },\n          React.createElement(\"span\", { className: \"ui-asc ui-disabled\" }),\n          React.createElement(\"span\", { className: \"ui-desc ui-disabled\" })\n        )\n      );\n    });\n\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-table-titles\", ref: \"toTop\" },\n      titleBtn\n    );\n  }\n});";
+      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  handleClick: function handleClick(e) {\n    var handler = this.props.customHandler;\n    var target = e.target;\n    var index = target.dataset.index;\n    if (handler) {\n      handler({\n        eventType: \'click\',\n        data: index\n      });\n    }\n\n    target.classList.add("active");\n    var _broNode = target.parentNode.childNodes;\n    var _broNodeLen = _broNode.length;\n\n    for (var i = 0; i < _broNodeLen; i++) {\n      var _asc = _broNode[i].querySelector(".ui-asc");\n      var _desc = _broNode[i].querySelector(".ui-desc");\n\n      if (i == index) {\n        if (_asc.classList.contains(\'ui-disabled\') == true) {\n          _asc.classList.remove("ui-disabled");\n          _desc.classList.add("ui-disabled");\n        } else {\n          _asc.classList.add("ui-disabled");\n          _desc.classList.remove("ui-disabled");\n        }\n      } else {\n        _broNode[i].classList.remove("active");\n        _asc.classList.add("ui-disabled");\n        _desc.classList.add("ui-disabled");\n      }\n    }\n  },\n  componentDidUpdate: function componentDidUpdate() {\n    var elem = this.refs.toTop.ownerDocument.querySelector(".view-wrapper");\n    setTimeout(function () {\n      elem.scrollTop = 0;\n    }, 500);\n  },\n\n  render: function render() {\n    var _this = this;\n    var data = this.props.data.customData;\n    var titleBtn = data.map(function (d, i) {\n      return React.createElement(\n        "div",\n        { className: "ysp-table-titleItem",\n          onClick: _this.handleClick.bind(_this), "data-index": i },\n        data[i].title == "\u5B9E\u9645\u9500\u91CF\u603B\u8BA1" ? "\u5B9E\u9645\u9500\u91CF" : data[i].title == "\u5B9E\u9645\u9500\u552E\u603B\u8BA1" ? "\u5B9E\u9645\u9500\u552E\u989D" : data[i].title,\n        React.createElement(\n          "span",\n          { className: "ysp-s-ico" },\n          React.createElement("span", { className: "ui-asc ui-disabled" }),\n          React.createElement("span", { className: "ui-desc ui-disabled" })\n        )\n      );\n    });\n\n    return React.createElement(\n      "div",\n      { className: "ysp-table-titles", ref: "toTop" },\n      titleBtn\n    );\n  }\n});';
     },
 
     getData_control124_1ZAE1L: function (elem) {
+      "use strict";
+
       if (!elem) {
         return;
       }var data = [];var tds = elem.querySelectorAll("td");var obj = {};for (var i = 0; i < tds.length; i++) {
@@ -109,35 +115,43 @@
             obj.salesAmountPercent = _textContent.trim();break;}
       }data.push(obj);return data;
     },
-    doAction_uiControl114_XrbJwG: function (data, elem) {},
+    doAction_uiControl114_XrbJwG: function (data, elem) {
+      "use strict";
+    },
     getTemplate_uiControl114_XrbJwG: function () {
-      var selfTemplate = 'module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lists = data && data.map(function(d,i){\n      return (\n        <div>\n          <h5 className="title"><i class="icon"></i><span>\u603B\u8BA1</span></h5>\n          <ul>\n            <li><span>\u76EE\u6807\u9500\u91CF</span><b>{data[i].targetSalesCount}</b></li>\n            <li><span>\u76EE\u6807\u9500\u552E\u989D</span><b>{data[i].targetSalesAmount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u91CF</span><b>{data[i].realSalesCount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u552E\u989D</span><b>{data[i].realSalesAmount}</b></li>\n            <li><span>\u9500\u91CF\u8FBE\u6210\u7387</span><b>{data[i].salesCountPercent}</b></li>\n            <li><span>\u9500\u552E\u989D\u8FBE\u6210\u7387</span><b>{data[i].salesAmountPercent}</b></li>\n          </ul>\n        </div>\n      )\n    });\n    \n    return (\n      <div className="ysp-tableList-boxSum">\n        {lists}\n      </div>\n    )\n  }\n});';
-      return '"use strict";\n\nmodule.exports = React.createClass({\n  displayName: "exports",\n\n  render: function render() {\n    var data = this.props.customData;\n    var lists = data && data.map(function (d, i) {\n      return React.createElement(\n        "div",\n        null,\n        React.createElement(\n          "h5",\n          { className: "title" },\n          React.createElement("i", { "class": "icon" }),\n          React.createElement(\n            "span",\n            null,\n            "\\u603B\\u8BA1"\n          )\n        ),\n        React.createElement(\n          "ul",\n          null,\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u76EE\\u6807\\u9500\\u91CF"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].targetSalesCount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u76EE\\u6807\\u9500\\u552E\\u989D"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].targetSalesAmount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u5B9E\\u9645\\u9500\\u91CF"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].realSalesCount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u5B9E\\u9645\\u9500\\u552E\\u989D"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].realSalesAmount\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u9500\\u91CF\\u8FBE\\u6210\\u7387"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].salesCountPercent\n            )\n          ),\n          React.createElement(\n            "li",\n            null,\n            React.createElement(\n              "span",\n              null,\n              "\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387"\n            ),\n            React.createElement(\n              "b",\n              null,\n              data[i].salesAmountPercent\n            )\n          )\n        )\n      );\n    });\n\n    return React.createElement(\n      "div",\n      { className: "ysp-tableList-boxSum" },\n      lists\n    );\n  }\n});';
+      var selfTemplate = "module.exports = React.createClass({\n  render: function() {\n    var data = this.props.customData;\n    var lists = data && data.map(function(d,i){\n      return (\n        <div>\n          <h5 className=\"title\"><i class=\"icon\"></i><span>\u603B\u8BA1</span></h5>\n          <ul>\n            <li><span>\u76EE\u6807\u9500\u91CF</span><b>{data&&data[i]&&data[i].targetSalesCount}</b></li>\n            <li><span>\u76EE\u6807\u9500\u552E\u989D</span><b>{data&&data[i]&&data[i].targetSalesAmount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u91CF</span><b>{data&&data[i]&&data[i].realSalesCount}</b></li>\n            <li><span>\u5B9E\u9645\u9500\u552E\u989D</span><b>{data&&data[i]&&data[i].realSalesAmount}</b></li>\n            <li><span>\u9500\u91CF\u8FBE\u6210\u7387</span><b>{data&&data[i]&&data[i].salesCountPercent}</b></li>\n            <li><span>\u9500\u552E\u989D\u8FBE\u6210\u7387</span><b>{data&&data[i]&&data[i].salesAmountPercent}</b></li>\n          </ul>\n        </div>\n      )\n    });\n    \n    return (\n      <div className=\"ysp-tableList-boxSum\">\n        {lists}\n      </div>\n    )\n  }\n});";
+      return "\"use strict\";\n\nmodule.exports = React.createClass({\n  displayName: \"exports\",\n\n  render: function render() {\n    var data = this.props.customData;\n    var lists = data && data.map(function (d, i) {\n      return React.createElement(\n        \"div\",\n        null,\n        React.createElement(\n          \"h5\",\n          { className: \"title\" },\n          React.createElement(\"i\", { \"class\": \"icon\" }),\n          React.createElement(\n            \"span\",\n            null,\n            \"\\u603B\\u8BA1\"\n          )\n        ),\n        React.createElement(\n          \"ul\",\n          null,\n          React.createElement(\n            \"li\",\n            null,\n            React.createElement(\n              \"span\",\n              null,\n              \"\\u76EE\\u6807\\u9500\\u91CF\"\n            ),\n            React.createElement(\n              \"b\",\n              null,\n              data && data[i] && data[i].targetSalesCount\n            )\n          ),\n          React.createElement(\n            \"li\",\n            null,\n            React.createElement(\n              \"span\",\n              null,\n              \"\\u76EE\\u6807\\u9500\\u552E\\u989D\"\n            ),\n            React.createElement(\n              \"b\",\n              null,\n              data && data[i] && data[i].targetSalesAmount\n            )\n          ),\n          React.createElement(\n            \"li\",\n            null,\n            React.createElement(\n              \"span\",\n              null,\n              \"\\u5B9E\\u9645\\u9500\\u91CF\"\n            ),\n            React.createElement(\n              \"b\",\n              null,\n              data && data[i] && data[i].realSalesCount\n            )\n          ),\n          React.createElement(\n            \"li\",\n            null,\n            React.createElement(\n              \"span\",\n              null,\n              \"\\u5B9E\\u9645\\u9500\\u552E\\u989D\"\n            ),\n            React.createElement(\n              \"b\",\n              null,\n              data && data[i] && data[i].realSalesAmount\n            )\n          ),\n          React.createElement(\n            \"li\",\n            null,\n            React.createElement(\n              \"span\",\n              null,\n              \"\\u9500\\u91CF\\u8FBE\\u6210\\u7387\"\n            ),\n            React.createElement(\n              \"b\",\n              null,\n              data && data[i] && data[i].salesCountPercent\n            )\n          ),\n          React.createElement(\n            \"li\",\n            null,\n            React.createElement(\n              \"span\",\n              null,\n              \"\\u9500\\u552E\\u989D\\u8FBE\\u6210\\u7387\"\n            ),\n            React.createElement(\n              \"b\",\n              null,\n              data && data[i] && data[i].salesAmountPercent\n            )\n          )\n        )\n      );\n    });\n\n    return React.createElement(\n      \"div\",\n      { className: \"ysp-tableList-boxSum\" },\n      lists\n    );\n  }\n});";
     },
 
     getData_control275_2EgUIJ: function (elem) {
+      "use strict";
       if (elem) {
-        var data = { dataLabel: [], flag: [], flags: [] };var a_s = elem.querySelector('#tab-head').querySelectorAll("li");for (var i = 0; i < a_s.length; i++) {
-          var asText = a_s[i].textContent;if (asText != '年度项目达成') {
-            if (asText.indexOf("销售报表") == -1) {
-              data.dataLabel.push([asText]);
+        var data = { dataLabel: [], flag: [], flags: [] };if ($(elem).length > 0 && $(elem).find("#tab-head").length > 0 && $(elem).find("#tab-head").children("li").length > 0) {
+          var a_s = $(elem).find("#tab-head").children("li");for (var i = 0; i < a_s.length; i++) {
+            var asText = a_s.eq(i)[0].textContent;if (asText != '年度项目达成') {
+              if (asText.indexOf("销售报表") == -1) {
+                data.dataLabel.push({ idx: a_s.eq(i).index(), content: a_s.eq(i).text().trim() });
+              }
             }
           }
         }return data;
       }return [];
     },
     doAction_uiControl248_nQhTnd: function (data, elem) {
+      "use strict";
       if (data.eventType == 'click') {
-        var index = +data.dataCustom.index;var lis = elem.querySelector('#tab-head').querySelectorAll("li");if (index == 1) {
-          lis[2].click();
-        } else {
-          lis[index].click();
-        }
+        var index = +data.dataCustom.index;var lis = $(elem).find("#tab-head").children("li");if (lis) {
+          lis.eq(index)[0].click();
+        } // if (index == 1) {
+        //   lis[2].click();
+        // } else {
+        //   lis[index].click();
+        // }
       }
     },
     getTemplate_uiControl248_nQhTnd: function () {
-      var selfTemplate = 'import {Component} from \'react\';\nimport {Overlay} from \'ysp-custom-components\';\nexport default class extends Component{\n  constructor(){\n    super();\n    this.state={\n    \topen:false\n    }\n      window.addEventListener(\'ysp-dialog-close\',this.toogleSwitch.bind(this),false)\n  }\n  componentWillUnmount(){\n  \t\twindow.removeEventListener(\'ysp-dialog-close\',this.toogleSwitch.bind(this),false)\n  }\n  \n  toogleSwitch(){\n  \tthis.setState({\n    \topen:!this.state.open\n    })\n  }\n  render=()=>{\n    var data = this.props.customData && this.props.customData.dataLabel;\n    var flag = this.props.customData && this.props.customData.flag;\n    var flags = this.props.customData && this.props.customData.flags;\n    var _this = this;\n  \treturn (\n      <div className=\'.ysp-dialog-hander-op\'  style={{display:this.state.open ? \'block\':\'none\'}}>\n        <Overlay/>\n        <div className= \'ysp-dialog-hander\'>\n           <ul>\n          {data && data.map((d,i)=>{  \n            return(\n                <li data-index={i} onClick={(e)=>{\n                  var target = e.target;\n                  var index = target.dataset.index;\n                  var handler = this.props.customHandler;\n                  if(handler){\n                    handler({\n                      data:{\n                        index : index,\n                        flag : flag,\n                        flags : flags\n                      },\n                      eventType:\'click\'\n                    });\n                  }\n                  _this.toogleSwitch();\n                  var evt = new Event(\'ysp-change-title\');\n                  evt.title = e.target.textContent;\n                  window.dispatchEvent(evt);\n                }}>{d}</li>\n            )})}\n            </ul>\n          <button onClick={()=>{\n              _this.toogleSwitch();\n              }\n            }>\u53D6\u6D88</button>\n        </div>\n      </div>\n    )\n  }\n}';
-      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this));\n\n    _this2.render = function () {\n      var data = _this2.props.customData && _this2.props.customData.dataLabel;\n      var flag = _this2.props.customData && _this2.props.customData.flag;\n      var flags = _this2.props.customData && _this2.props.customData.flags;\n      var _this = _this2;\n      return React.createElement(\n        \'div\',\n        { className: \'.ysp-dialog-hander-op\', style: { display: _this2.state.open ? \'block\' : \'none\' } },\n        React.createElement(_yspCustomComponents.Overlay, null),\n        React.createElement(\n          \'div\',\n          { className: \'ysp-dialog-hander\' },\n          React.createElement(\n            \'ul\',\n            null,\n            data && data.map(function (d, i) {\n              return React.createElement(\n                \'li\',\n                { \'data-index\': i, onClick: function onClick(e) {\n                    var target = e.target;\n                    var index = target.dataset.index;\n                    var handler = _this2.props.customHandler;\n                    if (handler) {\n                      handler({\n                        data: {\n                          index: index,\n                          flag: flag,\n                          flags: flags\n                        },\n                        eventType: \'click\'\n                      });\n                    }\n                    _this.toogleSwitch();\n                    var evt = new Event(\'ysp-change-title\');\n                    evt.title = e.target.textContent;\n                    window.dispatchEvent(evt);\n                  } },\n                d\n              );\n            })\n          ),\n          React.createElement(\n            \'button\',\n            { onClick: function onClick() {\n                _this.toogleSwitch();\n              } },\n            \'\\u53D6\\u6D88\'\n          )\n        )\n      );\n    };\n\n    _this2.state = {\n      open: false\n    };\n    window.addEventListener(\'ysp-dialog-close\', _this2.toogleSwitch.bind(_this2), false);\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'componentWillUnmount\',\n    value: function componentWillUnmount() {\n      window.removeEventListener(\'ysp-dialog-close\', this.toogleSwitch.bind(this), false);\n    }\n  }, {\n    key: \'toogleSwitch\',\n    value: function toogleSwitch() {\n      this.setState({\n        open: !this.state.open\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
+      var selfTemplate = 'import {Component} from \'react\';\nimport {Overlay} from \'ysp-custom-components\';\nexport default class extends Component{\n  constructor(){\n    super();\n    this.state={\n     open:false\n    }\n      window.addEventListener(\'ysp-dialog-close\',this.toogleSwitch.bind(this),false)\n  }\n  componentWillUnmount(){\n    window.removeEventListener(\'ysp-dialog-close\',this.toogleSwitch.bind(this),false)\n  }\n  \n  toogleSwitch(){\n   this.setState({\n     open:!this.state.open\n    })\n  }\n  render=()=>{\n    var data = this.props.customData && this.props.customData.dataLabel;\n    var flag = this.props.customData && this.props.customData.flag;\n    var flags = this.props.customData && this.props.customData.flags;\n    var _this = this;\n   return (\n      <div className=\'.ysp-dialog-hander-op\'  style={{display:this.state.open ? \'block\':\'none\'}}>\n        <Overlay/>\n        <div className= \'ysp-dialog-hander\'>\n           <ul>\n          {data && data.map((d,i)=>{  \n            return(\n                <li data-index={d.idx} onClick={(e)=>{\n                  var target = e.target;\n                  var index = target.dataset.index;\n                  var handler = this.props.customHandler;\n                  if(handler){\n                    handler({\n                      data:{\n                        index : index,\n                        flag : flag,\n                        flags : flags\n                      },\n                      eventType:\'click\'\n                    });\n                  }\n                  _this.toogleSwitch();\n                  var evt = new Event(\'ysp-change-title\');\n                  evt.title = e.target.textContent;\n                  window.dispatchEvent(evt);\n                }}>{d.content}</li>\n            )})}\n            </ul>\n          <button onClick={()=>{\n              _this.toogleSwitch();\n              }\n            }>\u53D6\u6D88</button>\n        </div>\n      </div>\n    )\n  }\n}';
+      return '\'use strict\';\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\'react\');\n\nvar _yspCustomComponents = require(\'ysp-custom-components\');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn\'t been initialised - super() hasn\'t been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    var _this2 = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this));\n\n    _this2.render = function () {\n      var data = _this2.props.customData && _this2.props.customData.dataLabel;\n      var flag = _this2.props.customData && _this2.props.customData.flag;\n      var flags = _this2.props.customData && _this2.props.customData.flags;\n      var _this = _this2;\n      return React.createElement(\n        \'div\',\n        { className: \'.ysp-dialog-hander-op\', style: { display: _this2.state.open ? \'block\' : \'none\' } },\n        React.createElement(_yspCustomComponents.Overlay, null),\n        React.createElement(\n          \'div\',\n          { className: \'ysp-dialog-hander\' },\n          React.createElement(\n            \'ul\',\n            null,\n            data && data.map(function (d, i) {\n              return React.createElement(\n                \'li\',\n                { \'data-index\': d.idx, onClick: function onClick(e) {\n                    var target = e.target;\n                    var index = target.dataset.index;\n                    var handler = _this2.props.customHandler;\n                    if (handler) {\n                      handler({\n                        data: {\n                          index: index,\n                          flag: flag,\n                          flags: flags\n                        },\n                        eventType: \'click\'\n                      });\n                    }\n                    _this.toogleSwitch();\n                    var evt = new Event(\'ysp-change-title\');\n                    evt.title = e.target.textContent;\n                    window.dispatchEvent(evt);\n                  } },\n                d.content\n              );\n            })\n          ),\n          React.createElement(\n            \'button\',\n            { onClick: function onClick() {\n                _this.toogleSwitch();\n              } },\n            \'\\u53D6\\u6D88\'\n          )\n        )\n      );\n    };\n\n    _this2.state = {\n      open: false\n    };\n    window.addEventListener(\'ysp-dialog-close\', _this2.toogleSwitch.bind(_this2), false);\n    return _this2;\n  }\n\n  _createClass(_class, [{\n    key: \'componentWillUnmount\',\n    value: function componentWillUnmount() {\n      window.removeEventListener(\'ysp-dialog-close\', this.toogleSwitch.bind(this), false);\n    }\n  }, {\n    key: \'toogleSwitch\',\n    value: function toogleSwitch() {\n      this.setState({\n        open: !this.state.open\n      });\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;';
     },
     getData_control253_wPBgTz: function (elem) {
       'use strict';
@@ -178,12 +192,13 @@
 
     getData_control116_kIDcZ0: function (elem) {
       "use strict";
+
       if (!elem) {
         return [];
       }if (elem) {
         var data = [];var trs = elem.querySelector("#table_list_1").querySelectorAll("tr");var reportId = elem.querySelector('input[name="reportId"]').value;var titleIdx = null;var deepFlag = true;var strFuc = function strFuc(_obj) {
           var _string = _obj.getAttribute("aria-describedby");var _index = _string.lastIndexOf('_');var _str = _string.substring(_index + 1);return _str;
-        };debugger;if (!titleIdx) {
+        };if (!titleIdx) {
           var _tds = trs[1] && trs[1].querySelectorAll("td");var a, b, c, d, e, f, g, h, l;if (_tds) {
             if ("report34-2" == reportId || "report34-1" == reportId || "report49" == reportId) {
               //销售代表（客户与门店达成）、（产品销售达成）
@@ -198,21 +213,23 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   a = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   a = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   a = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   a = numTemp[3];
+                } else {
+                  a = 0;
                 }
               }
             } else if ("report34" == reportId || "report33" == reportId || "report33-1" == reportId || "report33-1-1" == reportId || "report48" == reportId) {
@@ -240,21 +257,23 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   b = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   b = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   b = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   b = numTemp[3];
+                } else {
+                  b = 0;
                 }
               }
             } else if ("report15" == reportId || "report16" == reportId || "report16-1" == reportId) {
@@ -276,21 +295,23 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   e = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   e = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   e = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   e = numTemp[3];
+                } else {
+                  e = 0;
                 }
               }
             } else if ("report20" == reportId || "report46" == reportId) {
@@ -306,21 +327,23 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   f = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   f = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   f = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   f = numTemp[3];
+                } else {
+                  f = 0;
                 }
               }
             } else if ("report17" == reportId || "report18" == reportId || "report18-1" == reportId || "report19" == reportId) {
@@ -363,42 +386,46 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   h = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   h = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   h = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   h = numTemp[3];
+                } else {
+                  h = 0;
                 }
               } else if ("report45" == reportId) {
                 var numTemp = new Array(4);for (var n = 0; n < _tds.length; n++) {
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   h = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   h = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   h = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   h = numTemp[3];
+                } else {
+                  h = 0;
                 }
               }
             } else if ("report31" == reportId || "report31-1" == reportId || "report31-1-1" == reportId || "report31-1-1-1" == reportId) {
@@ -447,21 +474,23 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   l = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   l = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   l = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   l = numTemp[3];
+                } else {
+                  l = 0;
                 }
               } else if ("report1-2" == reportId || "report2" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -502,21 +531,23 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   l = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   l = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   l = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   l = numTemp[3];
+                } else {
+                  l = 0;
                 }
               } else if ("report9" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -568,21 +599,23 @@
                   //把4种可能得标题都取出来存在数组里
                   var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                     numTemp[0] = n;
-                  } else if ("modelId" == _str) {
-                    numTemp[1] = n;
                   } else if ("projectSeries" == _str) {
-                    numTemp[2] = n;
+                    numTemp[1] = n;
                   } else if ("projectName" == _str) {
+                    numTemp[2] = n;
+                  } else if ("department" == _str) {
                     numTemp[3] = n;
                   }
-                }if (numTemp[0]) {
+                }if (numTemp[0] !== undefined) {
                   l = numTemp[0];
-                } else if (numTemp[1]) {
+                } else if (numTemp[1] !== undefined) {
                   l = numTemp[1];
-                } else if (numTemp[2]) {
+                } else if (numTemp[2] !== undefined) {
                   l = numTemp[2];
-                } else if (numTemp[3]) {
+                } else if (numTemp[3] !== undefined) {
                   l = numTemp[3];
+                } else {
+                  l = 0;
                 }
               } else if ("report22" == reportId) {
                 for (var n = 0; n < _tds.length; n++) {
@@ -657,11 +690,11 @@
                                    （逻辑为机型没数据，标题就找机型编码，以此类推） yue add*/var titleSite = new Array(4);for (var n = 0; n < _tds.length; n++) {
                 var _str = strFuc(_tds[n]);if ("modelName" == _str) {
                   titleSite[0] = n;
-                } else if ("modelId" == _str) {
-                  titleSite[1] = n;
                 } else if ("projectSeries" == _str) {
-                  titleSite[2] = n;
+                  titleSite[1] = n;
                 } else if ("projectName" == _str) {
+                  titleSite[2] = n;
+                } else if ("department" == _str) {
                   titleSite[3] = n;
                 }
               }
@@ -674,43 +707,59 @@
             obj.deepFlag = deepFlag;
           }obj.reportIds = reportId;for (var j = 0; j < tds.length; j++) {
             var _str = strFuc(tds[j]);var _textContent = tds[j].textContent.trim();if ("report34-2" == reportId || "report34-1" == reportId || "report18-1" == reportId || "report31-1-1-1" == reportId || "report1-2-1-1-1" == reportId || "report23-1-1" == reportId || "report2-2-1-1" == reportId || "report9-1-1-1" == reportId) {
-              var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
-                if (titleSite[1]) {
-                  titles = tds[titleSite[1]].textContent.trim();
+              debugger;var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
+                if (titleSite[0] !== undefined) {
+                  titles = tds[titleSite[0]].textContent.trim();
                 }if ("" == titles) {
-                  if (titleSite[2]) {
-                    titles = tds[titleSite[2]].textContent.trim();
+                  if (titleSite[1] !== undefined) {
+                    titles = tds[titleSite[1]].textContent.trim();
                   }if ("" == titles) {
-                    if (titleSite[3]) {
-                      titles = tds[titleSite[3]].textContent.trim();
+                    if (titleSite[2] !== undefined) {
+                      titles = tds[titleSite[2]].textContent.trim();
+                    }if ("" == titles) {
+                      if (titleSite[3] !== undefined) {
+                        titles = tds[titleSite[3]].textContent.trim();
+                      }
                     }
                   }
                 }
               }obj.title = titles;
             } else if ("report49" == reportId || "report33-1-1" == reportId || "report48" == reportId || "report16-1" == reportId || "report46" == reportId || "report29-1" == reportId || "report45" == reportId || "report1-1-1" == reportId || "report4-1" == reportId || "report43" == reportId || "report44" == reportId || "report47" == reportId) {
-              var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
-                if (titleSite[1]) {
-                  titles = tds[titleSite[1]].textContent.trim();
+              var titles = tds[titleIdx].textContent.trim();debugger;if ("" == titles) {
+                if (titleSite[0] !== undefined) {
+                  titles = tds[titleSite[0]].textContent.trim();
                 }if ("" == titles) {
-                  if (titleSite[2]) {
-                    titles = tds[titleSite[2]].textContent.trim();
+                  if (titleSite[1] !== undefined) {
+                    titles = tds[titleSite[1]].textContent.trim();
                   }if ("" == titles) {
-                    if (titleSite[3]) {
-                      titles = tds[titleSite[3]].textContent.trim();
+                    if (titleSite[2] !== undefined) {
+                      titles = tds[titleSite[2]].textContent.trim();
+                    }if ("" == titles) {
+                      if (titleSite[3] !== undefined) {
+                        titles = tds[titleSite[3]].textContent.trim();if ("" == titles) {
+                          titles = tds[0].textContent.trim();
+                        }
+                      }
                     }
                   }
                 }
               }obj.title = titles;
             } else if ("report2-1-1-1" == reportId || "report8" == reportId || "report10-1" == reportId || "report27" == reportId || "report22-1" == reportId) {
-              var titles = tds[titleIdx].textContent.trim();if ("" == titles) {
-                if (titleSite[1]) {
-                  titles = tds[titleSite[1]].textContent.trim();
+              var titles = tds[titleIdx].textContent.trim();debugger;if ("" == titles) {
+                if (titleSite[0] !== undefined) {
+                  titles = tds[titleSite[0]].textContent.trim();
                 }if ("" == titles) {
-                  if (titleSite[2]) {
-                    titles = tds[titleSite[2]].textContent.trim();
+                  if (titleSite[1] !== undefined) {
+                    titles = tds[titleSite[1]].textContent.trim();
                   }if ("" == titles) {
-                    if (titleSite[3]) {
-                      titles = tds[titleSite[3]].textContent.trim();
+                    if (titleSite[2] !== undefined) {
+                      titles = tds[titleSite[2]].textContent.trim();
+                    }if ("" == titles) {
+                      if (titleSite[3] !== undefined) {
+                        titles = tds[titleSite[3]].textContent.trim();if ("" == titles) {
+                          titles = tds[0].textContent.trim();
+                        }
+                      }
                     }
                   }
                 }
@@ -803,6 +852,7 @@
     },
     doAction_uiControl113_KRsmxE: function (data, elem) {
       "use strict";
+
       if (!elem) {
         return;
       }var trs = elem.querySelector("#table_list_1").querySelectorAll("tr");if (data.eventType === 'click') {
