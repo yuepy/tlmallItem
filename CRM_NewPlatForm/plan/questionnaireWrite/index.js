@@ -81,7 +81,7 @@
     doAction_uiControl318_TVQnXL: function (data, elem) {
       if ("click" == data.eventType) {
         var index = data.customData; //elem.ownerDocument.querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelectorAll("td")[7].querySelector("a").click();
-        var as = elem.ownerDocument.querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelector("a");as && as.click();
+        var url = 'http://192.168.220.82:8080/pttlCrm/res/page/' + elem.ownerDocument.querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelector("a").getAttribute('url').split('../')[1];var as = elem.ownerDocument.querySelector("#tbodyContent").querySelectorAll("tr")[index].querySelector("a");as.setAttribute('url', url);as && as.click();
       }
     },
     getTemplate_uiControl318_TVQnXL: function () {
