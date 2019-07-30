@@ -1342,17 +1342,17 @@
     var time = ((endTime - startTime)/1000+1).toFixed(2)+'s';
     ysp.customHelper.TimeScope.totalTime += time;
     localStorage.removeItem('startTime');
-    // if(!doc){
-    //   alert(time);
-    // }
-    // if(!elem){
-    //   var div = document.createElement('div');
-    //   var text = document.createTextNode(time);
-    // div.className = 'timeScope';
-    //   if(body){body.appendChild(div);}
-    // }else{
-    //   elem.textContent = time;
-    // }
+    if(!doc){
+      alert(time);
+    }
+    if(!elem){
+      var div = document.createElement('div');
+      var text = document.createTextNode(time);
+    div.className = 'timeScope';
+      if(body){body.appendChild(div);}
+    }else{
+      elem.textContent = time;
+    }
   }
   utils.extend(ysp.customHelper, {
     //页面时间输出
