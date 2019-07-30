@@ -335,6 +335,7 @@
 				type: "POST",
 				url: Constant.SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addCustomerVisitPlan',
 				data: { planComment: planComment, cusInfo: cusInfo, planEaiId: planEaiId, planRowId: planRowId, planDate: planDate, listType: listType },
+        timeout: 50000,
 				dataType: "json",
 				success: function success(data) {
           

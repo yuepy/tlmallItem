@@ -31,6 +31,7 @@
     },
 
     getData_control179_zxz2Sq: function (elem) {
+      "use strict";
       if (!elem) {
         return [];
       }var data = { dataContent: [], dataFlag: [] };if (elem) {
@@ -38,6 +39,7 @@
       }data.dataContent.push(table);var loading = ysp.customHelper.tipMsg.getLoading();data.dataFlag.push(loading);return data;
     },
     doAction_uiControl176_cUGqtJ: function (data, elem) {
+      "use strict";
       if (data.eventType == "click") {
         //   var A = elem.querySelector("tbody").querySelectorAll('a')[0].href;
         //   ysp.customHelper.informationEntry.enterName = ysp.customHelper.informationEntry.enterSplit(A, 'userId=');
