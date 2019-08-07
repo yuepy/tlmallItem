@@ -196,8 +196,7 @@
           }
         }return targetList;
       }if (data.eventType == 'AndroidBack') {
-        ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';
-        ysp.customHelper.AndroidBackFlag = 'destination';
+        ysp.customHelper.AndroidBackURL = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.AndroidBackModel = 'customerWorkspace';ysp.customHelper.AndroidBackFlag = 'destination';
       }if ('back' == data.eventType) {
         if (!top.EAPI.isAndroid()) {
           ysp.appMain.back();ysp.customHelper.BackReload();
@@ -245,7 +244,8 @@
           // addDayPlanOkBtn.click();
           cwin.Show();
         }if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
-          var tempTextAreaValue = tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer") && tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer").value;if (tempTextAreaValue != "" || selectedCount != "") {
+          var tempTextAreaValue = tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer") && tempCustomerOrStoreEl.querySelector("#tempPlanOtherCustomer").value;
+          if (tempTextAreaValue != "" || selectedCount != "") {
             ysp.appMain.showLoading();setTimeout(function () {
               ysp.appMain.hideLoading();var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.back();ysp.customHelper.BackReload();
             }, 2000);
@@ -254,12 +254,11 @@
         if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
           var textAreaValue = customerOrStoreEl.querySelector("#dayPlanContent") && customerOrStoreEl.querySelector("#dayPlanContent").value;if (textAreaValue != "") {
             ysp.appMain.showLoading();setTimeout(function () {
-              ysp.appMain.hideLoading();var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.customHelper.BackReload();
+              ysp.appMain.hideLoading();var url = "http://192.168.1.227/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html";ysp.appMain.back();ysp.customHelper.BackReload();
             }, 2000);
           }
         }
-      } //搜索方法
-      if ('query' == data.eventType) {
+      }if ('query' == data.eventType) {
         var queryValue = data.dataCustom.queryValue;queryInput && (queryInput.value = queryValue);queryBtn && queryBtn.click();
       }if ('checkClick' == data.eventType) {
         var clickIndex = data.dataCustom.clickIndex;var doc = elem.ownerDocument; // var targetId = elem.getAttribute("id"),targetList;
@@ -277,8 +276,7 @@
       }switch (data.eventType) {case 'prev':
           prevtitle(data.dataCustom);break;case 'next':
           prevtitle(data.dataCustom);break;case 'GO':
-          clickGO(data.dataCustom);
-          break;}function clickGO(data) {
+          clickGO(data.dataCustom);break;}function clickGO(data) {
         var targetList = commonTargetlist(),
             tarId = targetList && targetList.getAttribute("id"),
             input,
