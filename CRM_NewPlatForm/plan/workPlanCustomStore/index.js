@@ -3,7 +3,8 @@
     getData_control42_A9IB6L: function (elem) {
       if (!elem) {
         return;
-      }var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = "";var customerOrStoreEl = doc.getElementById('customerOrStorePopList'); //工作计划
+      }var doc = elem.ownerDocument;var win = doc.defaultView;var isShow = "";
+      var customerOrStoreEl = doc.getElementById('customerOrStorePopList'); //工作计划
       var tempCustomerOrStoreEl = doc.getElementById('tempCustomerOrStorePopList'); //临时签到计划
       if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "none" && tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "none") {
         isShow = "workOrTemp";
@@ -42,8 +43,7 @@
       }); //其它客户和工作计划填写
       var tempPlanOtherCustomerInput = elem.querySelector("#tempPlanOtherCustomer");var tempPlanOtherCustomer = '';if (tempPlanOtherCustomerInput) {
         tempPlanOtherCustomer = tempPlanOtherCustomerInput.value;
-      }
-      var dayPlanContentText = elem.querySelector("#dayPlanContent");var dayPlanContent = '';if (dayPlanContentText) {
+      }var dayPlanContentText = elem.querySelector("#dayPlanContent");var dayPlanContent = '';if (dayPlanContentText) {
         dayPlanContent = dayPlanContentText.value;
       } //选择临时拜访多少个客户和门店
       var selectedCount = 0;var tempAreaText = "";var targetList1;if (tempCustomerOrStoreEl && win.getComputedStyle(tempCustomerOrStoreEl).display == "block") {
@@ -84,7 +84,8 @@
       } //日工作计划
       var textArea = "";if (customerOrStoreEl && win.getComputedStyle(customerOrStoreEl).display == "block") {
         var text = elem.querySelector("#dayPlanContent").value;textArea = text;
-      } //分页
+      }
+      //分页
       var pageData = {};var item = [];pageData.prev = false;pageData.next = false; //获取对应的客户列表或者门店列表的下面公共底部的页面信息
       var targetPageInfo;if (targetId == "customerOrStorePopList") {
         //工作计划签到逻辑

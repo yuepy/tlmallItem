@@ -1,0 +1,267 @@
+getData_control190_oOp3N1: |
+  if (!elem) {
+    return;
+  } // var data = [];
+  // if (elem) {
+  //   data.push(elem.textContent);
+  // }
+  if (elem) {
+    var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading'); // if (load == null) {
+    //   setTimeout(function () {
+    //     ysp.appMain.hideLoading();
+    //   }, 5000);
+    // } else {
+    //   ysp.appMain.showLoading();
+    // }
+
+    return load;
+  }
+doAction_uiControl187_1hG0iv: |
+  if (data.eventType == 'AndroidBack') {
+    var pageId = window.beforePageId;
+
+    if (parent.EAPI.isAndroid() && pageId == "context51_PhTFP3") {
+      //history.back();
+      var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
+
+      ysp.customHelper.AndroidBackURL = url;
+    } else if (parent.EAPI.isIOS() && pageId == "context51_PhTFP3") {
+      var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方法 - 跳回至信息录入
+
+      ysp.customHelper.AndroidBackURL = url;
+    } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {
+      var urls = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //更换返回方法 - 跳回至工作台
+
+      ysp.customHelper.AndroidBackURL = urls;
+    } else {
+      ysp.customHelper.AndroidBackFlag = 'AndroidHistory';
+    }
+
+    ysp.customHelper.AndroidBackFlag = 'destination';
+  }
+  if (data.eventType == 'click') {
+    var target = elem.ownerDocument.querySelector('#srarch_date');
+    target.click();
+  } else if (data.eventType == 'back') {
+    var pageId = window.beforePageId;
+
+    if (parent.EAPI.isAndroid() && pageId == "context51_PhTFP3") {
+      //history.back();
+      var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方式,跳回至信息录入
+
+      ysp.customHelper.AndroidBackFn();
+    } else if (parent.EAPI.isIOS() && pageId == "context51_PhTFP3") {
+      var url = "http://192.168.220.82:8080/pttlCrm/res/page/psi/customerInfocollection.html"; //更换返回方法 - 跳回至信息录入
+
+      ysp.customHelper.BackReload(url);
+    } else if (parent.EAPI.isIOS() && pageId == "context2_15cCKI") {
+      var urls = "http://192.168.220.82:8080/pttlCrm/res/page/visitManager/customerWorkspace/customerWorkspace.html"; //更换返回方法 - 跳回至工作台
+
+      ysp.customHelper.BackReload();
+    } else {
+      history.back();
+    }
+  }
+getTemplate_uiControl187_1hG0iv: "import {\n  Component\n} from 'react';\nimport {\n  InformationHeader\n} from 'ysp-custom-components';\nimport {SaleReachCalendar} from 'ysp-custom-components';\nexport default class extends Component {\n  constructor(props){\n    super(props);\n  }\n  componentDidMount(){\n    var _this = this;\n \_ \_const {customHandler} = _this.props;\n    customHandler({\n      eventType:'AndroidBack'\n    })\n  } \n  render = () => {\n    var _this = this;\n    var data = this.props.customData;\n    if(data && data == null){\n      ysp.appMain.hideLoading();\n    }\n    return (\n      <div>\n         <InformationHeader\n \_ \_ \_ \_ \_ data={{centerText:'日别PSI',rightText:\"\"\n             }} \n           backIsShow={true}\n           time={(e)=>{\n              var evt = new Event('ysp-time-show');\n              evt.value = '打开日历';\n            \twindow.dispatchEvent(evt)\n              let target=e.target;\n              let handler=this.props.customHandler;\n              if(handler){\n                 handler({\n                   eventType:'click'\n                 })\n              }\n  \t\t\t\t\t}\n          }\n          back={(e)=>{\n              let target=e.target;\n              let handler=this.props.customHandler;\n              if(handler){\n                 handler({\n                   eventType:'back'\n                 })\n              }\n  \t\t\t\t\t}\n          }\n           \n           />\n         </div>\n    );\n  }\n}"
+getData_control212_Cymneo: ''
+doAction_uiControl209_e05Sw1: |
+  if (data.eventType == 'upValue') {
+    var input = elem.ownerDocument.querySelector('#srarch_date');
+    input.value = data.dataCustom;
+    input.focus();
+    elem.ownerDocument.querySelector("#search").click();
+  }
+getTemplate_uiControl209_e05Sw1: |-
+  import {Component} from 'react';
+  import {SaleReachCalendar} from 'ysp-custom-components';
+  export default class extends Component{
+    constructor(props){
+      super(props);
+      this.state={
+        year : true,
+        mouth : true,
+        day : true,
+        show : false,
+        data : true
+      }
+      window.addEventListener('ysp-time-show',this.toggle.bind(this),false)
+    }
+    componentDidUpdate(){
+      this.state.show ? this.styleId(): console.log('日历还没打开呢');
+    }
+    styleId(){
+      var doc = this.refs.time;
+      if(this.state.data && !this.state.day  && !!this.state.mouth){
+        doc.querySelector('#year').style.width = '50%';
+        doc.querySelector('#mouth').style.width = '50%';
+      }
+      if(this.state.data && !this.state.mouth && !this.state.day){
+        doc.querySelector('#year').style.width = '100%';
+      }
+      if(!this.state.data){
+        doc.querySelector('#year').style.width = '100%';
+      }
+    }
+    toggle(){
+      this.setState({
+        show : !this.state.show
+      })
+    }
+    activeValue(even){
+      var doc = even.parentElement.nextElementSibling;
+      var year = doc.querySelector('#year').querySelector('.active').textContent;
+      var mouth = this.state.mouth && doc.querySelector('#mouth').querySelector('.active').textContent;
+      var day = this.state.day && doc.querySelector('#day').querySelector('.active').textContent;
+      mouth = mouth < 10 ? '0' + mouth : mouth; 
+      day = day && day < 10 ? '0' + day : day;
+      var time = day ? (year + '-' + mouth + '-' + day ) :( mouth ? year + '-' + mouth : year);
+      return time;
+      // if(this.props.customData){
+      //   var year = doc.querySelector('#year').querySelector('.active').textContent;
+      //   var mouth = this.state.mouth && doc.querySelector('#mouth').querySelector('.active').textContent;
+      //   var day = this.state.day && doc.querySelector('#day').querySelector('.active').textContent;
+      //   mouth = mouth < 10 ? '0' + mouth : mouth; 
+      //   day = day && day < 10 ? '0' + day : day;
+      //   var time = day ? (year + '-' + mouth + '-' + day ) :( mouth ? year + '-' + mouth : year);
+      //   return time;
+      // }else{
+      //   return doc.querySelector('#year').querySelector('.active').textContent;
+      // }
+      
+    }
+    upValue(e){
+      var handler = this.props.customHandler;
+      var value = this.activeValue(e.target);
+      if(handler){
+        handler({
+          data : value,
+          eventType : 'upValue'
+        })
+      }
+      this.setState({
+        show : false
+      })
+    }
+    
+    render(){
+      var _this = this;
+      return(
+        <div>{this.state.show && 
+          <div className='moudle-time' ref='time'>
+            <div className = 'date-time'>
+              <SaleReachCalendar 
+                mouth = {_this.state.mouth}
+                day = {_this.state.day}
+                upValue = {_this.upValue.bind(_this)}
+                show = {(e)=>{
+                  _this.toggle();
+                }}
+                y = {_this.state.year}
+                
+              />
+            </div>
+          </div>}
+        </div>
+      )
+    }
+  }
+getData_control213_TwrNlh: |
+  var data = {};
+  if (ysp.customHelper.tipMsg.getMsg()) {
+    data.postMessage = ysp.customHelper.tipMsg.getMsg();
+  } else {
+    data.postMessage = "";
+  }
+  if (ysp.customHelper.tipMsg.cancelText()) {
+    data.cancel = ysp.customHelper.tipMsg.cancelText();
+  } else {
+    data.cancel = "";
+  }
+  return data;
+doAction_uiControl210_CVeeGa: |
+  if (data.eventType == "confirmClick") {
+    ysp.customHelper.tipMsg.confirm();
+  }
+  if (data.eventType == "cancelClick") {
+    ysp.customHelper.tipMsg.cancel();
+  }
+getTemplate_uiControl210_CVeeGa: "import {\n  Component\n} from 'react';\nimport {\n\tAlert\n} from 'ysp-custom-components';\nexport default class extends Component {\n  render(){\n    var _this=this;\n    var dataMessage = (this.props.customData && this.props.customData.postMessage) || \"\";\n    var dataCancel = (this.props.customData && this.props.customData.cancel) || \"\";\n     return(\n    \t<div>\n        {dataMessage==\"\" ? \"\" : \n          <Alert\n            content={dataMessage}\n            cancelText={dataCancel}\n            dismiss={\n              (e)=>{\n                var handler=this.props.customHandler;\n                if(handler){\n                  handler({\n                    eventType:\"confirmClick\"\n                  })\n                }\n              }\n            }\n            cancel={\n             (e)=>{\n                var handler=this.props.customHandler;\n                if(handler){\n                  handler({\n                    eventType:\"cancelClick\"\n                  })\n                }\n              }\n           }\n          />\n        }\n      </div>\n    )\n  }\n}"
+getData_control204_50rAzZ: |
+  if (!elem) {
+    return;
+  }
+  if (elem) {
+    var data = [];
+    var text = elem.querySelector("#customerName").textContent;
+    var content = text.split(" : ")[1];
+    var dataName = {};
+    dataName = content;
+    data.push(dataName);
+    var loading = ysp.customHelper.tipMsg.getLoading();
+    data.push(loading);
+
+    if (elem.querySelectorAll("tbody").length > 0 && elem.querySelectorAll("tbody")[0].querySelectorAll("tr").length == 0) {
+      var data1 = {};
+      data1.cjSO = '3';
+      data1.xm = '暂无信息';
+      data.push(data1);
+    } else if (elem && $(elem).find('tbody').children('tr').length > 0) {
+      $(elem).find('tbody').children('tr').each(function (i, d) {
+        var data1 = {};
+        data1.xm = $(d).children('td').eq(2)[0].textContent;
+        data1.xmtime = $(d).children('td').eq(0)[0].textContent;
+        data1.rwx1 = $(d).children('td').eq(3)[0].textContent;
+        data1.rwx2 = $(d).children('td').eq(4)[0].textContent;
+        data1.rwxcolor = $(d).children('td').eq(5)[0].textContent; //如果采集SO可输入则返回0，否则返回1，只有数字返回2
+
+        data1.opening = $(d).children('td').eq(6)[0].textContent; //期初库存
+
+        if ($(d).children('td').eq(7).find('input').length > 0) {
+          data1.cjSO = '0';
+          data1.cjSOval = $(d).children('td').eq(7).find('input').eq(1).val();
+        } else if ($(d).children('td').eq(7).text() == '') {
+          data1.cjSO = '1';
+        } else {
+          data1.cjSO = '2';
+          data1.cjSOcon = $(d).children('td').eq(7)[0].textContent;
+        } //如果采集I可输入则返回0，否则返回1,只有数字返回2
+
+
+        if ($(d).children('td').eq(8).find('input').length > 0) {
+          data1.cjI = '0';
+          data1.cjIval = $(d).children('td').eq(8).find('input').eq(1).val();
+        } else if ($(d).children('td').eq(8).text() == '') {
+          data1.cjI = '1';
+        } else {
+          data1.cjI = '2';
+          data1.cjIcon = $(d).children('td').eq(8)[0].textContent;
+        }
+
+        data.push(data1);
+      });
+    }
+
+    return data;
+  }
+doAction_uiControl198_cZXWTf: |
+  // if (data.eventType === 'click') {
+  //   var index = data.dataCustom;
+  //   console.log(index);
+  //   var target = $(elem).children('tr').eq(index).children('td').eq(2);
+  //   target.click();
+  if (data.eventType === 'changeSO') {
+    var index = data.dataCustom[0] - 2;
+    var value = data.dataCustom[1]; //.replace(/[^0-9]/g, ''); 
+    //console.log(value);
+
+    var target = $(elem).find('tbody').children('tr').eq(index).children('td').eq(7).find('input').eq(1).val(value);
+  } else if (data.eventType === 'changeI') {
+    var index = data.dataCustom[0];
+    var value = data.dataCustom[1];
+    var target = $(elem).find('tbody').children('tr').eq(index).children('td').eq(8).find('input').eq(1).val(value);
+  } else if (data.eventType === 'click') {
+    // ysp.customHelper.informationEntry.deleteData();
+    var target = elem.ownerDocument.querySelector('#savePsiSpan');
+    target.click();
+  }
+getTemplate_uiControl198_cZXWTf: "module.exports = React.createClass({\n  // onclick:function(e){\n  //   var target=e.target;\n  //   var handler=this.props.customHandler;\n  //   if(handler){\n  //     handler({\n  //       data:target.getAttribute('data-index'),\n  //       eventType:'click'\n  //     })\n  //   }\n  // },\n  \n  onchangeI:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:[target.getAttribute('data-index'),target.value.replace(/[^0-9]/g,'')],\n        eventType:'changeI'\n      })\n    }\n  },\n  onchangeSO:function(e){\n    var target=e.target;\n    target.value = target.value.replace(/[^0-9]/g,'')\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:[target.getAttribute('data-index'),target.value],\n        eventType:'changeSO'\n      })\n    }\n  },\n  onclick:function(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    target.disabled = true;\n    setTimeout(function(e){\n      target.disabled = false;\n    },1500)\n    if(handler){\n       handler({\n         eventType:'click'\n       })\n    }\n  },\n  render: function() {\n    var data=this.props.customData || [];\n    var _this=this;\n    return (\n      <div>\n        <div className=\"ysp-client-store-name\">\n          <span>客户名称：</span>\n          <span>{data[0]}</span>\n        </div>\n        <div className=\"ysp_clientInfoFill_dayPSI\">\n          {\n            data && data.map(function(elem,idx){\n              if(elem && elem.cjSO=='0' && elem.cjI=='1'){        \n                   return(\n                      <div className='list_ltt'>\n                          <p className='listtop_ltt'>\n                            <span>{elem.xm}</span>\n                            <span>{elem.xmtime}</span>\n                         </p>\n                         <div className='listContent_ltt'>\n                            <span>任务项：</span>\n                            <span>{elem.rwx1}</span>\n                            <span>{elem.rwx2}</span>\n                            <span>{elem.rwxcolor}</span>\n                         </div>\n                       \t <div className=\"listOpening_ltt\">\n                           <span>期初库存:</span>\n                           <span>{elem.opening}</span>\n                       \t </div>\n                         <div className='listContentput_ltt'>\n                           <p className='listContentputleft_ltt'>\n                              <span>SO</span>\n                            <input data-index={idx} type='text' onChange={_this.onchangeSO.bind(_this)} className='inputWrite_ltt' value={elem.cjSOval}/>\n                           </p>\n                            <p className='listContentputright_ltt'>\n                              <span className='gray_ltt'>I</span>\n                            <input data-index={idx} type='text' readOnly=\"readonly\" value={elem.cjIcon}/>\n                           </p>\n\n                        </div>\n                      </div>\n                 )\n              }else if(elem && elem.cjSO=='0' && elem.cjI=='0'){\n                return(\n                      <div className='list_ltt'>\n                          <p className='listtop_ltt'>\n                            <span>{elem.xm}</span>\n                            <span>{elem.xmtime}</span>\n                         </p>\n                         <div className='listContent_ltt'>\n                            <span>任务项：</span>\n                            <span>{elem.rwx1}</span>\n                            <span>{elem.rwx2}</span>\n                            <span>{elem.rwxcolor}</span>\n                         </div>\n                    \t\t <div className=\"listOpening_ltt\">\n                           <span>期初库存:</span>\n                           <span>{elem.opening}</span>\n                       \t </div>\n                         <div className='listContentput_ltt'>\n                           <p className='listContentputleft_ltt'>\n                           <span>SO</span>\n                            <input data-index={idx} type='text' onChange={_this.onchangeSO.bind(_this)} className='inputWrite_ltt' value={elem.cjSOval}/>\n                           </p>\n                           <p className='listContentputright_ltt'>\n                              <span className='gray_ltt'>I</span>\n                            <input data-index={idx} type='text' onChange={_this.onchangeI.bind(_this)} className='inputWrite_ltt' value={elem.cjIval}/>\n                           </p>\n\n                        </div>\n                      </div>\n                 )\n              }else if(elem && elem.cjSO=='1' && elem.cjI=='0'){\n                     return(\n                      <div className='list_ltt'>\n                          <p className='listtop_ltt'>\n                            <span>{elem.xm}</span>\n                            <span>{elem.xmtime}</span>\n                         </p>\n                         <div className='listContent_ltt'>\n                            <span>任务项：</span>\n                            <span>{elem.rwx1}</span>\n                            <span>{elem.rwx2}</span>\n                            <span>{elem.rwxcolor}</span>\n                         </div>\n                         <div className=\"listOpening_ltt\">\n                           <span>期初库存:</span>\n                           <span>{elem.opening}</span>\n                       \t </div>\n                         <div className='listContentput_ltt'>\n                           <p className='listContentputleft_ltt'>\n                            <span>SO</span>\n                            <input data-index={idx} type='text' readOnly=\"readonly\" value={elem.cjSOcon}/>\n                            </p>\n                           <p className='listContentputright_ltt'>\n                            <span className='gray_ltt'>I</span>\n                            <input data-index={idx} type='text' onChange={_this.onchangeI.bind(_this)} className='inputWrite_ltt' value={elem.cjIval}/>\n                             </p>\n                        </div>\n                      </div>\n                 )  \n              }else if(elem && elem.cjSO=='1' && elem.cjI=='1'){\n                return(\n                      <div className='list_ltt'>\n                          <p className='listtop_ltt'>\n                            <span>{elem.xm}</span>\n                            <span>{elem.xmtime}</span>\n                         </p>\n                         <div className='listContent_ltt'>\n                            <span>任务项：</span>\n                            <span>{elem.rwx1}</span>\n                            <span>{elem.rwx2}</span>\n                            <span>{elem.rwxcolor}</span>\n                         </div>\n                    \t\t <div className=\"listOpening_ltt\">\n                           <span>期初库存:</span>\n                           <span>{elem.opening}</span>\n                       \t </div>\n                         <div className='listContentput_ltt'>\n                           <p className='listContentputleft_ltt'>\n                            <span>SO</span>\n                            <input data-index={idx} type='text' readOnly=\"readonly\" value={elem.cjSOcon}/>\n                             </p>\n                           <p className='listContentputright_ltt'>\n                            <span className='gray_ltt'>I</span>\n                            <input data-index={idx} type='text' readOnly=\"readonly\" value={elem.cjIcon}/>\n                             </p>\n                        </div>\n                      </div>\n                 )\n              }\n\n            if(elem && elem.cjSO=='2'){\n                return(\n                      <div className='list_ltt'>\n                          <p className='listtop_ltt'>\n                            <span>{elem.xm}</span>\n                            <span>{elem.xmtime}</span>\n                         </p>\n                         <div className='listContent_ltt'>\n                            <span>任务项：</span>\n                            <span>{elem.rwx1}</span>\n                            <span>{elem.rwx2}</span>\n                            <span>{elem.rwxcolor}</span>\n                         </div>\n                    \t\t <div className=\"listOpening_ltt\">\n                           <span>期初库存:</span>\n                           <span>{elem.opening}</span>\n                       \t </div>\n                         <div className='listContentput_ltt'>\n                           <p className='listContentputleft_ltt'>\n                            <span>SO</span>\n                           <span className='listContentputleftNum_ltt'>{elem.cjSOcon}</span>\n                             </p>\n                           <p className='listContentputright_ltt'>\n                            <span className='gray_ltt'>I</span>\n                            <input data-index={idx} type='text' readOnly=\"readonly\" value={elem.cjIcon}/>\n                             </p>\n                        </div>\n                      </div>\n                 )\n              }\n              if(elem && elem.cjI=='2'){\n                return(\n                      <div className='list_ltt'>\n                          <p className='listtop_ltt'>\n                            <span>{elem.xm}</span>\n                            <span>{elem.xmtime}</span>\n                         </p>\n                         <div className='listContent_ltt'>\n                            <span>任务项：</span>\n                            <span>{elem.rwx1}</span>\n                            <span>{elem.rwx2}</span>\n                            <span>{elem.rwxcolor}</span>\n                         </div>\n                    \t\t <div className=\"listOpening_ltt\">\n                           <span>期初库存:</span>\n                           <span>{elem.opening}</span>\n                       \t </div>\n                         <div className='listContentput_ltt'>\n                             <p className='listContentputleft_ltt'>\n                              <span>SO</span>\n                               <input data-index={idx} type='text' readOnly=\"readonly\" value={elem.cjSOcon}/>                \t\t\t\t\t</p>\n                           <p className='listContentputright_ltt'>\n                            <span className='gray_ltt'>I</span>\n                             <span className='listContentputleftNum_ltt'>{elem.cjIcon}</span>                                         \n                           </p>\n                        </div>\n                      </div>\n                 )\n              }\n              if(elem && elem.cjSO=='3' && data[1] == null){\n                return (\n                  <div className=\"ysp-no-datas\">\n                    <div></div>\n                    <div>暂时没有数据~</div>\n                  </div>\n                )\n              }\n            })\n          }\n          {\n            data[2] && data[2].cjSO == '3' ? <div></div> : <div className=\"ysp-dayPSI-save-ltt\">\n            <button className='save_ltt' onClick={_this.onclick}>\n              提交\n            </button>\n          </div>\n          }\n        </div>\n      </div>\n      \n    )\n  }\n});"

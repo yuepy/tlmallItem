@@ -1038,7 +1038,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     if(offices) {
                         for (var i = 0; i < offices.length; i++) {
                         	var url = getLink("officeName",offices[i].name,"06");
-                            var html = '<tr><td><a href="'+url+'" title="' + offices[i].name + '">' + offices[i].name + '</a></td><td>' + offices[i].reachQty + '</td><td>' + offices[i].reachAmt + '</td></tr>';
+                            var html = '<tr><td><a href="'+url+'" title="' + offices[i].name + '">' + offices[i].name + '</a></td><td>' + toQfw_new(offices[i].reachQty,false) + '</td><td>' + toQfw_new(offices[i].reachAmt.toFixed(2),false) + '</td></tr>';
                             $("#officeTable").append(html);
                         }
                     }

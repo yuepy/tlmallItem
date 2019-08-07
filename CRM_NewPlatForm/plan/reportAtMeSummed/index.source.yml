@@ -1,0 +1,537 @@
+getData_control315_PFxRaT: >
+  if (!elem) {
+    return;
+  }
+
+  var data = {
+    table: [],
+    dateStart: [],
+    dateEnd: [],
+    page: [],
+    contentDate: [],
+    contentType: [],
+    contentState: [],
+    contentGS: [],
+    contentJS: [],
+    contentPerson: [],
+    loadingFlag: [],
+    loadFlag: []
+  }; //上报时间
+
+  var startTime = elem.querySelector("#startTime").value;
+
+  var endTime = elem.querySelector("#endTime").value;
+
+  data.dateStart.push(startTime);
+
+  data.dateEnd.push(endTime); //表格数据
+
+  var content = ysp.customHelper.getTableData(elem, ["总结类型", "查询状态", "归属组织",
+  "上报人", "人员角色", "上报时间"]);
+
+  data.table.push(content); //翻页
+
+  var pageData = {};
+
+  pageData.prev = false;
+
+  pageData.next = false;
+
+  if (elem.querySelector('.skip')) {
+    pageData.numberTaotal = elem.querySelector('.skip').querySelectorAll('span')[0].textContent.replace(/[^0-9]/g, '');
+  }
+
+  var lis = elem.querySelectorAll('li');
+
+  for (var i = 0; i < lis.length; i++) {
+    var as = lis[i].querySelectorAll('a');
+
+    for (var j = 0; j < as.length; j++) {
+      switch (as[j].getAttribute('title')) {
+        case 'Go to previous page':
+          pageData.prev = true;
+          break;
+
+        case 'Go to next page':
+          pageData.next = true;
+          break;
+      }
+    }
+  }
+
+  var liss = elem.querySelectorAll('li');
+
+  for (var k = 0; k < liss.length; k++) {
+    var active = liss[k].className;
+
+    if (active == 'active') {
+      pageData.currentPage = liss[k].querySelector('a').textContent;
+    }
+  }
+
+  pageData.page =
+  ysp.customHelper.trim(elem.ownerDocument.querySelector('#tbody').textContent)
+  != "" ? true : false;
+
+  var pageData = {
+    "prev": pageData.prev,
+    "next": pageData.next,
+    "numberTaotal": pageData.numberTaotal,
+    "page": pageData.page,
+    "currentPage": pageData.currentPage
+  };
+
+  data.page.push(pageData); //筛选数据
+
+  var muilSelectOption = elem.querySelector("#muilSelectOption");
+
+  var optionAll = muilSelectOption.querySelectorAll(".option-r-c");
+
+  var spans = optionAll[0].querySelectorAll("span");
+
+  if (spans.length > 0) {
+    [].forEach.call(spans, function (span, index) {
+      if (0 != index) {
+        var spanData = [];
+        var text = span.textContent;
+        spanData.push(text);
+        var flag = span.getAttribute('class');
+
+        if ("act" == flag) {
+          spanData.push(true);
+        } else {
+          spanData.push(false);
+        }
+
+        data.contentDate.push(spanData);
+      }
+    });
+  }
+
+  var spansOne = optionAll[1].querySelectorAll("span");
+
+  if (spansOne.length > 0) {
+    [].forEach.call(spansOne, function (span, index) {
+      if (0 != index) {
+        var spanData = [];
+        var text = span.textContent;
+        spanData.push(text);
+        var flag = span.getAttribute('class');
+
+        if ("act" == flag) {
+          spanData.push(true);
+        } else {
+          spanData.push(false);
+        }
+
+        data.contentType.push(spanData);
+      }
+    });
+  }
+
+  var spansTwo = optionAll[2].querySelectorAll("span");
+
+  if (spansTwo.length > 0) {
+    [].forEach.call(spansTwo, function (span, index) {
+      if (0 != index) {
+        var spanData = [];
+        var text = span.textContent;
+        spanData.push(text);
+        var flag = span.getAttribute('class');
+
+        if ("act" == flag) {
+          spanData.push(true);
+        } else {
+          spanData.push(false);
+        }
+
+        data.contentState.push(spanData);
+      }
+    });
+  }
+
+  var spansThree = optionAll[3].querySelectorAll("span");
+
+  if (spansThree.length > 0) {
+    [].forEach.call(spansThree, function (span, index) {
+      if (0 != index) {
+        var spanData = [];
+        var text = span.textContent;
+        spanData.push(text);
+        var flag = span.getAttribute('class');
+
+        if ("act" == flag) {
+          spanData.push(true);
+        } else {
+          spanData.push(false);
+        }
+
+        data.contentGS.push(spanData);
+      }
+    });
+  }
+
+  var spansFour = optionAll[4].querySelectorAll("span");
+
+  if (spansFour.length > 0) {
+    [].forEach.call(spansFour, function (span, index) {
+      if (0 != index) {
+        var spanData = [];
+        var text = span.textContent;
+        spanData.push(text);
+        var flag = span.getAttribute('class');
+
+        if ("act" == flag) {
+          spanData.push(true);
+        } else {
+          spanData.push(false);
+        }
+
+        data.contentJS.push(spanData);
+      }
+    });
+  }
+
+  var spansFive = optionAll[5].querySelectorAll("span");
+
+  if (spansFive.length > 0) {
+    [].forEach.call(spansFive, function (span, index) {
+      if (0 != index) {
+        var spanData = [];
+        var text = span.textContent;
+        spanData.push(text);
+        var flag = span.getAttribute('class');
+
+        if ("act" == flag) {
+          spanData.push(true);
+        } else {
+          spanData.push(false);
+        }
+
+        data.contentPerson.push(spanData);
+      }
+    });
+  }
+
+  var load =
+  elem.ownerDocument.defaultView.localStorage.getItem('layerLoading');
+
+  if (load == null) {
+    setTimeout(function () {
+      ysp.appMain.hideLoading();
+    }, 5000);
+  } else {
+    ysp.appMain.showLoading();
+  }
+
+  data.loadingFlag.push(load);
+
+  var loading = ysp.customHelper.tipMsg.getLoading();
+
+  data.loadFlag.push(loading);
+
+  return data;
+doAction_uiControl306_RfQZGl: |
+  if (data.eventType == 'AndroidBack') {
+    ysp.customHelper.AndroidBackFlag = 'PageClose';
+  }
+  if (data.eventType === 'back') {
+    if (!top.EAPI.isAndroid()) {
+      elem.ownerDocument.defaultView.close();
+    } else {
+      ysp.customHelper.AndroidBackFn();
+    }
+  }
+  if ("query" == data.eventType) {
+    var queryValue = data.dataCustom.queryValue;
+    var searchInput = elem.querySelector("#searchInput");
+    var queryBtnSearch = elem.querySelector("#queryBtnSearch");
+    searchInput && (searchInput.value = queryValue);
+    queryBtnSearch && queryBtnSearch.click();
+  } //翻页方法
+  switch (data.eventType) {
+    case 'prev':
+      //上一页
+      prevtitle(data.dataCustom);
+      break;
+
+    case 'next':
+      //下一页
+      prevtitle(data.dataCustom);
+      break;
+
+    case 'GO':
+      //跳转指定页数
+      clickGO(data.dataCustom);
+      break;
+  }
+  function clickGO(data) {
+    var input = elem.ownerDocument.querySelector('.skip-num');
+    input.value = data;
+    input.blur();
+    elem.ownerDocument.querySelector('.commpnPage').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
+  }
+  function prevtitle(data) {
+    var lis = elem.querySelectorAll('li');
+
+    for (var i = 0; i < lis.length; i++) {
+      var as = lis[i].querySelectorAll('a');
+
+      for (var j = 0; j < as.length; j++) {
+        if (data == 'prev' && as[j].getAttribute('title') == 'Go to previous page') {
+          as[j].click();
+        } else if (data == 'next' && as[j].getAttribute('title') == 'Go to next page') {
+          as[j].click();
+        }
+      }
+    }
+  } //筛选方法
+  if ("click" == data.eventType) {
+    var index = parseInt(data.dataCustom.index);
+    var text = data.dataCustom.text;
+    var option = elem.querySelectorAll(".option-r-c");
+
+    if ('上报时间' == text) {
+      option && option[0].querySelectorAll("span")[index + 1].click();
+    }
+
+    if ('总结类型' == text) {
+      option && option[1].querySelectorAll("span")[index + 1].click();
+    }
+
+    if ('查阅状态' == text) {
+      option && option[2].querySelectorAll("span")[index + 1].click();
+    }
+
+    if ('归属组织' == text) {
+      option && option[3].querySelectorAll("span")[index + 1].click();
+    }
+
+    if ('人员角色' == text) {
+      option && option[4].querySelectorAll("span")[index + 1].click();
+    }
+
+    if ('上报人' == text) {
+      option && option[5].querySelectorAll("span")[index + 1].click();
+    }
+  } //重置和确认方法
+  if ("yes" == data.eventType) {
+    var text = data.dataCustom;
+
+    if ("重置" == text) {
+      elem.querySelector("#clearBtn2").click();
+    }
+
+    if ("确认" == text) {
+      elem.querySelector("#searchBtn2").click();
+    }
+  } //点击查看按钮方法
+  if ('look' == data.eventType) {
+    var index = data.dataCustom;
+    elem.querySelector("#tbody").querySelectorAll("tr")[index].querySelector("a").click();
+  }
+getTemplate_uiControl306_RfQZGl: "import {Component} from 'react'; \nimport {CustomHeader,\n       CustomerSerch,\n       Page} from 'ysp-custom-components';\nexport default class extends Component{\n   constructor(props) {\n     super(props);\n     this.state={\n       open: false,\n       show: false,\n       buttonState: false,\n       commitState: false,\n       commitStateBtn: false,\n       width: false,\n       flag: false\n     }\n   }\n  componentDidMount(){\n    var _this = this;\n  /** ysp.customHelper.AndroidBackFlag = 'PageClose';**/\n    ysp.customHelper.AndroidBackFlag = 'PageClose';\n \_ \_var customHandler = _this.props.customHandler;\n    customHandler({\n      eventType:'AndroidBack'\n    })\n  }\n  handlerClick=()=>{\n    this.setState({\n      open: false,\n      show: false\n    })\n  }\n  //搜索方法\n  searchClick(e) {\n    var handler = this.props.customHandler;\n    if (handler) {\n      handler({\n        data: {\n          queryValue: e.target.previousSibling.value\n        },\n        eventType: 'query'\n      })\n    }\n    this.setState({\n      buttonState: false,\n      commitState: false,\n      commitStateBtn: false,\n      width: false\n    })\n    e.target.previousSibling.value = ''\n  }\n\n//筛选方法\nchoseClick(e){\n  var target = e.target;\n  var index = target.dataset.index;\n  var text = target.dataset.text;\n  var handler = this.props.customHandler;\n  if(handler){\n    handler({\n      data:{\n        index: index,\n        text: text\n      },\n      eventType:'click'\n    })\n  }\n}\n//重置和确认按钮方法\nyesClick(e){\n  var target = e.target;\n  var text = target.dataset.text;\n  var handler = this.props.customHandler;\n  if(handler){\n    handler({\n      data: text,\n      eventType: 'yes'\n    })\n  }\n  if(\"确认\" == text){\n    this.setState({\n      open: false,\n      show: false\n    })\n  }\n}\n\n//上报开始时间\ndateStartClick(e){\n  var evt = new Event('ysp-workSummend-startDate')\n  window.dispatchEvent(evt)\n}\n//上报结束时间\ndateEndClick(e){\n  var evt = new Event('ysp-workSummend-endDate');\n  window.dispatchEvent(evt)\n}\n\n//点击查看按钮方法\nlookClick(e){\n  var target = e.target;\n  var index = target.dataset.index;\n  var handler = this.props.customHandler;\n  if(handler){\n    handler({\n      data: index,\n      eventType: 'look'\n    })\n  }\n}\n\n   render = () => {\n     var dateStart = this.props.customData && this.props.customData.dateStart;\n     var dateEnd = this.props.customData && this.props.customData.dateEnd;\n     var content = this.props.customData && this.props.customData.table && this.props.customData.table[0].content;\n     var prevState = this.props.customData && this.props.customData.page && this.props.customData.page[0].prev;\n    var pageState = this.props.customData && this.props.customData.page && this.props.customData.page[0].page;\n    var nextState = this.props.customData && this.props.customData.page && this.props.customData.page[0].next;\n    var currentPage = this.props.customData && this.props.customData.page && this.props.customData.page[0].currentPage;\n    var numberTaotal = this.props.customData && this.props.customData.page && this.props.customData.page[0].numberTaotal;\n     var contentDate = this.props.customData && this.props.customData.contentDate;\n     var contentType = this.props.customData && this.props.customData.contentType;\n     var contentState = this.props.customData && this.props.customData.contentState;\n     var contentGS= this.props.customData && this.props.customData.contentGS;\n     var contentJS = this.props.customData && this.props.customData.contentJS;\n     var contentPerson = this.props.customData && this.props.customData.contentPerson;\n     var loadingFlag = this.props.customData && this.props.customData.loadingFlag && this.props.customData.loadingFlag[0];\n     var loadFlag = this.props.customData && this.props.customData.loadFlag && this.props.customData.loadFlag[0];\n     if(loadingFlag == null){\n       // ysp.appRenderer.hideLoading();\n       ysp.appMain.hideLoading();\n     }\n     return (\n       <div>\n       \t<CustomHeader\n         data={{centerText:\"汇报给我的总结\",rightText:\"筛选\"}} \n         backIsShow={true} \n         back={()=>{ \n            var handler = this.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: 'back'\n              });\n            }\n         }} \n        filterIsShow={false} \n        filter={()=>{console.info(\"header filter ...\")}}\n        workScreenIsShow={true}\n        screen={()=>{\n           this.setState({\n             open: !this.state.open,\n             show: !this.state.show\n           })\n         }}\n        />\n       \t\n         <div>\n          {\n           this.state.open && \n             <div className=\"ysp-workSummed-chose\">\n               <div>\n                 <div>时间选择</div>\n                 <div>\n                   <span onClick={this.dateStartClick.bind(this)}ref='date'>\n                     <i></i>\n                     {dateStart}\n                   </span>\n                   <i>-</i>\n                   <span onClick={this.dateEndClick.bind(this)} ref='date'>\n                     <i></i>\n                     {dateEnd}\n                   </span>\n                 </div>\n               </div>\n               \n               <div>\n                 <div>上报时间</div>\n                 <div>\n                 \t{\n                     contentDate.map((items,index)=>\n                    \t\t<span className={items[1] == true ? \"ysp-workSummed-chose-color\" : \"ysp-workSummed-chose-text\"} onClick={this.choseClick.bind(this)} data-index={index} data-text=\"上报时间\">{items[0]}</span>                \n                     )\n                   }\n                 </div>\n               </div>\n               \n               <div>\n                 <div>总结类型</div>\n                 <div>\n                 \t{\n                     contentType.map((items,index)=>\n                    \t\t<span className={items[1] == true ? \"ysp-workSummed-chose-color\" : \"ysp-workSummed-chose-text\"} onClick={this.choseClick.bind(this)} data-index={index} data-text=\"总结类型\">{items[0]}</span>                \n                     )\n                   }\n                 </div>\n               </div>\n               \n               <div>\n                 <div>查阅状态</div>\n                 <div>\n                 \t{\n                     contentState.map((items,index)=>\n                    \t\t<span className={items[1] == true ? \"ysp-workSummed-chose-color\" : \"ysp-workSummed-chose-text\"} onClick={this.choseClick.bind(this)} data-index={index} data-text=\"查阅状态\">{items[0]}</span>                \n                     )\n                   }\n                 </div>\n               </div>\n               \n               <div>\n                 <div>归属组织</div>\n                 <div>\n                 \t{\n                     contentGS.map((items,index)=>\n                    \t\t<span className={items[1] == true ? \"ysp-workSummed-chose-color\" : \"ysp-workSummed-chose-text\"} onClick={this.choseClick.bind(this)} data-index={index} data-text=\"归属组织\">{items[0]}</span>                \n                     )\n                   }\n                 </div>\n               </div>\n               \n               <div>\n                 <div>人员角色</div>\n                 <div>\n                 \t{\n                     contentJS.map((items,index)=>\n                    \t\t<span className={items[1] == true ? \"ysp-workSummed-chose-color\" : \"ysp-workSummed-chose-text\"} onClick={this.choseClick.bind(this)} data-index={index} data-text=\"人员角色\">{items[0]}</span>                \n                     )\n                   }\n                 </div>\n               </div>\n               \n               <div>\n                 <div>上报人</div>\n                 <div>\n                 \t{\n                     contentPerson.map((items,index)=>\n                    \t\t<span className={items[1] == true ? \"ysp-workSummed-chose-color\" : \"ysp-workSummed-chose-text\"} onClick={this.choseClick.bind(this)} data-index={index} data-text=\"上报人\">{items[0]}</span>                \n                     )\n                   }\n                 </div>\n               </div>\n               \n               \n               <div className=\"ysp-workSummed-chose-button\">\n                 <span onClick={this.yesClick.bind(this)} data-text=\"重置\">重置</span>\n                 <span onClick={this.yesClick.bind(this)} data-text=\"确认\">确认</span>\n               </div>\n             </div>\n           }\n         </div>\n         <CustomerSerch \n            placeholder='搜索'\n            commitStateBtn = {this.state.commitStateBtn}\n            click={this.searchClick.bind(this)}\n            buttonState = {this.state.buttonState}\n            commitState = {this.state.commitState}\n            width = {this.state.width}\n            flag = {this.state.flag}\n          />\n         <div onClick={this.handlerClick.bind(this)}>\n           <div className={this.state.show ? \"ysp-workSummedContentShow\" : \"ysp-workSummedContent\"}>\n             { \n               content && content.length == 0 && loadFlag == null\n                 ?\n                 <div className=\"ysp-no-dataes\">\n                  <div></div>\n                  <div>暂时没有数据~</div>\n                 </div>\n                 :\n               content.map((items,index)=>{\n                return(\n                  <div className=\"ysp-workSummendContent-overflow\">\n                    <div className=\"ysp-workSummendContentLeft\">\n                      <div>\n                        <span>{items[3]}</span>\n                        <span>{items[4]}</span>\n                      </div>\n                      <div>\n                        <span>上报时间:</span>\n                        <span>{items[5]}</span>\n                      </div>\n                      <div>\n                        <span>总结类型:</span>\n                        <span>{items[0]}</span>\n                      </div>\n                      <div>\n                        <span>查询状态:</span>\n                        <span className={items[1] == \"未读\" ? \"ysp-workSummend-color\" : \"\"}>{items[1]}</span>\n                      </div>\n                    </div>\n                    <div className=\"ysp-workSummendContentRight\">\n                      <span onClick={this.lookClick.bind(this)} data-index={index}>查看</span>\n                    </div>\n                  </div>\n                );\n              }) \n             }\n             \n             {\n              content && content.length == 0 ? <div></div> : \n                <Page \n                  pageState = {pageState}\n                  prevState = {prevState}\n                  nextState = {nextState}\n                  show = {this.state.show}\n                  prev={(e)=>{\n                  var handler = this.props.customHandler;\n                  if(handler){\n                    handler({\n                      data:\"prev\",\n                      eventType:'prev'\n                    })\n                  }\n                    e.target.parentElement.querySelector('.input-serch').querySelector('input').value = '';\n                }}\n                  currentPage = {currentPage}\n                  pageNumber={numberTaotal}\n                  next={(e)=>{\n                  var handler = this.props.customHandler;\n                  if(handler){\n                    handler({\n                      data:\"next\",\n                      eventType:\"next\"\n                    })\n                  }\n                    e.target.previousSibling.querySelector('input').value = '';\n                }}\n                Click={(e)=>{\n                  var handler = this.props.customHandler;\n                  var target = e.target;\n                  // target.value = target.value.replace(/[^0-9]/g,'')\n                  var value = target.parentElement.querySelector('input').value;\n                  value = value.replace(/[^0-9]/g,'');\n                  if(handler){\n                    handler({\n                      data:value,\n                      eventType:'GO'\n                    })\n                  }\n                }}\n              Change={(e)=>{\n                var target = e.target;\n                target.value = target.value.replace(/[^0-9]/g,'');\n              }}\n              />\n            }\n           </div>\n         </div>\n       </div>\n       \n     );\n   }\n}\n"
+getData_control316_GEAzs5: |
+  return true;
+doAction_uiControl307_XScNUV: |
+  if (data.eventType == 'upValue') {
+    var input = elem.ownerDocument.querySelector('#startTime');
+    input.value = data.dataCustom;
+    input.focus(); // var cwin = elem.ownerDocument.defaultView;
+    // cwin.timeSaleInit();
+  }
+getTemplate_uiControl307_XScNUV: |-
+  import {Component} from 'react';
+  import {SaleReachCalendar} from 'ysp-custom-components';
+  export default class extends Component{
+    constructor(props){
+      super(props);
+      this.state={
+        year : true,
+        mouth : true,
+        day : true,
+        show : false,
+        data : props.customData
+      }
+      window.addEventListener('ysp-workSummend-startDate',this.toggle.bind(this),false)
+    }
+    componentDidUpdate(){
+      this.state.show ? this.styleId(): console.log('日历还没打开呢');
+      
+    }
+    styleId(){
+      var doc = this.refs.time;
+      if(this.state.data && !this.state.day  && !!this.state.mouth){
+        doc.querySelector('#year').style.width = '50%';
+        doc.querySelector('#mouth').style.width = '50%';
+      }
+      if(this.state.data && !this.state.mouth && !this.state.day){
+        doc.querySelector('#year').style.width = '100%';
+      }
+      if(!this.state.data){
+        doc.querySelector('#year').style.width = '100%';
+      }
+    }
+    toggle(){
+      this.setState({
+        show : !this.state.show
+      })
+    }
+    activeValue(even){
+      var doc = even.parentElement.nextElementSibling;
+      var year = doc.querySelector('#year').querySelector('.active').textContent;
+      var mouth = this.state.mouth && doc.querySelector('#mouth').querySelector('.active').textContent;
+      var day = this.state.day && doc.querySelector('#day').querySelector('.active').textContent;
+      mouth = mouth < 10 ? '0' + mouth : mouth; 
+      day = day && day < 10 ? '0' + day : day;
+      var time = day ? (year + '-' + mouth + '-' + day ) :( mouth ? year + '-' + mouth : year);
+      return time;
+      // if(this.props.customData){
+      //   var year = doc.querySelector('#year').querySelector('.active').textContent;
+      //   var mouth = this.state.mouth && doc.querySelector('#mouth').querySelector('.active').textContent;
+      //   var day = this.state.day && doc.querySelector('#day').querySelector('.active').textContent;
+      //   mouth = mouth < 10 ? '0' + mouth : mouth; 
+      //   day = day && day < 10 ? '0' + day : day;
+      //   var time = day ? (year + '-' + mouth + '-' + day ) :( mouth ? year + '-' + mouth : year);
+      //   return time;
+      // }else{
+      //   return doc.querySelector('#year').querySelector('.active').textContent;
+      // }
+      
+    }
+    upValue(e){
+      var handler = this.props.customHandler;
+      var value = this.activeValue(e.target);
+      if(handler){
+        handler({
+          data : value,
+          eventType : 'upValue'
+        })
+      }
+      this.setState({
+        show : false
+      })
+    }
+    render(){
+      var _this = this;
+      return(
+        <div>{this.state.show && 
+          <div className='moudle-time' ref='time'>
+            <div className = 'date-time'>
+              <SaleReachCalendar 
+                mouth = {_this.state.mouth}
+                day = {_this.state.day}
+                upValue = {_this.upValue.bind(_this)}
+                show = {(e)=>{
+                  _this.toggle();
+                }}
+                y = {_this.state.year}
+              />
+            </div>
+          </div>}
+        </div>
+      )
+    }
+  }
+getData_control317_q9kIBF: |
+  return true;
+doAction_uiControl308_Xs0S2e: |
+  if (data.eventType == 'upValue') {
+    var input = elem.ownerDocument.querySelector('#endTime');
+    input.value = data.dataCustom;
+    input.focus(); // var cwin = elem.ownerDocument.defaultView;
+    // cwin.timeSaleInit();
+  }
+getTemplate_uiControl308_Xs0S2e: |-
+  import {Component} from 'react';
+  import {SaleReachCalendar} from 'ysp-custom-components';
+  export default class extends Component{
+    constructor(props){
+      super(props);
+      this.state={
+        year : true,
+        mouth : true,
+        day : true,
+        show : false,
+        data : props.customData
+      }
+      window.addEventListener('ysp-workSummend-endDate',this.toggle.bind(this),false)
+    }
+    componentDidUpdate(){
+      this.state.show ? this.styleId(): console.log('日历还没打开呢');
+      
+    }
+    styleId(){
+      var doc = this.refs.time;
+      if(this.state.data && !this.state.day  && !!this.state.mouth){
+        doc.querySelector('#year').style.width = '50%';
+        doc.querySelector('#mouth').style.width = '50%';
+      }
+      if(this.state.data && !this.state.mouth && !this.state.day){
+        doc.querySelector('#year').style.width = '100%';
+      }
+      if(!this.state.data){
+        doc.querySelector('#year').style.width = '100%';
+      }
+    }
+    toggle(){
+      this.setState({
+        show : !this.state.show
+      })
+    }
+    activeValue(even){
+      var doc = even.parentElement.nextElementSibling;
+      var year = doc.querySelector('#year').querySelector('.active').textContent;
+      var mouth = this.state.mouth && doc.querySelector('#mouth').querySelector('.active').textContent;
+      var day = this.state.day && doc.querySelector('#day').querySelector('.active').textContent;
+      mouth = mouth < 10 ? '0' + mouth : mouth; 
+      day = day && day < 10 ? '0' + day : day;
+      var time = day ? (year + '-' + mouth + '-' + day ) :( mouth ? year + '-' + mouth : year);
+      return time;
+      // if(this.props.customData){
+      //   var year = doc.querySelector('#year').querySelector('.active').textContent;
+      //   var mouth = this.state.mouth && doc.querySelector('#mouth').querySelector('.active').textContent;
+      //   var day = this.state.day && doc.querySelector('#day').querySelector('.active').textContent;
+      //   mouth = mouth < 10 ? '0' + mouth : mouth; 
+      //   day = day && day < 10 ? '0' + day : day;
+      //   var time = day ? (year + '-' + mouth + '-' + day ) :( mouth ? year + '-' + mouth : year);
+      //   return time;
+      // }else{
+      //   return doc.querySelector('#year').querySelector('.active').textContent;
+      // }
+      
+    }
+    upValue(e){
+      var handler = this.props.customHandler;
+      var value = this.activeValue(e.target);
+      if(handler){
+        handler({
+          data : value,
+          eventType : 'upValue'
+        })
+      }
+      this.setState({
+        show : false
+      })
+    }
+    render(){
+      var _this = this;
+      return(
+        <div>{this.state.show && 
+          <div className='moudle-time' ref='time'>
+            <div className = 'date-time'>
+              <SaleReachCalendar 
+                mouth = {_this.state.mouth}
+                day = {_this.state.day}
+                upValue = {_this.upValue.bind(_this)}
+                show = {(e)=>{
+                  _this.toggle();
+                }}
+                y = {_this.state.year}
+              />
+            </div>
+          </div>}
+        </div>
+      )
+    }
+  }

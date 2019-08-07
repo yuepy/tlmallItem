@@ -1,10 +1,10 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control315_PFxRaT: function (elem) {
+      "use strict";
       if (!elem) {
         return;
-      }var data = { table: [], dateStart: [],
-        dateEnd: [], page: [], contentDate: [], contentType: [], contentState: [], contentGS: [], contentJS: [], contentPerson: [], loadingFlag: [], loadFlag: [] }; //上报时间
+      }var data = { table: [], dateStart: [], dateEnd: [], page: [], contentDate: [], contentType: [], contentState: [], contentGS: [], contentJS: [], contentPerson: [], loadingFlag: [], loadFlag: [] }; //上报时间
       var startTime = elem.querySelector("#startTime").value;var endTime = elem.querySelector("#endTime").value;data.dateStart.push(startTime);data.dateEnd.push(endTime); //表格数据
       var content = ysp.customHelper.getTableData(elem, ["总结类型", "查询状态", "归属组织", "上报人", "人员角色", "上报时间"]);data.table.push(content); //翻页
       var pageData = {};pageData.prev = false;pageData.next = false;if (elem.querySelector('.skip')) {
@@ -30,8 +30,7 @@
             }data.contentDate.push(spanData);
           }
         });
-      }
-      var spansOne = optionAll[1].querySelectorAll("span");if (spansOne.length > 0) {
+      }var spansOne = optionAll[1].querySelectorAll("span");if (spansOne.length > 0) {
         [].forEach.call(spansOne, function (span, index) {
           if (0 != index) {
             var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
@@ -41,12 +40,10 @@
             }data.contentType.push(spanData);
           }
         });
-      }
-      var spansTwo = optionAll[2].querySelectorAll("span");if (spansTwo.length > 0) {
+      }var spansTwo = optionAll[2].querySelectorAll("span");if (spansTwo.length > 0) {
         [].forEach.call(spansTwo, function (span, index) {
           if (0 != index) {
-            var spanData = [];var text = span.textContent;
-            spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
+            var spanData = [];var text = span.textContent;spanData.push(text);var flag = span.getAttribute('class');if ("act" == flag) {
               spanData.push(true);
             } else {
               spanData.push(false);
@@ -92,6 +89,7 @@
       }data.loadingFlag.push(load);var loading = ysp.customHelper.tipMsg.getLoading();data.loadFlag.push(loading);return data;
     },
     doAction_uiControl306_RfQZGl: function (data, elem) {
+      'use strict';
       if (data.eventType == 'AndroidBack') {
         ysp.customHelper.AndroidBackFlag = 'PageClose';
       }if (data.eventType === 'back') {
@@ -112,8 +110,7 @@
           clickGO(data.dataCustom);break;}function clickGO(data) {
         var input = elem.ownerDocument.querySelector('.skip-num');input.value = data;input.blur();elem.ownerDocument.querySelector('.commpnPage').querySelector('.skip_right_goto').querySelector('.skip-right-icon').click();
       }function prevtitle(data) {
-        var lis = elem.querySelectorAll('li');
-        for (var i = 0; i < lis.length; i++) {
+        var lis = elem.querySelectorAll('li');for (var i = 0; i < lis.length; i++) {
           var as = lis[i].querySelectorAll('a');for (var j = 0; j < as.length; j++) {
             if (data == 'prev' && as[j].getAttribute('title') == 'Go to previous page') {
               as[j].click();

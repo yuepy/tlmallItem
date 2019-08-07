@@ -1348,9 +1348,9 @@
     if(!elem){
       var div = document.createElement('div');
       var text = document.createTextNode(time);
-      div.className = 'timeScope';
+    div.className = 'timeScope';
       if(body){body.appendChild(div);}
-    }else{
+    }else{
       elem.textContent = time;
     }
   }
