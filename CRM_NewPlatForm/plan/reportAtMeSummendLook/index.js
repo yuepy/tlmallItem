@@ -78,7 +78,7 @@
         }
       } /*_____________________
                        	以下为@人员中展示数据
-                       _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');for (var i = 0; i < users.length; i++) {
+                       _______________________*/data.user = { users: [], val: [], val1: [] };var users = elem.querySelector('#ContactUsers').querySelectorAll('.user');debugger;for (var i = 0; i < users.length; i++) {
         data.user.users.push(users[i].querySelector('span').textContent);data.user.val.push(users[i].querySelector('span').getAttribute('val'));data.user.val1.push(users[i].querySelector('span').getAttribute('val1'));
       } /**Author:ZhangRui**/var reportSuperVisorObjArrs = elem.querySelectorAll('#ContactUsers1 .user'),
           leng = reportSuperVisorObjArrs && reportSuperVisorObjArrs.length; /**循环拿出所有的span标签**/for (var i = 0; i < leng; i++) {
@@ -107,8 +107,7 @@
         } else {}
       }); /*
                	Dialog 数据   所选分公司树结构数据
-               */var DialogElem = elem.ownerDocument;
-      var branchs = DialogElem.querySelector('#ContactAlert').querySelectorAll('.box');data.Dialog = [];for (var i = 0, personnel = ''; i < branchs.length; i++) {
+               */var DialogElem = elem.ownerDocument;var branchs = DialogElem.querySelector('#ContactAlert').querySelectorAll('.box');data.Dialog = [];for (var i = 0, personnel = ''; i < branchs.length; i++) {
         var bran = [],
             perso = [],
             checked = [];bran.push([branchs[i].querySelector('.area-name').textContent.replace(/^(\s*)|(\s*)$/g, '')]);personnel = branchs[i].querySelectorAll('.lists-one');for (var j = 0; j < personnel.length; j++) {
