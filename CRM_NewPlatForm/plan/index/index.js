@@ -3,7 +3,6 @@
 (function (win, ysp) {
   ysp.runtime.Model.extendLoadingModel({
     getData_control321_P7fT3E: function (elem) {
-      "use strict";
       if (!elem && ysp.customHelper.getTargetMenus) {
         return;
       }var WorkSpace = ysp.customHelper.getTargetMenus(["工作台", "信息录入", "拜访总览", "拜访查看", "@我的报告", "汇报总结", '问卷填写'], ['门店信息录入']);var Achievement = ysp.customHelper.getTargetMenus(["销售业绩总览", "计划达成总览", "事业部达成", "项目达成", "产品达成", "分公司达成", "办事处达成", "销售人员达成", "客户门店达成", "年度销售达成(新)", "智能生活馆"]);var InFormation = ysp.customHelper.getTargetMenus(["库存查询", "产品上下架", "分货产品查询", "我的工作", "分货客户查询"]);var ClientOrStore = ysp.customHelper.getTargetMenus(['客户360', '门店360']);var atMe = ysp.customHelper.IconNum.atMe || 0;var summary = ysp.customHelper.IconNum.summary || 0;if (!atMe || !summary) {
@@ -12,11 +11,9 @@
         }if (atMe == null) {
           atMe = 0;
         }
-      }return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation, ClientOrStore: ClientOrStore,
-        IconNum: { atMe: atMe, summary: summary } };
+      }return { WorkSpace: WorkSpace, Achievement: Achievement, InFormation: InFormation, ClientOrStore: ClientOrStore, IconNum: { atMe: atMe, summary: summary } };
     },
     doAction_uiControl63_ax7qQG: function (data, elem) {
-      'use strict';
       if (data.eventType == 'testClick') {
         elem.ownerDocument.defaultView.open(data.dataCustom);
       } //下拉刷新 , 因模版原因,现刷新原网页实现
@@ -46,7 +43,7 @@
       function openUrl(src, title) {
         ysp.appMain.showLoading();var xhr = new XMLHttpRequest();xhr.onreadystatechange = function () {
           if (xhr.readyState == 4) {
-            var obj = JSON.parse(xhr.response);var branch = obj.branch.match(/\d+/) ? obj.branch.match(/\d+/)[0] : obj.branch;if (obj.position == '总部领导' || obj.position == '事业部总经理' || obj.position == '产品经理' || obj.position == '大客户业务部总经理' || obj.position == '总部客户经理' || obj.position == '电商平台运营中心客户管理部' || obj.position == '电商平台运营中心产品运营部' || obj.position == '电商平台运营中心商务管理部' || obj.position == '事业部商务人员' || obj.position == '智能生活馆') {
+            var obj = JSON.parse(xhr.response);var branch = obj.branch.match(/\d+/) ? obj.branch.match(/\d+/)[0] : obj.branch;debugger;if (obj.position == '总部领导' || obj.position == '事业部总经理' || obj.position == '产品经理' || obj.position == '大客户业务部总经理' || obj.position == '总部客户经理' || obj.position == '电商平台运营中心客户管理部' || obj.position == '电商平台运营中心产品运营部' || obj.position == '电商平台运营中心商务管理部' || obj.position == '事业部商务人员' || obj.position == '智能生活馆') {
               src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku4Manager?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&a=1';
             } else if (obj.position == '分公司分总' || obj.position == '品牌经理' || obj.position == '分公司电商中心经理') {
               src = title == '产品上下架' && src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '/querySku4Manager?a=1&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1' : src.indexOf('?') != -1 && src.indexOf('&') != -1 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1' : src.indexOf('?') == -1 && src.indexOf('&') == -1 ? src + '?filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&firstFlag' : src.indexOf('?') != -1 && src.indexOf('&') == -1 && src.split('?')[1].length > 0 ? src + '&filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1' : src + 'filter_userId=' + obj.userId + '&encoder=' + obj.encoder + '&username=' + obj.userId + '&branch=' + branch + '&a=1';
