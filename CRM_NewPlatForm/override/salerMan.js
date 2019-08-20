@@ -754,7 +754,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         		if(secondLevel[j].projectName==firstLevel[i].projectName){
                         			var url = getLink("modelName",secondLevel[j].modelName,"07");//style="text-decoration:none;"
                                  	html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
-                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),fa4)+'</td></tr>';
+                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
                         			//html += '        <tr><td title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
                         		}
                         	}
@@ -1173,7 +1173,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         		if(secondLevel[j].projectName==firstLevel[i].projectName){
                         			var url = getLink("modelName",secondLevel[j].modelName,"07");//style="text-decoration:none;"
                                  	html += '<tr><td><a href="'+url+'" title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td>';
-                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),fa4)+'</td></tr>';
+                                    html += '<td>'+toQfw_new(secondLevel[j].qty,false)+'</td><td>'+toQfw_new(secondLevel[j].amt.toFixed(2),false)+'</td></tr>';
                         			//html += '        <tr><td title="'+secondLevel[j].modelName+'">'+secondLevel[j].modelName+'</td><td>'+secondLevel[j].qty+'</td><td>'+secondLevel[j].amt.toFixed(2)+'</td></tr>';
                         		}
                         	}

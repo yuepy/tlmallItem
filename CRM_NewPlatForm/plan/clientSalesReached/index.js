@@ -67,9 +67,9 @@
     },
     doAction_uiControl270_dcMuGX: function (data, elem) {
       if (data.eventType == 'prevpage') {
-        elem.ownerDocument.querySelector('#prev_pager_list_1 span').click();
+        elem.ownerDocument.querySelector('iframe').contentDocument.querySelector('#prev_pager_list_1 span').click();
       }if (data.eventType == 'nextpage') {
-        elem.ownerDocument.querySelector('#next_pager_list_1 span').click();
+        elem.ownerDocument.querySelector('iframe').contentDocument.querySelector('#next_pager_list_1 span').click();
       }
     },
     getTemplate_uiControl270_dcMuGX: function () {

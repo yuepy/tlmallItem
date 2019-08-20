@@ -2440,8 +2440,8 @@
 	    $(".customersign-active").attr("style", "display:none;");
 	    $(".customersign-remarktextarea2 .remarktextimg").remove();
 	    $("#remarktextname").attr("disabled", "disabled");
-
-	    historyManager.pushState(Constant.LOCAL_SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addCustomerSignIn');
+      // historyManager.pushState(Constant.LOCAL_SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addCustomerSignIn');
+	    historyManager.pushState(Constant.LOCAL_SERVER_ROOT + '/pttlCrm/new/visit/addCustomerSignIn');
 	};
 	/**
 	 * 
@@ -2521,13 +2521,16 @@
 
 	var signSubmit = '0';
 	function signIn(param, referenceParentHtmlFn, data) {
+    debugger
 	    if (signSubmit == '1') {
 	        return;
 	    }
 	    signSubmit = '1';
 	    param.signInOutScope = signInOutScope;
-	    ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignIn", param, null, function (reslult) {
+	    // ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignIn", param, null, function (reslult) {
+    	ajaxUtils.sendAjax("new/visit/addCustomerSignIn", param, null, function (reslult) {
 	        if (reslult.status == "true") {
+            debugger
             	window.signStatus = 'completed';//后添加
 	            layerUtils.success("签到成功！", { time: 1000 });
 	            referenceParentHtmlFn("签到", data.row_Id); //刷新父页面
@@ -2735,7 +2738,7 @@
 	    $(".customersign-remarktextarea .remarktextimg").remove();
 	    $("#remarktextname").attr("disabled", "disabled");
 
-	    historyManager.pushState(Constant.LOCAL_SERVER_ROOT + '/pttlCrm/visit/customerVisitPlan/addCustomerSignOut');
+	    historyManager.pushState(Constant.LOCAL_SERVER_ROOT + '/pttlCrm/new/visit/addCustomerSignOut');
 	};
 	/**
 	 * 
@@ -2820,7 +2823,7 @@
 	    }
 	    signOutSubmit = '1';
 	    param.signOutOutScope = signOutOutScope;
-	    ajaxUtils.sendAjax("visit/customerVisitPlan/addCustomerSignOut", param, null, function (reslult) {
+	    ajaxUtils.sendAjax("new/visit/addCustomerSignOut", param, null, function (reslult) {
 	        if (reslult.status == "true") {
             	window.signOutStatus = 'completed';//后添加
 	            layerUtils.success("签出成功！", { time: 1000 });
