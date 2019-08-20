@@ -31,7 +31,7 @@
     },
     doAction_uiControl58_rDvvOT: function (data, elem) {
       if (data.eventType === 'change') {
-        var value = data.dataCustom;elem.focus();elem.value = value;
+        alert('弹出来!');var value = data.dataCustom;elem.focus();elem.value = value;
       }
     },
     getTemplate_uiControl58_rDvvOT: function getTemplate_uiControl58_rDvvOT() {
