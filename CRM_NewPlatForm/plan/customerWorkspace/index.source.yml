@@ -1,0 +1,532 @@
+getData_control3_t1ElOC: |
+  if (elem) {
+    var load = elem.ownerDocument.defaultView.localStorage.getItem('layerLoading'); // if (load == null) {
+    //   setTimeout(function () {
+    //     ysp.appMain.hideLoading();
+    //   }, 5000);
+    // } else {
+    //   ysp.appMain.showLoading();
+    // }
+
+    return load;
+  }
+doAction_uiControl5_hecK9N: |
+  if (data.eventType === 'back') {
+    if (!top.EAPI.isAndroid()) {
+      elem.ownerDocument.defaultView.close();
+    } else {
+      ysp.customHelper.AndroidBackFn();
+    }
+  }
+  if (data.eventType === 'AndroidBack') {
+    ysp.customHelper.AndroidBackFlag = 'PageClose';
+    ysp.customHelper.AndroidBackModel = 'index';
+  }
+getTemplate_uiControl5_hecK9N: "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n \_componentDidMount(){\n    var _this = this;\n    ysp.customHelper.AndroidBackFlag = 'PageClose';\n    ysp.customHelper.AndroidBackModel='index';\n    var {customHandler} = _this.props;\n    customHandler({eventType:'AndroidBack'});\n  } \n \_componentDidUpdate(){\n    var _this = this;\n    var {customHandler} = _this.props;\n    customHandler({eventType:'AndroidBack'})\n    \n  } \n \_render = () => {\n       var _this = this;\n       var  data = _this.props.customData;\n          if(data == null){\n            ysp.appMain.hideLoading();\n          }\n       return (\n         <CustomHeader \n           data={{centerText:\"拜访工作台\",rightText:\"筛选\"}} \n           backIsShow={true} \n           back={()=>{ \n              var handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  eventType: 'back'\n                });\n                pt_oberseve.subscribe('temp:visit:clientstore:choose', _this.switch,this);\n              }\n           }} \n           filterIsShow={false} \n           filter={()=>{console.info(\"header filter ...\")}}/>\n       );\n   }\n}"
+getData_control35_7n8VvC: |
+  if (!elem) {
+    return;
+  }
+  var doc = elem.ownerDocument;
+  var newTempVisitButton = doc.getElementById('newTempVisitButton');
+  if (newTempVisitButton && newTempVisitButton.style.pointerEvents != 'none') {
+    return true;
+  }
+  return false;
+doAction_uiControl38_EJkfz8: |
+  if (data.eventType === 'click') {
+    var doc = elem.ownerDocument;
+    var newTempVisitBtn = doc.getElementById('newTempVisitButton');
+
+    if (newTempVisitBtn) {
+      newTempVisitBtn.click();
+    }
+  }
+getTemplate_uiControl38_EJkfz8: |-
+  import {
+    Component
+  } from 'react';
+  import {
+    ContentHeader
+  } from 'ysp-custom-components';
+  export default class extends Component {
+    render() {
+      var _this = this;
+      var isClicked = this.props.customData || false;
+      return (
+        <div>
+          <ContentHeader
+            title = "今日拜访"
+            operation = "临时签到"
+            iconClassName = "ysp-visit-client-profile-icon"
+            disabled = {!isClicked}
+            oprCallback = {(data)=>{
+              var handler = _this.props.customHandler;
+              if (handler) {
+                handler({
+                  eventType: 'click'
+                });
+                pt_oberseve.publish('temp:visit:clientstore',{headerTitle:"临时签到"});
+              }
+            }}
+            />
+        </div>
+      );
+    }
+  }
+getData_control310_rtFkBQ: |
+  if (!elem) {
+    return;
+  }
+  var cells = elem.querySelectorAll('div.fc-row span.calendar-cell');
+  var content = [];
+  [].forEach.call(cells, function (item, index) {
+    var statusValue = ysp.customHelper.trim(item.lastElementChild.textContent);
+    var cell = {
+      x_PLAN_DATE: item.getAttribute('cell-date'),
+      x_STATUS_CD: statusValue != "未制定" ? statusValue : ""
+    };
+    content.push(cell);
+  });
+  var dateEl = elem.querySelector('div.date-tit > span.time');
+  var dateStr = dateEl.textContent;
+  return {
+    title: dateStr,
+    content: content
+  };
+doAction_uiControl301_Dt839P: |
+  var doc = elem.ownerDocument;
+  if (data.eventType === 'click') {
+    var operation = data.dataCustom.operation;
+
+    if (operation == 'pre') {
+      var preEl = doc.querySelector('#custom-prev');
+      preEl.click();
+    } else if (operation == 'next') {
+      var nextEl = doc.querySelector('#custom-next');
+      nextEl.click();
+    }
+  } else if (data.eventType === 'onDayClick') {
+    var dayValue = data.dataCustom.dayValue;
+    var xpath = '//div[@id="calendar"]//span[@class="calendar-cell"]//descendant::b[text()="' + dayValue + '"]';
+    var dayEl = ysp.utils.xfind(xpath, doc)[0];
+
+    if (dayEl) {
+      dayEl.click();
+    }
+  }
+getTemplate_uiControl301_Dt839P: |
+  import {
+    VisitCalendar
+  } from 'ysp-custom-components';
+  import {
+    Component
+  } from 'react';
+  export default class extends Component {
+    
+    render() {
+      var _this = this;
+      var {content=[],title='加载中...'} = this.props.data.customData;
+      return (
+        <div className="ysp-visitcalendar-wrapper">    
+          <div>
+              
+              <div id="calendar" ref= 'visitCalendarRoot' className="fc-calendar-container">
+                <VisitCalendar
+                  title={title}
+                  data={content}
+                  preMonth={()=>{
+                    var handler = _this.props.customHandler;
+                    if (handler) {
+                      handler({
+                        eventType: 'click',
+                        data:{
+                          operation:'pre'
+                        }
+                      });
+                    }
+                  }}
+                  nextMonth={()=>{
+                    var handler = _this.props.customHandler;
+                    if (handler) {
+                      handler({
+                        eventType: 'click',
+                        data:{
+                          operation:'next'
+                        }
+                      });
+                    }
+                  }}
+                  onDayBack={(data)=>{
+                    var handler = _this.props.customHandler;
+                    if (handler) {
+                      handler({
+                        eventType: 'onDayClick',
+                        data:{
+                          dayValue:data.realDay
+                        }
+                      });
+                    }
+                  }}
+                />
+              </div>
+          </div>
+        </div>
+      )
+    }
+  }
+getData_control311_Nv8Czt: >
+  if (!elem) {
+    return;
+  }
+
+  var titleEls = elem.querySelector("ul#visitPlanList") &&
+  elem.querySelector("ul#visitPlanList").querySelectorAll('li');
+
+  var titles = [];
+
+  [].forEach.call(titleEls, function (item) {
+    var title = item.querySelector('div.p-name') && item.querySelector('div.p-name').firstChild.textContent;
+    var deleteAEl = item.querySelector('a.close-btn');
+    var times = item.querySelector('div.p-name > span') && item.querySelector('div.p-name > span').textContent;
+    var time = ysp.customHelper.trim(times.split("创建时间")[1]);
+    var content = item.querySelectorAll("a");
+    var a = [];
+    [].forEach.call(content, function (d) {
+      if (d.getAttribute("style") == "color:#666;" || d.getAttribute("style") == "color:#666;;") {
+        var tips = "grey";
+        var buttonText = d.textContent;
+      } else if (d.getAttribute("style") == "color:blue;" || d.getAttribute("style") == "color:blue;;") {
+        var tips = "blue";
+        var buttonText = d.textContent;
+      } else {
+        var tips = "orange";
+        var buttonText = d.textContent;
+      }
+
+      a.push({
+        tips: tips,
+        buttonText: buttonText
+      });
+    });
+    titles.push({
+      title: title,
+      time: time,
+      isDeleteExist: !!deleteAEl,
+      content: a
+    });
+  });
+
+  return titles;
+doAction_uiControl302_BlcByv: |
+  var doc = elem.ownerDocument;
+  if (data.eventType === 'click') {
+    var operation = data.dataCustom.operation;
+    var index = data.dataCustom.index + 1;
+    var xpath = "";
+    ysp.customHelper.pageId();
+
+    if (operation == "delete") {
+      operation = "";
+      xpath = '//ul[@id="visitPlanList"]/li[' + parseInt(index) + ']//a[contains(@class,"close-btn")]';
+    } else {
+      xpath = '//ul[@id="visitPlanList"]/li[' + parseInt(index) + ']//div[contains(@class,"workBanchOperate_visitCustomerCode")]/a[text()="' + operation + '"]';
+    }
+
+    var targetEl = ysp.utils.xfind(xpath, doc)[0];
+
+    if (targetEl) {
+      targetEl.click();
+    }
+  }
+getTemplate_uiControl302_BlcByv: |-
+  import {
+    Component
+  } from 'react';
+  import {
+    WorkspaceList
+  } from 'ysp-custom-components';
+  export default class extends Component {
+    render() {
+      var _this = this;
+      var titles = this.props.data.customData;
+      return (
+        <div>
+           <WorkspaceList 
+             title="计划拜访"
+             data={titles}
+             callback={(e,index)=>{
+                var target = e.target;
+                var handler = this.props.customHandler;
+                if (handler) {
+                  var operation = target.targetValue || target.textContent;
+                  handler({
+                    eventType: 'click',
+                    data:{
+                      operation:operation,
+                      index:index
+                    }
+                  });
+                }
+            }}
+             />
+         </div>
+      );
+    }
+  }
+getData_control312_mwBi0M: >
+  if (!elem) {
+    return;
+  }
+
+  var titleEls = elem.querySelector("ul#tempPlanList") &&
+  elem.querySelector("ul#tempPlanList").querySelectorAll('li');
+
+  var titles = [];
+
+  [].forEach.call(titleEls, function (item) {
+    var title = item.querySelector('div.p-name') && item.querySelector('div.p-name').firstChild.textContent;
+    var deleteAEl = item.querySelector('a.close-btn');
+    var times = item.querySelector('div.p-name > span') && item.querySelector('div.p-name > span').textContent;
+    var time = ysp.customHelper.trim(times.split("创建时间")[1]);
+    var content = item.querySelectorAll("a");
+    var a = [];
+    [].forEach.call(content, function (d) {
+      if (d.getAttribute("style") == "color:#666;" || d.getAttribute("style") == "color:#666;;") {
+        var tips = "grey";
+        var buttonText = d.textContent;
+      } else if (d.getAttribute("style") == "color:blue;" || d.getAttribute("style") == "color:blue;;") {
+        var tips = "blue";
+        var buttonText = d.textContent;
+      } else {
+        var tips = "orange";
+        var buttonText = d.textContent;
+      }
+
+      a.push({
+        tips: tips,
+        buttonText: buttonText
+      });
+    });
+    titles.push({
+      title: title,
+      time: time,
+      isDeleteExist: !!deleteAEl,
+      content: a
+    });
+  });
+
+  return titles;
+doAction_uiControl303_qrmwcK: |
+  var doc = elem.ownerDocument;
+  if (data.eventType === 'click') {
+    var operation = data.dataCustom.operation;
+    var index = data.dataCustom.index + 1;
+    var xpath = "";
+    ysp.customHelper.pageId();
+
+    if (operation == "delete") {
+      operation = "";
+      xpath = '//ul[@id="tempPlanList"]/li[' + parseInt(index) + ']//a[contains(@class,"close-btn")]';
+    } else {
+      xpath = '//ul[@id="tempPlanList"]/li[' + parseInt(index) + ']//div[contains(@class,"workBanchOperate_tempCustomerCode")]/a[text()="' + operation + '"]';
+    }
+
+    var targetEl = ysp.utils.xfind(xpath, doc)[0];
+
+    if (targetEl) {
+      targetEl.click();
+    }
+  }
+getTemplate_uiControl303_qrmwcK: |-
+  import {
+    Component
+  } from 'react';
+  import {
+    WorkspaceList
+  } from 'ysp-custom-components';
+  export default class extends Component {
+    render() {
+      var _this = this;
+      var titles = this.props.data.customData;
+      return (
+        <div>
+           <WorkspaceList 
+             title="临时拜访"
+             data={titles}
+             callback={(e,index)=>{
+                var target = e.target;
+                var handler = this.props.customHandler;
+                if (handler) {
+                  var operation = target.targetValue || target.textContent;
+                  handler({
+                    eventType: 'click',
+                    data:{
+                      operation:operation,
+                      index:index
+                    }
+                  });
+                }
+            }}
+             />
+         </div>
+      );
+    }
+  }
+getData_control26_kba3Qe: >
+  if (!elem) {
+    return;
+  }
+
+  var doc = elem.ownerDocument;
+
+  var status = '';
+
+  var workPlanNoConstituteEl = doc.getElementById('workPlanNoConstitute');
+
+  var workPlanHaveConstituteEl = doc.getElementById('workPlanHaveConstitute');
+
+  if (workPlanNoConstituteEl && workPlanNoConstituteEl.style.display != 'none')
+  {
+    status = workPlanNoConstituteEl.textContent;
+  } else if (workPlanHaveConstituteEl && workPlanHaveConstituteEl.style.display
+  != 'none') {
+    status = workPlanHaveConstituteEl.textContent;
+  }
+
+  var operation = '';
+
+  var newPlanAddButton = doc.getElementById('newPlanAddButton');
+
+  if (newPlanAddButton && newPlanAddButton.style.display != 'none') {
+    operation += (!!operation ? ':' : '') + newPlanAddButton.textContent;
+  }
+
+  var newPlanDeleteButton = doc.getElementById('newPlanDeleteButton');
+
+  if (newPlanDeleteButton && newPlanDeleteButton.style.display != 'none') {
+    operation += (!!operation ? ':' : '') + newPlanDeleteButton.textContent;
+  }
+
+  return {
+    status: status,
+    operation: operation
+  };
+doAction_uiControl6_JDIiap: |
+  var doc = elem.ownerDocument;
+  if (data.eventType === 'click') {
+    var operation = data.dataCustom.operation;
+
+    if (operation == "编辑" || operation == "+新建" || operation == "查看") {
+      var editAndNewBtn = doc.getElementById('newPlanAddButton');
+      editAndNewBtn.click();
+    } else if (operation == "删除") {
+      var deleteBtn = doc.getElementById('newPlanDeleteButton');
+      deleteBtn.click();
+    }
+  }
+getTemplate_uiControl6_JDIiap: |-
+  import {
+    Component
+  } from 'react';
+  import {
+    ContentHeader
+  } from 'ysp-custom-components';
+  export default class extends Component {
+    oprHandler(e) {
+      var target = e.target;
+      var operation = target.textContent;
+      if (operation) {
+        var handler = this.props.customHandler;
+        if (handler) {
+          handler({
+            eventType: 'click',
+            data: {
+              operation: operation
+            }
+          });
+          // if (operation == "编辑" || operation == "+新建") {
+          //   // let event = new Event('temp:visit:clientstore');
+          //   // event.headerTitle = "工作计划";
+          //   // window.dispatchEvent(event);
+          //   pt_oberseve.publish('temp:visit:clientstore',{headerTitle:"工作计划"});
+          // }
+        }
+      }
+    }
+    render() {
+      var status = (this.props.customData && this.props.customData.status) || '';
+      var operation = (this.props.customData && this.props.customData.operation) || '';
+      return (
+        <div>
+          <ContentHeader
+            title = "工作计划"
+            operation = {operation}
+            iconClassName = "ysp-visit-workplan-icon"
+            status={status}
+            statusStyle={{backgroundColor:status == '未制定'?'#fe5722':'grey'}}
+            oprCallback={this.oprHandler.bind(this)}
+            />
+        </div>
+      );
+    }
+  }
+getData_control43_nXZbyJ: |
+  var data = {};
+  if (ysp.customHelper.tipMsg.getMsg()) {
+    data.postMessage = ysp.customHelper.tipMsg.getMsg();
+  } else {
+    data.postMessage = "";
+  }
+  if (ysp.customHelper.tipMsg.cancelText()) {
+    data.cancel = ysp.customHelper.tipMsg.cancelText();
+  } else {
+    data.cancel = "";
+  }
+  return data;
+doAction_uiControl47_iW5ald: |
+  if (data.eventType == "confirmClick") {
+    ysp.customHelper.tipMsg.confirm();
+  }
+  if (data.eventType == "cancelClick") {
+    ysp.customHelper.tipMsg.cancel();
+  }
+getTemplate_uiControl47_iW5ald: "import {\n  Component\n} from 'react';\nimport {\n\tAlert\n} from 'ysp-custom-components';\nexport default class extends Component {\n  render(){\n    var _this=this;\n    var dataMessage = (this.props.customData && this.props.customData.postMessage) || \"\";\n    var dataCancel = (this.props.customData && this.props.customData.cancel) || \"\";\n     return(\n    \t<div>\n        {dataMessage ==\"\" ? \"\" : \n          <Alert\n            content={dataMessage}\n            cancelText={dataCancel}\n            dismiss={\n              (e)=>{\n                var handler=this.props.customHandler;\n                if(handler){\n                  handler({\n                    eventType:\"confirmClick\"\n                  })\n                }\n              }\n            }\n            cancel={\n             (e)=>{\n                var handler=this.props.customHandler;\n                if(handler){\n                  handler({\n                    eventType:\"cancelClick\"\n                  })\n                }\n              }\n           }\n          />\n        }\n      </div>\n    )\n  }\n}\n"
+getData_control45_Fr7laA: ''
+doAction_uiControl46_aqS265: |
+  if ('click' == data.eventType) {
+    var button = elem.querySelector('#workSummaryAddBtn');
+
+    if (button) {
+      button.click();
+    }
+  }
+getTemplate_uiControl46_aqS265: |-
+  import {
+    Component
+  } from 'react';
+  import {
+    ContentHeader
+  } from 'ysp-custom-components';
+  export default class extends Component {
+    buttonHandler(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          eventType: 'click'
+        })
+      }
+    }
+    render() {
+      return (
+        <div style = {{'marginBottom':'10px'}}>
+          <ContentHeader
+            title = "工作总结"
+            operation = "+新建"
+            iconClassName = "ysp-visit-workplan-icon"
+            oprCallback={this.buttonHandler.bind(this)}
+            />
+        </div>
+      );
+    }
+  }
