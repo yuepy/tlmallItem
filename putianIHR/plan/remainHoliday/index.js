@@ -108,9 +108,17 @@
     doAction_uiControl107_VPUGiF: function (data, elem) {
       if (data.eventType == "btnClick") {
         if (data.dataCustom == "sure") {
-          elem.querySelector("input[value='确定']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='确定']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='确定']").click();
+          }
         } else {
-          elem.querySelector("input[value='取消']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='取消']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='取消']").click();
+          }
         }
       }
     },

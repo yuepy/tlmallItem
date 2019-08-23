@@ -30,7 +30,7 @@
     },
 
     getData_control39_gHDVro: function (elem) {
-      //提示弹框
+      ; //提示弹框
       if (elem && elem.getAttribute("role") == "alertdialog") {
         return ysp.customHelper.alert(elem);
       } else {
@@ -40,9 +40,17 @@
     doAction_uiControl39_1cSzpI: function (data, elem) {
       if (data.eventType == "btnClick") {
         if (data.dataCustom == "sure") {
-          elem.querySelector("input[value='确定']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='确定']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='确定']").click();
+          }
         } else {
-          elem.querySelector("input[value='取消']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='取消']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='取消']").click();
+          }
         }
       }
     },

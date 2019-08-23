@@ -1,0 +1,347 @@
+getData_control49_6Hie6z: |
+  if (elem) {
+    var data = {
+      vall: [],
+      pserror: []
+    };
+    var trs = elem.querySelectorAll("tr[id]");
+    var href = elem.ownerDocument.defaultView.location.href;
+    [].forEach.call(trs, function (d, i) {
+      var arr = [];
+      var errers = [];
+      var inputs = d.querySelectorAll("input");
+      [].forEach.call(inputs, function (d1, i1) {
+        if (i1 == 0) {
+          // arr.push(d1.value.replace(/\//g, "-"));
+          if (ysp.appMain.isIOS() && d1.getAttribute("id").indexOf("DATE") !== -1 && href.indexOf("192.168.220.110") !== -1) {
+            var date = d1.value.split("/");
+            arr.push(date[2] + "-" + date[1] + "-" + date[0]);
+          } else {
+            arr.push(d1.value.replace(/\//g, "-"));
+          }
+
+          errers.push(d1.getAttribute("class"));
+        } else {
+          var leixing = d.querySelectorAll("td")[2].querySelector("span");
+
+          if (leixing) {
+            arr.push(leixing.textContent);
+            errers.push("");
+          }
+
+          arr.push(d1.value);
+          errers.push(d1.getAttribute("class"));
+        }
+      });
+      data.vall.push(arr);
+      data.pserror.push(errers);
+    });
+    return data;
+  } else {
+    return;
+  }
+doAction_uiControl48_gySyv1: |
+  var type = data.eventType;
+  var group = data.dataCustom;
+  var trs = elem.querySelectorAll("tr[id]");
+  if (type == "inputBlur") {
+    if (group[0].indexOf("time") != -1) {
+      // trs[group[2]].querySelectorAll("input")[0].value = group[1].replace(/-/g, "/");
+      var href = elem.ownerDocument.defaultView.location.href;
+
+      if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
+        var date = group[1].split("-");
+        trs[group[2]].querySelectorAll("input")[0].value = date[2] + "/" + date[1] + "/" + date[0];
+      } else {
+        trs[group[2]].querySelectorAll("input")[0].value = group[1].replace(/-/g, "/");
+      }
+
+      trs[group[2]].querySelectorAll("input")[0].dispatchEvent(new Event("change"));
+      trs[group[2]].querySelectorAll("input")[0].nextElementSibling.click();
+      elem.ownerDocument.querySelector("#bodyCalendar").querySelector('a[tabindex="0"]').parentElement.click();
+    } else if (group[0].indexOf("hours") != -1) {
+      trs[group[2]].querySelectorAll("input")[1].value = group[1].replace(/-/g, "/");
+      trs[group[2]].querySelectorAll("input")[1].dispatchEvent(new Event("change"));
+    }
+  } else if (type == "delete") {
+    trs[group].querySelectorAll("td")[6].querySelector("a").click();
+  }
+getTemplate_uiControl48_gySyv1: "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n  inputBlur(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:[target.className,target.value,target.dataset.index],\n        eventType:\"inputBlur\"\n      })\n    }\n  }\n  delete(e){\n     var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        data:target.dataset.index,\n        eventType:\"delete\"\n      })\n    }\n  }\n  render(){\n    var _this=this;\n    var data=this.props.customData;\n    return(\n    \t<div className=\"ysp_addWork_list\">\n      \t{data&&data.vall.map(function(d,i){\n          return(\n          \t<div className=\"ysp_addWork_card\">\n              <div className=\"line1\">\n                <div><span style={{color:\"red\"}}>*</span>加班日期</div>\n                <AInput className={\"time \"+data.pserror[i][0]} type=\"date\" onBlur={_this.inputBlur.bind(_this)} data-index={i} value={d[0]}/>\n              </div>\n              <div className=\"line2\">\n                <div>加班类型</div>\n                <div style={{float:\"right\"}}>{d[1]}</div>\n              </div>\n              <div className=\"line2\">\n              \t<div><span style={{color:\"red\"}}>*</span>预计加班时长(小时)</div>\n                <AInput className={\"hours \"+data.pserror[i][2]} type=\"text\" onBlur={_this.inputBlur.bind(_this)} data-index={i} value={d[2]}/>\n              </div>\n              <div className=\"delete\" onClick={_this.delete.bind(_this)} data-index={i}>删除</div>\n            </div>\n          )\n        })}\n      </div>\n    )\n  }\n}"
+getData_control50_MmhJ9y: |
+  if (elem) {
+    var data = {
+      vall: "请输入请假事由",
+      pserror: ""
+    }; // var data = "请输入请假事由";
+
+    data.vall = elem.value;
+    data.pserror = elem.getAttribute("class");
+    return data;
+  } else {
+    return;
+  }
+doAction_uiControl49_GduLH8: |
+  if (data.eventType == "textareaBlur") {
+    elem.value = data.dataCustom;
+    elem.dispatchEvent(new Event("change"));
+    $(elem.ownerDocument.querySelectorAll("[dir='ltr']")[0]).find("input").focus();
+  }
+getTemplate_uiControl49_GduLH8: "import {Component} from 'react'; \nexport default class extends Component{\n  textareaBlur(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"textareaBlur\",\n        data:target.value\n      })\n    }\n  }\n  render(){\n    var data=this.props.customData;\n    var _this=this;\n    return(\n    \t<div className=\"ysp_addWork_reason\">\n      \t<span style={{color:\"red\"}}>*</span>加班事由\n        <ATextarea value={data.vall} className={data.pserror} placeholder=\"请输入加班事由\" onBlur={_this.textareaBlur.bind(_this)}/>\n      </div>\n    )\n  }\n}"
+getData_control51_GspU5y: |
+  if (elem) {
+    var data = {
+      name: [],
+      leng: ""
+    };
+    var trs = elem.querySelectorAll("tr[id]");
+    [].forEach.call(trs, function (d, i) {
+      data.name.push(d.querySelectorAll("td")[1].textContent.trim());
+    });
+    data.leng = trs && trs.length;
+    return data;
+  }
+doAction_uiControl50_Tp9i9i: |
+  if (data.eventType == "addFile") {
+    var ind = parseInt(data.dataCustom);
+    var trs = elem.querySelectorAll("tr[id]");
+    trs[ind - 1].querySelectorAll("td")[3].querySelector("input").click();
+  } else if (data.eventType == "autoClick") {
+    var ind = parseInt(data.dataCustom);
+    var trs = elem.querySelectorAll("tr[id]");
+    trs[ind - 1].querySelectorAll("td")[4].querySelector("a").click();
+  } else if (data.eventType == "delete") {
+    var ind = parseInt(data.dataCustom);
+    var trs = elem.querySelectorAll("tr[id]");
+    trs[ind].querySelectorAll("td")[6].querySelector("a").click();
+  }
+getTemplate_uiControl50_Tp9i9i: "import {Component} from 'react'; \nexport default class extends Component{\n  componentDidUpdate(){\n    if(this.props.customData.name[0]==\"\"&&this.props.customData.leng==1){\n      \n    }else{\n      this.refs.autoClick.click()\n    }\n    \n  }\n  addFile(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"addFile\",\n        data:target.dataset.index\n      })\n    }\n  }\n  autoClick(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"autoClick\",\n        data:target.dataset.index\n      })\n    }\n  }\n  delete(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"delete\",\n        data:target.dataset.index\n      })\n    }\n  }\n  render(){\n    var data=this.props.customData;\n    var _this=this;\n    return(\n    \t<div className=\"ysp-con-box annex-box\" style={{marginBottom:\"10px\"}}>\n        <div className=\"annex-tit\">附件</div>\n        <div className=\"annex-conent\">\n        \t<div className=\"annex-add\" onClick={_this.addFile.bind(_this)} data-index={data&&data.leng}>+</div>\n          {data&&data.name&&data.name.map(function(d,i){\n              return(\n                <div className=\"annex-listItem\">\n                  {d==\"\"? <div></div>:\n                    <div>\n                      <div className=\"annex-item\">\n                        <div className={d.indexOf(\"jpg\"||\"png\")? \"pic\": d.indexOf(\"xl\")? \"excel\":d.indexOf(\"doc\")? \"doc\":d.indexOf(\"ppt\")? \"ppt\": d.indexOf(\"pdf\")? \"pdf\": d.indexOf(\"zip\")? \"zip\": d.indexOf(\"rar\")? \"rar\":\"default\"}></div>\n                        <i className=\"delete-btn\" onClick={_this.delete.bind(_this)} data-index={i}>X</i>\n                      </div>\n                      <div className=\"fileName\">{d}</div>\n                    </div>\n                  }\n                </div>\n\n              )\n          })}\n        </div>\n        <div ref=\"autoClick\" onClick={_this.autoClick.bind(_this)} data-index={data&&data.leng}></div>\n      </div>\n    )\n  }\n}"
+getData_control52_uKwSVw: |
+  //附件上传弹窗
+  if (!elem) {
+    return;
+  }
+  var data = [];
+  var annexName = elem.querySelector("input[title='浏览']");
+  if (annexName && annexName.value != "") {
+    data.push(annexName.value.match(/([^<>/\\\|:""\*\?]+)\.\w+$/g));
+  } else {
+    data = ["未选中任何文件"];
+  }
+  return data;
+doAction_uiControl51_Sb8SJa: >
+  if (data.eventType == "selclick") {//
+  console.log(elem.ownerDocument.defaultView.enableUpload);
+    //elem.ownerDocument.defaultView.enableUpload(); 
+    // elem.ownerDocument.querySelector("input[type='file']").click();
+  } else if (data.eventType == "upclick") {
+    var d = data.dataCustom;
+    var ipt1 = elem.querySelectorAll(".PSPUSHBUTTON")[0].querySelector("input");
+    ipt1.click();
+  } else if (data.eventType == "cancelclick") {
+    var d = data.dataCustom;
+    var ipt2 = elem.querySelectorAll(".PSPUSHBUTTON")[2].querySelector("input");
+    ipt2.click();
+  }
+getTemplate_uiControl51_Sb8SJa: |-
+  import {Component} from 'react';
+
+  export default class extends React.Component{
+      selClick(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          eventType:"selclick"
+        })
+      }
+       
+      e.target.ownerDocument.querySelector("[type='fileUpload']").click();
+    }
+    upClick(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          eventType:"upclick"
+        })
+      }
+    }
+      cancelClick(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          eventType:"cancelclick"
+        })
+      }
+    }
+
+    render(){
+      var data = this.props.customData;
+      var _this = this;
+    return(<div>
+      {data && data.length>0?
+          <div className="ysp-pop-box">
+            <div className="ysp-pop-mask"></div>
+            <div className="ysp-pop-con">
+          <h4>文件附件</h4>
+              <div className="annex-name">{data[0]}</div>
+         <p onClick={_this.selClick.bind(_this)} className="up-annex">上传附件</p>
+          <button className="pop-two-btn" onClick={_this.upClick.bind(_this)}>上载</button><button className="pop-two-btn" onClick={_this.cancelClick.bind(_this)}>取消</button>
+        </div>
+        </div>
+          :
+        <div style={{display:"none"}}></div>
+        }
+      </div>)
+    }
+  };
+getData_control53_SoW3bg: ''
+doAction_uiControl52_y5AbQE: |
+  var type = data.eventType;
+  if (type == "back") {
+    // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
+    //   top.EAPI.closeWindow();
+    // } else {
+    //   ysp.appMain.back();
+    // } // ysp.appMain.back();
+    var backVal = ysp.customHelper.tab;
+
+    if (backVal == "menu") {
+      ysp.appMain.back();
+      backVal = null;
+    } else {
+      top.EAPI.closeWindow();
+    }
+  } else if (type == "filter") {
+    var trs = elem.querySelectorAll("tr[id]");
+    trs[trs.length - 1].querySelectorAll("td")[5].querySelector("a").click();
+  }
+getTemplate_uiControl52_y5AbQE: "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n  render () {\n\n    var _this=this;\n    var data=this.props.customData;\n    return(\n      <div>\n      \t<CustomHeader \n           data={{centerText:\"加班申请\",rightText:\"\"}} \n           backIsShow={true} \n           back={()=>{ \n              let handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  eventType: 'back'\n                });\n              }\n           }} \n           filterIsShow={true}\n        \t filter={()=>{\n          \t\tlet handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  eventType: 'filter'\n                });\n              }\n        \t }}\n        />\n        <div style={{height:\"2.7rem\"}}></div>\n      </div>\n      )\n    }\n}"
+getData_control48_2B2nl2: |
+  ;//提示弹框
+  if (elem && elem.getAttribute("role") == "alertdialog") {
+    return ysp.customHelper.alert(elem);
+  } else {
+    return;
+  }
+doAction_uiControl47_cglekz: |
+  if (data.eventType == "btnClick") {
+    if (data.dataCustom == "sure") {
+      elem.querySelector("input[value='确定']").click();
+      ysp.appMain.back()
+    } else {
+      elem.querySelector("input[value='取消']").click();
+      ysp.appMain.back()
+    }
+  }
+getTemplate_uiControl47_cglekz: "import {Component} from 'react'; \nimport {CustomAlert} from 'ysp-custom-components';\nexport default class extends Component{\n  btnClick(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"btnClick\",\n        data:target.className\n      })\n    }\n  }\n  render () {\n    var _this=this;\n    var data=this.props.customData;\n    return(\n      <div>\n      \t{data? <CustomAlert\n           data={data}\n          btnClick={_this.btnClick.bind(_this)}\n        />:<div></div>}\n      </div>\n      )\n    }\n}"
+getData_control75_5yAX5O: |
+  if (!elem) {
+    return;
+  }
+  var data = {
+    vall: [],
+    grey: []
+  };
+  var save = elem.querySelector("#HPS_AWE_WRK_SAVE_BTN");
+  var sub = elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN");
+  if (save) {
+    data.vall.push(save.value);
+
+    if (save.disabled == true) {
+      data.grey.push("disabled");
+    } else {
+      data.grey.push("");
+    }
+  }
+  if (sub) {
+    data.vall.push(sub.value);
+
+    if (sub.disabled == true) {
+      data.grey.push("disabled");
+    } else {
+      data.grey.push("");
+    }
+  }
+  return data;
+doAction_uiControl74_bBS71r: |
+  if (data.eventType == "click1") {
+    var data = data.customData;
+    elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").click();
+  } else if (data.eventType == "click2") {
+    elem.querySelector("#HPS_AWE_WRK_SAVE_BTN").click();
+  }
+getTemplate_uiControl74_bBS71r: |-
+  import {Component} from 'react';
+
+  export default class extends React.Component{
+    handlerClick1(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          data:[e.target.className,e.target.value],
+          eventType:"click1"
+        })
+      }
+    }
+      handlerClick2(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          data:[e.target.className,e.target.value],
+          eventType:"click2"
+        })
+      }
+    }
+
+    render(){
+      var data = this.props.customData;
+      return (
+        <div>
+          {data&&data.vall && data.vall.length>0?
+          <div className="ysp-btn-box">
+              <button className={"ysp-sel-btn "+data.grey[1]} onClick={this.handlerClick1.bind(this)}>{data.vall[1]}</button>
+          <button className={"ysp-save-btn "+data.grey[0]} onClick={this.handlerClick2.bind(this)}>{data.vall[0]}</button>
+          </div>
+            :
+          <div></div>
+          }
+        
+        </div>
+      )
+    }
+  };
+getData_control8_f14Z7x: >
+  if (elem && elem.querySelector("div[id*='SAVED']") &&
+  elem.querySelector("div[id*='SAVED']").style.display == "block") {
+    return true;
+  } else {
+    return;
+  }
+doAction_uiControl8_K94E2d: ''
+getTemplate_uiControl8_K94E2d: "import {Component} from \"react\";\nexport default class extends Component{\n  render(){\n    var data=this.props.customData;\n    return(\n    \t<div>\n      \t{data? \n          <div className=\"savedModal\">\n\t\t\t\t\t\t<div className=\"saveContent\">\n            \t<div>√</div>\n              <div>已保存</div>\n            </div>\n          </div>:\n          <div></div>\n        }\n      </div>\n    )\n  }\n}"
+getData_control20_sQdATO: >
+  if (!elem) {
+    return;
+  }
+
+  var disabedMask = elem && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN") &&
+  elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").disabled;
+
+  if (elem && disabedMask) {
+    return true;
+  }
+doAction_uiControl20_KaTOBH: ''
+getTemplate_uiControl20_KaTOBH: "import {Component} from \"react\";\nexport default class extends Component{\n  render(){\n    var data=this.props.customData;\n    return(\n    \t<div>\n      \t{data==\"grey\"? <div className=\"disableMask\">\n      </div>:\"\"}\n      </div>\n    )\n  }\n}"
+getData_control110_uurBb0: |
+  if (elem) {
+    var loading = elem.querySelector("[id*='processing']").parentElement;
+
+    if (loading && loading.style.display == "block") {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return;
+  }
+doAction_uiControl113_QNfDg9: ''
+getTemplate_uiControl113_QNfDg9: "import {Component} from 'react';\nexport default class extends Component{\n  render(){\n    var data=this.props.customData;\n    if(data){\n     var div=\n    \t\t<div className=\"tab-loading\"><p>数据加载中...</p></div>\n    \t\n    }else{\n      setTimeout(function(){\n      var div=\n      \t\t<div className=\"tab-loading\"><p>数据加载中...</p></div>\n      \t\n    \t},500)\n    }\n    return(\n    \t<div>{div}</div>\n    )\n  }\n}"

@@ -126,7 +126,7 @@
       return "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require('react');\n\nvar _yspCustomComponents = require('ysp-custom-components');\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_Component) {\n  _inherits(_class, _Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: 'render',\n    value: function render() {\n\n      var _this = this;\n      var data = this.props.customData;\n      return React.createElement(\n        'div',\n        null,\n        React.createElement(_yspCustomComponents.CustomHeader, {\n          data: { centerText: \"\u52A0\u73ED\u7533\u8BF7\", rightText: \"\" },\n          backIsShow: true,\n          back: function back() {\n            var handler = _this.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: 'back'\n              });\n            }\n          },\n          filterIsShow: true,\n          filter: function filter() {\n            var handler = _this.props.customHandler;\n            if (handler) {\n              handler({\n                eventType: 'filter'\n              });\n            }\n          }\n        }),\n        React.createElement('div', { style: { height: \"2.7rem\" } })\n      );\n    }\n  }]);\n\n  return _class;\n}(_react.Component);\n\nexports.default = _class;";
     },
     getData_control48_2B2nl2: function (elem) {
-      //提示弹框
+      ; //提示弹框
       if (elem && elem.getAttribute("role") == "alertdialog") {
         return ysp.customHelper.alert(elem);
       } else {
@@ -136,9 +136,17 @@
     doAction_uiControl47_cglekz: function (data, elem) {
       if (data.eventType == "btnClick") {
         if (data.dataCustom == "sure") {
-          elem.querySelector("input[value='确定']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='确定']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='确定']").click();
+          }
         } else {
-          elem.querySelector("input[value='取消']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='取消']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='取消']").click();
+          }
         }
       }
     },

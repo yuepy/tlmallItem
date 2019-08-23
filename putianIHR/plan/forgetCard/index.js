@@ -82,7 +82,7 @@
       return "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = require(\"react\");\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar _class = function (_React$Component) {\n  _inherits(_class, _React$Component);\n\n  function _class() {\n    _classCallCheck(this, _class);\n\n    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));\n  }\n\n  _createClass(_class, [{\n    key: \"handlerClick1\",\n    value: function handlerClick1(e) {\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          data: [e.target.className, e.target.value],\n          eventType: \"click1\"\n        });\n      }\n    }\n  }, {\n    key: \"handlerClick2\",\n    value: function handlerClick2(e) {\n      var handler = this.props.customHandler;\n      if (handler) {\n        handler({\n          data: [e.target.className, e.target.value],\n          eventType: \"click2\"\n        });\n      }\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      var data = this.props.customData;\n      return React.createElement(\n        \"div\",\n        null,\n        data && data.vall && data.vall.length > 0 ? React.createElement(\n          \"div\",\n          { className: \"ysp-btn-box\" },\n          React.createElement(\n            \"button\",\n            { className: \"ysp-sel-btn \" + data.grey[1], onClick: this.handlerClick1.bind(this) },\n            data.vall[1]\n          ),\n          React.createElement(\n            \"button\",\n            { className: \"ysp-save-btn \" + data.grey[0], onClick: this.handlerClick2.bind(this) },\n            data.vall[0]\n          )\n        ) : React.createElement(\"div\", null)\n      );\n    }\n  }]);\n\n  return _class;\n}(React.Component);\n\nexports.default = _class;\n;";
     },
     getData_control27_m3fHk5: function (elem) {
-      //提示弹框
+      ; //提示弹框
       if (elem && elem.getAttribute("role") == "alertdialog") {
         return ysp.customHelper.alert(elem);
       } else {
@@ -92,9 +92,17 @@
     doAction_uiControl27_a55LCI: function (data, elem) {
       if (data.eventType == "btnClick") {
         if (data.dataCustom == "sure") {
-          elem.querySelector("input[value='确定']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='确定']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='确定']").click();
+          }
         } else {
-          elem.querySelector("input[value='取消']").click();
+          if (/完善您的个人信息/.test(elem.textContent.trim())) {
+            elem.querySelector("input[value='取消']").click();ysp.appMain.back();
+          } else {
+            elem.querySelector("input[value='取消']").click();
+          }
         }
       }
     },

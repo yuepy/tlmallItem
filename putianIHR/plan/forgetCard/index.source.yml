@@ -1,0 +1,280 @@
+getData_control23_5agOhX: ''
+doAction_uiControl23_t26RJN: |
+  var type = data.eventType;
+  if (type == "back") {
+    //ysp.appMain.back();
+    // if (ysp.appMain.isIOS() || ysp.appMain.isAndroid()) {
+    //   top.EAPI.closeWindow();
+    // } else {
+    //   ysp.appMain.back();
+    // } // ysp.appMain.back();
+    var backVal = ysp.customHelper.tab;
+    var innerBack = ysp.customHelper.innerBack;
+
+    if (backVal == "menu" && innerBack == null) {
+      ysp.appMain.back();
+      backVal = null;
+    } else if (backVal == "menu" && innerBack == "returnBack") {
+      ysp.appMain.back();
+      innerBack = null;
+    } else if (backVal == null && innerBack == "returnBack") {
+      ysp.appMain.back();
+      innerBack = null;
+    } else {
+      top.EAPI.closeWindow();
+    }
+  }
+getTemplate_uiControl23_t26RJN: "import {Component} from 'react'; \nimport {CustomHeader} from 'ysp-custom-components';\nexport default class extends Component{\n  render () {\n    var _this=this;\n    return(\n      <div>\n      \t<CustomHeader \n           data={{centerText:\"忘打卡申请\",rightText:\"\"}} \n           backIsShow={true} \n           back={()=>{ \n              let handler = _this.props.customHandler;\n              if (handler) {\n                handler({\n                  eventType: 'back'\n                });\n              }\n           }} \n           filterIsShow={false}\n        \t />\n      \t<div style={{height:\"2.7rem\"}}></div>\n      </div>\n      )\n    }\n}"
+getData_control24_NnciIJ: >
+  if (!elem) {
+    return;
+  }
+
+  var data = {
+    date: "",
+    opts: [],
+    pserror: [],
+    select: ""
+  };
+
+  var ipt = elem.querySelector("#HPS_AWE002_HDR_PDATE"); // data.date =
+  ipt.value.replace(/\//g, "-");
+
+  var href = elem.ownerDocument.defaultView.location.href;
+
+  if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
+    var date = ipt.value.split("/");
+    data.date = date[2] + "-" + date[1] + "-" + date[0];
+  } else {
+    data.date = ipt.value.replace(/\//g, "-");
+  }
+
+  data.pserror.push(ipt.getAttribute("class"));
+
+  var opt =
+  elem.querySelector("#HPS_AWE002_HDR_HPS_FG_PUNCH").querySelectorAll("option");
+
+  data.pserror.push(elem.querySelector("select").getAttribute("class"));
+
+  [].forEach.call(opt, function (item, index) {
+    data.opts.push(item.textContent.trim());
+
+    if (item.selected) {
+      data.select = item.textContent;
+    }
+  });
+
+  return data;
+doAction_uiControl24_Zfin7m: |
+  if (data.eventType == "selclick") {
+    var d = data.dataCustom;
+    elem.querySelector("#HPS_AWE002_HDR_HPS_FG_PUNCH").querySelectorAll("option")[d].selected = true;
+    elem.querySelector("#HPS_AWE002_HDR_HPS_FG_PUNCH").dispatchEvent(new Event("change"));
+  } else if (data.eventType == "dateBlur") {
+    var d = data.dataCustom;
+    var href = elem.ownerDocument.defaultView.location.href; // elem.querySelector("#HPS_AWE002_HDR_PDATE").value = d.replace(/-/g, "/");
+
+    if (ysp.appMain.isIOS() && href.indexOf("192.168.220.110") !== -1) {
+      var date = d.split("-");
+      elem.querySelector("#HPS_AWE002_HDR_PDATE").value = date[2] + "/" + date[1] + "/" + date[0];
+    } else {
+      elem.querySelector("#HPS_AWE002_HDR_PDATE").value = d.replace(/-/g, "/");
+    }
+
+    elem.querySelector("#HPS_AWE002_HDR_PDATE").dispatchEvent(new Event("change"));
+  }
+getTemplate_uiControl24_Zfin7m: "\nimport {Component} from 'react';\n\nexport default class extends React.Component{\n    selClick(e) {\n   var handler=this.props.customHandler;\n    var target=e.target;\n    if(handler){\n      handler({\n        data:target.selectedIndex,\n        eventType:\"selclick\"\n      })\n    }\n  }\n\tdateBlur(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"dateBlur\",\n        data:target.value\n      })\n    }\n  }\n  render(){\n    var data = this.props.data.customData;\n    var _this = this;\n    return (\n    <div>\n        {data?<div className=\"ysp-con-box ysp-bottom-default\">\n        <div class=\"ysp-lists\">\n          <div class=\"ysp-l\"><em class=\"star\">*</em>忘打卡日期</div>\n          <div class=\"ysp-r\"><AInput type=\"date\" placeholder=\"请选择\" value={data && data.date} class={\"date-time \"+data.pserror[0]} onBlur={_this.dateBlur.bind(_this)}/></div>\n\t\t\t\t</div>\n        <div class=\"ysp-lists\">\n          <div class=\"ysp-l\"><em class=\"star\">*</em>忘打卡类型</div>\n          <div class=\"ysp-r\"><select class={\"sel-type \"+data.pserror[1]} onChange={_this.selClick.bind(_this)}>{\n              data && data.opts.length>0 && data.opts.map(function(item,index){\n                return(<option selected={data.select==item? \"selected\":\"\"}>{item}</option>)\n              })\n            }</select></div>\n\t\t\t\t</div>\n      </div>:<div></div>}\n\t\t\t\n    </div>\n    )\n  }\n};"
+getData_control26_eNalGN: |
+  if (!elem) {
+    return;
+  }
+  var data = {
+    vall: [],
+    grey: []
+  };
+  var save = elem.querySelector("#HPS_AWE_WRK_SAVE_BTN");
+  var sub = elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN");
+  if (save) {
+    data.vall.push(save.value);
+
+    if (save.disabled == true) {
+      data.grey.push("disabled");
+    } else {
+      data.grey.push("");
+    }
+  }
+  if (sub) {
+    data.vall.push(sub.value);
+
+    if (sub.disabled == true) {
+      data.grey.push("disabled");
+    } else {
+      data.grey.push("");
+    }
+  }
+  return data;
+doAction_uiControl26_ynkiKT: |
+  if (data.eventType == "click1") {
+    var data = data.customData;
+    elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").click();
+  } else if (data.eventType == "click2") {
+    elem.querySelector("#HPS_AWE_WRK_SAVE_BTN").click();
+  }
+getTemplate_uiControl26_ynkiKT: |-
+  import {Component} from 'react';
+
+  export default class extends React.Component{
+    handlerClick1(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          data:[e.target.className,e.target.value],
+          eventType:"click1"
+        })
+      }
+    }
+      handlerClick2(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          data:[e.target.className,e.target.value],
+          eventType:"click2"
+        })
+      }
+    }
+
+    render(){
+      var data = this.props.customData;
+      return (
+        <div>
+          {data&&data.vall && data.vall.length>0?
+          <div className="ysp-btn-box">
+              <button className={"ysp-sel-btn "+data.grey[1]} onClick={this.handlerClick1.bind(this)}>{data.vall[1]}</button>
+          <button className={"ysp-save-btn "+data.grey[0]} onClick={this.handlerClick2.bind(this)}>{data.vall[0]}</button>
+          </div>
+            :
+          <div></div>
+          }
+        
+        </div>
+      )
+    }
+  };
+getData_control27_m3fHk5: |
+  ;//提示弹框
+  if (elem && elem.getAttribute("role") == "alertdialog") {
+    return ysp.customHelper.alert(elem);
+  } else {
+    return;
+  }
+doAction_uiControl27_a55LCI: |
+  if (data.eventType == "btnClick") {
+    if (data.dataCustom == "sure") {
+      elem.querySelector("input[value='确定']").click();
+      ysp.appMain.back()
+    } else {
+      elem.querySelector("input[value='取消']").click();
+      ysp.appMain.back()
+    }
+  }
+getTemplate_uiControl27_a55LCI: "import {Component} from 'react'; \nimport {CustomAlert} from 'ysp-custom-components';\nexport default class extends Component{\n  btnClick(e){\n    var target=e.target;\n    var handler=this.props.customHandler;\n    if(handler){\n      handler({\n        eventType:\"btnClick\",\n        data:target.className\n      })\n    }\n  }\n  render () {\n    var _this=this;\n    var data=this.props.customData;\n    return(\n      <div>\n      \t{data? <CustomAlert\n           data={data}\n          btnClick={_this.btnClick.bind(_this)}\n        />:<div></div>}\n      </div>\n      )\n    }\n}"
+getData_control30_QSE6y1: |
+  if (!elem) {
+    return;
+  }
+  var data = {
+    vall: [],
+    pserror: []
+  };
+  var st = elem.querySelector("#HPS_AWE002_HDR_START_TIME");
+  var end = elem.querySelector("#HPS_AWE002_HDR_END_TIME");
+  if (st) {
+    data.vall.push(st.value);
+    data.pserror.push(st.getAttribute("class"));
+  }
+  if (end) {
+    data.vall.push(end.value);
+    data.pserror.push(end.getAttribute("class"));
+  }
+  return data;
+doAction_uiControl30_sFLbvU: |
+  if (data.eventType == "timechange1") {
+    var d = data.dataCustom;
+    elem.querySelector("#HPS_AWE002_HDR_START_TIME").value = d;
+    elem.querySelector("#HPS_AWE002_HDR_START_TIME").dispatchEvent(new Event("change"));
+  } else if (data.eventType == "timechange2") {
+    var d = data.dataCustom;
+    elem.querySelector("#HPS_AWE002_HDR_END_TIME").value = d;
+    elem.querySelector("#HPS_AWE002_HDR_END_TIME").dispatchEvent(new Event("change"));
+  }
+getTemplate_uiControl30_sFLbvU: |-
+
+  import {Component} from 'react';
+
+  export default class extends React.Component{
+      timeChange1(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          data:e.target.value,
+          eventType:"timechange1"
+        })
+      }
+    }
+        timeChange2(e) {
+      var handler = this.props.customHandler;
+      if(handler){
+        handler({
+          data:e.target.value,
+          eventType:"timechange2"
+        })
+      }
+    }
+    render(){
+      const data = this.props.data.customData;
+      var _this = this;
+      return (
+        <div>
+          {
+            data && data.vall.length!=1?
+            <div className="ysp-con-box ysp-bottom-default">
+          <div className="ysp-lists">
+          <span className="ysp-l ysp-tit"><em className="star">*</em>忘记时间</span>
+              <span className="ysp-r">{data&&data.pserror&&data.pserror[0]? <AInput type="text" className={"time-ipt "+data.pserror[0]} value={data.vall[0]} onChange={_this.timeChange1.bind(_this)} />:""}<em className="bolang">~</em>{data&&data.pserror&&data.pserror[1]? <AInput type="text" className={"time-ipt "+data.pserror[1]} value={data.vall[1]} onChange={_this.timeChange2.bind(_this)} />:""}</span>
+         </div>
+        </div>
+              :
+           <div className="ysp-con-box ysp-bottom-default">
+          <div className="ysp-lists">
+          <span className="ysp-l ysp-tit"><em className="star">*</em>忘记时间</span>
+              <span className="ysp-r">{data&&data.pserror&&data.pserror[0]? <AInput type="text" className={"time-ipt-one "+data.pserror[0]} value={data.vall[0]} onChange={_this.timeChange1.bind(_this)} />:""}</span>
+         </div>
+        </div>
+          }
+        
+          </div>
+      )
+    }
+  };
+getData_control60_WdiTkQ: >
+  if (elem && elem.querySelector("div[id*='SAVED']") &&
+  elem.querySelector("div[id*='SAVED']").style.display == "block") {
+    return true;
+  } else {
+    return;
+  }
+doAction_uiControl59_M1UzqX: ''
+getTemplate_uiControl59_M1UzqX: "import {Component} from \"react\";\nexport default class extends Component{\n  render(){\n    var data=this.props.customData;\n    return(\n    \t<div>\n      \t{data? \n          <div className=\"savedModal\">\n\t\t\t\t\t\t<div className=\"saveContent\">\n            \t<div>√</div>\n              <div>已保存</div>\n            </div>\n          </div>:\n          <div></div>\n        }\n      </div>\n    )\n  }\n}"
+getData_control63_hcBgKO: >
+  if (!elem) {
+    return;
+  }
+
+  var disabedMask = elem && elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN") &&
+  elem.querySelector("#HPS_AWE_WRK_SUBMIT_BTN").disabled;
+
+  if (elem && disabedMask) {
+    return true;
+  }
+doAction_uiControl97_kT2v2t: ''
+getTemplate_uiControl97_kT2v2t: "import {Component} from \"react\";\nexport default class extends Component{\n  render(){\n    var data=this.props.customData;\n    return(\n    \t<div>\n      \t{data? <div className=\"disableMask\">\n      </div>:\"\"}\n      </div>\n    )\n  }\n}"
