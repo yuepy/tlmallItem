@@ -46,8 +46,7 @@
             }
           }
         } else {
-          var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");
-          _click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
+          var _click = elem.contentWindow.document.querySelector('#td_0_2').querySelector("a");_click.click();var json = { time: new Date().getTime() };ysp.appMain.getActiveWindow().history.pushState(json, "", "/ptsoa/bps/wfclient/task/app/taskTabPage/pendingTask.jsp?");
         }
       } else if (data.eventType == 'back') {
         //待办里面#dataForm1里面的第一个input的class里没有mini-disabled
