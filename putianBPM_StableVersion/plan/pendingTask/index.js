@@ -6,7 +6,8 @@
         return;
       }if (elem) {
         //获取tr的数组
-        var data = [];var trArr = elem.querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
+        var data = [];
+        var trArr = elem.querySelector("tbody").querySelectorAll("tr");for (var i = 0; i < trArr.length; i++) {
           var tdArr = trArr[i].querySelectorAll("td");var arry = [];for (var j = 0; j < tdArr.length; j++) {
             arry.push(tdArr[j].textContent);
           }data.push(arry);arry.shift();arry.shift();

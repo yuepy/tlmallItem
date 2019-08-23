@@ -15,7 +15,7 @@
       if (!elem) {
         return;
       }if (elem) {
-        var data = { title: [], content: [], total: [] };var tTrs = elem.querySelectorAll('tr	.form_label');var trsLen = tTrs.length;for (var i = 0; i < trsLen; i++) {
+        var data = { title: [], content: [], total: [] };var tTrs = elem.querySelectorAll('tr .form_label');var trsLen = tTrs.length;for (var i = 0; i < trsLen; i++) {
           data.title.push(tTrs[i].textContent);
         }var _table = elem.querySelectorAll('tr');if (_table.length > 2) {
           var trs = _table;var trsLen = trs.length - 1;for (var i = 1; i < trsLen; i++) {
@@ -26,7 +26,7 @@
                 children.attr = 'INPUT';
               }children.cont.push(tds[j].textContent);pData.push(children);
             }data.content.push(pData);
-          }var totalTrs = elem.querySelectorAll('tbody	tr:last-child td');var totalLen = totalTrs.length;for (var i = 0; i < totalLen; i++) {
+          }var totalTrs = elem.querySelectorAll('tbody  tr:last-child td');var totalLen = totalTrs.length;for (var i = 0; i < totalLen; i++) {
             data.total.push(totalTrs[i].textContent.trim());
           }
         }return data;
